@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="punter-odds">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="game" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:byte" name="id" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="type">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:short" name="id" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alternatives">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="alternative" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute type="xs:float" name="odds" use="optional" />
+								<xs:attribute type="xs:int" name="team" use="optional" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="category">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="id" use="optional" />
+					<xs:attribute type="xs:int" name="order" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="game">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description">
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element ref="category" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="type" />
+				<xs:element name="alternatives" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="id" use="optional" />
+			<xs:attribute type="xs:int" name="date" use="optional" />
+			<xs:attribute type="xs:short" name="time" use="optional" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

@@ -1,0 +1,74 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="sports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sport" maxOccurs="unbounded" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute type="xs:dateTime" name="file_date" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="bet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="choice" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute type="xs:string" name="name" use="optional" />
+								<xs:attribute type="xs:int" name="id" use="optional" />
+								<xs:attribute type="xs:float" name="odd" use="optional" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="code" use="optional" />
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:int" name="id" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="bets">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bet" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="match">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bets" />
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:int" name="id" use="optional" />
+			<xs:attribute type="xs:dateTime" name="start_date" use="optional" />
+			<xs:attribute type="xs:string" name="live_id" use="optional" />
+			<xs:attribute type="xs:byte" name="streaming" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="event">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="match" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:short" name="id" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="sport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="event" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:byte" name="id" use="optional" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
