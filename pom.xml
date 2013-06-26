@@ -12,7 +12,7 @@
 		<hibernate.version>4.2.2.Final</hibernate.version>
 		<jaxb.version>2.2.7</jaxb.version>
 		<querydsl.version>3.2.0</querydsl.version>
-		<java.version></java.version>
+		<java.version>1.7</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -130,7 +130,7 @@
 							<outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
 							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
 							<includes>
-								<include>fr.ele.model.*</include>
+								<include>fr.ele.model.**</include>
 							</includes>
 						</configuration>
 					</execution>
