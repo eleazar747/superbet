@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import fr.ele.model.util.Entity;
+import fr.ele.model.Entity;
 import fr.ele.services.GenericDao;
 
 @Repository
@@ -41,5 +41,4 @@ public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> 
     protected final Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
-
 }

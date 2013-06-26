@@ -1,4 +1,4 @@
-package fr.ele.model.util;
+package fr.ele.model;
 
 import javax.persistence.MappedSuperclass;
 

@@ -4,14 +4,12 @@ import java.util.Date;
 
 import javax.persistence.MappedSuperclass;
 
-import fr.ele.model.util.Entity;
+import fr.ele.model.HasCodeEntity;
 
 @MappedSuperclass
-public interface Match extends Entity {
+public interface Match extends HasCodeEntity {
 
     Sport getSport();
-
-    String getCode();
 
     Date getDate();
 }

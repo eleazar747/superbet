@@ -9,9 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
-import fr.ele.model.util.EntityImpl;
 
 @Entity
 @Table(name = "MATCH")

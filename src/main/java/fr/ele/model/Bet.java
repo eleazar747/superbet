@@ -5,7 +5,6 @@ import java.util.Date;
 import javax.persistence.MappedSuperclass;
 
 import fr.ele.model.ref.BookMarker;
-import fr.ele.model.util.Entity;
 
 @MappedSuperclass
 public interface Bet extends Entity {

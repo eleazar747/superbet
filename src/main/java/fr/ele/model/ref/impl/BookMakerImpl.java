@@ -4,21 +4,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.BookMarker;
-import fr.ele.model.util.EntityImpl;
 
 @Entity
 @Table(name = "BOOKMAKER")
 public class BookMakerImpl extends EntityImpl implements BookMarker {
-    @Column(name = "NAME", nullable = false, unique = true)
-    private String name;
 
-    public String getName() {
-        return name;
+    @Column(name = "CODE", nullable = false, unique = true)
+    private String code;
+
+    public String getCode() {
+        return code;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCode(String code) {
+        this.code = code;
     }
-
 }

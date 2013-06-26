@@ -1,6 +1,6 @@
 package fr.ele.services;
 
-import fr.ele.model.util.Entity;
+import fr.ele.model.Entity;
 
 public interface GenericDao<T extends Entity> {
     void create(T entity);
