@@ -1,4 +1,4 @@
-package fr.ele.services;
+package fr.ele.services.dao;
 
 import fr.ele.model.ref.Sport;
 

@@ -1,4 +1,4 @@
-package fr.ele.services.impl;
+package fr.ele.services.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import fr.ele.model.Entity;
-import fr.ele.services.GenericDao;
+import fr.ele.services.dao.GenericDao;
 
 @Repository
 public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> {
