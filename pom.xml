@@ -97,6 +97,8 @@
 							<schemaFiles>betclick.xsd</schemaFiles>
 							<packageName>fr.ele.feeds.betclick.dto</packageName>
 							<staleFile>${project.build.directory}/jaxb2/.betclickXjcStaleFlag</staleFile>
+							<bindingFiles>betclick.xjb</bindingFiles>
+							<bindingDirectory>src/main/resources/xsd</bindingDirectory>
 						</configuration>
 					</execution>
 					<execution>

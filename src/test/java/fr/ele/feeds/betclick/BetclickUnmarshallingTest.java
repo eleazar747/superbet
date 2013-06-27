@@ -11,24 +11,24 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import fr.ele.feeds.betclick.dto.Sport;
-import fr.ele.feeds.betclick.dto.Sports;
+import fr.ele.feeds.betclick.dto.SportBcDto;
+import fr.ele.feeds.betclick.dto.SportsBcDto;
 
 public class BetclickUnmarshallingTest {
 
     @Test
     public void test() throws Throwable {
-        JAXBContext jaxbContext = JAXBContext.newInstance(Sports.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(SportsBcDto.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         Source source = new StreamSource(
                 BetclickUnmarshallingTest.class
                         .getResourceAsStream("odds_en.xml"));
-        Sports sports = (Sports) unmarshaller.unmarshal(source);
+        SportsBcDto sports = (SportsBcDto) unmarshaller.unmarshal(source);
         Assert.assertNotNull(sports);
         Assert.assertNotNull(sports.getSport());
-        List<Sport> sportList = sports.getSport();
+        List<SportBcDto> sportList = sports.getSport();
         Assert.assertEquals(18, sportList.size());
-        for (Sport sport : sportList) {
+        for (SportBcDto sport : sportList) {
             System.out.println(sport.getName());
         }
     }
