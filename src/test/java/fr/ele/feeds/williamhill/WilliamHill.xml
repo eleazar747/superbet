@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oxip version="7.1" created="2013-06-29 13:53:09" lastMsgId="" requestTime="0.3288">
+<response request="getHierarchyByMarketType" code="001" message="success" debug="">
+<williamhill>
+<class id="436" name="Football - Virtual" maxRepDate="2013-06-29" maxRepTime="00:53:54">
+<type id="8398" name="Victoria Stadium" url="http://sports.williamhill.com/bet/betting/t/8398" lastUpdateDate="2013-05-31" lastUpdateTime="17:44:21">
+<market id="90919306" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637148/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="13:56:00" betTillDate="2013-06-29" betTillTime="13:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56">
+<participant name="Four" id="336022991" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+<participant name="Three" id="336022988" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+<participant name="Two" id="336022986" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+<participant name="One" id="336022985" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+<participant name="None" id="336022983" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+</market>
+<market id="90919312" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637149/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="14:00:00" betTillDate="2013-06-29" betTillTime="14:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56">
+<participant name="Four" id="336023117" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:57" handicap=""/>
+<participant name="Three" id="336023114" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:57" handicap=""/>
+<participant name="Two" id="336023112" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:57" handicap=""/>
+<participant name="One" id="336023110" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+<participant name="None" id="336023107" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:56" handicap=""/>
+</market>
+<market id="90919318" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637150/%2dFrance%2dv%2dEngland" date="2013-06-29" time="14:04:00" betTillDate="2013-06-29" betTillTime="14:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58">
+<participant name="Four" id="336023250" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58" handicap=""/>
+<participant name="Three" id="336023248" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58" handicap=""/>
+<participant name="Two" id="336023245" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58" handicap=""/>
+<participant name="One" id="336023243" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58" handicap=""/>
+<participant name="None" id="336023240" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:49:58" handicap=""/>
+</market>
+<market id="90919324" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637151/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="14:08:00" betTillDate="2013-06-29" betTillTime="14:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00">
+<participant name="Four" id="336023378" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00" handicap=""/>
+<participant name="Three" id="336023376" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00" handicap=""/>
+<participant name="Two" id="336023374" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00" handicap=""/>
+<participant name="One" id="336023373" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00" handicap=""/>
+<participant name="None" id="336023370" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:00" handicap=""/>
+</market>
+<market id="90919330" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637152/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="14:12:00" betTillDate="2013-06-29" betTillTime="14:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01">
+<participant name="Four" id="336023495" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01" handicap=""/>
+<participant name="Three" id="336023492" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01" handicap=""/>
+<participant name="Two" id="336023489" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01" handicap=""/>
+<participant name="One" id="336023487" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01" handicap=""/>
+<participant name="None" id="336023485" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:01" handicap=""/>
+</market>
+<market id="90919336" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637153/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="14:16:00" betTillDate="2013-06-29" betTillTime="14:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02">
+<participant name="Four" id="336023607" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02" handicap=""/>
+<participant name="Three" id="336023606" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02" handicap=""/>
+<participant name="Two" id="336023604" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02" handicap=""/>
+<participant name="One" id="336023603" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02" handicap=""/>
+<participant name="None" id="336023602" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:02" handicap=""/>
+</market>
+<market id="90919342" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637154/%2dSweden%2dv%2dFrance" date="2013-06-29" time="14:20:00" betTillDate="2013-06-29" betTillTime="14:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03">
+<participant name="Four" id="336023719" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03" handicap=""/>
+<participant name="Three" id="336023717" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03" handicap=""/>
+<participant name="Two" id="336023715" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03" handicap=""/>
+<participant name="One" id="336023712" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03" handicap=""/>
+<participant name="None" id="336023710" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:03" handicap=""/>
+</market>
+<market id="90919348" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637155/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="14:24:00" betTillDate="2013-06-29" betTillTime="14:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05">
+<participant name="Four" id="336023818" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05" handicap=""/>
+<participant name="Three" id="336023816" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05" handicap=""/>
+<participant name="Two" id="336023813" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05" handicap=""/>
+<participant name="One" id="336023811" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05" handicap=""/>
+<participant name="None" id="336023809" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:05" handicap=""/>
+</market>
+<market id="90919354" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637156/%2dPoland%2dv%2dGreece" date="2013-06-29" time="14:28:00" betTillDate="2013-06-29" betTillTime="14:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06">
+<participant name="Four" id="336023928" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06" handicap=""/>
+<participant name="Three" id="336023925" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06" handicap=""/>
+<participant name="Two" id="336023923" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06" handicap=""/>
+<participant name="One" id="336023921" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06" handicap=""/>
+<participant name="None" id="336023919" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:06" handicap=""/>
+</market>
+<market id="90919360" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637157/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="14:32:00" betTillDate="2013-06-29" betTillTime="14:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:08">
+<participant name="Four" id="336024048" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:09" handicap=""/>
+<participant name="Three" id="336024046" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:09" handicap=""/>
+<participant name="Two" id="336024043" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:09" handicap=""/>
+<participant name="One" id="336024041" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:08" handicap=""/>
+<participant name="None" id="336024038" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:08" handicap=""/>
+</market>
+<market id="90919366" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637158/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="14:36:00" betTillDate="2013-06-29" betTillTime="14:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10">
+<participant name="Four" id="336024183" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10" handicap=""/>
+<participant name="Three" id="336024180" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10" handicap=""/>
+<participant name="Two" id="336024177" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10" handicap=""/>
+<participant name="One" id="336024175" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10" handicap=""/>
+<participant name="None" id="336024173" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:10" handicap=""/>
+</market>
+<market id="90919372" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637159/%2dSweden%2dv%2dEngland" date="2013-06-29" time="14:40:00" betTillDate="2013-06-29" betTillTime="14:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11">
+<participant name="Four" id="336024317" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11" handicap=""/>
+<participant name="Three" id="336024315" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11" handicap=""/>
+<participant name="Two" id="336024313" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11" handicap=""/>
+<participant name="One" id="336024311" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11" handicap=""/>
+<participant name="None" id="336024308" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:11" handicap=""/>
+</market>
+<market id="90919378" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637160/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="14:44:00" betTillDate="2013-06-29" betTillTime="14:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12">
+<participant name="Four" id="336024448" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12" handicap=""/>
+<participant name="Three" id="336024447" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12" handicap=""/>
+<participant name="Two" id="336024445" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12" handicap=""/>
+<participant name="One" id="336024443" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12" handicap=""/>
+<participant name="None" id="336024440" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:12" handicap=""/>
+</market>
+<market id="90919384" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637161/%2dSpain%2dv%2dItaly" date="2013-06-29" time="14:48:00" betTillDate="2013-06-29" betTillTime="14:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13">
+<participant name="Four" id="336024478" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13" handicap=""/>
+<participant name="Three" id="336024477" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13" handicap=""/>
+<participant name="Two" id="336024476" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13" handicap=""/>
+<participant name="One" id="336024475" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13" handicap=""/>
+<participant name="None" id="336024474" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:13" handicap=""/>
+</market>
+<market id="90919390" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637162/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="14:52:00" betTillDate="2013-06-29" betTillTime="14:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14">
+<participant name="Four" id="336024508" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14" handicap=""/>
+<participant name="Three" id="336024507" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14" handicap=""/>
+<participant name="Two" id="336024506" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14" handicap=""/>
+<participant name="One" id="336024505" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14" handicap=""/>
+<participant name="None" id="336024504" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:14" handicap=""/>
+</market>
+<market id="90919396" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637163/%2dFrance%2dv%2dEngland" date="2013-06-29" time="14:56:00" betTillDate="2013-06-29" betTillTime="14:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15">
+<participant name="Four" id="336024538" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15" handicap=""/>
+<participant name="Three" id="336024537" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15" handicap=""/>
+<participant name="Two" id="336024536" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15" handicap=""/>
+<participant name="One" id="336024535" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15" handicap=""/>
+<participant name="None" id="336024534" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:15" handicap=""/>
+</market>
+<market id="90919402" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637164/%2dUkraine%2dv%2dSweden" date="2013-06-29" time="15:00:00" betTillDate="2013-06-29" betTillTime="15:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17">
+<participant name="Four" id="336024568" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17" handicap=""/>
+<participant name="Three" id="336024567" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17" handicap=""/>
+<participant name="Two" id="336024566" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17" handicap=""/>
+<participant name="One" id="336024565" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17" handicap=""/>
+<participant name="None" id="336024564" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:17" handicap=""/>
+</market>
+<market id="90919408" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637165/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-29" time="15:04:00" betTillDate="2013-06-29" betTillTime="15:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18">
+<participant name="Four" id="336024598" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18" handicap=""/>
+<participant name="Three" id="336024597" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18" handicap=""/>
+<participant name="Two" id="336024596" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18" handicap=""/>
+<participant name="One" id="336024595" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18" handicap=""/>
+<participant name="None" id="336024594" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:18" handicap=""/>
+</market>
+<market id="90919414" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637166/%2dPoland%2dv%2dRussia" date="2013-06-29" time="15:08:00" betTillDate="2013-06-29" betTillTime="15:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20">
+<participant name="Four" id="336024628" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20" handicap=""/>
+<participant name="Three" id="336024627" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20" handicap=""/>
+<participant name="Two" id="336024626" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20" handicap=""/>
+<participant name="One" id="336024625" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20" handicap=""/>
+<participant name="None" id="336024624" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:20" handicap=""/>
+</market>
+<market id="90919420" name=" Denmark v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637167/%2dDenmark%2dv%2dPortugal" date="2013-06-29" time="15:12:00" betTillDate="2013-06-29" betTillTime="15:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21">
+<participant name="Four" id="336024658" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21" handicap=""/>
+<participant name="Three" id="336024657" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21" handicap=""/>
+<participant name="Two" id="336024656" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21" handicap=""/>
+<participant name="One" id="336024655" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21" handicap=""/>
+<participant name="None" id="336024654" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:21" handicap=""/>
+</market>
+<market id="90919426" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637168/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="15:16:00" betTillDate="2013-06-29" betTillTime="15:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22">
+<participant name="Four" id="336024688" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22" handicap=""/>
+<participant name="Three" id="336024687" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22" handicap=""/>
+<participant name="Two" id="336024686" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22" handicap=""/>
+<participant name="One" id="336024685" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22" handicap=""/>
+<participant name="None" id="336024684" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:22" handicap=""/>
+</market>
+<market id="90919432" name=" Holland v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637169/%2dHolland%2dv%2dGermany" date="2013-06-29" time="15:20:00" betTillDate="2013-06-29" betTillTime="15:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25">
+<participant name="Four" id="336024718" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25" handicap=""/>
+<participant name="Three" id="336024717" odds="3/1" oddsDecimal="4.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25" handicap=""/>
+<participant name="Two" id="336024716" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25" handicap=""/>
+<participant name="One" id="336024715" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25" handicap=""/>
+<participant name="None" id="336024714" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:25" handicap=""/>
+</market>
+<market id="90919438" name=" Italy v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637170/%2dItaly%2dv%2dCroatia" date="2013-06-29" time="15:24:00" betTillDate="2013-06-29" betTillTime="15:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26">
+<participant name="Four" id="336024748" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26" handicap=""/>
+<participant name="Three" id="336024747" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26" handicap=""/>
+<participant name="Two" id="336024746" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26" handicap=""/>
+<participant name="One" id="336024745" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26" handicap=""/>
+<participant name="None" id="336024744" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:26" handicap=""/>
+</market>
+<market id="90919444" name=" Spain v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637171/%2dSpain%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="15:28:00" betTillDate="2013-06-29" betTillTime="15:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27">
+<participant name="Four" id="336024778" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27" handicap=""/>
+<participant name="Three" id="336024777" odds="7/2" oddsDecimal="4.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27" handicap=""/>
+<participant name="Two" id="336024776" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27" handicap=""/>
+<participant name="One" id="336024775" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27" handicap=""/>
+<participant name="None" id="336024774" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:27" handicap=""/>
+</market>
+<market id="90919450" name=" Ukraine v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637172/%2dUkraine%2dv%2dFrance" date="2013-06-29" time="15:32:00" betTillDate="2013-06-29" betTillTime="15:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28">
+<participant name="Four" id="336024808" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28" handicap=""/>
+<participant name="Three" id="336024807" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28" handicap=""/>
+<participant name="Two" id="336024806" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28" handicap=""/>
+<participant name="One" id="336024805" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28" handicap=""/>
+<participant name="None" id="336024804" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:28" handicap=""/>
+</market>
+<market id="90919456" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637173/%2dSweden%2dv%2dEngland" date="2013-06-29" time="15:36:00" betTillDate="2013-06-29" betTillTime="15:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:30">
+<participant name="Four" id="336024838" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:30" handicap=""/>
+<participant name="Three" id="336024837" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:30" handicap=""/>
+<participant name="Two" id="336024836" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:30" handicap=""/>
+<participant name="One" id="336024835" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:30" handicap=""/>
+<participant name="None" id="336024834" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:29" handicap=""/>
+</market>
+<market id="90919462" name=" Greece v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637174/%2dGreece%2dv%2dRussia" date="2013-06-29" time="15:40:00" betTillDate="2013-06-29" betTillTime="15:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32">
+<participant name="Four" id="336024868" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="Three" id="336024867" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="Two" id="336024866" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="One" id="336024865" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="None" id="336024864" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+</market>
+<market id="90919468" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637175/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="15:44:00" betTillDate="2013-06-29" betTillTime="15:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32">
+<participant name="Four" id="336024898" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="Three" id="336024897" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="Two" id="336024896" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="One" id="336024895" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+<participant name="None" id="336024894" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:32" handicap=""/>
+</market>
+<market id="90919474" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637176/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="15:48:00" betTillDate="2013-06-29" betTillTime="15:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34">
+<participant name="Four" id="336024928" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34" handicap=""/>
+<participant name="Three" id="336024927" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34" handicap=""/>
+<participant name="Two" id="336024926" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34" handicap=""/>
+<participant name="One" id="336024925" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34" handicap=""/>
+<participant name="None" id="336024924" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:34" handicap=""/>
+</market>
+<market id="90919480" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637177/%2dFrance%2dv%2dEngland" date="2013-06-29" time="15:52:00" betTillDate="2013-06-29" betTillTime="15:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36">
+<participant name="Four" id="336024958" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36" handicap=""/>
+<participant name="Three" id="336024957" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36" handicap=""/>
+<participant name="Two" id="336024956" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36" handicap=""/>
+<participant name="One" id="336024955" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36" handicap=""/>
+<participant name="None" id="336024954" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:36" handicap=""/>
+</market>
+<market id="90919486" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637178/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="15:56:00" betTillDate="2013-06-29" betTillTime="15:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37">
+<participant name="Four" id="336024988" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37" handicap=""/>
+<participant name="Three" id="336024987" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37" handicap=""/>
+<participant name="Two" id="336024986" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37" handicap=""/>
+<participant name="One" id="336024985" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37" handicap=""/>
+<participant name="None" id="336024984" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:37" handicap=""/>
+</market>
+<market id="90919492" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637179/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="16:00:00" betTillDate="2013-06-29" betTillTime="16:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38">
+<participant name="Four" id="336025082" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38" handicap=""/>
+<participant name="Three" id="336025080" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38" handicap=""/>
+<participant name="Two" id="336025077" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38" handicap=""/>
+<participant name="One" id="336025075" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38" handicap=""/>
+<participant name="None" id="336025074" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:38" handicap=""/>
+</market>
+<market id="90919498" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637180/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="16:04:00" betTillDate="2013-06-29" betTillTime="16:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:40">
+<participant name="Four" id="336025208" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:41" handicap=""/>
+<participant name="Three" id="336025206" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:40" handicap=""/>
+<participant name="Two" id="336025203" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:40" handicap=""/>
+<participant name="One" id="336025201" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:40" handicap=""/>
+<participant name="None" id="336025200" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:40" handicap=""/>
+</market>
+<market id="90919504" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637181/%2dSweden%2dv%2dFrance" date="2013-06-29" time="16:08:00" betTillDate="2013-06-29" betTillTime="16:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42">
+<participant name="Four" id="336025339" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42" handicap=""/>
+<participant name="Three" id="336025336" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42" handicap=""/>
+<participant name="Two" id="336025334" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42" handicap=""/>
+<participant name="One" id="336025332" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42" handicap=""/>
+<participant name="None" id="336025329" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:42" handicap=""/>
+</market>
+<market id="90919510" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637182/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="16:12:00" betTillDate="2013-06-29" betTillTime="16:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43">
+<participant name="Four" id="336025457" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43" handicap=""/>
+<participant name="Three" id="336025454" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43" handicap=""/>
+<participant name="Two" id="336025452" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43" handicap=""/>
+<participant name="One" id="336025450" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43" handicap=""/>
+<participant name="None" id="336025447" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:43" handicap=""/>
+</market>
+<market id="90919516" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637183/%2dPoland%2dv%2dGreece" date="2013-06-29" time="16:16:00" betTillDate="2013-06-29" betTillTime="16:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:44">
+<participant name="Four" id="336025594" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:45" handicap=""/>
+<participant name="Three" id="336025592" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:45" handicap=""/>
+<participant name="Two" id="336025590" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:45" handicap=""/>
+<participant name="One" id="336025589" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:45" handicap=""/>
+<participant name="None" id="336025586" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:44" handicap=""/>
+</market>
+<market id="90919522" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637184/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="16:20:00" betTillDate="2013-06-29" betTillTime="16:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46">
+<participant name="Four" id="336025713" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46" handicap=""/>
+<participant name="Three" id="336025712" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46" handicap=""/>
+<participant name="Two" id="336025711" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46" handicap=""/>
+<participant name="One" id="336025710" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46" handicap=""/>
+<participant name="None" id="336025709" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:46" handicap=""/>
+</market>
+<market id="90919528" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637185/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="16:24:00" betTillDate="2013-06-29" betTillTime="16:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48">
+<participant name="Four" id="336025837" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48" handicap=""/>
+<participant name="Three" id="336025834" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48" handicap=""/>
+<participant name="Two" id="336025831" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48" handicap=""/>
+<participant name="One" id="336025829" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48" handicap=""/>
+<participant name="None" id="336025827" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:48" handicap=""/>
+</market>
+<market id="90919534" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637186/%2dSweden%2dv%2dEngland" date="2013-06-29" time="16:28:00" betTillDate="2013-06-29" betTillTime="16:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49">
+<participant name="Four" id="336025962" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49" handicap=""/>
+<participant name="Three" id="336025959" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49" handicap=""/>
+<participant name="Two" id="336025957" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49" handicap=""/>
+<participant name="One" id="336025954" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49" handicap=""/>
+<participant name="None" id="336025951" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:49" handicap=""/>
+</market>
+<market id="90919540" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637187/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="16:32:00" betTillDate="2013-06-29" betTillTime="16:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50">
+<participant name="Four" id="336026079" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50" handicap=""/>
+<participant name="Three" id="336026076" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50" handicap=""/>
+<participant name="Two" id="336026075" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50" handicap=""/>
+<participant name="One" id="336026072" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50" handicap=""/>
+<participant name="None" id="336026070" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:50" handicap=""/>
+</market>
+<market id="90919546" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637188/%2dSpain%2dv%2dItaly" date="2013-06-29" time="16:36:00" betTillDate="2013-06-29" betTillTime="16:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52">
+<participant name="Four" id="336026206" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52" handicap=""/>
+<participant name="Three" id="336026204" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52" handicap=""/>
+<participant name="Two" id="336026201" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52" handicap=""/>
+<participant name="One" id="336026199" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52" handicap=""/>
+<participant name="None" id="336026195" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:52" handicap=""/>
+</market>
+<market id="90919552" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637189/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="16:40:00" betTillDate="2013-06-29" betTillTime="16:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53">
+<participant name="Four" id="336026336" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53" handicap=""/>
+<participant name="Three" id="336026334" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53" handicap=""/>
+<participant name="Two" id="336026331" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53" handicap=""/>
+<participant name="One" id="336026329" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53" handicap=""/>
+<participant name="None" id="336026326" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:53" handicap=""/>
+</market>
+<market id="90919558" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637190/%2dFrance%2dv%2dEngland" date="2013-06-29" time="16:44:00" betTillDate="2013-06-29" betTillTime="16:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56">
+<participant name="Four" id="336026458" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56" handicap=""/>
+<participant name="Three" id="336026456" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56" handicap=""/>
+<participant name="Two" id="336026454" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56" handicap=""/>
+<participant name="One" id="336026451" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56" handicap=""/>
+<participant name="None" id="336026449" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:56" handicap=""/>
+</market>
+<market id="90919564" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637191/%2dUkraine%2dv%2dSweden" date="2013-06-29" time="16:48:00" betTillDate="2013-06-29" betTillTime="16:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57">
+<participant name="Four" id="336026590" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57" handicap=""/>
+<participant name="Three" id="336026588" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57" handicap=""/>
+<participant name="Two" id="336026586" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57" handicap=""/>
+<participant name="One" id="336026585" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57" handicap=""/>
+<participant name="None" id="336026582" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:57" handicap=""/>
+</market>
+<market id="90919570" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637192/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-29" time="16:52:00" betTillDate="2013-06-29" betTillTime="16:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58">
+<participant name="Four" id="336026720" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58" handicap=""/>
+<participant name="Three" id="336026718" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58" handicap=""/>
+<participant name="Two" id="336026715" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58" handicap=""/>
+<participant name="One" id="336026713" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58" handicap=""/>
+<participant name="None" id="336026710" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:50:58" handicap=""/>
+</market>
+<market id="90919576" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637193/%2dPoland%2dv%2dRussia" date="2013-06-29" time="16:56:00" betTillDate="2013-06-29" betTillTime="16:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00">
+<participant name="Four" id="336026832" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00" handicap=""/>
+<participant name="Three" id="336026829" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00" handicap=""/>
+<participant name="Two" id="336026827" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00" handicap=""/>
+<participant name="One" id="336026824" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00" handicap=""/>
+<participant name="None" id="336026821" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:00" handicap=""/>
+</market>
+<market id="90919582" name=" Denmark v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637194/%2dDenmark%2dv%2dPortugal" date="2013-06-29" time="17:00:00" betTillDate="2013-06-29" betTillTime="17:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01">
+<participant name="Four" id="336026945" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01" handicap=""/>
+<participant name="Three" id="336026943" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01" handicap=""/>
+<participant name="Two" id="336026941" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01" handicap=""/>
+<participant name="One" id="336026939" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01" handicap=""/>
+<participant name="None" id="336026936" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:01" handicap=""/>
+</market>
+<market id="90919588" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637195/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="17:04:00" betTillDate="2013-06-29" betTillTime="17:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03">
+<participant name="Four" id="336027059" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+<participant name="Three" id="336027057" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+<participant name="Two" id="336027055" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+<participant name="One" id="336027052" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+<participant name="None" id="336027050" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+</market>
+<market id="90919594" name=" Holland v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637196/%2dHolland%2dv%2dGermany" date="2013-06-29" time="17:08:00" betTillDate="2013-06-29" betTillTime="17:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03">
+<participant name="Four" id="336027178" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:04" handicap=""/>
+<participant name="Three" id="336027176" odds="3/1" oddsDecimal="4.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:04" handicap=""/>
+<participant name="Two" id="336027173" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:04" handicap=""/>
+<participant name="One" id="336027171" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:04" handicap=""/>
+<participant name="None" id="336027168" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:03" handicap=""/>
+</market>
+<market id="90919600" name=" Italy v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637197/%2dItaly%2dv%2dCroatia" date="2013-06-29" time="17:12:00" betTillDate="2013-06-29" betTillTime="17:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06">
+<participant name="Four" id="336027313" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06" handicap=""/>
+<participant name="Three" id="336027310" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06" handicap=""/>
+<participant name="Two" id="336027308" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06" handicap=""/>
+<participant name="One" id="336027306" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06" handicap=""/>
+<participant name="None" id="336027303" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:06" handicap=""/>
+</market>
+<market id="90919606" name=" Spain v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637198/%2dSpain%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="17:16:00" betTillDate="2013-06-29" betTillTime="17:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07">
+<participant name="Four" id="336027437" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07" handicap=""/>
+<participant name="Three" id="336027435" odds="7/2" oddsDecimal="4.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07" handicap=""/>
+<participant name="Two" id="336027433" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07" handicap=""/>
+<participant name="One" id="336027430" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07" handicap=""/>
+<participant name="None" id="336027428" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:07" handicap=""/>
+</market>
+<market id="90919612" name=" Ukraine v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637199/%2dUkraine%2dv%2dFrance" date="2013-06-29" time="17:20:00" betTillDate="2013-06-29" betTillTime="17:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:08">
+<participant name="Four" id="336027535" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:09" handicap=""/>
+<participant name="Three" id="336027533" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:09" handicap=""/>
+<participant name="Two" id="336027530" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:09" handicap=""/>
+<participant name="One" id="336027528" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:08" handicap=""/>
+<participant name="None" id="336027526" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:08" handicap=""/>
+</market>
+<market id="90919618" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637200/%2dSweden%2dv%2dEngland" date="2013-06-29" time="17:24:00" betTillDate="2013-06-29" betTillTime="17:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:10">
+<participant name="Four" id="336027651" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:10" handicap=""/>
+<participant name="Three" id="336027648" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:10" handicap=""/>
+<participant name="Two" id="336027645" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:10" handicap=""/>
+<participant name="One" id="336027643" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:10" handicap=""/>
+<participant name="None" id="336027640" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:09" handicap=""/>
+</market>
+<market id="90919624" name=" Greece v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637201/%2dGreece%2dv%2dRussia" date="2013-06-29" time="17:28:00" betTillDate="2013-06-29" betTillTime="17:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11">
+<participant name="Four" id="336027763" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11" handicap=""/>
+<participant name="Three" id="336027761" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11" handicap=""/>
+<participant name="Two" id="336027759" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11" handicap=""/>
+<participant name="One" id="336027756" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11" handicap=""/>
+<participant name="None" id="336027753" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:11" handicap=""/>
+</market>
+<market id="90919630" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637202/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="17:32:00" betTillDate="2013-06-29" betTillTime="17:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12">
+<participant name="Four" id="336027900" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12" handicap=""/>
+<participant name="Three" id="336027897" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12" handicap=""/>
+<participant name="Two" id="336027895" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12" handicap=""/>
+<participant name="One" id="336027893" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12" handicap=""/>
+<participant name="None" id="336027889" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:12" handicap=""/>
+</market>
+<market id="90919636" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637203/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="17:36:00" betTillDate="2013-06-29" betTillTime="17:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14">
+<participant name="Four" id="336028034" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14" handicap=""/>
+<participant name="Three" id="336028031" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14" handicap=""/>
+<participant name="Two" id="336028028" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14" handicap=""/>
+<participant name="One" id="336028026" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14" handicap=""/>
+<participant name="None" id="336028023" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:14" handicap=""/>
+</market>
+<market id="90919642" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637204/%2dFrance%2dv%2dEngland" date="2013-06-29" time="17:40:00" betTillDate="2013-06-29" betTillTime="17:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16">
+<participant name="Four" id="336028156" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="Three" id="336028155" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="Two" id="336028154" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="One" id="336028153" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="None" id="336028152" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+</market>
+<market id="90919648" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637205/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="17:44:00" betTillDate="2013-06-29" betTillTime="17:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16">
+<participant name="Four" id="336028186" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="Three" id="336028185" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="Two" id="336028184" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="One" id="336028183" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+<participant name="None" id="336028182" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:16" handicap=""/>
+</market>
+<market id="90919654" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637206/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="17:48:00" betTillDate="2013-06-29" betTillTime="17:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18">
+<participant name="Four" id="336028290" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18" handicap=""/>
+<participant name="Three" id="336028288" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18" handicap=""/>
+<participant name="Two" id="336028285" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18" handicap=""/>
+<participant name="One" id="336028283" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18" handicap=""/>
+<participant name="None" id="336028280" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:18" handicap=""/>
+</market>
+<market id="90919660" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637207/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="17:52:00" betTillDate="2013-06-29" betTillTime="17:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19">
+<participant name="Four" id="336028425" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19" handicap=""/>
+<participant name="Three" id="336028422" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19" handicap=""/>
+<participant name="Two" id="336028420" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19" handicap=""/>
+<participant name="One" id="336028418" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19" handicap=""/>
+<participant name="None" id="336028415" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:19" handicap=""/>
+</market>
+<market id="90919666" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637208/%2dSweden%2dv%2dFrance" date="2013-06-29" time="17:56:00" betTillDate="2013-06-29" betTillTime="17:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21">
+<participant name="Four" id="336028548" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21" handicap=""/>
+<participant name="Three" id="336028547" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21" handicap=""/>
+<participant name="Two" id="336028546" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21" handicap=""/>
+<participant name="One" id="336028545" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21" handicap=""/>
+<participant name="None" id="336028542" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:21" handicap=""/>
+</market>
+<market id="90919672" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637209/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="18:00:00" betTillDate="2013-06-29" betTillTime="18:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22">
+<participant name="Four" id="336028664" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22" handicap=""/>
+<participant name="Three" id="336028662" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22" handicap=""/>
+<participant name="Two" id="336028660" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22" handicap=""/>
+<participant name="One" id="336028657" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22" handicap=""/>
+<participant name="None" id="336028654" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:22" handicap=""/>
+</market>
+<market id="90919678" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637210/%2dPoland%2dv%2dGreece" date="2013-06-29" time="18:04:00" betTillDate="2013-06-29" betTillTime="18:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23">
+<participant name="Four" id="336028790" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23" handicap=""/>
+<participant name="Three" id="336028788" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23" handicap=""/>
+<participant name="Two" id="336028786" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23" handicap=""/>
+<participant name="One" id="336028784" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23" handicap=""/>
+<participant name="None" id="336028781" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:23" handicap=""/>
+</market>
+<market id="90919684" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637211/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="18:08:00" betTillDate="2013-06-29" betTillTime="18:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25">
+<participant name="Four" id="336028911" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25" handicap=""/>
+<participant name="Three" id="336028910" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25" handicap=""/>
+<participant name="Two" id="336028909" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25" handicap=""/>
+<participant name="One" id="336028908" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25" handicap=""/>
+<participant name="None" id="336028906" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:25" handicap=""/>
+</market>
+<market id="90919690" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637212/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="18:12:00" betTillDate="2013-06-29" betTillTime="18:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27">
+<participant name="Four" id="336029028" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27" handicap=""/>
+<participant name="Three" id="336029026" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27" handicap=""/>
+<participant name="Two" id="336029023" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27" handicap=""/>
+<participant name="One" id="336029021" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27" handicap=""/>
+<participant name="None" id="336029018" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:27" handicap=""/>
+</market>
+<market id="90919696" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637213/%2dSweden%2dv%2dEngland" date="2013-06-29" time="18:16:00" betTillDate="2013-06-29" betTillTime="18:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28">
+<participant name="Four" id="336029155" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28" handicap=""/>
+<participant name="Three" id="336029153" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28" handicap=""/>
+<participant name="Two" id="336029150" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28" handicap=""/>
+<participant name="One" id="336029147" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28" handicap=""/>
+<participant name="None" id="336029145" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:28" handicap=""/>
+</market>
+<market id="90919702" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637214/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="18:20:00" betTillDate="2013-06-29" betTillTime="18:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29">
+<participant name="Four" id="336029273" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29" handicap=""/>
+<participant name="Three" id="336029271" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29" handicap=""/>
+<participant name="Two" id="336029270" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29" handicap=""/>
+<participant name="One" id="336029268" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29" handicap=""/>
+<participant name="None" id="336029267" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:29" handicap=""/>
+</market>
+<market id="90919708" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637215/%2dSpain%2dv%2dItaly" date="2013-06-29" time="18:24:00" betTillDate="2013-06-29" betTillTime="18:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31">
+<participant name="Four" id="336029396" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31" handicap=""/>
+<participant name="Three" id="336029393" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31" handicap=""/>
+<participant name="Two" id="336029391" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31" handicap=""/>
+<participant name="One" id="336029389" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31" handicap=""/>
+<participant name="None" id="336029386" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:31" handicap=""/>
+</market>
+<market id="90919714" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637216/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="18:28:00" betTillDate="2013-06-29" betTillTime="18:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32">
+<participant name="Four" id="336029520" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32" handicap=""/>
+<participant name="Three" id="336029517" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32" handicap=""/>
+<participant name="Two" id="336029515" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32" handicap=""/>
+<participant name="One" id="336029512" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32" handicap=""/>
+<participant name="None" id="336029510" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:32" handicap=""/>
+</market>
+<market id="90919720" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637217/%2dFrance%2dv%2dEngland" date="2013-06-29" time="18:32:00" betTillDate="2013-06-29" betTillTime="18:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33">
+<participant name="Four" id="336029645" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33" handicap=""/>
+<participant name="Three" id="336029643" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33" handicap=""/>
+<participant name="Two" id="336029641" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33" handicap=""/>
+<participant name="One" id="336029638" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33" handicap=""/>
+<participant name="None" id="336029636" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:33" handicap=""/>
+</market>
+<market id="90919726" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637218/%2dUkraine%2dv%2dSweden" date="2013-06-29" time="18:36:00" betTillDate="2013-06-29" betTillTime="18:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35">
+<participant name="Four" id="336029778" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35" handicap=""/>
+<participant name="Three" id="336029776" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35" handicap=""/>
+<participant name="Two" id="336029773" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35" handicap=""/>
+<participant name="One" id="336029770" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35" handicap=""/>
+<participant name="None" id="336029767" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:35" handicap=""/>
+</market>
+<market id="90919732" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637219/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-29" time="18:40:00" betTillDate="2013-06-29" betTillTime="18:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37">
+<participant name="Four" id="336029913" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37" handicap=""/>
+<participant name="Three" id="336029911" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37" handicap=""/>
+<participant name="Two" id="336029909" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37" handicap=""/>
+<participant name="One" id="336029906" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37" handicap=""/>
+<participant name="None" id="336029904" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:37" handicap=""/>
+</market>
+<market id="90919738" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637220/%2dPoland%2dv%2dRussia" date="2013-06-29" time="18:44:00" betTillDate="2013-06-29" betTillTime="18:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38">
+<participant name="Four" id="336030027" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38" handicap=""/>
+<participant name="Three" id="336030025" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38" handicap=""/>
+<participant name="Two" id="336030022" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38" handicap=""/>
+<participant name="One" id="336030019" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38" handicap=""/>
+<participant name="None" id="336030017" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:38" handicap=""/>
+</market>
+<market id="90919744" name=" Denmark v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637221/%2dDenmark%2dv%2dPortugal" date="2013-06-29" time="18:48:00" betTillDate="2013-06-29" betTillTime="18:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39">
+<participant name="Four" id="336030157" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39" handicap=""/>
+<participant name="Three" id="336030155" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39" handicap=""/>
+<participant name="Two" id="336030153" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39" handicap=""/>
+<participant name="One" id="336030151" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39" handicap=""/>
+<participant name="None" id="336030148" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:39" handicap=""/>
+</market>
+<market id="90919750" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637222/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="18:52:00" betTillDate="2013-06-29" betTillTime="18:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41">
+<participant name="Four" id="336030286" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41" handicap=""/>
+<participant name="Three" id="336030284" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41" handicap=""/>
+<participant name="Two" id="336030281" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41" handicap=""/>
+<participant name="One" id="336030279" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41" handicap=""/>
+<participant name="None" id="336030278" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:41" handicap=""/>
+</market>
+<market id="90919756" name=" Holland v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637223/%2dHolland%2dv%2dGermany" date="2013-06-29" time="18:56:00" betTillDate="2013-06-29" betTillTime="18:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43">
+<participant name="Four" id="336030403" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43" handicap=""/>
+<participant name="Three" id="336030400" odds="3/1" oddsDecimal="4.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43" handicap=""/>
+<participant name="Two" id="336030398" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43" handicap=""/>
+<participant name="One" id="336030395" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43" handicap=""/>
+<participant name="None" id="336030392" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:43" handicap=""/>
+</market>
+<market id="90919762" name=" Italy v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637224/%2dItaly%2dv%2dCroatia" date="2013-06-29" time="19:00:00" betTillDate="2013-06-29" betTillTime="19:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44">
+<participant name="Four" id="336030512" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44" handicap=""/>
+<participant name="Three" id="336030511" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44" handicap=""/>
+<participant name="Two" id="336030508" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44" handicap=""/>
+<participant name="One" id="336030506" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44" handicap=""/>
+<participant name="None" id="336030503" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:44" handicap=""/>
+</market>
+<market id="90919768" name=" Spain v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637225/%2dSpain%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="19:04:00" betTillDate="2013-06-29" betTillTime="19:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:45">
+<participant name="Four" id="336030622" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:46" handicap=""/>
+<participant name="Three" id="336030620" odds="7/2" oddsDecimal="4.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:46" handicap=""/>
+<participant name="Two" id="336030618" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:45" handicap=""/>
+<participant name="One" id="336030617" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:45" handicap=""/>
+<participant name="None" id="336030616" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:45" handicap=""/>
+</market>
+<market id="90919774" name=" Ukraine v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637226/%2dUkraine%2dv%2dFrance" date="2013-06-29" time="19:08:00" betTillDate="2013-06-29" betTillTime="19:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47">
+<participant name="Four" id="336030744" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47" handicap=""/>
+<participant name="Three" id="336030741" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47" handicap=""/>
+<participant name="Two" id="336030739" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47" handicap=""/>
+<participant name="One" id="336030736" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47" handicap=""/>
+<participant name="None" id="336030733" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:47" handicap=""/>
+</market>
+<market id="90919780" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637227/%2dSweden%2dv%2dEngland" date="2013-06-29" time="19:12:00" betTillDate="2013-06-29" betTillTime="19:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49">
+<participant name="Four" id="336030887" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49" handicap=""/>
+<participant name="Three" id="336030885" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49" handicap=""/>
+<participant name="Two" id="336030882" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49" handicap=""/>
+<participant name="One" id="336030880" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49" handicap=""/>
+<participant name="None" id="336030876" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:49" handicap=""/>
+</market>
+<market id="90919786" name=" Greece v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637228/%2dGreece%2dv%2dRussia" date="2013-06-29" time="19:16:00" betTillDate="2013-06-29" betTillTime="19:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50">
+<participant name="Four" id="336031025" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50" handicap=""/>
+<participant name="Three" id="336031024" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50" handicap=""/>
+<participant name="Two" id="336031023" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50" handicap=""/>
+<participant name="One" id="336031022" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50" handicap=""/>
+<participant name="None" id="336031019" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:50" handicap=""/>
+</market>
+<market id="90919792" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637229/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="19:20:00" betTillDate="2013-06-29" betTillTime="19:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52">
+<participant name="Four" id="336031140" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52" handicap=""/>
+<participant name="Three" id="336031138" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52" handicap=""/>
+<participant name="Two" id="336031135" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52" handicap=""/>
+<participant name="One" id="336031134" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52" handicap=""/>
+<participant name="None" id="336031131" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:52" handicap=""/>
+</market>
+<market id="90919798" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637230/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="19:24:00" betTillDate="2013-06-29" betTillTime="19:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53">
+<participant name="Four" id="336031253" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53" handicap=""/>
+<participant name="Three" id="336031252" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53" handicap=""/>
+<participant name="Two" id="336031250" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53" handicap=""/>
+<participant name="One" id="336031249" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53" handicap=""/>
+<participant name="None" id="336031248" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:53" handicap=""/>
+</market>
+<market id="90919804" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637231/%2dFrance%2dv%2dEngland" date="2013-06-29" time="19:28:00" betTillDate="2013-06-29" betTillTime="19:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55">
+<participant name="Four" id="336031354" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+<participant name="Three" id="336031353" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+<participant name="Two" id="336031352" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+<participant name="One" id="336031351" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+<participant name="None" id="336031350" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+</market>
+<market id="90919810" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637232/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="19:32:00" betTillDate="2013-06-29" betTillTime="19:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55">
+<participant name="Four" id="336031391" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:56" handicap=""/>
+<participant name="Three" id="336031388" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:56" handicap=""/>
+<participant name="Two" id="336031386" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:56" handicap=""/>
+<participant name="One" id="336031384" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+<participant name="None" id="336031381" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:55" handicap=""/>
+</market>
+<market id="90919816" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637233/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="19:36:00" betTillDate="2013-06-29" betTillTime="19:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58">
+<participant name="Four" id="336031520" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58" handicap=""/>
+<participant name="Three" id="336031518" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58" handicap=""/>
+<participant name="Two" id="336031516" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58" handicap=""/>
+<participant name="One" id="336031514" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58" handicap=""/>
+<participant name="None" id="336031511" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:51:58" handicap=""/>
+</market>
+<market id="90919822" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637234/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="19:40:00" betTillDate="2013-06-29" betTillTime="19:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00">
+<participant name="Four" id="336031664" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="Three" id="336031662" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="Two" id="336031659" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="One" id="336031657" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="None" id="336031654" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+</market>
+<market id="90919828" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637235/%2dSweden%2dv%2dFrance" date="2013-06-29" time="19:44:00" betTillDate="2013-06-29" betTillTime="19:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00">
+<participant name="Four" id="336031784" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="Three" id="336031781" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="Two" id="336031779" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="One" id="336031777" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+<participant name="None" id="336031774" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:00" handicap=""/>
+</market>
+<market id="90919834" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637236/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="19:48:00" betTillDate="2013-06-29" betTillTime="19:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03">
+<participant name="Four" id="336031918" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03" handicap=""/>
+<participant name="Three" id="336031916" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03" handicap=""/>
+<participant name="Two" id="336031913" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03" handicap=""/>
+<participant name="One" id="336031911" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03" handicap=""/>
+<participant name="None" id="336031908" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:03" handicap=""/>
+</market>
+<market id="90919840" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637237/%2dPoland%2dv%2dGreece" date="2013-06-29" time="19:52:00" betTillDate="2013-06-29" betTillTime="19:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05">
+<participant name="Four" id="336032052" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05" handicap=""/>
+<participant name="Three" id="336032050" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05" handicap=""/>
+<participant name="Two" id="336032047" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05" handicap=""/>
+<participant name="One" id="336032045" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05" handicap=""/>
+<participant name="None" id="336032042" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:05" handicap=""/>
+</market>
+<market id="90919846" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637238/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="19:56:00" betTillDate="2013-06-29" betTillTime="19:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06">
+<participant name="Four" id="336032169" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06" handicap=""/>
+<participant name="Three" id="336032166" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06" handicap=""/>
+<participant name="Two" id="336032164" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06" handicap=""/>
+<participant name="One" id="336032161" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06" handicap=""/>
+<participant name="None" id="336032159" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:06" handicap=""/>
+</market>
+<market id="90919852" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637239/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="20:00:00" betTillDate="2013-06-29" betTillTime="20:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08">
+<participant name="Four" id="336032301" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08" handicap=""/>
+<participant name="Three" id="336032298" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08" handicap=""/>
+<participant name="Two" id="336032296" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08" handicap=""/>
+<participant name="One" id="336032294" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08" handicap=""/>
+<participant name="None" id="336032291" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:08" handicap=""/>
+</market>
+<market id="90919858" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637240/%2dSweden%2dv%2dEngland" date="2013-06-29" time="20:04:00" betTillDate="2013-06-29" betTillTime="20:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09">
+<participant name="Four" id="336032429" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09" handicap=""/>
+<participant name="Three" id="336032427" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09" handicap=""/>
+<participant name="Two" id="336032424" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09" handicap=""/>
+<participant name="One" id="336032422" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09" handicap=""/>
+<participant name="None" id="336032419" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:09" handicap=""/>
+</market>
+<market id="90919864" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637241/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="20:08:00" betTillDate="2013-06-29" betTillTime="20:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10">
+<participant name="Four" id="336032549" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10" handicap=""/>
+<participant name="Three" id="336032547" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10" handicap=""/>
+<participant name="Two" id="336032544" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10" handicap=""/>
+<participant name="One" id="336032542" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10" handicap=""/>
+<participant name="None" id="336032539" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:10" handicap=""/>
+</market>
+<market id="90919870" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637242/%2dSpain%2dv%2dItaly" date="2013-06-29" time="20:12:00" betTillDate="2013-06-29" betTillTime="20:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11">
+<participant name="Four" id="336032679" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11" handicap=""/>
+<participant name="Three" id="336032678" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11" handicap=""/>
+<participant name="Two" id="336032675" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11" handicap=""/>
+<participant name="One" id="336032673" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11" handicap=""/>
+<participant name="None" id="336032670" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:11" handicap=""/>
+</market>
+<market id="90919876" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637243/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="20:16:00" betTillDate="2013-06-29" betTillTime="20:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12">
+<participant name="Four" id="336032799" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12" handicap=""/>
+<participant name="Three" id="336032797" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12" handicap=""/>
+<participant name="Two" id="336032795" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12" handicap=""/>
+<participant name="One" id="336032793" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12" handicap=""/>
+<participant name="None" id="336032792" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:12" handicap=""/>
+</market>
+<market id="90919882" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637244/%2dFrance%2dv%2dEngland" date="2013-06-29" time="20:20:00" betTillDate="2013-06-29" betTillTime="20:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14">
+<participant name="Four" id="336032928" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14" handicap=""/>
+<participant name="Three" id="336032926" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14" handicap=""/>
+<participant name="Two" id="336032923" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14" handicap=""/>
+<participant name="One" id="336032921" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14" handicap=""/>
+<participant name="None" id="336032918" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:14" handicap=""/>
+</market>
+<market id="90919888" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637245/%2dUkraine%2dv%2dSweden" date="2013-06-29" time="20:24:00" betTillDate="2013-06-29" betTillTime="20:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16">
+<participant name="Four" id="336033061" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16" handicap=""/>
+<participant name="Three" id="336033059" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16" handicap=""/>
+<participant name="Two" id="336033057" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16" handicap=""/>
+<participant name="One" id="336033054" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16" handicap=""/>
+<participant name="None" id="336033051" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:16" handicap=""/>
+</market>
+<market id="90919894" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637246/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-29" time="20:28:00" betTillDate="2013-06-29" betTillTime="20:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17">
+<participant name="Four" id="336033180" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17" handicap=""/>
+<participant name="Three" id="336033178" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17" handicap=""/>
+<participant name="Two" id="336033175" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17" handicap=""/>
+<participant name="One" id="336033173" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17" handicap=""/>
+<participant name="None" id="336033170" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:17" handicap=""/>
+</market>
+<market id="90919900" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637247/%2dPoland%2dv%2dRussia" date="2013-06-29" time="20:32:00" betTillDate="2013-06-29" betTillTime="20:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18">
+<participant name="Four" id="336033315" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18" handicap=""/>
+<participant name="Three" id="336033313" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18" handicap=""/>
+<participant name="Two" id="336033310" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18" handicap=""/>
+<participant name="One" id="336033308" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18" handicap=""/>
+<participant name="None" id="336033306" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:18" handicap=""/>
+</market>
+<market id="90919906" name=" Denmark v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637248/%2dDenmark%2dv%2dPortugal" date="2013-06-29" time="20:36:00" betTillDate="2013-06-29" betTillTime="20:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20">
+<participant name="Four" id="336033450" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20" handicap=""/>
+<participant name="Three" id="336033447" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20" handicap=""/>
+<participant name="Two" id="336033445" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20" handicap=""/>
+<participant name="One" id="336033442" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20" handicap=""/>
+<participant name="None" id="336033439" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:20" handicap=""/>
+</market>
+<market id="90919912" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637249/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="20:40:00" betTillDate="2013-06-29" betTillTime="20:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21">
+<participant name="Four" id="336033568" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21" handicap=""/>
+<participant name="Three" id="336033565" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21" handicap=""/>
+<participant name="Two" id="336033563" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21" handicap=""/>
+<participant name="One" id="336033560" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21" handicap=""/>
+<participant name="None" id="336033558" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:21" handicap=""/>
+</market>
+<market id="90919918" name=" Holland v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637250/%2dHolland%2dv%2dGermany" date="2013-06-29" time="20:44:00" betTillDate="2013-06-29" betTillTime="20:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23">
+<participant name="Four" id="336033688" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23" handicap=""/>
+<participant name="Three" id="336033685" odds="3/1" oddsDecimal="4.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23" handicap=""/>
+<participant name="Two" id="336033683" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23" handicap=""/>
+<participant name="One" id="336033681" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23" handicap=""/>
+<participant name="None" id="336033678" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:23" handicap=""/>
+</market>
+<market id="90919924" name=" Italy v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637251/%2dItaly%2dv%2dCroatia" date="2013-06-29" time="20:48:00" betTillDate="2013-06-29" betTillTime="20:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24">
+<participant name="Four" id="336033802" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24" handicap=""/>
+<participant name="Three" id="336033800" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24" handicap=""/>
+<participant name="Two" id="336033799" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24" handicap=""/>
+<participant name="One" id="336033798" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24" handicap=""/>
+<participant name="None" id="336033795" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:24" handicap=""/>
+</market>
+<market id="90919930" name=" Spain v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637252/%2dSpain%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="20:52:00" betTillDate="2013-06-29" betTillTime="20:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26">
+<participant name="Four" id="336033924" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26" handicap=""/>
+<participant name="Three" id="336033922" odds="7/2" oddsDecimal="4.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26" handicap=""/>
+<participant name="Two" id="336033920" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26" handicap=""/>
+<participant name="One" id="336033917" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26" handicap=""/>
+<participant name="None" id="336033914" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:26" handicap=""/>
+</market>
+<market id="90919936" name=" Ukraine v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637253/%2dUkraine%2dv%2dFrance" date="2013-06-29" time="20:56:00" betTillDate="2013-06-29" betTillTime="20:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28">
+<participant name="Four" id="336034063" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28" handicap=""/>
+<participant name="Three" id="336034061" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28" handicap=""/>
+<participant name="Two" id="336034058" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28" handicap=""/>
+<participant name="One" id="336034056" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28" handicap=""/>
+<participant name="None" id="336034053" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:28" handicap=""/>
+</market>
+<market id="90919942" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637254/%2dSweden%2dv%2dEngland" date="2013-06-29" time="21:00:00" betTillDate="2013-06-29" betTillTime="21:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29">
+<participant name="Four" id="336034203" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29" handicap=""/>
+<participant name="Three" id="336034200" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29" handicap=""/>
+<participant name="Two" id="336034198" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29" handicap=""/>
+<participant name="One" id="336034195" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29" handicap=""/>
+<participant name="None" id="336034193" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:29" handicap=""/>
+</market>
+<market id="90919948" name=" Greece v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637255/%2dGreece%2dv%2dRussia" date="2013-06-29" time="21:04:00" betTillDate="2013-06-29" betTillTime="21:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30">
+<participant name="Four" id="336034314" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30" handicap=""/>
+<participant name="Three" id="336034312" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30" handicap=""/>
+<participant name="Two" id="336034310" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30" handicap=""/>
+<participant name="One" id="336034309" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30" handicap=""/>
+<participant name="None" id="336034308" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:30" handicap=""/>
+</market>
+<market id="90919954" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637256/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="21:08:00" betTillDate="2013-06-29" betTillTime="21:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32">
+<participant name="Four" id="336034431" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32" handicap=""/>
+<participant name="Three" id="336034428" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32" handicap=""/>
+<participant name="Two" id="336034425" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32" handicap=""/>
+<participant name="One" id="336034423" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32" handicap=""/>
+<participant name="None" id="336034421" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:32" handicap=""/>
+</market>
+<market id="90919960" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637257/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="21:12:00" betTillDate="2013-06-29" betTillTime="21:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34">
+<participant name="Four" id="336034522" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="Three" id="336034521" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="Two" id="336034520" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="One" id="336034519" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="None" id="336034518" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+</market>
+<market id="90919966" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637258/%2dFrance%2dv%2dEngland" date="2013-06-29" time="21:16:00" betTillDate="2013-06-29" betTillTime="21:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34">
+<participant name="Four" id="336034552" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="Three" id="336034551" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="Two" id="336034550" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="One" id="336034549" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+<participant name="None" id="336034548" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:34" handicap=""/>
+</market>
+<market id="90919972" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637259/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="21:20:00" betTillDate="2013-06-29" betTillTime="21:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35">
+<participant name="Four" id="336034582" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35" handicap=""/>
+<participant name="Three" id="336034581" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35" handicap=""/>
+<participant name="Two" id="336034580" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35" handicap=""/>
+<participant name="One" id="336034579" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35" handicap=""/>
+<participant name="None" id="336034578" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:35" handicap=""/>
+</market>
+<market id="90919978" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637260/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="21:24:00" betTillDate="2013-06-29" betTillTime="21:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37">
+<participant name="Four" id="336034612" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37" handicap=""/>
+<participant name="Three" id="336034611" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37" handicap=""/>
+<participant name="Two" id="336034610" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37" handicap=""/>
+<participant name="One" id="336034609" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37" handicap=""/>
+<participant name="None" id="336034608" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:37" handicap=""/>
+</market>
+<market id="90919984" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637261/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="21:28:00" betTillDate="2013-06-29" betTillTime="21:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39">
+<participant name="Four" id="336034642" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39" handicap=""/>
+<participant name="Three" id="336034641" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39" handicap=""/>
+<participant name="Two" id="336034640" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39" handicap=""/>
+<participant name="One" id="336034639" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39" handicap=""/>
+<participant name="None" id="336034638" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:39" handicap=""/>
+</market>
+<market id="90919990" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637262/%2dSweden%2dv%2dFrance" date="2013-06-29" time="21:32:00" betTillDate="2013-06-29" betTillTime="21:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41">
+<participant name="Four" id="336034672" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41" handicap=""/>
+<participant name="Three" id="336034671" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41" handicap=""/>
+<participant name="Two" id="336034670" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41" handicap=""/>
+<participant name="One" id="336034669" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41" handicap=""/>
+<participant name="None" id="336034668" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:41" handicap=""/>
+</market>
+<market id="90919996" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637263/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="21:36:00" betTillDate="2013-06-29" betTillTime="21:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42">
+<participant name="Four" id="336034702" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42" handicap=""/>
+<participant name="Three" id="336034701" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42" handicap=""/>
+<participant name="Two" id="336034700" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42" handicap=""/>
+<participant name="One" id="336034699" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42" handicap=""/>
+<participant name="None" id="336034698" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:42" handicap=""/>
+</market>
+<market id="90920002" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637264/%2dPoland%2dv%2dGreece" date="2013-06-29" time="21:40:00" betTillDate="2013-06-29" betTillTime="21:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43">
+<participant name="Four" id="336034732" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43" handicap=""/>
+<participant name="Three" id="336034731" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43" handicap=""/>
+<participant name="Two" id="336034730" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43" handicap=""/>
+<participant name="One" id="336034729" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43" handicap=""/>
+<participant name="None" id="336034728" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:43" handicap=""/>
+</market>
+<market id="90920008" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637265/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="21:44:00" betTillDate="2013-06-29" betTillTime="21:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46">
+<participant name="Four" id="336034762" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46" handicap=""/>
+<participant name="Three" id="336034761" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46" handicap=""/>
+<participant name="Two" id="336034760" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46" handicap=""/>
+<participant name="One" id="336034759" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46" handicap=""/>
+<participant name="None" id="336034758" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:46" handicap=""/>
+</market>
+<market id="90920014" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637266/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="21:48:00" betTillDate="2013-06-29" betTillTime="21:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47">
+<participant name="Four" id="336034792" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47" handicap=""/>
+<participant name="Three" id="336034791" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47" handicap=""/>
+<participant name="Two" id="336034790" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47" handicap=""/>
+<participant name="One" id="336034789" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47" handicap=""/>
+<participant name="None" id="336034788" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:47" handicap=""/>
+</market>
+<market id="90920020" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637267/%2dSweden%2dv%2dEngland" date="2013-06-29" time="21:52:00" betTillDate="2013-06-29" betTillTime="21:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48">
+<participant name="Four" id="336034822" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48" handicap=""/>
+<participant name="Three" id="336034821" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48" handicap=""/>
+<participant name="Two" id="336034820" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48" handicap=""/>
+<participant name="One" id="336034819" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48" handicap=""/>
+<participant name="None" id="336034818" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:48" handicap=""/>
+</market>
+<market id="90920026" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637268/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="21:56:00" betTillDate="2013-06-29" betTillTime="21:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50">
+<participant name="Four" id="336034852" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50" handicap=""/>
+<participant name="Three" id="336034851" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50" handicap=""/>
+<participant name="Two" id="336034850" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50" handicap=""/>
+<participant name="One" id="336034849" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50" handicap=""/>
+<participant name="None" id="336034848" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:50" handicap=""/>
+</market>
+<market id="90920032" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637269/%2dSpain%2dv%2dItaly" date="2013-06-29" time="22:00:00" betTillDate="2013-06-29" betTillTime="22:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51">
+<participant name="Four" id="336034882" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51" handicap=""/>
+<participant name="Three" id="336034881" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51" handicap=""/>
+<participant name="Two" id="336034880" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51" handicap=""/>
+<participant name="One" id="336034879" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51" handicap=""/>
+<participant name="None" id="336034878" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:51" handicap=""/>
+</market>
+<market id="90920038" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637270/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="22:04:00" betTillDate="2013-06-29" betTillTime="22:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53">
+<participant name="Four" id="336034912" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53" handicap=""/>
+<participant name="Three" id="336034911" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53" handicap=""/>
+<participant name="Two" id="336034910" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53" handicap=""/>
+<participant name="One" id="336034909" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53" handicap=""/>
+<participant name="None" id="336034908" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:53" handicap=""/>
+</market>
+<market id="90920044" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637271/%2dFrance%2dv%2dEngland" date="2013-06-29" time="22:08:00" betTillDate="2013-06-29" betTillTime="22:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55">
+<participant name="Four" id="336034942" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55" handicap=""/>
+<participant name="Three" id="336034941" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55" handicap=""/>
+<participant name="Two" id="336034940" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55" handicap=""/>
+<participant name="One" id="336034939" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55" handicap=""/>
+<participant name="None" id="336034938" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:55" handicap=""/>
+</market>
+<market id="90920050" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637272/%2dUkraine%2dv%2dSweden" date="2013-06-29" time="22:12:00" betTillDate="2013-06-29" betTillTime="22:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56">
+<participant name="Four" id="336034972" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56" handicap=""/>
+<participant name="Three" id="336034971" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56" handicap=""/>
+<participant name="Two" id="336034970" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56" handicap=""/>
+<participant name="One" id="336034969" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56" handicap=""/>
+<participant name="None" id="336034968" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:56" handicap=""/>
+</market>
+<market id="90920056" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637273/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-29" time="22:16:00" betTillDate="2013-06-29" betTillTime="22:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58">
+<participant name="Four" id="336035002" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58" handicap=""/>
+<participant name="Three" id="336035001" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58" handicap=""/>
+<participant name="Two" id="336035000" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58" handicap=""/>
+<participant name="One" id="336034999" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58" handicap=""/>
+<participant name="None" id="336034998" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:58" handicap=""/>
+</market>
+<market id="90920062" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637274/%2dPoland%2dv%2dRussia" date="2013-06-29" time="22:20:00" betTillDate="2013-06-29" betTillTime="22:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59">
+<participant name="Four" id="336035032" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59" handicap=""/>
+<participant name="Three" id="336035031" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59" handicap=""/>
+<participant name="Two" id="336035030" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59" handicap=""/>
+<participant name="One" id="336035029" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59" handicap=""/>
+<participant name="None" id="336035028" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:52:59" handicap=""/>
+</market>
+<market id="90920068" name=" Denmark v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637275/%2dDenmark%2dv%2dPortugal" date="2013-06-29" time="22:24:00" betTillDate="2013-06-29" betTillTime="22:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:00">
+<participant name="Four" id="336035062" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:01" handicap=""/>
+<participant name="Three" id="336035061" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:00" handicap=""/>
+<participant name="Two" id="336035060" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:00" handicap=""/>
+<participant name="One" id="336035059" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:00" handicap=""/>
+<participant name="None" id="336035058" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:00" handicap=""/>
+</market>
+<market id="90920074" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637276/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="22:28:00" betTillDate="2013-06-29" betTillTime="22:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02">
+<participant name="Four" id="336035092" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02" handicap=""/>
+<participant name="Three" id="336035091" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02" handicap=""/>
+<participant name="Two" id="336035090" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02" handicap=""/>
+<participant name="One" id="336035089" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02" handicap=""/>
+<participant name="None" id="336035088" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:02" handicap=""/>
+</market>
+<market id="90920080" name=" Holland v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637277/%2dHolland%2dv%2dGermany" date="2013-06-29" time="22:32:00" betTillDate="2013-06-29" betTillTime="22:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03">
+<participant name="Four" id="336035122" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03" handicap=""/>
+<participant name="Three" id="336035121" odds="3/1" oddsDecimal="4.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03" handicap=""/>
+<participant name="Two" id="336035120" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03" handicap=""/>
+<participant name="One" id="336035119" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03" handicap=""/>
+<participant name="None" id="336035118" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:03" handicap=""/>
+</market>
+<market id="90920086" name=" Italy v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637278/%2dItaly%2dv%2dCroatia" date="2013-06-29" time="22:36:00" betTillDate="2013-06-29" betTillTime="22:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04">
+<participant name="Four" id="336035152" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04" handicap=""/>
+<participant name="Three" id="336035151" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04" handicap=""/>
+<participant name="Two" id="336035150" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04" handicap=""/>
+<participant name="One" id="336035149" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04" handicap=""/>
+<participant name="None" id="336035148" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:04" handicap=""/>
+</market>
+<market id="90920092" name=" Spain v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637279/%2dSpain%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="22:40:00" betTillDate="2013-06-29" betTillTime="22:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06">
+<participant name="Four" id="336035182" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06" handicap=""/>
+<participant name="Three" id="336035181" odds="7/2" oddsDecimal="4.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06" handicap=""/>
+<participant name="Two" id="336035180" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06" handicap=""/>
+<participant name="One" id="336035179" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06" handicap=""/>
+<participant name="None" id="336035178" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:06" handicap=""/>
+</market>
+<market id="90920098" name=" Ukraine v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637280/%2dUkraine%2dv%2dFrance" date="2013-06-29" time="22:44:00" betTillDate="2013-06-29" betTillTime="22:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08">
+<participant name="Four" id="336035212" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08" handicap=""/>
+<participant name="Three" id="336035211" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08" handicap=""/>
+<participant name="Two" id="336035210" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08" handicap=""/>
+<participant name="One" id="336035209" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08" handicap=""/>
+<participant name="None" id="336035208" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:08" handicap=""/>
+</market>
+<market id="90920104" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637281/%2dSweden%2dv%2dEngland" date="2013-06-29" time="22:48:00" betTillDate="2013-06-29" betTillTime="22:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09">
+<participant name="Four" id="336035242" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09" handicap=""/>
+<participant name="Three" id="336035241" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09" handicap=""/>
+<participant name="Two" id="336035240" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09" handicap=""/>
+<participant name="One" id="336035239" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09" handicap=""/>
+<participant name="None" id="336035238" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:09" handicap=""/>
+</market>
+<market id="90920110" name=" Greece v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637282/%2dGreece%2dv%2dRussia" date="2013-06-29" time="22:52:00" betTillDate="2013-06-29" betTillTime="22:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11">
+<participant name="Four" id="336035272" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11" handicap=""/>
+<participant name="Three" id="336035271" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11" handicap=""/>
+<participant name="Two" id="336035270" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11" handicap=""/>
+<participant name="One" id="336035269" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11" handicap=""/>
+<participant name="None" id="336035268" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:11" handicap=""/>
+</market>
+<market id="90920116" name=" Czech Republic v Poland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637283/%2dCzech%2dRepublic%2dv%2dPoland" date="2013-06-29" time="22:56:00" betTillDate="2013-06-29" betTillTime="22:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13">
+<participant name="Four" id="336035302" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13" handicap=""/>
+<participant name="Three" id="336035301" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13" handicap=""/>
+<participant name="Two" id="336035300" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13" handicap=""/>
+<participant name="One" id="336035299" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13" handicap=""/>
+<participant name="None" id="336035298" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:13" handicap=""/>
+</market>
+<market id="90920122" name=" Portugal v Holland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637284/%2dPortugal%2dv%2dHolland" date="2013-06-29" time="23:00:00" betTillDate="2013-06-29" betTillTime="23:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14">
+<participant name="Four" id="336035332" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14" handicap=""/>
+<participant name="Three" id="336035331" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14" handicap=""/>
+<participant name="Two" id="336035330" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14" handicap=""/>
+<participant name="One" id="336035329" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14" handicap=""/>
+<participant name="None" id="336035328" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:14" handicap=""/>
+</market>
+<market id="90920128" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637285/%2dFrance%2dv%2dEngland" date="2013-06-29" time="23:04:00" betTillDate="2013-06-29" betTillTime="23:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15">
+<participant name="Four" id="336035362" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15" handicap=""/>
+<participant name="Three" id="336035361" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15" handicap=""/>
+<participant name="Two" id="336035360" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15" handicap=""/>
+<participant name="One" id="336035359" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15" handicap=""/>
+<participant name="None" id="336035358" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:15" handicap=""/>
+</market>
+<market id="90920134" name=" Denmark v Germany - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637286/%2dDenmark%2dv%2dGermany" date="2013-06-29" time="23:08:00" betTillDate="2013-06-29" betTillTime="23:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17">
+<participant name="Four" id="336035392" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17" handicap=""/>
+<participant name="Three" id="336035391" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17" handicap=""/>
+<participant name="Two" id="336035390" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17" handicap=""/>
+<participant name="One" id="336035389" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17" handicap=""/>
+<participant name="None" id="336035388" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:17" handicap=""/>
+</market>
+<market id="90920140" name=" Croatia v Spain - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637287/%2dCroatia%2dv%2dSpain" date="2013-06-29" time="23:12:00" betTillDate="2013-06-29" betTillTime="23:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18">
+<participant name="Four" id="336035422" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18" handicap=""/>
+<participant name="Three" id="336035421" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18" handicap=""/>
+<participant name="Two" id="336035420" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18" handicap=""/>
+<participant name="One" id="336035419" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18" handicap=""/>
+<participant name="None" id="336035418" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:18" handicap=""/>
+</market>
+<market id="90920146" name=" Italy v Republic of Ireland - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637288/%2dItaly%2dv%2dRepublic%2dof%2dIreland" date="2013-06-29" time="23:16:00" betTillDate="2013-06-29" betTillTime="23:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20">
+<participant name="Four" id="336035452" odds="11/2" oddsDecimal="6.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20" handicap=""/>
+<participant name="Three" id="336035451" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20" handicap=""/>
+<participant name="Two" id="336035450" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20" handicap=""/>
+<participant name="One" id="336035449" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20" handicap=""/>
+<participant name="None" id="336035448" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:20" handicap=""/>
+</market>
+<market id="90920152" name=" Sweden v France - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637289/%2dSweden%2dv%2dFrance" date="2013-06-29" time="23:20:00" betTillDate="2013-06-29" betTillTime="23:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21">
+<participant name="Four" id="336035482" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21" handicap=""/>
+<participant name="Three" id="336035481" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21" handicap=""/>
+<participant name="Two" id="336035480" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21" handicap=""/>
+<participant name="One" id="336035479" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21" handicap=""/>
+<participant name="None" id="336035478" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:21" handicap=""/>
+</market>
+<market id="90920158" name=" England v Ukraine - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637290/%2dEngland%2dv%2dUkraine" date="2013-06-29" time="23:24:00" betTillDate="2013-06-29" betTillTime="23:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24">
+<participant name="Four" id="336035512" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24" handicap=""/>
+<participant name="Three" id="336035511" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24" handicap=""/>
+<participant name="Two" id="336035510" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24" handicap=""/>
+<participant name="One" id="336035509" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24" handicap=""/>
+<participant name="None" id="336035508" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:24" handicap=""/>
+</market>
+<market id="90920164" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637291/%2dPoland%2dv%2dGreece" date="2013-06-29" time="23:28:00" betTillDate="2013-06-29" betTillTime="23:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25">
+<participant name="Four" id="336035542" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25" handicap=""/>
+<participant name="Three" id="336035541" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25" handicap=""/>
+<participant name="Two" id="336035540" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25" handicap=""/>
+<participant name="One" id="336035539" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25" handicap=""/>
+<participant name="None" id="336035538" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:25" handicap=""/>
+</market>
+<market id="90920170" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637292/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-29" time="23:32:00" betTillDate="2013-06-29" betTillTime="23:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26">
+<participant name="Four" id="336035653" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26" handicap=""/>
+<participant name="Three" id="336035651" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26" handicap=""/>
+<participant name="Two" id="336035649" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26" handicap=""/>
+<participant name="One" id="336035646" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26" handicap=""/>
+<participant name="None" id="336035644" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:26" handicap=""/>
+</market>
+<market id="90920176" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637293/%2dHolland%2dv%2dDenmark" date="2013-06-29" time="23:36:00" betTillDate="2013-06-29" betTillTime="23:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28">
+<participant name="Four" id="336035783" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28" handicap=""/>
+<participant name="Three" id="336035780" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28" handicap=""/>
+<participant name="Two" id="336035778" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28" handicap=""/>
+<participant name="One" id="336035775" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28" handicap=""/>
+<participant name="None" id="336035772" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:28" handicap=""/>
+</market>
+<market id="90920182" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637294/%2dSweden%2dv%2dEngland" date="2013-06-29" time="23:40:00" betTillDate="2013-06-29" betTillTime="23:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29">
+<participant name="Four" id="336035904" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29" handicap=""/>
+<participant name="Three" id="336035903" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29" handicap=""/>
+<participant name="Two" id="336035902" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29" handicap=""/>
+<participant name="One" id="336035901" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29" handicap=""/>
+<participant name="None" id="336035900" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:29" handicap=""/>
+</market>
+<market id="90920188" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637295/%2dGermany%2dv%2dPortugal" date="2013-06-29" time="23:44:00" betTillDate="2013-06-29" betTillTime="23:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31">
+<participant name="Four" id="336036028" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31" handicap=""/>
+<participant name="Three" id="336036025" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31" handicap=""/>
+<participant name="Two" id="336036023" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31" handicap=""/>
+<participant name="One" id="336036020" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31" handicap=""/>
+<participant name="None" id="336036018" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:31" handicap=""/>
+</market>
+<market id="90920194" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637296/%2dSpain%2dv%2dItaly" date="2013-06-29" time="23:48:00" betTillDate="2013-06-29" betTillTime="23:48:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32">
+<participant name="Four" id="336036166" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32" handicap=""/>
+<participant name="Three" id="336036163" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32" handicap=""/>
+<participant name="Two" id="336036161" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32" handicap=""/>
+<participant name="One" id="336036158" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32" handicap=""/>
+<participant name="None" id="336036156" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:32" handicap=""/>
+</market>
+<market id="90920200" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637297/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-29" time="23:52:00" betTillDate="2013-06-29" betTillTime="23:52:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34">
+<participant name="Four" id="336036289" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34" handicap=""/>
+<participant name="Three" id="336036287" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34" handicap=""/>
+<participant name="Two" id="336036285" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34" handicap=""/>
+<participant name="One" id="336036283" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34" handicap=""/>
+<participant name="None" id="336036280" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:34" handicap=""/>
+</market>
+<market id="90920206" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637298/%2dFrance%2dv%2dEngland" date="2013-06-29" time="23:56:00" betTillDate="2013-06-29" betTillTime="23:56:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:35">
+<participant name="Four" id="336036423" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:36" handicap=""/>
+<participant name="Three" id="336036421" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:36" handicap=""/>
+<participant name="Two" id="336036418" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:36" handicap=""/>
+<participant name="One" id="336036416" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:36" handicap=""/>
+<participant name="None" id="336036413" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:35" handicap=""/>
+</market>
+<market id="90920212" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637299/%2dUkraine%2dv%2dSweden" date="2013-06-30" time="00:00:00" betTillDate="2013-06-30" betTillTime="00:00:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:37">
+<participant name="Four" id="336036558" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+<participant name="Three" id="336036555" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:37" handicap=""/>
+<participant name="Two" id="336036552" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:37" handicap=""/>
+<participant name="One" id="336036550" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:37" handicap=""/>
+<participant name="None" id="336036547" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:37" handicap=""/>
+</market>
+<market id="90920218" name=" Poland v Greece - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637300/%2dPoland%2dv%2dGreece" date="2013-06-30" time="00:04:00" betTillDate="2013-06-30" betTillTime="00:04:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38">
+<participant name="Four" id="336036677" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+<participant name="Three" id="336036675" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+<participant name="Two" id="336036672" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+<participant name="One" id="336036670" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+<participant name="None" id="336036667" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:38" handicap=""/>
+</market>
+<market id="90920224" name=" Russia v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637301/%2dRussia%2dv%2dCzech%2dRepublic" date="2013-06-30" time="00:08:00" betTillDate="2013-06-30" betTillTime="00:08:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40">
+<participant name="Four" id="336036811" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40" handicap=""/>
+<participant name="Three" id="336036808" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40" handicap=""/>
+<participant name="Two" id="336036806" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40" handicap=""/>
+<participant name="One" id="336036803" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40" handicap=""/>
+<participant name="None" id="336036801" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:40" handicap=""/>
+</market>
+<market id="90920230" name=" Holland v Denmark - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637302/%2dHolland%2dv%2dDenmark" date="2013-06-30" time="00:12:00" betTillDate="2013-06-30" betTillTime="00:12:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42">
+<participant name="Four" id="336036942" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42" handicap=""/>
+<participant name="Three" id="336036940" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42" handicap=""/>
+<participant name="Two" id="336036937" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42" handicap=""/>
+<participant name="One" id="336036935" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42" handicap=""/>
+<participant name="None" id="336036932" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:42" handicap=""/>
+</market>
+<market id="90920236" name=" Sweden v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637303/%2dSweden%2dv%2dEngland" date="2013-06-30" time="00:16:00" betTillDate="2013-06-30" betTillTime="00:16:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43">
+<participant name="Four" id="336037060" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43" handicap=""/>
+<participant name="Three" id="336037057" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43" handicap=""/>
+<participant name="Two" id="336037055" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43" handicap=""/>
+<participant name="One" id="336037052" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43" handicap=""/>
+<participant name="None" id="336037049" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:43" handicap=""/>
+</market>
+<market id="90920242" name=" Germany v Portugal - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637304/%2dGermany%2dv%2dPortugal" date="2013-06-30" time="00:20:00" betTillDate="2013-06-30" betTillTime="00:20:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:44">
+<participant name="Four" id="336037197" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:45" handicap=""/>
+<participant name="Three" id="336037195" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:45" handicap=""/>
+<participant name="Two" id="336037193" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:45" handicap=""/>
+<participant name="One" id="336037191" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:45" handicap=""/>
+<participant name="None" id="336037188" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:44" handicap=""/>
+</market>
+<market id="90920248" name=" Spain v Italy - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637305/%2dSpain%2dv%2dItaly" date="2013-06-30" time="00:24:00" betTillDate="2013-06-30" betTillTime="00:24:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:46">
+<participant name="Four" id="336037317" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:47" handicap=""/>
+<participant name="Three" id="336037315" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:47" handicap=""/>
+<participant name="Two" id="336037312" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:47" handicap=""/>
+<participant name="One" id="336037311" odds="11/5" oddsDecimal="3.20" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:46" handicap=""/>
+<participant name="None" id="336037310" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:46" handicap=""/>
+</market>
+<market id="90920254" name=" Republic of Ireland v Croatia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637306/%2dRepublic%2dof%2dIreland%2dv%2dCroatia" date="2013-06-30" time="00:28:00" betTillDate="2013-06-30" betTillTime="00:28:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48">
+<participant name="Four" id="336037447" odds="6/1" oddsDecimal="7.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48" handicap=""/>
+<participant name="Three" id="336037444" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48" handicap=""/>
+<participant name="Two" id="336037442" odds="5/2" oddsDecimal="3.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48" handicap=""/>
+<participant name="One" id="336037439" odds="9/4" oddsDecimal="3.25" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48" handicap=""/>
+<participant name="None" id="336037437" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:48" handicap=""/>
+</market>
+<market id="90920260" name=" France v England - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637307/%2dFrance%2dv%2dEngland" date="2013-06-30" time="00:32:00" betTillDate="2013-06-30" betTillTime="00:32:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49">
+<participant name="Four" id="336037581" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49" handicap=""/>
+<participant name="Three" id="336037579" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49" handicap=""/>
+<participant name="Two" id="336037576" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49" handicap=""/>
+<participant name="One" id="336037574" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49" handicap=""/>
+<participant name="None" id="336037571" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:49" handicap=""/>
+</market>
+<market id="90920266" name=" Ukraine v Sweden - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637308/%2dUkraine%2dv%2dSweden" date="2013-06-30" time="00:36:00" betTillDate="2013-06-30" betTillTime="00:36:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51">
+<participant name="Four" id="336037698" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51" handicap=""/>
+<participant name="Three" id="336037696" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51" handicap=""/>
+<participant name="Two" id="336037694" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51" handicap=""/>
+<participant name="One" id="336037692" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51" handicap=""/>
+<participant name="None" id="336037689" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:51" handicap=""/>
+</market>
+<market id="90920272" name=" Greece v Czech Republic - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637309/%2dGreece%2dv%2dCzech%2dRepublic" date="2013-06-30" time="00:40:00" betTillDate="2013-06-30" betTillTime="00:40:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52">
+<participant name="Four" id="336037818" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52" handicap=""/>
+<participant name="Three" id="336037815" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52" handicap=""/>
+<participant name="Two" id="336037813" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52" handicap=""/>
+<participant name="One" id="336037811" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52" handicap=""/>
+<participant name="None" id="336037808" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:52" handicap=""/>
+</market>
+<market id="90920278" name=" Poland v Russia - Total Goals" url="http://sports.williamhill.com/bet/en-gb/betting/e/4637310/%2dPoland%2dv%2dRussia" date="2013-06-30" time="00:44:00" betTillDate="2013-06-30" betTillTime="00:44:00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54">
+<participant name="Four" id="336037928" odds="13/2" oddsDecimal="7.50" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54" handicap=""/>
+<participant name="Three" id="336037926" odds="10/3" oddsDecimal="4.33" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54" handicap=""/>
+<participant name="Two" id="336037923" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54" handicap=""/>
+<participant name="One" id="336037921" odds="12/5" oddsDecimal="3.40" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54" handicap=""/>
+<participant name="None" id="336037919" odds="7/1" oddsDecimal="8.00" lastUpdateDate="2013-06-29" lastUpdateTime="00:53:54" handicap=""/>
+</market>
+</type>
+</class>
+<disclaimer>
+WHG (International) Ltd ("We/Us") of 6/1 Waterport Place, Gibraltar, owns the XML Feed Website ( the "Website") relating to information contained on its main trading website. By using the Website You agree to these full Terms of Use available at http://developer.williamhill.com
+</disclaimer>
+</williamhill>
+</response>
+</oxip>
