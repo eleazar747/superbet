@@ -2,14 +2,19 @@ package fr.ele.model;
 
 import java.util.Date;
 
-import fr.ele.model.ref.BookMarker;
+import javax.persistence.MappedSuperclass;
 
-//@MappedSuperclass
+import fr.ele.model.ref.BookMarker;
+import fr.ele.model.ref.RefKey;
+
+@MappedSuperclass
 public interface Bet extends Entity {
 
-    double odd();
+    double getOdd();
 
     Date getDate();
 
     BookMarker getBookMarker();
+    
+    RefKey getRefKey();
 }
