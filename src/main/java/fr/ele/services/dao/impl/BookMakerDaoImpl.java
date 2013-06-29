@@ -1,12 +1,15 @@
 package fr.ele.services.dao.impl;
 
-import fr.ele.model.ref.BookMarker;
+import org.springframework.stereotype.Repository;
+
+import fr.ele.model.ref.BookMaker;
 import fr.ele.services.dao.BookMakerDao;
 
-public class BookMakerDaoImpl extends GenericDaoImpl<BookMarker> implements BookMakerDao {
+@Repository
+public class BookMakerDaoImpl extends GenericDaoImpl<BookMaker> implements BookMakerDao {
 
 	public BookMakerDaoImpl() {
-		super(BookMarker.class);
+		super(BookMaker.class);
 	}
 
 }

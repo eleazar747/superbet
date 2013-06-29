@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import fr.ele.model.EntityImpl;
-import fr.ele.model.ref.BookMarker;
+import fr.ele.model.ref.BookMaker;
 
 @Entity
 @Table(name = "BOOKMAKER")
-public class BookMakerImpl extends EntityImpl implements BookMarker {
+public class BookMakerImpl extends EntityImpl implements BookMaker {
 
     @Column(name = "CODE", nullable = false, unique = true)
     private String code;

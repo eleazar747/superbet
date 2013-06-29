@@ -34,7 +34,8 @@ public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> 
         getCurrentSession().delete(entity);
     }
 
-    public T getById(Long id) {
+    @SuppressWarnings("unchecked")
+	public T getById(Long id) {
         return (T) getCurrentSession().get(clazz, id);
     }
 

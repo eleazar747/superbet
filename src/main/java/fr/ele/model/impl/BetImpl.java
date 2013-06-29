@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import fr.ele.model.Bet;
 import fr.ele.model.EntityImpl;
-import fr.ele.model.ref.BookMarker;
+import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
 
 
@@ -27,7 +27,7 @@ public class BetImpl extends EntityImpl implements Bet {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BOOKMAKER_ID", nullable = false)
-	private BookMarker bookMarker;
+	private BookMaker bookMarker;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "REFKEY_ID", nullable = false)
@@ -57,11 +57,11 @@ public class BetImpl extends EntityImpl implements Bet {
 		this.date = date;
 	}
 
-	public BookMarker getBookMarker() {
+	public BookMaker getBookMarker() {
 		return bookMarker;
 	}
 
-	public void setBookMarker(BookMarker bookMarker) {
+	public void setBookMarker(BookMaker bookMarker) {
 		this.bookMarker = bookMarker;
 	}
 

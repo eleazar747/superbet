@@ -1,7 +1,7 @@
 package fr.ele.services.dao;
 
-import fr.ele.model.ref.BookMarker;
+import fr.ele.model.ref.BookMaker;
 
-public interface BookMakerDao extends GenericDao<BookMarker> {
+public interface BookMakerDao extends GenericDao<BookMaker> {
 
 }
