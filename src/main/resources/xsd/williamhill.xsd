@@ -1,0 +1,92 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="oxip">
+		<xs:annotation>
+			<xs:documentation>OXi dbPublish Copyright (c) 2001, 2002, 2003 Orbis
+				Technology Ltd. All rights reserved.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="response">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="williamhill">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="class">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="type" />
+												</xs:sequence>
+												<xs:attribute type="xs:short" name="id" />
+												<xs:attribute type="xs:string" name="name" />
+												<xs:attribute type="xs:date" name="maxRepDate" />
+												<xs:attribute type="xs:time" name="maxRepTime" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element type="xs:string" name="disclaimer" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:string" name="request" />
+						<xs:attribute type="xs:byte" name="code" />
+						<xs:attribute type="xs:string" name="message" />
+						<xs:attribute type="xs:string" name="debug" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:float" name="version" />
+			<xs:attribute type="xs:string" name="created" />
+			<xs:attribute type="xs:string" name="lastMsgId" />
+			<xs:attribute type="xs:float" name="requestTime" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="type">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element ref="market" />
+			</xs:choice>
+			<xs:attribute type="xs:short" name="id" />
+			<xs:attribute type="xs:string" name="name" />
+			<xs:attribute type="xs:anyURI" name="url" />
+			<xs:attribute type="xs:date" name="lastUpdateDate" />
+			<xs:attribute type="xs:time" name="lastUpdateTime" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="participant">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="name" use="optional" />
+					<xs:attribute type="xs:int" name="id" use="optional" />
+					<xs:attribute type="xs:string" name="odds" use="optional" />
+					<xs:attribute type="xs:float" name="oddsDecimal" use="optional" />
+					<xs:attribute type="xs:date" name="lastUpdateDate"
+						use="optional" />
+					<xs:attribute type="xs:time" name="lastUpdateTime"
+						use="optional" />
+					<xs:attribute type="xs:string" name="handicap" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="market">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="participant" maxOccurs="unbounded"
+					minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="id" use="optional" />
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:anyURI" name="url" use="optional" />
+			<xs:attribute type="xs:date" name="date" use="optional" />
+			<xs:attribute type="xs:time" name="time" use="optional" />
+			<xs:attribute type="xs:date" name="betTillDate" use="optional" />
+			<xs:attribute type="xs:time" name="betTillTime" use="optional" />
+			<xs:attribute type="xs:date" name="lastUpdateDate" use="optional" />
+			<xs:attribute type="xs:time" name="lastUpdateTime" use="optional" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

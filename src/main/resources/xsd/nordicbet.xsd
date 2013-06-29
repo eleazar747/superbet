@@ -1,0 +1,77 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Odds">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Game" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Participant">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:long" name="id" use="optional" />
+					<xs:attribute type="xs:string" name="info" use="optional" />
+					<xs:attribute type="xs:string" name="role" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Game">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Sport" />
+				<xs:element type="xs:string" name="Region" />
+				<xs:element type="xs:string" name="Season" />
+				<xs:element type="xs:string" name="BreadCrumbs" />
+				<xs:element type="xs:string" name="GameStartTime" />
+				<xs:element type="xs:string" name="BettingEndTime" />
+				<xs:element type="xs:string" name="LiveBet" />
+				<xs:element type="xs:string" name="IsRunning" />
+				<xs:element ref="Participant" maxOccurs="unbounded"
+					minOccurs="0" />
+
+				<xs:element ref="OutcomeSet" maxOccurs="unbounded"
+					minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:long" name="id" use="optional" />
+			<xs:attribute type="xs:string" name="name" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OutcomeSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Outcome" maxOccurs="unbounded"
+					minOccurs="0" />
+				<xs:element type="xs:string" name="ExternalComment"
+					minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:long" name="id" use="optional" />
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:string" name="type" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Outcome">
+		<xs:complexType mixed="true">
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element name="Participant">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute type="xs:long" name="id" use="optional" />
+								<xs:attribute type="xs:string" name="info" use="optional" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element type="xs:float" name="OptionalValue1" />
+				<xs:element type="xs:float" name="OptionalValue2" />
+			</xs:choice>
+			<xs:attribute type="xs:long" name="id" use="optional" />
+			<xs:attribute type="xs:string" name="name" use="optional" />
+			<xs:attribute type="xs:float" name="odds" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

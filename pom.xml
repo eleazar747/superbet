@@ -113,6 +113,30 @@
 							<staleFile>${project.build.directory}/jaxb2/.expektXjcStaleFlag</staleFile>
 						</configuration>
 					</execution>
+					<execution>
+						<id>jaxb-nordic</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<clearOutputDir>false</clearOutputDir>
+							<schemaFiles>nordicbet.xsd</schemaFiles>
+							<packageName>fr.ele.feeds.nordicbet.dto</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.nordicbetXjcStaleFlag</staleFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jaxb-willimanhill</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<clearOutputDir>false</clearOutputDir>
+							<schemaFiles>williamhill.xsd</schemaFiles>
+							<packageName>fr.ele.feeds.wiliamhill.dto</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.wiliamhillXjcStaleFlag</staleFile>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<schemaDirectory>src/main/resources/xsd</schemaDirectory>
