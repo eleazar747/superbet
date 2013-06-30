@@ -1,28 +1,37 @@
 package fr.ele.services.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mysema.query.jpa.hibernate.HibernateQuery;
+import com.mysema.query.types.path.EntityPathBase;
+
 import fr.ele.model.Entity;
 import fr.ele.services.dao.GenericDao;
 
 @Repository
-public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> {
+public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<? extends T>>
+        implements GenericDao<T, Q> {
 
     private final Class<T> clazz;
+
+    protected final Q entityQuery;
 
     @Autowired
     SessionFactory sessionFactory;
 
-    public GenericDaoImpl(Class<T> clazz) {
+    public GenericDaoImpl(Class<T> clazz, Q entityQuery) {
         this.clazz = clazz;
+        this.entityQuery = entityQuery;
     }
 
     public void create(T entity) {
         getCurrentSession().persist(entity);
-        
+
     }
 
     public void update(T entity) {
@@ -35,8 +44,14 @@ public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> 
     }
 
     @SuppressWarnings("unchecked")
-	public T getById(Long id) {
+    public T getById(Long id) {
         return (T) getCurrentSession().get(clazz, id);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<T> findAll() {
+        HibernateQuery query = new HibernateQuery(getCurrentSession());
+        return (List<T>) query.from(entityQuery).list(entityQuery);
     }
 
     protected final Session getCurrentSession() {
