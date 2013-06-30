@@ -9,15 +9,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Proxy;
+
 import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
 
 @Entity
 @Table(name = "MATCH")
+@Proxy(proxyClass=Match.class)
 public class MatchImpl extends EntityImpl implements Match {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,targetEntity=SportImpl.class)
     @JoinColumn(name = "SPORT_ID", nullable = false)
     private Sport sport;
 

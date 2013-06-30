@@ -22,7 +22,7 @@ public abstract class GenericDaoImpl<T extends Entity> implements GenericDao<T> 
 
     public void create(T entity) {
         getCurrentSession().persist(entity);
-
+        
     }
 
     public void update(T entity) {

@@ -13,6 +13,8 @@ import fr.ele.model.Bet;
 import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
+import fr.ele.model.ref.impl.BookMakerImpl;
+import fr.ele.model.ref.impl.RefKeyImpl;
 
 
 @Entity
@@ -25,11 +27,11 @@ public class BetImpl extends EntityImpl implements Bet {
 	@Column(name = "DATE", nullable = false)
 	private Date date;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY,targetEntity=BookMakerImpl.class)
     @JoinColumn(name = "BOOKMAKER_ID", nullable = false)
 	private BookMaker bookMarker;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY,targetEntity=RefKeyImpl.class)
 	@JoinColumn(name = "REFKEY_ID", nullable = false)
 	private RefKey refKey;
 	

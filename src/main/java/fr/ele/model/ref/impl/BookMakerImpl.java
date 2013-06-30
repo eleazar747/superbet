@@ -4,11 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Proxy;
+
 import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.BookMaker;
 
 @Entity
 @Table(name = "BOOKMAKER")
+@Proxy(proxyClass=BookMaker.class)
 public class BookMakerImpl extends EntityImpl implements BookMaker {
 
     @Column(name = "CODE", nullable = false, unique = true)
