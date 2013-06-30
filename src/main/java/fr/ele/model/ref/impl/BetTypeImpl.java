@@ -4,11 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Proxy;
+
 import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.BetType;
 
 @Entity
 @Table(name = "BET_TYPE")
+@Proxy(proxyClass=BetType.class)
 public class BetTypeImpl extends EntityImpl implements BetType {
 
     @Column(name = "CODE", nullable = false, unique = true)
