@@ -22,4 +22,9 @@ public class BookMakerRestServiceImpl implements BookMakerRestService {
         return bookMakerDao.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public BookMaker get(long id) {
+        return bookMakerDao.getById(id);
+    }
+
 }
