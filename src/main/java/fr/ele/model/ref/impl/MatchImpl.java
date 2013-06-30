@@ -12,22 +12,23 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 import fr.ele.model.EntityImpl;
+import fr.ele.model.SuperBetTables;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
 
 @Entity
-@Table(name = "MATCH")
+@Table(name = SuperBetTables.MatchTable.TABLE)
 @Proxy(proxyClass=Match.class)
 public class MatchImpl extends EntityImpl implements Match {
 
     @ManyToOne(fetch = FetchType.LAZY,targetEntity=SportImpl.class)
-    @JoinColumn(name = "SPORT_ID", nullable = false)
+    @JoinColumn(name = SuperBetTables.SportTable.CODE_COLUMN, nullable = false)
     private Sport sport;
 
-    @Column(name = "CODE", nullable = false)
+    @Column(name = SuperBetTables.MatchTable.CODE_COLUMN , nullable = false, unique=true)
     private String code;
 
-    @Column(name = "DATE", nullable = false)
+    @Column(name = SuperBetTables.MatchTable.DATE_COLUMN, nullable = false)
     private Date date;
 
     public Sport getSport() {

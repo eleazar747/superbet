@@ -9,20 +9,21 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 import fr.ele.model.EntityImpl;
+import fr.ele.model.SuperBetTables;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 
 @Entity
-@Table(name = "REF_KEY")
+@Table(name = SuperBetTables.RefKeyTable.TABLE)
 @Proxy(proxyClass=RefKey.class)
 public class RefKeyImpl extends EntityImpl implements RefKey {
     @ManyToOne(fetch = FetchType.LAZY,targetEntity=BetTypeImpl.class)
-    @JoinColumn(name = "BET_TYPE_ID", nullable = false)
+    @JoinColumn(name = SuperBetTables.BetTypeTable.CODE_COLUMN, nullable = false)
     private BetType betType;
 
     @ManyToOne(fetch = FetchType.LAZY,targetEntity=MatchImpl.class)
-    @JoinColumn(name = "MATCH_ID", nullable = false)
+    @JoinColumn(name = SuperBetTables.MatchTable.CODE_COLUMN, nullable = false)
     private Match match;
 
     public BetType getBetType() {

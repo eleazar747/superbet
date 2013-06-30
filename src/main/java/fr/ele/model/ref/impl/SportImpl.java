@@ -7,14 +7,15 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 import fr.ele.model.EntityImpl;
+import fr.ele.model.SuperBetTables;
 import fr.ele.model.ref.Sport;
 
 @Entity
-@Table(name = "SPORT")
+@Table(name = SuperBetTables.SportTable.TABLE)
 @Proxy(proxyClass=Sport.class)
 public class SportImpl extends EntityImpl implements Sport {
 
-    @Column(name = "CODE", nullable = false, unique = true)
+    @Column(name = SuperBetTables.SportTable.CODE_COLUMN, nullable = false, unique = true)
     private String code;
 
     public String getCode() {
