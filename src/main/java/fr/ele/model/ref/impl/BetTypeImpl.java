@@ -12,7 +12,7 @@ import fr.ele.model.ref.BetType;
 
 @Entity
 @Table(name = SuperBetTables.BetTypeTable.TABLE)
-@Proxy(proxyClass=BetType.class)
+@Proxy(proxyClass = BetType.class)
 public class BetTypeImpl extends EntityImpl implements BetType {
 
     @Column(name = SuperBetTables.BetTypeTable.CODE_COLUMN, nullable = false, unique = true)

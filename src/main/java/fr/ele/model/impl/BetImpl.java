@@ -16,55 +16,54 @@ import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.impl.BookMakerImpl;
 import fr.ele.model.ref.impl.RefKeyImpl;
 
-
 @Entity
 @Table(name = "BET")
 public class BetImpl extends EntityImpl implements Bet {
 
-	@Column(name = "ODD", nullable = false)
-	private double odd;
-	
-	@Column(name = "DATE", nullable = false)
-	private Date date;
-	
-	@ManyToOne(fetch = FetchType.LAZY,targetEntity=BookMakerImpl.class)
+    @Column(name = "ODD", nullable = false)
+    private double odd;
+
+    @Column(name = "DATE", nullable = false)
+    private Date date;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMakerImpl.class)
     @JoinColumn(name = "BOOKMAKER_ID", nullable = false)
-	private BookMaker bookMarker;
+    private BookMaker bookMarker;
 
-	@ManyToOne(fetch = FetchType.LAZY,targetEntity=RefKeyImpl.class)
-	@JoinColumn(name = "REFKEY_ID", nullable = false)
-	private RefKey refKey;
-	
-	public RefKey getRefKey() {
-		return refKey;
-	}
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = RefKeyImpl.class)
+    @JoinColumn(name = "REFKEY_ID", nullable = false)
+    private RefKey refKey;
 
-	public void setRefKey(RefKey refKey) {
-		this.refKey = refKey;
-	}
+    public RefKey getRefKey() {
+        return refKey;
+    }
 
-	public double getOdd() {
-		return odd;
-	}
+    public void setRefKey(RefKey refKey) {
+        this.refKey = refKey;
+    }
 
-	public void setOdd(double odd) {
-		this.odd = odd;
-	}
+    public double getOdd() {
+        return odd;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public void setOdd(double odd) {
+        this.odd = odd;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public BookMaker getBookMarker() {
-		return bookMarker;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public void setBookMarker(BookMaker bookMarker) {
-		this.bookMarker = bookMarker;
-	}
+    public BookMaker getBookMarker() {
+        return bookMarker;
+    }
+
+    public void setBookMarker(BookMaker bookMarker) {
+        this.bookMarker = bookMarker;
+    }
 
 }

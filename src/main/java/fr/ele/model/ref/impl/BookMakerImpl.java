@@ -12,7 +12,7 @@ import fr.ele.model.ref.BookMaker;
 
 @Entity
 @Table(name = SuperBetTables.BookMakerTable.TABLE)
-@Proxy(proxyClass=BookMaker.class)
+@Proxy(proxyClass = BookMaker.class)
 public class BookMakerImpl extends EntityImpl implements BookMaker {
 
     @Column(name = SuperBetTables.BookMakerTable.CODE_COLUMN, nullable = false, unique = true)

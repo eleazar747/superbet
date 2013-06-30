@@ -16,14 +16,14 @@ import fr.ele.model.ref.RefKey;
 
 @Entity
 @Table(name = SuperBetTables.RefKeyTable.TABLE)
-@Proxy(proxyClass=RefKey.class)
+@Proxy(proxyClass = RefKey.class)
 public class RefKeyImpl extends EntityImpl implements RefKey {
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity=BetTypeImpl.class)
-    @JoinColumn(name = SuperBetTables.BetTypeTable.CODE_COLUMN, nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BetTypeImpl.class)
+    @JoinColumn(name = SuperBetTables.RefKeyTable.BETTYPE_ID_COLUMN, nullable = false)
     private BetType betType;
 
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity=MatchImpl.class)
-    @JoinColumn(name = SuperBetTables.MatchTable.CODE_COLUMN, nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = MatchImpl.class)
+    @JoinColumn(name = SuperBetTables.RefKeyTable.MATCH_ID_COLUMN, nullable = false)
     private Match match;
 
     public BetType getBetType() {

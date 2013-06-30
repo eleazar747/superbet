@@ -18,14 +18,14 @@ import fr.ele.model.ref.Sport;
 
 @Entity
 @Table(name = SuperBetTables.MatchTable.TABLE)
-@Proxy(proxyClass=Match.class)
+@Proxy(proxyClass = Match.class)
 public class MatchImpl extends EntityImpl implements Match {
 
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity=SportImpl.class)
-    @JoinColumn(name = SuperBetTables.SportTable.CODE_COLUMN, nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = SportImpl.class)
+    @JoinColumn(name = SuperBetTables.MatchTable.SPORT_COLUMN, nullable = false)
     private Sport sport;
 
-    @Column(name = SuperBetTables.MatchTable.CODE_COLUMN , nullable = false, unique=true)
+    @Column(name = SuperBetTables.MatchTable.CODE_COLUMN, nullable = false, unique = true)
     private String code;
 
     @Column(name = SuperBetTables.MatchTable.DATE_COLUMN, nullable = false)
