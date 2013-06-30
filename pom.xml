@@ -137,6 +137,18 @@
 							<staleFile>${project.build.directory}/jaxb2/.wiliamhillXjcStaleFlag</staleFile>
 						</configuration>
 					</execution>
+					<execution>
+						<id>jaxb-intertops</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<clearOutputDir>false</clearOutputDir>
+							<schemaFiles>intertops.xsd</schemaFiles>
+							<packageName>fr.ele.feeds.intertops.dto</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.intertopsjcStaleFlag</staleFile>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<schemaDirectory>src/main/resources/xsd</schemaDirectory>

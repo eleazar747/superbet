@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+<params legend="False" catId="-1" sportId="-1" matchId="-1" delta="100" deltaUtc="2013-06-30T05:34" utc="2013-06-30T07:14" includeCent="False" includeFraction="False"/>
+<![CDATA[...]]>
+<data>
+<s id="31" n="Darts">
+<cat id="2674" n="European Tour - Event 5">
+<m id="951152" n="Michael Van Gerwen v Colin Lloyd" mid="538960" m=" Michael Van Gerwen v Colin Lloyd" dt="2013-06-30T11:00">
+<t id="1" n="Single Match">
+<l id="13958979" i="1" o="1.12">Michael Van Gerwen</l>
+<l id="13958980" i="2" o="5.25">Colin Lloyd</l>
+</t>
+</m>
+<m id="951150" n="Dave Chisnall v Andy Hamilton" mid="538967" m=" Dave Chisnall v Andy Hamilton" dt="2013-06-30T13:20">
+<t id="1" n="Single Match">
+<l id="13958973" i="1" o="1.85">Dave Chisnall</l>
+<l id="13958974" i="2" o="1.85">Andy Hamilton</l>
+</t>
+</m>
+<m id="951148" n="Kim Huybrechts v Peter Wright" mid="538966" m=" Kim Huybrechts v Peter Wright" dt="2013-06-30T13:00">
+<t id="1" n="Single Match">
+<l id="13958967" i="1" o="2">Kim Huybrechts</l>
+<l id="13958968" i="2" o="1.7">Peter Wright</l>
+</t>
+</m>
+<m id="951146" n="Leon De Geus v Phil Taylor" mid="538965" m=" Leon De Geus v Phil Taylor" dt="2013-06-30T12:40">
+<t id="1" n="Single Match">
+<l id="13958961" i="1" o="7.5">Leon De Geus</l>
+<l id="13958962" i="2" o="1.06">Phil Taylor</l>
+</t>
+</m>
+<m id="951144" n="Steve Beaton v John Henderson" mid="538964" m=" Steve Beaton v John Henderson" dt="2013-06-30T12:20">
+<t id="1" n="Single Match">
+<l id="13958955" i="1" o="1.65">Steve Beaton</l>
+<l id="13958956" i="2" o="2.1">John Henderson</l>
+</t>
+</m>
+<m id="951142" n="Jamie Lewis v Steve Brown" mid="538963" m=" Jamie Lewis v Steve Brown" dt="2013-06-30T12:00">
+<t id="1" n="Single Match">
+<l id="13958949" i="1" o="2.1">Jamie Lewis</l>
+<l id="13958950" i="2" o="1.65">Steve Brown</l>
+</t>
+</m>
+<m id="951140" n="Kevin Painter v James Wade" mid="538962" m=" Kevin Painter v James Wade" dt="2013-06-30T11:40">
+<t id="1" n="Single Match">
+<l id="13958943" i="1" o="2.75">Kevin Painter</l>
+<l id="13958944" i="2" o="1.4">James Wade</l>
+</t>
+</m>
+<m id="951138" n="Jamie Caven v Adrian Lewis" mid="538961" m=" Jamie Caven v Adrian Lewis" dt="2013-06-30T11:20">
+<t id="1" n="Single Match">
+<l id="13958937" i="1" o="2.6">Jamie Caven</l>
+<l id="13958938" i="2" o="1.44">Adrian Lewis</l>
+</t>
+</m>
+</cat>
+</s>
+<s id="0" n="Misc">
+<cat id="0" n="Misc"/>
+</s>
+<s id="23" n="Snooker">
+<cat id="1933" n="Australian Open">
+<m id="951184" n="Mark Davis v Paul Davison" mid="538983" dt="2013-07-10T01:30">
+<t id="1" n="Single Match">
+<l id="13959075" i="1" o="1.3">Mark Davis</l>
+<l id="13959076" i="2" o="3.2">Paul Davison</l>
+</t>
+</m>
+<m id="951182" n="Robert Milkins v Ben Woollaston" mid="538981" dt="2013-07-10T05:30">
+<t id="1" n="Single Match">
+<l id="13959069" i="1" o="1.45">Robert Milkins</l>
+<l id="13959070" i="2" o="2.55">Ben Woollaston</l>
+</t>
+</m>
+<m id="951180" n="Ding Junhui v Rory Mcleod" mid="538982" dt="2013-07-10T05:30">
+<t id="1" n="Single Match">
+<l id="13959063" i="1" o="1.18">Ding Junhui</l>
+<l id="13959064" i="2" o="4.3">Rory Mcleod</l>
+</t>
+</m>
+<m id="951178" n="Marco Fu v Ken Doherty" mid="538980" dt="2013-07-10T01:30">
+<t id="1" n="Single Match">
+<l id="13959057" i="1" o="1.45">Marco Fu</l>
+<l id="13959058" i="2" o="2.55">Ken Doherty</l>
+</t>
+</m>
+<m id="951176" n="Mark Selby v Ian Burns" mid="538979" dt="2013-07-09T09:00">
+<t id="1" n="Single Match">
+<l id="13959051" i="1" o="1.12">Mark Selby</l>
+<l id="13959052" i="2" o="5.25">Ian Burns</l>
+</t>
+</m>
+<m id="951174" n="Michael Holt v Alfie Burden" mid="538978" dt="2013-07-09T09:00">
+<t id="1" n="Single Match">
+<l id="13959045" i="1" o="1.6">Michael Holt</l>
+<l id="13959046" i="2" o="2.2">Alfie Burden</l>
+</t>
+</m>
+<m id="951172" n="Joe Perry v Xiao Guodong" mid="538977" dt="2013-07-09T05:30">
+<t id="1" n="Single Match">
+<l id="13959039" i="1" o="1.45">Joe Perry</l>
+<l id="13959040" i="2" o="2.55">Xiao Guodong</l>
+</t>
+</m>
+<m id="951170" n="Ricky Walden v Fergal O'Brien" mid="538976" dt="2013-07-09T01:30">
+<t id="1" n="Single Match">
+<l id="13959033" i="1" o="1.4">Ricky Walden</l>
+<l id="13959034" i="2" o="2.75">Fergal O'Brien</l>
+</t>
+</m>
+<m id="951168" n="Neil Robertson v Marcus Campbell" mid="538974" dt="2013-07-08T09:00">
+<t id="1" n="Single Match">
+<l id="13959027" i="1" o="1.14">Neil Robertson</l>
+<l id="13959028" i="2" o="5">Marcus Campbell</l>
+</t>
+</m>
+<m id="951166" n="Andrew Higginson v Anda Zhang" mid="538975" dt="2013-07-08T09:00">
+<t id="1" n="Single Match">
+<l id="13959021" i="1" o="1.44">Andrew Higginson</l>
+<l id="13959022" i="2" o="2.6">Anda Zhang</l>
+</t>
+</m>
+<m id="951164" n="Martin Gould v Jamie Cope" mid="538972" m=" Martin Gould v Jamie Cope" dt="2013-07-08T06:00">
+<t id="1" n="Single Match">
+<l id="13959015" i="1" o="1.57">Martin Gould</l>
+<l id="13959016" i="2" o="2.25">Jamie Cope</l>
+</t>
+</m>
+<m id="951162" n="Stuart Bingham v Noppon Saengkham" mid="538973" dt="2013-07-08T06:00">
+<t id="1" n="Single Match">
+<l id="13959009" i="1" o="1.2">Stuart Bingham</l>
+<l id="13959010" i="2" o="4">Noppon Saengkham</l>
+</t>
+</m>
+<m id="951160" n="Barry Hawkins v Dechawat Poomjaeng" mid="538970" dt="2013-07-08T02:00">
+<t id="1" n="Single Match">
+<l id="13959003" i="1" o="1.28">Barry Hawkins</l>
+<l id="13959004" i="2" o="3.3">Dechawat Poomjaeng</l>
+</t>
+</m>
+<m id="951158" n="Tom Ford v Ryan Day" mid="538971" dt="2013-07-08T02:00">
+<t id="1" n="Single Match">
+<l id="13958997" i="1" o="1.95">Tom Ford</l>
+<l id="13958998" i="2" o="1.75">Ryan Day</l>
+</t>
+</m>
+<m id="951156" n="Michael White v Shaun Dalitz" mid="538969" m=" Michael White v Shaun Dalitz" dt="2013-07-08T00:00">
+<t id="1" n="Single Match">
+<l id="13958991" i="1" o="1.1">Michael White</l>
+<l id="13958992" i="2" o="5.75">Shaun Dalitz</l>
+</t>
+</m>
+<m id="951154" n="Mike Dune v Steve Mifsud" mid="538968" dt="2013-07-08T00:00">
+<t id="1" n="Single Match">
+<l id="13958985" i="1" o="1.28">Mike Dune</l>
+<l id="13958986" i="2" o="3.3">Steve Mifsud</l>
+</t>
+</m>
+</cat>
+</s>
+<s id="12" n="Soccer">
+<cat id="1183" n="International Club Friendlies">
+<m id="951192" n="SC Preussen Münster v VfL Bochum" mid="538408" dt="2013-06-30T13:00">
+<t id="1" n="Single Match">
+<l id="13959125" i="0" o="3.35">Draw</l>
+<l id="13959124" i="1" o="2.65">SC Preussen Münster</l>
+<l id="13959123" i="2" o="2.25">VfL Bochum</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959126" i="1" o="1.48">SC Preussen Münster or draw</l>
+<l id="13959127" i="2" o="1.35">VfL Bochum or draw</l>
+<l id="13959128" i="3" o="1.22">SC Preussen Münster or VfL Bochum</l>
+</t>
+</m>
+<m id="951191" n="Union Berlin v FK Banik Most" mid="538989" dt="2013-06-30T16:30">
+<t id="1" n="Single Match">
+<l id="13959119" i="0" o="4.3">Draw</l>
+<l id="13959118" i="1" o="1.4">Union Berlin</l>
+<l id="13959117" i="2" o="5.75">FK Banik Most</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959120" i="1" o="1.07">Union Berlin or draw</l>
+<l id="13959121" i="2" o="2.37">FK Banik Most or draw</l>
+<l id="13959122" i="3" o="1.15">Union Berlin or FK Banik Most</l>
+</t>
+</m>
+<m id="951190" n="TSV 1860 München v Zaglebie Lubin" mid="538988" dt="2013-06-30T16:30">
+<t id="1" n="Single Match">
+<l id="13959113" i="0" o="3.55">Draw</l>
+<l id="13959112" i="1" o="2">TSV 1860 München</l>
+<l id="13959111" i="2" o="3">Zaglebie Lubin</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959114" i="1" o="1.28">TSV 1860 München or draw</l>
+<l id="13959115" i="2" o="1.63">Zaglebie Lubin or draw</l>
+<l id="13959116" i="3" o="1.2">TSV 1860 München or Zaglebie Lubin</l>
+</t>
+</m>
+<m id="951189" n="Neftchi Baku Pfc v Wacker Burghausen" mid="538987" dt="2013-06-30T16:00">
+<t id="1" n="Single Match">
+<l id="13959107" i="0" o="3.55">Draw</l>
+<l id="13959106" i="1" o="2.1">Neftchi Baku Pfc</l>
+<l id="13959105" i="2" o="2.75">Wacker Burghausen</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959108" i="1" o="1.32">Neftchi Baku Pfc or draw</l>
+<l id="13959109" i="2" o="1.55">Wacker Burghausen or draw</l>
+<l id="13959110" i="3" o="1.19">Neftchi Baku Pfc or Wacker Burghausen</l>
+</t>
+</m>
+<m id="951188" n="FC Ingolstadt 04 v Macc Tel Aviv" mid="538986" dt="2013-06-30T16:00">
+<t id="1" n="Single Match">
+<l id="13959101" i="0" o="3.4">Draw</l>
+<l id="13959100" i="1" o="2.9">FC Ingolstadt 04</l>
+<l id="13959099" i="2" o="2.1">Macc Tel Aviv</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959102" i="1" o="1.57">FC Ingolstadt 04 or draw</l>
+<l id="13959103" i="2" o="1.3">Macc Tel Aviv or draw</l>
+<l id="13959104" i="3" o="1.22">FC Ingolstadt 04 or Macc Tel Aviv</l>
+</t>
+</m>
+<m id="951187" n="Wisla Krakow v AC Omonia Nicosia" mid="538985" dt="2013-06-30T15:00">
+<t id="1" n="Single Match">
+<l id="13959095" i="0" o="3.25">Draw</l>
+<l id="13959094" i="1" o="2.25">Wisla Krakow</l>
+<l id="13959093" i="2" o="2.75">AC Omonia Nicosia</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959096" i="1" o="1.33">Wisla Krakow or draw</l>
+<l id="13959097" i="2" o="1.49">AC Omonia Nicosia or draw</l>
+<l id="13959098" i="3" o="1.24">Wisla Krakow or AC Omonia Nicosia</l>
+</t>
+</m>
+<m id="951186" n="SPVGG Greuther Fürth v SK Slavia Prague" mid="538984" dt="2013-06-30T14:00">
+<t id="1" n="Single Match">
+<l id="13959089" i="0" o="3.5">Draw</l>
+<l id="13959088" i="1" o="2.2">SPVGG Greuther Fürth</l>
+<l id="13959087" i="2" o="2.6">SK Slavia Prague</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959090" i="1" o="1.35">SPVGG Greuther Fürth or draw</l>
+<l id="13959091" i="2" o="1.49">SK Slavia Prague or draw</l>
+<l id="13959092" i="3" o="1.19">SPVGG Greuther Fürth or SK Slavia Prague</l>
+</t>
+</m>
+<m id="951185" n="VfL Rhede v Borussia Mönchengladbach" mid="538409" dt="2013-06-30T14:00">
+<t id="1" n="Single Match">
+<l id="13959083" i="0" o="7.5">Draw</l>
+<l id="13959082" i="1" o="8">VfL Rhede</l>
+<l id="13959081" i="2" o="1.16">Borussia Mönchengladbach</l>
+</t>
+<t id="20" n="Double Chance">
+<l id="13959084" i="1" o="3.87">VfL Rhede or draw</l>
+<l id="13959085" i="2" o="1">Borussia Mönchengladbach or draw</l>
+<l id="13959086" i="3" o="1.01">VfL Rhede or Borussia Mönchengladbach</l>
+</t>
+</m>
+</cat>
+</s>
+</data>
+</result>
