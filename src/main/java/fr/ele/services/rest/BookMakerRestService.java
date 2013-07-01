@@ -22,4 +22,9 @@ public interface BookMakerRestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
     BookMaker get(@PathParam("id") long id);
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("{code}")
+    BookMaker findByCode(@PathParam("code") String code);
 }
