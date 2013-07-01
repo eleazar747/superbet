@@ -95,7 +95,7 @@
 			<version>2.2.8</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		
+
 		<!-- webserver dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -126,6 +126,11 @@
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-xc</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ostermiller</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.07.00</version>
 		</dependency>
 	</dependencies>
 	<build>
