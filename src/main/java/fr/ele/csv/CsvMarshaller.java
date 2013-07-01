@@ -31,7 +31,7 @@ public class CsvMarshaller<T> {
                 throw new RuntimeException(object.toString() + "not handled");
             }
             for (CsvProperty property : csvBeanProperties.getProperties()) {
-                printer.write(property.getStringValue(object));
+                printer.write(property.getStringValue(context, object));
             }
             printer.println();
         }

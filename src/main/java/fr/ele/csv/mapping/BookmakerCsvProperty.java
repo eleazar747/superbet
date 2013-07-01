@@ -1,5 +1,6 @@
 package fr.ele.csv.mapping;
 
+import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvProperty;
 import fr.ele.model.ref.BookMaker;
 
@@ -7,8 +8,9 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
     ID("id") {
 
         @Override
-        public String getStringValue(BookMaker object) {
-            return String.valueOf(object.getId());
+        public String getStringValue(CsvContext<BookMaker> context,
+                BookMaker object) {
+            return context.marshall(object.getId());
         }
 
         @Override
@@ -20,8 +22,9 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
     CODE("code") {
 
         @Override
-        public String getStringValue(BookMaker object) {
-            return object.getCode();
+        public String getStringValue(CsvContext<BookMaker> context,
+                BookMaker object) {
+            return context.marshall(object.getCode());
         }
 
         @Override

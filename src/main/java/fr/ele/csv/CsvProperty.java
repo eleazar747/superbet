@@ -2,7 +2,7 @@ package fr.ele.csv;
 
 public interface CsvProperty<T> {
 
-    String getStringValue(T object);
+    String getStringValue(CsvContext<T> context, T object);
 
     String getHeader();
 

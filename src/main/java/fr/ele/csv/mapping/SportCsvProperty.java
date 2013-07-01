@@ -1,5 +1,6 @@
 package fr.ele.csv.mapping;
 
+import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvProperty;
 import fr.ele.model.ref.Sport;
 
@@ -7,8 +8,8 @@ public enum SportCsvProperty implements CsvProperty<Sport> {
     ID("id") {
 
         @Override
-        public String getStringValue(Sport object) {
-            return String.valueOf(object.getId());
+        public String getStringValue(CsvContext<Sport> context, Sport object) {
+            return context.marshall(object.getId());
         }
 
         @Override
@@ -20,8 +21,8 @@ public enum SportCsvProperty implements CsvProperty<Sport> {
     CODE("code") {
 
         @Override
-        public String getStringValue(Sport object) {
-            return object.getCode();
+        public String getStringValue(CsvContext<Sport> context, Sport object) {
+            return context.marshall(object.getCode());
         }
 
         @Override
