@@ -9,6 +9,7 @@ import com.mysema.query.jpa.hibernate.HibernateQuery;
 import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
 import fr.ele.model.ref.impl.QSportImpl;
+import fr.ele.model.ref.impl.SportImpl;
 import fr.ele.services.dao.SportDao;
 
 @Repository
@@ -16,7 +17,7 @@ public class SportDaoImpl extends GenericDaoImpl<Sport, QSportImpl> implements
         SportDao {
 
     public SportDaoImpl() {
-        super(Sport.class, QSportImpl.sportImpl);
+        super(SportImpl.class, QSportImpl.sportImpl);
     }
 
     public List<Sport> findByCode(String code) {

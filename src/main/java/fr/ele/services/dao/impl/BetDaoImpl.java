@@ -3,6 +3,7 @@ package fr.ele.services.dao.impl;
 import org.springframework.stereotype.Repository;
 
 import fr.ele.model.Bet;
+import fr.ele.model.impl.BetImpl;
 import fr.ele.model.impl.QBetImpl;
 import fr.ele.services.dao.BetDao;
 
@@ -10,7 +11,7 @@ import fr.ele.services.dao.BetDao;
 public class BetDaoImpl extends GenericDaoImpl<Bet, QBetImpl> implements BetDao {
 
     public BetDaoImpl() {
-        super(Bet.class, QBetImpl.betImpl);
+        super(BetImpl.class, QBetImpl.betImpl);
     }
 
 }
