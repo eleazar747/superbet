@@ -17,14 +17,14 @@ import fr.ele.services.dao.GenericDao;
 public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<? extends T>>
         implements GenericDao<T, Q> {
 
-    private final Class<T> clazz;
+    private final Class<? extends T> clazz;
 
     protected final Q entityQuery;
 
     @Autowired
     SessionFactory sessionFactory;
 
-    public GenericDaoImpl(Class<T> clazz, Q entityQuery) {
+    public GenericDaoImpl(Class<? extends T> clazz, Q entityQuery) {
         this.clazz = clazz;
         this.entityQuery = entityQuery;
     }

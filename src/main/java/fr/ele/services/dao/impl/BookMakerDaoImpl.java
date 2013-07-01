@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.mysema.query.jpa.hibernate.HibernateQuery;
 
 import fr.ele.model.ref.BookMaker;
+import fr.ele.model.ref.impl.BookMakerImpl;
 import fr.ele.model.ref.impl.QBookMakerImpl;
 import fr.ele.services.dao.BookMakerDao;
 
@@ -13,7 +14,7 @@ public class BookMakerDaoImpl extends GenericDaoImpl<BookMaker, QBookMakerImpl>
         implements BookMakerDao {
 
     public BookMakerDaoImpl() {
-        super(BookMaker.class, QBookMakerImpl.bookMakerImpl);
+        super(BookMakerImpl.class, QBookMakerImpl.bookMakerImpl);
     }
 
     @Override
