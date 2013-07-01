@@ -6,7 +6,5 @@ public interface CsvProperty<T> {
 
     String getHeader();
 
-    String getPropertyBean();
-
     void setValue();
 }

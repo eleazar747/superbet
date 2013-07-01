@@ -1,9 +1,10 @@
-package fr.ele.csv;
+package fr.ele.csv.mapping;
 
+import fr.ele.csv.CsvProperty;
 import fr.ele.model.ref.BookMaker;
 
 public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
-    ID("id", "id") {
+    ID("id") {
 
         @Override
         public String getStringValue(BookMaker object) {
@@ -16,7 +17,7 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
 
         }
     },
-    CODE("code", "code") {
+    CODE("code") {
 
         @Override
         public String getStringValue(BookMaker object) {
@@ -32,11 +33,8 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
 
     private final String header;
 
-    private final String propertyBean;
-
-    private BookmakerCsvProperty(String header, String propertyBean) {
+    private BookmakerCsvProperty(String header) {
         this.header = header;
-        this.propertyBean = propertyBean;
     }
 
     @Override
@@ -44,8 +42,4 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
         return header;
     }
 
-    @Override
-    public String getPropertyBean() {
-        return propertyBean;
-    }
 }

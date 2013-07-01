@@ -1,5 +1,7 @@
 package fr.ele.csv;
 
+import fr.ele.csv.mapping.CsvRegistry;
+
 public class CsvContext<T> {
 
     private final CsvBeanProperties csvBeanProperties;
