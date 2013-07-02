@@ -16,4 +16,6 @@ public interface GenericDao<T extends Entity, Q extends EntityPathBase<? extends
     T getById(Long id);
 
     List<T> findAll();
+
+    Class<? extends T> handledClass();
 }

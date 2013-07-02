@@ -57,4 +57,9 @@ public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<
     protected final Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
+
+    @Override
+    public Class<? extends T> handledClass() {
+        return clazz;
+    }
 }
