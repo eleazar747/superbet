@@ -47,19 +47,20 @@
 	<xs:element name="game">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="description">
-					<xs:complexType mixed="true">
-						<xs:sequence>
-							<xs:element ref="category" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="type" />
-				<xs:element name="alternatives" />
+				<xs:element ref="description" />
+					<xs:element ref="type" />
+					<xs:element ref="alternatives" />
 			</xs:sequence>
 			<xs:attribute type="xs:int" name="id" use="optional" />
 			<xs:attribute type="xs:int" name="date" use="optional" />
 			<xs:attribute type="xs:short" name="time" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="description">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element ref="category" />
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
