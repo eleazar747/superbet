@@ -31,6 +31,12 @@ public class CsvUnmarshaller<T> {
                 context.getSeparator());
         parser.setCommentStart(String.valueOf(context.getComment()));
         parser.changeQuote(context.getQuote());
+        if (context.isWithHeader()) {
+            try {
+                parser.getLine();
+            } catch (IOException e) {
+            }
+        }
         return new Iterator<T>() {
             private String[] line;
 

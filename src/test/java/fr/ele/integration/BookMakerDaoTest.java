@@ -7,13 +7,13 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.csv.CsvUnmarshaller;
-import fr.ele.feeds.integration.AbstractSuperbetIntegrationTest;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.impl.BookMakerImpl;
 import fr.ele.services.dao.BookMakerDao;
@@ -24,6 +24,12 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     @Autowired
     private BookMakerDao bookMakerDao;
+
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
     @Test
     public void testFindByCode() {

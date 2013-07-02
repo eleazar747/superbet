@@ -1,10 +1,10 @@
 package fr.ele.integration;
 
+import java.net.URL;
 import java.util.Iterator;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -35,13 +35,16 @@ public abstract class AbstractSuperbetIntegrationTest extends
         return sessionFactory.getCurrentSession();
     }
 
-    @BeforeClass
-    public void createTestData() {
+    protected void initializeDatas() {
         CsvContext<Sport> context = CsvContext.create(Sport.class);
+        context.setWithHeader(true);
         CsvUnmarshaller<Sport> unmarshaller = context.newUnmarshaller();
+        URL resource = AbstractSuperbetIntegrationTest.class
+                .getResource("SportsRef.csv");
+        System.err.println(resource);
         Iterator<Sport> iterator = unmarshaller
                 .unmarshall(AbstractSuperbetIntegrationTest.class
-                        .getResourceAsStream("SportRef.csv"));
+                        .getResourceAsStream("SportsRef.csv"));
         while (iterator.hasNext()) {
             sportDao.create(iterator.next());
         }
