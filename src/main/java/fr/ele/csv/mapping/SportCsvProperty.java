@@ -2,6 +2,7 @@ package fr.ele.csv.mapping;
 
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvProperty;
+import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.Sport;
 
 public enum SportCsvProperty implements CsvProperty<Sport> {
@@ -13,9 +14,9 @@ public enum SportCsvProperty implements CsvProperty<Sport> {
         }
 
         @Override
-        public void setValue() {
-            // TODO Auto-generated method stub
-
+        public void setValue(CsvContext context, Sport object, String value) {
+            ((EntityImpl) object).setId((Long) context.unmarshall(Long.class,
+                    value));
         }
     },
     CODE("code") {
@@ -26,9 +27,8 @@ public enum SportCsvProperty implements CsvProperty<Sport> {
         }
 
         @Override
-        public void setValue() {
-            // TODO Auto-generated method stub
-
+        public void setValue(CsvContext context, Sport object, String value) {
+            object.setCode((String) context.unmarshall(String.class, value));
         }
     };
     private final String header;

@@ -2,6 +2,7 @@ package fr.ele.csv.mapping;
 
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvProperty;
+import fr.ele.model.EntityImpl;
 import fr.ele.model.ref.BetType;
 
 public enum BetTypeCsvProperty implements CsvProperty<BetType> {
@@ -13,9 +14,9 @@ public enum BetTypeCsvProperty implements CsvProperty<BetType> {
         }
 
         @Override
-        public void setValue() {
-            // TODO Auto-generated method stub
-
+        public void setValue(CsvContext context, BetType object, String value) {
+            ((EntityImpl) object).setId((Long) context.unmarshall(Long.class,
+                    value));
         }
     },
     CODE("code") {
@@ -26,8 +27,8 @@ public enum BetTypeCsvProperty implements CsvProperty<BetType> {
         }
 
         @Override
-        public void setValue() {
-            // TODO Auto-generated method stub
+        public void setValue(CsvContext context, BetType object, String value) {
+            object.setCode((String) context.unmarshall(String.class, value));
 
         }
     };

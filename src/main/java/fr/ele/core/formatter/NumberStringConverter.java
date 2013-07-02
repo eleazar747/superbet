@@ -27,11 +27,11 @@ public class NumberStringConverter implements StringConverter<Number> {
         if (Integer.class.equals(type)) {
             return Integer.valueOf(string);
         } else if (Long.class.equals(type)) {
-            return new Long(string);
+            return Long.valueOf(string);
         } else if (Double.class.equals(type)) {
-            return new Double(string);
+            return Double.valueOf(string);
         } else if (Float.class.equals(type)) {
-            return new Float(string);
+            return Float.valueOf(string);
         }
 
         return null;

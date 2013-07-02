@@ -5,6 +5,9 @@ import fr.ele.csv.CsvProperty;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Sport;
+import fr.ele.model.ref.impl.BetTypeImpl;
+import fr.ele.model.ref.impl.BookMakerImpl;
+import fr.ele.model.ref.impl.SportImpl;
 
 public enum CsvRegistry implements CsvBeanProperties {
     BOOKMAKER(BookMaker.class) {
@@ -13,6 +16,11 @@ public enum CsvRegistry implements CsvBeanProperties {
         public CsvProperty[] getProperties() {
             return BookmakerCsvProperty.values();
         }
+
+        @Override
+        public Object getNewInstance() {
+            return new BookMakerImpl();
+        }
     },
     SPORT(Sport.class) {
 
@@ -20,12 +28,22 @@ public enum CsvRegistry implements CsvBeanProperties {
         public CsvProperty[] getProperties() {
             return SportCsvProperty.values();
         }
+
+        @Override
+        public Object getNewInstance() {
+            return new SportImpl();
+        }
     },
     BET_TYPE(BetType.class) {
 
         @Override
         public CsvProperty[] getProperties() {
             return BetTypeCsvProperty.values();
+        }
+
+        @Override
+        public Object getNewInstance() {
+            return new BetTypeImpl();
         }
     };
 

@@ -1,7 +1,7 @@
 package fr.ele.csv;
 
-import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import com.Ostermiller.util.CSVPrinter;
@@ -18,20 +18,24 @@ public class CsvMarshaller<T> {
         this.csvBeanProperties = csvBeanProperties;
     }
 
-    public void marshall(List<T> objects, OutputStream outputStream) throws IOException {
-        CSVPrinter printer = new CSVPrinter(outputStream);
+    public void marshall(List<T> objects, OutputStream outputStream) {
+        CSVPrinter printer = new CSVPrinter(
+                new OutputStreamWriter(outputStream), context.getComment(),
+                context.getQuote(), context.getSeparator());
         if (context.isWithHeader()) {
             for (CsvProperty property : csvBeanProperties.getProperties()) {
-                printer.write(property.getHeader());
+                printer.print(property.getHeader());
             }
+            printer.println();
         }
+
         for (T object : objects) {
             if (!csvBeanProperties.getHandledClass().isAssignableFrom(
                     object.getClass())) {
                 throw new RuntimeException(object.toString() + "not handled");
             }
             for (CsvProperty property : csvBeanProperties.getProperties()) {
-                printer.write(property.getStringValue(context, object));
+                printer.print(property.getStringValue(context, object));
             }
             printer.println();
         }
