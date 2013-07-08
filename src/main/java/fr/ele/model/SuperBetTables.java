@@ -54,4 +54,12 @@ public class SuperBetTables {
 
         public static final String BOOKMAKER_ID_COLUMN = "BOOKMAKER_ID";
     }
+
+    public static final class DataMapping {
+        public static final String TABLE = "DATA_MAPPING";
+
+        public static final String MODEL_CODE = "MODEL_CODE";
+
+        public static final String BOOKMAKER_CODE = "BOOKMAKER_CODE";
+    }
 }
