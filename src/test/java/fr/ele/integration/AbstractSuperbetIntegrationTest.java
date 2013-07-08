@@ -33,7 +33,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
         AbstractTransactionalJUnit4SpringContextTests implements
         BeanFactoryAware {
 
-    private static final Map<Class, String> REFS = new HashMap<Class, String>();
+    private static final Map<Class<?>, String> REFS = new HashMap<Class<?>, String>();
     static {
         REFS.put(SportImpl.class, "SportsRef.csv");
     }
@@ -44,7 +44,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
     @Autowired
     SportDao sportDao;
 
-    private Map<Class, GenericDao> map;
+    private Map<Class<?>, GenericDao> map;
 
     protected void flush() {
         sessionFactory.getCurrentSession().flush();
@@ -58,7 +58,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
     public void setBeanFactory(BeanFactory factory) throws BeansException {
         ListableBeanFactory lf = (ListableBeanFactory) factory;
         Map<String, GenericDao> beans = lf.getBeansOfType(GenericDao.class);
-        map = new HashMap<Class, GenericDao>(beans.size());
+        map = new HashMap<Class<?>, GenericDao>(beans.size());
         for (GenericDao bean : beans.values()) {
             map.put(bean.handledClass(), bean);
         }
