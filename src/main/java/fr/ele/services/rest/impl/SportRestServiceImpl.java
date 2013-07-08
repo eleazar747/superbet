@@ -18,8 +18,9 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     private SportDao sportDao;
 
     @Override
+    @Transactional(readOnly = true)
     public Sport findByCode(String code) {
-        return null;
+        return sportDao.findByCode(code);
     }
 
     @Override

@@ -18,9 +18,9 @@ public class MatchRestServiceImpl extends AbstractRefRestServiceImpl<Match>
     private MatchDao matchDao;
 
     @Override
+    @Transactional(readOnly = true)
     public Match findByCode(String code) {
-        // TODO Auto-generated method stub
-        return null;
+        return matchDao.findByCode(code);
     }
 
     @Override
