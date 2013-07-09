@@ -20,7 +20,8 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import fr.ele.core.ApplicationProfiles;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvUnmarshaller;
-import fr.ele.model.ref.Sport;
+import fr.ele.model.Entity;
+import fr.ele.model.ref.impl.BetTypeImpl;
 import fr.ele.model.ref.impl.SportImpl;
 import fr.ele.services.dao.GenericDao;
 import fr.ele.services.dao.SportDao;
@@ -36,6 +37,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
     private static final Map<Class<?>, String> REFS = new HashMap<Class<?>, String>();
     static {
         REFS.put(SportImpl.class, "SportsRef.csv");
+        REFS.put(BetTypeImpl.class, "BetTypesRef.csv");
     }
 
     @Autowired
@@ -66,10 +68,11 @@ public abstract class AbstractSuperbetIntegrationTest extends
 
     protected void initializeDatas() {
         for (Class clazz : REFS.keySet()) {
-            CsvContext<Sport> context = CsvContext.create(clazz);
+            CsvContext<? extends Entity> context = CsvContext.create(clazz);
             context.setWithHeader(true);
-            CsvUnmarshaller<Sport> unmarshaller = context.newUnmarshaller();
-            Iterator<Sport> iterator = unmarshaller
+            CsvUnmarshaller<? extends Entity> unmarshaller = context
+                    .newUnmarshaller();
+            Iterator<? extends Entity> iterator = unmarshaller
                     .unmarshall(AbstractSuperbetIntegrationTest.class
                             .getResourceAsStream(REFS.get(clazz)));
             while (iterator.hasNext()) {
