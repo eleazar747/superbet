@@ -22,6 +22,7 @@ import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.Entity;
 import fr.ele.model.ref.impl.BetTypeImpl;
+import fr.ele.model.ref.impl.BookMakerImpl;
 import fr.ele.model.ref.impl.SportImpl;
 import fr.ele.services.dao.GenericDao;
 import fr.ele.services.dao.SportDao;
@@ -38,6 +39,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
     static {
         REFS.put(SportImpl.class, "SportsRef.csv");
         REFS.put(BetTypeImpl.class, "BetTypesRef.csv");
+        REFS.put(BookMakerImpl.class, "BookMakersRef.csv");
     }
 
     @Autowired

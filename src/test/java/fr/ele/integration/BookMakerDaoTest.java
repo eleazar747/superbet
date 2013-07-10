@@ -22,6 +22,8 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     public static String newline = System.getProperty("line.separator");
 
+    private static final String BOOKMAKER = "BETCLICK";
+
     @Autowired
     private BookMakerDao bookMakerDao;
 
@@ -34,25 +36,23 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
     @Test
     public void testFindByCode() {
         BookMaker bookMaker = new BookMakerImpl();
-        String code = "BETCLICK";
-        bookMaker.setCode(code);
+        bookMaker.setCode(BOOKMAKER);
         bookMakerDao.create(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
-        Assert.assertEquals(code, bookMaker.getCode());
-        BookMaker byCode = bookMakerDao.findByCode(code);
+        Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
+        BookMaker byCode = bookMakerDao.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
     }
 
     @Test
-    public void test() {
+    public void testCsv() {
         BookMaker bookMaker = new BookMakerImpl();
-        String code = "BETCLICK";
-        bookMaker.setCode(code);
+        bookMaker.setCode(BOOKMAKER);
         bookMakerDao.create(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
-        Assert.assertEquals(code, bookMaker.getCode());
-        BookMaker byCode = bookMakerDao.findByCode(code);
+        Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
+        BookMaker byCode = bookMakerDao.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
         CsvContext<BookMaker> context = CsvContext.create(BookMaker.class);
@@ -61,8 +61,9 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         marshaller.marshall(Collections.singletonList(byCode), outputStream);
         String csv = outputStream.toString();
-        Assert.assertEquals("1,BETCLICK" + newline, csv);
-        System.err.println(csv);
+        Assert.assertNotNull(csv);
+        Assert.assertTrue(!csv.isEmpty());
+        Assert.assertTrue(csv.contains("," + BOOKMAKER));
         CsvUnmarshaller<BookMaker> unmarshaller = context.newUnmarshaller();
         Iterator<BookMaker> it = unmarshaller
                 .unmarshall(new ByteArrayInputStream(csv.getBytes()));
@@ -76,16 +77,18 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void testFindAll() {
-        BookMaker bookMaker = new BookMakerImpl();
-        String code = "BETCLICK";
-        bookMaker.setCode(code);
-        bookMakerDao.create(bookMaker);
-        bookMaker = new BookMakerImpl();
-        bookMaker.setCode(code + "2");
-        bookMakerDao.create(bookMaker);
         List<BookMaker> bookmarkers = bookMakerDao.findAll();
         Assert.assertNotNull(bookmarkers);
-        Assert.assertEquals(2, bookmarkers.size());
+        Assert.assertEquals(4, bookmarkers.size());
+        BookMaker bookMaker = new BookMakerImpl();
+        bookMaker.setCode(BOOKMAKER);
+        bookMakerDao.create(bookMaker);
+        bookMaker = new BookMakerImpl();
+        bookMaker.setCode(BOOKMAKER + "2");
+        bookMakerDao.create(bookMaker);
+        List<BookMaker> bookmarkersAfter = bookMakerDao.findAll();
+        Assert.assertNotNull(bookmarkersAfter);
+        Assert.assertEquals(bookmarkers.size() + 2, bookmarkersAfter.size());
     }
 
 }
