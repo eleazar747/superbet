@@ -2,10 +2,13 @@ package fr.ele.model.impl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import fr.ele.model.DataMapping;
 import fr.ele.model.EntityImpl;
+import fr.ele.model.RefEntityType;
 import fr.ele.model.SuperBetTables;
 
 @Entity
@@ -17,6 +20,10 @@ public class DataMappingImpl extends EntityImpl implements DataMapping {
 
     @Column(name = SuperBetTables.DataMapping.BOOKMAKER_CODE, nullable = false)
     private String bookMakerCode;
+
+    @Column(name = SuperBetTables.DataMapping.BOOKMAKER_CODE, nullable = false)
+    @Enumerated(EnumType.STRING)
+    private RefEntityType refEntityType;
 
     public String getModelCode() {
         return modelCode;
@@ -32,6 +39,14 @@ public class DataMappingImpl extends EntityImpl implements DataMapping {
 
     public void setBookMakerCode(String bookMakerCode) {
         this.bookMakerCode = bookMakerCode;
+    }
+
+    public RefEntityType getRefEntityType() {
+        return refEntityType;
+    }
+
+    public void setRefEntityType(RefEntityType refEntityType) {
+        this.refEntityType = refEntityType;
     }
 
 }
