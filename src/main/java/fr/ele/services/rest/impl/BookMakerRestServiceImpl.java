@@ -19,6 +19,7 @@ public class BookMakerRestServiceImpl extends
 
     @Transactional(readOnly = true)
     public BookMaker findByCode(String code) {
+        LOGGER.debug("findByCode(code={})", code);
         return bookMakerDao.findByCode(code);
     }
 

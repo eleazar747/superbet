@@ -21,5 +21,6 @@ public interface RefRestService<T> {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("search")
     T findByCode(@QueryParam("code") String code);
 }
