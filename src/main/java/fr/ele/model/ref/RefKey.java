@@ -3,6 +3,7 @@ package fr.ele.model.ref;
 import javax.persistence.MappedSuperclass;
 
 import fr.ele.model.Entity;
+
 @MappedSuperclass
 public interface RefKey extends Entity {
 
@@ -10,4 +11,7 @@ public interface RefKey extends Entity {
 
     Match getMatch();
 
+    void setBetType(BetType betType);
+
+    void setMatch(Match match);
 }

@@ -6,16 +6,23 @@ import javax.persistence.MappedSuperclass;
 
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
+
 @MappedSuperclass
 public interface Bet extends Entity {
 
-	long getId();
-	
     double getOdd();
 
     Date getDate();
 
-    BookMaker getBookMarker();
-    
+    BookMaker getBookMaker();
+
     RefKey getRefKey();
+
+    void setOdd(double odd);
+
+    void setDate(Date date);
+
+    void setRefKey(RefKey refKey);
+
+    void setBookMaker(BookMaker bookMaker);
 }

@@ -29,7 +29,7 @@ public class BetImpl extends EntityImpl implements Bet {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMakerImpl.class)
     @JoinColumn(name = SuperBetTables.BetTable.BOOKMAKER_ID_COLUMN, nullable = false)
-    private BookMaker bookMarker;
+    private BookMaker bookMaker;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RefKeyImpl.class)
     @JoinColumn(name = SuperBetTables.BetTable.REFKEY_ID_COLUMN, nullable = false)
@@ -59,12 +59,12 @@ public class BetImpl extends EntityImpl implements Bet {
         this.date = date;
     }
 
-    public BookMaker getBookMarker() {
-        return bookMarker;
+    public BookMaker getBookMaker() {
+        return bookMaker;
     }
 
-    public void setBookMarker(BookMaker bookMarker) {
-        this.bookMarker = bookMarker;
+    public void setBookMaker(BookMaker bookMaker) {
+        this.bookMaker = bookMaker;
     }
 
 }
