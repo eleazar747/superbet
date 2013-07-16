@@ -6,11 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.ele.model.Entity;
+import fr.ele.model.SuperBetEntity;
 import fr.ele.services.dao.GenericDao;
 import fr.ele.services.rest.RefRestService;
 
-public abstract class AbstractRefRestServiceImpl<T extends Entity> implements
+public abstract class AbstractRefRestServiceImpl<T extends SuperBetEntity> implements
         RefRestService<T> {
 
     protected final Logger LOGGER = LoggerFactory.getLogger(getClass());

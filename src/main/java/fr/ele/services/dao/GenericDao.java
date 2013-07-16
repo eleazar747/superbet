@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.mysema.query.types.path.EntityPathBase;
 
-import fr.ele.model.Entity;
+import fr.ele.model.SuperBetEntity;
 
-public interface GenericDao<T extends Entity, Q extends EntityPathBase<? extends T>> {
+public interface GenericDao<T extends SuperBetEntity, Q extends EntityPathBase<? extends T>> {
     void create(T entity);
 
     void update(T entity);

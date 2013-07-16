@@ -1,18 +1,47 @@
 package fr.ele.model;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
-@MappedSuperclass
-public interface DataMapping extends Entity {
-    String getModelCode();
+@Entity
+@Table(name = SuperBetTables.DataMapping.TABLE)
+public class DataMapping extends SuperBetEntity {
 
-    void setModelCode(String code);
+    @Column(name = SuperBetTables.DataMapping.MODEL_CODE, nullable = false)
+    private String modelCode;
 
-    String getBookMakerCode();
+    @Column(name = SuperBetTables.DataMapping.BOOKMAKER_CODE, nullable = false)
+    private String bookMakerCode;
 
-    void setBookMakerCode(String code);
+    @Column(name = SuperBetTables.DataMapping.REF_ENTITY_TYPE, nullable = false)
+    @Enumerated(EnumType.STRING)
+    private RefEntityType refEntityType;
 
-    RefEntityType getRefEntityType();
+    public String getModelCode() {
+        return modelCode;
+    }
 
-    void setRefEntityType(RefEntityType refEntityType);
+    public void setModelCode(String modelCode) {
+        this.modelCode = modelCode;
+    }
+
+    public String getBookMakerCode() {
+        return bookMakerCode;
+    }
+
+    public void setBookMakerCode(String bookMakerCode) {
+        this.bookMakerCode = bookMakerCode;
+    }
+
+    public RefEntityType getRefEntityType() {
+        return refEntityType;
+    }
+
+    public void setRefEntityType(RefEntityType refEntityType) {
+        this.refEntityType = refEntityType;
+    }
+
 }

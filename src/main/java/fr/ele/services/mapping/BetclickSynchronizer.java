@@ -11,13 +11,10 @@ import fr.ele.feeds.betclick.dto.SportBcDto;
 import fr.ele.feeds.betclick.dto.SportsBcDto;
 import fr.ele.model.Bet;
 import fr.ele.model.RefEntityType;
-import fr.ele.model.impl.BetImpl;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
-import fr.ele.model.ref.impl.MatchImpl;
-import fr.ele.model.ref.impl.RefKeyImpl;
 import fr.ele.services.dao.BetDao;
 import fr.ele.services.dao.BetTypeDao;
 import fr.ele.services.dao.BookMakerDao;
@@ -71,7 +68,7 @@ public class BetclickSynchronizer {
             String matchCode = computeMatchCode(sport, eventBcDto, matchBcDto);
             Match match = matchDao.findByCode(matchCode);
             if (match == null) {
-                match = new MatchImpl();
+                match = new Match();
                 match.setCode(matchCode);
                 matchDao.create(match);
             }
@@ -94,13 +91,13 @@ public class BetclickSynchronizer {
 
     private void convert(Sport sport, Match match, BetType betType,
             Choice choice) {
-        RefKey refKey = new RefKeyImpl();
+        RefKey refKey = new RefKey();
         refKey.setBetType(betType);
         refKey.setMatch(match);
         // TODO : refresh refKey -> create RefKeyDao and findby sport match
         // bettype
 
-        Bet bet = new BetImpl();
+        Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
         bet.setBookMaker(bookMakerDao.findByCode("betclick"));

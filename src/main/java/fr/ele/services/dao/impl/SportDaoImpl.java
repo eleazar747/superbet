@@ -2,24 +2,23 @@ package fr.ele.services.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.mysema.query.jpa.hibernate.HibernateQuery;
+import com.mysema.query.jpa.impl.JPAQuery;
 
+import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
-import fr.ele.model.ref.impl.QSportImpl;
-import fr.ele.model.ref.impl.SportImpl;
 import fr.ele.services.dao.SportDao;
 
 @Repository
-public class SportDaoImpl extends GenericDaoImpl<Sport, QSportImpl> implements
+public class SportDaoImpl extends GenericDaoImpl<Sport, QSport> implements
         SportDao {
 
     public SportDaoImpl() {
-        super(SportImpl.class, QSportImpl.sportImpl);
+        super(Sport.class, QSport.sport);
     }
 
     @Override
     public Sport findByCode(String code) {
-        HibernateQuery query = new HibernateQuery(getCurrentSession());
+        JPAQuery query = new JPAQuery(getCurrentSession());
         return query.from(entityQuery).where(entityQuery.code.eq(code))
                 .uniqueResult(entityQuery);
     }

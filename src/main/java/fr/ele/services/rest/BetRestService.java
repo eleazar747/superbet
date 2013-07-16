@@ -10,7 +10,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.Bet;
-import fr.ele.model.SureBet;
 
 @Path("bets")
 public interface BetRestService {
@@ -28,8 +27,8 @@ public interface BetRestService {
     @Path("bests")
     List<Bet> getBestBets(@QueryParam("date") Date date);
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("sures")
-    List<SureBet> getSureBets(@QueryParam("date") Date date);
+    // @GET
+    // @Produces(MediaType.APPLICATION_JSON)
+    // @Path("sures")
+    // List<SureBet> getSureBets(@QueryParam("date") Date date);
 }

@@ -15,7 +15,6 @@ import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.model.ref.impl.BookMakerImpl;
 import fr.ele.services.dao.BookMakerDao;
 
 public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
@@ -35,7 +34,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void testFindByCode() {
-        BookMaker bookMaker = new BookMakerImpl();
+        BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
         bookMakerDao.create(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
@@ -47,7 +46,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void testCsv() {
-        BookMaker bookMaker = new BookMakerImpl();
+        BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
         bookMakerDao.create(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
@@ -80,10 +79,10 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         List<BookMaker> bookmarkers = bookMakerDao.findAll();
         Assert.assertNotNull(bookmarkers);
         Assert.assertEquals(4, bookmarkers.size());
-        BookMaker bookMaker = new BookMakerImpl();
+        BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
         bookMakerDao.create(bookMaker);
-        bookMaker = new BookMakerImpl();
+        bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER + "2");
         bookMakerDao.create(bookMaker);
         List<BookMaker> bookmarkersAfter = bookMakerDao.findAll();

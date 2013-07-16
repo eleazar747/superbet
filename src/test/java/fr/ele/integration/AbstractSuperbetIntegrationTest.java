@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import javax.persistence.EntityManagerFactory;
+
 import org.junit.Ignore;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -20,10 +20,10 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import fr.ele.core.ApplicationProfiles;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvUnmarshaller;
-import fr.ele.model.Entity;
-import fr.ele.model.ref.impl.BetTypeImpl;
-import fr.ele.model.ref.impl.BookMakerImpl;
-import fr.ele.model.ref.impl.SportImpl;
+import fr.ele.model.SuperBetEntity;
+import fr.ele.model.ref.BetType;
+import fr.ele.model.ref.BookMaker;
+import fr.ele.model.ref.Sport;
 import fr.ele.services.dao.GenericDao;
 import fr.ele.services.dao.SportDao;
 
@@ -37,26 +37,18 @@ public abstract class AbstractSuperbetIntegrationTest extends
 
     private static final Map<Class<?>, String> REFS = new HashMap<Class<?>, String>();
     static {
-        REFS.put(SportImpl.class, "SportsRef.csv");
-        REFS.put(BetTypeImpl.class, "BetTypesRef.csv");
-        REFS.put(BookMakerImpl.class, "BookMakersRef.csv");
+        REFS.put(Sport.class, "SportsRef.csv");
+        REFS.put(BetType.class, "BetTypesRef.csv");
+        REFS.put(BookMaker.class, "BookMakersRef.csv");
     }
 
     @Autowired
-    SessionFactory sessionFactory;
+    EntityManagerFactory entityManagerFactory;
 
     @Autowired
     SportDao sportDao;
 
     private Map<Class<?>, GenericDao> map;
-
-    protected void flush() {
-        sessionFactory.getCurrentSession().flush();
-    }
-
-    protected Session getCurrentSession() {
-        return sessionFactory.getCurrentSession();
-    }
 
     @Override
     public void setBeanFactory(BeanFactory factory) throws BeansException {
@@ -70,11 +62,11 @@ public abstract class AbstractSuperbetIntegrationTest extends
 
     protected void initializeDatas() {
         for (Class clazz : REFS.keySet()) {
-            CsvContext<? extends Entity> context = CsvContext.create(clazz);
+            CsvContext<? extends SuperBetEntity> context = CsvContext.create(clazz);
             context.setWithHeader(true);
-            CsvUnmarshaller<? extends Entity> unmarshaller = context
+            CsvUnmarshaller<? extends SuperBetEntity> unmarshaller = context
                     .newUnmarshaller();
-            Iterator<? extends Entity> iterator = unmarshaller
+            Iterator<? extends SuperBetEntity> iterator = unmarshaller
                     .unmarshall(AbstractSuperbetIntegrationTest.class
                             .getResourceAsStream(REFS.get(clazz)));
             while (iterator.hasNext()) {

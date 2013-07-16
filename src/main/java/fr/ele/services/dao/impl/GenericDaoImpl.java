@@ -2,19 +2,20 @@ package fr.ele.services.dao.impl;
 
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mysema.query.jpa.hibernate.HibernateQuery;
+import com.mysema.query.jpa.impl.JPAQuery;
 import com.mysema.query.types.path.EntityPathBase;
 
-import fr.ele.model.Entity;
+import fr.ele.model.SuperBetEntity;
 import fr.ele.services.dao.GenericDao;
 
 @Repository
-public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<? extends T>>
+public abstract class GenericDaoImpl<T extends SuperBetEntity, Q extends EntityPathBase<? extends T>>
         implements GenericDao<T, Q> {
 
     private final Class<? extends T> clazz;
@@ -22,7 +23,7 @@ public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<
     protected final Q entityQuery;
 
     @Autowired
-    SessionFactory sessionFactory;
+    EntityManagerFactory sessionFactory;
 
     public GenericDaoImpl(Class<? extends T> clazz, Q entityQuery) {
         this.clazz = clazz;
@@ -40,22 +41,21 @@ public abstract class GenericDaoImpl<T extends Entity, Q extends EntityPathBase<
     }
 
     public void delete(T entity) {
-        getCurrentSession().delete(entity);
+        getCurrentSession().remove(entity);
     }
 
-    @SuppressWarnings("unchecked")
     public T getById(Long id) {
-        return (T) getCurrentSession().get(clazz, id);
+        return getCurrentSession().find(clazz, id);
     }
 
     @SuppressWarnings("unchecked")
     public List<T> findAll() {
-        HibernateQuery query = new HibernateQuery(getCurrentSession());
-        return (List<T>) query.from(entityQuery).list(entityQuery);
+        JPAQuery query = new JPAQuery(getCurrentSession());
+        return (List<T>) query.from(entityQuery).list(entityQuery.getRoot());
     }
 
-    protected final Session getCurrentSession() {
-        return sessionFactory.getCurrentSession();
+    protected final EntityManager getCurrentSession() {
+        return sessionFactory.createEntityManager();
     }
 
     @Override

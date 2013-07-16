@@ -1,17 +1,41 @@
 package fr.ele.model.ref;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import fr.ele.model.Entity;
+import org.hibernate.annotations.Proxy;
 
-@MappedSuperclass
-public interface RefKey extends Entity {
+import fr.ele.model.SuperBetEntity;
+import fr.ele.model.SuperBetTables;
 
-    BetType getBetType();
+@Entity
+@Table(name = SuperBetTables.RefKeyTable.TABLE)
+@Proxy(proxyClass = RefKey.class)
+public class RefKey extends SuperBetEntity {
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BetType.class)
+    @JoinColumn(name = SuperBetTables.RefKeyTable.BETTYPE_ID_COLUMN, nullable = false)
+    private BetType betType;
 
-    Match getMatch();
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Match.class)
+    @JoinColumn(name = SuperBetTables.RefKeyTable.MATCH_ID_COLUMN, nullable = false)
+    private Match match;
 
-    void setBetType(BetType betType);
+    public BetType getBetType() {
+        return betType;
+    }
 
-    void setMatch(Match match);
+    public void setBetType(BetType betType) {
+        this.betType = betType;
+    }
+
+    public Match getMatch() {
+        return match;
+    }
+
+    public void setMatch(Match match) {
+        this.match = match;
+    }
 }
