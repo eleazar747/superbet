@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mysema.query.types.path.EntityPathBase;
 
 import fr.ele.model.HasCodeEntity;
-import fr.ele.queries.Queries;
+import fr.ele.services.repositories.HasCodeRepository;
 import fr.ele.services.repositories.SuperBetRepository;
 import fr.ele.services.rest.RefRestService;
 
@@ -33,7 +33,7 @@ public abstract class AbstractRefRestServiceImpl<T extends HasCodeEntity>
     @Override
     @Transactional(readOnly = true)
     public T findByCode(String code) {
-        return getRepository().findOne(Queries.findByCode(entityPath(), code));
+        return ((HasCodeRepository<T>) getRepository()).findByCode(code);
     }
 
     protected abstract SuperBetRepository<T> getRepository();

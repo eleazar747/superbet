@@ -18,4 +18,7 @@ public interface DataMappingRepository extends SuperBetRepository<DataMapping> {
                     dataMapping.bookMakerCode.eq(bookMakerCode));
         }
     }
+
+    DataMapping findModelCodeByRefEntityTypeAndBookMakerCode(
+            RefEntityType refEntityType, String bookMakerCode);
 }

@@ -15,8 +15,6 @@ import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.model.ref.QBookMaker;
-import fr.ele.queries.Queries;
 import fr.ele.services.repositories.BookMakerRepository;
 
 public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
@@ -41,8 +39,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         bookMakerRepository.save(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
         Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
-        BookMaker byCode = bookMakerRepository.findOne(Queries.findByCode(
-                QBookMaker.bookMaker, BOOKMAKER));
+        BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
     }
@@ -54,8 +51,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         bookMakerRepository.save(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
         Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
-        BookMaker byCode = bookMakerRepository.findOne(Queries.findByCode(
-                QBookMaker.bookMaker, BOOKMAKER));
+        BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
         CsvContext<BookMaker> context = CsvContext.create(BookMaker.class);

@@ -14,13 +14,8 @@ import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
-import fr.ele.model.ref.QBetType;
-import fr.ele.model.ref.QBookMaker;
-import fr.ele.model.ref.QMatch;
-import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
-import fr.ele.queries.Queries;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
@@ -64,8 +59,7 @@ public class BetclickSynchronizer {
         if (sportMapping == null) {
             return;
         }
-        Sport sport = sportRepository.findOne(Queries.findByCode(QSport.sport,
-                sportMapping.getModelCode()));
+        Sport sport = sportRepository.findByCode(sportMapping.getModelCode());
         for (EventBcDto eventBcDto : sportBcDto.getEvent()) {
             convert(sport, eventBcDto);
         }
@@ -74,10 +68,12 @@ public class BetclickSynchronizer {
     private void convert(Sport sport, EventBcDto eventBcDto) {
         for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
             String matchCode = computeMatchCode(sport, eventBcDto, matchBcDto);
-            Match match = matchRepository.findOne(Queries.findByCode(
-                    QMatch.match, matchCode));
+            Match match = matchRepository.findByCode(matchCode);
             if (match == null) {
                 match = new Match();
+                match.setSport(sport);
+                match.setDate(matchBcDto.getStartDate().toGregorianCalendar()
+                        .getTime());
                 match.setCode(matchCode);
                 matchRepository.save(match);
             }
@@ -109,8 +105,7 @@ public class BetclickSynchronizer {
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
-        bet.setBookMaker(bookMakerRepository.findOne(Queries.findByCode(
-                QBookMaker.bookMaker, "betclick")));
+        bet.setBookMaker(bookMakerRepository.findByCode("betclick"));
         betRepository.save(bet);
     }
 
@@ -121,12 +116,15 @@ public class BetclickSynchronizer {
         if (modelMapping == null) {
             return null;
         }
-        return betTypeRepository.findOne(Queries.findByCode(QBetType.betType,
-                modelMapping.getModelCode()));
+        return betTypeRepository.findByCode(modelMapping.getModelCode());
     }
 
     private String computeMatchCode(Sport sport, EventBcDto eventBcDto,
             MatchBcDto matchBcDto) {
-        return null;
+        StringBuilder sb = new StringBuilder(sport.getCode());
+        sb.append(eventBcDto.getName().replaceAll(" ", ""));
+        sb.append('_');
+        sb.append(matchBcDto.getName().replaceAll(" ", ""));
+        return sb.toString();
     }
 }
