@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.model.ref.Match;
-import fr.ele.services.dao.GenericDao;
-import fr.ele.services.dao.MatchDao;
+import fr.ele.model.ref.QMatch;
+import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.rest.MatchRestService;
 
 @Transactional
@@ -15,17 +15,16 @@ public class MatchRestServiceImpl extends AbstractRefRestServiceImpl<Match>
         implements MatchRestService {
 
     @Autowired
-    private MatchDao matchDao;
+    private MatchRepository matchRepository;
 
     @Override
-    @Transactional(readOnly = true)
-    public Match findByCode(String code) {
-        return matchDao.findByCode(code);
+    protected MatchRepository getRepository() {
+        return matchRepository;
     }
 
     @Override
-    protected GenericDao getDao() {
-        return matchDao;
+    protected QMatch entityPath() {
+        return QMatch.match;
     }
 
 }

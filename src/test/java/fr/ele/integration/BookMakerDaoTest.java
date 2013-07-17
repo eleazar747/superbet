@@ -15,7 +15,7 @@ import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.dao.BookMakerDao;
+import fr.ele.services.repositories.BookMakerRepository;
 
 public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
@@ -24,7 +24,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
     private static final String BOOKMAKER = "BETCLICK";
 
     @Autowired
-    private BookMakerDao bookMakerDao;
+    private BookMakerRepository bookMakerRepository;
 
     @Override
     @Before
@@ -36,10 +36,10 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
     public void testFindByCode() {
         BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
-        bookMakerDao.create(bookMaker);
+        bookMakerRepository.save(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
         Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
-        BookMaker byCode = bookMakerDao.findByCode(BOOKMAKER);
+        BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
     }
@@ -48,10 +48,10 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
     public void testCsv() {
         BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
-        bookMakerDao.create(bookMaker);
+        bookMakerRepository.save(bookMaker);
         Assert.assertTrue(bookMaker.getId() > 0);
         Assert.assertEquals(BOOKMAKER, bookMaker.getCode());
-        BookMaker byCode = bookMakerDao.findByCode(BOOKMAKER);
+        BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
         CsvContext<BookMaker> context = CsvContext.create(BookMaker.class);
@@ -76,16 +76,16 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void testFindAll() {
-        List<BookMaker> bookmarkers = bookMakerDao.findAll();
+        List<BookMaker> bookmarkers = bookMakerRepository.findAll();
         Assert.assertNotNull(bookmarkers);
         Assert.assertEquals(4, bookmarkers.size());
         BookMaker bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER);
-        bookMakerDao.create(bookMaker);
+        bookMakerRepository.save(bookMaker);
         bookMaker = new BookMaker();
         bookMaker.setCode(BOOKMAKER + "2");
-        bookMakerDao.create(bookMaker);
-        List<BookMaker> bookmarkersAfter = bookMakerDao.findAll();
+        bookMakerRepository.save(bookMaker);
+        List<BookMaker> bookmarkersAfter = bookMakerRepository.findAll();
         Assert.assertNotNull(bookmarkersAfter);
         Assert.assertEquals(bookmarkers.size() + 2, bookmarkersAfter.size());
     }

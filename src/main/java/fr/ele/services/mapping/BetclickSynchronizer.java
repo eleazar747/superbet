@@ -10,38 +10,39 @@ import fr.ele.feeds.betclick.dto.MatchBcDto;
 import fr.ele.feeds.betclick.dto.SportBcDto;
 import fr.ele.feeds.betclick.dto.SportsBcDto;
 import fr.ele.model.Bet;
+import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.dao.BetDao;
-import fr.ele.services.dao.BetTypeDao;
-import fr.ele.services.dao.BookMakerDao;
-import fr.ele.services.dao.DataMappingDao;
-import fr.ele.services.dao.MatchDao;
-import fr.ele.services.dao.SportDao;
+import fr.ele.services.repositories.BetRepository;
+import fr.ele.services.repositories.BetTypeRepository;
+import fr.ele.services.repositories.BookMakerRepository;
+import fr.ele.services.repositories.DataMappingRepository;
+import fr.ele.services.repositories.MatchRepository;
+import fr.ele.services.repositories.SportRepository;
 
 @Service
 public class BetclickSynchronizer {
 
     @Autowired
-    private DataMappingDao dataMappingDao;
+    private DataMappingRepository dataMappingRepository;
 
     @Autowired
-    private SportDao sportDao;
+    private SportRepository sportRepository;
 
     @Autowired
-    private MatchDao matchDao;
+    private MatchRepository matchRepository;
 
     @Autowired
-    private BetTypeDao betTypeDao;
+    private BetTypeRepository betTypeRepository;
 
     @Autowired
-    private BookMakerDao bookMakerDao;
+    private BookMakerRepository bookMakerRepository;
 
     @Autowired
-    private BetDao betDao;
+    private BetRepository betRepository;
 
     void convert(SportsBcDto sportsBcDto) {
         for (SportBcDto sportBcDto : sportsBcDto.getSport()) {
@@ -52,12 +53,13 @@ public class BetclickSynchronizer {
 
     private void convert(SportBcDto sportBcDto) {
         String sportBetclickCode = sportBcDto.getName();
-        String sportCode = dataMappingDao.getModelCode(RefEntityType.SPORT,
-                sportBetclickCode);
-        if (sportCode == null) {
+        DataMapping sportMapping = dataMappingRepository
+                .findOne(DataMappingRepository.Queries.findModelByBookMaker(
+                        RefEntityType.SPORT, sportBetclickCode));
+        if (sportMapping == null) {
             return;
         }
-        Sport sport = sportDao.findByCode(sportCode);
+        Sport sport = sportRepository.findByCode(sportMapping.getModelCode());
         for (EventBcDto eventBcDto : sportBcDto.getEvent()) {
             convert(sport, eventBcDto);
         }
@@ -66,11 +68,14 @@ public class BetclickSynchronizer {
     private void convert(Sport sport, EventBcDto eventBcDto) {
         for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
             String matchCode = computeMatchCode(sport, eventBcDto, matchBcDto);
-            Match match = matchDao.findByCode(matchCode);
+            Match match = matchRepository.findByCode(matchCode);
             if (match == null) {
                 match = new Match();
+                match.setSport(sport);
+                match.setDate(matchBcDto.getStartDate().toGregorianCalendar()
+                        .getTime());
                 match.setCode(matchCode);
-                matchDao.create(match);
+                matchRepository.save(match);
             }
             for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
                 convert(sport, match, betsBcDto);
@@ -100,21 +105,26 @@ public class BetclickSynchronizer {
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
-        bet.setBookMaker(bookMakerDao.findByCode("betclick"));
-        betDao.create(bet);
+        bet.setBookMaker(bookMakerRepository.findByCode("betclick"));
+        betRepository.save(bet);
     }
 
     private BetType findBetType(String betclickBetType) {
-        String modelCode = dataMappingDao.getModelCode(RefEntityType.BET_TYPE,
-                betclickBetType);
-        if (modelCode == null) {
+        DataMapping modelMapping = dataMappingRepository
+                .findOne(DataMappingRepository.Queries.findModelByBookMaker(
+                        RefEntityType.SPORT, betclickBetType));
+        if (modelMapping == null) {
             return null;
         }
-        return betTypeDao.findByCode(modelCode);
+        return betTypeRepository.findByCode(modelMapping.getModelCode());
     }
 
     private String computeMatchCode(Sport sport, EventBcDto eventBcDto,
             MatchBcDto matchBcDto) {
-        return null;
+        StringBuilder sb = new StringBuilder(sport.getCode());
+        sb.append(eventBcDto.getName().replaceAll(" ", ""));
+        sb.append('_');
+        sb.append(matchBcDto.getName().replaceAll(" ", ""));
+        return sb.toString();
     }
 }

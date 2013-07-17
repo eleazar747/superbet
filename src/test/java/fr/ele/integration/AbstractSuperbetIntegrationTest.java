@@ -18,18 +18,18 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import fr.ele.core.ApplicationProfiles;
+import fr.ele.core.jpa.HandledClass;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.dao.GenericDao;
-import fr.ele.services.dao.SportDao;
+import fr.ele.services.repositories.SuperBetRepository;
 
 @Ignore
 @ContextConfiguration(locations = "/ApplicationContext.xml")
-@TransactionConfiguration(transactionManager = "txManager", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @ActiveProfiles(ApplicationProfiles.TEST)
 public abstract class AbstractSuperbetIntegrationTest extends
         AbstractTransactionalJUnit4SpringContextTests implements
@@ -45,32 +45,38 @@ public abstract class AbstractSuperbetIntegrationTest extends
     @Autowired
     EntityManagerFactory entityManagerFactory;
 
-    @Autowired
-    SportDao sportDao;
-
-    private Map<Class<?>, GenericDao> map;
+    private Map<Class<?>, SuperBetRepository> map;
 
     @Override
     public void setBeanFactory(BeanFactory factory) throws BeansException {
         ListableBeanFactory lf = (ListableBeanFactory) factory;
-        Map<String, GenericDao> beans = lf.getBeansOfType(GenericDao.class);
-        map = new HashMap<Class<?>, GenericDao>(beans.size());
-        for (GenericDao bean : beans.values()) {
-            map.put(bean.handledClass(), bean);
+        Map<String, SuperBetRepository> beans = lf
+                .getBeansOfType(SuperBetRepository.class);
+        map = new HashMap<Class<?>, SuperBetRepository>(beans.size());
+        for (SuperBetRepository bean : beans.values()) {
+            Class<?>[] interfaces = bean.getClass().getInterfaces();
+            for (Class<?> interfaze : interfaces) {
+                HandledClass handledClass = interfaze
+                        .getAnnotation(HandledClass.class);
+                if (handledClass != null) {
+                    map.put(handledClass.value(), bean);
+                }
+            }
         }
     }
 
     protected void initializeDatas() {
         for (Class clazz : REFS.keySet()) {
-            CsvContext<? extends SuperBetEntity> context = CsvContext.create(clazz);
+            CsvContext<? extends SuperBetEntity> context = CsvContext
+                    .create(clazz);
             context.setWithHeader(true);
             CsvUnmarshaller<? extends SuperBetEntity> unmarshaller = context
                     .newUnmarshaller();
-            Iterator<? extends SuperBetEntity> iterator = unmarshaller
+            Iterator iterator = unmarshaller
                     .unmarshall(AbstractSuperbetIntegrationTest.class
                             .getResourceAsStream(REFS.get(clazz)));
             while (iterator.hasNext()) {
-                map.get(clazz).create(iterator.next());
+                map.get(clazz).save(iterator.next());
             }
         }
     }

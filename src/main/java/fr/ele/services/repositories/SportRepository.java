@@ -1,11 +1,10 @@
 package fr.ele.services.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
-
+import fr.ele.core.jpa.HandledClass;
 import fr.ele.model.ref.Sport;
 
-public interface SportRepository extends JpaRepository<Sport, Long>,
-        QueryDslPredicateExecutor<Sport> {
+@HandledClass(Sport.class)
+public interface SportRepository extends SuperBetRepository<Sport>,
+        HasCodeRepository<Sport> {
 
 }
