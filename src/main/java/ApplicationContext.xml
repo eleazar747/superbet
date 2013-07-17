@@ -62,8 +62,7 @@
 
 	<beans profile="prod">
 		<context:property-placeholder location="classpath:superbet.properties" />
-		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-			destroy-method="close">
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="${superbet.db.driverClassName}" />
 			<property name="url" value="${superbet.db.url}" />
 			<property name="username" value="${superbet.db.username}" />
