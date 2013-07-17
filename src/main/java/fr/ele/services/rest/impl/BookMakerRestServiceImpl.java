@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.dao.BookMakerDao;
-import fr.ele.services.dao.GenericDao;
+import fr.ele.model.ref.QBookMaker;
+import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.rest.BookMakerRestService;
 
 @Transactional
@@ -15,17 +15,16 @@ public class BookMakerRestServiceImpl extends
         AbstractRefRestServiceImpl<BookMaker> implements BookMakerRestService {
 
     @Autowired
-    private BookMakerDao bookMakerDao;
+    private BookMakerRepository bookMakerRepository;
 
-    @Transactional(readOnly = true)
-    public BookMaker findByCode(String code) {
-        LOGGER.debug("findByCode(code={})", code);
-        return bookMakerDao.findByCode(code);
+    @Override
+    protected BookMakerRepository getRepository() {
+        return bookMakerRepository;
     }
 
     @Override
-    protected GenericDao getDao() {
-        return bookMakerDao;
+    protected QBookMaker entityPath() {
+        return QBookMaker.bookMaker;
     }
 
 }

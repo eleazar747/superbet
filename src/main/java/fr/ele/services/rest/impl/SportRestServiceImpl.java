@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.dao.GenericDao;
-import fr.ele.services.dao.SportDao;
+import fr.ele.services.repositories.SportRepository;
 import fr.ele.services.rest.SportRestService;
 
 @Transactional
@@ -15,17 +15,16 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
         implements SportRestService {
 
     @Autowired
-    private SportDao sportDao;
+    private SportRepository sportRepository;
 
     @Override
-    @Transactional(readOnly = true)
-    public Sport findByCode(String code) {
-        return sportDao.findByCode(code);
+    protected SportRepository getRepository() {
+        return sportRepository;
     }
 
     @Override
-    protected GenericDao getDao() {
-        return sportDao;
+    protected QSport entityPath() {
+        return QSport.sport;
     }
 
 }
