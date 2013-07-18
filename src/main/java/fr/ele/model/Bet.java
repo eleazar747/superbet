@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import fr.ele.model.Bet;
-import fr.ele.model.SuperBetTables;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
 
@@ -31,6 +29,9 @@ public class Bet extends SuperBetEntity {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RefKey.class)
     @JoinColumn(name = SuperBetTables.BetTable.REFKEY_ID_COLUMN, nullable = false)
     private RefKey refKey;
+
+    @Column(name = SuperBetTables.CODE_COLUMN, nullable = false)
+    private String code;
 
     public RefKey getRefKey() {
         return refKey;
@@ -62,6 +63,14 @@ public class Bet extends SuperBetEntity {
 
     public void setBookMaker(BookMaker bookMaker) {
         this.bookMaker = bookMaker;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
 }

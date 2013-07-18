@@ -5,26 +5,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.model.ref.Match;
-import fr.ele.model.ref.QMatch;
 import fr.ele.services.repositories.MatchRepository;
+import fr.ele.services.repositories.SuperBetRepository;
 import fr.ele.services.rest.MatchRestService;
 
 @Transactional
 @Service(MatchRestService.SERVER)
-public class MatchRestServiceImpl extends AbstractRefRestServiceImpl<Match>
+public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
         implements MatchRestService {
+
+    @Override
+    @Transactional(readOnly = true)
+    public Match findByCode(String code) {
+        return matchRepository.findByCode(code);
+    }
 
     @Autowired
     private MatchRepository matchRepository;
 
     @Override
-    protected MatchRepository getRepository() {
+    protected SuperBetRepository<Match> getRepository() {
         return matchRepository;
-    }
-
-    @Override
-    protected QMatch entityPath() {
-        return QMatch.match;
     }
 
 }

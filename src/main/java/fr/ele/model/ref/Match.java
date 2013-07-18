@@ -8,16 +8,18 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Proxy;
 
-import fr.ele.model.HasCodeEntity;
+import fr.ele.model.SuperBetEntity;
 import fr.ele.model.SuperBetTables;
 
 @Entity
-@Table(name = SuperBetTables.MatchTable.TABLE)
+@Table(name = SuperBetTables.MatchTable.TABLE, uniqueConstraints = @UniqueConstraint(columnNames = {
+        "sport", "date", "code"}))
 @Proxy(proxyClass = Match.class)
-public class Match extends HasCodeEntity {
+public class Match extends SuperBetEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sport.class)
     @JoinColumn(name = SuperBetTables.MatchTable.SPORT_COLUMN, nullable = false)
@@ -25,6 +27,17 @@ public class Match extends HasCodeEntity {
 
     @Column(name = SuperBetTables.MatchTable.DATE_COLUMN, nullable = false)
     private Date date;
+
+    @Column(name = SuperBetTables.CODE_COLUMN, nullable = false)
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public Sport getSport() {
         return sport;
