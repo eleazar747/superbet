@@ -13,6 +13,7 @@ import fr.ele.model.Bet;
 
 @Path("bets")
 public interface BetRestService {
+    public static final String SERVER = "BetRestService";
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
