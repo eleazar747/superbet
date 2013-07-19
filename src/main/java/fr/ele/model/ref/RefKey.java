@@ -14,7 +14,8 @@ import fr.ele.model.SuperBetTables;
 
 @Entity
 @Table(name = SuperBetTables.RefKeyTable.TABLE, uniqueConstraints = @UniqueConstraint(columnNames = {
-        "betType", "match"}))
+        SuperBetTables.RefKeyTable.BETTYPE_ID_COLUMN,
+        SuperBetTables.RefKeyTable.MATCH_ID_COLUMN}))
 @Proxy(proxyClass = RefKey.class)
 public class RefKey extends SuperBetEntity {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BetType.class)

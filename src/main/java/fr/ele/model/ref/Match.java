@@ -17,7 +17,8 @@ import fr.ele.model.SuperBetTables;
 
 @Entity
 @Table(name = SuperBetTables.MatchTable.TABLE, uniqueConstraints = @UniqueConstraint(columnNames = {
-        "sport", "date", "code"}))
+        SuperBetTables.MatchTable.SPORT_COLUMN,
+        SuperBetTables.MatchTable.DATE_COLUMN, SuperBetTables.CODE_COLUMN}))
 @Proxy(proxyClass = Match.class)
 public class Match extends SuperBetEntity {
 
