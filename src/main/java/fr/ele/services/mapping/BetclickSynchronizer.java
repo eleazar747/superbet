@@ -21,6 +21,7 @@ import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.MatchRepository;
+import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
 @Service
@@ -43,6 +44,9 @@ public class BetclickSynchronizer {
 
     @Autowired
     private BetRepository betRepository;
+
+    @Autowired
+    private RefKeyRepository refKeyRepository;
 
     void convert(SportsBcDto sportsBcDto) {
         for (SportBcDto sportBcDto : sportsBcDto.getSport()) {
@@ -96,11 +100,14 @@ public class BetclickSynchronizer {
 
     private void convert(Sport sport, Match match, BetType betType,
             Choice choice) {
-        RefKey refKey = new RefKey();
-        refKey.setBetType(betType);
-        refKey.setMatch(match);
-        // TODO : refresh refKey -> create RefKeyDao and findby sport match
-        // bettype
+        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
+                .findRefKey(betType, match));
+        if (refKey == null) {
+            refKey = new RefKey();
+            refKey.setBetType(betType);
+            refKey.setMatch(match);
+            refKeyRepository.save(refKey);
+        }
 
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
