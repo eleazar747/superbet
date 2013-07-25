@@ -8,9 +8,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import fr.ele.ui.Template;
+
 public interface BaseRestService<T> {
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
+    @Template("index")
     public List<T> findAll();
 
     @GET

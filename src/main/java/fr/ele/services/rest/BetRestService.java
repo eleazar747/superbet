@@ -10,6 +10,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.Bet;
+import fr.ele.ui.Template;
 
 @Path("bets")
 public interface BetRestService {
@@ -17,6 +18,7 @@ public interface BetRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Template("bets")
     List<Bet> getBets();
 
     @GET
@@ -25,7 +27,7 @@ public interface BetRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("bests")
+    @Path("best")
     List<Bet> getBestBets(@QueryParam("date") Date date);
 
     // @GET

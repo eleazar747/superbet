@@ -1,0 +1,26 @@
+ {{>header}}         
+          <table class="table table-condensed table-hover table-striped">
+				<thead>
+					<tr>
+						<th>
+							Id
+						</th>
+						<th>
+							Code
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#bookmakers}}
+					<tr>
+						<td>
+							{{id}}
+						</td>
+						<td>
+							{{code}}
+						</td>
+					</tr>
+				{{/bookmakers}}
+				</tbody>
+			</table>
+{{>footer}}

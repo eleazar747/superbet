@@ -46,9 +46,16 @@
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean='jacksonProvider' />
+			<ref bean='mvWrapper' />
+			<ref bean='htmlProvider' />
 		</jaxrs:providers>
 	</jaxrs:server>
 	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
+	<bean id='mvWrapper' class='fr.ele.ui.EntityToModelAndViewWrapper' />
+	<bean id='htmlProvider' class='fr.ele.ui.ModelToViewProvider'>
+		<property name="templateEngine" ref="mustacheEngine" />
+	</bean>
+	<bean id='mustacheEngine' class='fr.ele.ui.MustacheTemplateEngine' />
 
 	<jpa:repositories base-package="fr.ele.services.repositories" />
 
