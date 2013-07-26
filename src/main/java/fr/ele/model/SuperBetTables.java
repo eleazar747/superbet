@@ -57,6 +57,8 @@ public class SuperBetTables {
 
         public static final String BOOKMAKER_CODE = "BOOKMAKER_CODE";
 
+        public static final String BOOKMAKER_ID = "BOOKMAKER_ID";
+
         public static final String REF_ENTITY_TYPE = "REF_ENTITY_TYPE";
     }
 }

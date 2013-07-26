@@ -4,7 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import fr.ele.model.ref.BookMaker;
 
 @Entity
 @Table(name = SuperBetTables.DataMapping.TABLE)
@@ -19,6 +24,10 @@ public class DataMapping extends SuperBetEntity {
     @Column(name = SuperBetTables.DataMapping.REF_ENTITY_TYPE, nullable = false)
     @Enumerated(EnumType.STRING)
     private RefEntityType refEntityType;
+
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMaker.class)
+    @JoinColumn(name = SuperBetTables.DataMapping.BOOKMAKER_ID, nullable = false)
+    private BookMaker bookMaker;
 
     public String getModelCode() {
         return modelCode;
@@ -42,6 +51,14 @@ public class DataMapping extends SuperBetEntity {
 
     public void setRefEntityType(RefEntityType refEntityType) {
         this.refEntityType = refEntityType;
+    }
+
+    public BookMaker getBookMaker() {
+        return bookMaker;
+    }
+
+    public void setBookMaker(BookMaker bookMaker) {
+        this.bookMaker = bookMaker;
     }
 
 }

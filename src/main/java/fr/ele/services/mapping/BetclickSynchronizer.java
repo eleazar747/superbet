@@ -13,6 +13,7 @@ import fr.ele.model.Bet;
 import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BetType;
+import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
@@ -57,9 +58,10 @@ public class BetclickSynchronizer {
 
     private void convert(SportBcDto sportBcDto) {
         String sportBetclickCode = sportBcDto.getName();
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
         DataMapping sportMapping = dataMappingRepository
                 .findOne(DataMappingRepository.Queries.findModelByBookMaker(
-                        RefEntityType.SPORT, sportBetclickCode));
+                        RefEntityType.SPORT, bookMaker, sportBetclickCode));
         if (sportMapping == null) {
             return;
         }
@@ -112,14 +114,16 @@ public class BetclickSynchronizer {
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
-        bet.setBookMaker(bookMakerRepository.findByCode("betclick"));
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
+        bet.setBookMaker(bookMaker);
         betRepository.save(bet);
     }
 
     private BetType findBetType(String betclickBetType) {
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
         DataMapping modelMapping = dataMappingRepository
                 .findOne(DataMappingRepository.Queries.findModelByBookMaker(
-                        RefEntityType.SPORT, betclickBetType));
+                        RefEntityType.SPORT, bookMaker, betclickBetType));
         if (modelMapping == null) {
             return null;
         }
