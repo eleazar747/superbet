@@ -7,33 +7,94 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.io.Writer;
+import java.util.HashMap;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
-import com.github.mustachejava.MustacheFactory;
-import com.google.common.base.Charsets;
+
+import fr.ele.ui.model.MetaRegistry;
 
 public class MustacheTemplateEngine implements TemplateEngine {
+
+    private class SuperBetMustacheFactory extends DefaultMustacheFactory {
+        @Override
+        public Reader getReader(String template) {
+            LOGGER.info(template);
+            if (template.contains(":")) {
+                String[] split = template.split(":");
+                String template2 = split[split.length - 1];
+                LOGGER.info("Compile {}", template);
+                Mustache meta = metaFactory
+                        .compile(metaFactory.getReader(template2), template2,
+                                "[[", "]]");
+                StringWriter sw = new StringWriter();
+                LOGGER.info("Execute {}", template);
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("model", metaRegistry.getMetaMapping(split[0]));
+                map.put("test", "hello world!!");
+                meta.execute(sw, map);
+                LOGGER.info(sw.toString());
+                return new StringReader(sw.toString());
+            }
+            String path = "/mustache/" + template + ".mustache";
+            LOGGER.info("load mustache template : {} at {}", template, path);
+            InputStream is = MustacheTemplateEngine.class
+                    .getResourceAsStream(path);
+            String string = getStringFromInputStream(is);
+            LOGGER.info(string);
+            return new StringReader(string);
+            // return new BufferedReader(new InputStreamReader(is,
+            // Charsets.UTF_8));
+        }
+    }
+
+    private static String getStringFromInputStream(InputStream is) {
+
+        BufferedReader br = null;
+        StringBuilder sb = new StringBuilder();
+
+        String line;
+        try {
+
+            br = new BufferedReader(new InputStreamReader(is));
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return sb.toString();
+
+    }
 
     private final static Logger LOGGER = LoggerFactory
             .getLogger(MustacheTemplateEngine.class);
 
-    private final MustacheFactory factory = new DefaultMustacheFactory() {
+    @Inject
+    private MetaRegistry metaRegistry;
 
-        @Override
-        public Reader getReader(String template) {
-            String path = "/mustache/" + template;
-            LOGGER.info("load mustache template : {} at {}", template, path);
-            InputStream is = MustacheTemplateEngine.class
-                    .getResourceAsStream(path);
-            return new BufferedReader(new InputStreamReader(is, Charsets.UTF_8));
-        }
-    };
+    private final SuperBetMustacheFactory metaFactory = new SuperBetMustacheFactory();
+
+    private final SuperBetMustacheFactory factory = new SuperBetMustacheFactory();
 
     @Override
     public void execute(OutputStream outputStream, String view,

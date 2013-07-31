@@ -1,0 +1,24 @@
+{{>header}}         
+          <table class="table table-condensed table-hover table-striped">
+				<thead>
+					<tr>
+						[[#model.metaProperties]]
+						<th>
+							[[propertyName]]
+						</th>
+						[[/model.metaProperties]]
+					</tr>
+				</thead>
+				<tbody>
+				{{#entities}}
+					<tr>
+						[[#model.metaProperties]]
+						<td>
+							{{[[property]]}}
+						</td>
+						[[/model.metaProperties]]
+					</tr>
+				{{/entities}}
+				</tbody>
+			</table>
+{{>footer}}

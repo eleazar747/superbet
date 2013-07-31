@@ -1,5 +1,7 @@
 package fr.ele.services.rest.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +28,11 @@ public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
     @Override
     protected SuperBetRepository<Match> getRepository() {
         return matchRepository;
+    }
+
+    @Override
+    public List<Match> findAll() {
+        return super.findAll();
     }
 
 }

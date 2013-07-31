@@ -18,13 +18,17 @@ public class EntityToModelAndViewWrapper implements ContainerResponseFilter {
         for (Annotation a : responseContext.getEntityAnnotations()) {
             if (a.annotationType() == Template.class) {
                 String templatePath = ((Template) a).value();
-                ModelAndView mav = new ModelAndView(
-                        responseContext.getEntity(), templatePath);
-                responseContext.setEntity(mav,
-                        responseContext.getEntityAnnotations(),
-                        responseContext.getMediaType());
+                map(responseContext, templatePath);
                 break;
             }
         }
+    }
+
+    protected void map(ContainerResponseContext responseContext,
+            String templatePath) {
+        ModelAndView mav = new ModelAndView(responseContext.getEntity(),
+                templatePath);
+        responseContext.setEntity(mav, responseContext.getEntityAnnotations(),
+                responseContext.getMediaType());
     }
 }

@@ -10,9 +10,11 @@
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
           http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
-          http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd
-">
-
+          http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd">
+<!-- 	<import resource="classpath:META-INF/cxf/cxf.xml" /> -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf-extension-http.xml" /> -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf-extension-http-jetty.xml" /> -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -36,6 +38,7 @@
 
 	<context:annotation-config />
 	<context:component-scan base-package="fr.ele.services" />
+	<context:component-scan base-package="fr.ele.ui.model.superbet" />
 
 
 	<jaxrs:server address="${superbet.server.url}">
@@ -47,11 +50,13 @@
 		<jaxrs:providers>
 			<ref bean='jacksonProvider' />
 			<ref bean='mvWrapper' />
+			<ref bean='metamvWrapper' />
 			<ref bean='htmlProvider' />
 		</jaxrs:providers>
 	</jaxrs:server>
 	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
 	<bean id='mvWrapper' class='fr.ele.ui.EntityToModelAndViewWrapper' />
+	<bean id='metamvWrapper' class='fr.ele.ui.MetaEntityToModelAndViewWrapper' />
 	<bean id='htmlProvider' class='fr.ele.ui.ModelToViewProvider'>
 		<property name="templateEngine" ref="mustacheEngine" />
 	</bean>

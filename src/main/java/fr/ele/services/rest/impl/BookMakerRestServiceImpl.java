@@ -1,5 +1,7 @@
 package fr.ele.services.rest.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,11 @@ public class BookMakerRestServiceImpl extends
     @Override
     protected BookMakerRepository getRepository() {
         return bookMakerRepository;
+    }
+
+    @Override
+    public List<BookMaker> findAll() {
+        return super.findAll();
     }
 
     @Override

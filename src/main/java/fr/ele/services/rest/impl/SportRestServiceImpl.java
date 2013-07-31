@@ -1,5 +1,7 @@
 package fr.ele.services.rest.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,11 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     @Override
     protected QSport entityPath() {
         return QSport.sport;
+    }
+
+    @Override
+    public List<Sport> findAll() {
+        return super.findAll();
     }
 
 }

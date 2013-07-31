@@ -8,10 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.model.SuperBetEntity;
 import fr.ele.services.repositories.SuperBetRepository;
-import fr.ele.services.rest.BaseRestService;
 
-public abstract class AbstractBaseRestService<T extends SuperBetEntity>
-        implements BaseRestService<T> {
+public abstract class AbstractBaseRestService<T extends SuperBetEntity> {
 
     protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
