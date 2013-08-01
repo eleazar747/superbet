@@ -18,7 +18,7 @@ public interface MatchRestService {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = Match.class)
+    @MetaTemplate(template = "refview", entityClass = Match.class)
     public List<Match> findAll();
 
     @GET
@@ -30,6 +30,6 @@ public interface MatchRestService {
     @GET
     @Path("search")
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = Match.class)
+    @MetaTemplate(template = "refview", entityClass = Match.class)
     Match findByCode(@QueryParam("code") String code);
 }

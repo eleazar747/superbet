@@ -18,7 +18,7 @@ public interface BookMakerRestService {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = BookMaker.class)
+    @MetaTemplate(template = "refview", entityClass = BookMaker.class)
     List<BookMaker> findAll();
 
     @GET
@@ -30,7 +30,7 @@ public interface BookMakerRestService {
     @GET
     @Path("search")
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = BookMaker.class)
+    @MetaTemplate(template = "refview", entityClass = BookMaker.class)
     BookMaker findByCode(@QueryParam("code") String code);
 
 }

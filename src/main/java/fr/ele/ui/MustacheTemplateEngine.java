@@ -20,6 +20,9 @@ import org.slf4j.LoggerFactory;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 
 import fr.ele.ui.model.MetaRegistry;
 
@@ -32,28 +35,65 @@ public class MustacheTemplateEngine implements TemplateEngine {
             if (template.contains(":")) {
                 String[] split = template.split(":");
                 String template2 = split[split.length - 1];
-                LOGGER.info("Compile {}", template);
+                LOGGER.debug("Compile {}", template);
                 Mustache meta = metaFactory
                         .compile(metaFactory.getReader(template2), template2,
                                 "[[", "]]");
                 StringWriter sw = new StringWriter();
-                LOGGER.info("Execute {}", template);
+                LOGGER.debug("Execute {}", template);
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("model", metaRegistry.getMetaMapping(split[0]));
-                map.put("test", "hello world!!");
                 meta.execute(sw, map);
-                LOGGER.info(sw.toString());
+                if (LOGGER.isDebugEnabled()) {
+                    LOGGER.debug(sw.toString());
+                }
                 return new StringReader(sw.toString());
             }
             String path = "/mustache/" + template + ".mustache";
             LOGGER.info("load mustache template : {} at {}", template, path);
             InputStream is = MustacheTemplateEngine.class
                     .getResourceAsStream(path);
+            if (LOGGER.isDebugEnabled()) {
+                String string = getStringFromInputStream(is);
+                LOGGER.info(string);
+                return new StringReader(string);
+            }
+            return new BufferedReader(new InputStreamReader(is));
+        }
+    }
+
+    private class MetaSuperBetMustacheFactory extends DefaultMustacheFactory {
+
+        @Override
+        public Reader getReader(String template) {
+            LOGGER.info("meta {}", template);
+            String path = "/mustache/" + template + ".mustache";
+            LOGGER.info("load mustache meta template : {} at {}", template,
+                    path);
+            InputStream is = MustacheTemplateEngine.class
+                    .getResourceAsStream(path);
+            if (LOGGER.isDebugEnabled()) {
+                String string = getStringFromInputStream(is);
+                LOGGER.info(string);
+                return new StringReader(string);
+            }
+            // if (LOGGER.isDebugEnabled()) {
             String string = getStringFromInputStream(is);
             LOGGER.info(string);
             return new StringReader(string);
-            // return new BufferedReader(new InputStreamReader(is,
-            // Charsets.UTF_8));
+            // }
+            // return new BufferedReader(new InputStreamReader(is));
+        }
+
+        @Override
+        protected LoadingCache<String, Mustache> createMustacheCache() {
+            return CacheBuilder.newBuilder().build(
+                    new CacheLoader<String, Mustache>() {
+                        @Override
+                        public Mustache load(String key) throws Exception {
+                            return mc.compile(getReader(key), key, "[[", "]]");
+                        }
+                    });
         }
     }
 
@@ -92,7 +132,7 @@ public class MustacheTemplateEngine implements TemplateEngine {
     @Inject
     private MetaRegistry metaRegistry;
 
-    private final SuperBetMustacheFactory metaFactory = new SuperBetMustacheFactory();
+    private final MetaSuperBetMustacheFactory metaFactory = new MetaSuperBetMustacheFactory();
 
     private final SuperBetMustacheFactory factory = new SuperBetMustacheFactory();
 

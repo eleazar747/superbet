@@ -18,7 +18,7 @@ public interface SportRestService {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = Sport.class)
+    @MetaTemplate(template = "refview", entityClass = Sport.class)
     public List<Sport> findAll();
 
     @GET
@@ -30,6 +30,6 @@ public interface SportRestService {
     @GET
     @Path("search")
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "table", entityClass = Sport.class)
+    @MetaTemplate(template = "refview", entityClass = Sport.class)
     Sport findByCode(@QueryParam("code") String code);
 }
