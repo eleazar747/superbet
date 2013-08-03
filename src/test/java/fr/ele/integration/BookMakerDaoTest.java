@@ -54,7 +54,8 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
-        CsvContext<BookMaker> context = CsvContext.create(BookMaker.class);
+        CsvContext<BookMaker> context = CsvContext.create(BookMaker.class,
+                repositoryRegistry);
         context.setWithHeader(false);
         CsvMarshaller<BookMaker> marshaller = context.newMarshaller();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

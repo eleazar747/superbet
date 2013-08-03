@@ -4,8 +4,11 @@ import fr.ele.core.formatter.DefaultStringConverterRegistry;
 import fr.ele.core.formatter.StringConverter;
 import fr.ele.core.formatter.StringConverterRegistry;
 import fr.ele.csv.mapping.CsvRegistry;
+import fr.ele.model.SuperBetEntity;
+import fr.ele.services.repositories.RepositoryRegistry;
+import fr.ele.services.repositories.SuperBetRepository;
 
-public class CsvContext<T> {
+public class CsvContext<T> implements RepositoryRegistry {
 
     public static final char DEFAULT_SEPARATOR = ',';
 
@@ -14,6 +17,8 @@ public class CsvContext<T> {
     public static final char DEFAULT_COMMENT = '#';
 
     private final CsvBeanProperties csvBeanProperties;
+
+    private final RepositoryRegistry repositoryRegistry;
 
     private StringConverterRegistry registry = new DefaultStringConverterRegistry();
 
@@ -25,12 +30,16 @@ public class CsvContext<T> {
 
     private char comment = DEFAULT_COMMENT;
 
-    private CsvContext(CsvBeanProperties csvBeanProperties) {
+    private CsvContext(CsvBeanProperties csvBeanProperties,
+            RepositoryRegistry repositoryRegistry) {
         this.csvBeanProperties = csvBeanProperties;
+        this.repositoryRegistry = repositoryRegistry;
     }
 
-    public static <T> CsvContext<T> create(Class<T> clazz) {
-        return new CsvContext(CsvRegistry.findCsvDefinition(clazz));
+    public static <T> CsvContext<T> create(Class<T> clazz,
+            RepositoryRegistry repositoryRegistry) {
+        return new CsvContext(CsvRegistry.findCsvDefinition(clazz),
+                repositoryRegistry);
     }
 
     public CsvMarshaller<T> newMarshaller() {
@@ -89,5 +98,11 @@ public class CsvContext<T> {
 
     public void setComment(char comment) {
         this.comment = comment;
+    }
+
+    @Override
+    public <Q extends SuperBetEntity> SuperBetRepository<Q> getRepository(
+            Class<Q> entityClass) {
+        return repositoryRegistry.getRepository(entityClass);
     }
 }
