@@ -3,6 +3,7 @@ package fr.ele.csv.mapping;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvProperty;
 import fr.ele.model.DataMapping;
+import fr.ele.model.RefEntityType;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.services.repositories.BookMakerRepository;
@@ -37,6 +38,21 @@ public enum DataMappingCsvProperty implements CsvProperty<DataMapping> {
             BookMakerRepository repository = (BookMakerRepository) context
                     .getRepository(BookMaker.class);
             object.setBookMaker(repository.findByCode((String) context
+                    .unmarshall(String.class, value)));
+        }
+    },
+    REF_ENTITY_TYPE("ref_entity_type") {
+
+        @Override
+        public String getStringValue(CsvContext<DataMapping> context,
+                DataMapping object) {
+            return context.marshall(object.getRefEntityType().name());
+        }
+
+        @Override
+        public void setValue(CsvContext context, DataMapping object,
+                String value) {
+            object.setRefEntityType(RefEntityType.valueOf((String) context
                     .unmarshall(String.class, value)));
         }
     },

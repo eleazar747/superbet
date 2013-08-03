@@ -2,6 +2,7 @@ package fr.ele.csv.mapping;
 
 import fr.ele.csv.CsvBeanProperties;
 import fr.ele.csv.CsvProperty;
+import fr.ele.model.DataMapping;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Sport;
@@ -30,6 +31,19 @@ public enum CsvRegistry implements CsvBeanProperties {
         public Object getNewInstance() {
             return new Sport();
         }
+    },
+    DATA_MAPPING(DataMapping.class) {
+
+        @Override
+        public CsvProperty[] getProperties() {
+            return DataMappingCsvProperty.values();
+        }
+
+        @Override
+        public Object getNewInstance() {
+            return new DataMapping();
+        }
+
     },
     BET_TYPE(BetType.class) {
 
