@@ -3,6 +3,7 @@ package fr.ele.ui.model.superbet;
 import java.util.Arrays;
 import java.util.List;
 
+import fr.ele.model.DataMapping;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
@@ -13,6 +14,8 @@ public enum SuperBetUiMetaMapping implements MetaMapping {
     BOOKMAKER(BookMakerMapping.values(), BookMaker.class),
 
     MATCH(MatchMapping.values(), Match.class),
+
+    DATA_MAPPING(DataMappingMapping.values(), DataMapping.class),
 
     SPORT(SportMapping.values(), Sport.class);
 

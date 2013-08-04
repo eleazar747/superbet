@@ -123,7 +123,7 @@ public class BetclickSynchronizer {
         BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
         DataMapping modelMapping = dataMappingRepository
                 .findOne(DataMappingRepository.Queries.findModelByBookMaker(
-                        RefEntityType.SPORT, bookMaker, betclickBetType));
+                        RefEntityType.BET_TYPE, bookMaker, betclickBetType));
         if (modelMapping == null) {
             return null;
         }

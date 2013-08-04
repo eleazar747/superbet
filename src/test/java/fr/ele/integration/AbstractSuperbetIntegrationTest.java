@@ -33,7 +33,7 @@ public abstract class AbstractSuperbetIntegrationTest extends
         REFS.put(Sport.class, "SportsRef.csv");
         REFS.put(BetType.class, "BetTypesRef.csv");
         REFS.put(BookMaker.class, "BookMakersRef.csv");
-        REFS.put(DataMapping.class, "DataMappingRef.csv");
+        REFS.put(DataMapping.class, "DataMappingsRef.csv");
     }
 
     @Autowired
