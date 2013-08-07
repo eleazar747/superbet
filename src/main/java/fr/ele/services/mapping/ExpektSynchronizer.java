@@ -1,5 +1,8 @@
 package fr.ele.services.mapping;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,7 +75,14 @@ public class ExpektSynchronizer {
 		if (match == null) {
 			match = new Match();
 			match.setSport(sport);
-			// match.setDate(game.getDate());
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+			try {
+				match.setDate(formatter.parse(game.getDate().toString()));
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			match.setCode(matchCode);
 			matchRepository.save(match);
 		}
@@ -113,10 +123,11 @@ public class ExpektSynchronizer {
 		if (description.getContent().get(2).toString().contains(":")) {
 			String[] strtmp = description.getContent().get(2).toString()
 					.split(":");
-			sb.append(strtmp[0].replaceAll(" ", ""));
+			sb.append(strtmp[0].replaceAll(" ", "").replaceAll("-", "vs"));
+
 		} else {
 			sb.append(description.getContent().get(2).toString()
-					.replaceAll(" ", ""));
+					.replaceAll(" ", "").replaceAll("-", "vs"));
 		}
 
 		return sb.toString();
