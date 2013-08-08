@@ -1,3 +1,5 @@
 id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclick,SPORT,Football,Football
 0,expekt,SPORT,TEN,Tennis
+0,expekt,BET_TYPE,Over/Under,Over Under
+0,expekt,BET_TYPE,Match Result,Match Result 

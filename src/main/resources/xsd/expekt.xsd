@@ -20,18 +20,19 @@
 	<xs:element name="alternatives">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="alternative" maxOccurs="unbounded"
-					minOccurs="0">
-					<xs:complexType>
-						<xs:simpleContent>
-							<xs:extension base="xs:string">
-								<xs:attribute type="xs:float" name="odds" use="optional" />
-								<xs:attribute type="xs:int" name="team" use="optional" />
-							</xs:extension>
-						</xs:simpleContent>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="alternative" maxOccurs="unbounded"
+					minOccurs="0" />
 			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="alternative">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:float" name="odds" use="optional" />
+					<xs:attribute type="xs:int" name="team" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="category">
@@ -48,8 +49,8 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="description" />
-					<xs:element ref="type" />
-					<xs:element ref="alternatives" />
+				<xs:element ref="type" />
+				<xs:element ref="alternatives" />
 			</xs:sequence>
 			<xs:attribute type="xs:int" name="id" use="optional" />
 			<xs:attribute type="xs:int" name="date" use="optional" />
