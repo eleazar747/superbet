@@ -11,13 +11,14 @@ import fr.ele.model.ref.BookMaker;
 @HandledClass(DataMapping.class)
 public interface DataMappingRepository extends SuperBetRepository<DataMapping> {
 
-    public abstract static class Queries {
-        public static final Predicate findModelByBookMaker(RefEntityType type,
-                BookMaker bookMaker, String bookMakerCode) {
-            QDataMapping dataMapping = QDataMapping.dataMapping;
-            return dataMapping.refEntityType.eq(type).and(
-                    dataMapping.bookMakerCode.eq(bookMakerCode));
-        }
-    }
+	public abstract static class Queries {
+		public static final Predicate findModelByBookMaker(RefEntityType type,
+				BookMaker bookMaker, String bookMakerCode) {
+			QDataMapping dataMapping = QDataMapping.dataMapping;
+			return dataMapping.refEntityType.eq(type).and(
+					dataMapping.bookMakerCode.eq(bookMakerCode).and(
+							dataMapping.bookMaker.eq(bookMaker)));
+		}
+	}
 
 }

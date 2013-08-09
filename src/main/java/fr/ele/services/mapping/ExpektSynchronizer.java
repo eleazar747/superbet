@@ -61,7 +61,7 @@ public class ExpektSynchronizer {
 	private void convert(Game game) {
 		Description description = game.getDescription();
 		Category category = (Category) description.getContent().get(1);
-		String[] vDescription = ParseExpektDescription(description);
+		String[] vDescription = parseExpektDescription(description);
 		String sporExpektCode = category.getId().toString().substring(0, 3);
 		BookMaker bookMaker = bookMakerRepository.findByCode("expekt");
 		DataMapping sportMapping = dataMappingRepository
@@ -136,11 +136,11 @@ public class ExpektSynchronizer {
 		return betTypeRepository.findByCode(modelMapping.getModelCode());
 	}
 
-	private String[] ParseExpektDescription(Description description) {
+	private String[] parseExpektDescription(Description description) {
 		String[] strtmp = null;
 		if (description.getContent().get(2).toString().contains(":")) {
 			strtmp = description.getContent().get(2).toString().split(":");
-			strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "vs")
+			strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "**")
 					.toLowerCase();
 			strtmp[1] = strtmp[1].replaceAll(" ", "").toLowerCase();
 
@@ -148,7 +148,7 @@ public class ExpektSynchronizer {
 
 			strtmp = new String[2];
 			strtmp[0] = description.getContent().get(2).toString()
-					.toLowerCase().replaceAll(" ", "").replaceAll("-", "vs");
+					.toLowerCase().replaceAll(" ", "").replaceAll("-", "**");
 			strtmp[1] = "Match Result";
 		}
 		return strtmp;
