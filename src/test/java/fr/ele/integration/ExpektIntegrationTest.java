@@ -32,7 +32,7 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
 	@Test
 	public void test() throws Throwable {
 
-		String Code = "TennisWimbledon_RichardGasquetvsMarcelGranollers";
+		String Code = "richardgasquetvsmarcelgranollers";
 
 		JAXBContext jaxbContext = JAXBContext.newInstance(PunterOdds.class);
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
