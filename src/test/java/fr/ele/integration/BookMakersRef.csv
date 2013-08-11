@@ -1,5 +1,5 @@
-id,code
-0,betclick
-0,expekt
-0,intertops
-0,nordicbet
+id,code,url,url sync,class sync
+0,betclick,www.google.com,www.google.com,fr.ele.feeds.betclick.dto.SportsBcDto
+0,expekt,www.google.com,www.google.com,fr.ele.feeds.expekt.dto.PunterOdds
+0,intertops,www.google.com,www.google.com,Object
+0,nordicbet,www.google.com,www.google.com,fr.ele.feeds.nordicbet.dto.Odds

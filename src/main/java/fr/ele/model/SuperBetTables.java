@@ -8,6 +8,12 @@ public class SuperBetTables {
     public static final class BookMakerTable {
         public static final String TABLE = "BOOKMAKER";
 
+        public static final String URL_COLUMN = "URL";
+
+        public static final String URL_SYNC_COLUMN = "URL_SYNC";
+
+        public static final String CLASS_SYNC_COLUMN = "CLAZZ";
+
     }
 
     public static final class MatchTable {
