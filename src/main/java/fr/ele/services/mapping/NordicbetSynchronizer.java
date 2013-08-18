@@ -2,6 +2,7 @@ package fr.ele.services.mapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,11 +10,8 @@ import org.springframework.stereotype.Service;
 import fr.ele.feeds.nordicbet.dto.Game;
 import fr.ele.feeds.nordicbet.dto.Odds;
 import fr.ele.feeds.nordicbet.dto.OutcomeSet;
-import fr.ele.model.DataMapping;
-import fr.ele.model.RefEntityType;
+import fr.ele.model.BookMakers;
 import fr.ele.model.ref.BetType;
-import fr.ele.model.ref.BookMaker;
-import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BetTypeRepository;
@@ -23,96 +21,79 @@ import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
-@Service
-public class NordicbetSynchronizer {
+@Service("NordicbetSynchronizer")
+public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
 
-	@Autowired
-	private DataMappingRepository dataMappingRepository;
+    @Autowired
+    private DataMappingRepository dataMappingRepository;
 
-	@Autowired
-	private SportRepository sportRepository;
+    @Autowired
+    private SportRepository sportRepository;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Autowired
-	private BetTypeRepository betTypeRepository;
+    @Autowired
+    private BetTypeRepository betTypeRepository;
 
-	@Autowired
-	private BookMakerRepository bookMakerRepository;
+    @Autowired
+    private BookMakerRepository bookMakerRepository;
 
-	@Autowired
-	private BetRepository betRepository;
+    @Autowired
+    private BetRepository betRepository;
 
-	@Autowired
-	private RefKeyRepository refKeyRepository;
+    @Autowired
+    private RefKeyRepository refKeyRepository;
 
-	public void convert(Odds odds) {
-		for (Game game : odds.getGame()) {
-			convert(game);
-		}
+    @Override
+    protected long convert(SynchronizerContext context, Odds dto) {
+        for (Game game : dto.getGame()) {
+            convert(context, game);
+        }
+        return 0;
+    }
 
-	}
+    @Override
+    protected BookMakers getBookMaker() {
+        return BookMakers.NORDICBET;
+    }
 
-	private void convert(Game game) {
+    private long convert(SynchronizerContext context, Game game) {
 
-		String sportNordicbetCode = game.getSport();
-		BookMaker bookMaker = bookMakerRepository.findByCode("nordicbet");
-		DataMapping sportMapping = dataMappingRepository
-				.findOne(DataMappingRepository.Queries.findModelByBookMaker(
-						RefEntityType.SPORT, bookMaker, sportNordicbetCode));
-		if (sportMapping == null) {
-			return;
-		}
-		Sport sport = sportRepository.findByCode(sportMapping.getModelCode());
+        Sport sport = context.findSport(game.getSport());
+        if (sport == null) {
+            return 0;
+        }
 
-		String matchCode = game.getName().toString().toLowerCase()
-				.replaceAll(" ", "").replaceAll("-", "**");
+        String matchCode = game.getName().toString().toLowerCase()
+                .replaceAll(" ", "").replaceAll("-", "**");
+        Date date = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+        try {
+            date = formatter.parse(game.getGameStartTime().replaceAll("CEST",
+                    ""));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        context.findOrCreateMatch(sport, matchCode, date);
+        long nb = 0L;
+        for (OutcomeSet outcomeset : game.getOutcomeSet()) {
+            nb += convert(context, outcomeset, game);
+        }
+        return nb;
 
-		Match match = matchRepository.findByCode(matchCode);
-		if (match == null) {
-			match = new Match();
-			match.setSport(sport);
+    }
 
-			SimpleDateFormat formatter = new SimpleDateFormat(
-					"yyyy-MM-DD HH:mm:ss");
-			try {
-				match.setDate(formatter.parse(game.getGameStartTime()
-						.replaceAll("CEST", "")));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+    private long convert(SynchronizerContext context, OutcomeSet outcomeset,
+            Game game) {
+        String sBet = outcomeset.getName().toString()
+                .replaceAll(game.getName().toString(), "");
 
-			match.setCode(matchCode);
-			matchRepository.save(match);
-		}
+        BetType betType = context.findBetType(sBet);
+        if (betType != null) {
 
-		for (OutcomeSet outcomeset : game.getOutcomeSet()) {
-			convert(outcomeset, game);
-		}
+        }
+        return 0L;
+    }
 
-	}
-
-	private void convert(OutcomeSet outcomeset, Game game) {
-		String sBet = outcomeset.getName().toString()
-				.replaceAll(game.getName().toString(), "");
-
-		BetType betType = findBetType(sBet);
-		if (betType != null) {
-
-		}
-
-	}
-
-	private BetType findBetType(String nordicbetBetType) {
-		BookMaker bookMaker = bookMakerRepository.findByCode("nordicbet");
-		DataMapping modelMapping = dataMappingRepository
-				.findOne(DataMappingRepository.Queries.findModelByBookMaker(
-						RefEntityType.BET_TYPE, bookMaker, nordicbetBetType));
-		if (modelMapping == null) {
-			return null;
-		}
-		return betTypeRepository.findByCode(modelMapping.getModelCode());
-	}
 }

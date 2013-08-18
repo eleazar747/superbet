@@ -23,7 +23,7 @@ import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
-@Service
+@Service("BetclickSynchronizer")
 public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 
     @Autowired
@@ -73,7 +73,7 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
     private void convert(SynchronizerContext context, Sport sport,
             EventBcDto eventBcDto) {
         for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
-            String matchCode = computeMatchCode(sport, eventBcDto, matchBcDto);
+            String matchCode = matchBcDto.getName().replaceAll(" - ", "**");
             Match match = context.findOrCreateMatch(sport, matchCode,
                     matchBcDto.getStartDate().toGregorianCalendar().getTime());
             for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
@@ -108,19 +108,10 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
+        // TODO Normalize bet code !!!!!
+        bet.setCode(choice.getName());
         bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
         betRepository.save(bet);
     }
-
-    private String computeMatchCode(Sport sport, EventBcDto eventBcDto,
-            MatchBcDto matchBcDto) {
-        // TODO fix code to match with player1**player2
-        StringBuilder sb = new StringBuilder(sport.getCode());
-        sb.append(eventBcDto.getName().replaceAll(" ", ""));
-        sb.append('_');
-        sb.append(matchBcDto.getName().replaceAll(" ", ""));
-        return sb.toString();
-    }
-
 }
