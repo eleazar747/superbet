@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.core.TimeTracker;
+import fr.ele.model.BookMakers;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.DataMappingRepository;
@@ -31,19 +32,22 @@ public abstract class AbstractSynchronizer<T> {
     @Autowired
     private MatchRepository matchRepository;
 
-    public long synchronize(T dto) {
-        SynchronizerContext context = new SynchronizerContext("expekt",
-                dataMappingRepository, sportRepository, betTypeRepository,
-                bookMakerRepository, matchRepository);
+    public final long synchronize(T dto) {
+        SynchronizerContext context = new SynchronizerContext(getBookMaker()
+                .getCode(), dataMappingRepository, sportRepository,
+                betTypeRepository, bookMakerRepository, matchRepository);
         context.setSynchronizationDate(new Date());
-        LOGGER.debug("start expekt sync at {}",
+        LOGGER.debug("start {} sync at {}", context.getBookMaker().getCode(),
                 context.getSynchronizationDate());
         TimeTracker tt = new TimeTracker();
         long nb = convert(context, dto);
-        LOGGER.debug("finish expekt sync at {} nb {} bets inserted in {}ms",
+        LOGGER.debug("finish {} sync at {} nb {} bets inserted in {}ms",
+                context.getBookMaker().getCode(),
                 context.getSynchronizationDate(), nb, tt.getDuration());
         return nb;
     }
 
     protected abstract long convert(SynchronizerContext context, T dto);
+
+    protected abstract BookMakers getBookMaker();
 }

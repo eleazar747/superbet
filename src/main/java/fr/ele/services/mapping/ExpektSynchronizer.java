@@ -13,6 +13,7 @@ import fr.ele.feeds.expekt.dto.Description;
 import fr.ele.feeds.expekt.dto.Game;
 import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
+import fr.ele.model.BookMakers;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
@@ -20,7 +21,7 @@ import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.RefKeyRepository;
 
-@Service
+@Service("ExpektSynchronizer")
 public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
 
     @Autowired
@@ -108,4 +109,10 @@ public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
         }
         return strtmp;
     }
+
+    @Override
+    protected BookMakers getBookMaker() {
+        return BookMakers.EXPEKT;
+    }
+
 }
