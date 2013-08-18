@@ -16,30 +16,10 @@ import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetRepository;
-import fr.ele.services.repositories.BetTypeRepository;
-import fr.ele.services.repositories.BookMakerRepository;
-import fr.ele.services.repositories.DataMappingRepository;
-import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
-import fr.ele.services.repositories.SportRepository;
 
 @Service("BetclickSynchronizer")
 public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
-
-    @Autowired
-    private DataMappingRepository dataMappingRepository;
-
-    @Autowired
-    private SportRepository sportRepository;
-
-    @Autowired
-    private MatchRepository matchRepository;
-
-    @Autowired
-    private BetTypeRepository betTypeRepository;
-
-    @Autowired
-    private BookMakerRepository bookMakerRepository;
 
     @Autowired
     private BetRepository betRepository;
