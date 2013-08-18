@@ -4,12 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.ele.core.TimeTracker;
 import fr.ele.feeds.expekt.dto.Alternative;
 import fr.ele.feeds.expekt.dto.Category;
 import fr.ele.feeds.expekt.dto.Description;
@@ -21,33 +18,10 @@ import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetRepository;
-import fr.ele.services.repositories.BetTypeRepository;
-import fr.ele.services.repositories.BookMakerRepository;
-import fr.ele.services.repositories.DataMappingRepository;
-import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
-import fr.ele.services.repositories.SportRepository;
 
 @Service
-public class ExpektSynchronizer {
-
-    private static final Logger LOGGER = LoggerFactory
-            .getLogger(ExpektSynchronizer.class);
-
-    @Autowired
-    private DataMappingRepository dataMappingRepository;
-
-    @Autowired
-    private SportRepository sportRepository;
-
-    @Autowired
-    private MatchRepository matchRepository;
-
-    @Autowired
-    private BetTypeRepository betTypeRepository;
-
-    @Autowired
-    private BookMakerRepository bookMakerRepository;
+public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
 
     @Autowired
     private BetRepository betRepository;
@@ -55,30 +29,23 @@ public class ExpektSynchronizer {
     @Autowired
     private RefKeyRepository refKeyRepository;
 
-    public void convert(PunterOdds punterodds) {
-        SynchronizerContext context = new SynchronizerContext("expekt",
-                dataMappingRepository, sportRepository, betTypeRepository,
-                bookMakerRepository, matchRepository);
-        context.setSynchronizationDate(new Date());
-        LOGGER.debug("start expekt sync at {}",
-                context.getSynchronizationDate());
-        TimeTracker tt = new TimeTracker();
+    @Override
+    protected long convert(SynchronizerContext context, PunterOdds punterodds) {
+        long nb = 0L;
         for (Game game : punterodds.getGame()) {
-            convert(context, game);
+            nb += convert(context, game);
         }
-        LOGGER.debug("finish expekt sync at {} in {}ms",
-                context.getSynchronizationDate(), tt.getDuration());
-
+        return nb;
     }
 
-    private void convert(SynchronizerContext context, Game game) {
+    private long convert(SynchronizerContext context, Game game) {
         Description description = game.getDescription();
         Category category = (Category) description.getContent().get(1);
         String[] vDescription = parseExpektDescription(description);
         String sporExpektCode = category.getId().toString().substring(0, 3);
         Sport sport = context.findSport(sporExpektCode);
         if (sport == null) {
-            return;
+            return 0L;
         }
 
         String matchCode = vDescription[0];
@@ -92,7 +59,7 @@ public class ExpektSynchronizer {
         Match match = context.findOrCreateMatch(sport, matchCode, date);
         BetType betType = context.findBetType(vDescription[1]);
         if (betType == null) {
-            return;
+            return 0L;
         }
         RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
                 .findRefKey(betType, match));
@@ -103,10 +70,12 @@ public class ExpektSynchronizer {
             refKey.setMatch(match);
             refKeyRepository.save(refKey);
         }
-
+        long nb = 0L;
         for (Alternative alternative : game.getAlternatives().getAlternative()) {
             convert(context, alternative, refKey, match);
+            ++nb;
         }
+        return nb;
     }
 
     private void convert(SynchronizerContext context, Alternative alternative,

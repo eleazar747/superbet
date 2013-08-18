@@ -37,22 +37,20 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-        String Code = "richardgasquet**marcelgranollers";
+        String code = "richardgasquet**marcelgranollers";
 
         JAXBContext jaxbContext = JAXBContext.newInstance(PunterOdds.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         BufferedInputStream inputStream = new BufferedInputStream(
                 ExpektUnmarshallingTest.class
                         .getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
-        expektSynchronizer.convert((PunterOdds) unmarshaller
+        expektSynchronizer.synchronize((PunterOdds) unmarshaller
                 .unmarshal(inputStream));
 
-        Assert.assertNotNull(matchRepository.findByCode(Code));
+        Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = betRepository.findAll();
         Assert.assertNotNull(bets);
-        System.out.println(bets.size());
-        Assert.assertTrue(bets.size() > 0);
-
+        Assert.assertEquals(312, bets.size());
     }
 
 }
