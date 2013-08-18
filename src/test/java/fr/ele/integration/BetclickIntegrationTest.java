@@ -47,7 +47,7 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = betRepository.findAll();
         Assert.assertNotNull(bets);
-        Assert.assertEquals(312, bets.size());
+        Assert.assertEquals(567, bets.size());
     }
 
 }

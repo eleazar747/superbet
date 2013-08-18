@@ -49,10 +49,11 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 
     @Override
     protected long convert(SynchronizerContext context, SportsBcDto dto) {
+        long nb = 0L;
         for (SportBcDto sportBcDto : dto.getSport()) {
-            convert(context, sportBcDto);
+            nb += convert(context, sportBcDto);
         }
-        return 0;
+        return nb;
     }
 
     @Override
@@ -60,41 +61,47 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         return BookMakers.BETCLICK;
     }
 
-    private void convert(SynchronizerContext context, SportBcDto sportBcDto) {
+    private long convert(SynchronizerContext context, SportBcDto sportBcDto) {
         Sport sport = context.findSport(sportBcDto.getName());
         if (sport == null) {
-            return;
+            return 0L;
         }
+        long nb = 0L;
         for (EventBcDto eventBcDto : sportBcDto.getEvent()) {
-            convert(context, sport, eventBcDto);
+            nb += convert(context, sport, eventBcDto);
         }
+        return nb;
     }
 
-    private void convert(SynchronizerContext context, Sport sport,
+    private long convert(SynchronizerContext context, Sport sport,
             EventBcDto eventBcDto) {
+        long nb = 0L;
         for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
             String matchCode = matchBcDto.getName().replaceAll(" - ", "**");
             Match match = context.findOrCreateMatch(sport, matchCode,
                     matchBcDto.getStartDate().toGregorianCalendar().getTime());
             for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
-                convert(context, sport, match, betsBcDto);
+                nb += convert(context, sport, match, betsBcDto);
             }
         }
+        return nb;
     }
 
-    private void convert(SynchronizerContext context, Sport sport, Match match,
+    private long convert(SynchronizerContext context, Sport sport, Match match,
             BetBcDto betBcDto) {
         String betName = betBcDto.getName();
         BetType betType = context.findBetType(betName);
         if (betType == null) {
-            return;
+            return 0L;
         }
+        long nb = 0L;
         for (Choice choice : betBcDto.getChoice()) {
-            convert(context, sport, match, betType, choice);
+            nb += convert(context, sport, match, betType, choice);
         }
+        return nb;
     }
 
-    private void convert(SynchronizerContext context, Sport sport, Match match,
+    private long convert(SynchronizerContext context, Sport sport, Match match,
             BetType betType, Choice choice) {
         RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
                 .findRefKey(betType, match));
@@ -109,9 +116,22 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         bet.setOdd(choice.getOdd().doubleValue());
         bet.setRefKey(refKey);
         // TODO Normalize bet code !!!!!
-        bet.setCode(choice.getName());
+        if ("Match Result".equals(betType.getCode())) {
+            if (choice.getName().contains("1")) {
+                bet.setCode("1");
+            } else if (choice.getName().contains("Draw")) {
+                bet.setCode("X");
+            } else if (choice.getName().contains("2")) {
+                bet.setCode("2");
+            } else {
+                return 0L;
+            }
+        } else {
+            bet.setCode(choice.getName());
+        }
         bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
         betRepository.save(bet);
+        return 1L;
     }
 }
