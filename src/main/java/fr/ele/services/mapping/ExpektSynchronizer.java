@@ -2,10 +2,14 @@ package fr.ele.services.mapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.ele.core.TimeTracker;
 import fr.ele.feeds.expekt.dto.Alternative;
 import fr.ele.feeds.expekt.dto.Category;
 import fr.ele.feeds.expekt.dto.Description;
@@ -26,6 +30,9 @@ import fr.ele.services.repositories.SportRepository;
 
 @Service
 public class ExpektSynchronizer {
+
+    private static final Logger LOGGER = LoggerFactory
+            .getLogger(ExpektSynchronizer.class);
 
     @Autowired
     private DataMappingRepository dataMappingRepository;
@@ -51,10 +58,16 @@ public class ExpektSynchronizer {
     public void convert(PunterOdds punterodds) {
         SynchronizerContext context = new SynchronizerContext("expekt",
                 dataMappingRepository, sportRepository, betTypeRepository,
-                bookMakerRepository);
+                bookMakerRepository, matchRepository);
+        context.setSynchronizationDate(new Date());
+        LOGGER.debug("start expekt sync at {}",
+                context.getSynchronizationDate());
+        TimeTracker tt = new TimeTracker();
         for (Game game : punterodds.getGame()) {
             convert(context, game);
         }
+        LOGGER.debug("finish expekt sync at {} in {}ms",
+                context.getSynchronizationDate(), tt.getDuration());
 
     }
 
@@ -69,22 +82,14 @@ public class ExpektSynchronizer {
         }
 
         String matchCode = vDescription[0];
-
-        Match match = matchRepository.findByCode(matchCode);
-        if (match == null) {
-            match = new Match();
-            match.setSport(sport);
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-            try {
-                match.setDate(formatter.parse(game.getDate().toString()));
-            } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-            match.setCode(matchCode);
-            matchRepository.save(match);
+        Date date = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        try {
+            date = formatter.parse(game.getDate().toString());
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
         }
+        Match match = context.findOrCreateMatch(sport, matchCode, date);
         BetType betType = context.findBetType(vDescription[1]);
         if (betType == null) {
             return;
@@ -111,15 +116,16 @@ public class ExpektSynchronizer {
         bet.setOdd(alternative.getOdds());
         bet.setRefKey(refKey);
         bet.setCode(alternative.getValue());
-        bet.setDate(match.getDate());
+        bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
         betRepository.save(bet);
     }
 
     private String[] parseExpektDescription(Description description) {
         String[] strtmp = null;
-        if (description.getContent().get(2).toString().contains(":")) {
-            strtmp = description.getContent().get(2).toString().split(":");
+        String matchDescription = description.getContent().get(2).toString();
+        if (matchDescription.contains(":")) {
+            strtmp = matchDescription.split(":");
             strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "**")
                     .toLowerCase();
             strtmp[1] = strtmp[1].replaceAll(" ", "").toLowerCase();
@@ -127,8 +133,8 @@ public class ExpektSynchronizer {
         } else {
 
             strtmp = new String[2];
-            strtmp[0] = description.getContent().get(2).toString()
-                    .toLowerCase().replaceAll(" ", "").replaceAll("-", "**");
+            strtmp[0] = matchDescription.toLowerCase().replaceAll(" ", "")
+                    .replaceAll("-", "**");
             strtmp[1] = "Match Result";
         }
         return strtmp;

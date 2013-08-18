@@ -1,6 +1,7 @@
 package fr.ele.integration;
 
 import java.io.BufferedInputStream;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -12,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.feeds.expekt.ExpektUnmarshallingTest;
 import fr.ele.feeds.expekt.dto.PunterOdds;
+import fr.ele.model.Bet;
 import fr.ele.services.mapping.ExpektSynchronizer;
+import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.MatchRepository;
 
 public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
@@ -22,6 +25,9 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Autowired
     private MatchRepository matchRepository;
+
+    @Autowired
+    private BetRepository betRepository;
 
     @Override
     @Before
@@ -42,6 +48,11 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
                 .unmarshal(inputStream));
 
         Assert.assertNotNull(matchRepository.findByCode(Code));
+        List<Bet> bets = betRepository.findAll();
+        Assert.assertNotNull(bets);
+        System.out.println(bets.size());
+        Assert.assertTrue(bets.size() > 0);
+
     }
 
 }
