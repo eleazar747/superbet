@@ -31,7 +31,6 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-
         String Code = "richardgasquet**marcelgranollers";
 
         JAXBContext jaxbContext = JAXBContext.newInstance(PunterOdds.class);
