@@ -1,9 +1,9 @@
 package fr.ele.integration;
 
+import java.io.BufferedInputStream;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,32 +17,32 @@ import fr.ele.services.repositories.MatchRepository;
 
 public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
-	private ExpektSynchronizer expektSynchronizer;
+    @Autowired
+    private ExpektSynchronizer expektSynchronizer;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Override
-	@Before
-	public void initializeDatas() {
-		super.initializeDatas();
-	}
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
-	@Test
-	public void test() throws Throwable {
+    @Test
+    public void test() throws Throwable {
 
-		String Code = "richardgasquet**marcelgranollers";
+        String Code = "richardgasquet**marcelgranollers";
 
-		JAXBContext jaxbContext = JAXBContext.newInstance(PunterOdds.class);
-		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		Source source = new StreamSource(
-				ExpektUnmarshallingTest.class
-						.getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
+        JAXBContext jaxbContext = JAXBContext.newInstance(PunterOdds.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        BufferedInputStream inputStream = new BufferedInputStream(
+                ExpektUnmarshallingTest.class
+                        .getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
+        expektSynchronizer.convert((PunterOdds) unmarshaller
+                .unmarshal(inputStream));
 
-		expektSynchronizer.convert((PunterOdds) unmarshaller.unmarshal(source));
-
-		Assert.assertNotNull(matchRepository.findByCode(Code));
-	}
+        Assert.assertNotNull(matchRepository.findByCode(Code));
+    }
 
 }

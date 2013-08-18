@@ -12,10 +12,7 @@ import fr.ele.feeds.expekt.dto.Description;
 import fr.ele.feeds.expekt.dto.Game;
 import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
-import fr.ele.model.DataMapping;
-import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BetType;
-import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
@@ -30,127 +27,110 @@ import fr.ele.services.repositories.SportRepository;
 @Service
 public class ExpektSynchronizer {
 
-	@Autowired
-	private DataMappingRepository dataMappingRepository;
+    @Autowired
+    private DataMappingRepository dataMappingRepository;
 
-	@Autowired
-	private SportRepository sportRepository;
+    @Autowired
+    private SportRepository sportRepository;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Autowired
-	private BetTypeRepository betTypeRepository;
+    @Autowired
+    private BetTypeRepository betTypeRepository;
 
-	@Autowired
-	private BookMakerRepository bookMakerRepository;
+    @Autowired
+    private BookMakerRepository bookMakerRepository;
 
-	@Autowired
-	private BetRepository betRepository;
+    @Autowired
+    private BetRepository betRepository;
 
-	@Autowired
-	private RefKeyRepository refKeyRepository;
+    @Autowired
+    private RefKeyRepository refKeyRepository;
 
-	public void convert(PunterOdds punterodds) {
-		for (Game game : punterodds.getGame()) {
-			convert(game);
-		}
+    public void convert(PunterOdds punterodds) {
+        SynchronizerContext context = new SynchronizerContext("expekt",
+                dataMappingRepository, sportRepository, betTypeRepository,
+                bookMakerRepository);
+        for (Game game : punterodds.getGame()) {
+            convert(context, game);
+        }
 
-	}
+    }
 
-	private void convert(Game game) {
-		Description description = game.getDescription();
-		Category category = (Category) description.getContent().get(1);
-		String[] vDescription = parseExpektDescription(description);
-		String sporExpektCode = category.getId().toString().substring(0, 3);
-		BookMaker bookMaker = bookMakerRepository.findByCode("expekt");
-		DataMapping sportMapping = dataMappingRepository
-				.findOne(DataMappingRepository.Queries.findModelByBookMaker(
-						RefEntityType.SPORT, bookMaker, sporExpektCode));
-		if (sportMapping == null) {
-			return;
-		}
-		Sport sport = sportRepository.findByCode(sportMapping.getModelCode());
+    private void convert(SynchronizerContext context, Game game) {
+        Description description = game.getDescription();
+        Category category = (Category) description.getContent().get(1);
+        String[] vDescription = parseExpektDescription(description);
+        String sporExpektCode = category.getId().toString().substring(0, 3);
+        Sport sport = context.findSport(sporExpektCode);
+        if (sport == null) {
+            return;
+        }
 
-		String matchCode = vDescription[0];
+        String matchCode = vDescription[0];
 
-		Match match = matchRepository.findByCode(matchCode);
-		if (match == null) {
-			match = new Match();
-			match.setSport(sport);
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-			try {
-				match.setDate(formatter.parse(game.getDate().toString()));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        Match match = matchRepository.findByCode(matchCode);
+        if (match == null) {
+            match = new Match();
+            match.setSport(sport);
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+            try {
+                match.setDate(formatter.parse(game.getDate().toString()));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 
-			match.setCode(matchCode);
-			matchRepository.save(match);
-		}
+            match.setCode(matchCode);
+            matchRepository.save(match);
+        }
+        BetType betType = context.findBetType(vDescription[1]);
+        if (betType == null) {
+            return;
+        }
+        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
+                .findRefKey(betType, match));
 
-		DataMapping betMapping = dataMappingRepository
-				.findOne(DataMappingRepository.Queries.findModelByBookMaker(
-						RefEntityType.BET_TYPE, bookMaker, vDescription[1]));
-		if (betMapping != null) {
-			BetType betType = findBetType(betMapping.getModelCode());
-			RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
-					.findRefKey(betType, match));
+        if (refKey == null) {
+            refKey = new RefKey();
+            refKey.setBetType(betType);
+            refKey.setMatch(match);
+            refKeyRepository.save(refKey);
+        }
 
-			if (refKey == null) {
-				refKey = new RefKey();
-				refKey.setBetType(betType);
-				refKey.setMatch(match);
-				refKeyRepository.save(refKey);
-			}
+        for (Alternative alternative : game.getAlternatives().getAlternative()) {
+            convert(context, alternative, refKey, match);
+        }
+    }
 
-			for (Alternative alternative : game.getAlternatives()
-					.getAlternative()) {
+    private void convert(SynchronizerContext context, Alternative alternative,
+            RefKey refKey, Match match) {
 
-				convert(alternative, refKey, match);
-			}
-		}
-	}
+        Bet bet = new Bet();
+        bet.setOdd(alternative.getOdds());
+        bet.setRefKey(refKey);
+        bet.setCode(alternative.getValue());
+        bet.setDate(match.getDate());
+        bet.setBookMaker(context.getBookMaker());
+        betRepository.save(bet);
+    }
 
-	private void convert(Alternative alternative, RefKey refKey, Match match) {
+    private String[] parseExpektDescription(Description description) {
+        String[] strtmp = null;
+        if (description.getContent().get(2).toString().contains(":")) {
+            strtmp = description.getContent().get(2).toString().split(":");
+            strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "**")
+                    .toLowerCase();
+            strtmp[1] = strtmp[1].replaceAll(" ", "").toLowerCase();
 
-		Bet bet = new Bet();
-		bet.setOdd(alternative.getOdds());
-		bet.setRefKey(refKey);
-		bet.setCode(alternative.getValue());
-		bet.setDate(match.getDate());
-		BookMaker bookMaker = bookMakerRepository.findByCode("expekt");
-		bet.setBookMaker(bookMaker);
-		betRepository.save(bet);
-	}
+        } else {
 
-	private BetType findBetType(String expektBetType) {
-		BookMaker bookMaker = bookMakerRepository.findByCode("expekt");
-		DataMapping modelMapping = dataMappingRepository
-				.findOne(DataMappingRepository.Queries.findModelByBookMaker(
-						RefEntityType.BET_TYPE, bookMaker, expektBetType));
-		if (modelMapping == null) {
-			return null;
-		}
-		return betTypeRepository.findByCode(modelMapping.getModelCode());
-	}
-
-	private String[] parseExpektDescription(Description description) {
-		String[] strtmp = null;
-		if (description.getContent().get(2).toString().contains(":")) {
-			strtmp = description.getContent().get(2).toString().split(":");
-			strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "**")
-					.toLowerCase();
-			strtmp[1] = strtmp[1].replaceAll(" ", "").toLowerCase();
-
-		} else {
-
-			strtmp = new String[2];
-			strtmp[0] = description.getContent().get(2).toString()
-					.toLowerCase().replaceAll(" ", "").replaceAll("-", "**");
-			strtmp[1] = "Match Result";
-		}
-		return strtmp;
-	}
+            strtmp = new String[2];
+            strtmp[0] = description.getContent().get(2).toString()
+                    .toLowerCase().replaceAll(" ", "").replaceAll("-", "**");
+            strtmp[1] = "Match Result";
+        }
+        return strtmp;
+    }
 }
