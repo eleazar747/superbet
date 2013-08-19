@@ -7,11 +7,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.core.TimeTracker;
+import fr.ele.model.Bet;
 import fr.ele.model.BookMakers;
+import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.MatchRepository;
+import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
 public abstract class AbstractSynchronizer<T> {
@@ -32,10 +35,17 @@ public abstract class AbstractSynchronizer<T> {
     @Autowired
     private MatchRepository matchRepository;
 
+    @Autowired
+    private BetRepository betRepository;
+
+    @Autowired
+    private RefKeyRepository refKeyRepository;
+
     public final long synchronize(T dto) {
         SynchronizerContext context = new SynchronizerContext(getBookMaker()
                 .getCode(), dataMappingRepository, sportRepository,
-                betTypeRepository, bookMakerRepository, matchRepository);
+                betTypeRepository, bookMakerRepository, matchRepository,
+                refKeyRepository);
         context.setSynchronizationDate(new Date());
         LOGGER.debug("start {} sync at {}", context.getBookMaker().getCode(),
                 context.getSynchronizationDate());
@@ -50,4 +60,8 @@ public abstract class AbstractSynchronizer<T> {
     protected abstract long convert(SynchronizerContext context, T dto);
 
     protected abstract BookMakers getBookMaker();
+
+    protected void saveBet(Bet bet) {
+        betRepository.save(bet);
+    }
 }

@@ -13,11 +13,13 @@ import fr.ele.model.DataMapping;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
+import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.MatchRepository;
+import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
 public class SynchronizerContext {
@@ -34,6 +36,8 @@ public class SynchronizerContext {
 
     private final MatchRepository matchRepository;
 
+    private final RefKeyRepository refKeyRepository;
+
     private Map<String, Sport> sportCache;
 
     private Map<String, BetType> betTypeCache;
@@ -41,6 +45,8 @@ public class SynchronizerContext {
     private BookMaker bookMaker;
 
     private Date synchronizationDate;
+
+    private RefKey refKeyCache;
 
     private final Map<MatchKey, Match> matchCache = new HashMap<MatchKey, Match>();
 
@@ -109,12 +115,13 @@ public class SynchronizerContext {
             SportRepository sportRepository,
             BetTypeRepository betTypeRepository,
             BookMakerRepository bookMakerRepository,
-            MatchRepository matchRepository) {
+            MatchRepository matchRepository, RefKeyRepository refKeyRepository) {
         this.dataMappingRepository = dataMappingRepository;
         this.sportRepository = sportRepository;
         this.betTypeRepository = betTypeRepository;
         this.bookMakerRepository = bookMakerRepository;
         this.matchRepository = matchRepository;
+        this.refKeyRepository = refKeyRepository;
         init(bookmakerCode);
     }
 
@@ -205,5 +212,23 @@ public class SynchronizerContext {
     private static MatchKey createKey(Match match) {
         return new MatchKey(match.getCode(), match.getSport().getCode(),
                 match.getDate());
+    }
+
+    public RefKey findOrCreateRefKey(Match match, BetType betType) {
+        if (refKeyCache != null
+                && refKeyCache.getBetType().getId() == betType.getId()
+                && match.getId() == refKeyCache.getMatch().getId()) {
+            return refKeyCache;
+        }
+        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
+                .findRefKey(betType, match));
+        if (refKey == null) {
+            refKey = new RefKey();
+            refKey.setBetType(betType);
+            refKey.setMatch(match);
+            refKeyRepository.save(refKey);
+        }
+        refKeyCache = refKey;
+        return refKey;
     }
 }

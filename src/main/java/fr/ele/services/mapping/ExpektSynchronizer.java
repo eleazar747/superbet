@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.expekt.dto.Alternative;
@@ -18,17 +17,9 @@ import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.repositories.BetRepository;
-import fr.ele.services.repositories.RefKeyRepository;
 
 @Service("ExpektSynchronizer")
 public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
-
-    @Autowired
-    private BetRepository betRepository;
-
-    @Autowired
-    private RefKeyRepository refKeyRepository;
 
     @Override
     protected long convert(SynchronizerContext context, PunterOdds punterodds) {
@@ -62,15 +53,7 @@ public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
         if (betType == null) {
             return 0L;
         }
-        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
-                .findRefKey(betType, match));
-
-        if (refKey == null) {
-            refKey = new RefKey();
-            refKey.setBetType(betType);
-            refKey.setMatch(match);
-            refKeyRepository.save(refKey);
-        }
+        RefKey refKey = context.findOrCreateRefKey(match, betType);
         long nb = 0L;
         for (Alternative alternative : game.getAlternatives().getAlternative()) {
             convert(context, alternative, refKey, match);
@@ -88,7 +71,8 @@ public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
         bet.setCode(alternative.getValue());
         bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
-        betRepository.save(bet);
+        bet.setBookmakerBetId("dummy");
+        saveBet(bet);
     }
 
     private String[] parseExpektDescription(Description description) {

@@ -1,6 +1,5 @@
 package fr.ele.services.mapping;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.betclick.dto.BetBcDto;
@@ -15,17 +14,9 @@ import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.repositories.BetRepository;
-import fr.ele.services.repositories.RefKeyRepository;
 
 @Service("BetclickSynchronizer")
 public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
-
-    @Autowired
-    private BetRepository betRepository;
-
-    @Autowired
-    private RefKeyRepository refKeyRepository;
 
     @Override
     protected long convert(SynchronizerContext context, SportsBcDto dto) {
@@ -83,14 +74,7 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 
     private long convert(SynchronizerContext context, Sport sport, Match match,
             BetType betType, Choice choice) {
-        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
-                .findRefKey(betType, match));
-        if (refKey == null) {
-            refKey = new RefKey();
-            refKey.setBetType(betType);
-            refKey.setMatch(match);
-            refKeyRepository.save(refKey);
-        }
+        RefKey refKey = context.findOrCreateRefKey(match, betType);
 
         Bet bet = new Bet();
         bet.setOdd(choice.getOdd().doubleValue());
@@ -112,7 +96,7 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         bet.setBookmakerBetId(String.valueOf(choice.getId()));
         bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
-        betRepository.save(bet);
+        saveBet(bet);
         return 1L;
     }
 }
