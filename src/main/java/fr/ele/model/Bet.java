@@ -33,6 +33,9 @@ public class Bet extends SuperBetEntity {
     @Column(name = SuperBetTables.CODE_COLUMN, nullable = false)
     private String code;
 
+    @Column(name = SuperBetTables.BetTable.BOOKMAKER_BET_ID_COLUMN, nullable = false)
+    private String bookmakerBetId;
+
     public RefKey getRefKey() {
         return refKey;
     }
@@ -71,6 +74,14 @@ public class Bet extends SuperBetEntity {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getBookmakerBetId() {
+        return bookmakerBetId;
+    }
+
+    public void setBookmakerBetId(String bookmakerBetId) {
+        this.bookmakerBetId = bookmakerBetId;
     }
 
 }

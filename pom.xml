@@ -104,14 +104,14 @@
 			<!-- <scope>test</scope> -->
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-		<dependency>
 			<artifactId>slf4j-api</artifactId>
 			<groupId>org.slf4j</groupId>
 			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.13</version>
 		</dependency>
 		<dependency>
 			<groupId>postgresql</groupId>
@@ -196,10 +196,13 @@
 		</resources>
 		<testResources>
 			<testResource>
-				<directory>src/test</directory>
+				<directory>src/test/java/</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources/</directory>
 			</testResource>
 		</testResources>
 		<plugins>
@@ -375,14 +378,14 @@
 					</execution>
 				</executions>
 				<dependencies>
-                <dependency>
-                    <groupId>org.apache.cxf</groupId>
-                    <artifactId>cxf-buildtools</artifactId>
-                    <version>2.2.12</version>
-                    <type>jar</type>
-                    <scope>compile</scope>
-                </dependency>
-            </dependencies>
+					<dependency>
+						<groupId>org.apache.cxf</groupId>
+						<artifactId>cxf-buildtools</artifactId>
+						<version>2.2.12</version>
+						<type>jar</type>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>

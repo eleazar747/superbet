@@ -17,32 +17,33 @@ import fr.ele.services.repositories.MatchRepository;
 
 public class NordicbetIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
-	private NordicbetSynchronizer nordicbetSynchronizer;
+    @Autowired
+    private NordicbetSynchronizer nordicbetSynchronizer;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Override
-	@Before
-	public void initializeDatas() {
-		super.initializeDatas();
-	}
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
-	@Test
-	public void test() throws Throwable {
+    @Test
+    public void test() throws Throwable {
 
-		String Code = "richardgasquet**marcelgranollers";
+        String Code = "richardgasquet**marcelgranollers";
 
-		JAXBContext jaxbContext = JAXBContext.newInstance(Odds.class);
-		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-		Source source = new StreamSource(
-				NordicbetUnwmarshallingTest.class
-						.getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
+        JAXBContext jaxbContext = JAXBContext.newInstance(Odds.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Source source = new StreamSource(
+                NordicbetUnwmarshallingTest.class
+                        .getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
 
-		nordicbetSynchronizer.convert((Odds) unmarshaller.unmarshal(source));
+        nordicbetSynchronizer
+                .synchronize((Odds) unmarshaller.unmarshal(source));
 
-		Assert.assertNotNull(matchRepository.findByCode(Code));
-	}
+        Assert.assertNotNull(matchRepository.findByCode(Code));
+    }
 
 }
