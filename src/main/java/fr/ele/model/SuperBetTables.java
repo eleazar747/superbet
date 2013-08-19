@@ -54,6 +54,8 @@ public class SuperBetTables {
         public static final String REFKEY_ID_COLUMN = "REFKEY_ID";
 
         public static final String BOOKMAKER_ID_COLUMN = "BOOKMAKER_ID";
+
+        public static final String BOOKMAKER_BET_ID_COLUMN = "BOOKMAKER_BET_ID";
     }
 
     public static final class DataMapping {

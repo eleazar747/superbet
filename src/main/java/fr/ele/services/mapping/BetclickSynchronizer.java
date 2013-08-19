@@ -109,6 +109,7 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         } else {
             bet.setCode(choice.getName());
         }
+        bet.setBookmakerBetId(String.valueOf(choice.getId()));
         bet.setDate(context.getSynchronizationDate());
         bet.setBookMaker(context.getBookMaker());
         betRepository.save(bet);
