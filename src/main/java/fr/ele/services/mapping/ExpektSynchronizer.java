@@ -80,8 +80,7 @@ public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
         String matchDescription = description.getContent().get(2).toString();
         if (matchDescription.contains(":")) {
             strtmp = matchDescription.split(":");
-            strtmp[0] = strtmp[0].replaceAll(" ", "").replaceAll("-", "**")
-                    .toLowerCase();
+            strtmp[0] = strtmp[0].replaceAll("-", "**");
             strtmp[1] = strtmp[1].replaceAll(" ", "").toLowerCase();
 
         } else {

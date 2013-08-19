@@ -1,28 +1,35 @@
 package fr.ele.integration;
 
 import java.io.BufferedInputStream;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+
 import fr.ele.feeds.betclick.dto.SportsBcDto;
+import fr.ele.feeds.expekt.ExpektUnmarshallingTest;
+import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
+import fr.ele.model.ref.BookMaker;
 import fr.ele.services.mapping.BetclickSynchronizer;
+import fr.ele.services.mapping.ExpektSynchronizer;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.MatchRepository;
 
-public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
+public class SynchroIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Autowired
     private BetclickSynchronizer betclickSynchronizer;
+
+    @Autowired
+    private ExpektSynchronizer expektSynchronizer;
 
     @Autowired
     private MatchRepository matchRepository;
@@ -46,17 +53,26 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
         betclickSynchronizer.synchronize((SportsBcDto) unmarshaller
                 .unmarshal(inputStream));
 
+        jaxbContext = JAXBContext.newInstance(PunterOdds.class);
+        unmarshaller = jaxbContext.createUnmarshaller();
+        inputStream = new BufferedInputStream(
+                ExpektUnmarshallingTest.class
+                        .getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
+        expektSynchronizer.synchronize((PunterOdds) unmarshaller
+                .unmarshal(inputStream));
+
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = betRepository.findAll();
-        Assert.assertNotNull(bets);
-        Assert.assertEquals(665, bets.size());
-        Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());
+        System.err.println(bets.size());
+        Multimap<String, BookMaker> map = HashMultimap.create();
         for (Bet bet : bets) {
-            bookmakerUniqueIds.add(bet.getBookmakerBetId());
-            // System.err.println(bet.getRefKey().getMatch().getCode());
+            map.put(bet.getRefKey().getMatch().getCode(), bet.getBookMaker());
         }
-        Assert.assertEquals(bets.size(), bookmakerUniqueIds.size());
-
+        for (String code : map.keySet()) {
+            if (map.get(code).size() > 1) {
+                // TODO try to find common match to validate synchro algos
+                System.err.println(code);
+            }
+        }
     }
-
 }

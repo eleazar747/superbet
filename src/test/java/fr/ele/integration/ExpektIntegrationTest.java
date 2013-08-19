@@ -1,7 +1,9 @@
 package fr.ele.integration;
 
 import java.io.BufferedInputStream;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -51,6 +53,13 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
         List<Bet> bets = betRepository.findAll();
         Assert.assertNotNull(bets);
         Assert.assertEquals(312, bets.size());
+        Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());
+        for (Bet bet : bets) {
+            bookmakerUniqueIds.add(bet.getBookmakerBetId());
+            // System.err.println(bet.getRefKey().getMatch().getCode());
+        }
+        // TODO find unique id used by expekt
+        // Assert.assertEquals(bets.size(), bookmakerUniqueIds.size());
     }
 
 }

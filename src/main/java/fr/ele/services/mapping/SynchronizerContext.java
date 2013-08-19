@@ -1,5 +1,6 @@
 package fr.ele.services.mapping;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +8,9 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 
 import fr.ele.core.TimeTracker;
 import fr.ele.model.DataMapping;
@@ -132,8 +136,9 @@ public class SynchronizerContext {
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(DataMappingRepository.Queries
                         .findByBookMaker(bookMaker));
-        Map<String, String> sportDataMappingCache = new HashMap<String, String>();
-        Map<String, String> betTypeDataMappingCache = new HashMap<String, String>();
+        Multimap<String, String> sportDataMappingCache = HashMultimap.create();
+        Multimap<String, String> betTypeDataMappingCache = HashMultimap
+                .create();
         for (DataMapping mapping : mappings) {
             switch (mapping.getRefEntityType()) {
             case SPORT:
@@ -150,9 +155,12 @@ public class SynchronizerContext {
         List<Sport> sports = sportRepository.findAll();
         sportCache = new HashMap<String, Sport>(sportDataMappingCache.size());
         for (Sport sport : sports) {
-            String code = sportDataMappingCache.get(sport.getCode());
-            if (code != null) {
-                sportCache.put(code, sport);
+            Collection<String> codes = sportDataMappingCache.get(sport
+                    .getCode());
+            if (codes != null && !codes.isEmpty()) {
+                for (String code : codes) {
+                    sportCache.put(code, sport);
+                }
             }
         }
 
@@ -160,9 +168,12 @@ public class SynchronizerContext {
         betTypeCache = new HashMap<String, BetType>(
                 betTypeDataMappingCache.size());
         for (BetType betType : betTypes) {
-            String code = betTypeDataMappingCache.get(betType.getCode());
-            if (code != null) {
-                betTypeCache.put(code, betType);
+            Collection<String> codes = betTypeDataMappingCache.get(betType
+                    .getCode());
+            if (codes != null && !codes.isEmpty()) {
+                for (String code : codes) {
+                    betTypeCache.put(code, betType);
+                }
             }
         }
         sportDataMappingCache.clear();
