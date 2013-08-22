@@ -20,34 +20,38 @@
 						</xs:simpleContent>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="data">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="s" maxOccurs="unbounded" minOccurs="0" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="data" />
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="s" maxOccurs="unbounded" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="s">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="cat">
-					<xs:complexType mixed="true">
-						<xs:sequence>
-							<xs:element ref="m" maxOccurs="unbounded" minOccurs="0" />
-						</xs:sequence>
-						<xs:attribute type="xs:short" name="id" use="optional" />
-						<xs:attribute type="xs:string" name="n" use="optional" />
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="cat" />
+
 			</xs:sequence>
 			<xs:attribute type="xs:byte" name="id" use="optional" />
 			<xs:attribute type="xs:string" name="n" use="optional" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="m">
+	<xs:element name="cat">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element ref="m" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:short" name="id" use="optional" />
+			<xs:attribute type="xs:string" name="n" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="m" >
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="t" maxOccurs="unbounded" minOccurs="0" />

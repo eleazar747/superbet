@@ -2,15 +2,16 @@ package fr.ele.model;
 
 public enum BookMakers {
 
-    BETCLICK("betclick"), EXPEKT("expekt"), NORDICBET("nordicbet");
+	BETCLICK("betclick"), EXPEKT("expekt"), NORDICBET("nordicbet"), INTERTOPS(
+			"intertops");
 
-    private final String code;
+	private final String code;
 
-    private BookMakers(String code) {
-        this.code = code;
-    }
+	private BookMakers(String code) {
+		this.code = code;
+	}
 
-    public String getCode() {
-        return code;
-    }
+	public String getCode() {
+		return code;
+	}
 }
