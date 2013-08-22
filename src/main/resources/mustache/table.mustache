@@ -6,17 +6,19 @@
 							[[propertyName]]
 						</th>
 						[[/model.metaProperties]]
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-				{{#entities}}
+				{{#entity}}
 					<tr>
 						[[#model.metaProperties]]
 						<td>
 							{{[[property]]}}
 						</td>
 						[[/model.metaProperties]]
+						<td><button type="submit" class="btn btn-danger" onclick="javascript:alert({{id}})">Delete</button></td>
 					</tr>
-				{{/entities}}
+				{{/entity}}
 				</tbody>
 			</table>

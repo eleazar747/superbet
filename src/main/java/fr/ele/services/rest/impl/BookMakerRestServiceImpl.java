@@ -34,4 +34,20 @@ public class BookMakerRestServiceImpl extends
         return QBookMaker.bookMaker;
     }
 
+    @Override
+    @Transactional
+    public BookMaker insert(String code) {
+        LOGGER.info("insert bookmaker with code={}", code);
+        BookMaker bookMaker = new BookMaker();
+        bookMaker.setCode(code);
+        bookMakerRepository.save(bookMaker);
+        return bookMaker;
+    }
+
+    @Override
+    @Transactional
+    public void delete(long id) {
+        LOGGER.info("delete bookmaker with id={}", id);
+        bookMakerRepository.delete(id);
+    }
 }

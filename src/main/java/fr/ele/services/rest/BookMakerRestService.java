@@ -2,7 +2,10 @@ package fr.ele.services.rest;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -24,7 +27,7 @@ public interface BookMakerRestService {
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "detail", entityClass = BookMaker.class)
+    @MetaTemplate(template = "detailview", entityClass = BookMaker.class)
     BookMaker get(@PathParam("id") long id);
 
     @GET
@@ -33,4 +36,11 @@ public interface BookMakerRestService {
     @MetaTemplate(template = "refview", entityClass = BookMaker.class)
     BookMaker findByCode(@QueryParam("code") String code);
 
+    @POST
+    @MetaTemplate(template = "detailview", entityClass = BookMaker.class)
+    BookMaker insert(@FormParam("code") String code);
+
+    @DELETE
+    @Path("{id}")
+    void delete(@PathParam("id") long id);
 }
