@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+          http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+	<!-- do not use import statements if CXFServlet init parameters link to 
+		this beans.xml -->
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<import resource="classpath:ApplicationContext.xml" />
+
+	<jaxrs:server address="${superbet.server.url}">
+		<jaxrs:serviceBeans>
+			<ref bean="BookMakerRestService" />
+			<ref bean="MatchRestService" />
+			<ref bean="SportRestService" />
+			<ref bean="DataMappingRestService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean='jacksonProvider' />
+			<ref bean='mvWrapper' />
+			<ref bean='metamvWrapper' />
+			<ref bean='htmlProvider' />
+		</jaxrs:providers>
+	</jaxrs:server>
+	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
+	<bean id='mvWrapper' class='fr.ele.ui.EntityToModelAndViewWrapper' />
+	<bean id='metamvWrapper' class='fr.ele.ui.MetaEntityToModelAndViewWrapper' />
+	<bean id='htmlProvider' class='fr.ele.ui.ModelToViewProvider'>
+		<property name="templateEngine" ref="mustacheEngine" />
+	</bean>
+	<bean id='mustacheEngine' class='fr.ele.ui.MustacheTemplateEngine' />
+</beans>

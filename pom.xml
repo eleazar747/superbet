@@ -16,6 +16,7 @@
 		<jackson.version>1.9.12</jackson.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<cxf.version>2.7.5</cxf.version>
+		<jetty.version>8.1.12.v20130726</jetty.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -130,16 +131,16 @@
 			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http-jetty</artifactId>
-			<version>${cxf.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+     
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>${jetty.version}</version>
+        </dependency> 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
@@ -188,7 +189,7 @@
 				</excludes>
 			</resource>
 			<resource>
-				<directory>src/main/webapp</directory>
+				<directory>src/main/webapp/</directory>
 			</resource>
 			<resource>
 				<directory>${project.build.directory}/generated-sources</directory>
