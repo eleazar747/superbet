@@ -20,20 +20,7 @@
 	  <script type="text/javascript">
 		$(document).ready(function() {
 		      $('#create-form-save').bind('click', function(){
-				var formData = $('#ref-form').toObject({mode: 'first'}); 
-		      	$.ajax({
-			        type: 'POST',
-			        contentType: 'application/json',
-			        url: '/rest/bookmakers/',
-			        dataType: "json",
-			        data: JSON.stringify(formData, null, '\t'),
-			        success: function(data, textStatus, jqXHR){
-			            alert('[[model.identifier]] created successfully');
-			        },
-			        error: function(jqXHR, textStatus, errorThrown){
-			            alert('[[model.identifier]] creation error: ' + textStatus);
-			        }
-			    });
+				createRefObject('#ref-form','bookmakers');
 		      });
 		});
 	  </script>        
