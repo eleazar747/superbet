@@ -21,4 +21,5 @@ public enum MatchMapping implements MetaProperty {
         this.property = property;
         this.propertyName = propertyName;
     }
+
 }

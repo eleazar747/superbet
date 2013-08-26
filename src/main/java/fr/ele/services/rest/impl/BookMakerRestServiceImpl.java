@@ -36,12 +36,10 @@ public class BookMakerRestServiceImpl extends
 
     @Override
     @Transactional
-    public BookMaker insert(String code) {
-        LOGGER.info("insert bookmaker with code={}", code);
-        BookMaker bookMaker = new BookMaker();
-        bookMaker.setCode(code);
-        bookMakerRepository.save(bookMaker);
-        return bookMaker;
+    public BookMaker create(BookMaker bookmaker) {
+        LOGGER.info("insert bookmaker with code={}", bookmaker.getCode());
+        bookMakerRepository.save(bookmaker);
+        return bookmaker;
     }
 
     @Override

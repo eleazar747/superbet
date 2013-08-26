@@ -1,16 +1,16 @@
 <script type="text/javascript">
 jQuery(document).ready(function(){
-      var user_data ={entity: [{
-      	id: "28",
-        code: "Henrik Joreteg"
-     }]};
-  var template = jQuery('#rows').html();
-  var renderedData = Mustache.render(template, user_data);
-  jQuery('#table-content').html(renderedData);
+	$.getJSON('/rest/bookmakers', function(data) {
+      	var user_data ={entity: data};
+      	alert(JSON.stringify(user_data, null, '\t'));
+  		var template = jQuery('#rows').html();
+  		var renderedData = Mustache.render(template, user_data);
+  		jQuery('#table-content').html(renderedData);
+  });
 });
 </script>
 <script id="rows" type="text/x-mustache-template">
-{{#entity}}
+{{#entity.model}}
 	<tr>
 		[[#model.metaProperties]]
 		<td>
@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
 		[[/model.metaProperties]]
 		<td><button type="submit" class="btn btn-danger" onclick="javascript:alert({{id}})">Delete</button></td>
 	</tr>
-{{/entity}}
+{{/entity.model}}
 </script>
 <table class="table table-condensed table-hover table-striped">
 	<thead>
