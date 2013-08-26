@@ -15,8 +15,11 @@ import javax.ws.rs.core.MediaType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.ui.rest.MetaTemplate;
 
-@Path("bookmakers")
+@Path(BookMakerRestService.PATH)
 public interface BookMakerRestService {
+
+    public static final String PATH = "bookmakers";
+
     public static final String SERVER = "BookMakerRestService";
 
     @GET

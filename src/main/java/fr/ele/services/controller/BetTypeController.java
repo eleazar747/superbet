@@ -26,4 +26,9 @@ public class BetTypeController extends AbstractRefController {
         return BetType.class;
     }
 
+    @Override
+    protected String resourceUri() {
+        return "betTypes";
+    }
+
 }

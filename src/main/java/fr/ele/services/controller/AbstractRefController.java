@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ele.ui.model.MetaMapping;
 import fr.ele.ui.model.MetaRegistry;
-import fr.ele.ui.mvc.AbstractBaseController;
-import fr.ele.ui.mvc.ActivityController;
+import fr.ele.ui.mvc.AbstractActivityController;
 
-public abstract class AbstractRefController extends AbstractBaseController
-        implements ActivityController {
+public abstract class AbstractRefController extends AbstractActivityController {
 
     @Autowired
     private MetaRegistry metaRegistry;
@@ -29,6 +27,7 @@ public abstract class AbstractRefController extends AbstractBaseController
         MetaMapping metaMapping = metaRegistry
                 .getMetaMapping(handledModelClass());
         model.addAttribute("model", metaMapping);
+        model.addAttribute("resource", resourceUri());
         mapActivities(model);
         return "refView";
     }
@@ -36,4 +35,6 @@ public abstract class AbstractRefController extends AbstractBaseController
     public String edit(Locale locale, Model model) {
         return "editRefView";
     }
+
+    protected abstract String resourceUri();
 }

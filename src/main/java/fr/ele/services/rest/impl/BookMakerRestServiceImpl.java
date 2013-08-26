@@ -35,17 +35,13 @@ public class BookMakerRestServiceImpl extends
     }
 
     @Override
-    @Transactional
     public BookMaker create(BookMaker bookmaker) {
-        LOGGER.info("insert bookmaker with code={}", bookmaker.getCode());
-        bookMakerRepository.save(bookmaker);
-        return bookmaker;
+        return super.create(bookmaker);
     }
 
     @Override
     @Transactional
     public void delete(long id) {
-        LOGGER.info("delete bookmaker with id={}", id);
-        bookMakerRepository.delete(id);
+        super.delete(id);
     }
 }

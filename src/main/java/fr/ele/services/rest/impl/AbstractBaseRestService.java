@@ -25,6 +25,17 @@ public abstract class AbstractBaseRestService<T extends SuperBetEntity> {
         return getRepository().findOne(id);
     }
 
+    @Transactional
+    protected T create(T model) {
+        getRepository().save(model);
+        return model;
+    }
+
+    @Transactional
+    protected void delete(long id) {
+        getRepository().delete(id);
+    }
+
     protected abstract SuperBetRepository<T> getRepository();
 
 }

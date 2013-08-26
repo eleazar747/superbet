@@ -35,4 +35,14 @@ public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
         return super.findAll();
     }
 
+    @Override
+    public Match create(Match match) {
+        return super.create(match);
+    }
+
+    @Override
+    public void delete(long id) {
+        super.delete(id);
+    }
+
 }

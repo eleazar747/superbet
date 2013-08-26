@@ -34,4 +34,14 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
         return super.findAll();
     }
 
+    @Override
+    public Sport create(Sport model) {
+        return super.create(model);
+    }
+
+    @Override
+    public void delete(long id) {
+        super.delete(id);
+    }
+
 }
