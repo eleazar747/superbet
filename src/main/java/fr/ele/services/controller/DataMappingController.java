@@ -3,18 +3,18 @@ package fr.ele.services.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.ele.model.ref.BetType;
-import fr.ele.services.rest.BetTypeRestService;
+import fr.ele.model.DataMapping;
+import fr.ele.services.rest.DataMappingRestService;
 
 @Controller
-@RequestMapping(BetTypeController.URI)
-public class BetTypeController extends AbstractRefController {
+@RequestMapping(DataMappingController.URI)
+public class DataMappingController extends AbstractRefController {
 
-    public static final String URI = "bettype";
+    static final String URI = "datamapping";
 
     @Override
     public String getActivityName() {
-        return "Bet Type";
+        return "Data Mapping";
     }
 
     @Override
@@ -24,12 +24,12 @@ public class BetTypeController extends AbstractRefController {
 
     @Override
     protected Class<?> handledModelClass() {
-        return BetType.class;
+        return DataMapping.class;
     }
 
     @Override
     protected String resourceUri() {
-        return BetTypeRestService.PATH;
+        return DataMappingRestService.PATH;
     }
 
 }

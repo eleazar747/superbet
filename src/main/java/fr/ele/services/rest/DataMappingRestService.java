@@ -11,8 +11,10 @@ import javax.ws.rs.core.MediaType;
 import fr.ele.model.DataMapping;
 import fr.ele.ui.rest.MetaTemplate;
 
-@Path("datamappings")
+@Path(DataMappingRestService.PATH)
 public interface DataMappingRestService {
+
+    public static final String PATH = "datamappings";
 
     static final String SERVER = "DataMappingRestService";
 

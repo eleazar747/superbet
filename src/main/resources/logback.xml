@@ -18,9 +18,6 @@
 	<logger name="fr.ele" level="TRACE" additivity="false">
 		<appender-ref ref="STDERR"/>
 	</logger>
-	<logger name="org.eclipse.jetty.servlet" level="DEBUG" additivity="false">
-		<appender-ref ref="STDOUT"/>
-	</logger>
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
