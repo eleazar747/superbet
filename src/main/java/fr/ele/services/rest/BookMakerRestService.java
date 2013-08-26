@@ -13,7 +13,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.ref.BookMaker;
-import fr.ele.ui.MetaTemplate;
+import fr.ele.ui.rest.MetaTemplate;
 
 @Path("bookmakers")
 public interface BookMakerRestService {

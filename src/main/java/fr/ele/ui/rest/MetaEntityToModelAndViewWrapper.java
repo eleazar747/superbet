@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -8,8 +8,8 @@ import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.ext.Provider;
 
-import fr.ele.ui.MetaTemplate.Dummy;
 import fr.ele.ui.model.MetaRegistry;
+import fr.ele.ui.rest.MetaTemplate.Dummy;
 
 @Provider
 @MetaTemplate

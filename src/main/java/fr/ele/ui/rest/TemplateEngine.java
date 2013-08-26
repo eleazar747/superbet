@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 import java.io.OutputStream;
 import java.util.Map;

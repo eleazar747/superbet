@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,14 +10,6 @@ import javax.ws.rs.NameBinding;
 @NameBinding
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(value = RetentionPolicy.RUNTIME)
-public @interface MetaTemplate {
-    public static class Dummy {
-
-    }
-
-    String template() default "";
-
-    Class<?> entityClass() default Dummy.class;
-
-    String profile() default "";
+public @interface Template {
+    String value() default "";
 }

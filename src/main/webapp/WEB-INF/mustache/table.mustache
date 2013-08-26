@@ -1,0 +1,37 @@
+<script type="text/javascript">
+jQuery(document).ready(function(){
+      var user_data ={entity: [{
+      	id: "28",
+        code: "Henrik Joreteg"
+     }]};
+  var template = jQuery('#rows').html();
+  var renderedData = Mustache.render(template, user_data);
+  jQuery('#table-content').html(renderedData);
+});
+</script>
+<script id="rows" type="text/x-mustache-template">
+{{#entity}}
+	<tr>
+		[[#model.metaProperties]]
+		<td>
+			{{[[property]]}}
+		</td>
+		[[/model.metaProperties]]
+		<td><button type="submit" class="btn btn-danger" onclick="javascript:alert({{id}})">Delete</button></td>
+	</tr>
+{{/entity}}
+</script>
+<table class="table table-condensed table-hover table-striped">
+	<thead>
+		<tr>
+			[[#model.metaProperties]]
+			<th>
+				[[propertyName]]
+			</th>
+			[[/model.metaProperties]]
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody id="table-content">
+	</tbody>
+</table>

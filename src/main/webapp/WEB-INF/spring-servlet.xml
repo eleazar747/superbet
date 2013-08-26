@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xsi:schemaLocation="
-http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd
-http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
-          http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd 
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
 	<!-- do not use import statements if CXFServlet init parameters link to 
 		this beans.xml -->
@@ -13,6 +14,9 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	<import resource="classpath:ApplicationContext.xml" />
+
+	<context:component-scan base-package="fr.ele.ui.model.superbet" />
+	<context:component-scan base-package="fr.ele.ui.mvc" />
 
 	<jaxrs:server address="${superbet.server.url}">
 		<jaxrs:serviceBeans>
@@ -29,10 +33,15 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 		</jaxrs:providers>
 	</jaxrs:server>
 	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
-	<bean id='mvWrapper' class='fr.ele.ui.EntityToModelAndViewWrapper' />
-	<bean id='metamvWrapper' class='fr.ele.ui.MetaEntityToModelAndViewWrapper' />
-	<bean id='htmlProvider' class='fr.ele.ui.ModelToViewProvider'>
+	<bean id='mvWrapper' class='fr.ele.ui.rest.EntityToModelAndViewWrapper' />
+	<bean id='metamvWrapper' class='fr.ele.ui.rest.MetaEntityToModelAndViewWrapper' />
+	<bean id='htmlProvider' class='fr.ele.ui.rest.ModelToViewProvider'>
 		<property name="templateEngine" ref="mustacheEngine" />
 	</bean>
-	<bean id='mustacheEngine' class='fr.ele.ui.MustacheTemplateEngine' />
+	<bean id='mustacheEngine' class='fr.ele.ui.rest.MustacheTemplateEngine' />
+
+	<bean id="viewResolver" class="fr.ele.ui.mvc.MustacheViewResolver">
+		<property name="resourceBase" value="/WEB-INF/mustache/" />
+		<property name="resourceSuffix" value=".mustache" />
+	</bean>
 </beans>

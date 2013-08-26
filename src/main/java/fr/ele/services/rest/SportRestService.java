@@ -10,7 +10,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.ref.Sport;
-import fr.ele.ui.MetaTemplate;
+import fr.ele.ui.rest.MetaTemplate;
 
 @Path("sports")
 public interface SportRestService {

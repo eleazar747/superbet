@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 public class ModelAndView {
     private final Object model;

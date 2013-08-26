@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;

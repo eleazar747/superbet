@@ -1,4 +1,4 @@
-package fr.ele.ui;
+package fr.ele.ui.rest;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,11 +20,9 @@ import org.slf4j.LoggerFactory;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
 
 import fr.ele.ui.model.MetaRegistry;
+import fr.ele.ui.mustache.MetaMustacheFactory;
 
 public class MustacheTemplateEngine implements TemplateEngine {
 
@@ -59,41 +57,6 @@ public class MustacheTemplateEngine implements TemplateEngine {
                 return new StringReader(string);
             }
             return new BufferedReader(new InputStreamReader(is));
-        }
-    }
-
-    private class MetaSuperBetMustacheFactory extends DefaultMustacheFactory {
-
-        @Override
-        public Reader getReader(String template) {
-            LOGGER.info("meta {}", template);
-            String path = "/mustache/" + template + ".mustache";
-            LOGGER.info("load mustache meta template : {} at {}", template,
-                    path);
-            InputStream is = MustacheTemplateEngine.class
-                    .getResourceAsStream(path);
-            if (LOGGER.isDebugEnabled()) {
-                String string = getStringFromInputStream(is);
-                LOGGER.info(string);
-                return new StringReader(string);
-            }
-            // if (LOGGER.isDebugEnabled()) {
-            String string = getStringFromInputStream(is);
-            LOGGER.info(string);
-            return new StringReader(string);
-            // }
-            // return new BufferedReader(new InputStreamReader(is));
-        }
-
-        @Override
-        protected LoadingCache<String, Mustache> createMustacheCache() {
-            return CacheBuilder.newBuilder().build(
-                    new CacheLoader<String, Mustache>() {
-                        @Override
-                        public Mustache load(String key) throws Exception {
-                            return mc.compile(getReader(key), key, "[[", "]]");
-                        }
-                    });
         }
     }
 
@@ -132,7 +95,8 @@ public class MustacheTemplateEngine implements TemplateEngine {
     @Inject
     private MetaRegistry metaRegistry;
 
-    private final MetaSuperBetMustacheFactory metaFactory = new MetaSuperBetMustacheFactory();
+    private final MetaMustacheFactory metaFactory = new MetaMustacheFactory(
+            "/mustache/", ".mustache");
 
     private final SuperBetMustacheFactory factory = new SuperBetMustacheFactory();
 

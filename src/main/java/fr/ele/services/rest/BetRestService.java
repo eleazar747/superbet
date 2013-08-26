@@ -10,7 +10,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.Bet;
-import fr.ele.ui.Template;
+import fr.ele.ui.rest.Template;
 
 @Path("bets")
 public interface BetRestService {
