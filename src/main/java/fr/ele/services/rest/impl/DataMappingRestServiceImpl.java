@@ -27,4 +27,14 @@ public class DataMappingRestServiceImpl extends
         return super.findAll();
     }
 
+    @Override
+    public DataMapping create(DataMapping model) {
+        return super.create(model);
+    }
+
+    @Override
+    public void delete(long id) {
+        super.delete(id);
+    }
+
 }

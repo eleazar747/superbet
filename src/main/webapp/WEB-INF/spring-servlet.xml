@@ -8,9 +8,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd 
 http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
-	<!-- do not use import statements if CXFServlet init parameters link to 
-		this beans.xml -->
-
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	<import resource="classpath:ApplicationContext.xml" />
@@ -28,18 +25,9 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean='jacksonProvider' />
-			<ref bean='mvWrapper' />
-			<ref bean='metamvWrapper' />
-			<ref bean='htmlProvider' />
 		</jaxrs:providers>
 	</jaxrs:server>
 	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
-	<bean id='mvWrapper' class='fr.ele.ui.rest.EntityToModelAndViewWrapper' />
-	<bean id='metamvWrapper' class='fr.ele.ui.rest.MetaEntityToModelAndViewWrapper' />
-	<bean id='htmlProvider' class='fr.ele.ui.rest.ModelToViewProvider'>
-		<property name="templateEngine" ref="mustacheEngine" />
-	</bean>
-	<bean id='mustacheEngine' class='fr.ele.ui.rest.MustacheTemplateEngine' />
 
 	<bean id="viewResolver" class="fr.ele.ui.mvc.MustacheViewResolver">
 		<property name="resourceBase" value="/WEB-INF/mustache/" />

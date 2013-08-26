@@ -13,7 +13,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.ref.BookMaker;
-import fr.ele.ui.rest.MetaTemplate;
 
 @Path(BookMakerRestService.PATH)
 public interface BookMakerRestService {
@@ -23,20 +22,17 @@ public interface BookMakerRestService {
     public static final String SERVER = "BookMakerRestService";
 
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "refview", entityClass = BookMaker.class)
+    @Produces(MediaType.APPLICATION_JSON)
     List<BookMaker> findAll();
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "detailview", entityClass = BookMaker.class)
+    @Produces(MediaType.APPLICATION_JSON)
     BookMaker get(@PathParam("id") long id);
 
     @GET
     @Path("search")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "refview", entityClass = BookMaker.class)
+    @Produces(MediaType.APPLICATION_JSON)
     BookMaker findByCode(@QueryParam("code") String code);
 
     @POST

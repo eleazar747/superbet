@@ -2,14 +2,16 @@ package fr.ele.services.rest;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.model.DataMapping;
-import fr.ele.ui.rest.MetaTemplate;
 
 @Path(DataMappingRestService.PATH)
 public interface DataMappingRestService {
@@ -19,13 +21,20 @@ public interface DataMappingRestService {
     static final String SERVER = "DataMappingRestService";
 
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "refview", entityClass = DataMapping.class)
+    @Produces(MediaType.APPLICATION_JSON)
     List<DataMapping> findAll();
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_HTML})
-    @MetaTemplate(template = "detail", entityClass = DataMapping.class)
+    @Produces(MediaType.APPLICATION_JSON)
     DataMapping get(@PathParam("id") long id);
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    DataMapping create(DataMapping dataMapping);
+
+    @DELETE
+    @Path("{id}")
+    void delete(@PathParam("id") long id);
 }

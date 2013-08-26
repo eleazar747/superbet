@@ -16,8 +16,6 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
-import fr.ele.ui.rest.MustacheTemplateEngine;
-
 public class MetaMustacheFactory extends DefaultMustacheFactory {
 
     private final static Logger LOGGER = LoggerFactory
@@ -38,7 +36,7 @@ public class MetaMustacheFactory extends DefaultMustacheFactory {
         LOGGER.debug("meta {}", template);
         String path = resourceBase + template + resourceSuffix;
         LOGGER.debug("load mustache meta template : {} at {}", template, path);
-        InputStream is = MustacheTemplateEngine.class.getResourceAsStream(path);
+        InputStream is = MetaMustacheFactory.class.getResourceAsStream(path);
         if (LOGGER.isDebugEnabled()) {
             String string = getStringFromInputStream(is);
             LOGGER.debug(string);
