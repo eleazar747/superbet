@@ -2,7 +2,6 @@
 jQuery(document).ready(function(){
 	$.getJSON('/rest/bookmakers', function(data) {
       	var user_data ={entity: data};
-      	alert(JSON.stringify(user_data, null, '\t'));
   		var template = jQuery('#rows').html();
   		var renderedData = Mustache.render(template, user_data);
   		jQuery('#table-content').html(renderedData);
