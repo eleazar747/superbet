@@ -2,6 +2,7 @@ package fr.ele.services.rest.impl;
 
 import java.util.List;
 
+import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,8 @@ public class DataMappingRestServiceImpl extends
         super.delete(id);
     }
 
+    @Override
+    public List<DataMapping> insertCsv(Attachment file) {
+        return insertCsv(file, DataMapping.class);
+    }
 }
