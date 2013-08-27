@@ -9,7 +9,6 @@ import fr.ele.feeds.betclick.dto.MatchBcDto;
 import fr.ele.feeds.betclick.dto.SportBcDto;
 import fr.ele.feeds.betclick.dto.SportsBcDto;
 import fr.ele.model.Bet;
-import fr.ele.model.BookMakers;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
@@ -28,8 +27,8 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
     }
 
     @Override
-    protected BookMakers getBookMaker() {
-        return BookMakers.BETCLICK;
+    protected Class<SportsBcDto> getDtoClass() {
+        return SportsBcDto.class;
     }
 
     private long convert(SynchronizerContext context, SportBcDto sportBcDto) {
@@ -99,4 +98,5 @@ public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         saveBet(bet);
         return 1L;
     }
+
 }

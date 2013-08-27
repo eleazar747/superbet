@@ -1,9 +1,7 @@
 package fr.ele.integration;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,17 +29,12 @@ public class NordicbetIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-
         String Code = "richardgasquet**marcelgranollers";
-
-        JAXBContext jaxbContext = JAXBContext.newInstance(Odds.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        Source source = new StreamSource(
+        InputStream inputStream = new BufferedInputStream(
                 NordicbetUnwmarshallingTest.class
                         .getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
-
-        nordicbetSynchronizer
-                .synchronize((Odds) unmarshaller.unmarshal(source));
+        Odds odds = nordicbetSynchronizer.unmarshall(inputStream);
+        nordicbetSynchronizer.synchronize("nordicbet", odds);
 
         Assert.assertNotNull(matchRepository.findByCode(Code));
     }

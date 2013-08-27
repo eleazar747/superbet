@@ -14,6 +14,8 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 
 	<context:component-scan base-package="fr.ele.ui.model.superbet" />
 	<context:component-scan base-package="fr.ele.ui.mvc" />
+	<context:component-scan base-package="fr.ele.services.controller" />
+	<context:component-scan base-package="fr.ele.services.rest" />
 
 	<jaxrs:server address="${superbet.server.url}">
 		<jaxrs:serviceBeans>

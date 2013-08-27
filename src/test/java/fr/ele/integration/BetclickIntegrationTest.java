@@ -5,9 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,13 +35,11 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-        JAXBContext jaxbContext = JAXBContext.newInstance(SportsBcDto.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         BufferedInputStream inputStream = new BufferedInputStream(
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/betclick/odds_en.xml"));
-        betclickSynchronizer.synchronize((SportsBcDto) unmarshaller
-                .unmarshal(inputStream));
+        SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream);
+        betclickSynchronizer.synchronize("betclick", dto);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = betRepository.findAll();

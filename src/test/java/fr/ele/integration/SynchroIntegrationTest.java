@@ -3,9 +3,6 @@ package fr.ele.integration;
 import java.io.BufferedInputStream;
 import java.util.List;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,21 +42,17 @@ public class SynchroIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-        JAXBContext jaxbContext = JAXBContext.newInstance(SportsBcDto.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         BufferedInputStream inputStream = new BufferedInputStream(
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/betclick/odds_en.xml"));
-        betclickSynchronizer.synchronize((SportsBcDto) unmarshaller
-                .unmarshal(inputStream));
+        SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream);
+        betclickSynchronizer.synchronize("betclick", dto);
 
-        jaxbContext = JAXBContext.newInstance(PunterOdds.class);
-        unmarshaller = jaxbContext.createUnmarshaller();
         inputStream = new BufferedInputStream(
                 ExpektUnmarshallingTest.class
                         .getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
-        expektSynchronizer.synchronize((PunterOdds) unmarshaller
-                .unmarshal(inputStream));
+        PunterOdds odds = expektSynchronizer.unmarshall(inputStream);
+        expektSynchronizer.synchronize("expekt", odds);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = betRepository.findAll();

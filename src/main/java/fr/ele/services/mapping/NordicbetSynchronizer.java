@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import fr.ele.feeds.nordicbet.dto.Game;
 import fr.ele.feeds.nordicbet.dto.Odds;
 import fr.ele.feeds.nordicbet.dto.OutcomeSet;
-import fr.ele.model.BookMakers;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetRepository;
@@ -53,11 +52,6 @@ public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
         return 0;
     }
 
-    @Override
-    protected BookMakers getBookMaker() {
-        return BookMakers.NORDICBET;
-    }
-
     private long convert(SynchronizerContext context, Game game) {
 
         Sport sport = context.findSport(game.getSport());
@@ -94,6 +88,11 @@ public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
 
         }
         return 0L;
+    }
+
+    @Override
+    protected Class<Odds> getDtoClass() {
+        return Odds.class;
     }
 
 }

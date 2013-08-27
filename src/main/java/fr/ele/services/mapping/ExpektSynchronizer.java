@@ -12,7 +12,6 @@ import fr.ele.feeds.expekt.dto.Description;
 import fr.ele.feeds.expekt.dto.Game;
 import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
-import fr.ele.model.BookMakers;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
@@ -94,8 +93,8 @@ public class ExpektSynchronizer extends AbstractSynchronizer<PunterOdds> {
     }
 
     @Override
-    protected BookMakers getBookMaker() {
-        return BookMakers.EXPEKT;
+    protected Class<PunterOdds> getDtoClass() {
+        return PunterOdds.class;
     }
 
 }
