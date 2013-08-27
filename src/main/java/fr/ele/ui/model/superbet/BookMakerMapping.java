@@ -12,7 +12,7 @@ public enum BookMakerMapping implements MetaProperty {
 
     URL_SYNC("urlSync", "URL for sync"),
 
-    CLASS_SYNC("classSync", "class for sync");
+    SYNC_SERVICE("synchronizerService", "Sync Service");
 
     private final String property;
 

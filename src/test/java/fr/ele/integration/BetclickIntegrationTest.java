@@ -12,20 +12,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.feeds.betclick.dto.SportsBcDto;
 import fr.ele.model.Bet;
-import fr.ele.services.mapping.BetclickSynchronizer;
+import fr.ele.model.ref.BookMaker;
+import fr.ele.services.mapping.BetclicSynchronizer;
+import fr.ele.services.mapping.BookMakerSynchronizerService;
 import fr.ele.services.repositories.BetRepository;
+import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.MatchRepository;
 
 public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Autowired
-    private BetclickSynchronizer betclickSynchronizer;
+    private BetclicSynchronizer betclickSynchronizer;
 
     @Autowired
     private MatchRepository matchRepository;
 
     @Autowired
     private BetRepository betRepository;
+
+    @Autowired
+    private BookMakerSynchronizerService bookMakerSynchronizerService;
+
+    @Autowired
+    private BookMakerRepository bookMakerRepository;
 
     @Override
     @Before
@@ -54,4 +63,9 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     }
 
+    @Test
+    public void test2() {
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
+        bookMakerSynchronizerService.synchronize(bookMaker);
+    }
 }

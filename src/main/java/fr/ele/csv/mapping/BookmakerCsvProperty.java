@@ -59,18 +59,18 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
             object.setUrlSync((String) context.unmarshall(String.class, value));
         }
     },
-    CLASS_SYNC("class sync") {
+    SYNC_SERVICE("sync service") {
 
         @Override
         public String getStringValue(CsvContext<BookMaker> context,
                 BookMaker object) {
-            return context.marshall(object.getClassSync());
+            return context.marshall(object.getSynchronizerService());
         }
 
         @Override
         public void setValue(CsvContext context, BookMaker object, String value) {
-            object.setClassSync((String) context
-                    .unmarshall(String.class, value));
+            object.setSynchronizerService((String) context.unmarshall(
+                    String.class, value));
         }
     };
 

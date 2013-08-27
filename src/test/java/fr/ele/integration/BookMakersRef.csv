@@ -1,5 +1,5 @@
-id,code,url,url sync,class sync
-0,betclick,www.google.com,www.google.com,fr.ele.feeds.betclick.dto.SportsBcDto
-0,expekt,www.google.com,www.google.com,fr.ele.feeds.expekt.dto.PunterOdds
+id,code,url,url sync,sync service
+0,betclic,http://betclic.com,http://xml.cdn.betclic.com/odds_en.xml,BetclicSynchronizer
+0,expekt,www.google.com,www.google.com,ExpektSynchronizer
 0,intertops,www.google.com,www.google.com,Object
-0,nordicbet,www.google.com,www.google.com,fr.ele.feeds.nordicbet.dto.Odds
+0,nordicbet,www.google.com,www.google.com,NordicbetSynchronizer

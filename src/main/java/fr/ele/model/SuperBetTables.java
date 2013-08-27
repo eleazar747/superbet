@@ -12,7 +12,7 @@ public class SuperBetTables {
 
         public static final String URL_SYNC_COLUMN = "URL_SYNC";
 
-        public static final String CLASS_SYNC_COLUMN = "CLAZZ";
+        public static final String SYNC_SERVICE = "SYNC_SERVICE";
 
     }
 

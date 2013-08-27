@@ -19,15 +19,15 @@ public class BookMaker extends HasCodeEntity {
     @Column(name = SuperBetTables.BookMakerTable.URL_SYNC_COLUMN, nullable = false)
     private String urlSync;
 
-    @Column(name = SuperBetTables.BookMakerTable.CLASS_SYNC_COLUMN, nullable = false)
-    private String classSync;
+    @Column(name = SuperBetTables.BookMakerTable.SYNC_SERVICE, nullable = false)
+    private String synchronizerService;
 
-    public String getClassSync() {
-        return classSync;
+    public String getSynchronizerService() {
+        return synchronizerService;
     }
 
-    public void setClassSync(String classSync) {
-        this.classSync = classSync;
+    public void setSynchronizerService(String synchronierService) {
+        this.synchronizerService = synchronierService;
     }
 
     public String getUrl() {

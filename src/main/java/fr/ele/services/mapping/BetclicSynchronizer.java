@@ -14,8 +14,8 @@ import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 
-@Service("BetclickSynchronizer")
-public class BetclickSynchronizer extends AbstractSynchronizer<SportsBcDto> {
+@Service("BetclicSynchronizer")
+public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 
     @Override
     protected long convert(SynchronizerContext context, SportsBcDto dto) {

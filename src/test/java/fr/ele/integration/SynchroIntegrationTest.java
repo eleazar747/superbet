@@ -15,7 +15,7 @@ import fr.ele.feeds.expekt.ExpektUnmarshallingTest;
 import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.mapping.BetclickSynchronizer;
+import fr.ele.services.mapping.BetclicSynchronizer;
 import fr.ele.services.mapping.ExpektSynchronizer;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.MatchRepository;
@@ -23,7 +23,7 @@ import fr.ele.services.repositories.MatchRepository;
 public class SynchroIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Autowired
-    private BetclickSynchronizer betclickSynchronizer;
+    private BetclicSynchronizer betclickSynchronizer;
 
     @Autowired
     private ExpektSynchronizer expektSynchronizer;
