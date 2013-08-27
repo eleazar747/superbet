@@ -45,5 +45,4 @@ public class BookMaker extends HasCodeEntity {
     public void setUrlSync(String urlSync) {
         this.urlSync = urlSync;
     }
-
 }

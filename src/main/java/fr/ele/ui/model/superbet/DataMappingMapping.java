@@ -5,11 +5,11 @@ import fr.ele.ui.model.MetaProperty;
 public enum DataMappingMapping implements MetaProperty {
     ID("id", "Id"),
 
-    BOOKMAKER("bookmaker", "BookMaker"),
+    BOOKMAKER("bookMaker.code", "BookMaker"),
 
     REF_TYPE("refEntityType", "Ref Type"),
 
-    BOOKMAKER_CODE("bookmakerCode", "BookMaker Code"),
+    BOOKMAKER_CODE("bookMakerCode", "BookMaker Code"),
 
     MODEL_CODE("modelCode", "Model Code");
 

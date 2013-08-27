@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import fr.ele.model.ref.BookMaker;
 
 @Entity
@@ -25,8 +28,9 @@ public class DataMapping extends SuperBetEntity {
     @Enumerated(EnumType.STRING)
     private RefEntityType refEntityType;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMaker.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = BookMaker.class)
     @JoinColumn(name = SuperBetTables.DataMapping.BOOKMAKER_ID, nullable = false)
+    @Fetch(FetchMode.JOIN)
     private BookMaker bookMaker;
 
     public String getModelCode() {
