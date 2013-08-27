@@ -14,14 +14,34 @@
 				<a href="#" class="btn" data-dismiss="modal">Close</a>
 			</div>
 	 </div>
+	  <div id="upload-form" class="modal hide fade in" style="display: none; ">
+	  		<div class="modal-header">
+				<a class="close" data-dismiss="modal">x</a>
+				<h3>Create [[model.identifier]]</h3>
+			</div>
+			<div class="modal-body">
+				<form id="upload-request" action="/rest/[[resource]]/upload" method="POST" target="_blank" enctype="multipart/form-data">
+				    <input id="upload-file" name="content" type="file" />
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#" id='upload-form-send' class="btn btn-success" data-dismiss="modal">Upload</a>
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+			</div>
+	 </div>
 	  <div class="form-actions">
 	  	<button data-toggle="modal" href="#create-form" class="btn btn-primary type="button">New</button>
+	  	<button data-toggle="modal" href="#upload-form" class="btn btn-primary type="button">Import</button>
 	  <div> 
 	  <script type="text/javascript">
 		$(document).ready(function() {
 		      $('#create-form-save').bind('click', function(){
 				createRefObject('#ref-form','[[resource]]');
 		      });
+			  $("#upload-form-send").click(function () {
+			    var obj = document.getElementById("upload-request");
+				obj.submit();
+			  });
 		});
 	  </script>        
 	  [[>table]]
