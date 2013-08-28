@@ -23,7 +23,7 @@ public class BookMakerSynchronizerServiceImpl implements
     private Map<String, SynchronizerService> synchronizers;
 
     @Override
-    public void synchronize(BookMaker bookMaker) {
+    public Long synchronize(BookMaker bookMaker) {
         SynchronizerService service = synchronizers.get(bookMaker
                 .getSynchronizerService());
         if (service == null) {
@@ -39,7 +39,7 @@ public class BookMakerSynchronizerServiceImpl implements
             InputStream inputStream = response.getEntity().getContent();
             Object dto = service
                     .unmarshall(new BufferedInputStream(inputStream));
-            service.synchronize(bookMaker.getCode(), dto);
+            return service.synchronize(bookMaker.getCode(), dto);
         } catch (Throwable e) {
             throw new RuntimeException(e);
         }

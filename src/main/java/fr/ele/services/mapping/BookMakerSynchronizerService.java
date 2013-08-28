@@ -4,5 +4,5 @@ import fr.ele.model.ref.BookMaker;
 
 public interface BookMakerSynchronizerService {
 
-    void synchronize(BookMaker bookMaker);
+    Long synchronize(BookMaker bookMaker);
 }

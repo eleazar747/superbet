@@ -35,6 +35,13 @@ function findAll(templateId, activity) {
 	});
 };
 
+function synchronizeBookmaker(bookmaker) {
+	var uri = rest +'admin/synchronize/?bookmaker='+bookmaker;
+	$.getJSON(uri, function(data) {
+		alert(JSON.stringify(data));
+	});
+};
+
 function deleteRefObject(activity, id) {
 	$.ajax({
 		type: 'DELETE',
