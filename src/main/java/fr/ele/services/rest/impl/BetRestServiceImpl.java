@@ -10,6 +10,7 @@ import java.util.Map;
 import org.joda.time.DateMidnight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.model.Bet;
 import fr.ele.model.ref.RefKey;
@@ -25,6 +26,7 @@ public class BetRestServiceImpl implements BetRestService {
     private BetService betService;
 
     @Override
+    @Transactional(readOnly = true)
     public List<SureBetDto> getSureBets() {
         BetSearch search = new BetSearch();
         search.setFrom(DateMidnight.now().toDate());
