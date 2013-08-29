@@ -3,7 +3,13 @@ package fr.ele.ui.model.superbet;
 import fr.ele.ui.model.MetaProperty;
 
 public enum MatchMapping implements MetaProperty {
-    ID("id", "Id"), CODE("code", "Code"), SPORT("sport.code", "Sport");
+    ID("id", "Id"),
+
+    CODE("code", "Code"),
+
+    DATE("date", "Date"),
+
+    SPORT("sport.code", "Sport");
 
     private final String property;
 

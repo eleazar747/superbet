@@ -9,7 +9,7 @@ public class LastBet implements Holder<Bet, Bet> {
 
     @Override
     public Bet getResult() {
-        return null;
+        return lastBet;
     }
 
     @Override

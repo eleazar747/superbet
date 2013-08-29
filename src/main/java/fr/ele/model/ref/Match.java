@@ -22,7 +22,7 @@ import fr.ele.model.SuperBetTables;
 @Proxy(proxyClass = Match.class)
 public class Match extends SuperBetEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sport.class)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Sport.class)
     @JoinColumn(name = SuperBetTables.MatchTable.SPORT_COLUMN, nullable = false)
     private Sport sport;
 

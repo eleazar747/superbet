@@ -1,52 +1,28 @@
 package fr.ele.mapreduce;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.annotation.Nullable;
+public class KeyMap<K extends Key, R, V> {
 
-import com.google.common.base.Function;
-import com.google.common.collect.Iterators;
+    private final Map<K, Holder<R, V>> map;
 
-public class KeyMap<K extends Key, R, V, H extends Holder<R, V>> {
+    private final HolderFactory<R, V> factory;
 
-    public static final class Pair<G, D> {
-        private final G left;
-
-        private final D right;
-
-        public Pair(G left, D right) {
-            this.left = left;
-            this.right = right;
-        }
-
-        public G getLeft() {
-            return left;
-        }
-
-        public D getRight() {
-            return right;
-        }
-
-    }
-
-    private final Map<K, H> map;
-
-    private final HolderFactory<H> factory;
-
-    public KeyMap(HolderFactory<H> factory, Map<K, H> map) {
+    public KeyMap(HolderFactory<R, V> factory, Map<K, Holder<R, V>> map) {
         this.map = map;
         this.factory = factory;
     }
 
-    public KeyMap(HolderFactory<H> factory) {
-        this(factory, new HashMap<K, H>());
+    public KeyMap(HolderFactory<R, V> factory) {
+        this(factory, new HashMap());
     }
 
     public void add(K key, V value) {
-        H holder = map.get(key);
+        Holder<R, V> holder = map.get(key);
         if (holder == null) {
             holder = factory.createHolder();
             map.put(key, holder);
@@ -54,20 +30,15 @@ public class KeyMap<K extends Key, R, V, H extends Holder<R, V>> {
         holder.add(value);
     }
 
-    Iterator<Entry<K, H>> iterate() {
+    public Iterator<Entry<K, Holder<R, V>>> iterate() {
         return map.entrySet().iterator();
     }
 
-    Iterator<Pair<K, R>> iterateResults() {
-        return Iterators.transform(iterate(),
-                new Function<Entry<K, H>, Pair<K, R>>() {
+    public Iterator<Holder<R, V>> iterateHolder() {
+        return map.values().iterator();
+    }
 
-                    @Override
-                    @Nullable
-                    public Pair<K, R> apply(@Nullable Entry<K, H> entry) {
-                        return new Pair(entry.getKey(), entry.getValue()
-                                .getResult());
-                    };
-                });
+    public Collection<Holder<R, V>> getHolders() {
+        return map.values();
     }
 }
