@@ -25,6 +25,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 			<ref bean="DataMappingRestService" />
 			<ref bean="BetTypeRestService" />
 			<ref bean="AdminRestService" />
+			<ref bean="BetRestService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean='jacksonProvider' />

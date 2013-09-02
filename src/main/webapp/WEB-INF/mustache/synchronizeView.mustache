@@ -1,23 +1,23 @@
 [[<index]]
 [[$content]]
-	  <legend>Synchronize Bookmakers</legend>
-	  
-				<div class="input-append">
-				    <select id="table-content"></select>
-					<button id="sync-button" class="btn" type="button">Synchronize</button>
-				</div>
-	  <script type="text/javascript">
+	<legend>Synchronize Bookmakers</legend>
+  
+	<div class="input-append">
+	    <select id="bookmaker-list"></select>
+		<button id="sync-button" class="btn" type="button">Synchronize</button>
+	</div>
+	<script type="text/javascript">
 		$(document).ready(function() {
-			  findAll('#bookmaker-values','bookmakers');
-		      $('#sync-button').bind('click', function(){
-				synchronizeBookmaker($('#table-content').val());
-		      });
+			findAll('#bookmaker-values','bookmakers','#bookmaker-list');
+		    $('#sync-button').bind('click', function(){
+				synchronizeBookmaker($('#bookmaker-list').val());
+		    });
 		});
-	  </script>
-	  <script id="bookmaker-values" type="text/x-mustache-template">
+	</script>
+	<script id="bookmaker-values" type="text/x-mustache-template">
 		{{#response}}
 			<option>{{code}}</option>
 		{{/response}}
-	 </script>        
+	</script>        
 [[/content]]
 [[/index]]

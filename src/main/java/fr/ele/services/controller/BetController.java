@@ -11,13 +11,13 @@ import fr.ele.ui.mvc.annotation.Activity;
 import fr.ele.ui.mvc.annotation.Group;
 
 @Controller
-@Group("admin")
-public class AdminController extends AbstractActivityController {
-
-    @RequestMapping("synchronize")
-    @Activity(name = "Synchronize Bookmakers")
+@Group("bets")
+@RequestMapping("bets")
+public class BetController extends AbstractActivityController {
+    @RequestMapping("sures")
+    @Activity(name = "Sure Bets")
     public String synchronize(Locale locale, Model model) {
         mapActivities(model);
-        return "synchronizeView";
+        return "betSearchView";
     }
 }

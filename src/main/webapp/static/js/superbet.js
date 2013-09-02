@@ -21,7 +21,7 @@ function createRefObject(formId, activity) {
 	});
 };
 
-function findAll(templateId, activity) {
+function findAll(templateId, activity,applyTo) {
 	var uri = rest + activity + '/';
 	$.getJSON(uri, function(data) {
 		var user_data = {
@@ -30,7 +30,7 @@ function findAll(templateId, activity) {
 		var template = jQuery(templateId)
 			.html();
 		var renderedData = Mustache.render(template, user_data);
-		jQuery('#table-content')
+		jQuery(applyTo)
 			.html(renderedData);
 	});
 };

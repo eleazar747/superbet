@@ -19,7 +19,7 @@ import fr.ele.services.bets.BetService;
 import fr.ele.services.bets.SureBet;
 import fr.ele.services.rest.BetRestService;
 
-@Service
+@Service(BetRestService.SERVER)
 public class BetRestServiceImpl implements BetRestService {
 
     @Autowired

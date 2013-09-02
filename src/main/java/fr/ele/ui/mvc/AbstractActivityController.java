@@ -8,7 +8,6 @@ public abstract class AbstractActivityController extends AbstractBaseController
     @Override
     protected void mapActivities(Model model) {
         super.mapActivities(model);
-        model.addAttribute("currentActivity", getActivityUrlBase());
     }
 
 }

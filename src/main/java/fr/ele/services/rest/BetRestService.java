@@ -8,8 +8,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("bets")
+@Path(BetRestService.PATH)
 public interface BetRestService {
+    public static final String PATH = "bets";
+
     public static final String SERVER = "BetRestService";
 
     public static final class SureBetDto {

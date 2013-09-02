@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import fr.ele.ui.model.MetaMapping;
 import fr.ele.ui.model.MetaRegistry;
 import fr.ele.ui.mvc.AbstractActivityController;
+import fr.ele.ui.mvc.annotation.Group;
 
+@Group("referential")
 public abstract class AbstractRefController extends AbstractActivityController {
 
     @Autowired
@@ -17,12 +19,7 @@ public abstract class AbstractRefController extends AbstractActivityController {
 
     protected abstract Class<?> handledModelClass();
 
-    @Override
-    public String getGroup() {
-        return "referential";
-    }
-
-    @RequestMapping("/")
+    @RequestMapping
     public String list(Locale locale, Model model) {
         MetaMapping metaMapping = metaRegistry
                 .getMetaMapping(handledModelClass());

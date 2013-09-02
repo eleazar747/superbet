@@ -3,20 +3,21 @@
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n
-			</Pattern>
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</Pattern>
 		</layout>
 	</appender>
 	<appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n
-			</Pattern>
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</Pattern>
 		</layout>
 		<target>System.err</target>
 	</appender>
 
 	<logger name="fr.ele" level="TRACE" additivity="false">
 		<appender-ref ref="STDERR"/>
+	</logger>
+	<logger name="fr.ele.ui.mustache" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT"/>
 	</logger>
 
 	<root level="INFO">
