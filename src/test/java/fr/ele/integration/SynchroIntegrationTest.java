@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 
 import fr.ele.feeds.betclick.dto.SportsBcDto;
@@ -46,7 +47,7 @@ public class SynchroIntegrationTest extends AbstractSuperbetIntegrationTest {
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/betclick/odds_en.xml"));
         SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream);
-        betclickSynchronizer.synchronize("betclick", dto);
+        betclickSynchronizer.synchronize("betclic", dto);
 
         inputStream = new BufferedInputStream(
                 ExpektUnmarshallingTest.class
@@ -55,7 +56,7 @@ public class SynchroIntegrationTest extends AbstractSuperbetIntegrationTest {
         expektSynchronizer.synchronize("expekt", odds);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
-        List<Bet> bets = betRepository.findAll();
+        List<Bet> bets = Lists.newArrayList(betRepository.findAll());
         System.err.println(bets.size());
         Multimap<String, BookMaker> map = HashMultimap.create();
         for (Bet bet : bets) {

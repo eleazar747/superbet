@@ -6,6 +6,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import fr.ele.model.BookMakerSynchronization;
+
 @Path(AdminRestService.PATH)
 public interface AdminRestService {
 
@@ -13,14 +15,14 @@ public interface AdminRestService {
 
     public static final String SERVER = "AdminRestService";
 
-    public static class SynchronizationResult {
-        public Long nb;
-
-        public String bookmaker;
-    }
-
     @GET
     @Path("synchronize")
     @Produces(MediaType.APPLICATION_JSON)
-    SynchronizationResult synchronize(@QueryParam("bookmaker") String bookmaker);
+    BookMakerSynchronization synchronize(
+            @QueryParam("bookmaker") String bookmaker);
+
+    @GET
+    @Path("syncs")
+    @Produces(MediaType.APPLICATION_JSON)
+    Iterable<BookMakerSynchronization> listSyncs();
 }

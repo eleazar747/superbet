@@ -14,6 +14,7 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.stereotype.Service;
 
+import fr.ele.model.BookMakerSynchronization;
 import fr.ele.model.ref.BookMaker;
 
 @Service
@@ -23,7 +24,7 @@ public class BookMakerSynchronizerServiceImpl implements
     private Map<String, SynchronizerService> synchronizers;
 
     @Override
-    public Long synchronize(BookMaker bookMaker) {
+    public BookMakerSynchronization synchronize(BookMaker bookMaker) {
         SynchronizerService service = synchronizers.get(bookMaker
                 .getSynchronizerService());
         if (service == null) {

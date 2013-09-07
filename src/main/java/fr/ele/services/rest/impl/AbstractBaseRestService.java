@@ -26,7 +26,7 @@ public abstract class AbstractBaseRestService<T extends SuperBetEntity> {
     private RepositoryRegistry repositoryRegistry;
 
     @Transactional(readOnly = true)
-    public List<T> findAll() {
+    public Iterable<T> findAll() {
         LOGGER.debug("findAll");
         return getRepository().findAll();
     }

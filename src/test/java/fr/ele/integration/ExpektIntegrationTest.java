@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.collect.Lists;
+
 import fr.ele.feeds.expekt.ExpektUnmarshallingTest;
 import fr.ele.feeds.expekt.dto.PunterOdds;
 import fr.ele.model.Bet;
@@ -45,7 +47,7 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
         expektSynchronizer.synchronize("expekt", odds);
 
         Assert.assertNotNull(matchRepository.findByCode(code));
-        List<Bet> bets = betRepository.findAll();
+        List<Bet> bets = Lists.newArrayList(betRepository.findAll());
         Assert.assertNotNull(bets);
         Assert.assertEquals(312, bets.size());
         Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());

@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.collect.Lists;
+
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.model.DataMapping;
@@ -32,7 +34,7 @@ public class DataMappingIntegrationTest extends AbstractSuperbetIntegrationTest 
 
     @Test
     public void testDao() {
-        BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         DataMapping mapping = new DataMapping();
         mapping.setBookMakerCode("toto");
         mapping.setModelCode("tata");
@@ -52,7 +54,7 @@ public class DataMappingIntegrationTest extends AbstractSuperbetIntegrationTest 
 
     @Test
     public void testFind() {
-        BookMaker bookMaker = bookMakerRepository.findByCode("betclick");
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         DataMapping result = dataMappingRepository
                 .findOne(DataMappingRepository.Queries.findModelByBookMaker(
                         RefEntityType.SPORT, bookMaker, "Football"));
@@ -62,7 +64,8 @@ public class DataMappingIntegrationTest extends AbstractSuperbetIntegrationTest 
 
     @Test
     public void testFindAll() {
-        List<DataMapping> results = dataMappingRepository.findAll();
+        List<DataMapping> results = Lists.newArrayList(dataMappingRepository
+                .findAll());
         CsvContext<DataMapping> csvContext = CsvContext.create(
                 DataMapping.class, repositoryRegistry);
         CsvMarshaller<DataMapping> marshaller = csvContext.newMarshaller();

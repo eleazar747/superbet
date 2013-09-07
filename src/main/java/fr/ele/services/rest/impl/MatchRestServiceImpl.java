@@ -32,7 +32,7 @@ public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
     }
 
     @Override
-    public List<Match> findAll() {
+    public Iterable<Match> findAll() {
         return super.findAll();
     }
 

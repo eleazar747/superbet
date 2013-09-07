@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.collect.Lists;
+
 import fr.ele.feeds.betclick.dto.SportsBcDto;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.BookMaker;
@@ -48,10 +50,10 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/betclick/odds_en.xml"));
         SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream);
-        betclickSynchronizer.synchronize("betclick", dto);
+        betclickSynchronizer.synchronize("betclic", dto);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
-        List<Bet> bets = betRepository.findAll();
+        List<Bet> bets = Lists.newArrayList(betRepository.findAll());
         Assert.assertNotNull(bets);
         Assert.assertEquals(665, bets.size());
         Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());

@@ -25,7 +25,7 @@ public interface MatchRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Match> findAll();
+    public Iterable<Match> findAll();
 
     @GET
     @Path("{id}")

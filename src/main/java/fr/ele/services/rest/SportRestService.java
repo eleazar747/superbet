@@ -25,7 +25,7 @@ public interface SportRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Sport> findAll();
+    Iterable<Sport> findAll();
 
     @GET
     @Path("{id}")

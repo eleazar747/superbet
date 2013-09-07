@@ -26,7 +26,7 @@ public class BookMakerRestServiceImpl extends
     }
 
     @Override
-    public List<BookMaker> findAll() {
+    public Iterable<BookMaker> findAll() {
         return super.findAll();
     }
 

@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.core.TimeTracker;
 import fr.ele.model.Bet;
+import fr.ele.model.BookMakerSynchronization;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
+import fr.ele.services.repositories.BookMakerSynchronizationRepository;
 import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
@@ -45,7 +47,11 @@ public abstract class AbstractSynchronizer<T> implements SynchronizerService<T> 
     @Autowired
     private RefKeyRepository refKeyRepository;
 
-    public final long synchronize(String bookmakerCode, T dto) {
+    @Autowired
+    private BookMakerSynchronizationRepository bookMakerSynchronizationRepository;
+
+    public final BookMakerSynchronization synchronize(String bookmakerCode,
+            T dto) {
         SynchronizerContext context = new SynchronizerContext(bookmakerCode,
                 dataMappingRepository, sportRepository, betTypeRepository,
                 bookMakerRepository, matchRepository, refKeyRepository);
@@ -57,7 +63,13 @@ public abstract class AbstractSynchronizer<T> implements SynchronizerService<T> 
         LOGGER.debug("finish {} sync at {} nb {} bets inserted in {}ms",
                 context.getBookMaker().getCode(),
                 context.getSynchronizationDate(), nb, tt.getDuration());
-        return nb;
+        BookMakerSynchronization sync = new BookMakerSynchronization();
+        sync.setBookMaker(context.getBookMaker());
+        sync.setDuration(tt.getDuration());
+        sync.setNbBets(nb);
+        sync.setSynchronizationDate(context.getSynchronizationDate());
+        bookMakerSynchronizationRepository.save(sync);
+        return sync;
     }
 
     protected abstract long convert(SynchronizerContext context, T dto);

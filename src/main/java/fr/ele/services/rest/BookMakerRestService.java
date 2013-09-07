@@ -26,7 +26,7 @@ public interface BookMakerRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    List<BookMaker> findAll();
+    Iterable<BookMaker> findAll();
 
     @GET
     @Path("{id}")

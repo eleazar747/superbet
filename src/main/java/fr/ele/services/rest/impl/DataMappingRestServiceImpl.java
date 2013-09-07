@@ -24,7 +24,7 @@ public class DataMappingRestServiceImpl extends
     }
 
     @Override
-    public List<DataMapping> findAll() {
+    public Iterable<DataMapping> findAll() {
         return super.findAll();
     }
 

@@ -21,7 +21,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
 
     public static String newline = System.getProperty("line.separator");
 
-    private static final String BOOKMAKER = "BETCLICK";
+    private static final String BOOKMAKER = "BETCLIC";
 
     @Autowired
     private BookMakerRepository bookMakerRepository;

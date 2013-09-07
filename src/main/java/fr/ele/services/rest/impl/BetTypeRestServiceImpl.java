@@ -39,7 +39,7 @@ public class BetTypeRestServiceImpl extends AbstractRefRestServiceImpl<BetType>
     }
 
     @Override
-    public List<BetType> findAll() {
+    public Iterable<BetType> findAll() {
         return super.findAll();
     }
 

@@ -25,7 +25,7 @@ public interface DataMappingRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    List<DataMapping> findAll();
+    Iterable<DataMapping> findAll();
 
     @GET
     @Path("{id}")

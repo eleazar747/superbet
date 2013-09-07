@@ -25,7 +25,7 @@ public interface BetTypeRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    List<BetType> findAll();
+    Iterable<BetType> findAll();
 
     @GET
     @Path("{id}")

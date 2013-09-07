@@ -31,7 +31,7 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     }
 
     @Override
-    public List<Sport> findAll() {
+    public Iterable<Sport> findAll() {
         return super.findAll();
     }
 

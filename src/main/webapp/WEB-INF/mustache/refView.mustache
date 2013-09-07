@@ -13,7 +13,7 @@
 				<a href="#" id='create-form-save' class="btn btn-success" data-dismiss="modal">Save</a>
 				<a href="#" class="btn" data-dismiss="modal">Close</a>
 			</div>
-	 </div>
+	  </div>
 	  <div id="upload-form" class="modal hide fade in" style="display: none; ">
 	  		<div class="modal-header">
 				<a class="close" data-dismiss="modal">x</a>
@@ -32,15 +32,20 @@
 	  <div class="form-actions">
 	  	<button data-toggle="modal" href="#create-form" class="btn btn-primary type="button">New</button>
 	  	<button data-toggle="modal" href="#upload-form" class="btn btn-primary type="button">Import</button>
+	  	<button id="refresh" class="btn btn-primary type="button">Refresh</button>
 	  <div> 
 	  <script type="text/javascript">
 		$(document).ready(function() {
 		      $('#create-form-save').bind('click', function(){
 				createRefObject('#ref-form','[[resource]]');
 		      });
-			  $("#upload-form-send").click(function () {
+			  $("#upload-form-send").click(function() {
 			    var obj = document.getElementById("upload-request");
 				obj.submit();
+			  });
+			  $("#refresh").click(function() {
+			  	$('#table-content').empty();
+			    findAll('#rows','[[resource]]','#table-content');
 			  });
 		});
 	  </script>        

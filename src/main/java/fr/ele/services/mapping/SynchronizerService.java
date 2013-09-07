@@ -2,8 +2,10 @@ package fr.ele.services.mapping;
 
 import java.io.InputStream;
 
+import fr.ele.model.BookMakerSynchronization;
+
 public interface SynchronizerService<T> {
-    long synchronize(String bookmakerCode, T dto);
+    BookMakerSynchronization synchronize(String bookmakerCode, T dto);
 
     T unmarshall(InputStream inputStream);
 }
