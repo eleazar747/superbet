@@ -8,3 +8,5 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,expekt,BET_TYPE,Match Result,Match Result
 0,nordicbet,SPORT,Football,Football
 0,nordicbet,BET_TYPE,(under/over: 4.5),Over Under
+0,williamhill,SPORT,UEFA Champions League,Football
+0,williamhill,BET_TYPE,match betting,Match Result

@@ -11,24 +11,7 @@
 				<xs:element name="response">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="williamhill">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="class">
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element ref="type" />
-												</xs:sequence>
-												<xs:attribute type="xs:short" name="id" />
-												<xs:attribute type="xs:string" name="name" />
-												<xs:attribute type="xs:date" name="maxRepDate" />
-												<xs:attribute type="xs:time" name="maxRepTime" />
-											</xs:complexType>
-										</xs:element>
-										<xs:element type="xs:string" name="disclaimer" />
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
+							<xs:element ref="williamhill" />
 						</xs:sequence>
 						<xs:attribute type="xs:string" name="request" />
 						<xs:attribute type="xs:byte" name="code" />
@@ -41,6 +24,14 @@
 			<xs:attribute type="xs:string" name="created" />
 			<xs:attribute type="xs:string" name="lastMsgId" />
 			<xs:attribute type="xs:float" name="requestTime" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="williamhill">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="class"/>
+				<xs:element type="xs:string" name="disclaimer" />
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="type">
@@ -87,6 +78,17 @@
 			<xs:attribute type="xs:time" name="betTillTime" use="optional" />
 			<xs:attribute type="xs:date" name="lastUpdateDate" use="optional" />
 			<xs:attribute type="xs:time" name="lastUpdateTime" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="class">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="type" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:short" name="id" />
+			<xs:attribute type="xs:string" name="name" />
+			<xs:attribute type="xs:date" name="maxRepDate" />
+			<xs:attribute type="xs:time" name="maxRepTime" />
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
