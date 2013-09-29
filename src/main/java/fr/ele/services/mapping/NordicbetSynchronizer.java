@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.nordicbet.dto.Game;
@@ -12,37 +11,12 @@ import fr.ele.feeds.nordicbet.dto.Odds;
 import fr.ele.feeds.nordicbet.dto.OutcomeSet;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.repositories.BetRepository;
-import fr.ele.services.repositories.BetTypeRepository;
-import fr.ele.services.repositories.BookMakerRepository;
-import fr.ele.services.repositories.DataMappingRepository;
-import fr.ele.services.repositories.MatchRepository;
-import fr.ele.services.repositories.RefKeyRepository;
-import fr.ele.services.repositories.SportRepository;
+
 
 @Service("NordicbetSynchronizer")
 public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
 
-    @Autowired
-    private DataMappingRepository dataMappingRepository;
 
-    @Autowired
-    private SportRepository sportRepository;
-
-    @Autowired
-    private MatchRepository matchRepository;
-
-    @Autowired
-    private BetTypeRepository betTypeRepository;
-
-    @Autowired
-    private BookMakerRepository bookMakerRepository;
-
-    @Autowired
-    private BetRepository betRepository;
-
-    @Autowired
-    private RefKeyRepository refKeyRepository;
 
     @Override
     protected long convert(SynchronizerContext context, Odds dto) {

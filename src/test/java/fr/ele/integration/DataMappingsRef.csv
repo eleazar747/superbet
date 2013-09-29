@@ -4,9 +4,13 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,BET_TYPE,Match Result,Match Result
 0,betclic,BET_TYPE,Match Winner,Match Result
 0,expekt,SPORT,TEN,Tennis
+0,expekt,SPORT,SOC,Football
 0,expekt,BET_TYPE,Over/Under,Over Under
 0,expekt,BET_TYPE,Match Result,Match Result
 0,nordicbet,SPORT,Football,Football
-0,nordicbet,BET_TYPE,(under/over: 4.5),Over Under
+0,nordicbet,SPORT,Tennis, Tennis
+0,nordicbet,BET_TYPE,(under/overá: 4.5),Over Under
 0,williamhill,SPORT,UEFA Champions League,Football
 0,williamhill,BET_TYPE,match betting,Match Result
+0,bwin,SPORT,4,Football
+0,bwin,BET_TYPE,1 X 2,Match Result

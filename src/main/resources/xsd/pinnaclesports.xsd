@@ -1,0 +1,121 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="pinnacle_line_feed">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:long" name="PinnacleFeedTime" />
+				<xs:element type="xs:int" name="lastContest" />
+				<xs:element type="xs:int" name="lastGame" />
+				<xs:element name="events">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="event" maxOccurs="unbounded"
+								minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="event">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="event_datetimeGMT" />
+				<xs:element type="xs:int" name="gamenumber" />
+				<xs:element type="xs:string" name="sporttype" />
+				<xs:element type="xs:string" name="league" />
+				<xs:element type="xs:string" name="IsLive" minOccurs="0" />
+				<xs:element type="xs:short" name="contest_maximum"
+					minOccurs="0" />
+				<xs:element type="xs:string" name="description"
+					minOccurs="0" />
+				<xs:element name="participants">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="participant" maxOccurs="unbounded"
+								minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="participant_name" />
+										<xs:element type="xs:int" name="contestantnum" />
+										<xs:element type="xs:int" name="rotnum" />
+										<xs:element type="xs:string" name="visiting_home_draw"
+											minOccurs="0" />
+										<xs:element type="xs:string" name="pitcher"
+											minOccurs="0" />
+										<xs:element name="odds" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:float" name="moneyline_value" />
+													<xs:element type="xs:float" name="to_base" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="periods" minOccurs="0">
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element name="period" maxOccurs="unbounded"
+								minOccurs="0">
+								<xs:complexType>
+									<xs:choice maxOccurs="unbounded" minOccurs="0">
+										<xs:element type="xs:byte" name="period_number" />
+										<xs:element type="xs:string" name="period_description" />
+										<xs:element type="xs:string" name="periodcutoff_datetimeGMT" />
+										<xs:element type="xs:string" name="period_status" />
+										<xs:element type="xs:string" name="period_update" />
+										<xs:element type="xs:short" name="spread_maximum" />
+										<xs:element type="xs:short" name="moneyline_maximum" />
+										<xs:element type="xs:short" name="total_maximum" />
+										<xs:element name="spread">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:float" name="spread_visiting" />
+													<xs:element type="xs:short" name="spread_adjust_visiting" />
+													<xs:element type="xs:float" name="spread_home" />
+													<xs:element type="xs:short" name="spread_adjust_home" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="moneyline">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:short" name="moneyline_visiting" />
+													<xs:element type="xs:short" name="moneyline_home" />
+													<xs:element type="xs:short" name="moneyline_draw"
+														minOccurs="0" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="total">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:float" name="total_points" />
+													<xs:element type="xs:short" name="over_adjust" />
+													<xs:element type="xs:short" name="under_adjust" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="total" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:float" name="total_points" />
+							<xs:element type="xs:string" name="units" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

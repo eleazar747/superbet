@@ -1,0 +1,105 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="ROOT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ROOT2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="TREE" />
+							<xs:element ref="EVENTS" />
+						</xs:sequence>
+						<xs:attribute type="xs:string" name="GMTNow" />
+						<xs:attribute type="xs:dateTime" name="StdGMTNow" />
+						<xs:attribute type="xs:byte" name="UserOffsetToGMT" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="GMTNow" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EVENTS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="E" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="E">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="G" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="DBID" use="optional" />
+			<xs:attribute type="xs:string" name="N" use="optional" />
+			<xs:attribute type="xs:string" name="D" use="optional" />
+			<xs:attribute type="xs:dateTime" name="StdEventDate"
+				use="optional" />
+			<xs:attribute type="xs:dateTime" name="StdEventDate_UTC"
+				use="optional" />
+			<xs:attribute type="xs:byte" name="SID" use="optional" />
+			<xs:attribute type="xs:short" name="RID" use="optional" />
+			<xs:attribute type="xs:int" name="LID" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="G">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="R" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:int" name="DBID" use="optional" />
+			<xs:attribute type="xs:int" name="EID" use="optional" />
+			<xs:attribute type="xs:string" name="N" use="optional" />
+			<xs:attribute type="xs:short" name="GT" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TN2" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:short" name="DBID" use="optional" />
+			<xs:attribute type="xs:string" name="T" use="optional" />
+			<xs:attribute type="xs:string" name="N" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="S">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TN" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute type="xs:byte" name="DBID" use="optional" />
+			<xs:attribute type="xs:string" name="N" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="R">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:int" name="DBID" use="optional" />
+					<xs:attribute type="xs:string" name="N" use="optional" />
+					<xs:attribute type="xs:float" name="O" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="TREE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="S" maxOccurs="unbounded" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TN2">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:int" name="DBID" use="optional" />
+					<xs:attribute type="xs:string" name="T" use="optional" />
+					<xs:attribute type="xs:string" name="N" use="optional" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

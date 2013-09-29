@@ -303,6 +303,30 @@
 							<staleFile>${project.build.directory}/jaxb2/.intertopsjcStaleFlag</staleFile>
 						</configuration>
 					</execution>
+					<execution>
+						<id>jaxb-pinnaclesports</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<clearOutputDir>false</clearOutputDir>
+							<schemaFiles>pinnaclesports.xsd</schemaFiles>
+							<packageName>fr.ele.feeds.pinnaclesports.dto</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.pinnaclesportsjcStaleFlag</staleFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jaxb-bwin</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<clearOutputDir>false</clearOutputDir>
+							<schemaFiles>bwin.xsd</schemaFiles>
+							<packageName>fr.ele.feeds.bwin.dto</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.bwinjcStaleFlag</staleFile>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<schemaDirectory>src/main/resources/xsd</schemaDirectory>
