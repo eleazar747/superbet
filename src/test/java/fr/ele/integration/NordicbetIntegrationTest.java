@@ -29,7 +29,7 @@ public class NordicbetIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
-        String Code = "richardgasquet**marcelgranollers";
+       String Code = "richardgasquet**marcelgranollers";
         InputStream inputStream = new BufferedInputStream(
                 NordicbetUnwmarshallingTest.class
                         .getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));

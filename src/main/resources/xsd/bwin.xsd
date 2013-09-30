@@ -3,19 +3,20 @@
 	<xs:element name="ROOT">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="ROOT2">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="TREE" />
-							<xs:element ref="EVENTS" />
-						</xs:sequence>
-						<xs:attribute type="xs:string" name="GMTNow" />
-						<xs:attribute type="xs:dateTime" name="StdGMTNow" />
-						<xs:attribute type="xs:byte" name="UserOffsetToGMT" />
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="ROOT2" />
 			</xs:sequence>
 			<xs:attribute type="xs:string" name="GMTNow" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ROOT2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TREE" />
+				<xs:element ref="EVENTS" />
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="GMTNow" />
+			<xs:attribute type="xs:dateTime" name="StdGMTNow" />
+			<xs:attribute type="xs:byte" name="UserOffsetToGMT" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="EVENTS">
