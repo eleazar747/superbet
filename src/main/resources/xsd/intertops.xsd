@@ -1,28 +1,28 @@
 <xs:schema attributeFormDefault="unqualified"
 	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="result">
-		<xs:complexType mixed="true">
+		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="params">
-					<xs:complexType>
-						<xs:simpleContent>
-							<xs:extension base="xs:string">
-								<xs:attribute type="xs:string" name="legend" />
-								<xs:attribute type="xs:byte" name="catId" />
-								<xs:attribute type="xs:byte" name="sportId" />
-								<xs:attribute type="xs:byte" name="matchId" />
-								<xs:attribute type="xs:byte" name="delta" />
-								<xs:attribute type="xs:string" name="deltaUtc" />
-								<xs:attribute type="xs:string" name="utc" />
-								<xs:attribute type="xs:string" name="includeCent" />
-								<xs:attribute type="xs:string" name="includeFraction" />
-							</xs:extension>
-						</xs:simpleContent>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="params" />
 				<xs:element ref="data" />
-
 			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="params">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="legend" />
+					<xs:attribute type="xs:long" name="catId" />
+					<xs:attribute type="xs:long" name="sportId" />
+					<xs:attribute type="xs:long" name="matchId" />
+					<xs:attribute type="xs:long" name="delta" />
+					<xs:attribute type="xs:string" name="deltaUtc" />
+					<xs:attribute type="xs:string" name="utc" />
+					<xs:attribute type="xs:string" name="includeCent" />
+					<xs:attribute type="xs:string" name="includeFraction" />
+				</xs:extension>
+			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="data">
@@ -38,20 +38,20 @@
 				<xs:element ref="cat" />
 
 			</xs:sequence>
-			<xs:attribute type="xs:byte" name="id" use="optional" />
+			<xs:attribute type="xs:long" name="id" use="optional" />
 			<xs:attribute type="xs:string" name="n" use="optional" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="cat">
-		<xs:complexType mixed="true">
+		<xs:complexType >
 			<xs:sequence>
 				<xs:element ref="m" maxOccurs="unbounded" minOccurs="0" />
 			</xs:sequence>
-			<xs:attribute type="xs:short" name="id" use="optional" />
+			<xs:attribute type="xs:long" name="id" use="optional" />
 			<xs:attribute type="xs:string" name="n" use="optional" />
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="m" >
+	<xs:element name="m">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="t" maxOccurs="unbounded" minOccurs="0" />
