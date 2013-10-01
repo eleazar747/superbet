@@ -57,6 +57,9 @@ public class BetVictorSynchroniser {
 		String text="";
 		String ligne="";
 		readDataOver(doc.select("tr"));
+		
+		
+		
 		//ecrirText(text, "src/betvictor/betvictorBundesliga3");
 	}
 	/*public void ecrirText(String text, String path) throws IOException{
