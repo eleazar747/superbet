@@ -37,7 +37,7 @@ public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
         if (sport == null) {
             return 0L;
         }
-
+        playerprint( game.getName().toString());
         String matchCode = game.getName().toString().toLowerCase()
                 .replaceAll(" ", "").replaceAll("-", "**");
         Date date = null;
@@ -97,7 +97,15 @@ public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
 		return 1L;
         
     }
+	private void playerprint(String match) {
 
+		String[] team = match.split("-");
+		for (String str : team) {
+			System.out.println(str);
+		}
+	
+		
+	}
     
     @Override
     protected Class<Odds> getDtoClass() {

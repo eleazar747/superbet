@@ -2,7 +2,6 @@ package fr.ele.services.mapping;
 
 import org.springframework.stereotype.Service;
 
-
 import fr.ele.feeds.bwin.dto.E;
 import fr.ele.feeds.bwin.dto.EVENTS;
 import fr.ele.feeds.bwin.dto.G;
@@ -35,7 +34,7 @@ public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 		Sport sport = context.findSport(e.getSID().toString());
 		if (sport != null) {
-
+			playerprint(e.getN().toString().replaceAll(" ", ""));
 			Match match = context.findOrCreateMatch(sport, e.getN().toString()
 					.toLowerCase().replaceAll(" ", "").replaceAll("-", "**"), e
 					.getStdEventDateUTC().toGregorianCalendar().getTime());
@@ -52,9 +51,10 @@ public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 		long nb = 0L;
 
 		BetType betType = context.findBetType(g.getN());
-
+		if(betType!=null){
 		for (R r : g.getR()) {
 			convert(context, r, match, betType);
+		}
 		}
 		return nb;
 	}
@@ -81,5 +81,13 @@ public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 		// TODO Auto-generated method stub
 		return ROOT.class;
 	}
+	private void playerprint(String match) {
 
+		String[] team = match.split("-");
+		for (String str : team) {
+			System.out.println(str);
+		}
+	
+		
+	}
 }

@@ -6,7 +6,6 @@ import fr.ele.feeds.wiliamhill.dto.Market;
 import fr.ele.feeds.wiliamhill.dto.Oxip;
 import fr.ele.feeds.wiliamhill.dto.Participant;
 import fr.ele.feeds.wiliamhill.dto.Type;
-
 import fr.ele.model.Bet;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
@@ -52,9 +51,9 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 
 	private long convert(SynchronizerContext context, Market market, Sport sport) {
 		long nb = 0;
-		String[] matchCode = market.getName().toString().toLowerCase()
+		String[] matchCode = market.getName().toString()
 				.split(" - ");
-
+		playerprint(matchCode[0]);
 		Match match = context.findOrCreateMatch(sport, matchCode[0].toString()
 				.toLowerCase().replaceAll(" v ", "**").replaceAll(" ", ""),
 				market.getBetTillDate().toGregorianCalendar().getTime());
@@ -80,9 +79,18 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 		bet.setRefKey(refKey);
 		bet.setCode(participant.getName());
 		bet.setDate(context.getSynchronizationDate());
+		 bet.setBookmakerBetId(String.valueOf(participant.getId()));
 		bet.setBookMaker(context.getBookMaker());
 		saveBet(bet);
 		return 1L;
 	}
-
+	private void playerprint(String match){
+		
+		String [] team=match.split(" v ");
+		for(String str : team){
+			System.out.println(str);
+		}
+	
+		
+	}
 }

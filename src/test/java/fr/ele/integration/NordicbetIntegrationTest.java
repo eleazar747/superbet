@@ -38,5 +38,16 @@ public class NordicbetIntegrationTest extends AbstractSuperbetIntegrationTest {
 
         Assert.assertNotNull(matchRepository.findByCode(Code));
     }
-
+    @Test
+    public void testfindTeam() throws Throwable {
+    	
+      String Code = "richardgasquet**marcelgranollers";
+    InputStream inputStream = new BufferedInputStream(
+            NordicbetUnwmarshallingTest.class
+                    .getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
+    Odds odds = nordicbetSynchronizer.unmarshall(inputStream);
+    nordicbetSynchronizer.synchronize("nordicbet", odds);
+    
+    
+    }
 }

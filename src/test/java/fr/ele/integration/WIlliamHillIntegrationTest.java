@@ -55,7 +55,7 @@ public class WIlliamHillIntegrationTest  extends AbstractSuperbetIntegrationTest
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = Lists.newArrayList(betRepository.findAll());
         Assert.assertNotNull(bets);
-        Assert.assertEquals(665, bets.size());
+        Assert.assertEquals(48, bets.size());
         Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());
         for (Bet bet : bets) {
             bookmakerUniqueIds.add(bet.getBookmakerBetId());

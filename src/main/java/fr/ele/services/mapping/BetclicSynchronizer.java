@@ -47,7 +47,9 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
             EventBcDto eventBcDto) {
         long nb = 0L;
         for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
-            String matchCode = matchBcDto.getName().replaceAll(" - ", "**");
+        	 playerprint(matchBcDto.getName());
+        	String matchCode = matchBcDto.getName().replaceAll(" - ", "**");
+           
             Match match = context.findOrCreateMatch(sport, matchCode,
                     matchBcDto.getStartDate().toGregorianCalendar().getTime());
             for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
@@ -98,5 +100,15 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
         saveBet(bet);
         return 1L;
     }
+
+	private void playerprint(String match) {
+
+		String[] team = match.split(" - ");
+		for (String str : team) {
+			System.out.println(str);
+		}
+	
+		
+	}
 
 }
