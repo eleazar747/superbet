@@ -1,5 +1,5 @@
 package fr.ele.model;
 
 public enum RefEntityType {
-    SPORT, BET_TYPE;
+	SPORT, BET_TYPE, TEAM;
 }
