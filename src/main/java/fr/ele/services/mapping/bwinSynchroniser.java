@@ -1,5 +1,10 @@
 package fr.ele.services.mapping;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.bwin.dto.E;
@@ -16,16 +21,28 @@ import fr.ele.model.ref.Sport;
 @Service("bwinSynchroniser")
 public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
+	private BufferedWriter w;
+
 	@Override
 	protected long convert(SynchronizerContext context, ROOT dto) {
 		// TODO Auto-generated method stub
 		long nb = 0L;
+		try {
+			File file = new File("/fr/ele/feeds/bwin/teamNameBwin.txt");
+			w = new BufferedWriter(new FileWriter("teamNameBwin.txt"));
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		EVENTS event = dto.getROOT2().getEVENTS();
 
 		for (E e : event.getE()) {
 			convert(context, e);
 		}
-
+		try {
+			w.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return nb;
 	}
 
@@ -51,10 +68,10 @@ public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 		long nb = 0L;
 
 		BetType betType = context.findBetType(g.getN());
-		if(betType!=null){
-		for (R r : g.getR()) {
-			convert(context, r, match, betType);
-		}
+		if (betType != null) {
+			for (R r : g.getR()) {
+				convert(context, r, match, betType);
+			}
 		}
 		return nb;
 	}
@@ -81,13 +98,18 @@ public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
 		// TODO Auto-generated method stub
 		return ROOT.class;
 	}
+
 	private void playerprint(String match) {
 
 		String[] team = match.split("-");
 		for (String str : team) {
-			System.out.println(str);
+			try {
+				w.write(str);
+				w.write('\n');
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	
-		
+
 	}
 }
