@@ -11,10 +11,15 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import fr.ele.core.search.StringOperator;
+import fr.ele.core.search.StringValueCriteria;
+import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;
 import fr.ele.csv.CsvUnmarshaller;
 import fr.ele.model.ref.BookMaker;
+import fr.ele.model.ref.QBookMaker;
+import fr.ele.model.search.BookmakerSearch;
 import fr.ele.services.repositories.BookMakerRepository;
 
 public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
@@ -91,4 +96,19 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         Assert.assertEquals(bookmarkers.size() + 2, bookmarkersAfter.size());
     }
 
+    @Test
+    public void testSearch() {
+        BookmakerSearch search = new BookmakerSearch();
+        StringValueCriteria code = new StringValueCriteria();
+        code.setOperator(StringOperator.START_WITH);
+        code.setValue("bet");
+        search.setCode(code);
+        Iterable<BookMaker> iterable = bookMakerRepository
+                .findAll(new QueryBuilder().and(QBookMaker.bookMaker.code,
+                        search.getCode()).build());
+        Iterator<BookMaker> it = iterable.iterator();
+        Assert.assertTrue(it.hasNext());
+        it.next();
+        Assert.assertFalse(it.hasNext());
+    }
 }
