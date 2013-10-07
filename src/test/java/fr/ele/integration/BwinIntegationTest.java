@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.ele.feeds.bwin.dto.ROOT;
 import fr.ele.services.mapping.BookMakerSynchronizerService;
-import fr.ele.services.mapping.bwinSynchroniser;
+import fr.ele.services.mapping.BwinSynchroniser;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.MatchRepository;
@@ -16,7 +16,7 @@ import fr.ele.services.repositories.MatchRepository;
 public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
 
 	@Autowired
-	private bwinSynchroniser BwinSynchroniser;
+	private BwinSynchroniser BwinSynchroniser;
 
 	@Autowired
 	private MatchRepository matchRepository;
