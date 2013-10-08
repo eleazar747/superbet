@@ -16,6 +16,9 @@ public class BetVictorSynchroniser {
 	private Document doc;
 	private Elements el;
 	private String date;
+	private String player;
+	private double odd;
+	private String betType;
 	public BetVictorSynchroniser() throws IOException{
 		parseLigue1();
 		parseLigue2();
@@ -82,30 +85,23 @@ public class BetVictorSynchroniser {
 
 					for(Element d:t.select("td")){
 						System.out.println(d.text()+ d.attributes().get("class"));
-						if(d.attributes().get("class")=="date"){
+						if(d.attributes().get("class")=="group_date"){
 							date=d.text();
 						}
 						if(d.attributes().get("class")=="date"){
 							date=d.text();
 						}
-						if(d.attributes().get("class")=="date"){
+						if(d.attributes().get("class")=="event_description"){
+							player=d.text();
+						}
+						if(d.attributes().get("class")=="outcome_ou"){
+							betType+=d.text();
+						}
+						if(d.attributes().get("class")=="outcome"){
 							date=d.text();
 						}
-						if(d.attributes().get("class")=="date"){
-							date=d.text();
-						}
-						if(d.attributes().get("class")=="date"){
-							date=d.text();
-						}
-						if(d.attributes().get("class")=="date"){
-							date=d.text();
-						}
-						if(d.attributes().get("class")=="date"){
-							date=d.text();
-						}
-						if(d.attributes().get("class")=="date"){
-							date=d.text();
-						}
+						
+						
 					}
 					text+=ligne+"\n";
 				}
