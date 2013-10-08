@@ -19,7 +19,7 @@ import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 
 @Service("bwinSynchroniser")
-public class bwinSynchroniser extends AbstractSynchronizer<ROOT> {
+public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 	private BufferedWriter w;
 
