@@ -27,219 +27,243 @@ import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
 
 public class SynchronizerContext {
-    private final static Logger LOGGER = LoggerFactory
-            .getLogger(SynchronizerContext.class);
+	private final static Logger LOGGER = LoggerFactory
+			.getLogger(SynchronizerContext.class);
 
-    private final DataMappingRepository dataMappingRepository;
+	private final DataMappingRepository dataMappingRepository;
 
-    private final SportRepository sportRepository;
+	private final SportRepository sportRepository;
 
-    private final BetTypeRepository betTypeRepository;
+	private final BetTypeRepository betTypeRepository;
 
-    private final BookMakerRepository bookMakerRepository;
+	private final BookMakerRepository bookMakerRepository;
 
-    private final MatchRepository matchRepository;
+	private final MatchRepository matchRepository;
 
-    private final RefKeyRepository refKeyRepository;
+	private final RefKeyRepository refKeyRepository;
 
-    private Map<String, Sport> sportCache;
+	private Map<String, Sport> sportCache;
 
-    private Map<String, BetType> betTypeCache;
+	private Map<String, BetType> betTypeCache;
 
-    private BookMaker bookMaker;
+	private Map<String, String> teamCache;
 
-    private Date synchronizationDate;
+	private BookMaker bookMaker;
 
-    private RefKey refKeyCache;
+	private Date synchronizationDate;
 
-    private final Map<MatchKey, Match> matchCache = new HashMap<MatchKey, Match>();
+	private RefKey refKeyCache;
 
-    private static class MatchKey {
-        private final String code, sportCode;
+	private final Map<MatchKey, Match> matchCache = new HashMap<MatchKey, Match>();
 
-        private final Date date;
+	private static class MatchKey {
+		private final String code, sportCode;
 
-        public MatchKey(String code, String sportCode, Date date) {
-            this.code = code;
-            this.sportCode = sportCode;
-            this.date = date;
-        }
+		private final Date date;
 
-        @Override
-        public int hashCode() {
-            final int prime = 31;
-            int result = 1;
-            result = prime * result + (code == null ? 0 : code.hashCode());
-            result = prime * result + (date == null ? 0 : date.hashCode());
-            result = prime * result
-                    + (sportCode == null ? 0 : sportCode.hashCode());
-            return result;
-        }
+		public MatchKey(String code, String sportCode, Date date) {
+			this.code = code;
+			this.sportCode = sportCode;
+			this.date = date;
+		}
 
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null) {
-                return false;
-            }
-            if (getClass() != obj.getClass()) {
-                return false;
-            }
-            MatchKey other = (MatchKey) obj;
-            if (code == null) {
-                if (other.code != null) {
-                    return false;
-                }
-            } else if (!code.equals(other.code)) {
-                return false;
-            }
-            if (date == null) {
-                if (other.date != null) {
-                    return false;
-                }
-            } else if (!date.equals(other.date)) {
-                return false;
-            }
-            if (sportCode == null) {
-                if (other.sportCode != null) {
-                    return false;
-                }
-            } else if (!sportCode.equals(other.sportCode)) {
-                return false;
-            }
-            return true;
-        }
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + (code == null ? 0 : code.hashCode());
+			result = prime * result + (date == null ? 0 : date.hashCode());
+			result = prime * result
+					+ (sportCode == null ? 0 : sportCode.hashCode());
+			return result;
+		}
 
-    }
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) {
+				return true;
+			}
+			if (obj == null) {
+				return false;
+			}
+			if (getClass() != obj.getClass()) {
+				return false;
+			}
+			MatchKey other = (MatchKey) obj;
+			if (code == null) {
+				if (other.code != null) {
+					return false;
+				}
+			} else if (!code.equals(other.code)) {
+				return false;
+			}
+			if (date == null) {
+				if (other.date != null) {
+					return false;
+				}
+			} else if (!date.equals(other.date)) {
+				return false;
+			}
+			if (sportCode == null) {
+				if (other.sportCode != null) {
+					return false;
+				}
+			} else if (!sportCode.equals(other.sportCode)) {
+				return false;
+			}
+			return true;
+		}
 
-    public SynchronizerContext(String bookmakerCode,
-            DataMappingRepository dataMappingRepository,
-            SportRepository sportRepository,
-            BetTypeRepository betTypeRepository,
-            BookMakerRepository bookMakerRepository,
-            MatchRepository matchRepository, RefKeyRepository refKeyRepository) {
-        this.dataMappingRepository = dataMappingRepository;
-        this.sportRepository = sportRepository;
-        this.betTypeRepository = betTypeRepository;
-        this.bookMakerRepository = bookMakerRepository;
-        this.matchRepository = matchRepository;
-        this.refKeyRepository = refKeyRepository;
-        init(bookmakerCode);
-    }
+	}
 
-    private void init(String bookmakerCode) {
-        LOGGER.debug("start init synchro for {}", bookmakerCode);
-        TimeTracker tt = new TimeTracker();
-        bookMaker = bookMakerRepository.findByCode(bookmakerCode);
-        Iterable<DataMapping> mappings = dataMappingRepository
-                .findAll(DataMappingRepository.Queries
-                        .findByBookMaker(bookMaker));
-        Multimap<String, String> sportDataMappingCache = HashMultimap.create();
-        Multimap<String, String> betTypeDataMappingCache = HashMultimap
-                .create();
-        for (DataMapping mapping : mappings) {
-            switch (mapping.getRefEntityType()) {
-            case SPORT:
-                sportDataMappingCache.put(mapping.getModelCode(),
-                        mapping.getBookMakerCode());
-                break;
-            case BET_TYPE:
-                betTypeDataMappingCache.put(mapping.getModelCode(),
-                        mapping.getBookMakerCode());
-                break;
-            }
-        }
+	public SynchronizerContext(String bookmakerCode,
+			DataMappingRepository dataMappingRepository,
+			SportRepository sportRepository,
+			BetTypeRepository betTypeRepository,
+			BookMakerRepository bookMakerRepository,
+			MatchRepository matchRepository, RefKeyRepository refKeyRepository) {
+		this.dataMappingRepository = dataMappingRepository;
+		this.sportRepository = sportRepository;
+		this.betTypeRepository = betTypeRepository;
+		this.bookMakerRepository = bookMakerRepository;
+		this.matchRepository = matchRepository;
+		this.refKeyRepository = refKeyRepository;
+		init(bookmakerCode);
+	}
 
-        List<Sport> sports = sportRepository.findAll();
-        sportCache = new HashMap<String, Sport>(sportDataMappingCache.size());
-        for (Sport sport : sports) {
-            Collection<String> codes = sportDataMappingCache.get(sport
-                    .getCode());
-            if (codes != null && !codes.isEmpty()) {
-                for (String code : codes) {
-                    sportCache.put(code, sport);
-                }
-            }
-        }
+	private void init(String bookmakerCode) {
+		LOGGER.debug("start init synchro for {}", bookmakerCode);
+		TimeTracker tt = new TimeTracker();
+		bookMaker = bookMakerRepository.findByCode(bookmakerCode);
+		Iterable<DataMapping> mappings = dataMappingRepository
+				.findAll(DataMappingRepository.Queries
+						.findByBookMaker(bookMaker));
+		Multimap<String, String> sportDataMappingCache = HashMultimap.create();
+		Multimap<String, String> betTypeDataMappingCache = HashMultimap
+				.create();
+		Multimap<String, String> teamDataMappingCache = HashMultimap.create();
+		for (DataMapping mapping : mappings) {
+			switch (mapping.getRefEntityType()) {
+			case SPORT:
+				sportDataMappingCache.put(mapping.getModelCode(),
+						mapping.getBookMakerCode());
+				break;
+			case BET_TYPE:
+				betTypeDataMappingCache.put(mapping.getModelCode(),
+						mapping.getBookMakerCode());
+				break;
 
-        List<BetType> betTypes = betTypeRepository.findAll();
-        betTypeCache = new HashMap<String, BetType>(
-                betTypeDataMappingCache.size());
-        for (BetType betType : betTypes) {
-            Collection<String> codes = betTypeDataMappingCache.get(betType
-                    .getCode());
-            if (codes != null && !codes.isEmpty()) {
-                for (String code : codes) {
-                    betTypeCache.put(code, betType);
-                }
-            }
-        }
-        sportDataMappingCache.clear();
-        betTypeDataMappingCache.clear();
-        LOGGER.debug("finish init synchro in {}ms ", tt.getDuration());
-    }
+			case TEAM:
+				teamDataMappingCache.put(mapping.getModelCode(),
+						mapping.getBookMakerCode());
+				break;
+			}
+		}
 
-    public Sport findSport(String bookMakerSportCode) {
-        return sportCache.get(bookMakerSportCode);
-    }
+		List<Sport> sports = sportRepository.findAll();
+		sportCache = new HashMap<String, Sport>(sportDataMappingCache.size());
+		for (Sport sport : sports) {
+			Collection<String> codes = sportDataMappingCache.get(sport
+					.getCode());
+			if (codes != null && !codes.isEmpty()) {
+				for (String code : codes) {
+					sportCache.put(code, sport);
+				}
+			}
+		}
 
-    public BetType findBetType(String bookMakerBetTypeCode) {
-        return betTypeCache.get(bookMakerBetTypeCode);
-    }
+		List<BetType> betTypes = betTypeRepository.findAll();
+		betTypeCache = new HashMap<String, BetType>(
+				betTypeDataMappingCache.size());
+		for (BetType betType : betTypes) {
+			Collection<String> codes = betTypeDataMappingCache.get(betType
+					.getCode());
+			if (codes != null && !codes.isEmpty()) {
+				for (String code : codes) {
+					betTypeCache.put(code, betType);
+				}
+			}
+		}
 
-    public BookMaker getBookMaker() {
-        return bookMaker;
-    }
+		teamCache = new HashMap<String, String>(teamDataMappingCache.size());
 
-    public Date getSynchronizationDate() {
-        return synchronizationDate;
-    }
+		for (String strkey : teamDataMappingCache.keys()) {
+			Collection<String> codes = teamDataMappingCache.get(strkey);
+			for (String code : codes) {
+				teamCache
+						.put(strkey, teamDataMappingCache.get(code).toString());
+			}
 
-    public void setSynchronizationDate(Date synchronizationDate) {
-        this.synchronizationDate = synchronizationDate;
-    }
+		}
 
-    public Match findOrCreateMatch(Sport sport, String matchCode, Date date) {
-        MatchKey key = new MatchKey(matchCode, sport.getCode(), date);
-        Match match = matchCache.get(key);
-        if (match != null) {
-            return match;
-        }
-        match = matchRepository.findByCode(matchCode);
-        if (match == null) {
-            match = new Match();
-            match.setSport(sport);
-            match.setDate(date);
-            match.setCode(matchCode);
-            matchRepository.save(match);
-        }
-        matchCache.put(createKey(match), match);
-        return match;
+		sportDataMappingCache.clear();
+		betTypeDataMappingCache.clear();
+		LOGGER.debug("finish init synchro in {}ms ", tt.getDuration());
+	}
 
-    }
+	public Sport findSport(String bookMakerSportCode) {
+		return sportCache.get(bookMakerSportCode);
+	}
 
-    private static MatchKey createKey(Match match) {
-        return new MatchKey(match.getCode(), match.getSport().getCode(),
-                match.getDate());
-    }
+	public String findTeam(String bookMakerSportCode) {
+		return teamCache.get(bookMakerSportCode);
+	}
 
-    public RefKey findOrCreateRefKey(Match match, BetType betType) {
-        if (refKeyCache != null
-                && refKeyCache.getBetType().getId() == betType.getId()
-                && match.getId() == refKeyCache.getMatch().getId()) {
-            return refKeyCache;
-        }
-        RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
-                .findRefKey(betType, match));
-        if (refKey == null) {
-            refKey = new RefKey();
-            refKey.setBetType(betType);
-            refKey.setMatch(match);
-            refKeyRepository.save(refKey);
-        }
-        refKeyCache = refKey;
-        return refKey;
-    }
+	public BetType findBetType(String bookMakerBetTypeCode) {
+		return betTypeCache.get(bookMakerBetTypeCode);
+	}
+
+	public BookMaker getBookMaker() {
+		return bookMaker;
+	}
+
+	public Date getSynchronizationDate() {
+		return synchronizationDate;
+	}
+
+	public void setSynchronizationDate(Date synchronizationDate) {
+		this.synchronizationDate = synchronizationDate;
+	}
+
+	public Match findOrCreateMatch(Sport sport, String matchCode, Date date) {
+		MatchKey key = new MatchKey(matchCode, sport.getCode(), date);
+		Match match = matchCache.get(key);
+		if (match != null) {
+			return match;
+		}
+		match = matchRepository.findByCode(matchCode);
+		if (match == null) {
+			match = new Match();
+			match.setSport(sport);
+			match.setDate(date);
+			match.setCode(matchCode);
+			matchRepository.save(match);
+		}
+		matchCache.put(createKey(match), match);
+		return match;
+
+	}
+
+	private static MatchKey createKey(Match match) {
+		return new MatchKey(match.getCode(), match.getSport().getCode(),
+				match.getDate());
+	}
+
+	public RefKey findOrCreateRefKey(Match match, BetType betType) {
+		if (refKeyCache != null
+				&& refKeyCache.getBetType().getId() == betType.getId()
+				&& match.getId() == refKeyCache.getMatch().getId()) {
+			return refKeyCache;
+		}
+		RefKey refKey = refKeyRepository.findOne(RefKeyRepository.Queries
+				.findRefKey(betType, match));
+		if (refKey == null) {
+			refKey = new RefKey();
+			refKey.setBetType(betType);
+			refKey.setMatch(match);
+			refKeyRepository.save(refKey);
+		}
+		refKeyCache = refKey;
+		return refKey;
+	}
 }
