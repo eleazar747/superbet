@@ -18,7 +18,7 @@ public class SearchToViewTransformer {
             if (name.startsWith("get")) {
                 if (SearchCriteria.class.isAssignableFrom(method
                         .getReturnType())) {
-                    String propertyName = StringUtils.difference(name, "get");
+                    String propertyName = StringUtils.removeStart(name, "get");
                     CriteriaView criteria = new CriteriaView();
                     criteria.setName(WordUtils.uncapitalize(propertyName));
                     criteria.setLabel(propertyName);
