@@ -66,12 +66,19 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 		long nb = 0L;
 		for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
 			playerprint(matchBcDto.getName());
-			String matchCode = matchBcDto.getName().replaceAll(" - ", "**");
+			if (matchBcDto.getName().toString().contains(" - ")) {
+				String team[] = matchBcDto.getName().split(" - ");
 
-			Match match = context.findOrCreateMatch(sport, matchCode,
-					matchBcDto.getStartDate().toGregorianCalendar().getTime());
-			for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
-				nb += convert(context, sport, match, betsBcDto);
+				String player1 = context.findTeam(team[0]);
+				String player2 = context.findTeam(team[1]);
+				String matchCode = player1 + "**" + player2;
+
+				Match match = context.findOrCreateMatch(sport, matchCode,
+						matchBcDto.getStartDate().toGregorianCalendar()
+								.getTime());
+				for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
+					nb += convert(context, sport, match, betsBcDto);
+				}
 			}
 		}
 		return nb;

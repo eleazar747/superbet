@@ -190,8 +190,7 @@ public class SynchronizerContext {
 		for (String strkey : teamDataMappingCache.keys()) {
 			Collection<String> codes = teamDataMappingCache.get(strkey);
 			for (String code : codes) {
-				teamCache
-						.put(strkey, teamDataMappingCache.get(code).toString());
+				teamCache.put(code, strkey);
 			}
 
 		}
