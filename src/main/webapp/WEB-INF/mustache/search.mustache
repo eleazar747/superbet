@@ -4,10 +4,22 @@
 	[[#search.criterias]]
 	<div class="control-group">
 	  <label for="[[name]]" class="control-label">[[name]]</label>
-	  <div class="controls">
+	  <div class="input-prepend">
+	  	<div class="btn-group">
+			<button class="btn dropdown-toggle" data-toggle="dropdown">
+			Action
+			<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				[[#operators]]
+				<li>[[.]]</li>
+				[[/operators]]
+			</ul>
+		</div>
 	  	<input type="text" name="[[name]]" id="[[name]]" placeholder="[[name]]" >
 	  </div>
 	</div>
 	[[/search.criterias]]
+	<button type="submit" class="btn">Search</button>
 	</fieldset>
 </form>
