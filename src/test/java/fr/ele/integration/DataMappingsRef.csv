@@ -1,6 +1,12 @@
 id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,SPORT,Football,Football
 0,betclic,SPORT,Tennis,Tennis
+0,betvictor,SPORT,Football,Football
+0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
+0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
+0,betvictor,TEAM,Nice,Nice
+0,betvictor,TEAM,Marseille,Marseille
+0,betvictor,BET_TYPE,Match Betting,Match Result
 0,betclic,BET_TYPE,Match Result,Match Result
 0,betclic,BET_TYPE,Match Winner,Match Result
 0,expekt,SPORT,TEN,Tennis
@@ -1396,6 +1402,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,nordicbet,TEAM,Marseille,Marseille
 0,nordicbet,TEAM,Marslev G & IF,Marseille
 0,betclic,TEAM,Martina,Martina
+
 0,nordicbet,TEAM,Matsumoto Yamaga FC,Matsumoto Yamaga
 0,betclic,TEAM,Matsumoto Yamaga,Matsumoto Yamaga
 0,bwin,TEAM,M?laga,Matsumoto Yamaga
@@ -1892,6 +1899,506 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,nordicbet,TEAM,Sageata Navodari,Sageata Navodari
 0,nordicbet,TEAM,Salangen,Saint-Etienne
 0,betclic,TEAM,Saint-Etienne,Saint-Etienne
+=======
+0,betclic,TEAM,Marseille,Marseille
+0,nordicbet,TEAM,Matsumoto Yamaga FC,Matsumoto Yamaga
+0,betclic,TEAM,Matsumoto Yamaga,Matsumoto Yamaga
+0,bwin,TEAM,M?laga,Matsumoto Yamaga
+0,nordicbet,TEAM,Medkila,MC Oran
+0,nordicbet,TEAM,Mejrup GU,MC Oran
+0,betclic,TEAM,MC Oran,MC Oran
+0,bwin,TEAM,Meilleur buteur,MC Oran
+0,betclic,TEAM,Melbourne Heart,Melbourne Heart
+0,betclic,TEAM,Melbourne Victory,Melbourne Victory
+0,betclic,TEAM,Melfi,Melfi
+0,betclic,TEAM,Melgar,Melgar
+0,betclic,TEAM,Meppen,Meppen
+0,nordicbet,TEAM,Merida FC,Merida
+0,betclic,TEAM,Merida,Merida
+0,nordicbet,TEAM,Mersin Idman Yurdu,Mersin Idman Yurdu
+0,betclic,TEAM,Messina,Messina
+0,nordicbet,TEAM,Metalurg Donetsk,Metalist Kharkiv
+0,nordicbet,TEAM,Metalurg Skopje,Metalist Kharkiv
+0,nordicbet,TEAM,Metalurg Zaporizhya,Metalist Kharkiv
+0,betclic,TEAM,Metalist Kharkiv,Metalist Kharkiv
+0,bwin,TEAM,Metallist Kharkiv,Metalist Kharkiv
+0,nordicbet,TEAM,Metta/LU,Metalurh Donetsk
+0,betclic,TEAM,Metalurh Donetsk,Metalurh Donetsk
+0,betclic,TEAM,Meuselwitz,Meuselwitz
+0,nordicbet,TEAM,Mezokovesd-Zsory,Mexico
+0,nordicbet,TEAM,MG & BK,Mexico
+0,nordicbet,TEAM,Mexico,Mexico
+0,nordicbet,TEAM,MFK Kosice,Mexico
+0,nordicbet,TEAM,MFK Ruzomberok,Mexico
+0,bwin,TEAM,Mexique,Mexico
+0,nordicbet,TEAM,Middelfart,Middelfart
+0,nordicbet,TEAM,Middlesbrough,Middelfart
+0,betclic,TEAM,Midtjylland,Midtjylland
+0,betclic,TEAM,Mikhail Youzhny,Mikhail Youzhny
+0,betclic,TEAM,Milan,Milan
+0,bwin,TEAM,Milan AC,Milan
+0,nordicbet,TEAM,Millwall,Millonarios
+0,betclic,TEAM,Millonarios,Millonarios
+0,nordicbet,TEAM,Milton Keynes Dons,Milos Raonic
+0,betclic,TEAM,Milos Raonic,Milos Raonic
+0,betclic,TEAM,Mineros Guayana,Mineros Guayana
+0,nordicbet,TEAM,Minnesota United,Minnesota Stars
+0,betclic,TEAM,Minnesota Stars,Minnesota Stars
+0,nordicbet,TEAM,Mirandes,Miramar Mission
+0,betclic,TEAM,Miramar Mission,Miramar Mission
+0,nordicbet,TEAM,Mito Hollyhock,Mito Hollyhock
+0,bwin,TEAM,Mj?llby AIF,Mito Hollyhock
+0,nordicbet,TEAM,Mj?ndalen,Mjondalen
+0,nordicbet,TEAM,Mj?lner,Mjondalen
+0,betclic,TEAM,Mjondalen,Mjondalen
+0,nordicbet,TEAM,Moi,MO Bejaia
+0,nordicbet,TEAM,Modum FK,MO Bejaia
+0,nordicbet,TEAM,Modena,MO Bejaia
+0,betclic,TEAM,MO Bejaia,MO Bejaia
+0,bwin,TEAM,Moldavie,MO Bejaia
+0,nordicbet,TEAM,Molde,Molde
+0,nordicbet,TEAM,Moldova,Moldova
+0,betclic,TEAM,Molenbeek,Molenbeek
+0,betclic,TEAM,Monaco,Monaco
+0,nordicbet,TEAM,Mons Bergen,Mons
+0,betclic,TEAM,Mons,Mons
+0,nordicbet,TEAM,Montedio Yamagata,Montedio Yamagata
+0,nordicbet,TEAM,Montenegro,Montenegro
+0,betclic,TEAM,Monterrey,Monterrey
+0,bwin,TEAM,Mont?n?gro,Monterrey
+0,nordicbet,TEAM,Montpellier,Montpellier
+0,nordicbet,TEAM,Morecambe,Montpellier
+0,nordicbet,TEAM,Montrose,Montpellier
+0,bwin,TEAM,Montpellier HSC,Montpellier
+0,nordicbet,TEAM,Morud IF 2,Moreirense
+0,nordicbet,TEAM,Motherwell,Moreirense
+0,nordicbet,TEAM,Morud IF,Moreirense
+0,nordicbet,TEAM,Moss,Moreirense
+0,betclic,TEAM,Moreirense,Moreirense
+0,nordicbet,TEAM,Motor Lublin,Motor Lublin
+0,nordicbet,TEAM,MS Ashdod,Mouscron-Peruwelz
+0,nordicbet,TEAM,MTK Hungaria FC,Mouscron-Peruwelz
+0,nordicbet,TEAM,MTK Hung?ria FC,Mouscron-Peruwelz
+0,nordicbet,TEAM,MSK Zilina,Mouscron-Peruwelz
+0,betclic,TEAM,Mouscron-Peruwelz,Mouscron-Peruwelz
+0,nordicbet,TEAM,Munkebo BK,Municipal
+0,nordicbet,TEAM,Municipal Iquique,Municipal
+0,betclic,TEAM,Municipal,Municipal
+0,nordicbet,TEAM,M?rk?v IF,Myllykosken Pallo-47
+0,nordicbet,TEAM,MyPa,Myllykosken Pallo-47
+0,betclic,TEAM,Myllykosken Pallo-47,Myllykosken Pallo-47
+0,bwin,TEAM,MyPa Anjalankoski,Myllykosken Pallo-47
+0,nordicbet,TEAM,NAC Breda,NAC Breda
+0,betclic,TEAM,Nacional Asuncion,Nacional Asuncion
+0,nordicbet,TEAM,Nacional Madeira,Nacional Madeira
+0,nordicbet,TEAM,Nakskov Boldklub,Nacional Potosi
+0,betclic,TEAM,Nacional Potosi,Nacional Potosi
+0,nordicbet,TEAM,Nantes,Nantes
+0,nordicbet,TEAM,Nardo,Napoli
+0,nordicbet,TEAM,Napoli,Napoli
+0,betclic,TEAM,Nastved,Nastved
+0,nordicbet,TEAM,ND Hit Gorica,Nautico
+0,nordicbet,TEAM,N?ssj? FF,Nautico
+0,nordicbet,TEAM,NB Bornholm,Nautico
+0,nordicbet,TEAM,Nautico PE,Nautico
+0,betclic,TEAM,Nautico,Nautico
+0,nordicbet,TEAM,Nea Salamis,Nea Salamina
+0,betclic,TEAM,Nea Salamina,Nea Salamina
+0,nordicbet,TEAM,Nes,NEC Nijmegen
+0,nordicbet,TEAM,Neftochimik 1962 Bourgas,NEC Nijmegen
+0,nordicbet,TEAM,Nest Sotra,NEC Nijmegen
+0,nordicbet,TEAM,Nesodden,NEC Nijmegen
+0,nordicbet,TEAM,Neset,NEC Nijmegen
+0,nordicbet,TEAM,NEC Nijmegen,NEC Nijmegen
+0,bwin,TEAM,Neman Grodno,NEC Nijmegen
+0,bwin,TEAM,NEC Nim?gue,NEC Nijmegen
+0,nordicbet,TEAM,Netherlands,Netherlands
+0,betclic,TEAM,Neum?nster,Neum?nster
+0,nordicbet,TEAM,New England Revolution,New England Revolution
+0,nordicbet,TEAM,New York Red Bulls,New York Cosmos
+0,nordicbet,TEAM,New York Cosmos,New York Cosmos
+0,betclic,TEAM,Newcastle,Newcastle
+0,nordicbet,TEAM,Newcastle United,Newcastle Jets
+0,betclic,TEAM,Newcastle Jets,Newcastle Jets
+0,nordicbet,TEAM,Newtown,Newell's Old Boys
+0,nordicbet,TEAM,NFB,Newell's Old Boys
+0,nordicbet,TEAM,Newport County,Newell's Old Boys
+0,nordicbet,TEAM,Newell's Old Boys,Newell's Old Boys
+0,nordicbet,TEAM,Newton Stewart FC,Newell's Old Boys
+0,nordicbet,TEAM,Nice,Nice
+0,nordicbet,TEAM,Nice Futis,Nice
+0,nordicbet,TEAM,NK Travnik,Nick Kyrgios
+0,nordicbet,TEAM,NK Vitez,Nick Kyrgios
+0,nordicbet,TEAM,NK Siroki Brijeg,Nick Kyrgios
+0,nordicbet,TEAM,NK Zvijezda Gradacac,Nick Kyrgios
+0,nordicbet,TEAM,NK ?elik Zenica,Nick Kyrgios
+0,nordicbet,TEAM,NK Maribor,Nick Kyrgios
+0,nordicbet,TEAM,NK MIK CM Celje,Nick Kyrgios
+0,nordicbet,TEAM,NK Maribor PIV Lasko,Nick Kyrgios
+0,nordicbet,TEAM,NK Olimpija Ljubljana,Nick Kyrgios
+0,nordicbet,TEAM,NK Dom?ale,Nick Kyrgios
+0,nordicbet,TEAM,NK Krka,Nick Kyrgios
+0,nordicbet,TEAM,NK Zavrc,Nick Kyrgios
+0,nordicbet,TEAM,NK Rudar Velenje,Nick Kyrgios
+0,nordicbet,TEAM,NK Istra 1961,Nick Kyrgios
+0,nordicbet,TEAM,NK Hrvatski Dragovoljac,Nick Kyrgios
+0,nordicbet,TEAM,Nigeria,Nick Kyrgios
+0,nordicbet,TEAM,NK Dinamo Zagreb,Nick Kyrgios
+0,nordicbet,TEAM,NK Osijek,Nick Kyrgios
+0,nordicbet,TEAM,NK Zadar,Nick Kyrgios
+0,betclic,TEAM,Nick Kyrgios,Nick Kyrgios
+0,betclic,TEAM,Nocerina,Nocerina
+0,nordicbet,TEAM,Nordre Land,Noja
+0,nordicbet,TEAM,Nordre Fjell,Noja
+0,nordicbet,TEAM,Nordhordland,Noja
+0,betclic,TEAM,Noja,Noja
+0,betclic,TEAM,Nordsjaelland,Nordsjaelland
+0,nordicbet,TEAM,Norrby IF,Nordvest
+0,nordicbet,TEAM,Nordvest FC,Nordvest
+0,nordicbet,TEAM,North Ferriby United,Nordvest
+0,betclic,TEAM,Nordvest,Nordvest
+0,nordicbet,TEAM,Northampton Town,North York Astros
+0,betclic,TEAM,North York Astros,North York Astros
+0,nordicbet,TEAM,Northern Ireland,Northern Ireland
+0,bwin,TEAM,Norv?ge,Northern Ireland
+0,nordicbet,TEAM,Norway,Norway
+0,nordicbet,TEAM,Norwich City,Norwich City
+0,nordicbet,TEAM,Nottingham Forest,Norwich City
+0,nordicbet,TEAM,Notts County,Norwich City
+0,nordicbet,TEAM,Numancia,Novak Djokovic
+0,nordicbet,TEAM,Nublense,Novak Djokovic
+0,nordicbet,TEAM,N?SV Neulengbach Frauen,Novak Djokovic
+0,nordicbet,TEAM,Nuneaton Town,Novak Djokovic
+0,nordicbet,TEAM,N?mme Kalju,Novak Djokovic
+0,nordicbet,TEAM,NUBI,Novak Djokovic
+0,nordicbet,TEAM,Novara,Novak Djokovic
+0,betclic,TEAM,Novak Djokovic,Novak Djokovic
+0,bwin,TEAM,Nuremberg,Novak Djokovic
+0,betclic,TEAM,Nuremburg,Nuremburg
+0,nordicbet,TEAM,Nyborg G & IF,Nuremburg II
+0,betclic,TEAM,Nuremburg II,Nuremburg II
+0,nordicbet,TEAM,Nyk?pings BIS,Nyk?pings BIS
+0,nordicbet,TEAM,N?rager B,Nyk?pings BIS
+0,nordicbet,TEAM,N?sby,Nyk?pings BIS
+0,nordicbet,TEAM,O K S,Nyk?pings BIS
+0,nordicbet,TEAM,N?stved,Nyk?pings BIS
+0,nordicbet,TEAM,Nyk?bing FC,Nyk?pings BIS
+0,nordicbet,TEAM,N?stved IF 3,Nyk?pings BIS
+0,nordicbet,TEAM,O K S 2,Nyk?pings BIS
+0,nordicbet,TEAM,N?rrebro United,Nyk?pings BIS
+0,nordicbet,TEAM,Nyk?bing Mors IF,Nyk?pings BIS
+0,nordicbet,TEAM,OB 4,O'Higgins
+0,nordicbet,TEAM,OB 2,O'Higgins
+0,nordicbet,TEAM,OB 3,O'Higgins
+0,nordicbet,TEAM,O'Higgins,O'Higgins
+0,nordicbet,TEAM,OB,O'Higgins
+0,betclic,TEAM,OB Odense,OB Odense
+0,nordicbet,TEAM,Odda,Odd Grenland
+0,nordicbet,TEAM,Odder,Odd Grenland
+0,nordicbet,TEAM,Odd Grenland,Odd Grenland
+0,nordicbet,TEAM,Odder IGF 2,Odd Grenland
+0,betclic,TEAM,Oddevold,Oddevold
+0,bwin,TEAM,Odense BK,Oddevold
+0,nordicbet,TEAM,OFK Belgrade,OFI Crete
+0,nordicbet,TEAM,OFI Crete,OFI Crete
+0,nordicbet,TEAM,Okocimski KS Brzesko,OFI Crete
+0,bwin,TEAM,OGC Nice,OFI Crete
+0,nordicbet,TEAM,Oldham Athletic,Oldenburg
+0,nordicbet,TEAM,Olhanense,Oldenburg
+0,betclic,TEAM,Oldenburg,Oldenburg
+0,nordicbet,TEAM,Olimpia Elbl?g,Olimpia Asuncion
+0,nordicbet,TEAM,Olimpia Zambr?w,Olimpia Asuncion
+0,nordicbet,TEAM,Olimpia Grudzi?dz,Olimpia Asuncion
+0,betclic,TEAM,Olimpia Asuncion,Olimpia Asuncion
+0,betclic,TEAM,Olimpija Ljubljana,Olimpija Ljubljana
+0,betclic,TEAM,Olimpik Sarajevo,Olimpik Sarajevo
+0,nordicbet,TEAM,Olimpo Bahia Blanca,Olimpo Bahia Blanca
+0,betclic,TEAM,Oliveirense,Oliveirense
+0,nordicbet,TEAM,Olympiakos,Olympiakos
+0,nordicbet,TEAM,Olympique Lyonnais,Olympiakos
+0,bwin,TEAM,Olympique de Marseille,Olympiakos
+0,bwin,TEAM,Olympiakos Piraeus,Olympiakos
+0,nordicbet,TEAM,ONS,Omonia Nicosia
+0,betclic,TEAM,Omonia Nicosia,Omonia Nicosia
+0,betclic,TEAM,Ontinyent,Ontinyent
+0,nordicbet,TEAM,OPS,Oostende
+0,betclic,TEAM,Oostende,Oostende
+0,betclic,TEAM,Optik Rathenow,Optik Rathenow
+0,nordicbet,TEAM,Ore/Bogense,Orduspor
+0,nordicbet,TEAM,Orduspor,Orduspor
+0,betclic,TEAM,Orebro,Orebro
+0,nordicbet,TEAM,Orkla,Oriente Petrolero
+0,nordicbet,TEAM,Os,Oriente Petrolero
+0,nordicbet,TEAM,Orlando Pirates,Oriente Petrolero
+0,nordicbet,TEAM,Orre,Oriente Petrolero
+0,betclic,TEAM,Oriente Petrolero,Oriente Petrolero
+0,nordicbet,TEAM,Oslo City FC,Osasuna
+0,nordicbet,TEAM,Oskarshamns AIK,Osasuna
+0,betclic,TEAM,Osasuna,Osasuna
+0,bwin,TEAM,Ostende,Osasuna
+0,nordicbet,TEAM,Ostrovia 1909 Ostr?w Wielkopolski,Oster
+0,nordicbet,TEAM,Oster?y,Oster
+0,betclic,TEAM,Oster,Oster
+0,bwin,TEAM,Osters IF,Oster
+0,betclic,TEAM,Ostsiden,Ostsiden
+0,nordicbet,TEAM,Otta,Otelul Galati
+0,nordicbet,TEAM,Otelul Galati,Otelul Galati
+0,nordicbet,TEAM,Otterup B & IK 2,Otelul Galati
+0,bwin,TEAM,Oud Heverlee Leuven,Otelul Galati
+0,nordicbet,TEAM,Oure Fodbold Akademi,Oud-Heverlee Leuven
+0,nordicbet,TEAM,Oud-Heverlee Leuven,Oud-Heverlee Leuven
+0,nordicbet,TEAM,Oxford City,Ourense
+0,nordicbet,TEAM,?rebro SK,Ourense
+0,nordicbet,TEAM,Oxford United,Ourense
+0,nordicbet,TEAM,?stersunds FK,Ourense
+0,nordicbet,TEAM,?rgryte IS,Ourense
+0,nordicbet,TEAM,Outrup B,Ourense
+0,nordicbet,TEAM,?sters IF,Ourense
+0,betclic,TEAM,Ourense,Ourense
+0,betclic,TEAM,Pablo Andujar,Pablo Andujar
+0,betclic,TEAM,Pachuca,Pachuca
+0,nordicbet,TEAM,Pac?fico FC,Pacifico FC
+0,betclic,TEAM,Pacifico FC,Pacifico FC
+0,nordicbet,TEAM,Pa?os Ferreira,Pacos Ferreira
+0,betclic,TEAM,Pacos Ferreira,Pacos Ferreira
+0,nordicbet,TEAM,Palermo,Paganese
+0,nordicbet,TEAM,Pakruojo Kruoja,Paganese
+0,nordicbet,TEAM,Paide Linnameeskond,Paganese
+0,nordicbet,TEAM,Pallokissat,Paganese
+0,betclic,TEAM,Paganese,Paganese
+0,nordicbet,TEAM,Palmeiras SP,Palmeiras
+0,betclic,TEAM,Palmeiras,Palmeiras
+0,nordicbet,TEAM,Panama,Panama
+0,nordicbet,TEAM,Panathinaikos,Panathinaikos
+0,betclic,TEAM,Pandurii Targu Jiu,Pandurii Targu Jiu
+0,bwin,TEAM,Pandurii Tg. Jiu,Pandurii Targu Jiu
+0,nordicbet,TEAM,Panetolikos,Panetolikos
+0,nordicbet,TEAM,Panionios,Panionios
+0,nordicbet,TEAM,Panthrakikos,Panthrakikos
+0,nordicbet,TEAM,PAOK Thessaloniki,PAOK
+0,betclic,TEAM,PAOK,PAOK
+0,bwin,TEAM,PAOK Salonique,PAOK
+0,betclic,TEAM,Paraguay,Paraguay
+0,nordicbet,TEAM,Paris St. Germain,Paris Saint-Germain
+0,nordicbet,TEAM,Paris Saint-Germain FC,Paris Saint-Germain
+0,nordicbet,TEAM,Paris Saint-Germain,Paris Saint-Germain
+0,nordicbet,TEAM,Parma,Parma
+0,bwin,TEAM,Parme FC,Parma
+0,nordicbet,TEAM,Partick Thistle,Partick
+0,betclic,TEAM,Partick,Partick
+0,nordicbet,TEAM,Partizan Belgrade,Partizan Belgrade
+0,nordicbet,TEAM,PAS Giannina,PAS Giannina
+0,betclic,TEAM,Patriotas,Patriotas
+0,betclic,TEAM,Patronato,Patronato
+0,betclic,TEAM,Pavia,Pavia
+0,bwin,TEAM,Pays de Galles,Pavia
+0,bwin,TEAM,Pays-Bas,Pavia
+0,nordicbet,TEAM,Pecsi MFC,Paysandu
+0,nordicbet,TEAM,Pelikan ?owicz,Paysandu
+0,nordicbet,TEAM,P?rnu Jalgpalliklubi,Paysandu
+0,nordicbet,TEAM,Paysandu PA,Paysandu
+0,betclic,TEAM,Paysandu,Paysandu
+0,bwin,TEAM,PEC Zwolle,Paysandu
+0,betclic,TEAM,Penafiel,Penafiel
+0,nordicbet,TEAM,Pe?a Sport,Penarol
+0,betclic,TEAM,Penarol,Penarol
+0,betclic,TEAM,Perth Glory,Perth Glory
+0,betclic,TEAM,Peru,Peru
+0,nordicbet,TEAM,Pescara,Perugia
+0,nordicbet,TEAM,Peterhead,Perugia
+0,nordicbet,TEAM,Peterborough United,Perugia
+0,betclic,TEAM,Perugia,Perugia
+0,nordicbet,TEAM,PFC Ludogorets 1947 Razgrad,Petrolul Ploiesti
+0,nordicbet,TEAM,Petrolul Ploiesti,Petrolul Ploiesti
+0,nordicbet,TEAM,PFC Sevastopol,Petrolul Ploiesti
+0,bwin,TEAM,PFC Beroe Stara Zagora,Petrolul Ploiesti
+0,bwin,TEAM,P?rou,Petrolul Ploiesti
+0,nordicbet,TEAM,Philadelphia Union,Philadelphia Union
+0,nordicbet,TEAM,Piast Gliwice,Piast Gliwice
+0,nordicbet,TEAM,Pirin Gotse Delchev,Pirin Gotse Delchev
+0,nordicbet,TEAM,Platanias,Pisa
+0,nordicbet,TEAM,Pite? IF,Pisa
+0,nordicbet,TEAM,PK-35 Vantaa,Pisa
+0,nordicbet,TEAM,PK-35,Pisa
+0,betclic,TEAM,Pisa,Pisa
+0,nordicbet,TEAM,Podbeskidzie Bielsko-Bia?a,Podbeskidzie Bielsko Biala
+0,betclic,TEAM,Podbeskidzie Bielsko Biala,Podbeskidzie Bielsko Biala
+0,nordicbet,TEAM,Pogo? Szczecin,Poggibonsi
+0,nordicbet,TEAM,Pogo? Siedlce,Poggibonsi
+0,betclic,TEAM,Poggibonsi,Poggibonsi
+0,nordicbet,TEAM,Poland,Poland
+0,nordicbet,TEAM,Polonia Bytom,Polish Ekstraklasa 2013-2014
+0,betclic,TEAM,Polish Ekstraklasa 2013-2014,Polish Ekstraklasa 2013-2014
+0,bwin,TEAM,Pologne,Polish Ekstraklasa 2013-2014
+0,nordicbet,TEAM,Ponta Preta SP,Ponferradina
+0,betclic,TEAM,Ponferradina,Ponferradina
+0,betclic,TEAM,Ponte Preta,Ponte Preta
+0,betclic,TEAM,Pontedera,Pontedera
+0,nordicbet,TEAM,Port Albot Town,Pors Grenland
+0,nordicbet,TEAM,Pors Grenland,Pors Grenland
+0,nordicbet,TEAM,Port Vale,Pors Grenland
+0,betclic,TEAM,Portimonense,Portimonense
+0,nordicbet,TEAM,Portland Timbers,Portland Timbers
+0,betclic,TEAM,Porto,Porto
+0,nordicbet,TEAM,Portsmouth,Porto B
+0,betclic,TEAM,Porto B,Porto B
+0,nordicbet,TEAM,Portugal,Portugal
+0,nordicbet,TEAM,Portuguesa SP,Portuguesa
+0,betclic,TEAM,Portuguesa,Portuguesa
+0,nordicbet,TEAM,Prat,Portuguese Superliga 2013-2014
+0,betclic,TEAM,Portuguese Superliga 2013-2014,Portuguese Superliga 2013-2014
+0,nordicbet,TEAM,Preston Athletic,Prato
+0,nordicbet,TEAM,Prestatyn Town,Prato
+0,nordicbet,TEAM,Preston North End,Prato
+0,betclic,TEAM,Prato,Prato
+0,betclic,TEAM,Preussen Munster,Preussen Munster
+0,betclic,TEAM,Pro Patria,Pro Patria
+0,nordicbet,TEAM,Pr?st? IF,Pro Vercelli
+0,betclic,TEAM,Pro Vercelli,Pro Vercelli
+0,betclic,TEAM,PSG,PSG
+0,nordicbet,TEAM,PSV Eindhoven,PSV Eindhoven
+0,nordicbet,TEAM,Puebla FC,Puebla
+0,betclic,TEAM,Puebla,Puebla
+0,nordicbet,TEAM,Puskas Akademia FC,Puntarenas
+0,nordicbet,TEAM,Puszcza Niepo?omice,Puntarenas
+0,nordicbet,TEAM,Purhus IF,Puntarenas
+0,betclic,TEAM,Puntarenas,Puntarenas
+0,nordicbet,TEAM,Queens Park FC,Puszcza Niepolomice
+0,nordicbet,TEAM,Queen of the South,Puszcza Niepolomice
+0,nordicbet,TEAM,Queens Park Rangers,Puszcza Niepolomice
+0,nordicbet,TEAM,Quilmes,Puszcza Niepolomice
+0,betclic,TEAM,Puszcza Niepolomice,Puszcza Niepolomice
+0,bwin,TEAM,Qualifications ? la Coupe du Monde,Puszcza Niepolomice
+0,bwin,TEAM,Qualifications CM,Puszcza Niepolomice
+0,bwin,TEAM,Qui arrivera dans les 4 premiers ?,Puszcza Niepolomice
+0,bwin,TEAM,Qui atteindra la finale de Ligue des Champions 2013/2014 ?,Puszcza Niepolomice
+0,nordicbet,TEAM,Qviding,Quilmes Atletico Club
+0,betclic,TEAM,Quilmes Atletico Club,Quilmes Atletico Club
+0,betclic,TEAM,Qviding FIF,Qviding FIF
+0,nordicbet,TEAM,Racing Club,Racing Avellaneda
+0,betclic,TEAM,Racing Avellaneda,Racing Avellaneda
+0,betclic,TEAM,Racing Club Montevideo,Racing Club Montevideo
+0,betclic,TEAM,Racing Ferrol,Racing Ferrol
+0,bwin,TEAM,Racing Genk,Racing Ferrol
+0,betclic,TEAM,Racing Santander,Racing Santander
+0,nordicbet,TEAM,Rad Belgrade,Rad Belgrade
+0,nordicbet,TEAM,Radnicki Nis,Radnicki Nis
+0,nordicbet,TEAM,Radomiak Radom,Radnik Bijeljina
+0,betclic,TEAM,Radnik Bijeljina,Radnik Bijeljina
+0,betclic,TEAM,Rafael Nadal,Rafael Nadal
+0,nordicbet,TEAM,Raith Rovers,Rain/Lech
+0,betclic,TEAM,Rain/Lech,Rain/Lech
+0,nordicbet,TEAM,Randers FC,Rakovski Kaposvar
+0,nordicbet,TEAM,Randaberg,Rakovski Kaposvar
+0,nordicbet,TEAM,Randers Freja 4,Rakovski Kaposvar
+0,betclic,TEAM,Rakovski Kaposvar,Rakovski Kaposvar
+0,nordicbet,TEAM,Rangers,Rangers
+0,nordicbet,TEAM,Rangers Talca,Rangers
+0,nordicbet,TEAM,Ranheim,Ranheim
+0,nordicbet,TEAM,Raufoss,Rapid Vienna
+0,nordicbet,TEAM,Rapid Wien,Rapid Vienna
+0,nordicbet,TEAM,Ravn,Rapid Vienna
+0,nordicbet,TEAM,Ravnsbjerg/L?gstrup,Rapid Vienna
+0,betclic,TEAM,Rapid Vienna,Rapid Vienna
+0,nordicbet,TEAM,RB 1906 2,Rayo Vallecano
+0,nordicbet,TEAM,Real Garcilaso,Rayo Vallecano
+0,nordicbet,TEAM,Reading,Rayo Vallecano
+0,nordicbet,TEAM,Real Betis,Rayo Vallecano
+0,nordicbet,TEAM,Rayo Vallecano,Rayo Vallecano
+0,bwin,TEAM,RC Lens,Rayo Vallecano
+0,nordicbet,TEAM,Real Jaen,Real Garcilsao
+0,betclic,TEAM,Real Garcilsao,Real Garcilsao
+0,nordicbet,TEAM,Real Madrid,Real Madrid
+0,betclic,TEAM,Real Madrid C,Real Madrid C
+0,nordicbet,TEAM,Real Madrid Castilla,Real Madrid Castilla
+0,nordicbet,TEAM,Real Murcia,Real Murcia
+0,bwin,TEAM,Real Murcie,Real Murcia
+0,betclic,TEAM,Real Oviedo,Real Oviedo
+0,betclic,TEAM,Real Potosi,Real Potosi
+0,nordicbet,TEAM,Real Salt Lake,Real Salt Lake
+0,nordicbet,TEAM,Real Sociedad,Real Sociedad
+0,nordicbet,TEAM,Real Valladolid,Real Sociedad B
+0,betclic,TEAM,Real Sociedad B,Real Sociedad B
+0,nordicbet,TEAM,Recreativo de Huelva,Real Vicenza
+0,nordicbet,TEAM,Real Zaragoza,Real Vicenza
+0,betclic,TEAM,Real Vicenza,Real Vicenza
+0,betclic,TEAM,Recreativo Huelva,Recreativo Huelva
+0,nordicbet,TEAM,Red Bull Salzburg,Red Bull New York
+0,betclic,TEAM,Red Bull New York,Red Bull New York
+0,nordicbet,TEAM,Redalen,Red Star Belgrade
+0,betclic,TEAM,Red Star Belgrade,Red Star Belgrade
+0,nordicbet,TEAM,Reggina,Reggina
+0,betclic,TEAM,Rehden,Rehden
+0,nordicbet,TEAM,Reims,Reims
+0,nordicbet,TEAM,Rena,Reims
+0,nordicbet,TEAM,Relegation,Reims
+0,betclic,TEAM,Renate,Renate
+0,nordicbet,TEAM,Renova Dzepciste,Rennes
+0,betclic,TEAM,Rennes,Rennes
+0,nordicbet,TEAM,Republic of Ireland,Rentistas
+0,betclic,TEAM,Rentistas,Rentistas
+0,nordicbet,TEAM,Rhyl FC,Reus
+0,nordicbet,TEAM,Ridabu,Reus
+0,nordicbet,TEAM,Ribe BK,Reus
+0,betclic,TEAM,Reus,Reus
+0,bwin,TEAM,R?publique Tch?que,Reus
+0,betclic,TEAM,Rijeka,Rijeka
+0,nordicbet,TEAM,Rish?j BK,Rimini Calcio
+0,nordicbet,TEAM,Ringk?bing  IF,Rimini Calcio
+0,nordicbet,TEAM,Ringe BK,Rimini Calcio
+0,nordicbet,TEAM,Ringk?bing IF 2,Rimini Calcio
+0,betclic,TEAM,Rimini Calcio,Rimini Calcio
+0,bwin,TEAM,Rio Ave,Rimini Calcio
+0,nordicbet,TEAM,River Plate,River Plate
+0,nordicbet,TEAM,RKC Waalwijk,RKC Waalwijk
+0,nordicbet,TEAM,RKG,RKC Waalwijk
+0,nordicbet,TEAM,RNK Split,RNK Split
+0,nordicbet,TEAM,Roasso Kumamoto,Roasso Kumamoto
+0,nordicbet,TEAM,Rochdale,Roasso Kumamoto
+0,betclic,TEAM,Roda,Roda
+0,bwin,TEAM,Roda JC,Roda
+0,nordicbet,TEAM,Roeselare,Roeselare
+0,betclic,TEAM,Roma,Roma
+0,nordicbet,TEAM,Romania,Romania
+0,nordicbet,TEAM,RoPS,Romania
+0,nordicbet,TEAM,Rosario Central,Rosario Central
+0,nordicbet,TEAM,Rosenborg,Rosenborg
+0,nordicbet,TEAM,Rosenh?j BK,Rosenborg
+0,nordicbet,TEAM,Ross County,Roskilde
+0,betclic,TEAM,Roskilde,Roskilde
+0,nordicbet,TEAM,Rotherham United,Rostov
+0,betclic,TEAM,Rostov,Rostov
+0,bwin,TEAM,Roumanie,Rostov
+0,nordicbet,TEAM,Rozw?j Katowice,Rovaniemi
+0,nordicbet,TEAM,Royal Boussu Dour Borinage,Rovaniemi
+0,nordicbet,TEAM,Royal Mouscron-Peruwelz,Rovaniemi
+0,nordicbet,TEAM,RTP Unia Racib?rz,Rovaniemi
+0,nordicbet,TEAM,RSC Anderlecht,Rovaniemi
+0,betclic,TEAM,Rovaniemi,Rovaniemi
+0,bwin,TEAM,Rovaniemi PS,Rovaniemi
+0,nordicbet,TEAM,Rubin Kazan,Rubin Kazan
+0,betclic,TEAM,Rubio Nu,Rubio Nu
+0,nordicbet,TEAM,Ruch Chorz?w,Ruch Chorzow
+0,betclic,TEAM,Ruch Chorzow,Ruch Chorzow
+0,betclic,TEAM,Rudar Velenje,Rudar Velenje
+0,nordicbet,TEAM,Ryds SK,Russia
+0,nordicbet,TEAM,R?nne f.B.,Russia
+0,nordicbet,TEAM,Russia,Russia
+0,nordicbet,TEAM,S.f.B. 2,Russia
+0,nordicbet,TEAM,R?ros,Russia
+0,nordicbet,TEAM,R?rvik,Russia
+0,nordicbet,TEAM,S.f.B. 3,Russia
+0,nordicbet,TEAM,Rustad,Russia
+0,bwin,TEAM,Russie,Russia
+0,bwin,TEAM,RZ Pellets WAC,Russia
+0,nordicbet,TEAM,Sabadell FC,Sabadell
+0,betclic,TEAM,Sabadell,Sabadell
+0,nordicbet,TEAM,Saint Etienne,Sageata Navodari
+0,nordicbet,TEAM,Sageata Navodari,Sageata Navodari
+0,nordicbet,TEAM,Salangen,Saint-Etienne
+0,betclic,TEAM,Saint-Etienne,Saint-Etienne
+0,betclic,TEAM,Nice,Nice
+>>>>>>> refs/remotes/origin/master
 0,nordicbet,TEAM,Salisbury City,Salernitana Calcio 1919
 0,betclic,TEAM,Salernitana Calcio 1919,Salernitana Calcio 1919
 0,nordicbet,TEAM,Samara Kryliya Sovetov,Salzburg
