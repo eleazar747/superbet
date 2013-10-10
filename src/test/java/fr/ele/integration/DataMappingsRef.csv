@@ -2,8 +2,11 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,SPORT,Football,Football
 0,betclic,SPORT,Tennis,Tennis
 0,betvictor,SPORT,Football,Football
-0,betvictor,BET_TYPE,Under 2.5,Over Under
-0,betvictor,BET_TYPE,Over 2.5,Over Under
+0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
+0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
+0,betvictor,TEAM,Nice,Nice
+0,betvictor,TEAM,Marseille,Marseille
+0,betvictor,BET_TYPE,Match Betting,Match Result
 0,betclic,BET_TYPE,Match Result,Match Result
 0,betclic,BET_TYPE,Match Winner,Match Result
 0,expekt,SPORT,TEN,Tennis
@@ -1399,6 +1402,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,nordicbet,TEAM,Marseille,Marseille
 0,nordicbet,TEAM,Marslev G & IF,Marseille
 0,betclic,TEAM,Martina,Martina
+0,betclic,TEAM,Marseille,Marseille
 0,nordicbet,TEAM,Matsumoto Yamaga FC,Matsumoto Yamaga
 0,betclic,TEAM,Matsumoto Yamaga,Matsumoto Yamaga
 0,bwin,TEAM,M?laga,Matsumoto Yamaga
@@ -1895,6 +1899,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,nordicbet,TEAM,Sageata Navodari,Sageata Navodari
 0,nordicbet,TEAM,Salangen,Saint-Etienne
 0,betclic,TEAM,Saint-Etienne,Saint-Etienne
+0,betclic,TEAM,Nice,Nice
 0,nordicbet,TEAM,Salisbury City,Salernitana Calcio 1919
 0,betclic,TEAM,Salernitana Calcio 1919,Salernitana Calcio 1919
 0,nordicbet,TEAM,Samara Kryliya Sovetov,Salzburg

@@ -2,8 +2,7 @@ package fr.ele.services.mapping;
 
 import java.io.IOException;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 import org.jsoup.Jsoup;
@@ -31,63 +30,50 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
 		parseLigue2();
 		parseBundesliga();
 		parseBundesliga2();
-		//parseBundesliga3();
+		
 	}
 
 	public void parseLigue1() throws IOException {
-
-		doc = Jsoup
-				.connect(
-						"http://www.betvictor.com/sports/en/football/fra-division-1/coupons/100/6270510/0/4529/0/MPE/0/0/0/30/1")
-				.get();
 		String sport = "Football";
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-1/coupons/100/6270510/0/4529/0/MPE/0/0/0/30/1").get();
 		readDataOver(doc.select("tr"), sport);
-
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-1/coupons/100/6270510/0/4428/0/MPE/0/0/0/30/1").get();
+		readDataOver(doc.select("tr"), sport);
 	}
 
 	public void parseLigue2() throws IOException {
-
-		doc = Jsoup
-				.connect(
-						"http://www.betvictor.com/sports/en/football/fra-division-2/coupons/100/7006510/0/4428/0/MPE/0/0/0/30/1")
-				.get();
 		String sport = "Football";
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-2/coupons/100/7006510/0/4429/0/MPE/0/0/0/30/1").get();
+		readDataOver(doc.select("tr"), sport);
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-2/coupons/100/7006510/0/4428/0/MPE/0/0/0/30/1").get();
 		readDataOver(doc.select("tr"), sport);
 	}
 
 	public void parseBundesliga() throws IOException {
-
+		String sport = "Football";
 		doc = Jsoup
 				.connect(
-						"http://www.betvictor.com/sports/en/football/ger-bundesliga/coupons/100/6316510/0/4428/0/MPE/0/0/0/30/1")
+						"http://www.betvictor.com/sports/en/football/ger-bundesliga/coupons/100/6316510/0/4529/0/MPE/0/0/0/30/1")
 				.get();
-		String sport = "Football";
+	
+		readDataOver(doc.select("tr"), sport);
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-2/coupons/100/7006510/0/4428/0/MPE/0/0/0/30/1").get();
 		readDataOver(doc.select("tr"), sport);
 	}
 
 	public void parseBundesliga2() throws IOException {
-
+		String sport = "Football";
 		doc = Jsoup
 				.connect(
-						"http://www.betvictor.com/sports/en/football/ger-bundesliga-2/coupons/100/5170510/0/4428/0/MPE/0/0/0/30/1")
+						"http://www.betvictor.com/sports/en/football/ger-bundesliga-2/coupons/100/5170510/0/4429/0/MPE/0/0/0/30/1")
 				.get();
-		String sport = "Football";
+		
 		readDataOver(doc.select("tr"), sport);
-
+		doc = Jsoup.connect("http://www.betvictor.com/sports/en/football/fra-division-2/coupons/100/7006510/0/4428/0/MPE/0/0/0/30/1").get();
+		readDataOver(doc.select("tr"), sport);
 		// ecrirText(text, "src/betvictor/betvictorBundesliga2");
 	}
 
-	public void parseBundesliga3() throws IOException {
-		
-		String sport = "Football";
-		readDataOver(doc.select("tr"), sport);
-	}
-
-	/*
-	 * public void ecrirText(String text, String path) throws IOException{
-	 * PrintWriter pw=new PrintWriter(new FileWriter(path, false));
-	 * BufferedWriter bw=new BufferedWriter(pw); bw.write(text); bw.close(); }
-	 */
 
 	private void readDataOver(Elements elements, String sSport) {
 		Elements e = doc.select("tr");
@@ -95,9 +81,12 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
 		
 		for (Element t : e) {
 			 String dates= null;
-			 String player= null;
+			 String player[]= null;
+			 String player1=null;
+			 String player2=null;
 			 double odd=0;
 			 String betTypes = null;
+			 String subBetTypes = null;
 			ligne = t.text();
 			if (ligne.substring(0, 4).equalsIgnoreCase("Time")) {
 				// rien
@@ -105,40 +94,40 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
 
 				for (Element d : t.select("td")) {
 					System.out.println(d.text() + d.attributes().get("class"));
-					if (d.attributes().get("class").equals("group_date")) {
-						dates = d.text();
-					}
+					
 					if (d.attributes().get("class").equals("date")) {
 						Elements sub=d.select("span");
 						dates = sub.get(0).attributes().get("data-time");
 					}
 					if (d.attributes().get("class").equals("event_description")) {
-						player = d.text();
+						player = d.text().split(" v ");
+						player1=context.findTeam(player[0]);
+						player2=context.findTeam(player[1]);
+						
 					}
-					if (d.attributes().get("class").equals("outcome_ou")) {
-						betTypes = d.text();
-					}
+					
 					if (d.attributes().get("class").equals("outcome")) {
 						String[] sOdd=d.text().split("/");
-						
+						Elements sub=d.select("span");
+						betTypes=sub.get(0).attributes().get("data-market_description");
+						subBetTypes=sub.get(0).attributes().get("data-outcome_description");
 						odd = Double.valueOf(sOdd[0])/Double.valueOf(sOdd[1])+1;
 				
 						Sport sport = context.findSport(sSport);
+						if(player1!=null && player2!=null){
 						if(sport!=null){
 							BetType betType = context.findBetType(betTypes);
 							if(betType!=null){
 								
-								
-								
 								Date date=new Date();
 								date.setTime(Long.valueOf(dates));
 								Match match = context.findOrCreateMatch(sport,
-										player, date);
+										player1+"**"+player2, date);
 								RefKey refKey = context.findOrCreateRefKey(match, betType);
 								Bet bet = new Bet();
 								bet.setOdd(odd);
 								bet.setRefKey(refKey);
-								bet.setCode("1111");
+								bet.setCode(subBetTypes);
 								bet.setDate(context.getSynchronizationDate());
 								bet.setBookMaker(context.getBookMaker());
 								bet.setBookmakerBetId("dummy");
@@ -150,6 +139,7 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
 
 				}
 				
+			}
 			}
 
 		}

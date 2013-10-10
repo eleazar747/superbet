@@ -5,4 +5,4 @@ id,code,url,url sync,sync service
 0,williamhill,www.google.com,www.google.com,WilliamHillSynchronizer
 0,bwin,www.google.com,https://www.bwin.fr/partner/xml/query.aspx?source=events&xpath=/ROOT,BwinSynchroniser
 0,intertops,www.google.com,www.google.com,IntertopsSynchronizer
-0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetvictorSynchronizer
+0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetVictorSynchroniser
