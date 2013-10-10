@@ -52,12 +52,18 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 		Sport sport = context.findSport(e.getSID().toString());
 		if (sport != null) {
 			playerprint(e.getN().toString().replaceAll(" ", ""));
-			Match match = context.findOrCreateMatch(sport, e.getN().toString()
-					.toLowerCase().replaceAll(" ", "").replaceAll("-", "**"), e
-					.getStdEventDateUTC().toGregorianCalendar().getTime());
+			if (e.getN().toString().contains(" - ")) {
+				String team[] = e.getN().toString().split(" - ");
+				String player1 = context.findTeam(team[0]);
+				String player2 = context.findTeam(team[1]);
+				String matchCode = player1 + "**" + player2;
 
-			for (G g : e.getG()) {
-				convert(context, g, match);
+				Match match = context.findOrCreateMatch(sport, matchCode, e
+						.getStdEventDateUTC().toGregorianCalendar().getTime());
+
+				for (G g : e.getG()) {
+					convert(context, g, match);
+				}
 			}
 		}
 
@@ -78,7 +84,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 	private long convert(SynchronizerContext context, R r, Match match,
 			BetType betType) {
-		long nb = 0L;
+
 		RefKey refKey = context.findOrCreateRefKey(match, betType);
 		Bet bet = new Bet();
 
