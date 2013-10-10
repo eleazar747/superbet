@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 		Sport sport = context.findSport(e.getSID().toString());
 		if (sport != null) {
-			playerprint(e.getN().toString().replaceAll(" ", ""));
+			playerprint(e.getN().toString());
 			if (e.getN().toString().contains(" - ")) {
 				String team[] = e.getN().toString().split(" - ");
 				String player1 = context.findTeam(team[0]);
@@ -106,16 +107,17 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 	}
 
 	private void playerprint(String match) {
-
-		String[] team = match.split("-");
+		HashMap<String, String> hMap = new HashMap<String, String>();
+		String[] team = match.split(" - ");
 		for (String str : team) {
-			try {
-				w.write(str);
-				w.write('\n');
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (hMap.containsKey(str) == false) {
+				try {
+					w.write(str);
+					w.write('\n');
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-
 	}
 }

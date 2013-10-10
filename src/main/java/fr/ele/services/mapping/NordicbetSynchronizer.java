@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
@@ -111,15 +112,17 @@ public class NordicbetSynchronizer extends AbstractSynchronizer<Odds> {
 	private void playerprint(String match) {
 
 		String[] team = match.split(" - ");
+		HashMap<String, String> hMap = new HashMap<String, String>();
 		for (String str : team) {
-			try {
-				w.write(str);
-				w.write('\n');
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (hMap.containsKey(str) == false) {
+				try {
+					w.write(str);
+					w.write('\n');
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-
 	}
 
 	@Override

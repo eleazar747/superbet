@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
@@ -127,14 +128,16 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 	}
 
 	private void playerprint(String match) {
-
+		HashMap<String, String> hMap = new HashMap<String, String>();
 		String[] team = match.split(" - ");
 		for (String str : team) {
-			try {
-				w.write(str);
-				w.write('\n');
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (hMap.containsKey(str) == false) {
+				try {
+					w.write(str);
+					w.write('\n');
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
