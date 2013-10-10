@@ -23,6 +23,8 @@ import fr.ele.model.ref.Sport;
 public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 
 	private BufferedWriter w;
+	String player1 = "";
+	String player2 = "";
 
 	@Override
 	protected long convert(SynchronizerContext context, SportsBcDto dto) {
@@ -64,20 +66,24 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 	private long convert(SynchronizerContext context, Sport sport,
 			EventBcDto eventBcDto) {
 		long nb = 0L;
+
 		for (MatchBcDto matchBcDto : eventBcDto.getMatch()) {
 			playerprint(matchBcDto.getName());
 			if (matchBcDto.getName().toString().contains(" - ")) {
 				String team[] = matchBcDto.getName().split(" - ");
-
-				String player1 = context.findTeam(team[0]);
-				String player2 = context.findTeam(team[1]);
+				player1 = null;
+				player2 = null;
+				player1 = context.findTeam(team[0]);
+				player2 = context.findTeam(team[1]);
+				
 				String matchCode = player1 + "**" + player2;
-
-				Match match = context.findOrCreateMatch(sport, matchCode,
-						matchBcDto.getStartDate().toGregorianCalendar()
-								.getTime());
-				for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
-					nb += convert(context, sport, match, betsBcDto);
+				if (player1 != null && player2!= null) {
+					Match match = context.findOrCreateMatch(sport, matchCode,
+							matchBcDto.getStartDate().toGregorianCalendar()
+									.getTime());
+					for (BetBcDto betsBcDto : matchBcDto.getBets().getBet()) {
+						nb += convert(context, sport, match, betsBcDto);
+					}
 				}
 			}
 		}
@@ -108,11 +114,11 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 		// TODO Normalize bet code !!!!!
 		if ("Match Result".equals(betType.getCode())) {
 			if (choice.getName().contains("1")) {
-				bet.setCode("1");
+				bet.setCode(player1);
 			} else if (choice.getName().contains("Draw")) {
-				bet.setCode("X");
+				bet.setCode("Draw");
 			} else if (choice.getName().contains("2")) {
-				bet.setCode("2");
+				bet.setCode(player2);
 			} else {
 				return 0L;
 			}
