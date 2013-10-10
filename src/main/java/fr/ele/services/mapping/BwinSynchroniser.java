@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
@@ -51,13 +52,19 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 		Sport sport = context.findSport(e.getSID().toString());
 		if (sport != null) {
-			playerprint(e.getN().toString().replaceAll(" ", ""));
-			Match match = context.findOrCreateMatch(sport, e.getN().toString()
-					.toLowerCase().replaceAll(" ", "").replaceAll("-", "**"), e
-					.getStdEventDateUTC().toGregorianCalendar().getTime());
+			playerprint(e.getN().toString());
+			if (e.getN().toString().contains(" - ")) {
+				String team[] = e.getN().toString().split(" - ");
+				String player1 = context.findTeam(team[0]);
+				String player2 = context.findTeam(team[1]);
+				String matchCode = player1 + "**" + player2;
 
-			for (G g : e.getG()) {
-				convert(context, g, match);
+				Match match = context.findOrCreateMatch(sport, matchCode, e
+						.getStdEventDateUTC().toGregorianCalendar().getTime());
+
+				for (G g : e.getG()) {
+					convert(context, g, match);
+				}
 			}
 		}
 
@@ -78,7 +85,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
 	private long convert(SynchronizerContext context, R r, Match match,
 			BetType betType) {
-		long nb = 0L;
+
 		RefKey refKey = context.findOrCreateRefKey(match, betType);
 		Bet bet = new Bet();
 
@@ -100,16 +107,17 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 	}
 
 	private void playerprint(String match) {
-
-		String[] team = match.split("-");
+		HashMap<String, String> hMap = new HashMap<String, String>();
+		String[] team = match.split(" - ");
 		for (String str : team) {
-			try {
-				w.write(str);
-				w.write('\n');
-			} catch (IOException e) {
-				e.printStackTrace();
+			if (hMap.containsKey(str) == false) {
+				try {
+					w.write(str);
+					w.write('\n');
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-
 	}
 }
