@@ -2,6 +2,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,SPORT,Football,Football
 0,betclic,SPORT,Tennis,Tennis
 0,betvictor,SPORT,Football,Football
+0,titanbet,SPORT,Football,Football
 0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
 0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
 0,betvictor,TEAM,Nice,Nice
