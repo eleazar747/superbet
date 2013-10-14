@@ -201,7 +201,7 @@ public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
 				String matchCode = team1 + "**" + player2;
 				try {
 					File file = new File(
-							"/fr/ele/feeds/bwin/teamNameBetclick.txt");
+							"/fr/ele/feeds/bwin/teamNametitanbet.txt");
 					w = new BufferedWriter(new FileWriter(
 							"teamNametitanbet.txt"));
 				} catch (Throwable ee) {
