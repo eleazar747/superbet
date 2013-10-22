@@ -1,5 +1,7 @@
 package fr.ele.services.mapping;
 
+import java.util.HashMap;
+
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.wiliamhill.dto.Market;
@@ -51,8 +53,7 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 
 	private long convert(SynchronizerContext context, Market market, Sport sport) {
 		long nb = 0;
-		String[] matchCode = market.getName().toString()
-				.split(" - ");
+		String[] matchCode = market.getName().toString().split(" - ");
 		playerprint(matchCode[0]);
 		Match match = context.findOrCreateMatch(sport, matchCode[0].toString()
 				.toLowerCase().replaceAll(" v ", "**").replaceAll(" ", ""),
@@ -79,18 +80,20 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 		bet.setRefKey(refKey);
 		bet.setCode(participant.getName());
 		bet.setDate(context.getSynchronizationDate());
-		 bet.setBookmakerBetId(String.valueOf(participant.getId()));
+		bet.setBookmakerBetId(String.valueOf(participant.getId()));
 		bet.setBookMaker(context.getBookMaker());
 		saveBet(bet);
 		return 1L;
 	}
-	private void playerprint(String match){
-		
-		String [] team=match.split(" v ");
-		for(String str : team){
-			System.out.println(str);
+
+	private void playerprint(String match) {
+		HashMap<String, String> hMap = new HashMap<String, String>();
+		String[] team = match.split(" v ");
+		for (String str : team) {
+			if (hMap.containsKey(str) == false) {
+				System.out.println(str);
+			}
 		}
-	
-		
+
 	}
 }

@@ -187,12 +187,13 @@ public class SynchronizerContext {
 
 		teamCache = new HashMap<String, String>(teamDataMappingCache.size());
 
-		for (String strkey : teamDataMappingCache.keys()) {
-			Collection<String> codes = teamDataMappingCache.get(strkey);
-			for (String code : codes) {
-				teamCache.put(code, strkey);
+		for (String key : teamDataMappingCache.keys()) {
+			Collection<String> codes = teamDataMappingCache.get(key);
+			if (codes != null && !codes.isEmpty()) {
+				for (String code : codes) {
+					teamCache.put(code, key);
+				}
 			}
-
 		}
 
 		sportDataMappingCache.clear();

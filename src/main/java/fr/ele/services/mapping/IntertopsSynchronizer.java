@@ -22,8 +22,6 @@ import fr.ele.model.ref.Sport;
 @Service("IntertopsSynchronizer")
 public class IntertopsSynchronizer extends AbstractSynchronizer<Result> {
 
-	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh-mm");
-
 	@Override
 	protected long convert(SynchronizerContext context, Result result) {
 
@@ -51,28 +49,17 @@ public class IntertopsSynchronizer extends AbstractSynchronizer<Result> {
 			for (M m : cat.getM()) {
 				nb += convert(context, sport, m);
 			}
-
 		}
-
-		/*
-		 * Date date= for (M m : cat.getContent().get(0)) {
-		 * 
-		 * }
-		 * 
-		 * String matchCode = computeMatchCode(m.get(0)); Sport sport= Date
-		 * date= Match match = context.findOrCreateMatch(sport, matchCode,
-		 * date);
-		 */
 		return nb;
 	}
 
 	private long convert(SynchronizerContext context, Sport sport, M m) {
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:MM");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 		long nb = 0L;
 		String matchCode = computeMatchCode(m);
 		Date date;
 		try {
-			date = formatter.parse(m.getDt().replaceAll("T", " "));
+			date = formatter.parse(m.getDt());
 			Match match = context.findOrCreateMatch(sport, matchCode, date);
 			for (T t : m.getT()) {
 
