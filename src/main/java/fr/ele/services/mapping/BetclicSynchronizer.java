@@ -100,7 +100,15 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
 		}
 		long nb = 0L;
 		for (Choice choice : betBcDto.getChoice()) {
+		
+			//add number to Over/Under
+			if(betBcDto.getName().equals("Over/Under")){
+				String underBet=betBcDto.getName()+" "+choice.getName().substring(choice.getName().length()-3, choice.getName().length());
+				
+				 betType = context.findBetType(underBet);
+			}
 			nb += convert(context, sport, match, betType, choice);
+			
 		}
 		return nb;
 	}
