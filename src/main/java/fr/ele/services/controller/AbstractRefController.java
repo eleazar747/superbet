@@ -26,6 +26,7 @@ public abstract class AbstractRefController extends AbstractActivityController {
         model.addAttribute("model", metaMapping);
         model.addAttribute("resource", resourceUri());
         mapActivities(model);
+        addSearch(model);
         return "refView";
     }
 
@@ -34,4 +35,8 @@ public abstract class AbstractRefController extends AbstractActivityController {
     }
 
     protected abstract String resourceUri();
+
+    protected void addSearch(Model model) {
+
+    }
 }

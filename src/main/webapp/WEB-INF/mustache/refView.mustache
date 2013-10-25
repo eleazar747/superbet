@@ -1,7 +1,8 @@
 [[<index]]
 [[$content]]
 	  <legend>[[model.identifier]]</legend>
-	  <div id="create-form" class="modal hide fade in" style="display: none; ">
+	  [[>search]]
+	  <div id="create-modal" class="modal hide fade in" style="display: none; ">
 	  		<div class="modal-header">
 				<a class="close" data-dismiss="modal">x</a>
 				<h3>Create [[model.identifier]]</h3>
@@ -14,7 +15,7 @@
 				<a href="#" class="btn" data-dismiss="modal">Close</a>
 			</div>
 	  </div>
-	  <div id="upload-form" class="modal hide fade in" style="display: none; ">
+	  <div id="upload-modal" class="modal hide fade in" style="display: none; ">
 	  		<div class="modal-header">
 				<a class="close" data-dismiss="modal">x</a>
 				<h3>Create [[model.identifier]]</h3>
@@ -30,8 +31,9 @@
 			</div>
 	 </div>
 	  <div class="form-actions">
-	  	<button data-toggle="modal" href="#create-form" class="btn btn-primary type="button">New</button>
-	  	<button data-toggle="modal" href="#upload-form" class="btn btn-primary type="button">Import</button>
+	  	<button data-toggle="modal" href="#create-modal" class="btn btn-primary type="button">New</button>
+	  	<button data-toggle="modal" href="#upload-modal" class="btn btn-primary type="button">Import</button>
+	  	<button data-toggle="modal" href="#search-modal" class="btn btn-primary type="button">Search</button>
 	  	<button id="refresh" class="btn btn-primary type="button">Refresh</button>
 	  <div> 
 	  <script type="text/javascript">

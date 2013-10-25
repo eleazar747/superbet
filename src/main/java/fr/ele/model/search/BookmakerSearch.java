@@ -1,10 +1,21 @@
 package fr.ele.model.search;
 
 import fr.ele.core.search.NumberValueCriteria;
+import fr.ele.core.search.Search;
 import fr.ele.core.search.StringValueCriteria;
 
-public class BookmakerSearch {
+public class BookmakerSearch implements Search {
     private StringValueCriteria code, url;
+
+    private StringValueCriteria zizicoptere;
+
+    public StringValueCriteria getZizicoptere() {
+        return zizicoptere;
+    }
+
+    public void setZizicoptere(StringValueCriteria zizicoptere) {
+        this.zizicoptere = zizicoptere;
+    }
 
     private NumberValueCriteria<Long> id;
 
