@@ -1,6 +1,6 @@
 package fr.ele.core.search;
 
-public enum NumberOperator {
+public enum NumberOperator implements SearchOperator {
     EQ {
         @Override
         public void accept(Visitor visitor) {
