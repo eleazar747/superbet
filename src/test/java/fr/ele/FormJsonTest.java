@@ -54,4 +54,14 @@ public class FormJsonTest {
         mapper.writeValue(System.out,
                 transformer.tranform(BookmakerSearch.class));
     }
+
+    @Test
+    public void testReadSearch() throws Throwable {
+        ObjectMapper mapper = new ObjectMapper();
+        BookmakerSearch value = mapper
+                .readValue(
+                        "{\"code\":{\"operator\":\"EQ\",\"criteriaValue\":\"hghjgkj\"},\"id\":{\"operator\":\"EQ\"},\"url\":{\"operator\":\"EQ\"},\"zizicoptere\":{\"operator\":\"EQ\"}}",
+                        BookmakerSearch.class);
+        value.toString();
+    }
 }

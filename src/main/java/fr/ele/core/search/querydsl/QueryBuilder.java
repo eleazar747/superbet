@@ -18,7 +18,10 @@ public class QueryBuilder {
             SearchCriteriaVisitor<T> visitor = new SearchCriteriaVisitor<T>(
                     path);
             criteria.accept(visitor);
-            criterias.add(visitor.result());
+            BooleanExpression result = visitor.result();
+            if (result != null) {
+                criterias.add(result);
+            }
         }
         return this;
     }

@@ -1,7 +1,9 @@
 package fr.ele.ui.search;
 
 import java.beans.PropertyDescriptor;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -20,6 +22,8 @@ public class SearchToForm {
         Form form = new Form();
         FormNode schema = new FormNode();
         form.setSchema(schema);
+        List<Object> formProperties = new ArrayList<Object>();
+        form.setForm(formProperties);
 
         PropertyDescriptor[] properties = BeanUtils
                 .getPropertyDescriptors(searchClass);
@@ -30,12 +34,21 @@ public class SearchToForm {
                 if (StringValueCriteria.class.isAssignableFrom(property
                         .getPropertyType())) {
                     field = createCriteriaField(name, FieldType.STRING,
-                            StringOperator.values());
-
+                            formProperties, StringOperator.values());
+                    FormNode fieldProperties = new FormNode();
+                    fieldProperties.add("key", name);
+                    fieldProperties.add("type", "criteria");
+                    formProperties.add(fieldProperties);
+                    // disableFieldTemplate(name, formProperties);
                 } else if (NumberValueCriteria.class.isAssignableFrom(property
                         .getPropertyType())) {
                     field = createCriteriaField(name, FieldType.NUMBER,
-                            NumberOperator.values());
+                            formProperties, NumberOperator.values());
+                    FormNode fieldProperties = new FormNode();
+                    fieldProperties.add("key", name);
+                    fieldProperties.add("type", "criteria");
+                    formProperties.add(fieldProperties);
+                    // disableFieldTemplate(name, formProperties);
                 }
                 schema.add(name, field);
             }
@@ -44,14 +57,15 @@ public class SearchToForm {
     }
 
     private static FormField createCriteriaField(String name,
-            FieldType valueType, SearchOperator... operators) {
+            FieldType valueType, List<Object> formProperties,
+            SearchOperator... operators) {
         FormField field = new FormField();
         field.setTitle(WordUtils.capitalize(name));
         field.setType(FieldType.OBJECT);
         FormField operatorField = new FormField();
         operatorField.setType(FieldType.STRING);
         for (SearchOperator operator : operators) {
-            operatorField.addValue(operator.name());
+            operatorField.addValue(operator.getValue());
         }
 
         FormField valueField = new FormField();
@@ -61,6 +75,7 @@ public class SearchToForm {
         subs.put("operator", operatorField);
         subs.put("value", valueField);
         field.setProperties(subs);
+
         return field;
     }
 

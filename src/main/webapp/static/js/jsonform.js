@@ -1182,7 +1182,7 @@ jsonform.elementTypes = {
         });
       }
       else {
-        children = _.map(node.children, function (child, idx) {
+         children = _.map(node.children, function (child, idx) {
           return {
             title: child.legend || child.title || ('Option ' + (child.childPos+1)),
             value: choices[child.childPos] || child.childPos,
@@ -1674,7 +1674,7 @@ var getInitialValue = function (formObject, key, arrayPath, tpldata, usePrevious
     schemaElement && schemaElement.maxLength) {
     if (value.length > schemaElement.maxLength) {
       // Truncate value to maximum length, adding continuation dots
-      value = value.substr(0, schemaElement.maxLength - 1) + '…';
+      value = value.substr(0, schemaElement.maxLength - 1) + '���';
     }
   }
 
@@ -2580,6 +2580,7 @@ formNode.prototype.generate = function () {
   // Wrap the view template in the generic field template
   // (note the strict equality to 'false', needed as we fallback
   // to the view's setting otherwise)
+  alert(this.id+":"+this.fieldtemplate+":"+this.view.fieldtemplate);
   if ((this.fieldtemplate !== false) &&
     (this.fieldtemplate || this.view.fieldtemplate)) {
     template = jsonform.fieldTemplate(template);

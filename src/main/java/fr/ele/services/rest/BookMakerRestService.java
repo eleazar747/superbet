@@ -16,6 +16,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.model.ref.BookMaker;
+import fr.ele.model.search.BookmakerSearch;
 
 @Path(BookMakerRestService.PATH)
 public interface BookMakerRestService {
@@ -27,6 +28,12 @@ public interface BookMakerRestService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     Iterable<BookMaker> findAll();
+
+    @POST
+    @Path("search")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    Iterable<BookMaker> search(BookmakerSearch search);
 
     @GET
     @Path("{id}")

@@ -101,7 +101,7 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         BookmakerSearch search = new BookmakerSearch();
         StringValueCriteria code = new StringValueCriteria();
         code.setOperator(StringOperator.START_WITH);
-        code.setValue("bet");
+        code.setCriteriaValue("bet");
         search.setCode(code);
         Iterable<BookMaker> iterable = bookMakerRepository
                 .findAll(new QueryBuilder().and(QBookMaker.bookMaker.code,

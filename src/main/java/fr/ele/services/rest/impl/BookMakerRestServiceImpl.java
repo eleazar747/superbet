@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mysema.query.types.Predicate;
+
+import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.QBookMaker;
+import fr.ele.model.search.BookmakerSearch;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.rest.BookMakerRestService;
 
@@ -48,6 +52,18 @@ public class BookMakerRestServiceImpl extends
     @Override
     public List<BookMaker> insertCsv(Attachment file) {
         return insertCsv(file, BookMaker.class);
+    }
+
+    @Override
+    public Iterable<BookMaker> search(BookmakerSearch search) {
+        LOGGER.debug("search");
+        QBookMaker bookmaker = QBookMaker.bookMaker;
+        Predicate predicate = new QueryBuilder()
+                .and(bookmaker.code, search.getCode())
+                .and(bookmaker.id, search.getId())
+                .and(bookmaker.url, search.getUrl()).build();
+        LOGGER.debug(predicate.toString());
+        return bookMakerRepository.findAll(predicate);
     }
 
 }

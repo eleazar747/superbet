@@ -7,7 +7,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 public class Form {
     private FormNode schema;
 
-    private FormNode form;
+    private Object form;
 
     public FormNode getSchema() {
         return schema;
@@ -17,11 +17,11 @@ public class Form {
         this.schema = schema;
     }
 
-    public FormNode getForm() {
+    public Object getForm() {
         return form;
     }
 
-    public void setForm(FormNode form) {
+    public void setForm(Object form) {
         this.form = form;
     }
 

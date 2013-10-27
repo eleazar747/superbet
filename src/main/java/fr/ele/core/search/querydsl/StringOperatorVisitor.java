@@ -25,22 +25,22 @@ public class StringOperatorVisitor implements Visitor {
 
     @Override
     public void visitEQ() {
-        expression = path.eq(value);
+        expression = value == null ? null : path.eq(value);
     }
 
     @Override
     public void visitLIKE() {
-        expression = path.like(value);
+        expression = value == null ? null : path.like(value);
     }
 
     @Override
     public void visitSTART_WITH() {
-        expression = path.startsWith(value);
+        expression = value == null ? null : path.startsWith(value);
     }
 
     @Override
     public void visitCONTAINS() {
-        expression = path.contains(value);
+        expression = value == null ? null : path.contains(value);
     }
 
     @Override

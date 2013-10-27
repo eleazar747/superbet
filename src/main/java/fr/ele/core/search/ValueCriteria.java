@@ -1,15 +1,16 @@
 package fr.ele.core.search;
 
+
 public abstract class ValueCriteria<T> extends SearchCriteria {
 
-    private T value;
+    private T criteriaValue;
 
-    public T getValue() {
-        return value;
+    public T getCriteriaValue() {
+        return criteriaValue;
     }
 
-    public void setValue(T value) {
-        this.value = value;
+    public void setCriteriaValue(T value) {
+        this.criteriaValue = value;
     }
 
 }

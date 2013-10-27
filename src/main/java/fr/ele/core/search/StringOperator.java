@@ -1,19 +1,19 @@
 package fr.ele.core.search;
 
 public enum StringOperator implements SearchOperator {
-    EQ {
+    EQ("=") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitEQ();
         }
     },
-    LIKE {
+    LIKE("like") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitLIKE();
         }
     },
-    START_WITH {
+    START_WITH("start with") {
 
         @Override
         public void accept(Visitor visitor) {
@@ -21,7 +21,7 @@ public enum StringOperator implements SearchOperator {
         }
 
     },
-    CONTAINS {
+    CONTAINS("contains") {
 
         @Override
         public void accept(Visitor visitor) {
@@ -29,7 +29,7 @@ public enum StringOperator implements SearchOperator {
         }
 
     },
-    NULL {
+    NULL("is null") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitNULL();
@@ -46,6 +46,20 @@ public enum StringOperator implements SearchOperator {
         void visitCONTAINS();
 
         void visitNULL();
+    }
+
+    private final String title;
+
+    private StringOperator(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getValue() {
+        return name();
     }
 
     public abstract void accept(Visitor visitor);

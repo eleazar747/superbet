@@ -23,30 +23,30 @@ public class NumberOperatorVisitor<N extends Number & Comparable<?>> implements
 
     @Override
     public void visitEQ() {
-        expression = path.eq(value);
+        expression = value == null ? null : path.eq(value);
     }
 
     @Override
     public void visitGT() {
-        expression = path.gt(value);
+        expression = value == null ? null : path.gt(value);
 
     }
 
     @Override
     public void visitLT() {
-        expression = path.lt(value);
+        expression = value == null ? null : path.lt(value);
 
     }
 
     @Override
     public void visitEGT() {
-        expression = path.goe(value);
+        expression = value == null ? null : path.goe(value);
 
     }
 
     @Override
     public void visitELT() {
-        expression = path.loe(value);
+        expression = value == null ? null : path.loe(value);
 
     }
 

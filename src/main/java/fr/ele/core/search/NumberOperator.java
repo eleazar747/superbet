@@ -1,37 +1,37 @@
 package fr.ele.core.search;
 
 public enum NumberOperator implements SearchOperator {
-    EQ {
+    EQ("=") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitEQ();
         }
     },
-    GT {
+    GT(">") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitGT();
         }
     },
-    LT {
+    LT("<") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitLT();
         }
     },
-    EGT {
+    EGT("=>") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitEGT();
         }
     },
-    ELT {
+    ELT("=<") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitELT();
         }
     },
-    NULL {
+    NULL("is null") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitNULL();
@@ -50,6 +50,20 @@ public enum NumberOperator implements SearchOperator {
         void visitELT();
 
         void visitNULL();
+    }
+
+    private final String title;
+
+    private NumberOperator(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getValue() {
+        return name();
     }
 
     public abstract void accept(Visitor visitor);

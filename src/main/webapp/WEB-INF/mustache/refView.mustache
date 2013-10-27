@@ -1,7 +1,6 @@
 [[<index]]
 [[$content]]
 	  <legend>[[model.identifier]]</legend>
-	  [[>search]]
 	  <div id="create-modal" class="modal hide fade in" style="display: none; ">
 	  		<div class="modal-header">
 				<a class="close" data-dismiss="modal">x</a>
@@ -30,6 +29,19 @@
 				<a href="#" class="btn" data-dismiss="modal">Close</a>
 			</div>
 	 </div>
+	  <div id="search-modal" class="modal hide fade in" style="display: none; ">
+	  		<div class="modal-header">
+				<a class="close" data-dismiss="modal">x</a>
+				<h3>Search [[model.identifier]]</h3>
+			</div>
+			<div class="modal-body">
+				[[>search2]]
+			</div>
+			<div class="modal-footer">
+				<a href="#" id='search-form-send' class="btn btn-success" data-dismiss="modal">Search</a>
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+			</div>
+	 </div>
 	  <div class="form-actions">
 	  	<button data-toggle="modal" href="#create-modal" class="btn btn-primary type="button">New</button>
 	  	<button data-toggle="modal" href="#upload-modal" class="btn btn-primary type="button">Import</button>
@@ -44,6 +56,10 @@
 			  $("#upload-form-send").click(function() {
 			    var obj = document.getElementById("upload-request");
 				obj.submit();
+			  });
+			  $("#search-form-send").click(function() {
+			  	$('#table-content').empty();
+			    search('#rows','[[resource]]','#table-content','#search-form');
 			  });
 			  $("#refresh").click(function() {
 			  	$('#table-content').empty();

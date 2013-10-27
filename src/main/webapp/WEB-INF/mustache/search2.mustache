@@ -1,0 +1,17 @@
+<form class="form-horizontal" id="search-form">
+<fieldset>
+[[#searchForm]]
+	<div class="control-group form-inline">
+    	<label class="control-label" for="[[name]]">[[title]]</label>
+	    <div class="input-prepend" id="[[name]]">
+	    	<select class="selectpicker span4" name="[[name]].operator" id="[[name]].operator">
+			    	[[#operators]]
+					<option value="[[value]]">[[title]]</option>	    	
+			    	[[/operators]]
+	    	</select>
+		  	<input id="[[name]].criteriaValue" name="[[name]].criteriaValue" type="text">
+	    </div>
+	</div>
+[[/searchForm]]
+</fieldset>
+</form>
