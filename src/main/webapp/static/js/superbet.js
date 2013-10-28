@@ -81,30 +81,3 @@ function deleteRefObject(activity, id) {
 		}
 	});
 };
-function initForm(){
-	JSONForm.fieldTypes['criteria'] = {
-	        template: '<div class="control-group">'+
-	                    '<label class="control-label" for=<%= id+".value" %>><%= node.title %></label>' +
-	                    '<div class="input-prepend controls">' +
-		                    '<button class="btn dropdown-toggle" data-toggle="dropdown">'+
-		                    'Operator<span class="caret"></span>'+
-		                    '</button>'+
-		                    '<div class="btn-group">' +
-		                        '<%= childvaluehtml %>'+
-		                    '</div>'+
-	                    '</div>'+
-	                  '</div>',
-	        onBeforeRender:function(data,node){
-	                	      var operatorNode=node.children[0];
-	                	      operatorNode.view.fieldTemplate=null;
-	                	      operatorNode.fieldTemplate=null;
-	                	      alert('operator');
-		                	  data.operator=operatorNode.generate();
-		                	  var valueNode=node.children[1];
-	                	      valueNode.view.fieldTemplate=null;
-	                	      valueNode.fieldTemplate=null;
-		                	  data.childvaluehtml=valueNode.generate();
-	                      }
-	                  
-	};
-}
