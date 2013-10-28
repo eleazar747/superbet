@@ -1,4 +1,4 @@
-package fr.ele.ui.search.mustache;
+package fr.ele.core.search.ui;
 
 import java.beans.PropertyDescriptor;
 import java.util.LinkedList;

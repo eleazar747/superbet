@@ -6,11 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import fr.ele.core.search.ui.SearchToUi;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.search.BookmakerSearch;
 import fr.ele.services.rest.BookMakerRestService;
 import fr.ele.ui.mvc.annotation.Activity;
-import fr.ele.ui.search.mustache.SearchToUi;
 
 @Controller
 @RequestMapping(BookMakerController.URI)

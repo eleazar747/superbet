@@ -1,4 +1,4 @@
-package fr.ele.ui.search.mustache;
+package fr.ele.core.search.ui;
 
 import java.util.ArrayList;
 import java.util.Arrays;
