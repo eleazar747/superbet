@@ -45,6 +45,6 @@ public class BookMakerController extends AbstractRefController {
     @Override
     protected void addSearch(Model model) {
         model.addAttribute("searchForm",
-                SearchToUi.transform(BookmakerSearch.class));
+                SearchToUi.transform(null, BookmakerSearch.class));
     }
 }

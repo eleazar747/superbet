@@ -1,9 +1,15 @@
 package fr.ele.ui.search.mustache;
 
 public enum ValueType {
-    STRING, NUMBER;
+    STRING("text"), NUMBER("number");
 
-    public String htmlType() {
-        return name().toLowerCase();
+    private final String htmlType;
+
+    private ValueType(String html) {
+        htmlType = html;
+    }
+
+    public String getHtmlType() {
+        return htmlType;
     }
 }
