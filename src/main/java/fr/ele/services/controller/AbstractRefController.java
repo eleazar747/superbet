@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import fr.ele.core.search.Search;
+import fr.ele.core.search.ui.SearchToUi;
 import fr.ele.ui.model.MetaMapping;
 import fr.ele.ui.model.MetaRegistry;
 import fr.ele.ui.mvc.AbstractActivityController;
@@ -36,7 +38,14 @@ public abstract class AbstractRefController extends AbstractActivityController {
 
     protected abstract String resourceUri();
 
-    protected void addSearch(Model model) {
+    protected <T extends Search> Class<T> getSearchClass() {
+        return null;
+    }
 
+    protected void addSearch(Model model) {
+        if (getSearchClass() != null) {
+            model.addAttribute("searchForm",
+                    SearchToUi.transform(null, getSearchClass()));
+        }
     }
 }

@@ -7,7 +7,7 @@ import com.mysema.query.types.Path;
 import com.mysema.query.types.Predicate;
 import com.mysema.query.types.expr.BooleanExpression;
 
-import fr.ele.core.search.ValueCriteria;
+import fr.ele.core.search.criteria.ValueCriteria;
 
 public class QueryBuilder {
 

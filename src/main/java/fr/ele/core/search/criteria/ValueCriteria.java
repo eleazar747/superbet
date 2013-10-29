@@ -1,4 +1,7 @@
-package fr.ele.core.search;
+package fr.ele.core.search.criteria;
+
+import fr.ele.core.search.SearchCriteria;
+
 
 
 public abstract class ValueCriteria<T> extends SearchCriteria {

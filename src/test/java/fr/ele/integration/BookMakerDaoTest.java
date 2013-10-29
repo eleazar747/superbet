@@ -11,8 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.ele.core.search.StringOperator;
-import fr.ele.core.search.StringValueCriteria;
+import fr.ele.core.search.criteria.string.StringOperator;
+import fr.ele.core.search.criteria.string.StringValueCriteria;
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.csv.CsvContext;
 import fr.ele.csv.CsvMarshaller;

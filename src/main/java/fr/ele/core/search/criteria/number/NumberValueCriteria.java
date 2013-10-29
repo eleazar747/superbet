@@ -1,4 +1,7 @@
-package fr.ele.core.search;
+package fr.ele.core.search.criteria.number;
+
+import fr.ele.core.search.CriteriaVisitor;
+import fr.ele.core.search.criteria.ValueCriteria;
 
 public class NumberValueCriteria<N extends Number> extends ValueCriteria<N> {
 

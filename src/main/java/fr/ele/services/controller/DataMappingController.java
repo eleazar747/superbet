@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ele.model.DataMapping;
+import fr.ele.model.search.DataMappingSearch;
 import fr.ele.services.rest.DataMappingRestService;
 import fr.ele.ui.mvc.annotation.Activity;
 
@@ -30,6 +31,11 @@ public class DataMappingController extends AbstractRefController {
     @Override
     protected String resourceUri() {
         return DataMappingRestService.PATH;
+    }
+
+    @Override
+    protected Class<DataMappingSearch> getSearchClass() {
+        return DataMappingSearch.class;
     }
 
 }

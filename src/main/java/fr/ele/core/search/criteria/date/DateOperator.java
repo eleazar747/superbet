@@ -1,6 +1,8 @@
-package fr.ele.core.search;
+package fr.ele.core.search.criteria.date;
 
-public enum NumberOperator implements SearchOperator {
+import fr.ele.core.search.SearchOperator;
+
+public enum DateOperator implements SearchOperator {
     EQ("=") {
         @Override
         public void accept(Visitor visitor) {
@@ -54,7 +56,7 @@ public enum NumberOperator implements SearchOperator {
 
     private final String title;
 
-    private NumberOperator(String title) {
+    private DateOperator(String title) {
         this.title = title;
     }
 

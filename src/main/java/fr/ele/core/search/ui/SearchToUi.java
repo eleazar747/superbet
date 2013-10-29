@@ -8,12 +8,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.BeanUtils;
 
-import fr.ele.core.search.NumberOperator;
-import fr.ele.core.search.NumberValueCriteria;
 import fr.ele.core.search.Search;
 import fr.ele.core.search.SearchOperator;
-import fr.ele.core.search.StringOperator;
-import fr.ele.core.search.StringValueCriteria;
+import fr.ele.core.search.criteria.date.DateOperator;
+import fr.ele.core.search.criteria.date.DateValueCriteria;
+import fr.ele.core.search.criteria.number.NumberOperator;
+import fr.ele.core.search.criteria.number.NumberValueCriteria;
+import fr.ele.core.search.criteria.string.StringOperator;
+import fr.ele.core.search.criteria.string.StringValueCriteria;
 
 public class SearchToUi {
     public static <T extends Search> List<UiCriteria> transform(
@@ -35,6 +37,12 @@ public class SearchToUi {
                         .getPropertyType())) {
                     UiCriteria criteria = createCriteria(path, title,
                             ValueType.NUMBER, NumberOperator.values());
+                    criterias.add(criteria);
+                } else if (DateValueCriteria.class.isAssignableFrom(property
+                        .getPropertyType())) {
+                    UiCriteria criteria = createCriteria(path, title,
+                            ValueType.DATE, DateOperator.values());
+                    criteria.setHtmlClass("datepicker");
                     criterias.add(criteria);
                 }
             }

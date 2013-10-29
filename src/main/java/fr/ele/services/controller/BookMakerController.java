@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.ele.core.search.ui.SearchToUi;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.search.BookmakerSearch;
 import fr.ele.services.rest.BookMakerRestService;
@@ -34,17 +33,8 @@ public class BookMakerController extends AbstractRefController {
         return BookMakerRestService.PATH;
     }
 
-    @Activity(name = "BookMaker Search")
-    @RequestMapping("search")
-    public String search(Locale locale, Model model) {
-        mapActivities(model);
-        addSearch(model);
-        return "bookmakerSearchView";
-    }
-
     @Override
-    protected void addSearch(Model model) {
-        model.addAttribute("searchForm",
-                SearchToUi.transform(null, BookmakerSearch.class));
+    protected Class<BookmakerSearch> getSearchClass() {
+        return BookmakerSearch.class;
     }
 }

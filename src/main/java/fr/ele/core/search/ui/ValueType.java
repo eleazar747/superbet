@@ -1,7 +1,7 @@
 package fr.ele.core.search.ui;
 
 public enum ValueType {
-    STRING("text"), NUMBER("number");
+    STRING("text"), NUMBER("number"), DATE("date");
 
     private final String htmlType;
 

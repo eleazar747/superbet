@@ -1,33 +1,37 @@
-package fr.ele.core.search;
+package fr.ele.core.search.criteria.number;
 
-public enum StringOperator implements SearchOperator {
+import fr.ele.core.search.SearchOperator;
+
+public enum NumberOperator implements SearchOperator {
     EQ("=") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitEQ();
         }
     },
-    LIKE("like") {
+    GT(">") {
         @Override
         public void accept(Visitor visitor) {
-            visitor.visitLIKE();
+            visitor.visitGT();
         }
     },
-    START_WITH("start with") {
-
+    LT("<") {
         @Override
         public void accept(Visitor visitor) {
-            visitor.visitSTART_WITH();
+            visitor.visitLT();
         }
-
     },
-    CONTAINS("contains") {
-
+    EGT("=>") {
         @Override
         public void accept(Visitor visitor) {
-            visitor.visitCONTAINS();
+            visitor.visitEGT();
         }
-
+    },
+    ELT("=<") {
+        @Override
+        public void accept(Visitor visitor) {
+            visitor.visitELT();
+        }
     },
     NULL("is null") {
         @Override
@@ -36,21 +40,23 @@ public enum StringOperator implements SearchOperator {
         }
     };
 
-    public static interface Visitor {
+    public static interface Visitor<T> {
         void visitEQ();
 
-        void visitLIKE();
+        void visitGT();
 
-        void visitSTART_WITH();
+        void visitLT();
 
-        void visitCONTAINS();
+        void visitEGT();
+
+        void visitELT();
 
         void visitNULL();
     }
 
     private final String title;
 
-    private StringOperator(String title) {
+    private NumberOperator(String title) {
         this.title = title;
     }
 

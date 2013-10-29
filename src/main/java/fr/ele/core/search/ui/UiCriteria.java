@@ -14,6 +14,16 @@ public class UiCriteria {
 
     private ValueType type;
 
+    private String htmlClass;
+
+    public String getHtmlClass() {
+        return htmlClass;
+    }
+
+    public void setHtmlClass(String htmlClass) {
+        this.htmlClass = htmlClass;
+    }
+
     public ValueType getType() {
         return type;
     }

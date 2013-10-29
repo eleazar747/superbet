@@ -15,6 +15,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.model.DataMapping;
+import fr.ele.model.search.DataMappingSearch;
 
 @Path(DataMappingRestService.PATH)
 public interface DataMappingRestService {
@@ -26,6 +27,12 @@ public interface DataMappingRestService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     Iterable<DataMapping> findAll();
+
+    @POST
+    @Path("search")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    Iterable<DataMapping> search(DataMappingSearch search);
 
     @GET
     @Path("{id}")

@@ -1,21 +1,22 @@
 package fr.ele.core.search.querydsl;
 
+import java.util.Date;
+
 import com.mysema.query.types.ExpressionBase;
 import com.mysema.query.types.expr.BooleanExpression;
-import com.mysema.query.types.path.NumberPath;
+import com.mysema.query.types.path.DatePath;
 
-import fr.ele.core.search.criteria.number.NumberOperator.Visitor;
+import fr.ele.core.search.criteria.date.DateOperator.Visitor;
 
-public class NumberOperatorVisitor<N extends Number & Comparable<?>> implements
-        Visitor {
+public class DateOperatorVisitor implements Visitor<Date> {
 
-    private final NumberPath<N> path;
+    private final DatePath path;
 
     private BooleanExpression expression;
 
-    private final ExpressionBase<N> value;
+    private final ExpressionBase value;
 
-    public NumberOperatorVisitor(NumberPath<N> path, ExpressionBase<N> value) {
+    public DateOperatorVisitor(DatePath path, ExpressionBase value) {
         super();
         this.value = value;
         this.path = path;
@@ -58,4 +59,5 @@ public class NumberOperatorVisitor<N extends Number & Comparable<?>> implements
     public BooleanExpression result() {
         return expression;
     }
+
 }

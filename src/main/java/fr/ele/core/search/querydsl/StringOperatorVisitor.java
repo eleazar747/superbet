@@ -4,7 +4,7 @@ import com.mysema.query.types.ExpressionBase;
 import com.mysema.query.types.expr.BooleanExpression;
 import com.mysema.query.types.path.StringPath;
 
-import fr.ele.core.search.StringOperator.Visitor;
+import fr.ele.core.search.criteria.string.StringOperator.Visitor;
 
 public class StringOperatorVisitor implements Visitor {
     private final StringPath path;
