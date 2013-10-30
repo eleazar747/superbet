@@ -59,5 +59,5 @@ public interface BookMakerRestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
     List<BookMaker> insertCsv(
-            @Multipart(value = "content", type = "text/csv") Attachment file);
+            @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

@@ -20,9 +20,7 @@
 				<h3>Create [[model.identifier]]</h3>
 			</div>
 			<div class="modal-body">
-				<form id="upload-request" action="/rest/[[resource]]/upload" method="POST" target="_blank" enctype="multipart/form-data">
-				    <input id="upload-file" name="content" type="file" />
-				</form>
+				<input id="upload-file" name="content" name="upload-file" type="file" data-url="/rest/[[resource]]/upload" />
 			</div>
 			<div class="modal-footer">
 				<a href="#" id='upload-form-send' class="btn btn-success" data-dismiss="modal">Upload</a>
@@ -54,8 +52,7 @@
 				createRefObject('#ref-form','[[resource]]');
 		      });
 			  $("#upload-form-send").click(function() {
-			    var obj = document.getElementById("upload-request");
-				obj.submit();
+			    
 			  });
 			  $("#search-form-send").click(function() {
 			  	$('#table-content').empty();
@@ -64,6 +61,18 @@
 			  $("#refresh").click(function() {
 			  	$('#table-content').empty();
 			    findAll('#rows','[[resource]]','#table-content');
+			  });
+			   $('#upload-file').fileupload({
+					dataType: 'json',
+					done: function (e, data) {
+					    alert('Upload finished.');
+					},
+					add: function (e, data) {
+					    data.context = $('#upload-form-send')
+					        .click(function () {
+					            data.submit();
+					        });
+					}
 			  });
 		});
 	  </script>        

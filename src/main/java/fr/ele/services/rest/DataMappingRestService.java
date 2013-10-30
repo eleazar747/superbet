@@ -53,5 +53,5 @@ public interface DataMappingRestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
     List<DataMapping> insertCsv(
-            @Multipart(value = "content", type = "text/csv") Attachment file);
+            @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

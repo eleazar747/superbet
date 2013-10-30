@@ -26,7 +26,6 @@ function search(templateId, activity,applyTo,formId) {
 	.toObject({
 	    mode: 'first'
 	});
-	alert(JSON.stringify(formData));
 	$.ajax({
 		type: 'POST',
 		contentType: 'application/json',
@@ -34,7 +33,6 @@ function search(templateId, activity,applyTo,formId) {
 		dataType: "json",
 		data: JSON.stringify(formData, null, '\t'),
 		success: function(data, textStatus, jqXHR) {
-			alert(JSON.stringify(data));
 			var user_data = {
 				response: data
 			};
@@ -44,7 +42,7 @@ function search(templateId, activity,applyTo,formId) {
 			jQuery(applyTo).html(renderedData);
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
-			alert('[[model.identifier]] creation error: ' + textStatus);
+			alert('[[model.identifier]] search error: '+ JSON.stringify(formData) + textStatus);
 		}
 	});
 };

@@ -58,5 +58,5 @@ public interface BetTypeRestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
     List<BetType> insertCsv(
-            @Multipart(value = "content", type = "text/csv") Attachment file);
+            @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

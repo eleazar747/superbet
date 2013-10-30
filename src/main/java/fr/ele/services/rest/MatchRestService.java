@@ -58,5 +58,5 @@ public interface MatchRestService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
     List<Match> insertCsv(
-            @Multipart(value = "content", type = "text/csv") Attachment file);
+            @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }
