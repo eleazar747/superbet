@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ele.model.ref.Match;
+import fr.ele.model.search.MatchSearch;
 import fr.ele.services.rest.MatchRestService;
 import fr.ele.ui.mvc.annotation.Activity;
 
@@ -30,6 +31,11 @@ public class MatchController extends AbstractRefController {
     @Override
     protected String resourceUri() {
         return MatchRestService.PATH;
+    }
+
+    @Override
+    protected Class<MatchSearch> getSearchClass() {
+        return MatchSearch.class;
     }
 
 }

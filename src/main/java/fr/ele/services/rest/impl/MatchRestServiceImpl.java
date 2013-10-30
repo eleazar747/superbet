@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.Match;
+import fr.ele.model.ref.QMatch;
+import fr.ele.model.search.MatchSearch;
 import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.SuperBetRepository;
+import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.MatchRestService;
 
 @Transactional
@@ -49,5 +53,12 @@ public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
     @Override
     public List<Match> insertCsv(Attachment file) {
         return insertCsv(file, Match.class);
+    }
+
+    @Override
+    public Iterable<Match> search(MatchSearch search) {
+        QueryBuilder queryBuilder = new QueryBuilder();
+        SearchMapping.map(queryBuilder, QMatch.match, search);
+        return getRepository().findAll(queryBuilder.build());
     }
 }

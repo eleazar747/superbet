@@ -16,6 +16,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.model.ref.Match;
+import fr.ele.model.search.MatchSearch;
 
 @Path(MatchRestService.PATH)
 public interface MatchRestService {
@@ -26,6 +27,12 @@ public interface MatchRestService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Iterable<Match> findAll();
+
+    @POST
+    @Path("search")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Iterable<Match> search(MatchSearch search);
 
     @GET
     @Path("{id}")
