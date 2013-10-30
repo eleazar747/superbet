@@ -1,9 +1,14 @@
 package fr.ele;
 
+import java.beans.PropertyDescriptor;
+
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 
+import fr.ele.core.search.criteria.enums.EnumValueCriteria;
 import fr.ele.core.search.ui.SearchToUi;
+import fr.ele.model.RefEntityType;
 import fr.ele.model.search.BookmakerSearch;
 
 public class FormJsonTest {
@@ -23,5 +28,13 @@ public class FormJsonTest {
                         "{\"code\":{\"operator\":\"EQ\",\"criteriaValue\":\"hghjgkj\"},\"id\":{\"operator\":\"EQ\"},\"url\":{\"operator\":\"EQ\"},\"zizicoptere\":{\"operator\":\"EQ\"}}",
                         BookmakerSearch.class);
         value.toString();
+    }
+
+    @Test
+    public void testReflection() {
+        EnumValueCriteria<RefEntityType> type = new EnumValueCriteria<RefEntityType>();
+        PropertyDescriptor[] propertyDescriptors = BeanUtils
+                .getPropertyDescriptors(type.getClass());
+        System.out.println(propertyDescriptors.length);
     }
 }

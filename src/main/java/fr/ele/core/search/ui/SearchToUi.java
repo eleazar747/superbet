@@ -1,6 +1,9 @@
 package fr.ele.core.search.ui;
 
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +15,8 @@ import fr.ele.core.search.Search;
 import fr.ele.core.search.SearchOperator;
 import fr.ele.core.search.criteria.date.DateOperator;
 import fr.ele.core.search.criteria.date.DateValueCriteria;
+import fr.ele.core.search.criteria.enums.EnumOperator;
+import fr.ele.core.search.criteria.enums.EnumValueCriteria;
 import fr.ele.core.search.criteria.number.NumberOperator;
 import fr.ele.core.search.criteria.number.NumberValueCriteria;
 import fr.ele.core.search.criteria.string.StringOperator;
@@ -43,6 +48,25 @@ public class SearchToUi {
                     UiCriteria criteria = createCriteria(path, title,
                             ValueType.DATE, DateOperator.values());
                     criteria.setHtmlClass("datepicker");
+                    criterias.add(criteria);
+                } else if (EnumValueCriteria.class.isAssignableFrom(property
+                        .getPropertyType())) {
+                    UiCriteria criteria = createCriteria(path, title,
+                            ValueType.ENUM, EnumOperator.values());
+                    try {
+                        Field field = clazz.getDeclaredField(name);
+                        ParameterizedType type = (ParameterizedType) field
+                                .getGenericType();
+                        Class<?> genericClass = (Class<?>) type
+                                .getActualTypeArguments()[0];
+                        if (genericClass.isEnum()) {
+                            Class<Enum<?>> enumClass = (Class<Enum<?>>) genericClass;
+                            Enum<?>[] constants = enumClass.getEnumConstants();
+                            criteria.setValues(Arrays.asList(constants));
+                        }
+                    } catch (Throwable e) {
+
+                    }
                     criterias.add(criteria);
                 }
             }

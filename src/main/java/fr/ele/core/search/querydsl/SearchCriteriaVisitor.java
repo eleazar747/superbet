@@ -4,12 +4,15 @@ import com.mysema.query.types.ConstantImpl;
 import com.mysema.query.types.Path;
 import com.mysema.query.types.expr.BooleanExpression;
 import com.mysema.query.types.path.DatePath;
+import com.mysema.query.types.path.EnumPath;
 import com.mysema.query.types.path.NumberPath;
 import com.mysema.query.types.path.StringPath;
 
 import fr.ele.core.search.CriteriaVisitor;
 import fr.ele.core.search.criteria.date.DateOperator;
 import fr.ele.core.search.criteria.date.DateValueCriteria;
+import fr.ele.core.search.criteria.enums.EnumOperator;
+import fr.ele.core.search.criteria.enums.EnumValueCriteria;
 import fr.ele.core.search.criteria.number.NumberOperator;
 import fr.ele.core.search.criteria.number.NumberValueCriteria;
 import fr.ele.core.search.criteria.string.StringOperator;
@@ -64,6 +67,20 @@ public class SearchCriteriaVisitor<T> implements CriteriaVisitor {
         DateOperatorVisitor visitor = new DateOperatorVisitor((DatePath) path,
                 constant);
         DateOperator operator = criteria.getOperator();
+        if (operator != null) {
+            operator.accept(visitor);
+        }
+        result = visitor.result();
+
+    }
+
+    @Override
+    public void visit(EnumValueCriteria criteria) {
+        Object value = criteria.getCriteriaValue();
+        ConstantImpl constant = value == null ? null : new ConstantImpl(value);
+        EnumOperatorVisitor visitor = new EnumOperatorVisitor((EnumPath) path,
+                constant);
+        EnumOperator operator = criteria.getOperator();
         if (operator != null) {
             operator.accept(visitor);
         }

@@ -9,11 +9,23 @@
 					<option value="[[value]]">[[title]]</option>	    	
 			    	[[/operators]]
 	    	</select>
-		  	<input id="[[name]].criteriaValue" name="[[name]].criteriaValue" type="[[type.htmlType]]"
-		  	[[#htmlClass]]
-		  		class="[[htmlClass]]"
-		  	[[/htmlClass]]
-		  	/>
+	    	
+	    	[[#isSelect]]
+	    		<select id="[[name]].criteriaValue" name="[[name]].criteriaValue">
+	    			[[#values]]
+	    				<option>[[name]]</option>
+	    			[[/values]]
+	    		</select>
+	    	[[/isSelect]]
+	    	[[^isSelect]]
+			  	<input type="[[type.htmlType]]" id="[[name]].criteriaValue" name="[[name]].criteriaValue" 
+			  	
+			  	[[#htmlClass]]
+			  		class="[[htmlClass]]"
+			  	[[/htmlClass]]
+			  	/>
+	    	[[/isSelect]]
+		  	
 	    </div>
 	</div>
 [[/searchForm]]

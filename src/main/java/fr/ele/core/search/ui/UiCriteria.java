@@ -16,6 +16,16 @@ public class UiCriteria {
 
     private String htmlClass;
 
+    private List<?> values;
+
+    public List<?> getValues() {
+        return values;
+    }
+
+    public void setValues(List<?> values) {
+        this.values = values;
+    }
+
     public String getHtmlClass() {
         return htmlClass;
     }
@@ -63,4 +73,7 @@ public class UiCriteria {
         this.title = title;
     }
 
+    public boolean isSelect() {
+        return type == ValueType.ENUM;
+    }
 }

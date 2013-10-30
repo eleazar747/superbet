@@ -38,7 +38,9 @@ public class DataMappingRestServiceImpl extends
         Predicate predicate = new QueryBuilder()
                 .and(datamapping.bookMaker.code, search.getBookmakerCode())
                 .and(datamapping.bookMakerCode, search.getBookmakerValue())
-                .and(datamapping.modelCode, search.getModelValue()).build();
+                .and(datamapping.modelCode, search.getModelValue())
+                .and(datamapping.refEntityType, search.getRefEntityType())
+                .build();
         return dataMappingRepository.findAll(predicate);
     }
 
