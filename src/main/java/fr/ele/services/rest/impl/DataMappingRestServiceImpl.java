@@ -6,14 +6,13 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mysema.query.types.Predicate;
-
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.DataMapping;
 import fr.ele.model.QDataMapping;
 import fr.ele.model.search.DataMappingSearch;
 import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.SuperBetRepository;
+import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.DataMappingRestService;
 
 @Service(DataMappingRestService.SERVER)
@@ -34,14 +33,9 @@ public class DataMappingRestServiceImpl extends
     }
 
     public Iterable<DataMapping> search(DataMappingSearch search) {
-        QDataMapping datamapping = QDataMapping.dataMapping;
-        Predicate predicate = new QueryBuilder()
-                .and(datamapping.bookMaker.code, search.getBookmakerCode())
-                .and(datamapping.bookMakerCode, search.getBookmakerValue())
-                .and(datamapping.modelCode, search.getModelValue())
-                .and(datamapping.refEntityType, search.getRefEntityType())
-                .build();
-        return dataMappingRepository.findAll(predicate);
+        QueryBuilder queryBuilder = new QueryBuilder();
+        SearchMapping.map(queryBuilder, QDataMapping.dataMapping, search);
+        return dataMappingRepository.findAll(queryBuilder.build());
     }
 
     @Override

@@ -16,6 +16,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.model.ref.BetType;
+import fr.ele.model.search.BetTypeSearch;
 
 @Path(BetTypeRestService.PATH)
 public interface BetTypeRestService {
@@ -40,7 +41,13 @@ public interface BetTypeRestService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    BetType create(BetType bookmaker);
+    BetType create(BetType betType);
+
+    @POST
+    @Path("search")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    Iterable<BetType> search(BetTypeSearch betTypeSearch);
 
     @DELETE
     @Path("{id}")

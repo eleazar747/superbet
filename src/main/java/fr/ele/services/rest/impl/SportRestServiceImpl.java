@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
+import fr.ele.model.search.BetTypeSearch;
 import fr.ele.services.repositories.SportRepository;
+import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.SportRestService;
 
 @Transactional
@@ -48,5 +51,12 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     @Override
     public List<Sport> insertCsv(Attachment file) {
         return insertCsv(file, Sport.class);
+    }
+
+    @Override
+    public Iterable<Sport> search(BetTypeSearch search) {
+        QueryBuilder queryBuilder = new QueryBuilder();
+        SearchMapping.map(queryBuilder, entityPath(), search);
+        return getRepository().findAll(queryBuilder.build());
     }
 }

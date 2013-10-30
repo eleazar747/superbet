@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mysema.query.types.path.EntityPathBase;
-
+import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.QBetType;
+import fr.ele.model.search.BetTypeSearch;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.SuperBetRepository;
+import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.BetTypeRestService;
 
 @Transactional
@@ -29,7 +30,7 @@ public class BetTypeRestServiceImpl extends AbstractRefRestServiceImpl<BetType>
     }
 
     @Override
-    protected EntityPathBase entityPath() {
+    protected QBetType entityPath() {
         return QBetType.betType;
     }
 
@@ -51,6 +52,13 @@ public class BetTypeRestServiceImpl extends AbstractRefRestServiceImpl<BetType>
     @Override
     public List<BetType> insertCsv(Attachment file) {
         return insertCsv(file, BetType.class);
+    }
+
+    @Override
+    public Iterable<BetType> search(BetTypeSearch betTypeSearch) {
+        QueryBuilder queryBuilder = new QueryBuilder();
+        SearchMapping.map(queryBuilder, entityPath(), betTypeSearch);
+        return getRepository().findAll(queryBuilder.build());
     }
 
 }

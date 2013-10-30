@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ele.model.ref.BetType;
+import fr.ele.model.search.BetTypeSearch;
 import fr.ele.services.rest.BetTypeRestService;
 import fr.ele.ui.mvc.annotation.Activity;
 
@@ -30,6 +31,11 @@ public class BetTypeController extends AbstractRefController {
     @Override
     protected String resourceUri() {
         return BetTypeRestService.PATH;
+    }
+
+    @Override
+    protected Class<BetTypeSearch> getSearchClass() {
+        return BetTypeSearch.class;
     }
 
 }
