@@ -28,7 +28,7 @@ import fr.ele.model.ref.Sport;
 @Service("TitanBetSynchroniser")
 public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
 	SynchronizerContext context;
-	private String matchResult = "Match Result";
+	private final String matchResult = "Match Result";
 	private BufferedWriter w;
 	String player1 = null;
 	String player2 = null;
@@ -196,19 +196,17 @@ public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
 			String cote = "";
 			player1 = context.findTeam(team1);
 			player2 = context.findTeam(team2);
-			
-				Sport sport = context.findSport(compete);
-				String matchCode = team1 + "**" + player2;
-				try {
-					File file = new File(
-							"/fr/ele/feeds/bwin/teamNametitanbet.txt");
-					w = new BufferedWriter(new FileWriter(
-							"teamNametitanbet.txt"));
-				} catch (Throwable ee) {
-					ee.printStackTrace();
-				}
-				playerprint(team1 + " - " + team2);
-				if (player1 != null && player2 != null) {
+
+			Sport sport = context.findSport(compete);
+			String matchCode = team1 + "**" + player2;
+			try {
+				File file = new File("/fr/ele/feeds/bwin/teamNametitanbet.txt");
+				w = new BufferedWriter(new FileWriter("teamNametitanbet.txt"));
+			} catch (Throwable ee) {
+				ee.printStackTrace();
+			}
+			playerprint(team1 + " - " + team2);
+			if (player1 != null && player2 != null) {
 				SimpleDateFormat formatter = new SimpleDateFormat(
 						"dd/MM/yyyy HH:mm");
 				date += "/" + (new Date().getYear() + 1900) + " " + hour;
@@ -270,7 +268,7 @@ public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
 			Bet bet = new Bet();
 			bet.setOdd(Long.valueOf(odd));
 			bet.setRefKey(refKey);
-			bet.setCode(player1);
+			bet.setCode(subBetType);
 			bet.setDate(context.getSynchronizationDate());
 			bet.setBookMaker(context.getBookMaker());
 			bet.setBookmakerBetId("dummy");
@@ -307,8 +305,8 @@ public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
  * price-28498515-LP seln-28498515 mkt-7048046 ev-413824
  * " value="Mjg0OTg1MTU6OC81Ojow
  * "> <span> <span><span class="favourite-button" title="Add or remove this team
- * from your
- * favourites." data-ref_key="TEAM" data-ref_id="1194">★</span></span> <span class="
+ * from your favourites." data-ref_key="TEAM" data-ref_id="1194
+ * ">★</span></span> <span class="
  * seln-name"> <span>Stade Reims</span> </span> <span class="price
  * frac">8/5</span> <span class="price dec">2.60</span> <span class="price
  * us">+160.0</span> </span> </button> </div> </td> <td
@@ -322,8 +320,8 @@ public class TitanBetSynchroniser extends AbstractSynchronizer<Odds> {
  * price-28498514-LP seln-28498514 mkt-7048046 ev-413824
  * " value="Mjg0OTg1MTQ6Ny80Ojow
  * "> <span> <span><span class="favourite-button" title="Add or remove this team
- * from your
- * favourites." data-ref_key="TEAM" data-ref_id="857">★</span></span> <span class="
+ * from your favourites." data-ref_key="TEAM" data-ref_id="857
+ * ">★</span></span> <span class="
  * seln-name"> <span>Toulouse</span> </span> <span class="price
  * frac">7/4</span> <span class="price dec">2.75</span> <span class="price
  * us">+175.0</span> </span> </button> </div> </td> <td class="mkt-count"> <a
