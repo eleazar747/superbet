@@ -4,35 +4,47 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import fr.ele.model.search.BetSearch;
+
 @Path(BetRestService.PATH)
 public interface BetRestService {
-	public static final String PATH = "bets";
+    public static final String PATH = "bets";
 
-	public static final String SERVER = "BetRestService";
+    public static final String SERVER = "BetRestService";
 
-	public static final class SureBetDto {
-		public String sport, betType, match;
+    public static final class SureBetDto {
+        public String sport, betType, match;
 
-		public Map<String, Double> alternatives;
-	}
+        public Map<String, Double> alternatives;
+    }
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("sures")
-	List<SureBetDto> getSureBets();
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("sures")
+    List<SureBetDto> getSureBets();
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	Iterable<BetDto> getBets();
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("search")
+    Iterable<BetDto> search(BetSearch search);
 
-	public static class BetDto {
-		public Double value;
-		public String type, bookmaker, match, alternative, sport;
-		public Date matchDate;
-	}
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    Iterable<BetDto> getBets();
+
+    public static class BetDto {
+        public Double value;
+
+        public String type, bookmaker, match, alternative, sport;
+
+        public Date matchDate;
+    }
 }

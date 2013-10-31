@@ -45,7 +45,7 @@ public abstract class AbstractRefController extends AbstractActivityController {
     protected void addSearch(Model model) {
         if (getSearchClass() != null) {
             model.addAttribute("searchForm",
-                    SearchToUi.transform(null, getSearchClass()));
+                    SearchToUi.transform(getSearchClass()));
         }
     }
 }

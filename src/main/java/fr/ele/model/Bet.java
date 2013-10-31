@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.mysema.query.annotations.QueryInit;
+
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
 
@@ -28,6 +30,7 @@ public class Bet extends SuperBetEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = RefKey.class)
     @JoinColumn(name = SuperBetTables.BetTable.REFKEY_ID_COLUMN, nullable = false)
+    @QueryInit("*.*")
     private RefKey refKey;
 
     @Column(name = SuperBetTables.CODE_COLUMN, nullable = false)

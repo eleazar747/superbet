@@ -23,9 +23,14 @@ import fr.ele.core.search.criteria.string.StringOperator;
 import fr.ele.core.search.criteria.string.StringValueCriteria;
 
 public class SearchToUi {
-    public static <T extends Search> List<UiCriteria> transform(
-            String pathPrefix, Class<T> clazz) {
+    public static <T extends Search> UiForm transform(Class<T> clazz) {
+        return transform(null, null, clazz);
+    }
+
+    public static <T extends Search> UiForm transform(String pathPrefix,
+            String formTitle, Class<T> clazz) {
         List<UiCriteria> criterias = new LinkedList<UiCriteria>();
+        List<UiForm> subForms = new LinkedList<UiForm>();
         PropertyDescriptor[] properties = BeanUtils
                 .getPropertyDescriptors(clazz);
         for (PropertyDescriptor property : properties) {
@@ -68,10 +73,20 @@ public class SearchToUi {
 
                     }
                     criterias.add(criteria);
+                } else if (Search.class.isAssignableFrom(property
+                        .getPropertyType())) {
+                    Class<? extends Search> sub = (Class<? extends Search>) property
+                            .getPropertyType();
+                    subForms.add(transform(path, WordUtils.capitalize(name),
+                            sub));
                 }
             }
         }
-        return criterias;
+        UiForm form = new UiForm();
+        form.setFields(criterias);
+        form.setTitle(formTitle);
+        form.setSubForms(subForms);
+        return form;
     }
 
     private static String createPath(String pathPrefix, String name) {

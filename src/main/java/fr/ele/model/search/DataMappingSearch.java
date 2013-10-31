@@ -6,9 +6,19 @@ import fr.ele.core.search.criteria.string.StringValueCriteria;
 import fr.ele.model.RefEntityType;
 
 public class DataMappingSearch implements Search {
-    private StringValueCriteria bookmakerCode, bookmakerValue, modelValue;
+    private StringValueCriteria bookmakerValue, modelValue;
+
+    private BookmakerSearch bookmaker;
 
     private EnumValueCriteria<RefEntityType> refEntityType;
+
+    public BookmakerSearch getBookmaker() {
+        return bookmaker;
+    }
+
+    public void setBookmaker(BookmakerSearch bookmaker) {
+        this.bookmaker = bookmaker;
+    }
 
     public EnumValueCriteria<RefEntityType> getRefEntityType() {
         return refEntityType;
@@ -16,14 +26,6 @@ public class DataMappingSearch implements Search {
 
     public void setRefEntityType(EnumValueCriteria<RefEntityType> refEntityType) {
         this.refEntityType = refEntityType;
-    }
-
-    public StringValueCriteria getBookmakerCode() {
-        return bookmakerCode;
-    }
-
-    public void setBookmakerCode(StringValueCriteria bookmakerCode) {
-        this.bookmakerCode = bookmakerCode;
     }
 
     public StringValueCriteria getBookmakerValue() {

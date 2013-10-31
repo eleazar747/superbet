@@ -18,6 +18,16 @@ public class UiCriteria {
 
     private List<?> values;
 
+    private List<UiCriteria> searchForm;
+
+    public List<UiCriteria> getSearchForm() {
+        return searchForm;
+    }
+
+    public void setSearchForm(List<UiCriteria> searchForm) {
+        this.searchForm = searchForm;
+    }
+
     public List<?> getValues() {
         return values;
     }

@@ -3,7 +3,7 @@ package fr.ele.core.search.querydsl;
 import com.mysema.query.types.ConstantImpl;
 import com.mysema.query.types.Path;
 import com.mysema.query.types.expr.BooleanExpression;
-import com.mysema.query.types.path.DatePath;
+import com.mysema.query.types.path.DateTimePath;
 import com.mysema.query.types.path.EnumPath;
 import com.mysema.query.types.path.NumberPath;
 import com.mysema.query.types.path.StringPath;
@@ -64,8 +64,8 @@ public class SearchCriteriaVisitor<T> implements CriteriaVisitor {
     public void visit(DateValueCriteria criteria) {
         Object value = criteria.getCriteriaValue();
         ConstantImpl constant = value == null ? null : new ConstantImpl(value);
-        DateOperatorVisitor visitor = new DateOperatorVisitor((DatePath) path,
-                constant);
+        DateOperatorVisitor visitor = new DateOperatorVisitor(
+                (DateTimePath) path, constant);
         DateOperator operator = criteria.getOperator();
         if (operator != null) {
             operator.accept(visitor);

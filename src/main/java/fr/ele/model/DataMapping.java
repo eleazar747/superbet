@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.mysema.query.annotations.QueryInit;
+
 import fr.ele.model.ref.BookMaker;
 
 @Entity
@@ -27,6 +29,7 @@ public class DataMapping extends SuperBetEntity {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = BookMaker.class)
     @JoinColumn(name = SuperBetTables.DataMapping.BOOKMAKER_ID, nullable = false)
+    @QueryInit("*")
     private BookMaker bookMaker;
 
     public String getModelCode() {

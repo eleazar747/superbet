@@ -17,7 +17,7 @@ public class FormJsonTest {
     public void testSearch() throws Throwable {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(System.out,
-                SearchToUi.transform(null, BookmakerSearch.class));
+                SearchToUi.transform(BookmakerSearch.class));
     }
 
     @Test

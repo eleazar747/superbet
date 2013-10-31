@@ -9,6 +9,8 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Proxy;
 
+import com.mysema.query.annotations.QueryInit;
+
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.SuperBetTables;
 
@@ -20,10 +22,12 @@ import fr.ele.model.SuperBetTables;
 public class RefKey extends SuperBetEntity {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = BetType.class)
     @JoinColumn(name = SuperBetTables.RefKeyTable.BETTYPE_ID_COLUMN, nullable = false)
+    @QueryInit("*")
     private BetType betType;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Match.class)
     @JoinColumn(name = SuperBetTables.RefKeyTable.MATCH_ID_COLUMN, nullable = false)
+    @QueryInit("*")
     private Match match;
 
     public BetType getBetType() {

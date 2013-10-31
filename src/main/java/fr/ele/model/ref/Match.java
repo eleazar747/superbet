@@ -12,6 +12,8 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Proxy;
 
+import com.mysema.query.annotations.QueryInit;
+
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.SuperBetTables;
 
@@ -24,6 +26,7 @@ public class Match extends SuperBetEntity {
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Sport.class)
     @JoinColumn(name = SuperBetTables.MatchTable.SPORT_COLUMN, nullable = false)
+    @QueryInit("*")
     private Sport sport;
 
     @Column(name = SuperBetTables.MatchTable.DATE_COLUMN, nullable = false)
