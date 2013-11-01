@@ -21,13 +21,13 @@ public enum DateOperator implements SearchOperator {
             visitor.visitLT();
         }
     },
-    EGT("=>") {
+    EGT(">=") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitEGT();
         }
     },
-    ELT("=<") {
+    ELT("<=") {
         @Override
         public void accept(Visitor visitor) {
             visitor.visitELT();
