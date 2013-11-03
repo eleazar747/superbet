@@ -34,7 +34,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
         } catch (Throwable e) {
             e.printStackTrace();
         }
-        EVENTS event = dto.getROOT2().getEVENTS();
+        EVENTS event = dto.getROOT().getEVENTS();
 
         for (E e : event.getE()) {
             convert(context, e);
@@ -57,13 +57,14 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
                 String team[] = e.getN().toString().split(" - ");
                 String player1 = context.findTeam(team[0]);
                 String player2 = context.findTeam(team[1]);
-                String matchCode = player1 + "**" + player2;
+                if (player1 != null && player2 != null) {
+                    Match match = context.findOrCreateMatch(sport, e
+                            .getStdEventDateUTC().toGregorianCalendar()
+                            .getTime(), player1, player2);
 
-                Match match = context.findOrCreateMatch(sport, matchCode, e
-                        .getStdEventDateUTC().toGregorianCalendar().getTime());
-
-                for (G g : e.getG()) {
-                    convert(context, g, match);
+                    for (G g : e.getG()) {
+                        convert(context, g, match);
+                    }
                 }
             }
         }

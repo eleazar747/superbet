@@ -335,6 +335,8 @@
 							<schemaFiles>bwin.xsd</schemaFiles>
 							<packageName>fr.ele.feeds.bwin.dto</packageName>
 							<staleFile>${project.build.directory}/jaxb2/.bwinjcStaleFlag</staleFile>
+							<bindingFiles>bwin.xjb</bindingFiles>
+							<bindingDirectory>src/main/resources/xsd</bindingDirectory>
 						</configuration>
 					</execution>
 				</executions>

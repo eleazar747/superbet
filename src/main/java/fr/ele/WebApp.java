@@ -16,7 +16,7 @@ public class WebApp {
     public static void main(String[] args) throws Exception {
         String profile = System.getProperty(SPRING_PROFILES_ACTIVE);
         if (profile == null || profile.isEmpty()) {
-            System.setProperty(SPRING_PROFILES_ACTIVE, ApplicationProfiles.TEST);
+            System.setProperty(SPRING_PROFILES_ACTIVE, ApplicationProfiles.PROD);
         }
         Server server = new Server(8080);
         WebAppContext context = new WebAppContext();

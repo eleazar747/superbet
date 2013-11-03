@@ -9,21 +9,18 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import fr.ele.feeds.expekt.ExpektUnmarshallingTest;
 import fr.ele.feeds.bwin.dto.ROOT;
 
 public class bwinTest {
-	
-	@Test
+
+    @Test
     public void test() throws Throwable {
         JAXBContext jaxbContext = JAXBContext.newInstance(ROOT.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         Source source = new StreamSource(
-                bwinTest.class
-                        .getResourceAsStream("bwin.xml"));
+                bwinTest.class.getResourceAsStream("bwin.xml"));
         ROOT root = (ROOT) unmarshaller.unmarshal(source);
         Assert.assertNotNull(root);
-
     }
 
 }

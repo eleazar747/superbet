@@ -2,6 +2,8 @@ package fr.ele.integration;
 
 import java.io.BufferedInputStream;
 
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,35 +17,37 @@ import fr.ele.services.repositories.MatchRepository;
 
 public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
-	private BwinSynchroniser BwinSynchroniser;
+    @Autowired
+    private BwinSynchroniser BwinSynchroniser;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Autowired
-	private BetRepository betRepository;
+    @Autowired
+    private BetRepository betRepository;
 
-	@Autowired
-	private BookMakerSynchronizerService bookMakerSynchronizerService;
+    @Autowired
+    private BookMakerSynchronizerService bookMakerSynchronizerService;
 
-	@Autowired
-	private BookMakerRepository bookMakerRepository;
+    @Autowired
+    private BookMakerRepository bookMakerRepository;
 
-	@Override
-	@Before
-	public void initializeDatas() {
-		super.initializeDatas();
-	}
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
-	@Test
-	public void test() throws Throwable {
-		BufferedInputStream inputStream = new BufferedInputStream(
-				BwinIntegationTest.class
-						.getResourceAsStream("/fr/ele/feeds/bwin/bwin.xml"));
-		ROOT root = BwinSynchroniser.unmarshall(inputStream);
-		BwinSynchroniser.synchronize("bwin", root);
+    @Test
+    public void test() throws Throwable {
+        BufferedInputStream inputStream = new BufferedInputStream(
+                BwinIntegationTest.class
+                        .getResourceAsStream("/fr/ele/feeds/bwin/bwin.xml"));
+        ROOT root = BwinSynchroniser.unmarshall(inputStream);
+        Assert.assertNotNull(root);
+        Assert.assertNotNull(root.getROOT());
 
-	}
+        BwinSynchroniser.synchronize("bwin", root);
+    }
 
 }
