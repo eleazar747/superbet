@@ -3,6 +3,7 @@ package fr.ele.services.repositories.search;
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.QBet;
 import fr.ele.model.QDataMapping;
+import fr.ele.model.QUnMatchedPlayer;
 import fr.ele.model.ref.QBetType;
 import fr.ele.model.ref.QBookMaker;
 import fr.ele.model.ref.QMatch;
@@ -12,6 +13,8 @@ import fr.ele.model.search.BetTypeSearch;
 import fr.ele.model.search.BookmakerSearch;
 import fr.ele.model.search.DataMappingSearch;
 import fr.ele.model.search.MatchSearch;
+import fr.ele.model.search.SportSearch;
+import fr.ele.model.search.UnMatchedPlayerSearch;
 
 public class SearchMapping {
     public static void map(QueryBuilder builder, QBookMaker bookmaker,
@@ -42,7 +45,7 @@ public class SearchMapping {
     }
 
     public static void map(QueryBuilder builder, QSport sport,
-            BetTypeSearch search) {
+            SportSearch search) {
         if (search != null) {
             builder.and(sport.id, search.getId()).and(sport.code,
                     search.getCode());
@@ -66,6 +69,14 @@ public class SearchMapping {
             map(builder, bet.bookMaker, search.getBookmaker());
             map(builder, bet.refKey.betType, search.getBetType());
             map(builder, bet.refKey.match, search.getMatch());
+        }
+    }
+
+    public static void map(QueryBuilder builder,
+            QUnMatchedPlayer unMatchedPlayer, UnMatchedPlayerSearch search) {
+        if (search != null) {
+            map(builder, unMatchedPlayer.sport, search.getSport());
+            map(builder, unMatchedPlayer.bookMaker, search.getBookmaker());
         }
     }
 }

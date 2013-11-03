@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
-import fr.ele.model.search.BetTypeSearch;
+import fr.ele.model.search.SportSearch;
 import fr.ele.services.repositories.SportRepository;
 import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.SportRestService;
@@ -54,7 +54,7 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     }
 
     @Override
-    public Iterable<Sport> search(BetTypeSearch search) {
+    public Iterable<Sport> search(SportSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, entityPath(), search);
         return getRepository().findAll(queryBuilder.build());

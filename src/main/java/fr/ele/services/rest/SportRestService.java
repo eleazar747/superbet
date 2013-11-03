@@ -16,7 +16,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.model.ref.Sport;
-import fr.ele.model.search.BetTypeSearch;
+import fr.ele.model.search.SportSearch;
 
 @Path(SportRestService.PATH)
 public interface SportRestService {
@@ -32,7 +32,7 @@ public interface SportRestService {
     @Path("search")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    Iterable<Sport> search(BetTypeSearch search);
+    Iterable<Sport> search(SportSearch search);
 
     @GET
     @Path("{id}")

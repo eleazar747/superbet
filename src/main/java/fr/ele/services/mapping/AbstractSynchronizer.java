@@ -22,6 +22,7 @@ import fr.ele.services.repositories.DataMappingRepository;
 import fr.ele.services.repositories.MatchRepository;
 import fr.ele.services.repositories.RefKeyRepository;
 import fr.ele.services.repositories.SportRepository;
+import fr.ele.services.repositories.UnMatchedPlayerRepository;
 
 public abstract class AbstractSynchronizer<T> implements SynchronizerService<T> {
     protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
@@ -50,11 +51,15 @@ public abstract class AbstractSynchronizer<T> implements SynchronizerService<T> 
     @Autowired
     private BookMakerSynchronizationRepository bookMakerSynchronizationRepository;
 
+    @Autowired
+    private UnMatchedPlayerRepository unMatchedPlayerRepository;
+
     public final BookMakerSynchronization synchronize(String bookmakerCode,
             T dto) {
-        SynchronizerContext context = new SynchronizerContext(bookmakerCode,
+        SynchronizerContext context = new MappingControlContext(bookmakerCode,
                 dataMappingRepository, sportRepository, betTypeRepository,
-                bookMakerRepository, matchRepository, refKeyRepository);
+                bookMakerRepository, matchRepository, refKeyRepository,
+                unMatchedPlayerRepository);
         context.setSynchronizationDate(new Date());
         LOGGER.debug("start {} sync at {}", context.getBookMaker().getCode(),
                 context.getSynchronizationDate());
