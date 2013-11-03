@@ -38,8 +38,8 @@ public class BookMakerSynchronizerServiceImpl implements
             HttpGet request = new HttpGet(urlSync);
             HttpResponse response = client.execute(request);
             InputStream inputStream = response.getEntity().getContent();
-            Object dto = service
-                    .unmarshall(new BufferedInputStream(inputStream));
+            Object dto = service.unmarshall(new BufferedInputStream(
+                    inputStream, 5000));
             return service.synchronize(bookMaker.getCode(), dto);
         } catch (Throwable e) {
             throw new RuntimeException(e);
