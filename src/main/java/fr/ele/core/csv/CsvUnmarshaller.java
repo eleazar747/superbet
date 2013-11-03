@@ -1,4 +1,4 @@
-package fr.ele.csv;
+package fr.ele.core.csv;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,9 +1,9 @@
-package fr.ele.csv;
+package fr.ele.core.csv;
 
 import fr.ele.core.formatter.DefaultStringConverterRegistry;
 import fr.ele.core.formatter.StringConverter;
 import fr.ele.core.formatter.StringConverterRegistry;
-import fr.ele.csv.mapping.CsvRegistry;
+import fr.ele.csv.CsvRegistry;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.services.repositories.RepositoryRegistry;
 import fr.ele.services.repositories.SuperBetRepository;

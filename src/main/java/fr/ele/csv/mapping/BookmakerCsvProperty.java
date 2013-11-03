@@ -1,7 +1,7 @@
 package fr.ele.csv.mapping;
 
-import fr.ele.csv.CsvContext;
-import fr.ele.csv.CsvProperty;
+import fr.ele.core.csv.CsvContext;
+import fr.ele.core.csv.CsvProperty;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BookMaker;
 

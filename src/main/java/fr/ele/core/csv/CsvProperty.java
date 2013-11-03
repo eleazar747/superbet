@@ -1,4 +1,4 @@
-package fr.ele.csv;
+package fr.ele.core.csv;
 
 public interface CsvProperty<T> {
 

@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.collect.Lists;
 
-import fr.ele.csv.CsvContext;
-import fr.ele.csv.CsvMarshaller;
+import fr.ele.core.csv.CsvContext;
+import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BookMaker;

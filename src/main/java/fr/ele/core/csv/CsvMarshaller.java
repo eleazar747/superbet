@@ -1,4 +1,4 @@
-package fr.ele.csv;
+package fr.ele.core.csv;
 
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;

@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import fr.ele.core.ApplicationProfiles;
-import fr.ele.csv.CsvContext;
-import fr.ele.csv.CsvUnmarshaller;
+import fr.ele.core.csv.CsvContext;
+import fr.ele.core.csv.CsvUnmarshaller;
 import fr.ele.model.DataMapping;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BetType;
