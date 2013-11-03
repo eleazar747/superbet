@@ -43,7 +43,7 @@
 
 	<beans profile="test">
 		<context:property-placeholder location="classpath:superbet-test.properties" />
-		<jdbc:embedded-database id="dataSource" type="HSQL">
+		<jdbc:embedded-database id="dataSource" type="H2">
 		</jdbc:embedded-database>
 	</beans>
 
