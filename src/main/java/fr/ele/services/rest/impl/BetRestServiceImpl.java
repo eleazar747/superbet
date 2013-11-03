@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.Bet;
@@ -96,7 +97,8 @@ public class BetRestServiceImpl implements BetRestService {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, QBet.bet, search);
         Iterable<Bet> bets = betRepository.findAll(queryBuilder.build());
-        return toDtos(bets);
+        Iterable<BetDto> dtos = toDtos(bets);
+        return Lists.newLinkedList(dtos);
     }
 
 }
