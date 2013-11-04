@@ -1,0 +1,35 @@
+[[<index]]
+[[$content]]
+	<legend>[[model.identifier]]</legend>
+	<div id="search-modal" class="modal hide fade in" style="display: none; ">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">x</a>
+			<h3>Search [[model.identifier]]</h3>
+		</div>
+		<div class="modal-body">
+			[[>search]]
+		</div>
+		<div class="modal-footer">
+			<a href="#" id='search-form-send' class="btn btn-success" data-dismiss="modal">Search</a>
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+		</div>
+	</div>
+	<div class="form-actions">
+		<button data-toggle="modal" href="#search-modal" class="btn btn-primary type="button">Search</button>
+		<button id="refresh" class="btn btn-primary type="button">Refresh</button>
+ 	<div> 
+ 	<script type="text/javascript">
+		$(document).ready(function() {
+			  $("#search-form-send").click(function() {
+			  	$('#table-content').empty();
+			    search('#rows','[[resource]]','#table-content','#search-form');
+			  });
+			  $("#refresh").click(function() {
+			  	$('#table-content').empty();
+			    findAll('#rows','[[resource]]','#table-content');
+			  });
+		});
+	</script>
+	[[>table]]
+[[/content]]
+[[/index]]

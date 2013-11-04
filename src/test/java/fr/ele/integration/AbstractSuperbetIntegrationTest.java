@@ -14,6 +14,8 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import fr.ele.core.ApplicationProfiles;
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvUnmarshaller;
+import fr.ele.core.csv.GraphResolver;
+import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.model.DataMapping;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BetType;
@@ -41,8 +43,10 @@ public abstract class AbstractSuperbetIntegrationTest extends
 
     protected void initializeDatas() {
         for (Class clazz : REFS.keySet()) {
+            GraphResolver graphResolver = new SuperBetGraphResolver(
+                    repositoryRegistry);
             CsvContext<? extends SuperBetEntity> context = CsvContext.create(
-                    clazz, repositoryRegistry);
+                    clazz, graphResolver);
             context.setWithHeader(true);
             CsvUnmarshaller<? extends SuperBetEntity> unmarshaller = context
                     .newUnmarshaller();

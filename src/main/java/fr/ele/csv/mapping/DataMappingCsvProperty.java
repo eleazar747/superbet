@@ -6,7 +6,6 @@ import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.repositories.BookMakerRepository;
 
 public enum DataMappingCsvProperty implements CsvProperty<DataMapping> {
     ID("id") {
@@ -35,10 +34,10 @@ public enum DataMappingCsvProperty implements CsvProperty<DataMapping> {
         @Override
         public void setValue(CsvContext context, DataMapping object,
                 String value) {
-            BookMakerRepository repository = (BookMakerRepository) context
-                    .getRepository(BookMaker.class);
-            object.setBookMaker(repository.findByCode((String) context
-                    .unmarshall(String.class, value)));
+            BookMaker bookMaker = context.getGraphResolver().findByCode(
+                    BookMaker.class,
+                    (String) context.unmarshall(String.class, value));
+            object.setBookMaker(bookMaker);
         }
     },
     REF_ENTITY_TYPE("ref_entity_type") {

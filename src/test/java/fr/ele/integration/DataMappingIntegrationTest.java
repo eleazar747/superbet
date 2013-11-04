@@ -12,6 +12,8 @@ import com.google.common.collect.Lists;
 
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
+import fr.ele.core.csv.GraphResolver;
+import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.model.DataMapping;
 import fr.ele.model.RefEntityType;
 import fr.ele.model.ref.BookMaker;
@@ -46,8 +48,10 @@ public class DataMappingIntegrationTest extends AbstractSuperbetIntegrationTest 
                         RefEntityType.SPORT, bookMaker, "toto"));
         Assert.assertNotNull(result);
         Assert.assertEquals("tata", result.getModelCode());
+        GraphResolver graphResolver = new SuperBetGraphResolver(
+                repositoryRegistry);
         CsvContext<DataMapping> csvContext = CsvContext.create(
-                DataMapping.class, repositoryRegistry);
+                DataMapping.class, graphResolver);
         CsvMarshaller<DataMapping> marshaller = csvContext.newMarshaller();
         marshaller.marshall(Collections.singletonList(result), System.out);
     }
@@ -66,8 +70,10 @@ public class DataMappingIntegrationTest extends AbstractSuperbetIntegrationTest 
     public void testFindAll() {
         List<DataMapping> results = Lists.newArrayList(dataMappingRepository
                 .findAll());
+        GraphResolver graphResolver = new SuperBetGraphResolver(
+                repositoryRegistry);
         CsvContext<DataMapping> csvContext = CsvContext.create(
-                DataMapping.class, repositoryRegistry);
+                DataMapping.class, graphResolver);
         CsvMarshaller<DataMapping> marshaller = csvContext.newMarshaller();
         marshaller.marshall(results, System.out);
     }

@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvUnmarshaller;
+import fr.ele.core.csv.GraphResolver;
+import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.services.repositories.RepositoryRegistry;
 import fr.ele.services.repositories.SuperBetRepository;
@@ -52,8 +54,9 @@ public abstract class AbstractBaseRestService<T extends SuperBetEntity> {
     public List<T> insertCsv(Attachment file, Class<T> clazz) {
         try {
             InputStream in = file.getDataHandler().getInputStream();
-            CsvContext<T> context = CsvContext
-                    .create(clazz, repositoryRegistry);
+            GraphResolver graphResolver = new SuperBetGraphResolver(
+                    repositoryRegistry);
+            CsvContext<T> context = CsvContext.create(clazz, graphResolver);
             CsvUnmarshaller<T> unmarshaller = context.newUnmarshaller();
             Iterator<T> iterator = unmarshaller.unmarshall(in);
             List<T> results = new LinkedList<T>();

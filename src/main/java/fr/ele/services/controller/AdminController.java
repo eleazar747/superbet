@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.ele.model.BookMakerSynchronization;
+import fr.ele.model.UnMatchedPlayer;
+import fr.ele.services.rest.UnMatchedPlayerRestService;
 import fr.ele.ui.model.MetaMapping;
 import fr.ele.ui.model.MetaRegistry;
 import fr.ele.ui.mvc.AbstractActivityController;
@@ -30,5 +32,16 @@ public class AdminController extends AbstractActivityController {
         model.addAttribute("resource", "admin/syncs");
         mapActivities(model);
         return "synchronizeView";
+    }
+
+    @RequestMapping("unMatchedPlayers")
+    @Activity(name = "Unmatched Players")
+    public String unMatchedPlayers(Locale locale, Model model) {
+        MetaMapping metaMapping = metaRegistry
+                .getMetaMapping(UnMatchedPlayer.class);
+        model.addAttribute("model", metaMapping);
+        model.addAttribute("resource", UnMatchedPlayerRestService.PATH);
+        mapActivities(model);
+        return "unmatchedPlayersView";
     }
 }

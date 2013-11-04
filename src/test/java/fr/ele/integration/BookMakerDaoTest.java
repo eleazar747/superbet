@@ -14,9 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.core.csv.CsvUnmarshaller;
+import fr.ele.core.csv.GraphResolver;
 import fr.ele.core.search.criteria.string.StringOperator;
 import fr.ele.core.search.criteria.string.StringValueCriteria;
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.QBookMaker;
 import fr.ele.model.search.BookmakerSearch;
@@ -59,8 +61,10 @@ public class BookMakerDaoTest extends AbstractSuperbetIntegrationTest {
         BookMaker byCode = bookMakerRepository.findByCode(BOOKMAKER);
         Assert.assertNotNull(byCode);
         Assert.assertEquals(bookMaker.getId(), byCode.getId());
-        CsvContext<BookMaker> context = CsvContext.create(BookMaker.class,
+        GraphResolver graphResolver = new SuperBetGraphResolver(
                 repositoryRegistry);
+        CsvContext<BookMaker> context = CsvContext.create(BookMaker.class,
+                graphResolver);
         context.setWithHeader(false);
         CsvMarshaller<BookMaker> marshaller = context.newMarshaller();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

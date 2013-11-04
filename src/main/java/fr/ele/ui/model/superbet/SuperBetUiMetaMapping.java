@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.ele.model.BookMakerSynchronization;
 import fr.ele.model.DataMapping;
+import fr.ele.model.UnMatchedPlayer;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
@@ -25,7 +26,9 @@ public enum SuperBetUiMetaMapping implements MetaMapping {
             BookMakerSynchronizationMapping.values(),
             BookMakerSynchronization.class),
 
-    SPORT(SportMapping.values(), Sport.class);
+    SPORT(SportMapping.values(), Sport.class),
+
+    UNMATCHED_PLAYER(UnMatchedPlayerMapping.values(), UnMatchedPlayer.class);
 
     private final List<MetaProperty> metaProperties;
 

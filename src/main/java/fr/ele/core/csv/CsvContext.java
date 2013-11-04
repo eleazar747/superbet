@@ -4,11 +4,8 @@ import fr.ele.core.formatter.DefaultStringConverterRegistry;
 import fr.ele.core.formatter.StringConverter;
 import fr.ele.core.formatter.StringConverterRegistry;
 import fr.ele.csv.CsvRegistry;
-import fr.ele.model.SuperBetEntity;
-import fr.ele.services.repositories.RepositoryRegistry;
-import fr.ele.services.repositories.SuperBetRepository;
 
-public class CsvContext<T> implements RepositoryRegistry {
+public class CsvContext<T> {
 
     public static final char DEFAULT_SEPARATOR = ',';
 
@@ -18,7 +15,7 @@ public class CsvContext<T> implements RepositoryRegistry {
 
     private final CsvBeanProperties csvBeanProperties;
 
-    private final RepositoryRegistry repositoryRegistry;
+    private final GraphResolver graphResolver;
 
     private StringConverterRegistry registry = new DefaultStringConverterRegistry();
 
@@ -31,15 +28,15 @@ public class CsvContext<T> implements RepositoryRegistry {
     private char comment = DEFAULT_COMMENT;
 
     private CsvContext(CsvBeanProperties csvBeanProperties,
-            RepositoryRegistry repositoryRegistry) {
+            GraphResolver graphResolver) {
         this.csvBeanProperties = csvBeanProperties;
-        this.repositoryRegistry = repositoryRegistry;
+        this.graphResolver = graphResolver;
     }
 
     public static <T> CsvContext<T> create(Class<T> clazz,
-            RepositoryRegistry repositoryRegistry) {
+            GraphResolver graphResolver) {
         return new CsvContext(CsvRegistry.findCsvDefinition(clazz),
-                repositoryRegistry);
+                graphResolver);
     }
 
     public CsvMarshaller<T> newMarshaller() {
@@ -100,9 +97,7 @@ public class CsvContext<T> implements RepositoryRegistry {
         this.comment = comment;
     }
 
-    @Override
-    public <Q extends SuperBetEntity> SuperBetRepository<Q> getRepository(
-            Class<Q> entityClass) {
-        return repositoryRegistry.getRepository(entityClass);
+    public GraphResolver getGraphResolver() {
+        return graphResolver;
     }
 }
