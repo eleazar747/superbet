@@ -16,7 +16,7 @@ import fr.ele.model.search.UnMatchedPlayerSearch;
 public interface UnMatchedPlayerRestService {
     public static final String PATH = "unmatchedplayer";
 
-    public static final String SERVER = "UnMatchedPlayersRestService";
+    public static final String SERVER = "UnMatchedPlayerRestService";
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

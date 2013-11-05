@@ -51,9 +51,6 @@
 		      $('#create-form-save').bind('click', function(){
 				createRefObject('#ref-form','[[resource]]');
 		      });
-			  $("#upload-form-send").click(function() {
-			    
-			  });
 			  $("#search-form-send").click(function() {
 			  	$('#table-content').empty();
 			    search('#rows','[[resource]]','#table-content','#search-form');
@@ -74,6 +71,7 @@
 					        });
 					}
 			  });
+			  findAll('#rows','[[resource]]','#table-content');
 		});
 	  </script>        
 	  [[>table]]

@@ -26,13 +26,13 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
 			<ref bean="BetTypeRestService" />
 			<ref bean="AdminRestService" />
 			<ref bean="BetRestService" />
+			<ref bean="UnMatchedPlayerRestService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean='jacksonProvider' />
 		</jaxrs:providers>
 	</jaxrs:server>
 	<bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
-<!-- 	<bean id='jacksonProvider' class='org.eclipse.persistence.jaxb.rs.MOXyJsonProvider' /> -->
 
 	<bean id="viewResolver" class="fr.ele.ui.mvc.MustacheViewResolver">
 		<property name="resourceBase" value="/WEB-INF/mustache/" />

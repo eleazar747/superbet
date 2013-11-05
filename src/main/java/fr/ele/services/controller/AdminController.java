@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import fr.ele.core.search.ui.SearchToUi;
 import fr.ele.model.BookMakerSynchronization;
 import fr.ele.model.UnMatchedPlayer;
+import fr.ele.model.search.UnMatchedPlayerSearch;
 import fr.ele.services.rest.UnMatchedPlayerRestService;
 import fr.ele.ui.model.MetaMapping;
 import fr.ele.ui.model.MetaRegistry;
@@ -41,6 +43,8 @@ public class AdminController extends AbstractActivityController {
                 .getMetaMapping(UnMatchedPlayer.class);
         model.addAttribute("model", metaMapping);
         model.addAttribute("resource", UnMatchedPlayerRestService.PATH);
+        model.addAttribute("searchForm",
+                SearchToUi.transform(UnMatchedPlayerSearch.class));
         mapActivities(model);
         return "unmatchedPlayersView";
     }

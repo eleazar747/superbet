@@ -1,6 +1,7 @@
 package fr.ele.services.rest.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.ele.core.search.querydsl.QueryBuilder;
@@ -13,6 +14,7 @@ import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.UnMatchedPlayerRestService;
 
 @Transactional(readOnly = true)
+@Service(UnMatchedPlayerRestService.SERVER)
 public class UnMatchedPlayerRestServiceImpl extends
         AbstractBaseRestService<UnMatchedPlayer> implements
         UnMatchedPlayerRestService {
