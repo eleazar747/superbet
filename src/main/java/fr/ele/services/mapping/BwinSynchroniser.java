@@ -1,11 +1,5 @@
 package fr.ele.services.mapping;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
-
 import org.springframework.stereotype.Service;
 
 import fr.ele.feeds.bwin.dto.E;
@@ -22,27 +16,13 @@ import fr.ele.model.ref.Sport;
 @Service("BwinSynchroniser")
 public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
-    private BufferedWriter w;
-
     @Override
     protected long convert(SynchronizerContext context, ROOT dto) {
-        // TODO Auto-generated method stub
         long nb = 0L;
-        try {
-            new File("/fr/ele/feeds/bwin/teamNameBwin.txt");
-            w = new BufferedWriter(new FileWriter("teamNameBwin.txt"));
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
         EVENTS event = dto.getROOT().getEVENTS();
 
         for (E e : event.getE()) {
-            convert(context, e);
-        }
-        try {
-            w.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            nb += convert(context, e);
         }
         return nb;
     }
@@ -52,9 +32,8 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
         Sport sport = context.findSport(e.getSID().toString());
         if (sport != null) {
-            playerprint(e.getN().toString());
-            if (e.getN().toString().contains(" - ")) {
-                String team[] = e.getN().toString().split(" - ");
+            if (e.getN().contains(" - ")) {
+                String team[] = e.getN().split(" - ");
                 String player1 = context.findTeam(team[0]);
                 String player2 = context.findTeam(team[1]);
                 if (player1 != null && player2 != null) {
@@ -63,7 +42,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
                             .getTime(), player1, player2);
 
                     for (G g : e.getG()) {
-                        convert(context, g, match);
+                        nb += convert(context, g, match);
                     }
                 }
             }
@@ -78,7 +57,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
         BetType betType = context.findBetType(g.getN());
         if (betType != null) {
             for (R r : g.getR()) {
-                convert(context, r, match, betType);
+                nb += convert(context, r, match, betType);
             }
         }
         return nb;
@@ -103,22 +82,7 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
 
     @Override
     protected Class<ROOT> getDtoClass() {
-        // TODO Auto-generated method stub
         return ROOT.class;
     }
 
-    private void playerprint(String match) {
-        HashMap<String, String> hMap = new HashMap<String, String>();
-        String[] team = match.split(" - ");
-        for (String str : team) {
-            if (hMap.containsKey(str) == false) {
-                try {
-                    w.write(str);
-                    w.write('\n');
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 }
