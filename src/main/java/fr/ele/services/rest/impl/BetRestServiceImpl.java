@@ -85,6 +85,7 @@ public class BetRestServiceImpl implements BetRestService {
                 dto.match = bet.getRefKey().getMatch().getCode();
                 dto.matchDate = bet.getRefKey().getMatch().getDate();
                 dto.value = bet.getOdd();
+                dto.syncDate = bet.getDate();
                 return dto;
 
                 // type, bookmaker, match, alternative, sport;
