@@ -36,10 +36,7 @@ function search(templateId, activity,applyTo,formId) {
 			var user_data = {
 				response: data
 			};
-			var template = jQuery(templateId)
-				.html();
-			var renderedData = Mustache.render(template, user_data);
-			jQuery(applyTo).html(renderedData);
+			executeTemplate(templateId,applyTo,user_data)
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			alert('[[model.identifier]] search error: '+ JSON.stringify(formData) + textStatus);
@@ -52,18 +49,31 @@ function findAll(templateId, activity,applyTo) {
 		var user_data = {
 			response: data
 		};
-		var template = jQuery(templateId)
-			.html();
-		var renderedData = Mustache.render(template, user_data);
-		jQuery(applyTo)
-			.html(renderedData);
+		executeTemplate(templateId,applyTo,user_data);
 	});
 };
+
+function executeTemplate(templateId,applyToHtml,data){
+	var template = jQuery(templateId).html();
+	var renderedData = Mustache.render(template,data);
+	jQuery(applyToHtml).html(renderedData);
+};
+
 
 function synchronizeBookmaker(bookmaker) {
 	var uri = rest +'admin/synchronize/?bookmaker='+bookmaker;
 	$.getJSON(uri, function(data) {
 		alert(JSON.stringify(data));
+	});
+	$.ajax({
+		type: 'GET',
+		url: uri,
+		success: function(data, textStatus, jqXHR) {
+			alert('Synchro ok');
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert(textStatus+'\n'+errorThrown);
+		}
 	});
 };
 
