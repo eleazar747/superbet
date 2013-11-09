@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import fr.ele.core.jaxb.DateTimeAdapter;
 import fr.ele.model.ref.BookMaker;
 
 @Entity
@@ -35,6 +37,7 @@ public class BookMakerSynchronization extends SuperBetEntity {
         this.bookMaker = bookMaker;
     }
 
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
     public Date getSynchronizationDate() {
         return synchronizationDate;
     }
