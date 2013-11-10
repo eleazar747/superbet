@@ -1,5 +1,7 @@
 package fr.ele.core.csv;
 
+import org.apache.commons.lang3.StringUtils;
+
 import fr.ele.core.formatter.DefaultStringConverterRegistry;
 import fr.ele.core.formatter.StringConverter;
 import fr.ele.core.formatter.StringConverterRegistry;
@@ -56,6 +58,9 @@ public class CsvContext<T> {
     }
 
     public String marshall(Object object) {
+        if (object == null) {
+            return StringUtils.EMPTY;
+        }
         StringConverter converter = registry.lookup(object.getClass());
         return converter.marshall(object);
     }
