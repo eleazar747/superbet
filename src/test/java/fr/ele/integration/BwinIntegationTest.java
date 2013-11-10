@@ -18,6 +18,9 @@ import com.google.common.collect.Lists;
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.core.csv.GraphResolver;
+import fr.ele.core.matcher.IgnoreCaseMatcher;
+import fr.ele.core.matcher.SimilarMatcher;
+import fr.ele.core.matcher.StringMatcher;
 import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.feeds.bwin.dto.ROOT;
 import fr.ele.model.DataMapping;
@@ -97,9 +100,12 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
             String line = scanner.nextLine();
             teams.add(line);
         }
+        List<StringMatcher> matchers = Lists.newArrayList(
+                new IgnoreCaseMatcher(), new SimilarMatcher(0.8));
+        // List matchers = Collections.singletonList(new IgnoreCaseMatcher());
         List<DataMapping> matched = new LinkedList<DataMapping>();
         for (UnMatchedPlayer player : unmatched) {
-            match(bookMaker, teams, matched, player);
+            match(bookMaker, teams, matched, player, matchers);
         }
         System.out.println("Non mais alo koi " + matched.size() + "/"
                 + unmatched.size());
@@ -112,16 +118,19 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
     }
 
     private void match(BookMaker bookMaker, List<String> teams,
-            List<DataMapping> matched, UnMatchedPlayer player) {
+            List<DataMapping> matched, UnMatchedPlayer player,
+            List<StringMatcher> matchers) {
         for (String team : teams) {
-            if (player.getCode().equalsIgnoreCase(team)) {
-                DataMapping mapping = new DataMapping();
-                mapping.setBookMaker(bookMaker);
-                mapping.setBookMakerCode(player.getCode());
-                mapping.setModelCode(team);
-                mapping.setRefEntityType(RefEntityType.TEAM);
-                matched.add(mapping);
-                return;
+            for (StringMatcher matcher : matchers) {
+                if (matcher.match(player.getCode(), team)) {
+                    DataMapping mapping = new DataMapping();
+                    mapping.setBookMaker(bookMaker);
+                    mapping.setBookMakerCode(player.getCode());
+                    mapping.setModelCode(team);
+                    mapping.setRefEntityType(RefEntityType.TEAM);
+                    matched.add(mapping);
+                    return;
+                }
             }
         }
     }
