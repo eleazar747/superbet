@@ -63,6 +63,7 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(datamapping.bookMaker.eq(bookMaker).and(
                         datamapping.refEntityType.eq(RefEntityType.TEAM)));
+        // TODO : TO REMOVE WHEN DATA MAPPING FILE WILL BE CLEAN
         for (DataMapping mapping : mappings) {
             dataMappingRepository.delete(mapping);
         }
