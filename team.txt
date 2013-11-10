@@ -437,3 +437,429 @@ Sandhausen
 SC Fribourg
 Union Berlin
 Wehen
+Afghanistan
+Albania
+Antarctica
+Algeria
+American Samoa
+Andorra
+Angola
+Antigua and Barbuda
+Azerbaijan
+Argentina
+Australia
+Austria
+Bahamas
+Bahrain
+Bangladesh
+Armenia
+Barbados
+Belgium
+Bermuda
+Bhutan
+Bolivia
+Bosnia and Herzegovina
+Botswana
+Bouvet Island
+Brazil
+Belize
+British Indian Ocean Territory
+Solomon Islands
+British Virgin Islands
+Brunei Darussalam
+Bulgaria
+Myanmar
+Burundi
+Belarus
+Cambodia
+Cameroon
+Canada
+Cape Verde
+Cayman Islands
+Central African
+Sri Lanka
+Chad
+Chile
+China
+Taiwan
+Christmas Island
+Cocos (Keeling) Islands
+Colombia
+Comoros
+Mayotte
+Republic of the Congo
+The Democratic Republic Of The Congo
+Cook Islands
+Costa Rica
+Croatia
+Cuba
+Cyprus
+Czech Republic
+Benin
+Denmark
+Dominica
+Dominican Republic
+Ecuador
+El Salvador
+Equatorial Guinea
+Ethiopia
+Eritrea
+Estonia
+Faroe Islands
+Falkland Islands
+South Georgia and the South Sandwich Islands
+Fiji
+Finland
+Åland Islands
+France
+French Guiana
+French Polynesia
+French Southern Territories
+Djibouti
+Gabon
+Georgia
+Gambia
+Occupied Palestinian Territory
+Germany
+Ghana
+Gibraltar
+Kiribati
+Greece
+Greenland
+Grenada
+Guadeloupe
+Guam
+Guatemala
+Guinea
+Guyana
+Haiti
+Heard Island and McDonald Islands
+Vatican City State
+Honduras
+Hong Kong
+Hungary
+Iceland
+India
+Indonesia
+Islamic Republic of Iran
+Iraq
+Ireland
+Israel
+Italy
+Côte d'Ivoire
+Jamaica
+Japan
+Kazakhstan
+Jordan
+Kenya
+Democratic People's Republic of Korea
+Republic of Korea
+Kuwait
+Kyrgyzstan
+Lao People's Democratic Republic
+Lebanon
+Lesotho
+Latvia
+Liberia
+Libyan Arab Jamahiriya
+Liechtenstein
+Lithuania
+Luxembourg
+Macao
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Martinique
+Mauritania
+Mauritius
+Mexico
+Monaco
+Mongolia
+Republic of Moldova
+Montserrat
+Morocco
+Mozambique
+Oman
+Namibia
+Nauru
+Nepal
+Netherlands
+Netherlands Antilles
+Aruba
+New Caledonia
+Vanuatu
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Niue
+Norfolk Island
+Norway
+Northern Mariana Islands
+United States Minor Outlying Islands
+Federated States of Micronesia
+Marshall Islands
+Palau
+Pakistan
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Pitcairn
+Poland
+Portugal
+Guinea-Bissau
+Timor-Leste
+Puerto Rico
+Qatar
+Réunion
+Romania
+Russian Federation
+Rwanda
+Saint Helena
+Saint Kitts and Nevis
+Anguilla
+Saint Lucia
+Saint-Pierre and Miquelon
+Saint Vincent and the Grenadines
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Seychelles
+Sierra Leone
+Singapore
+Slovakia
+Vietnam
+Slovenia
+Somalia
+South Africa
+Zimbabwe
+Spain
+Western Sahara
+Sudan
+Suriname
+Svalbard and Jan Mayen
+Swaziland
+Sweden
+Switzerland
+Syrian Arab Republic
+Tajikistan
+Thailand
+Togo
+Tokelau
+Tonga
+Trinidad and Tobago
+United Arab Emirates
+Tunisia
+Turkey
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+Uganda
+Ukraine
+The Former Yugoslav Republic of Macedonia
+Egypt
+United Kingdom
+Isle of Man
+United Republic Of Tanzania
+United States
+U.S. Virgin Islands
+Burkina Faso
+Uruguay
+Uzbekistan
+Venezuela
+Wallis and Futuna
+Samoa
+Yemen
+Serbia and Montenegro
+Zambia
+Académica de Coimbra
+Beira Mar
+Belenenses
+Benfica
+Boavista
+CS Maritimo
+Estoril Praia
+Estrela Amadora
+FC Arouca
+FC Porto
+Feirense
+Gil Vicente
+Leixoes
+Madère
+Moreirense
+Naval
+Olhanense
+Pacos de Ferreira
+Portimonense
+Rio Ave
+Sporting Braga
+Sporting Lisbonne
+Trofense
+Uniao Leiria
+Vitoria Guimaraes
+Vitoria Setubal
+Academico Viseu
+Atletico CP
+Beira Mar
+Belenenses
+Benfica B
+Boavista
+Braga B
+Carregado
+Chaves
+Desportivo Aves
+Estoril Praia
+Estrela Amadora
+Fatima
+FC Arouca
+Feirense
+Freamunde
+Gil Vicente
+Gondomar
+Guimaraes B
+Leixoes
+Maritimo B
+Moreirense
+Naval
+Olhanense
+Penafiel
+Portimonense
+Porto B
+Santa Clara
+SC Farense
+Sporting B
+Sporting Covilha
+Tondela
+Trofense
+UD Oliveirense
+Uniao Leiria
+Uniao Madeira
+Varzim
+Vizela
+Anderlecht
+Beerschot AC
+Cercle Bruges
+Club Bruges
+Dender EH
+Eupen
+FC Malines
+KSV Roulers
+KV Courtrai
+La Gantoise
+Lierse
+Lokeren
+Mons
+Mouscron-Péruwelz
+Oostende
+Oud-Heverlee Louvain
+Racing Genk
+Royal Charleroi
+RWDM Brussels FC
+Saint-Trond VV
+Standard de Liège
+Tubize
+Waasland-Beveren
+Westerlo
+Zulte Waregem
+Anvers
+Beveren
+Boussu Dour Borinage
+Deinze
+Dender EH
+Eendracht Alost
+Eupen
+Excelsior Virton
+FC Liege
+Geel
+Hamme
+Hoogstraten
+KFC Dessel Sport
+KSK Heist
+KSV Roulers
+KV Courtrai
+Lierse
+Lommel United
+Mons
+Mouscron-Péruwelz
+Olympic Charleroi
+Oostende
+Oud-Heverlee Louvain
+Oudenaarde
+RC Tournai
+RCS Visé
+Ronse
+Rupel Boom
+RWDM Brussels FC
+Saint-Trond VV
+SK Sint-Niklaas
+Sporting Charleroi
+St. Gilloise
+Standard Wetteren
+Tienen
+Tubize
+Turnhout
+UR Namur
+Virton
+Waasland-Beveren
+Westerlo
+WS Brussels
+ADO La Haye
+Ajax Amsterdam
+AZ Alkmaar
+Cambuur Leeuwarden
+De Graafschap
+Excelsior Rotterdam
+FC Groningue
+FC Twente
+FC Utrecht
+FC Volendam
+Feyenoord Rotterdam
+Go Ahead Eagles
+Heracles Almelo
+NAC Breda
+NEC Nimègue
+PEC Zwolle
+PSV Eindhoven
+RKC Waalwijk
+Roda JC
+SC Heerenveen
+Sparta Rotterdam
+Vitesse Arnhem
+VVV Venlo
+Willem II Tilburg
+Achilles 29
+ADO La Haye
+AGOVV Apeldoorn
+Almere City FC
+BV Veendam
+Cambuur Leeuwarden
+De Graafschap
+Excelsior Rotterdam
+FC Den Bosch
+FC Dordrecht
+FC Eindhoven
+FC Emmen
+FC Oss
+FC Volendam
+Fortuna Sittard
+Go Ahead Eagles
+Helmond Sport
+HFC Haarlem
+Jong Ajax
+Jong PSV
+Jong Twente
+MVV Maastricht
+Omniworld
+PEC Zwolle
+RBC Roosendaal
+RKC Waalwijk
+Sparta Rotterdam
+Stormvogels Telstar
+VVV Venlo
+Willem II Tilburg
