@@ -113,10 +113,11 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
                         Elements sub = d.select("span");
                         dates = sub.get(0).attributes().get("data-time");
                     }
+                    Sport sport = context.findSport(sSport);
                     if (d.attributes().get("class").equals("event_description")) {
                         player = d.text().split(" v ");
-                        player1 = context.findTeam(player[0]);
-                        player2 = context.findTeam(player[1]);
+                        player1 = context.findTeam(sport, player[0]);
+                        player2 = context.findTeam(sport, player[1]);
 
                     }
 
@@ -130,7 +131,6 @@ public class BetVictorSynchroniser extends AbstractSynchronizer<Odds> {
                         odd = Double.valueOf(sOdd[0]) / Double.valueOf(sOdd[1])
                                 + 1;
 
-                        Sport sport = context.findSport(sSport);
                         if (player1 != null && player2 != null) {
                             if (sport != null) {
                                 BetType betType = context.findBetType(betTypes);

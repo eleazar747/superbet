@@ -206,7 +206,7 @@ public class SynchronizerContext {
         return sportCache.get(bookMakerSportCode);
     }
 
-    public String findTeam(String bookMakerSportCode) {
+    public String findTeam(Sport sport, String bookMakerSportCode) {
         return teamCache.get(bookMakerSportCode);
     }
 

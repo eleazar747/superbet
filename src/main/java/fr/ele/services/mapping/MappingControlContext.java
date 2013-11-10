@@ -10,6 +10,7 @@ import com.google.common.collect.Sets;
 
 import fr.ele.model.QUnMatchedPlayer;
 import fr.ele.model.UnMatchedPlayer;
+import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.BetTypeRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.DataMappingRepository;
@@ -52,8 +53,8 @@ public class MappingControlContext extends SynchronizerContext {
     }
 
     @Override
-    public String findTeam(String bookMakerSportCode) {
-        String team = super.findTeam(bookMakerSportCode);
+    public String findTeam(Sport sport, String bookMakerSportCode) {
+        String team = super.findTeam(sport, bookMakerSportCode);
         if (team == null && !cache.contains(bookMakerSportCode)) {
             UnMatchedPlayer unMatchedPlayer = new UnMatchedPlayer();
             unMatchedPlayer.setBookMaker(getBookMaker());

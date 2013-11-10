@@ -72,8 +72,8 @@ public class BetclicSynchronizer extends AbstractSynchronizer<SportsBcDto> {
                 String team[] = matchBcDto.getName().split(" - ");
                 String player1 = null;
                 String player2 = null;
-                player1 = context.findTeam(team[0]);
-                player2 = context.findTeam(team[1]);
+                player1 = context.findTeam(sport, team[0]);
+                player2 = context.findTeam(sport, team[1]);
 
                 if (player1 != null && player2 != null) {
                     Match match = context.findOrCreateMatch(sport, matchBcDto

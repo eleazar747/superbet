@@ -34,8 +34,8 @@ public class BwinSynchroniser extends AbstractSynchronizer<ROOT> {
         if (sport != null) {
             if (e.getN().contains(" - ")) {
                 String team[] = e.getN().split(" - ");
-                String player1 = context.findTeam(team[0]);
-                String player2 = context.findTeam(team[1]);
+                String player1 = context.findTeam(sport, team[0]);
+                String player2 = context.findTeam(sport, team[1]);
                 if (player1 != null && player2 != null) {
                     Match match = context.findOrCreateMatch(sport, e
                             .getStdEventDateUTC().toGregorianCalendar()

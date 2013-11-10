@@ -58,7 +58,7 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void teamMatcher() throws Throwable {
-        BookMaker bookMaker = bookMakerRepository.findByCode("bwin");
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         QDataMapping datamapping = QDataMapping.dataMapping;
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(datamapping.bookMaker.eq(bookMaker).and(
