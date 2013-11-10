@@ -1,10 +1,15 @@
 package fr.ele.integration;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -53,7 +58,7 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void teamMatcher() throws Throwable {
-        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
+        BookMaker bookMaker = bookMakerRepository.findByCode("bwin");
         QDataMapping datamapping = QDataMapping.dataMapping;
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(datamapping.bookMaker.eq(bookMaker).and(
@@ -66,6 +71,93 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
                 .findAll(QUnMatchedPlayer.unMatchedPlayer.bookMaker
                         .eq(bookMaker));
         List<UnMatchedPlayer> unmatched = Lists.newArrayList(iterable);
+
+        List<String> teams = initModelTeams();
+
+        NoiseTeamRemover noiseTeamRemover = new NoiseTeamRemover();
+        GraphResolver graphResolver = new SuperBetGraphResolver(
+                repositoryRegistry);
+        CsvContext<DataMapping> context = CsvContext.create(DataMapping.class,
+                graphResolver);
+        CsvMarshaller<DataMapping> marshaller = context.newMarshaller();
+
+        Map<DataMapping, UnMatchedPlayer> matched = applyMatchingAlgorithm(
+                bookMaker, unmatched, teams, noiseTeamRemover,
+                new IgnoreCaseMatcher());
+        System.out.println("ignore case " + matched.size() + "/"
+                + unmatched.size());
+        if (matched.size() > 0) {
+            removeMatched(unmatched, matched);
+            marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                    System.out);
+        }
+
+        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                noiseTeamRemover, new SimilarMatcher(0.9));
+        System.out.println("similarity 90% " + matched.size() + "/"
+                + unmatched.size());
+        if (matched.size() > 0) {
+            removeMatched(unmatched, matched);
+            marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                    System.out);
+        }
+
+        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                noiseTeamRemover, new SimilarMatcher(0.8));
+        System.out.println("similarity 80% " + matched.size() + "/"
+                + unmatched.size());
+        if (matched.size() > 0) {
+            removeMatched(unmatched, matched);
+            marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                    System.out);
+        }
+
+        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                noiseTeamRemover, new SimilarMatcher(0.7));
+        System.out.println("similarity 70% " + matched.size() + "/"
+                + unmatched.size());
+        if (matched.size() > 0) {
+            removeMatched(unmatched, matched);
+            marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                    System.out);
+        }
+    }
+
+    private void removeMatched(List<UnMatchedPlayer> unmatched,
+            Map<DataMapping, UnMatchedPlayer> matched) {
+        Collection<UnMatchedPlayer> toRemove = matched.values();
+        Set<Long> ids = new HashSet<Long>(toRemove.size());
+        for (UnMatchedPlayer player : toRemove) {
+            ids.add(player.getId());
+            unmatched.remove(player);
+        }
+        for (Long id : ids) {
+            unMatchedPlayerRepository.delete(id);
+        }
+    }
+
+    private Map<DataMapping, UnMatchedPlayer> applyMatchingAlgorithm(
+            BookMaker bookMaker, List<UnMatchedPlayer> unmatched,
+            List<String> teams, NoiseTeamRemover noiseTeamRemover,
+            StringMatcher matcher) {
+        Map<DataMapping, UnMatchedPlayer> matched = new HashMap<DataMapping, UnMatchedPlayer>();
+        for (UnMatchedPlayer player : unmatched) {
+            String match = match(bookMaker, teams, player, matcher,
+                    noiseTeamRemover);
+            if (match != null) {
+                DataMapping mapping = new DataMapping();
+                mapping.setBookMaker(bookMaker);
+                mapping.setBookMakerCode(player.getCode());
+                mapping.setModelCode(match);
+                mapping.setRefEntityType(RefEntityType.TEAM);
+                matched.put(mapping, player);
+            }
+        }
+
+        return matched;
+    }
+
+    private List<String> initModelTeams() throws FileNotFoundException {
         List<String> teams = new ArrayList<String>(500);
         Scanner scanner = new Scanner(new File(
                 "/Users/marcherman/Documents/workspace/superbet/team.txt"));
@@ -73,40 +165,19 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
             String line = scanner.nextLine();
             teams.add(line);
         }
-        List<StringMatcher> matchers = Lists.newArrayList(
-                new IgnoreCaseMatcher(), new SimilarMatcher(0.8));
-        NoiseTeamRemover noiseTeamRemover = new NoiseTeamRemover();
-        List<DataMapping> matched = new LinkedList<DataMapping>();
-        for (UnMatchedPlayer player : unmatched) {
-            match(bookMaker, teams, matched, player, matchers, noiseTeamRemover);
-        }
-        System.out.println("Non mais alo koi " + matched.size() + "/"
-                + unmatched.size());
-        GraphResolver graphResolver = new SuperBetGraphResolver(
-                repositoryRegistry);
-        CsvContext<DataMapping> context = CsvContext.create(DataMapping.class,
-                graphResolver);
-        CsvMarshaller<DataMapping> marshaller = context.newMarshaller();
-        marshaller.marshall(matched, System.out);
+        return teams;
     }
 
-    private void match(BookMaker bookMaker, List<String> teams,
-            List<DataMapping> matched, UnMatchedPlayer player,
-            List<StringMatcher> matchers, NoiseTeamRemover noiseTeamRemover) {
+    private String match(BookMaker bookMaker, List<String> teams,
+            UnMatchedPlayer player, StringMatcher matcher,
+            NoiseTeamRemover noiseTeamRemover) {
         String cleanBookmaker = noiseTeamRemover.removeNoise(player.getCode());
         for (String team : teams) {
-            for (StringMatcher matcher : matchers) {
-                String cleanModel = noiseTeamRemover.removeNoise(team);
-                if (matcher.match(cleanBookmaker, cleanModel)) {
-                    DataMapping mapping = new DataMapping();
-                    mapping.setBookMaker(bookMaker);
-                    mapping.setBookMakerCode(player.getCode());
-                    mapping.setModelCode(team);
-                    mapping.setRefEntityType(RefEntityType.TEAM);
-                    matched.add(mapping);
-                    return;
-                }
+            String cleanModel = noiseTeamRemover.removeNoise(team);
+            if (matcher.match(cleanBookmaker, cleanModel)) {
+                return team;
             }
         }
+        return null;
     }
 }
