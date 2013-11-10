@@ -19,6 +19,7 @@ import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.core.csv.GraphResolver;
 import fr.ele.core.matcher.IgnoreCaseMatcher;
+import fr.ele.core.matcher.NoiseTeamRemover;
 import fr.ele.core.matcher.SimilarMatcher;
 import fr.ele.core.matcher.StringMatcher;
 import fr.ele.csv.SuperBetGraphResolver;
@@ -80,7 +81,7 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void teamMatcher() throws Throwable {
-        BookMaker bookMaker = bookMakerRepository.findByCode("bwin");
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         QDataMapping datamapping = QDataMapping.dataMapping;
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(datamapping.bookMaker.eq(bookMaker).and(
@@ -102,10 +103,10 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
         }
         List<StringMatcher> matchers = Lists.newArrayList(
                 new IgnoreCaseMatcher(), new SimilarMatcher(0.8));
-        // List matchers = Collections.singletonList(new IgnoreCaseMatcher());
+        NoiseTeamRemover noiseTeamRemover = new NoiseTeamRemover();
         List<DataMapping> matched = new LinkedList<DataMapping>();
         for (UnMatchedPlayer player : unmatched) {
-            match(bookMaker, teams, matched, player, matchers);
+            match(bookMaker, teams, matched, player, matchers, noiseTeamRemover);
         }
         System.out.println("Non mais alo koi " + matched.size() + "/"
                 + unmatched.size());
@@ -119,10 +120,12 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
 
     private void match(BookMaker bookMaker, List<String> teams,
             List<DataMapping> matched, UnMatchedPlayer player,
-            List<StringMatcher> matchers) {
+            List<StringMatcher> matchers, NoiseTeamRemover noiseTeamRemover) {
+        String cleanBookmaker = noiseTeamRemover.removeNoise(player.getCode());
         for (String team : teams) {
             for (StringMatcher matcher : matchers) {
-                if (matcher.match(player.getCode(), team)) {
+                String cleanModel = noiseTeamRemover.removeNoise(team);
+                if (matcher.match(cleanBookmaker, cleanModel)) {
                     DataMapping mapping = new DataMapping();
                     mapping.setBookMaker(bookMaker);
                     mapping.setBookMakerCode(player.getCode());
