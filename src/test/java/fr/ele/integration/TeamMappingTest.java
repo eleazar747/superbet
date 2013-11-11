@@ -24,11 +24,14 @@ import com.google.common.collect.Lists;
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.core.csv.GraphResolver;
+import fr.ele.core.matcher.EqualMatcher;
 import fr.ele.core.matcher.IgnoreCaseMatcher;
 import fr.ele.core.matcher.LevenshteinMatcher;
-import fr.ele.core.matcher.NoiseTeamRemover;
 import fr.ele.core.matcher.SimilarMatcher;
 import fr.ele.core.matcher.StringMatcher;
+import fr.ele.core.matcher.noise.BlankRemover;
+import fr.ele.core.matcher.noise.NoiseRemover;
+import fr.ele.core.matcher.noise.NoiseTeamRemover;
 import fr.ele.csv.SuperBetGraphResolver;
 import fr.ele.model.DataMapping;
 import fr.ele.model.QDataMapping;
@@ -100,8 +103,17 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
         CsvMarshaller<DataMapping> marshaller = context.newMarshaller();
 
         Map<DataMapping, UnMatchedPlayer> matched = applyMatchingAlgorithm(
-                bookMaker, unmatched, teams, noiseTeamRemover,
-                new IgnoreCaseMatcher());
+                bookMaker, unmatched, teams, new BlankRemover(),
+                new EqualMatcher());
+        System.out.println("equal " + matched.size() + "/" + unmatched.size());
+        if (matched.size() > 0) {
+            removeMatched(unmatched, matched);
+            marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                    System.out);
+        }
+
+        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                noiseTeamRemover, new IgnoreCaseMatcher());
         System.out.println("ignore case " + matched.size() + "/"
                 + unmatched.size());
         if (matched.size() > 0) {
@@ -155,12 +167,11 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
 
     private Map<DataMapping, UnMatchedPlayer> applyMatchingAlgorithm(
             BookMaker bookMaker, List<UnMatchedPlayer> unmatched,
-            List<String> teams, NoiseTeamRemover noiseTeamRemover,
-            StringMatcher matcher) {
+            List<String> teams, NoiseRemover noiseRemover, StringMatcher matcher) {
         Map<DataMapping, UnMatchedPlayer> matched = new HashMap<DataMapping, UnMatchedPlayer>();
         for (UnMatchedPlayer player : unmatched) {
             String match = match(bookMaker, teams, player, matcher,
-                    noiseTeamRemover);
+                    noiseRemover);
             if (match != null) {
                 DataMapping mapping = new DataMapping();
                 mapping.setBookMaker(bookMaker);
@@ -187,10 +198,10 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
 
     private String match(BookMaker bookMaker, List<String> teams,
             UnMatchedPlayer player, StringMatcher matcher,
-            NoiseTeamRemover noiseTeamRemover) {
-        String cleanBookmaker = noiseTeamRemover.removeNoise(player.getCode());
+            NoiseRemover noiseRemover) {
+        String cleanBookmaker = noiseRemover.removeNoise(player.getCode());
         for (String team : teams) {
-            String cleanModel = noiseTeamRemover.removeNoise(team);
+            String cleanModel = noiseRemover.removeNoise(team);
             if (matcher.match(cleanBookmaker, cleanModel)) {
                 return team;
             }
