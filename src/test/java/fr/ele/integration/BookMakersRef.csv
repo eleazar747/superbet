@@ -7,3 +7,4 @@ id,code,url,url sync,sync service
 0,intertops,www.google.com,www.google.com,IntertopsSynchronizer
 0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetVictorSynchroniser
 0,titanbet,www.google.com,http://xml.nordicbet.com/football.xml,TitanBetSynchroniser
+0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer
