@@ -55,10 +55,12 @@ public class MappingControlContext extends SynchronizerContext {
     @Override
     public String findTeam(Sport sport, String bookMakerSportCode) {
         String team = super.findTeam(sport, bookMakerSportCode);
-        if (team == null && !cache.contains(bookMakerSportCode)) {
+        if (bookMakerSportCode != null && team == null
+                && !cache.contains(bookMakerSportCode)) {
             UnMatchedPlayer unMatchedPlayer = new UnMatchedPlayer();
             unMatchedPlayer.setBookMaker(getBookMaker());
             unMatchedPlayer.setCode(bookMakerSportCode);
+            unMatchedPlayer.setSport(sport);
             unMatchedPlayerRepository.save(unMatchedPlayer);
         }
         return team;

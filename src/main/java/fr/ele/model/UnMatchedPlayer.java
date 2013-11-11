@@ -17,7 +17,7 @@ public class UnMatchedPlayer extends SuperBetEntity {
     private String code;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Sport.class)
-    @JoinColumn()
+    @JoinColumn(nullable = false)
     private Sport sport;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = BookMaker.class)

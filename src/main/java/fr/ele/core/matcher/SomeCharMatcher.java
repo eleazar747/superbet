@@ -1,18 +1,18 @@
 package fr.ele.core.matcher;
 
-public class SimilarMatcher implements StringMatcher {
+public class SomeCharMatcher implements StringMatcher {
 
-    private final double treshold;
+    private final int treshold;
 
-    public SimilarMatcher() {
-        this(0.8);
+    public SomeCharMatcher() {
+        this(1);
     }
 
-    public SimilarMatcher(double treshold) {
+    public SomeCharMatcher(int treshold) {
         this.treshold = treshold;
     }
 
-    private final double similarity(String a, String b) {
+    private double similarity(String a, String b) {
         double count = 0;
         char[] words = a.toUpperCase().toCharArray();
         String other = b.toUpperCase();
@@ -24,15 +24,14 @@ public class SimilarMatcher implements StringMatcher {
                 previousIndex = index;
             }
         }
-        return computeMatching(count, words, other);
-    }
-
-    protected double computeMatching(double count, char[] words, String other) {
-        return (count / words.length + count / other.length()) / 2;
+        return count;
     }
 
     @Override
     public boolean match(String a, String b) {
-        return similarity(a, b) >= treshold;
+        double count = similarity(a, b);
+        return Math.abs(a.length() - count) <= treshold
+                && Math.abs(b.length() - count) <= treshold;
     }
+
 }

@@ -11,16 +11,21 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.annotation.Nullable;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvMarshaller;
 import fr.ele.core.csv.GraphResolver;
 import fr.ele.core.matcher.IgnoreCaseMatcher;
+import fr.ele.core.matcher.LevenshteinMatcher;
 import fr.ele.core.matcher.NoiseTeamRemover;
 import fr.ele.core.matcher.SimilarMatcher;
 import fr.ele.core.matcher.StringMatcher;
@@ -58,7 +63,7 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void teamMatcher() throws Throwable {
-        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
+        BookMaker bookMaker = bookMakerRepository.findByCode("bwin");
         QDataMapping datamapping = QDataMapping.dataMapping;
         Iterable<DataMapping> mappings = dataMappingRepository
                 .findAll(datamapping.bookMaker.eq(bookMaker).and(
@@ -71,7 +76,19 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
         Iterable<UnMatchedPlayer> iterable = unMatchedPlayerRepository
                 .findAll(QUnMatchedPlayer.unMatchedPlayer.bookMaker
                         .eq(bookMaker));
-        List<UnMatchedPlayer> unmatched = Lists.newArrayList(iterable);
+
+        // Pour l'instant on s'occupe du Foot
+        List<UnMatchedPlayer> unmatched = Lists.newArrayList(Iterables.filter(
+                iterable, new Predicate<UnMatchedPlayer>() {
+
+                    @Override
+                    public boolean apply(@Nullable UnMatchedPlayer input) {
+                        return input.getSport() != null
+                                && "Football"
+                                        .equals(input.getSport().getCode());
+                    }
+
+                }));
 
         List<String> teams = initModelTeams();
 
@@ -93,34 +110,33 @@ public class TeamMappingTest extends AbstractSuperbetIntegrationTest {
                     System.out);
         }
 
-        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
-                noiseTeamRemover, new SimilarMatcher(0.9));
-        System.out.println("similarity 90% " + matched.size() + "/"
-                + unmatched.size());
-        if (matched.size() > 0) {
-            removeMatched(unmatched, matched);
-            marshaller.marshall(Lists.newArrayList(matched.keySet()),
-                    System.out);
+        for (int i = 1; i <= 3; i++) {
+            double treshold = 1d - i / 10d;
+            matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                    noiseTeamRemover, new SimilarMatcher(treshold));
+            System.out.println("similarity " + treshold * 100 + "% "
+                    + matched.size() + "/" + unmatched.size());
+            if (matched.size() > 0) {
+                removeMatched(unmatched, matched);
+                marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                        System.out);
+            }
+        }
+        for (int i = 1; i <= 3; i++) {
+            matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
+                    noiseTeamRemover, new LevenshteinMatcher(i));
+            System.out.println("levenshtein " + i + " " + matched.size() + "/"
+                    + unmatched.size());
+            if (matched.size() > 0) {
+                removeMatched(unmatched, matched);
+                marshaller.marshall(Lists.newArrayList(matched.keySet()),
+                        System.out);
+            }
         }
 
-        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
-                noiseTeamRemover, new SimilarMatcher(0.8));
-        System.out.println("similarity 80% " + matched.size() + "/"
-                + unmatched.size());
-        if (matched.size() > 0) {
-            removeMatched(unmatched, matched);
-            marshaller.marshall(Lists.newArrayList(matched.keySet()),
-                    System.out);
-        }
-
-        matched = applyMatchingAlgorithm(bookMaker, unmatched, teams,
-                noiseTeamRemover, new SimilarMatcher(0.7));
-        System.out.println("similarity 70% " + matched.size() + "/"
-                + unmatched.size());
-        if (matched.size() > 0) {
-            removeMatched(unmatched, matched);
-            marshaller.marshall(Lists.newArrayList(matched.keySet()),
-                    System.out);
+        for (UnMatchedPlayer player : unmatched) {
+            // on affiche le restant
+            System.err.println(player.getCode());
         }
     }
 
