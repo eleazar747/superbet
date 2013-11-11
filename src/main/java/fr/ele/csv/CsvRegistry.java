@@ -5,10 +5,12 @@ import fr.ele.core.csv.CsvProperty;
 import fr.ele.csv.mapping.BetTypeCsvProperty;
 import fr.ele.csv.mapping.BookmakerCsvProperty;
 import fr.ele.csv.mapping.DataMappingCsvProperty;
+import fr.ele.csv.mapping.PlayerCsvProperty;
 import fr.ele.csv.mapping.SportCsvProperty;
 import fr.ele.model.DataMapping;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.BookMaker;
+import fr.ele.model.ref.Player;
 import fr.ele.model.ref.Sport;
 
 public enum CsvRegistry implements CsvBeanProperties {
@@ -46,6 +48,19 @@ public enum CsvRegistry implements CsvBeanProperties {
         @Override
         public Object getNewInstance() {
             return new DataMapping();
+        }
+
+    },
+    PLAYER(Player.class) {
+
+        @Override
+        public CsvProperty[] getProperties() {
+            return PlayerCsvProperty.values();
+        }
+
+        @Override
+        public Object getNewInstance() {
+            return new Player();
         }
 
     },
