@@ -37,7 +37,7 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 
 	protected long convert(SynchronizerContext context, Type type) {
 		long nb = 0L;
-		Sport sport = context.findSport(type.getName().toString());
+		Sport sport = context.findSport("Football");
 
 		if (sport == null) {
 			return nb = 0L;
@@ -55,21 +55,25 @@ public class WilliamHillSynchronizer extends AbstractSynchronizer<Oxip> {
 		long nb = 0;
 		String[] matchCode = market.getName().toString().split(" - ");
 		playerprint(matchCode[0]);
-		Match match = context.findOrCreateMatch(sport, matchCode[0].toString()
-				.toLowerCase().replaceAll(" v ", "**").replaceAll(" ", ""),
-				market.getBetTillDate().toGregorianCalendar().getTime());
+		String[] player = matchCode[0].split(" v ");
+		if (player.length > 1) {
+			String team1 = context.findTeam(sport, player[0]);
+			String team2 = context.findTeam(sport, player[1]);
+			Match match = context.findOrCreateMatch(sport, market
+					.getBetTillDate().toGregorianCalendar().getTime(), team1,
+					team2);
 
-		BetType betType = context.findBetType(matchCode[1]);
-		if (betType == null) {
-			return nb = 0L;
+			BetType betType = context.findBetType(matchCode[1]);
+			if (betType == null) {
+				return nb = 0L;
+			}
+
+			RefKey refKey = context.findOrCreateRefKey(match, betType);
+
+			for (Participant particpant : market.getParticipant()) {
+				nb += convert(context, particpant, refKey, match);
+			}
 		}
-
-		RefKey refKey = context.findOrCreateRefKey(match, betType);
-
-		for (Participant particpant : market.getParticipant()) {
-			nb += convert(context, particpant, refKey, match);
-		}
-
 		return nb;
 	}
 
