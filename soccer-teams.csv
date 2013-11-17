@@ -1,0 +1,1184 @@
+arg.1,Argentinos Juniors
+arg.1,Belgrano de C?rdoba
+arg.1,Boca Juniors
+arg.1,Col?n de Santa Fe
+arg.1,Estudiantes La Plata
+arg.1,Gimnasia La Plata
+arg.1,Lan?s
+arg.1,Newell's Old Boys
+arg.1,Racing Club
+arg.1,River Plate
+arg.1,Rosario Central
+arg.1,San Lorenzo
+arg.1,V?lez Sarsfield
+arg.1,Arsenal de Sarand?
+arg.1,Olimpo de Bah?a Blanca
+arg.1,Quilmes
+arg.1,Godoy Cruz de Mendoza
+arg.1,Tigre
+arg.1,Atletico Rafaela
+arg.1,All Boys
+aut.1,Rapid Vienna
+aut.1,Austria Vienna
+aut.1,SV Salzburg
+aut.1,FC Wacker Tirol
+aut.1,SK Sturm Graz
+aut.1,SV Josko Ried
+aut.1,FC Magna Wr. Neustadt
+aut.1,FC Trenkwalder Admira
+aut.1,Wolfsberger AC
+aut.1,SV Grodig
+bel.1,Anderlecht
+bel.1,Standard Liege
+bel.1,Club Brugge
+bel.1,Racing Genk
+bel.1,KSC Lokeren
+bel.1,Cercle Brugge KSV
+bel.1,KAA Gent
+bel.1,KV Oostende
+bel.1,RAEC Bergen Mons
+bel.1,Royal Charleroi SC
+bel.1,Lierse SK
+bel.1,Zulte-Waregem
+bel.1,KV Kortrijk
+bel.1,KV Mechelen
+bel.1,OH Leuven
+bel.1,Waasland-Beveren
+den.1,FC Midtjylland
+den.1,Br?ndby
+den.1,FC Copenhagen
+den.1,Odense BK
+den.1,Esbjerg
+den.1,AaB
+den.1,FC Nordsjaelland
+den.1,Randers FC
+den.1,Viborg FF
+den.1,AGF Aarhus
+den.1,Sonderjyske
+den.1,FC Vestsjaelland
+fra.1,Bordeaux
+fra.1,Paris Saint-Germain 
+fra.1,Nantes
+fra.1,Lille
+fra.1,Lyon
+fra.1,Stade Rennes
+fra.1,Guingamp
+fra.1,Bastia
+fra.1,AS Monaco
+fra.1,Marseille
+fra.1,St Etienne
+fra.1,Toulouse
+fra.1,Sochaux
+fra.1,Lorient
+fra.1,Montpellier
+fra.1,Nice
+fra.1,AC Ajaccio
+fra.1,Stade de Reims
+fra.1,Valenciennes
+fra.1,Evian Thonon Gaillard
+ger.1,Borussia Dortmund
+ger.1,Eintracht Frankfurt
+ger.1,SC Freiburg
+ger.1,Hamburg SV
+ger.1,Hertha Berlin
+ger.1,Bayer Leverkusen
+ger.1,Bayern Munich
+ger.1,Schalke 04
+ger.1,VfB Stuttgart
+ger.1,Werder Bremen
+ger.1,VfL Wolfsburg
+ger.1,Borussia Monchengladbach
+ger.1,Nurnberg
+ger.1,Hannover 96
+ger.1,Mainz
+ger.1,TSV Eintracht Braunschweig
+ger.1,FC Augsburg
+ger.1,TSG Hoffenheim
+ned.1,Ajax Amsterdam
+ned.1,AZ Alkmaar
+ned.1,NAC Breda
+ned.1,Feyenoord Rotterdam
+ned.1,FC Groningen
+ned.1,Heerenveen
+ned.1,NEC Nijmegen
+ned.1,PSV Eindhoven
+ned.1,Roda JC Kerkrade
+ned.1,Twente Enschede
+ned.1,FC Utrecht
+ned.1,Vitesse Arnhem
+ned.1,RKC Waalwijk
+ned.1,PEC Zwolle
+ned.1,ADO Den Haag
+ned.1,Go Ahead Eagles
+ned.1,SC Heracles Almelo
+ned.1,Cambuur Leeuwarden
+ita.1,AC Milan
+ita.1,AS Roma
+ita.1,Atalanta
+ita.1,Bologna
+ita.1,Fiorentina
+ita.1,Internazionale
+ita.1,Juventus
+ita.1,Lazio
+ita.1,Napoli
+ita.1,Parma
+ita.1,Udinese
+ita.1,Hellas Verona
+ita.1,Chievo Verona
+ita.1,Torino
+ita.1,Sampdoria
+ita.1,Cagliari
+ita.1,Livorno
+ita.1,Catania
+ita.1,Genoa
+ita.1,Sassuolo
+nor.1,Rosenborg
+nor.1,Viking FK
+nor.1,Odd Grenland
+nor.1,SK Brann
+nor.1,Lillestrom
+nor.1,Molde
+nor.1,Valerenga
+nor.1,Sogndal
+nor.1,Aalesund
+nor.1,Haugesund
+nor.1,Sarpsborg FK
+nor.1,Tromso
+nor.1,IK Start
+nor.1,Honefoss
+nor.1,Sandnes Ulf
+nor.1,Stromsgodset
+por.1,FC Porto
+por.1,Maritimo
+por.1,Benfica
+por.1,Sporting Lisbon
+por.1,Braga
+por.1,CD Nacional de Madeira
+por.1,Belenenses
+por.1,Academica de Coimbra
+por.1,Gil Vicente
+por.1,Olhanense
+por.1,Pa?os de Ferreira
+por.1,Rio Ave
+por.1,Vitoria Setubal
+por.1,Guimaraes
+por.1,Belen
+por.1,Estoril
+por.1,Arouca
+esp.1,Barcelona
+esp.1,Celta Vigo
+esp.1,Real Madrid
+esp.1,Espanyol
+esp.1,Real Sociedad
+esp.1,Athletic Bilbao
+esp.1,Valencia
+esp.1,Real Valladolid
+esp.1,Osasuna
+esp.1,Malaga
+esp.1,Rayo Vallecano
+esp.1,Villarreal
+esp.1,Sevilla FC
+esp.1,Real Betis
+esp.1,Atletico Madrid
+esp.1,Levante
+esp.1,Getafe
+esp.1,Granada
+esp.1,Elche
+esp.1,Almeria
+swe.1,Halmstad
+swe.1,Elfsborg
+swe.1,Helsingborg
+swe.1,AIK
+swe.1,Djurgarden
+swe.1,IFK
+swe.1,Malmo FF
+swe.1,Osters IF
+swe.1,Kalmar FF
+swe.1,Gefle IF
+swe.1,Atvidabergs FF
+swe.1,BK Hacken
+swe.1,Brommapojkarna
+swe.1,Mjallby
+swe.1,IFK Norrkoping
+swe.1,Syrianska FC
+sui.1,Grasshoppers
+sui.1,St Gallen
+sui.1,FC Basel
+sui.1,Young Boys
+sui.1,FC Z?rich
+sui.1,FC Thun
+sui.1,FC Aarau
+sui.1,FC Sion Sitten
+sui.1,Lucerne
+sui.1,Lausanne Sports
+tur.1,Galatasaray
+tur.1,Fenerbahce
+tur.1,Gaziantepspor
+tur.1,Genclerbirligi
+tur.1,Trabzonspor
+tur.1,Besiktas
+tur.1,Kayserispor
+tur.1,Sivasspor
+tur.1,Antalyaspor
+tur.1,Elazigspor
+tur.1,Bursaspor
+tur.1,Eskisehirspor K
+tur.1,Konyaspor
+tur.1,Erciyesspor
+tur.1,Caykur Rizespor
+tur.1,Kasimpasa
+tur.1,Karabukspor
+tur.1,Akhisar Belediye 
+usa.1,Chicago
+usa.1,Columbus
+usa.1,Colorado
+usa.1,FC Dallas
+usa.1,Kansas City
+usa.1,Los Angeles
+usa.1,New England
+usa.1,New York Red Bulls
+usa.1,San Jose
+usa.1,DC United
+usa.1,Real Salt Lake
+usa.1,Chivas USA
+usa.1,Houston
+usa.1,Toronto FC
+usa.1,Montreal Impact
+usa.1,Portland Timbers
+usa.1,Seattle Sounders FC
+usa.1,Vancouver Whitecaps
+usa.1,Philadelphia Union
+usa.w.1,Atlanta Women
+usa.w.1,San Jose Women
+usa.w.1,Boston Women
+usa.w.1,Carolina Women
+usa.w.1,New York Women
+usa.w.1,Philadelphia Women
+usa.w.1,San Diego Women
+usa.w.1,Washington Women
+mex.1,Atlas
+mex.1,Cruz Azul
+mex.1,Guadalajara
+mex.1,Monterrey
+mex.1,Morelia
+mex.1,Quer?taro
+mex.1,Toluca
+mex.1,Chiapas
+mex.1,Santos
+mex.1,Atlante
+mex.1,Am?rica
+mex.1,Le?n
+mex.1,Puebla
+mex.1,U.A.N.L
+mex.1,UNAM
+mex.1,Pachuca
+mex.1,Veracruz
+mex.1,Tijuana
+eng.1,Hull City
+eng.1,Swansea City
+eng.1,Stoke City
+eng.1,Cardiff City
+eng.1,Arsenal
+eng.1,Manchester United
+eng.1,Newcastle United
+eng.1,Aston Villa
+eng.1,Chelsea
+eng.1,Liverpool
+eng.1,Sunderland
+eng.1,Tottenham Hotspur
+eng.1,Everton
+eng.1,Fulham
+eng.1,West Ham United
+eng.1,Southampton
+eng.1,Norwich City
+eng.1,Manchester City
+eng.1,West Bromwich Albion
+eng.1,Crystal Palace
+eng.2,Doncaster Rovers
+eng.2,Yeovil Town
+eng.2,Brighton & Hove Albion
+eng.2,Queens Park Rangers
+eng.2,Huddersfield Town
+eng.2,Reading
+eng.2,Blackpool
+eng.2,AFC Bournemouth
+eng.2,Wigan Athletic
+eng.2,Leeds United
+eng.2,Bolton Wanderers
+eng.2,Blackburn Rovers
+eng.2,Middlesbrough
+eng.2,Charlton Athletic
+eng.2,Ipswich Town
+eng.2,Derby County
+eng.2,Leicester City
+eng.2,Burnley
+eng.2,Millwall
+eng.2,Birmingham City
+eng.2,Nottingham Forest
+eng.2,Watford
+eng.2,Barnsley
+eng.2,Sheffield Wednesday
+eng.3,Stevenage
+eng.3,Shrewsbury Town
+eng.3,Leyton Orient
+eng.3,Carlisle United
+eng.3,Oldham Athletic
+eng.3,Bristol City
+eng.3,Brentford
+eng.3,Colchester United
+eng.3,Notts County
+eng.3,Swindon Town
+eng.3,Peterborough United
+eng.3,Tranmere Rovers
+eng.3,Port Vale
+eng.3,Wolverhampton Wanderers
+eng.3,Bradford City
+eng.3,Coventry City
+eng.3,Gillingham
+eng.3,Milton Keynes Dons
+eng.3,Preston North End
+eng.3,Crewe Alexandra
+eng.3,Sheffield United
+eng.3,Walsall
+eng.3,Rotherham United
+eng.3,Crawley Town
+eng.4,Dagenham & Redbridge
+eng.4,Morecambe
+eng.4,Rochdale
+eng.4,Mansfield Town
+eng.4,Plymouth Argyle
+eng.4,Bristol Rovers
+eng.4,Southend United 
+eng.4,Oxford United
+eng.4,Scunthorpe United
+eng.4,York City
+eng.4,Cheltenham Town
+eng.4,Torquay United
+eng.4,Hartlepool United
+eng.4,Exeter City
+eng.4,Chesterfield
+eng.4,Wycombe Wanderers
+eng.4,Northampton Town
+eng.4,Bury
+eng.4,Portsmouth
+eng.4,Newport County
+eng.4,Burton Albion
+eng.4,Accrington Stanley
+eng.4,AFC Wimbledon
+eng.4,Fleetwood Town
+eng.5,Barnet
+eng.5,Forest Green Rovers
+eng.5,Nuneaton Town
+eng.5,Southport
+eng.5,Hereford United
+eng.5,Woking
+eng.5,Chester City
+eng.5,Luton Town
+eng.5,Halifax
+eng.5,Lincoln City
+eng.5,Macclesfield Town
+eng.5,Kidderminster Harriers
+eng.5,Cambridge United
+eng.5,Wrexham
+eng.5,Grimsby Town
+eng.5,Aldershot Town
+eng.5,Welling
+eng.5,Tamworth
+eng.5,Salisbury City
+eng.5,Gateshead
+eng.5,Alfreton Town
+eng.5,Braintree Town
+eng.5,Dartford
+eng.5,Hyde
+sco.1,Partick Thistle
+sco.1,St Mirren
+sco.1,Ross County
+sco.1,Inverness Caledonian Thistle
+sco.1,Celtic
+sco.1,Hibernian
+sco.1,Kilmarnock
+sco.1,Heart of Midlothian
+sco.1,Aberdeen
+sco.1,Dundee United
+sco.1,Motherwell
+sco.1,St Johnstone
+sco.2,Raith Rovers
+sco.2,Falkirk
+sco.2,Livingston
+sco.2,Dundee
+sco.2,Alloa Athletic
+sco.2,Queen of the South
+sco.2,Hamilton Academical 
+sco.2,Cowdenbeath
+sco.2,Greenock Morton
+sco.2,Dumbarton
+sco.3,Ayr United
+sco.3,Arbroath
+sco.3,Rangers
+sco.3,Dunfermline Athletic
+sco.3,Stenhousemuir
+sco.3,Stranraer
+sco.3,Forfar Athletic
+sco.3,Brechin City
+sco.3,East Fife
+sco.3,Airdrie United
+sco.4,Clyde
+sco.4,Berwick Rangers
+sco.4,Montrose
+sco.4,Peterhead
+sco.4,Stirling Albion
+sco.4,East Stirlingshire
+sco.4,Elgin City
+sco.4,Albion Rovers
+sco.4,Queen's Park
+sco.4,Annan Athletic
+fifa.friendly,Italy
+fifa.friendly,Spain
+fifa.friendly,Argentina
+fifa.friendly,Mexico
+fifa.friendly,Bolivia
+fifa.friendly,Brazil
+fifa.friendly,Canada
+fifa.friendly,Chile
+fifa.friendly,Colombia
+fifa.friendly,Ecuador
+fifa.friendly,Paraguay
+fifa.friendly,Peru
+fifa.friendly,Uruguay
+fifa.friendly,Venezuela
+fifa.friendly,Costa Rica
+fifa.friendly,Honduras
+fifa.friendly,Estonia
+fifa.friendly,Cyprus
+fifa.friendly,Faroe Islands
+fifa.friendly,England
+fifa.friendly,Netherlands
+fifa.friendly,Czech Republic
+fifa.friendly,South Korea
+fifa.friendly,Bosnia-Herzegovina
+fifa.friendly,Malta
+fifa.friendly,Russia
+fifa.friendly,Greece
+fifa.friendly,Latvia
+fifa.friendly,Ukraine
+fifa.friendly,Finland
+fifa.friendly,Belgium
+fifa.friendly,Lithuania
+fifa.friendly,Israel
+fifa.friendly,Bulgaria
+fifa.friendly,Macedonia
+fifa.friendly,Norway
+fifa.friendly,Turkey
+fifa.friendly,Sweden
+fifa.friendly,South Africa
+fifa.friendly,Slovakia
+fifa.friendly,Iceland
+fifa.friendly,Poland
+fifa.friendly,Slovenia
+fifa.friendly,Romania
+fifa.friendly,Austria
+fifa.friendly,Switzerland
+fifa.friendly,Republic of Ireland
+fifa.friendly,Croatia
+fifa.friendly,France
+fifa.friendly,Denmark
+fifa.friendly.w,Argentina Women
+fifa.friendly.w,Australia Women
+fifa.friendly.w,Brazil Women
+fifa.friendly.w,Canada Women
+fifa.friendly.w,China Women
+fifa.friendly.w,France Women
+fifa.friendly.w,Germany Women
+fifa.friendly.w,Ghana Women
+fifa.friendly.w,Japan Women
+fifa.friendly.w,North Korea Women
+fifa.friendly.w,Korea Republic Women
+fifa.friendly.w,Nigeria Women
+fifa.friendly.w,Norway Women
+fifa.friendly.w,Russia Women
+fifa.friendly.w,Sweden Women
+fifa.friendly.w,U.S Women?s National Team
+fifa.friendly.w,Italy Women
+fifa.friendly.w,Mexico Women
+fifa.friendly.w,Haiti Women
+fifa.friendly.w,Trinidad and Tobago Women
+fifa.friendly.w,Jamaica Women
+fifa.friendly.w,Costa Rica Women
+fifa.friendly.w,Panama Women
+fifa.friendly.w,Denmark Women
+fifa.friendly.w,Greece Women
+fifa.friendly.w,Iceland Women
+fifa.friendly.w,New Zealand Women
+fifa.friendly.w,Ireland Women
+fifa.friendly.w,England Women
+fifa.friendly.w,Chinese Taipei Women
+bra.1,Flamengo
+bra.1,Corinthians
+bra.1,Internacional
+bra.1,Cruzeiro
+bra.1,S?o Paulo
+bra.1,Santos FC
+bra.1,Fluminense FC
+bra.1,CR Vasco da Gama
+bra.1,Coritiba FBC
+bra.1,EC Vit?ria
+bra.1,Atletico Paranaense
+bra.1,AA Ponte Preta
+bra.1,Portuguesa de Desportos
+bra.1,Goi?s
+bra.1,Botafogo
+bra.1,Gremio
+bra.1,Atl?tico MG
+bra.1,N?utico
+bra.1,Bahia
+bra.1,Crici?ma
+chi.1,Universidad Cat?lica
+chi.1,Cobreloa
+chi.1,Colo Colo
+chi.1,Santiago Wanderers
+chi.1,Everton CD
+chi.1,Uni?n Espa?ola
+chi.1,Cobresal
+chi.1,Huachipato
+chi.1,Rangers de Talca
+chi.1,Audax Italiano
+chi.1,Universidad de Chile
+chi.1,Palestino
+chi.1,Universidad de Concepci?n
+chi.1,Antofagasta
+chi.1,O'Higgins
+chi.1,?ublense
+chi.1,Municipal Iquique
+chi.1,Uni?n La Calera
+fra.2,Troyes
+fra.2,AJ Auxerre
+fra.2,Lens
+fra.2,Metz
+fra.2,Caen
+fra.2,Chateauroux
+fra.2,Dijon FCO
+fra.2,Clermont Foot
+fra.2,FC Istres
+fra.2,Le Havre AC
+fra.2,Stade Laval
+fra.2,AS Nancy Lorraine
+fra.2,Niort
+fra.2,Tours
+fra.2,Brest
+fra.2,Nimes
+fra.2,Angers
+fra.2,Arles
+fra.2,Cr?teil
+fra.2,CA Bastia
+ger.2,VfL Bochum
+ger.2,FC Cologne
+ger.2,Energie Cottbus
+ger.2,Kaiserslautern
+ger.2,TSV 1860 Munich
+ger.2,St Pauli
+ger.2,FC Union Berlin
+ger.2,Arminia Bielefeld
+ger.2,SpVgg Greuther Furth
+ger.2,SC Paderborn 07
+ger.2,VfR Aalen
+ger.2,FC Erzgebirge Aue
+ger.2,Karlsruhe
+ger.2,FC Ingolstadt 04
+ger.2,SV Sandhausen
+ger.2,FSV Frankfurt
+ger.2,Dynamo Dresden
+ger.2,Fortuna D?sseldorf
+gre.1,Olympiakos
+gre.1,Panathinaikos
+gre.1,PAOK Salonika
+gre.1,OFI Crete
+gre.1,FC Xanthi
+gre.1,Aris Salonika
+gre.1,Panionios
+gre.1,Ergotelis
+gre.1,Levadiakos
+gre.1,Panthrakikos
+gre.1,Atromitos
+gre.1,Veria
+gre.1,Asteras Tripoli
+gre.1,Giannina
+gre.1,Panetolikos
+gre.1,Platanias
+gre.1,Apollon Smyrni
+gre.1,Kalloni AEL
+ita.2,Bari
+ita.2,Brescia
+ita.2,Reggina
+ita.2,Modena
+ita.2,Empoli
+ita.2,Siena
+ita.2,Palermo
+ita.2,Crotone
+ita.2,Ternana
+ita.2,US Pescara
+ita.2,Cesena
+ita.2,Cittadella
+ita.2,Padova
+ita.2,Novara
+ita.2,Lanciano
+ita.2,Latina
+ita.2,Juve Stabia
+ita.2,US Avellino
+ita.2,Spezia
+ita.2,Varese
+ita.2,Carpi
+ita.2,Trapani
+ned.2,Fortuna Sittard
+ned.2,De Graafschap
+ned.2,Sparta Rotterdam
+ned.2,Willem II Tilburg
+ned.2,FC Den Bosch
+ned.2,Excelsior
+ned.2,FC Volendam
+ned.2,FC Emmen VV
+ned.2,FC Oss
+ned.2,MVV Maastricht
+ned.2,VVV Venlo
+ned.2,FC Eindhoven
+ned.2,SC Stormvogels Telstar
+ned.2,Helmond Sport
+ned.2,Dordrecht '90
+ned.2,Almere City
+ned.2,Jong PSV
+ned.2,Jong FC Twente
+ned.2,Jong Ajax
+ned.2,Achilles '29
+rus.1,Lokomotiv Moscow
+rus.1,Anzhi Makhachkala
+rus.1,Dinamo Moscow
+rus.1,Spartak Moscow
+rus.1,CSKA Moscow
+rus.1,Zenit St Petersburg
+rus.1,Terek Grozny
+rus.1,FK Amkar Perm'
+rus.1,PFK Samara Kryliya Sovetov
+rus.1,FK Rubin Kazan
+rus.1,FK Rostov-Na-Donu
+rus.1,FK Tom' Tomsk
+rus.1,Kuban Krasnodar
+rus.1,Volga Nizhny Novgorod
+rus.1,Krasnodar
+rus.1,Ural
+esp.2,Mallorca
+esp.2,Deportivo La Coru?a
+esp.2,Real Zaragoza
+esp.2,Alav?s
+esp.2,Las Palmas
+esp.2,Numancia
+esp.2,Tenerife
+esp.2,Recreativo Huelva
+esp.2,Murcia
+esp.2,Eibar
+esp.2,Sporting Gijon
+esp.2,Mirandes
+esp.2,Real Jaen CF
+esp.2,Barcelona B
+esp.2,Ponferradina
+esp.2,Hercules
+esp.2,Real Madrid Castilla
+esp.2,Lugo
+esp.2,Cordoba
+esp.2,Girona
+esp.2,AD Alcorcon
+esp.2,CD Sabadell
+wal.1,T.N.S.
+wal.1,Bangor City
+wal.1,Rhyl
+wal.1,Newtown
+wal.1,Airbus UK
+wal.1,Afan Lido
+wal.1,Carmarthen
+wal.1,Connah's Quay
+wal.1,Port Talbot
+wal.1,Aberystwyth
+wal.1,Prestatyn Town
+wal.1,Bala Town
+irl.1,Shelbourne
+irl.1,Bohemians
+irl.1,Dundalk
+irl.1,Shamrock
+irl.1,Derry City
+irl.1,Limerick FC
+irl.1,Cork
+irl.1,Drogheda Utd
+irl.1,Bray
+irl.1,St Patricks
+irl.1,UCD
+irl.1,Sligo
+nir.1,Glentoran
+nir.1,Glenavon
+nir.1,Portadown
+nir.1,Linfield
+nir.1,Coleraine
+nir.1,Dungannon Swifts
+nir.1,Ballymena
+nir.1,Cliftonville
+nir.1,Crusaders
+nir.1,Ards
+nir.1,Ballinamallard Utd
+nir.1,Warrenpoint Town
+usa.misl,Philadelphia Kixx
+usa.misl,Milwaukee Wave
+usa.misl,Baltimore Blast
+usa.misl,Chicago Storm
+usa.misl,California Cougars
+usa.misl,Detroit Ignition
+usa.misl,New Jersey Ironmen
+usa.misl,Monterrey La Raza
+usa.misl,Orlando Sharks
+aus.1,Adelaide United
+aus.1,Perth Glory
+aus.1,Newcastle Jets
+aus.1,Central Coast Mariners
+aus.1,Brisbane Roar
+aus.1,Sydney FC
+aus.1,Melbourne Victory
+aus.1,Wellington Phoenix FC
+aus.1,Melbourne Heart
+aus.1,Western Sydney FC
+col.1,Deportivo Cali
+col.1,Once Caldas
+col.1,Atl?tico Junior
+col.1,Atl?tico Nacional
+col.1,Millonarios
+col.1,Deportivo Pasto
+col.1,Independiente Santa Fe
+col.1,Itag??
+uru.1,Defensor Sporting
+uru.1,Pe?arol
+uru.1,Nacional
+uru.1,F?nix 
+uru.1,Danubio F.C.
+uru.1,Cerro
+uru.1,Liverpool
+uru.1,Miramar
+uru.1,Rentistas
+uru.1,River Plate
+uru.1,Wanderers
+uru.1,Juventud
+uru.1,Cerro Largo
+uru.1,Racing (U)
+uru.1,El Tanque Sisley
+uru.1,Sud Am?rica
+per.1,Sporting Cristal
+per.1,Alianza Lima
+per.1,Universitario de Deportes
+per.1,San Martin
+per.1,Club Sportivo Cienciano
+per.1,C?sar Vallejo
+per.1,Melgar FBC
+per.1,Jos? G?lvez
+per.1,Juan Aurich
+per.1,Inti Gas Deportes
+per.1,UTC
+per.1,Sport Huancayo
+per.1,Pac?fico FC
+per.1,Le?n de Hu?nuco
+per.1,Uni?n Comercio
+per.1,Real Garcilaso
+par.1,Libertad
+par.1,Cerro Porte?o
+par.1,Olimpia
+par.1,Guaran?
+par.1,Sportivo Luque?o
+par.1,Nacional
+par.1,Sol de Am?rica
+par.1,Cerro Porte?o de Franco
+par.1,General D?az
+par.1,Rubio ??
+par.1,Deportivo Capiat?
+par.1,Sp. Carapegu?
+ecu.1,El Nacional
+ecu.1,Deportivo Quito
+ecu.1,Emelec
+ecu.1,Barcelona
+ecu.1,Club Deportivo Cuenca
+ecu.1,LDU Quito
+ecu.1,Liga de Loja
+ecu.1,Macar?
+ecu.1,U. Cat?lica
+ecu.1,Manta F.C.
+ecu.1,Independiente Ter?n
+ecu.1,Deportivo Quevedo
+ven.1,A.C. Mineros
+ven.1,Caracas F.C.
+ven.1,Deportivo T?chira
+ven.1,Trujillanos
+ven.1,Aragua
+ven.1,Carabobo
+ven.1,Estudiantes de M?rida
+ven.1,Zamora
+ven.1,Llaneros
+ven.1,Anzo?tegui
+ven.1,Atl?tico Vig?a
+ven.1,Zulia
+ven.1,Real Espor
+ven.1,Yaracuyanos
+ven.1,CD Lara
+ven.1,Tucanes
+ven.1,Atl?tico Venezuela
+ven.1,Dep. Petare
+bol.1,Bol?var
+bol.1,Oriente Petrolero
+bol.1,The Strongest
+bol.1,Aurora
+bol.1,Blooming
+bol.1,Real Potos?
+bol.1,San Jos?
+bol.1,Wilstermann
+bol.1,Universitario de Sucre
+bol.1,Guabir?
+bol.1,Nacional Potos?
+bol.1,Sport Boys Warnes
+arg.urba,Alumni
+arg.urba,La Plata
+arg.urba,Newman
+arg.urba,CASI
+arg.urba,Atl. del Rosario
+arg.urba,Hind?
+arg.urba,Manuel Belgrano
+arg.urba,SIC
+arg.urba,Lomas
+arg.urba,Liceo Naval
+arg.urba,Belgrano AC
+arg.urba,San Luis
+arg.urba,CUBA
+arg.urba,Regatas Bella Vista
+rsa.1,Bloem Celtic
+rsa.1,Moroka Swallows
+rsa.1,Ajax Cape Town
+rsa.1,Silver Stars
+rsa.1,Golden Arrows
+rsa.1,Amazulu
+rsa.1,SuperSport United
+rsa.1,Kaizer Chiefs
+rsa.1,Maritzburg Utd
+rsa.1,Bidvest Wits
+rsa.1,Mamelodi Sundowns
+rsa.1,Orlando Pirates
+rsa.1,Pretoria Univ
+rsa.1,Free State Stars
+rsa.1,Bay United
+rsa.1,Mpumalanga Black Aces
+rsa.2,Benoni Premier Utd
+rsa.2,Witbank Spurs
+rsa.2,F.C A.K
+rsa.2,FC Cape Town
+rsa.2,Nathi Lions
+rsa.2,Pretoria Univ
+rsa.2,Dynamos
+rsa.2,Bay United
+rsa.2,Mpumalanga Black Aces
+rsa.2,African Warriors
+rsa.2,Vasco Da Gama
+rsa.2,Carara Kicks
+rsa.2,United FC
+rsa.2,Blackburn Rovers
+rsa.2,Chippa United
+rsa.2,Sivutsa Stars
+jpn.1,FC Tokyo
+jpn.1,Urawa Red Diamonds
+jpn.1,Shonan Bellmare
+jpn.1,Sagan Tosu
+jpn.1,Vegalta Sendai
+jpn.1,Vantforet Kofu
+jpn.1,Shimizu S-Pulse
+jpn.1,Oita Trinita
+jpn.1,Jubilo Iwata
+jpn.1,Nagoya Grampus Eight
+jpn.1,Cerezo Osaka
+jpn.1,Omiya Ardija
+jpn.1,Kawasaki Frontale
+jpn.1,Albirex Niigata
+jpn.1,Sanfrecce Hiroshima
+jpn.1,Kashima Antlers
+jpn.1,Yokohama F. Marinos
+jpn.1,Kashiwa Reysol
+slv.1,Metapan
+slv.1,Alianza FC
+slv.1,Aguila
+slv.1,CD FAS
+slv.1,Luis Angel Firpo
+slv.1,Juventud Independiente
+slv.1,Atletico Marte
+slv.1,Universidad de El Salvador
+slv.1,Santa Tecla
+slv.1,CD Dragon
+crc.1,Saprissa
+crc.1,Herediano
+crc.1,Santos
+crc.1,Alajuelense
+crc.1,Perez Zeledon
+crc.1,Puntarenas
+crc.1,Carmelita
+crc.1,Cartagines
+crc.1,Universidad De Costa Rica
+crc.1,Limon
+crc.1,Belen
+crc.1,Club Sport Uruguay
+hon.1,Olimpia
+hon.1,Victoria
+hon.1,CD Motagua
+hon.1,Platense
+hon.1,Real Espana
+hon.1,Vida
+hon.1,Marathon
+hon.1,Deportes Savio
+hon.1,C.D.Real Sociedad
+hon.1,Parrillas One
+gua.1,Suchitepequez
+gua.1,Marquense
+gua.1,Heredia
+gua.1,Comunicaciones
+gua.1,Municipal
+gua.1,Xelaju
+gua.1,Mictlan
+gua.1,Malacateco
+gua.1,Penarol
+gua.1,Universidad de San Carlos
+gua.1,Iztapa
+gua.1,Coatepeque
+usa.world_series,Los Angeles
+usa.world_series,U.A.N.L
+usa.world_series,Chelsea
+usa.world_series,Suwon Bluewings
+usa.usl.1,Montreal Impact
+usa.usl.1,Rochester Rhinos
+usa.usl.1,Portland Timbers
+usa.usl.1,Minnesota Thunder
+usa.usl.1,Carolina RailHawks
+usa.usl.1,Vancouver Whitecaps
+usa.usl.1,Miami FC Blues
+usa.usl.1,Charleston Battery
+usa.usl.1,Puerto Rico Islanders
+usa.usl.1,Austin Aztex
+usa.usl.1,Cleveland City Stars
+arg.2,Hurac?n 
+arg.2,Independiente
+arg.2,Talleres de C?rdoba
+arg.2,Uni?n de Santa Fe
+arg.2,Banfield
+arg.2,Instituto de C?rdoba
+arg.2,Gimnasia y Esgrima de Jujuy
+arg.2,San Mart?n de San Juan
+arg.2,Defensa y Justicia
+arg.2,Aldosivi
+arg.2,Almirante Brown
+arg.2,Ferro Carril Oeste
+arg.2,Independiente Rivadavia
+arg.2,Atl?tico Tucum?n
+arg.2,San Carlos
+arg.2,Brown de Adrogu?
+arg.2,Sarmiento de Jun?n
+arg.2,Patronato
+arg.2,Boca Unidos
+arg.2,Douglas Haig
+arg.2,Crucero del Norte
+arg.2,Sp. Belgrano
+col.2,Am?rica de Cali
+col.2,Uni?n Magdalena
+col.2,Academia FC
+col.2,Bogot? F.C.
+col.2,Cortulu?
+col.2,Deportivo Rionegro
+col.2,Valledupar F.C.
+col.2,Aut?noma
+bra.2,Palmeiras
+bra.2,Paran? Clube
+bra.2,Figueirense FC
+bra.2,Bragantino
+bra.2,Sao Caetano
+bra.2,ASAL/AL
+bra.2,Guaratinguet?
+bra.2,Ituiutaba Esporte Clube
+bra.2,Am?rica RN
+bra.2,Sport
+bra.2,Chapecoense AF
+bra.2,ABC
+bra.2,Ava?
+bra.2,Cear?
+bra.2,Oeste
+bra.2,Goianiense
+bra.2,Am?rica (MG)
+bra.2,Icasa
+bra.2,Joinville
+bra.2,Paysandu SC
+uru.2,Cerrito
+uru.2,Plaza Colonia
+uru.2,Rentistas
+uru.2,Rocha FC
+uru.2,Juventud
+uru.2,Cerro Largo
+uru.2,Atenas
+uru.2,Boston River
+uru.2,Deportivo Maldonado
+uru.2,Durazno
+uru.2,Sud Am?rica
+uru.2,Hurac?n FC
+arg.4,CADU
+arg.4,Luj?n
+arg.4,Berazategui
+arg.4,Sacachispas
+arg.4,Excursionistas
+arg.4,Argentino de Merlo
+arg.4,J. J. de Urquiza
+arg.4,Lamadrid
+arg.4,Cambaceres
+arg.4,Laferrere
+arg.4,Argentino de Quilmes
+arg.4,Dock Sud
+arg.4,Ituzaing?
+arg.4,Liniers
+arg.4,Midland
+arg.4,Central C?rdoba de Rosario
+arg.4,San Telmo
+arg.4,Social Espa?ol
+arg.4,Sportivo Italiano
+arg.4,Talleres de Remedios de Escalada
+par.2,12 de Octubre
+par.2,General Caballero
+par.2,2 de Mayo
+par.2,Fernando de la Mora
+par.2,Cerro Porte?o de Franco
+par.2,General D?az
+par.2,Sportivo Ite?o
+par.2,Colegiales
+par.2,Independiente CG
+par.2,Deportivo Caaguaz?
+par.2,Deportivo Capiat?
+par.2,San Lorenzo
+par.2,Deportivo Santan?
+par.2,Cerro Cor?
+ven.2,Portuguesa
+ven.2,Caracas B FC
+ven.2,Dvo. Barinas
+ven.2,Polic?a de Lara
+ven.2,UCV FC
+ven.2,Angostura
+ven.2,CD San Antonio
+ven.2,Loter?a de T?chira
+ven.2,Ure?a
+ven.2,Mineros B
+ven.2,Dep. Metropolitano
+ven.2,Monagas B
+ven.2,U. Los Andes
+ven.2,Miranda FC
+ven.2,Club Guaran?
+ven.2,Arroceros
+ven.2,Anzo?tegui B
+ven.2,UA Falc?n
+ven.2,Estudiantes Caron?
+arg.5,Central Espa?ol
+arg.5,Ca?uelas
+arg.5,Argentino Rosario
+arg.5,F?nix
+arg.5,Barracas Bolivar
+arg.5,Argentino de Quilmes
+arg.5,Atlas
+arg.5,Central Ballester
+arg.5,Centro Espa?ol
+arg.5,Claypole
+arg.5,Ituzaing?
+arg.5,Juventud Unida
+arg.5,Lugano
+arg.5,Deportivo Paraguayo
+arg.5,Riestra?
+arg.5,San Mart?n B
+arg.5,Victoriano Arenas
+arg.5,Yupanqui
+arg.5,Mu?iz
+per.2,Bolognesi
+per.2,Sport Ancash
+per.2,Jos? G?lvez
+per.2,Atl?tico Minero
+per.2,Deportivo Aviaci?n
+per.2,Hijos de Acosvinchos
+per.2,Univ. San Marcos
+per.2,Atl?tico Torino
+per.2,Alianza Unicachi
+per.2,U Am?rica FC
+mex.2,Necaxa
+mex.2,U.A. de G.
+mex.2,Dorados de Sinaloa
+mex.2,Lobos BUAP
+mex.2,Correcaminos
+mex.2,Cruz Azul Hidalgo
+mex.2,M?rida
+mex.2,Univ. de Guadalajara
+mex.2,Altamira
+mex.2,Celaya
+mex.2,Zacatepec
+mex.2,Delfines
+mex.2,At. San Luis
+mex.2,Ballenas
+mex.2,Alebrijes
+chi.2,Deportes Temuco
+chi.2,Coquimbo Unido
+chi.2,Rangers de Talca
+chi.2,Puerto Montt
+chi.2,Deportes Concepci?n
+chi.2,Antofagasta
+chi.2,Lota Schwager
+chi.2,Osorno
+chi.2,Arica
+chi.2,Copiap?
+chi.2,Curic? Unido
+chi.2,Municipal Iquique
+chi.2,Uni?n La Calera
+chi.2,Deportes Naval
+arg.3,Almagro 
+arg.3,Chacarita Juniors
+arg.3,Los Andes 
+arg.3,Nueva Chicago
+arg.3,Platense
+arg.3,F?nix
+arg.3,Barracas Central
+arg.3,Villa D?lmine
+arg.3,FC Urquiza
+arg.3,Acassuso
+arg.3,Atlanta
+arg.3,Colegiales
+arg.3,Comunicaciones
+arg.3,Defensores de Belgrano
+arg.3,Deportivo Armenio
+arg.3,Deportivo Merlo
+arg.3,Deportivo Mor?n
+arg.3,Estudiantes de Buenos Aires
+arg.3,Flandria
+arg.3,Temperley
+arg.3,Trist?n Su?rez
+ecu.2,Macar?
+ecu.2,Azogues
+ecu.2,Tec. Universitario
+ecu.2,U. Cat?lica
+ecu.2,Liga de Portoviejo
+ecu.2,Rocafuerte
+ecu.2,La Grecia
+ecu.2,Atl?tico Audaz
+ecu.2,U.T. Cotopaxi
+ecu.2,River (E)
+ecu.2,Deportivo Quevedo
+ecu.2,Valle del Chota
+eng.w.1,Arsenal Ladies
+eng.w.1,Birmingham City Ladies
+eng.w.1,Bristol Academy Women's FC?
+eng.w.1,Chelsea Ladies
+eng.w.1,Doncaster Rovers Belles Women
+eng.w.1,Everton Ladies
+eng.w.1,Lincoln Ladies
+eng.w.1,Liverpool Ladies
+ger.playoff.relegation,Kaiserslautern
+ger.playoff.relegation,TSG Hoffenheim
+ned.playoff.relegation,Roda JC Kerkrade
+ned.playoff.relegation,Sparta Rotterdam
+ned.playoff.relegation,FC Volendam
+ned.playoff.relegation,Go Ahead Eagles
+fifa.worldq.afc.conmebol,Uruguay
+fifa.worldq.afc.conmebol,Jordan
+fifa.worldq.concacaf.ofc,Mexico
+fifa.worldq.concacaf.ofc,New Zealand
