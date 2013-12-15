@@ -43,7 +43,7 @@ public class ExpektIntegrationTest extends AbstractSuperbetIntegrationTest {
         BufferedInputStream inputStream = new BufferedInputStream(
                 ExpektUnmarshallingTest.class
                         .getResourceAsStream("/fr/ele/feeds/expekt/exportServlet.xml"));
-        PunterOdds odds = expektSynchronizer.unmarshall(inputStream);
+        PunterOdds odds = expektSynchronizer.unmarshall(inputStream, null);
         expektSynchronizer.synchronize("expekt", odds);
 
         Assert.assertNotNull(matchRepository.findByCode(code));

@@ -12,29 +12,29 @@ import fr.ele.services.repositories.MatchRepository;
 
 public class IntertopsIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
-	private IntertopsSynchronizer intertopsSynchronizer;
+    @Autowired
+    private IntertopsSynchronizer intertopsSynchronizer;
 
-	@Autowired
-	private MatchRepository matchRepository;
+    @Autowired
+    private MatchRepository matchRepository;
 
-	@Override
-	@Before
-	public void initializeDatas() {
-		super.initializeDatas();
-	}
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
-	@Test
-	public void test() throws Throwable {
+    @Test
+    public void test() throws Throwable {
 
-		BufferedInputStream inputStream = new BufferedInputStream(
-				BetclickIntegrationTest.class
-						.getResourceAsStream("/fr/ele/feeds/intertops/intertops.xml"));
+        BufferedInputStream inputStream = new BufferedInputStream(
+                BetclickIntegrationTest.class
+                        .getResourceAsStream("/fr/ele/feeds/intertops/intertops.xml"));
 
-		Result result = intertopsSynchronizer.unmarshall(inputStream);
-		intertopsSynchronizer.synchronize("intertops", result);
+        Result result = intertopsSynchronizer.unmarshall(inputStream, null);
+        intertopsSynchronizer.synchronize("intertops", result);
 
-		// Assert.assertNotNull(matchRepository.findByCode(Code));
-	}
+        // Assert.assertNotNull(matchRepository.findByCode(Code));
+    }
 
 }

@@ -27,7 +27,7 @@ public class BwinIntegationTest extends AbstractSuperbetIntegrationTest {
         BufferedInputStream inputStream = new BufferedInputStream(
                 BwinIntegationTest.class
                         .getResourceAsStream("/fr/ele/feeds/bwin/bwin.xml"));
-        ROOT root = bwinSynchroniser.unmarshall(inputStream);
+        ROOT root = bwinSynchroniser.unmarshall(inputStream, null);
         Assert.assertNotNull(root);
         Assert.assertNotNull(root.getROOT());
 

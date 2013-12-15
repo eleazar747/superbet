@@ -46,11 +46,13 @@ public class BetclickIntegrationTest extends AbstractSuperbetIntegrationTest {
 
     @Test
     public void test() throws Throwable {
+        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         BufferedInputStream inputStream = new BufferedInputStream(
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/betclick/odds_en.xml"));
-        SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream);
-        betclickSynchronizer.synchronize("betclic", dto);
+        SportsBcDto dto = betclickSynchronizer.unmarshall(inputStream,
+                bookMaker.getEncoding());
+        betclickSynchronizer.synchronize(bookMaker.getCode(), dto);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
         List<Bet> bets = Lists.newArrayList(betRepository.findAll());

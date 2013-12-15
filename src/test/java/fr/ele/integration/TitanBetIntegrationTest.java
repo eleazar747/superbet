@@ -1,7 +1,6 @@
 package fr.ele.integration;
 
 import java.io.BufferedInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 import org.junit.Before;
@@ -14,22 +13,22 @@ import fr.ele.services.mapping.TitanBetSynchroniser;
 
 public class TitanBetIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
-	private TitanBetSynchroniser titanBetSynchroniser;
+    @Autowired
+    private TitanBetSynchroniser titanBetSynchroniser;
 
-	@Override
-	@Before
-	public void initializeDatas() {
-		super.initializeDatas();
-	}
+    @Override
+    @Before
+    public void initializeDatas() {
+        super.initializeDatas();
+    }
 
-	@Test
-	public void TestParse() throws IOException {
-		InputStream inputStream = new BufferedInputStream(
-				NordicbetUnwmarshallingTest.class
-						.getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
-		Odds odds = titanBetSynchroniser.unmarshall(inputStream);
-		titanBetSynchroniser.synchronize("titanbet", odds);
-	}
+    @Test
+    public void testParse() {
+        InputStream inputStream = new BufferedInputStream(
+                NordicbetUnwmarshallingTest.class
+                        .getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
+        Odds odds = titanBetSynchroniser.unmarshall(inputStream, null);
+        titanBetSynchroniser.synchronize("titanbet", odds);
+    }
 
 }

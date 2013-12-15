@@ -14,6 +14,8 @@ public class SuperBetTables {
 
         public static final String SYNC_SERVICE = "SYNC_SERVICE";
 
+        public static final String ENCODING = "ENCODING";
+
     }
 
     public static final class MatchTable {

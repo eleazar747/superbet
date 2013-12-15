@@ -1,6 +1,10 @@
 package fr.ele.services.mapping;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import javax.xml.bind.JAXBContext;
@@ -86,12 +90,20 @@ public abstract class AbstractSynchronizer<T> implements SynchronizerService<T> 
     }
 
     @Override
-    public T unmarshall(InputStream inputStream) {
+    public T unmarshall(InputStream inputStream, String charset) {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(getDtoClass());
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+            Reader reader;
+            if (charset != null) {
+                reader = new BufferedReader(new InputStreamReader(inputStream,
+                        charset));
+                return (T) unmarshaller.unmarshal(reader);
+            }
             return (T) unmarshaller.unmarshal(inputStream);
         } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
     }

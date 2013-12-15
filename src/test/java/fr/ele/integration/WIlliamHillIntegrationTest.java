@@ -15,15 +15,15 @@ import com.google.common.collect.Lists;
 import fr.ele.feeds.wiliamhill.dto.Oxip;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.mapping.WilliamHillSynchronizer;
 import fr.ele.services.mapping.BookMakerSynchronizerService;
+import fr.ele.services.mapping.WilliamHillSynchronizer;
 import fr.ele.services.repositories.BetRepository;
 import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.MatchRepository;
 
-public class WIlliamHillIntegrationTest  extends AbstractSuperbetIntegrationTest{
+public class WIlliamHillIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-	@Autowired
+    @Autowired
     private WilliamHillSynchronizer williamHillSynchronizer;
 
     @Autowired
@@ -49,7 +49,7 @@ public class WIlliamHillIntegrationTest  extends AbstractSuperbetIntegrationTest
         BufferedInputStream inputStream = new BufferedInputStream(
                 BetclickIntegrationTest.class
                         .getResourceAsStream("/fr/ele/feeds/williamhill/WilliamHill.xml"));
-        Oxip dto = williamHillSynchronizer.unmarshall(inputStream);
+        Oxip dto = williamHillSynchronizer.unmarshall(inputStream, null);
         williamHillSynchronizer.synchronize("williamhill", dto);
 
         // Assert.assertNotNull(matchRepository.findByCode(code));
@@ -70,7 +70,5 @@ public class WIlliamHillIntegrationTest  extends AbstractSuperbetIntegrationTest
         BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
         bookMakerSynchronizerService.synchronize(bookMaker);
     }
-	
-	
-	
+
 }

@@ -7,5 +7,5 @@ import fr.ele.model.BookMakerSynchronization;
 public interface SynchronizerService<T> {
     BookMakerSynchronization synchronize(String bookmakerCode, T dto);
 
-    T unmarshall(InputStream inputStream);
+    T unmarshall(InputStream inputStream, String charset);
 }

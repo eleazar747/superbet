@@ -72,6 +72,19 @@ public enum BookmakerCsvProperty implements CsvProperty<BookMaker> {
             object.setSynchronizerService((String) context.unmarshall(
                     String.class, value));
         }
+    },
+    ENCODING("encoding") {
+
+        @Override
+        public String getStringValue(CsvContext<BookMaker> context,
+                BookMaker object) {
+            return context.marshall(object.getEncoding());
+        }
+
+        @Override
+        public void setValue(CsvContext context, BookMaker object, String value) {
+            object.setEncoding((String) context.unmarshall(String.class, value));
+        }
     };
 
     private final String header;

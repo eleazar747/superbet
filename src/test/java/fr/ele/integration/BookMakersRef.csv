@@ -1,10 +1,10 @@
-id,code,url,url sync,sync service
-0,betclic,http://betclic.com,http://xml.cdn.betclic.com/odds_en.xml,BetclicSynchronizer
-0,expekt,www.google.com,http://www.expekt.com/exportServlet.com,ExpektSynchronizer
-0,nordicbet,www.google.com,http://xml.nordicbet.com/football.xml,NordicbetSynchronizer
-0,williamhill,www.google.com,http://cachepricefeeds.williamhill.com/openbet_cdn?action=template&template=getHierarchyByMarketType&classId=1&marketSort=--&filterBIR=N,WilliamHillSynchronizer
-0,bwin,www.google.com,https://www.bwin.fr/partner/xml/query.aspx?source=events&xpath=/ROOT,BwinSynchroniser
-0,intertops,www.google.com,www.google.com,IntertopsSynchronizer
-0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetVictorSynchroniser
-0,titanbet,www.google.com,http://xml.nordicbet.com/football.xml,TitanBetSynchroniser
-0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer
+id,code,url,url sync,sync service,encoding
+0,betclic,http://betclic.com,http://xml.cdn.betclic.com/odds_en.xml,BetclicSynchronizer,ISO-8859-2
+0,expekt,www.google.com,http://www.expekt.com/exportServlet.com,ExpektSynchronizer,
+0,nordicbet,www.google.com,http://xml.nordicbet.com/football.xml,NordicbetSynchronizer,ISO-8859-1
+0,williamhill,www.google.com,http://cachepricefeeds.williamhill.com/openbet_cdn?action=template&template=getHierarchyByMarketType&classId=1&marketSort=--&filterBIR=N,WilliamHillSynchronizer,
+0,bwin,www.google.com,https://www.bwin.fr/partner/xml/query.aspx?source=events&xpath=/ROOT,BwinSynchroniser,UTF-8
+0,intertops,www.google.com,www.google.com,IntertopsSynchronizer,
+0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetVictorSynchroniser,
+0,titanbet,www.google.com,http://xml.nordicbet.com/football.xml,TitanBetSynchroniser,
+0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer,ISO-8859-1

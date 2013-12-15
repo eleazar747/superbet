@@ -22,12 +22,15 @@ public class BookMaker extends HasCodeEntity {
     @Column(name = SuperBetTables.BookMakerTable.SYNC_SERVICE, nullable = false)
     private String synchronizerService;
 
+    @Column(name = SuperBetTables.BookMakerTable.ENCODING, nullable = true)
+    private String encoding;
+
     public String getSynchronizerService() {
         return synchronizerService;
     }
 
     public void setSynchronizerService(String synchronierService) {
-        this.synchronizerService = synchronierService;
+        synchronizerService = synchronierService;
     }
 
     public String getUrl() {
@@ -45,4 +48,13 @@ public class BookMaker extends HasCodeEntity {
     public void setUrlSync(String urlSync) {
         this.urlSync = urlSync;
     }
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
 }

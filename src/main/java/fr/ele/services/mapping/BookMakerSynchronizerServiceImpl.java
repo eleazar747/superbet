@@ -4,11 +4,9 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Map;
 
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -21,42 +19,43 @@ import fr.ele.model.ref.BookMaker;
 
 @Service
 public class BookMakerSynchronizerServiceImpl implements
-		BookMakerSynchronizerService, BeanFactoryAware {
+        BookMakerSynchronizerService, BeanFactoryAware {
 
-	private Map<String, SynchronizerService> synchronizers;
+    private Map<String, SynchronizerService> synchronizers;
 
-	@Override
-	public BookMakerSynchronization synchronize(BookMaker bookMaker) {
-		SynchronizerService service = synchronizers.get(bookMaker
-				.getSynchronizerService());
-		if (service == null) {
-			throw new RuntimeException(String.format(
-					"Sync service %s not found for bookmaker %s",
-					bookMaker.getSynchronizerService(), bookMaker.getCode()));
-		}
-		String urlSync = bookMaker.getUrlSync();
-		try {
-			HttpClient client = new DefaultHttpClient();
-			HttpHost proxy = new HttpHost("gecd-proxy.equities.net.intra", 80,
-					"http");
+    @Override
+    public BookMakerSynchronization synchronize(BookMaker bookMaker) {
+        SynchronizerService service = synchronizers.get(bookMaker
+                .getSynchronizerService());
+        if (service == null) {
+            throw new RuntimeException(String.format(
+                    "Sync service %s not found for bookmaker %s",
+                    bookMaker.getSynchronizerService(), bookMaker.getCode()));
+        }
+        String urlSync = bookMaker.getUrlSync();
+        try {
+            HttpClient client = new DefaultHttpClient();
 
-			HttpGet request = new HttpGet(urlSync);
-			request.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,
-					proxy);
-			HttpResponse response = client.execute(request);
-			InputStream inputStream = response.getEntity().getContent();
-			Object dto = service.unmarshall(new BufferedInputStream(
-					inputStream, 5000));
-			return service.synchronize(bookMaker.getCode(), dto);
-		} catch (Throwable e) {
-			throw new RuntimeException(e);
-		}
-	}
+            HttpGet request = new HttpGet(urlSync);
+            // HttpHost proxy = new HttpHost("gecd-proxy.equities.net.intra",
+            // 80,
+            // "http");
+            // request.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,
+            // proxy);
+            HttpResponse response = client.execute(request);
+            InputStream inputStream = response.getEntity().getContent();
+            Object dto = service.unmarshall(new BufferedInputStream(
+                    inputStream, 5000), bookMaker.getEncoding());
+            return service.synchronize(bookMaker.getCode(), dto);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-	@Override
-	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		ListableBeanFactory lf = (ListableBeanFactory) beanFactory;
-		synchronizers = lf.getBeansOfType(SynchronizerService.class);
-	}
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        ListableBeanFactory lf = (ListableBeanFactory) beanFactory;
+        synchronizers = lf.getBeansOfType(SynchronizerService.class);
+    }
 
 }
