@@ -2,6 +2,8 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,SPORT,Football,Football
 0,betclic,SPORT,Tennis,Tennis
 0,betvictor,SPORT,Football,Football
+0,oddsportal,SPORT,American Football,American Football
+0,oddsportal,SPORT,Basketball,Basketball
 0,titanbet,SPORT,Football,Football
 0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
 0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
@@ -16,8 +18,9 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,expekt,BET_TYPE,Match Result,Match Result
 0,nordicbet,SPORT,Football,Football
 0,nordicbet,SPORT,Tennis, Tennis
-0,nordicbet,BET_TYPE,(Totalgames)(under/over:22),Over Under
-0,nordicbet,BET_TYPE,(under/over:4.5),Over Under
+0,nordicbet,BET_TYPE,(Totalgames)(under/over:22),Over Under 22
+0,nordicbet,BET_TYPE,(under/over:1.5),Over/Under 1.5
+0,nordicbet,BET_TYPE,(under/over:4.5),Over/Under 4.5
 0,nordicbet,BET_TYPE,Result,Match Result
 0,nordicbet,TEAM,1461 Trabzon,1461 Trabzon
 0,betclic,TEAM,1860 Munich,1860 Munich
@@ -3097,7 +3100,8 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betclic,TEAM,Zulia,Zulia
 0,betclic,TEAM,Zwolle,Zwolle
 0,williamhill,SPORT,UEFA Champions League,Football
-0,williamhill,BET_TYPE,match betting,Match Result
+0,williamhill,SPORT,Football,Football
+0,williamhill,BET_TYPE,Match Betting,Match Result
 0,bwin,SPORT,4,Football
 0,bwin,SPORT,5,Tennis
 0,bwin,BET_TYPE,1 X 2,Match Result
