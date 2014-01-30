@@ -3107,3 +3107,18 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,bwin,BET_TYPE,1 X 2,Match Result
 0,intertops,SPORT,Soccer,Football
 0,intertops,BET_TYPE,Single Match,Match Result
+0,betexplorer,SPORT,Footballl,Footballl
+0,betexplorer,SPORT,Volleyball,Volleyball
+0,betexplorer,SPORT,BasketBall,BasketBall
+0,betexplorer,SPORT,Handball,Handball
+0,betexplorer,BET_TYPE,Over/Under 0.50,Over/Under 0.5
+0,betexplorer,BET_TYPE,Over/Under 1.50,Over/Under 1.5
+0,betexplorer,BET_TYPE,Over/Under 2.50,Over/Under 2.5
+0,betexplorer,BET_TYPE,Over/Under 3.50,Over/Under 3.5
+0,betexplorer,BET_TYPE,Over/Under 4.50,Over/Under 4.5
+0,betexplorer,BET_TYPE,1x2,Match Result
+0,betexplorer,BET_TYPE,Home/Away,Match Result
+
+
+
+
