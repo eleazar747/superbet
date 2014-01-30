@@ -10,3 +10,4 @@ id,code,url,url sync,sync service,encoding
 0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer,ISO-8859-1
 0,oddsportal,www.google.com,http://xml.nordicbet.com/football.xml,oddsPortalSynchroniser,
 0,betexplorer,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,PinnacleSports,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
