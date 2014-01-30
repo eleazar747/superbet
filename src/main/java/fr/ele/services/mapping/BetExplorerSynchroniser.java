@@ -9,6 +9,7 @@ import java.util.Date;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import com.ibm.icu.text.DateFormat;
@@ -81,36 +82,47 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 						DateFormat formatter = new SimpleDateFormat(
 								"dd:MM:yyyy:hh:mm");
-						Date date = formatter.parse(test);
-						Date timeSQL = new Date();
-						if (date.compareTo(timeSQL) > 0) {
-							matchCount++;
-							String extract = linkHref.substring(
-									linkHref.length() - 9,
-									linkHref.length() - 1);
-							// before, need to retrive match team1 vs team 2;
-							String linkOdd1 = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
-									+ extract + "&b=ou";
-							parseMatchId(linkOdd1, sport, context);
-							/*
-							 * String linkOdd2 =
-							 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
-							 * + extract + "&b=1x2"; parseMatchId(linkOdd2,
-							 * context); String linkOdd3 =
-							 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
-							 * + extract + "&b=ou"; parseMatchId(linkOdd3,
-							 * context);
-							 */
-							System.out.println(matchCount + "," + linkOdd1);
-						}
+						if (test != null || test != "") {
+							Date date = formatter.parse(test);
+							Date timeSQL = new Date();
+							if (date.compareTo(timeSQL) > 0) {
+								matchCount++;
+								String extract = linkHref.substring(
+										linkHref.length() - 9,
+										linkHref.length() - 1);
+								// before, need to retrive match team1 vs team
+								// 2;
+								String linkOdd1 = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
+										+ extract + "&b=ou";
+								String teams = t.select("td").get(1).text();
+								if (teams != null) {
+									String[] players = teams.split(" - ");
 
+									Match match = context
+											.findOrCreateMatch(sport, date,
+													players[0], players[1]);
+									parseMatchId(linkOdd1, sport, match,
+											context);
+								}
+								/*
+								 * String linkOdd2 =
+								 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
+								 * + extract + "&b=1x2"; parseMatchId(linkOdd2,
+								 * context); String linkOdd3 =
+								 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
+								 * + extract + "&b=ou"; parseMatchId(linkOdd3,
+								 * context);
+								 */
+								System.out.println(matchCount + "," + linkOdd1);
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 
-	private long parseMatchId(String httpRef, Sport sport,
+	private long parseMatchId(String httpRef, Sport sport, Match match,
 			SynchronizerContext context) throws Throwable {
 		long nb = 0L;
 		URL website = new URL(httpRef);
@@ -125,7 +137,8 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 			for (Element t : e) {
 				org.jsoup.select.Elements f = t.select("td");
-				parseOverUnder(f, t);
+
+				parseOverUnder(f, t, match, context);
 
 			}
 		}
@@ -133,21 +146,44 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 		return nb;
 	}
 
-	private void parseOverUnder(org.jsoup.select.Elements elements, Element t) {
+	private void parseOverUnder(org.jsoup.select.Elements elements, Element t,
+			Match match, SynchronizerContext context) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
-		Element tnode = t.select("th").first();
-		String hstr = tnode.attr("span.class");
-		int count = 0;
 
+		Element tnode = t.select("th").first();
+		Elements link = tnode.select("a");
+		if (link != null) {
+			Element tnode2 = link.select("span").first();
+
+			if (tnode2 != null) {
+				Elements link2 = tnode2.select("span");
+
+				if (link2 != null) {
+					String bookie = link2.text().replaceAll(" ", "")
+							.replaceAll("/", "").replaceAll("th", "")
+							.replaceAll("span", "").replaceAll("a", "")
+							.replace("(www)", "").replaceAll("<", "")
+							.replaceAll(">", "").replace(" \\", "")
+							.replace("\\", "");
+					bookie = bookie.replaceAll(" ", "");
+				}
+			}
+		}
+
+		int count = 0;
+		BetType betType = null;
 		for (Element r : elements) {
+
 			count++;
 			if (count == 2) {
 
 				String str = r.text().replaceAll("/", "").replaceAll("td", "")
 						.replaceAll("sets", "").replaceAll("<", "")
-						.replaceAll(">", "").replace(" \\", "");
+						.replaceAll("points", "").replaceAll(">", "")
+						.replace(" \\", "");
 				str = "Over/Under " + str;
+				betType = context.findBetType(str);
 				System.out.println(str);
 
 			}
@@ -156,6 +192,11 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				String odd1 = r.attr("data-odd").replaceAll("/", "")
 						.replaceAll("<", "").replaceAll(">", "")
 						.replace("\\", "").replace("\"", "");
+
+				if (betType != null) {
+					String subType = "Over";
+					convert(odd1, match, betType, subType, context);
+				}
 				System.out.println(odd1);
 			}
 			if (count == 4) {
@@ -163,18 +204,15 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				String odd2 = r.attr("data-odd").replaceAll("/", "")
 						.replaceAll("<", "").replaceAll(">", "")
 						.replace("\\", "").replace("\"", "");
-
+				if (betType != null) {
+					String subType = "Under";
+					convert(odd2, match, betType, subType, context);
+				}
 				System.out.println(odd2);
 
 			}
 
 		}
-		/**
-		 * Match match = context.findOrCreateMatch(sport, matchBcDto
-		 * .getStartDate().toGregorianCalendar().getTime(), player1, player2);
-		 * 
-		 * BetType betType = context.findBetType(betName);
-		 */
 
 	}
 
@@ -194,22 +232,18 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	}
 
 	// Optional : maybe to create a historical.
-	private void convert(Date date, String odd, Match match, String betTypes,
+	private void convert(String odd, Match match, BetType betType,
 			String subBetType, SynchronizerContext context) {
 
-		BetType betType = context.findBetType(betTypes);
-		if (betType != null) {
-
-			RefKey refKey = context.findOrCreateRefKey(match, betType);
-			Bet bet = new Bet();
-			bet.setOdd(Long.valueOf(odd));
-			bet.setRefKey(refKey);
-			bet.setCode(subBetType);
-			bet.setDate(context.getSynchronizationDate());
-			bet.setBookMaker(context.getBookMaker());
-			bet.setBookmakerBetId("dummy");
-			saveBet(bet);
-		}
+		RefKey refKey = context.findOrCreateRefKey(match, betType);
+		Bet bet = new Bet();
+		bet.setOdd(Double.valueOf(odd));
+		bet.setRefKey(refKey);
+		bet.setCode(subBetType);
+		bet.setDate(context.getSynchronizationDate());
+		bet.setBookMaker(context.getBookMaker());
+		bet.setBookmakerBetId("dummy");
+		saveBet(bet);
 
 	}
 }
