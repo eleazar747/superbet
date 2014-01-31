@@ -42,9 +42,10 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 			parseNextMatch("http://www.betexplorer.com/next/volleyball/",
 					VOLLEYBALL, context);
-			/**
-			 * parseNextMatch("http://www.betexplorer.com/next/volleyball/",
-			 * FOOTBALL, context);
+
+			parseNextMatch("http://www.betexplorer.com/next/soccer/", FOOTBALL,
+					context);
+			/***
 			 * parseNextMatch("http://www.betexplorer.com/next/volleyball/",
 			 * VOLLEYBALL, context);
 			 * parseNextMatch("http://www.betexplorer.com/next/basketball/",
@@ -53,7 +54,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			 * HANDBALL, context);
 			 * parseNextMatch("http://www.betexplorer.com/next/hockey/", HOCKEY,
 			 * context);
-			 * parseNextMatch("http://www.betexplorer.com/next/hockey/",
+			 * parseNextMatch("http://www.betexplorer.com/next/baseball/",
 			 * BASEBALL, context);
 			 */
 			// for
@@ -66,12 +67,6 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 		return nb;
 	}
 
-	/**
-	 * @param httpRef
-	 * @param sportType
-	 * @param context
-	 * @throws Throwable
-	 */
 	private void parseNextMatch(String httpRef, String sportType,
 			SynchronizerContext context) throws Throwable {
 		// TODO Auto-generated method stub
@@ -190,6 +185,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 			for (Element t : e) {
 				org.jsoup.select.Elements f = t.select("td");
+
 				if (typeBet.equals("Over/Under")) {
 					parseOverUnder(f, t, match, context);
 				}
@@ -199,6 +195,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				if (typeBet.equals("1x2")) {
 					parseMatchResult(f, t, match, context);
 				}
+
 			}
 		}
 
@@ -460,16 +457,17 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	// Optional : maybe to create a historical.
 	private void convert(String odd, Match match, BetType betType,
 			String subBetType, SynchronizerContext context) {
-
-		RefKey refKey = context.findOrCreateRefKey(match, betType);
-		Bet bet = new Bet();
-		bet.setOdd(Double.valueOf(odd));
-		bet.setRefKey(refKey);
-		bet.setCode(subBetType);
-		bet.setDate(context.getSynchronizationDate());
-		bet.setBookMaker(context.getBookMaker());
-		bet.setBookmakerBetId("dummy");
-		saveBet(bet);
-
+		if (odd.isEmpty() == false) {
+			RefKey refKey = context.findOrCreateRefKey(match, betType);
+			Bet bet = new Bet();
+			bet.setOdd(Double.valueOf(odd));
+			bet.setRefKey(refKey);
+			bet.setCode(subBetType);
+			bet.setDate(context.getSynchronizationDate());
+			bet.setBookMaker(context.getBookMaker());
+			bet.setBookmakerBetId("dummy");
+			saveBet(bet);
+		}
 	}
+
 }
