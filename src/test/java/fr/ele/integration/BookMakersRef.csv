@@ -3,11 +3,53 @@ id,code,url,url sync,sync service,encoding
 0,expekt,www.google.com,http://www.expekt.com/exportServlet.com,ExpektSynchronizer,
 0,nordicbet,www.google.com,http://xml.nordicbet.com/football.xml,NordicbetSynchronizer,ISO-8859-1
 0,williamhill,www.google.com,http://cachepricefeeds.williamhill.com/openbet_cdn?action=template&template=getHierarchyByMarketType&classId=1&marketSort=--&filterBIR=N,WilliamHillSynchronizer,
-0,bwin,www.google.com,https://www.bwin.fr/partner/xml/query.aspx?source=events&xpath=/ROOT,BwinSynchroniser,UTF-8
+0,BWIN,www.google.com,https://www.bwin.fr/partner/xml/query.aspx?source=events&xpath=/ROOT,BwinSynchroniser,UTF-8
 0,intertops,www.google.com,www.google.com,IntertopsSynchronizer,
 0,betvictor,www.google.com,http://xml.nordicbet.com/football.xml,BetVictorSynchroniser,
 0,titanbet,www.google.com,http://xml.nordicbet.com/football.xml,TitanBetSynchroniser,
 0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer,ISO-8859-1
 0,oddsportal,www.google.com,http://xml.nordicbet.com/football.xml,oddsPortalSynchroniser,
 0,betexplorer,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
-0,PinnacleSports,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,10Bet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,12BET,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,188BET,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,5Dimes,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Bestbet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,bet-at-home,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,bet365,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Betclic,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,BetCRIS,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,BetOnline,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Betsafe,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Betsson,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,BetVictor,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Betway,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,bwin,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,ComeOn,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Coral,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Dafabet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,DOXXbet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Expekt,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,FortunaWin,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Interwetten,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Jetbull,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Ladbrokes,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,LEON Bets,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,myBet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,NordicBet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
+0,Noxwin,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-2
+0,Offsidebet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-3
+0,Paddy Power,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-4
+0,Paf,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-5
+0,Pinnacle Sports,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-6
+0,Redbet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-7
+0,SBOBET,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-8
+0,Sportingbet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-9
+0,Stan James,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-10
+0,The Greek,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-11
+0,Titanbet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-12
+0,totesport,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-13
+0,Unibet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-14
+0,William Hill,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-15
+0,Betfair,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-16
+
