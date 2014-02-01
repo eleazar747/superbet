@@ -27,6 +27,6 @@ public class BetExplorerIntegration extends AbstractSuperbetIntegrationTest {
 				NordicbetUnwmarshallingTest.class
 						.getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
 		Odds odds = betExplorerSynchroniser.unmarshall(inputStream, null);
-		betExplorerSynchroniser.synchronize("titanbet", odds);
+		betExplorerSynchroniser.synchronize("betexplorer", odds);
 	}
 }

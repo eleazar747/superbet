@@ -39,19 +39,22 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 		long nb = 0L;
 
 		try {
-
 			parseNextMatch("http://www.betexplorer.com/next/volleyball/",
 					VOLLEYBALL, context);
 
-			parseNextMatch("http://www.betexplorer.com/next/soccer/", FOOTBALL,
-					context);
+			parseNextMatch("http://www.betexplorer.com/next/handball/",
+					HANDBALL, context);
+
+			parseNextMatch("http://www.betexplorer.com/next/basketball/",
+					BASKETBALL, context);
 			/***
-			 * parseNextMatch("http://www.betexplorer.com/next/volleyball/",
-			 * VOLLEYBALL, context);
-			 * parseNextMatch("http://www.betexplorer.com/next/basketball/",
-			 * BASKETBALL, context);
-			 * parseNextMatch("http://www.betexplorer.com/next/handball/",
-			 * HANDBALL, context);
+			parseNextMatch("http://www.betexplorer.com/next/soccer/",
+			 FOOTBALL, context);
+			 
+			
+			 * 
+			 parseNextMatch("http://www.betexplorer.com/next/soccer/",
+			 FOOTBALL, context);
 			 * parseNextMatch("http://www.betexplorer.com/next/hockey/", HOCKEY,
 			 * context);
 			 * parseNextMatch("http://www.betexplorer.com/next/baseball/",
@@ -70,13 +73,12 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	private void parseNextMatch(String httpRef, String sportType,
 			SynchronizerContext context) throws Throwable {
 		// TODO Auto-generated method stub
-
-		URL website = new URL(httpRef);
-		URLConnection urlConnetion = website.openConnection(getProxy());
-		Document doc = Jsoup
-				.parse(urlConnetion.getInputStream(), null, httpRef);
-
-		// Document doc = Jsoup.connect(httpRef).get();
+		/*
+		 * URL website = new URL(httpRef); URLConnection urlConnetion =
+		 * website.openConnection(getProxy()); Document doc = Jsoup
+		 * .parse(urlConnetion.getInputStream(), null, httpRef);
+		 */
+		Document doc = Jsoup.connect(httpRef).get();
 		org.jsoup.select.Elements e = doc.select("tr");
 		// Define sport
 		Sport sport = context.findSport(sportType);
@@ -113,18 +115,19 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 									Match match = context
 											.findOrCreateMatch(sport, date,
 													players[0], players[1]);
-									/**
-									 * if (sportType.toUpperCase().equals(
-									 * "FOOTBALL") ||
-									 * sportType.toUpperCase().equals(
-									 * "HANDBALL") ||
-									 * sportType.toUpperCase().equals(
-									 * "HOCKEY")) { String linkOdd2 =
-									 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
-									 * + extract + "&b=1x2";
-									 * parseMatchId(linkOdd2, match, "1x2",
-									 * context); }
-									 */
+
+									if (sportType.toUpperCase().equals(
+											"FOOTBALL")
+											|| sportType.toUpperCase().equals(
+													"HANDBALL")
+											|| sportType.toUpperCase().equals(
+													"HOCKEY")) {
+										String linkOdd2 = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
+												+ extract + "&b=1x2";
+										parseMatchId(linkOdd2, match, "1x2",
+												context);
+									}
+
 									// Over Under for all
 									if (sportType.toUpperCase().equals(
 											"FOOTBALL")
@@ -145,18 +148,18 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 									// Mactch result for BasketBall and
 									// Vollayball
-									/**
-									 * if (sportType.toUpperCase().equals(
-									 * "BASKETBALL") ||
-									 * sportType.toUpperCase().equals(
-									 * "VOLLEYBALL") ||
-									 * sportType.toUpperCase().equals(
-									 * "HOCKEY")) { String linkOdd3 =
-									 * "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
-									 * + extract + "&b=ha";
-									 * parseMatchId(linkOdd3, match,
-									 * "Home/Away", context); }
-									 */
+
+									if (sportType.toUpperCase().equals(
+											"BASKETBALL")
+											|| sportType.toUpperCase().equals(
+													"VOLLEYBALL")
+											|| sportType.toUpperCase().equals(
+													"HOCKEY")) {
+										String linkOdd3 = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e="
+												+ extract + "&b=ha";
+										parseMatchId(linkOdd3, match,
+												"Home/Away", context);
+									}
 
 								}
 							}
@@ -165,19 +168,19 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				}
 			}
 		}
+
 	}
 
 	private long parseMatchId(String httpRef, Match match, String typeBet,
 			SynchronizerContext context) throws Throwable {
 
 		long nb = 0L;
-
-		URL website = new URL(httpRef);
-		URLConnection urlConnetion = website.openConnection(getProxy());
-		Document docmatch = Jsoup.parse(urlConnetion.getInputStream(), null,
-				httpRef);
-
-		// Document docmatch = Jsoup.connect(httpRef).get();
+		/*
+		 * URL website = new URL(httpRef); URLConnection urlConnetion =
+		 * website.openConnection(getProxy()); Document docmatch =
+		 * Jsoup.parse(urlConnetion.getInputStream(), null, httpRef);
+		 */
+		Document docmatch = Jsoup.connect(httpRef).get();
 		if (docmatch.select("tr").isEmpty() == false) {
 			org.jsoup.select.Elements e = docmatch.select("tr");
 
@@ -206,7 +209,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			Match match, SynchronizerContext context) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
-		String bookie = null;
+		String bookie = "";
 		Element tnode = t.select("th").first();
 		Elements link = tnode.select("a");
 		if (link != null) {
@@ -240,8 +243,6 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				str = "Over/Under " + str;
 				betType = context.findBetType(str);
 
-				System.out.println(str);
-
 			}
 			if (count == 3) {
 
@@ -251,14 +252,16 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 				if (betType != null) {
 					String subType = "Over";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker() != null) {
-						convert(odd1, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd1, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd1);
+
 			}
 			if (count == 4) {
 
@@ -267,14 +270,15 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 						.replace("\\", "").replace("\"", "");
 				if (betType != null) {
 					String subType = "Under";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker() != null) {
-						convert(odd2, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd2, match, betType, subType, context);
+						}
+						context.setBookmaker("betexplorer");
 					}
-					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd2);
 
 			}
 
@@ -286,7 +290,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			Element t, Match match, SynchronizerContext context) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
-		String bookie = null;
+		String bookie = "";
 		Element tnode = t.select("th").first();
 		Elements link = tnode.select("a");
 		if (link != null) {
@@ -319,15 +323,15 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				betType = context.findBetType("1x2");
 				if (betType != null && odd1 != null) {
 					String subType = "1";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker() != null) {
-						convert(odd1, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd1, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd1);
-
 			}
 			if (count == 3) {
 
@@ -337,14 +341,16 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				betType = context.findBetType("1x2");
 				if (betType != null && odd2 != null) {
 					String subType = "x";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker() != null) {
-						convert(odd2, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd2, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd2);
+
 			}
 			if (count == 4) {
 
@@ -354,15 +360,16 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				betType = context.findBetType("1x2");
 				if (betType != null && odd3 != null) {
 					String subType = "2";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker() != null) {
-						convert(odd3, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd3, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 
 				}
-				System.out.println(odd3);
 
 			}
 
@@ -374,7 +381,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			Match match, SynchronizerContext context) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
-		String bookie = null;
+		String bookie = "";
 		Element tnode = t.select("th").first();
 		Elements link = tnode.select("a");
 		if (link != null) {
@@ -407,14 +414,15 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				betType = context.findBetType("Home/Away");
 				if (betType != null && odd1 != null) {
 					String subType = "1";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker().getCode().equals("") == false) {
-						convert(odd1, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd1, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd1);
 
 			}
 			if (count == 3) {
@@ -425,14 +433,15 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 				betType = context.findBetType("Home/Away");
 				if (betType != null && odd2 != null) {
 					String subType = "2";
-					context.setBookmaker((String) bookie.subSequence(1,
-							bookie.length()));
-					if (context.getBookMaker().getCode().equals("") == false) {
-						convert(odd2, match, betType, subType, context);
+					if (bookie.equals("") == false) {
+						context.setBookmaker((String) bookie.subSequence(1,
+								bookie.length()));
+						if (context.getBookMaker() != null) {
+							convert(odd2, match, betType, subType, context);
+						}
 					}
 					context.setBookmaker("betexplorer");
 				}
-				System.out.println(odd2);
 			}
 
 		}

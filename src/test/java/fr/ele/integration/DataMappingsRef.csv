@@ -3109,7 +3109,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,intertops,BET_TYPE,Single Match,Match Result
 0,betexplorer,SPORT,Football,Football
 0,betexplorer,SPORT,Volleyball,Volleyball
-0,betexplorer,SPORT,BasketBall,BasketBall
+0,betexplorer,SPORT,Basketball,Basketball
 0,betexplorer,SPORT,Handball,Handball
 0,betexplorer,BET_TYPE,Over/Under 0.50,Over/Under 0.5
 0,betexplorer,BET_TYPE,Over/Under 1.50,Over/Under 1.5
