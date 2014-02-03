@@ -18,38 +18,39 @@ import fr.ele.model.search.BetSearch;
 
 @Path(BetRestService.PATH)
 public interface BetRestService {
-    public static final String PATH = "bets";
+	public static final String PATH = "bets";
 
-    public static final String SERVER = "BetRestService";
+	public static final String SERVER = "BetRestService";
 
-    public static final class SureBetDto {
-        public String sport, betType, match;
+	public static final class SureBetDto {
+		public String sport, betType, match;
+		public String odds, date, profit;
 
-        public Map<String, Double> alternatives;
-    }
+		public Map<String, Double> alternatives;
+	}
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("sures")
-    List<SureBetDto> getSureBets();
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("sures")
+	List<SureBetDto> getSureBets();
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("search")
-    Iterable<BetDto> search(BetSearch search);
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("search")
+	Iterable<BetDto> search(BetSearch search);
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    Iterable<BetDto> getBets();
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	Iterable<BetDto> getBets();
 
-    @XmlRootElement
-    public static class BetDto {
-        public Double value;
+	@XmlRootElement
+	public static class BetDto {
+		public Double value;
 
-        public String type, bookmaker, match, alternative, sport;
+		public String type, bookmaker, match, alternative, sport;
 
-        @XmlJavaTypeAdapter(DateTimeAdapter.class)
-        public Date matchDate, syncDate;
-    }
+		@XmlJavaTypeAdapter(DateTimeAdapter.class)
+		public Date matchDate, syncDate;
+	}
 }
