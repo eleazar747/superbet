@@ -14,6 +14,8 @@ import fr.ele.services.mapping.SynchronizerContext;
 
 public class OverUnderMatchParser extends MatchParser {
 
+	private Element elementTmp;
+
 	@Override
 	protected List<Bet> doParse(Elements elements, Element t, Match match,
 			SynchronizerContext context) {
@@ -52,12 +54,19 @@ public class OverUnderMatchParser extends MatchParser {
 			betType = context.findBetType(str);
 
 			if (it.hasNext()) {
-				String odd = extractOdd(it.next());
-				createOdd(match, context, bookie, bets, betType, odd, "Over");
-				if (it.hasNext()) {
-					odd = extractOdd(it.next());
+				elementTmp = it.next();
+				String odd = extractOdd(elementTmp);
+				if (extractActiveOdd(elementTmp) == false) {
 					createOdd(match, context, bookie, bets, betType, odd,
-							"Under");
+							"Over");
+				}
+				if (it.hasNext()) {
+					elementTmp = it.next();
+					odd = extractOdd(elementTmp);
+					if (extractActiveOdd(elementTmp) == false) {
+						createOdd(match, context, bookie, bets, betType, odd,
+								"Under");
+					}
 				}
 			}
 		}

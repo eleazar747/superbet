@@ -76,6 +76,10 @@ public abstract class MatchParser {
 				.replaceAll(">", "").replace("\\", "").replace("\"", "");
 	}
 
+	protected boolean extractActiveOdd(Element element) {
+		return element.toString().contains("notactive");
+	}
+
 	private Proxy getProxy() throws Throwable {
 		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
 				"gecd-proxy.equities.net.intra", 8080));

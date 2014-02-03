@@ -14,6 +14,8 @@ import fr.ele.services.mapping.SynchronizerContext;
 
 public class WinnerMatchParser extends MatchParser {
 
+	private Element elementTmp;
+
 	@Override
 	protected List<Bet> doParse(Elements elements, Element t, Match match,
 			SynchronizerContext context) {
@@ -46,11 +48,18 @@ public class WinnerMatchParser extends MatchParser {
 			it.next();
 			betType = context.findBetType("Home/Away");
 			if (it.hasNext()) {
-				String odd = extractOdd(it.next());
-				createOdd(match, context, bookie, bets, betType, odd, "1");
+				elementTmp = it.next();
+				String odd = extractOdd(elementTmp);
+				if (extractActiveOdd(elementTmp) == false) {
+					createOdd(match, context, bookie, bets, betType, odd, "1");
+				}
 				if (it.hasNext()) {
-					odd = extractOdd(it.next());
-					createOdd(match, context, bookie, bets, betType, odd, "2");
+					elementTmp = it.next();
+					odd = extractOdd(elementTmp);
+					if (extractActiveOdd(elementTmp) == false) {
+						createOdd(match, context, bookie, bets, betType, odd,
+								"2");
+					}
 				}
 			}
 		}
