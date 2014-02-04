@@ -44,30 +44,33 @@ public class ResultMatchParser extends MatchParser {
 		List<Bet> bets = new LinkedList<Bet>();
 		BetType betType = null;
 		Iterator<Element> it = elements.iterator();
-		if (it.hasNext()) {
-			it.next();
-			betType = context.findBetType("1x2");
+		if (extractActiveOdd(elements.toString()) == false) {
 			if (it.hasNext()) {
-				elementTmp = it.next();
-				String odd = extractOdd(elementTmp);
-
-				if (extractActiveOdd(elementTmp) == false) {
-					createOdd(match, context, bookie, bets, betType, odd, "1");
-				}
+				it.next();
+				betType = context.findBetType("1x2");
 				if (it.hasNext()) {
 					elementTmp = it.next();
+					String odd = extractOdd(elementTmp);
 
-					odd = extractOdd(elementTmp);
 					if (extractActiveOdd(elementTmp) == false) {
 						createOdd(match, context, bookie, bets, betType, odd,
-								"x");
+								"1");
 					}
 					if (it.hasNext()) {
 						elementTmp = it.next();
+
 						odd = extractOdd(elementTmp);
-						if (extractActiveOdd(elementTmp) == false) {
+
+						createOdd(match, context, bookie, bets, betType, odd,
+								"x");
+
+						if (it.hasNext()) {
+							elementTmp = it.next();
+							odd = extractOdd(elementTmp);
+
 							createOdd(match, context, bookie, bets, betType,
 									odd, "2");
+
 						}
 					}
 				}

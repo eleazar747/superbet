@@ -20,6 +20,7 @@ import fr.ele.feeds.nordicbet.dto.Odds;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
+import fr.ele.services.mapping.betExplorer.AsianHandicapParser;
 import fr.ele.services.mapping.betExplorer.MatchParser;
 import fr.ele.services.mapping.betExplorer.OverUnderMatchParser;
 import fr.ele.services.mapping.betExplorer.ResultMatchParser;
@@ -36,32 +37,60 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 	private final String BASKETBALL = "Basketball";
 
+	private final String FOOTBALL = "Football";
+
+	private final String HOCKEY = "Hockey";
+
+	private final String BASEBALL = "Baseball";
+
 	@Override
 	protected long convert(SynchronizerContext context, Odds dto) {
 		long nb = 0L;
 
 		try {
 
+			LOGGER.info("Synchroniser Volleyball starts at :" + new Date()
+					+ "\n");
 			parseNextMatch("http://www.betexplorer.com/next/volleyball/",
-					VOLLEYBALL, context, new ResultMatchParser(),
-					new OverUnderMatchParser());
+					VOLLEYBALL, context, new OverUnderMatchParser(),
+					new WinnerMatchParser(), new AsianHandicapParser());
+			LOGGER.info("Synchroniser Volleyball finish at :" + new Date()
+					+ "\n");
 
+			LOGGER.info("Synchroniser Handball starts at :" + new Date() + "\n");
 			parseNextMatch("http://www.betexplorer.com/next/handball/",
 					HANDBALL, context, new OverUnderMatchParser(),
-					new WinnerMatchParser());
+					new ResultMatchParser(), new AsianHandicapParser());
+			LOGGER.info("Synchroniser Handball finish at :" + new Date() + "\n");
 
+			LOGGER.info("Synchroniser Basketball starts at :" + new Date()
+					+ "\n");
 			parseNextMatch("http://www.betexplorer.com/next/basketball/",
 					BASKETBALL, context, new ResultMatchParser(),
-					new OverUnderMatchParser());
-			/***
-			 * parseNextMatch("http://www.betexplorer.com/next/soccer/",
-			 * FOOTBALL, context);
-			 * parseNextMatch("http://www.betexplorer.com/next/soccer/",
-			 * FOOTBALL, context);
+					new OverUnderMatchParser(), new AsianHandicapParser());
+
+			LOGGER.info("Synchroniser Basketball finish at :" + new Date()
+					+ "\n");
+			/**
+			 * LOGGER.info("Synchroniser Football starts at :" + new Date() +
+			 * "\n"); parseNextMatch("http://www.betexplorer.com/next/soccer/",
+			 * FOOTBALL, context, new ResultMatchParser(), new
+			 * OverUnderMatchParser());
+			 * LOGGER.info("Synchroniser Football finish at :" + new Date() +
+			 * "\n"); /** LOGGER.info("Synchroniser Hockey starts at :" + new
+			 * Date() + "\n");
 			 * parseNextMatch("http://www.betexplorer.com/next/hockey/", HOCKEY,
-			 * context);
+			 * context, new ResultMatchParser(), new OverUnderMatchParser());
+			 * LOGGER.info("Synchroniser Hockey finish at :" + new Date() +
+			 * "\n");
+			 * 
+			 * LOGGER.info("Synchroniser Baseball starts at :" + new Date() +
+			 * "\n");
 			 * parseNextMatch("http://www.betexplorer.com/next/baseball/",
-			 * BASEBALL, context);
+			 * BASEBALL, context, new ResultMatchParser(), new
+			 * OverUnderMatchParser());
+			 * LOGGER.info("Synchroniser Baseball finish at :" + new Date() +
+			 * "\n");
 			 */
 			// for
 			// Volleyball

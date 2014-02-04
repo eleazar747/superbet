@@ -44,28 +44,31 @@ public class OverUnderMatchParser extends MatchParser {
 		List<Bet> bets = new LinkedList<Bet>();
 		BetType betType = null;
 		Iterator<Element> it = elements.iterator();
-		if (it.hasNext()) {
-			it.next();
-			String str = it.next().text().replaceAll("/", "")
-					.replaceAll("td", "").replaceAll("sets", "")
-					.replaceAll("<", "").replaceAll("points", "")
-					.replaceAll(">", "").replace(" \\", "").replace("\\", "");
-			str = "Over/Under " + str;
-			betType = context.findBetType(str);
-
+		if (extractActiveOdd(elements.toString()) == false) {
 			if (it.hasNext()) {
-				elementTmp = it.next();
-				String odd = extractOdd(elementTmp);
-				if (extractActiveOdd(elementTmp) == false) {
-					createOdd(match, context, bookie, bets, betType, odd,
-							"Over");
-				}
-				if (it.hasNext()) {
-					elementTmp = it.next();
-					odd = extractOdd(elementTmp);
-					if (extractActiveOdd(elementTmp) == false) {
+				it.next();
+				String str = it.next().text().replaceAll("/", "")
+						.replaceAll("td", "").replaceAll("<", "")
+						.replaceAll(">", "").replace(" \\", "")
+						.replace("\\", "");
+				str = "Over/Under " + str;
+				betType = context.findBetType(str);
+				if (betType != null) {
+					if (it.hasNext()) {
+						elementTmp = it.next();
+						String odd = extractOdd(elementTmp);
+
 						createOdd(match, context, bookie, bets, betType, odd,
-								"Under");
+								"Over");
+
+						if (it.hasNext()) {
+							elementTmp = it.next();
+							odd = extractOdd(elementTmp);
+
+							createOdd(match, context, bookie, bets, betType,
+									odd, "Under");
+
+						}
 					}
 				}
 			}

@@ -3324,3 +3324,668 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betexplorer,BET_TYPE,Over/Under 210.50,Over/Under 210.5
 0,betexplorer,BET_TYPE,1x2,Match Result
 0,betexplorer,BET_TYPE,Home/Away,Match Result
+0,betexplorer,BET_TYPE,Asian Handicap -20,Asian Handicap -20
+0,betexplorer,BET_TYPE,Asian Handicap -19.5,Asian Handicap -19.5
+0,betexplorer,BET_TYPE,Asian Handicap -19,Asian Handicap -19
+0,betexplorer,BET_TYPE,Asian Handicap -18.5,Asian Handicap -18.5
+0,betexplorer,BET_TYPE,Asian Handicap -18,Asian Handicap -18
+0,betexplorer,BET_TYPE,Asian Handicap -17.5,Asian Handicap -17.5
+0,betexplorer,BET_TYPE,Asian Handicap -17,Asian Handicap -17
+0,betexplorer,BET_TYPE,Asian Handicap -16.5,Asian Handicap -16.5
+0,betexplorer,BET_TYPE,Asian Handicap -16,Asian Handicap -16
+0,betexplorer,BET_TYPE,Asian Handicap -15.5,Asian Handicap -15.5
+0,betexplorer,BET_TYPE,Asian Handicap -15,Asian Handicap -15
+0,betexplorer,BET_TYPE,Asian Handicap -14.5,Asian Handicap -14.5
+0,betexplorer,BET_TYPE,Asian Handicap -14,Asian Handicap -14
+0,betexplorer,BET_TYPE,Asian Handicap -13.5,Asian Handicap -13.5
+0,betexplorer,BET_TYPE,Asian Handicap -13,Asian Handicap -13
+0,betexplorer,BET_TYPE,Asian Handicap -12.5,Asian Handicap -12.5
+0,betexplorer,BET_TYPE,Asian Handicap -12,Asian Handicap -12
+0,betexplorer,BET_TYPE,Asian Handicap -11.5,Asian Handicap -11.5
+0,betexplorer,BET_TYPE,Asian Handicap -11,Asian Handicap -11
+0,betexplorer,BET_TYPE,Asian Handicap -10.5,Asian Handicap -10.5
+0,betexplorer,BET_TYPE,Asian Handicap -10,Asian Handicap -10
+0,betexplorer,BET_TYPE,Asian Handicap -9.5,Asian Handicap -9.5
+0,betexplorer,BET_TYPE,Asian Handicap -9,Asian Handicap -9
+0,betexplorer,BET_TYPE,Asian Handicap -8.5,Asian Handicap -8.5
+0,betexplorer,BET_TYPE,Asian Handicap -8,Asian Handicap -8
+0,betexplorer,BET_TYPE,Asian Handicap -7.5,Asian Handicap -7.5
+0,betexplorer,BET_TYPE,Asian Handicap -7,Asian Handicap -7
+0,betexplorer,BET_TYPE,Asian Handicap -6.5,Asian Handicap -6.5
+0,betexplorer,BET_TYPE,Asian Handicap -6,Asian Handicap -6
+0,betexplorer,BET_TYPE,Asian Handicap -5.5,Asian Handicap -5.5
+0,betexplorer,BET_TYPE,Asian Handicap -5,Asian Handicap -5
+0,betexplorer,BET_TYPE,Asian Handicap -4.5,Asian Handicap -4.5
+0,betexplorer,BET_TYPE,Asian Handicap -4,Asian Handicap -4
+0,betexplorer,BET_TYPE,Asian Handicap -3.5,Asian Handicap -3.5
+0,betexplorer,BET_TYPE,Asian Handicap -3,Asian Handicap -3
+0,betexplorer,BET_TYPE,Asian Handicap -2.5,Asian Handicap -2.5
+0,betexplorer,BET_TYPE,Asian Handicap -2,Asian Handicap -2
+0,betexplorer,BET_TYPE,Asian Handicap -1.5,Asian Handicap -1.5
+0,betexplorer,BET_TYPE,Asian Handicap -1,Asian Handicap -1
+0,betexplorer,BET_TYPE,Asian Handicap -0.5,Asian Handicap -0.5
+0,betexplorer,BET_TYPE,Asian Handicap 0,Asian Handicap 0
+0,betexplorer,BET_TYPE,Asian Handicap 0.5,Asian Handicap 0.5
+0,betexplorer,BET_TYPE,Asian Handicap 1,Asian Handicap 1
+0,betexplorer,BET_TYPE,Asian Handicap 1.5,Asian Handicap 1.5
+0,betexplorer,BET_TYPE,Asian Handicap 2,Asian Handicap 2
+0,betexplorer,BET_TYPE,Asian Handicap 2.5,Asian Handicap 2.5
+0,betexplorer,BET_TYPE,Asian Handicap 3,Asian Handicap 3
+0,betexplorer,BET_TYPE,Asian Handicap 3.5,Asian Handicap 3.5
+0,betexplorer,BET_TYPE,Asian Handicap 4,Asian Handicap 4
+0,betexplorer,BET_TYPE,Asian Handicap 4.5,Asian Handicap 4.5
+0,betexplorer,BET_TYPE,Asian Handicap 5,Asian Handicap 5
+0,betexplorer,BET_TYPE,Asian Handicap 5.5,Asian Handicap 5.5
+0,betexplorer,BET_TYPE,Asian Handicap 6,Asian Handicap 6
+0,betexplorer,BET_TYPE,Asian Handicap 6.5,Asian Handicap 6.5
+0,betexplorer,BET_TYPE,Asian Handicap 7,Asian Handicap 7
+0,betexplorer,BET_TYPE,Asian Handicap 7.5,Asian Handicap 7.5
+0,betexplorer,BET_TYPE,Asian Handicap 8,Asian Handicap 8
+0,betexplorer,BET_TYPE,Asian Handicap 8.5,Asian Handicap 8.5
+0,betexplorer,BET_TYPE,Asian Handicap 9,Asian Handicap 9
+0,betexplorer,BET_TYPE,Asian Handicap 9.5,Asian Handicap 9.5
+0,betexplorer,BET_TYPE,Asian Handicap 10,Asian Handicap 10
+0,betexplorer,BET_TYPE,Asian Handicap 10.5,Asian Handicap 10.5
+0,betexplorer,BET_TYPE,Asian Handicap 11,Asian Handicap 11
+0,betexplorer,BET_TYPE,Asian Handicap 11.5,Asian Handicap 11.5
+0,betexplorer,BET_TYPE,Asian Handicap 12,Asian Handicap 12
+0,betexplorer,BET_TYPE,Asian Handicap 12.5,Asian Handicap 12.5
+0,betexplorer,BET_TYPE,Asian Handicap 13,Asian Handicap 13
+0,betexplorer,BET_TYPE,Asian Handicap 13.5,Asian Handicap 13.5
+0,betexplorer,BET_TYPE,Asian Handicap 14,Asian Handicap 14
+0,betexplorer,BET_TYPE,Asian Handicap 14.5,Asian Handicap 14.5
+0,betexplorer,BET_TYPE,Asian Handicap 15,Asian Handicap 15
+0,betexplorer,BET_TYPE,Asian Handicap 15.5,Asian Handicap 15.5
+0,betexplorer,BET_TYPE,Asian Handicap 16,Asian Handicap 16
+0,betexplorer,BET_TYPE,Asian Handicap 16.5,Asian Handicap 16.5
+0,betexplorer,BET_TYPE,Asian Handicap 17,Asian Handicap 17
+0,betexplorer,BET_TYPE,Asian Handicap 17.5,Asian Handicap 17.5
+0,betexplorer,BET_TYPE,Asian Handicap 18,Asian Handicap 18
+0,betexplorer,BET_TYPE,Asian Handicap 18.5,Asian Handicap 18.5
+0,betexplorer,BET_TYPE,Asian Handicap 19,Asian Handicap 19
+0,betexplorer,BET_TYPE,Asian Handicap 19.5,Asian Handicap 19.5
+0,betexplorer,BET_TYPE,Asian Handicap 20,Asian Handicap 20
+0,betexplorer,BET_TYPE,Over/Under 0.5 sets,Over/Under 0.5 sets
+,betexplorer,BET_TYPE,Over/Under 1.5 sets,Over/Under 1.5 sets
+,betexplorer,BET_TYPE,Over/Under 2.5 sets,Over/Under 2.5 sets
+,betexplorer,BET_TYPE,Over/Under 3.5 sets,Over/Under 3.5 sets
+,betexplorer,BET_TYPE,Over/Under 4.5 sets,Over/Under 4.5 sets
+,betexplorer,BET_TYPE,Over/Under 5.5 sets,Over/Under 5.5 sets
+,betexplorer,BET_TYPE,Over/Under 6.5 sets,Over/Under 6.5 sets
+,betexplorer,BET_TYPE,Over/Under 7.5 sets,Over/Under 7.5 sets
+,betexplorer,BET_TYPE,Over/Under 8.5 sets,Over/Under 8.5 sets
+,betexplorer,BET_TYPE,Over/Under 9.5 sets,Over/Under 9.5 sets
+,betexplorer,BET_TYPE,Over/Under 10.5 sets,Over/Under 10.5 sets
+,betexplorer,BET_TYPE,Over/Under 11.5 sets,Over/Under 11.5 sets
+,betexplorer,BET_TYPE,Over/Under 12.5 sets,Over/Under 12.5 sets
+,betexplorer,BET_TYPE,Over/Under 13.5 sets,Over/Under 13.5 sets
+,betexplorer,BET_TYPE,Over/Under 14.5 sets,Over/Under 14.5 sets
+,betexplorer,BET_TYPE,Over/Under 15.5 sets,Over/Under 15.5 sets
+,betexplorer,BET_TYPE,Over/Under 16.5 sets,Over/Under 16.5 sets
+,betexplorer,BET_TYPE,Over/Under 17.5 sets,Over/Under 17.5 sets
+,betexplorer,BET_TYPE,Over/Under 18.5 sets,Over/Under 18.5 sets
+,betexplorer,BET_TYPE,Over/Under 19.5 sets,Over/Under 19.5 sets
+,betexplorer,BET_TYPE,Over/Under 20.5 sets,Over/Under 20.5 sets
+,betexplorer,BET_TYPE,Over/Under 21.5 sets,Over/Under 21.5 sets
+,betexplorer,BET_TYPE,Over/Under 22.5 sets,Over/Under 22.5 sets
+,betexplorer,BET_TYPE,Over/Under 23.5 sets,Over/Under 23.5 sets
+,betexplorer,BET_TYPE,Over/Under 24.5 sets,Over/Under 24.5 sets
+,betexplorer,BET_TYPE,Over/Under 25.5 sets,Over/Under 25.5 sets
+,betexplorer,BET_TYPE,Over/Under 26.5 sets,Over/Under 26.5 sets
+,betexplorer,BET_TYPE,Over/Under 27.5 sets,Over/Under 27.5 sets
+,betexplorer,BET_TYPE,Over/Under 28.5 sets,Over/Under 28.5 sets
+,betexplorer,BET_TYPE,Over/Under 29.5 sets,Over/Under 29.5 sets
+,betexplorer,BET_TYPE,Over/Under 30.5 sets,Over/Under 30.5 sets
+,betexplorer,BET_TYPE,Over/Under 31.5 sets,Over/Under 31.5 sets
+,betexplorer,BET_TYPE,Over/Under 32.5 sets,Over/Under 32.5 sets
+,betexplorer,BET_TYPE,Over/Under 33.5 sets,Over/Under 33.5 sets
+,betexplorer,BET_TYPE,Over/Under 34.5 sets,Over/Under 34.5 sets
+,betexplorer,BET_TYPE,Over/Under 35.5 sets,Over/Under 35.5 sets
+,betexplorer,BET_TYPE,Over/Under 36.5 sets,Over/Under 36.5 sets
+,betexplorer,BET_TYPE,Over/Under 37.5 sets,Over/Under 37.5 sets
+,betexplorer,BET_TYPE,Over/Under 38.5 sets,Over/Under 38.5 sets
+,betexplorer,BET_TYPE,Over/Under 39.5 sets,Over/Under 39.5 sets
+,betexplorer,BET_TYPE,Over/Under 40.5 sets,Over/Under 40.5 sets
+,betexplorer,BET_TYPE,Over/Under 41.5 sets,Over/Under 41.5 sets
+,betexplorer,BET_TYPE,Over/Under 42.5 sets,Over/Under 42.5 sets
+,betexplorer,BET_TYPE,Over/Under 43.5 sets,Over/Under 43.5 sets
+,betexplorer,BET_TYPE,Over/Under 44.5 sets,Over/Under 44.5 sets
+,betexplorer,BET_TYPE,Over/Under 45.5 sets,Over/Under 45.5 sets
+,betexplorer,BET_TYPE,Over/Under 46.5 sets,Over/Under 46.5 sets
+,betexplorer,BET_TYPE,Over/Under 47.5 sets,Over/Under 47.5 sets
+,betexplorer,BET_TYPE,Over/Under 48.5 sets,Over/Under 48.5 sets
+,betexplorer,BET_TYPE,Over/Under 49.5 sets,Over/Under 49.5 sets
+,betexplorer,BET_TYPE,Over/Under 50.5 sets,Over/Under 50.5 sets
+,betexplorer,BET_TYPE,Over/Under 51.5 sets,Over/Under 51.5 sets
+,betexplorer,BET_TYPE,Over/Under 52.5 sets,Over/Under 52.5 sets
+,betexplorer,BET_TYPE,Over/Under 53.5 sets,Over/Under 53.5 sets
+,betexplorer,BET_TYPE,Over/Under 54.5 sets,Over/Under 54.5 sets
+,betexplorer,BET_TYPE,Over/Under 55.5 sets,Over/Under 55.5 sets
+,betexplorer,BET_TYPE,Over/Under 56.5 sets,Over/Under 56.5 sets
+,betexplorer,BET_TYPE,Over/Under 57.5 sets,Over/Under 57.5 sets
+,betexplorer,BET_TYPE,Over/Under 58.5 sets,Over/Under 58.5 sets
+,betexplorer,BET_TYPE,Over/Under 59.5 sets,Over/Under 59.5 sets
+,betexplorer,BET_TYPE,Over/Under 60.5 sets,Over/Under 60.5 sets
+,betexplorer,BET_TYPE,Over/Under 61.5 sets,Over/Under 61.5 sets
+,betexplorer,BET_TYPE,Over/Under 62.5 sets,Over/Under 62.5 sets
+,betexplorer,BET_TYPE,Over/Under 63.5 sets,Over/Under 63.5 sets
+,betexplorer,BET_TYPE,Over/Under 64.5 sets,Over/Under 64.5 sets
+,betexplorer,BET_TYPE,Over/Under 65.5 sets,Over/Under 65.5 sets
+,betexplorer,BET_TYPE,Over/Under 66.5 sets,Over/Under 66.5 sets
+,betexplorer,BET_TYPE,Over/Under 67.5 sets,Over/Under 67.5 sets
+,betexplorer,BET_TYPE,Over/Under 68.5 sets,Over/Under 68.5 sets
+,betexplorer,BET_TYPE,Over/Under 69.5 sets,Over/Under 69.5 sets
+,betexplorer,BET_TYPE,Over/Under 70.5 sets,Over/Under 70.5 sets
+,betexplorer,BET_TYPE,Over/Under 71.5 sets,Over/Under 71.5 sets
+,betexplorer,BET_TYPE,Over/Under 72.5 sets,Over/Under 72.5 sets
+,betexplorer,BET_TYPE,Over/Under 73.5 sets,Over/Under 73.5 sets
+,betexplorer,BET_TYPE,Over/Under 74.5 sets,Over/Under 74.5 sets
+,betexplorer,BET_TYPE,Over/Under 75.5 sets,Over/Under 75.5 sets
+,betexplorer,BET_TYPE,Over/Under 76.5 sets,Over/Under 76.5 sets
+,betexplorer,BET_TYPE,Over/Under 77.5 sets,Over/Under 77.5 sets
+,betexplorer,BET_TYPE,Over/Under 78.5 sets,Over/Under 78.5 sets
+,betexplorer,BET_TYPE,Over/Under 79.5 sets,Over/Under 79.5 sets
+,betexplorer,BET_TYPE,Over/Under 80.5 sets,Over/Under 80.5 sets
+,betexplorer,BET_TYPE,Over/Under 81.5 sets,Over/Under 81.5 sets
+,betexplorer,BET_TYPE,Over/Under 82.5 sets,Over/Under 82.5 sets
+,betexplorer,BET_TYPE,Over/Under 83.5 sets,Over/Under 83.5 sets
+,betexplorer,BET_TYPE,Over/Under 84.5 sets,Over/Under 84.5 sets
+,betexplorer,BET_TYPE,Over/Under 85.5 sets,Over/Under 85.5 sets
+,betexplorer,BET_TYPE,Over/Under 86.5 sets,Over/Under 86.5 sets
+,betexplorer,BET_TYPE,Over/Under 87.5 sets,Over/Under 87.5 sets
+,betexplorer,BET_TYPE,Over/Under 88.5 sets,Over/Under 88.5 sets
+,betexplorer,BET_TYPE,Over/Under 89.5 sets,Over/Under 89.5 sets
+,betexplorer,BET_TYPE,Over/Under 90.5 sets,Over/Under 90.5 sets
+,betexplorer,BET_TYPE,Over/Under 91.5 sets,Over/Under 91.5 sets
+,betexplorer,BET_TYPE,Over/Under 92.5 sets,Over/Under 92.5 sets
+,betexplorer,BET_TYPE,Over/Under 93.5 sets,Over/Under 93.5 sets
+,betexplorer,BET_TYPE,Over/Under 94.5 sets,Over/Under 94.5 sets
+,betexplorer,BET_TYPE,Over/Under 95.5 sets,Over/Under 95.5 sets
+,betexplorer,BET_TYPE,Over/Under 96.5 sets,Over/Under 96.5 sets
+,betexplorer,BET_TYPE,Over/Under 97.5 sets,Over/Under 97.5 sets
+,betexplorer,BET_TYPE,Over/Under 98.5 sets,Over/Under 98.5 sets
+,betexplorer,BET_TYPE,Over/Under 99.5 sets,Over/Under 99.5 sets
+,betexplorer,BET_TYPE,Over/Under 100.5 sets,Over/Under 100.5 sets
+,betexplorer,BET_TYPE,Over/Under 101.5 sets,Over/Under 101.5 sets
+,betexplorer,BET_TYPE,Over/Under 102.5 sets,Over/Under 102.5 sets
+,betexplorer,BET_TYPE,Over/Under 103.5 sets,Over/Under 103.5 sets
+,betexplorer,BET_TYPE,Over/Under 104.5 sets,Over/Under 104.5 sets
+,betexplorer,BET_TYPE,Over/Under 105.5 sets,Over/Under 105.5 sets
+,betexplorer,BET_TYPE,Over/Under 106.5 sets,Over/Under 106.5 sets
+,betexplorer,BET_TYPE,Over/Under 107.5 sets,Over/Under 107.5 sets
+,betexplorer,BET_TYPE,Over/Under 108.5 sets,Over/Under 108.5 sets
+,betexplorer,BET_TYPE,Over/Under 109.5 sets,Over/Under 109.5 sets
+,betexplorer,BET_TYPE,Over/Under 110.5 sets,Over/Under 110.5 sets
+,betexplorer,BET_TYPE,Over/Under 111.5 sets,Over/Under 111.5 sets
+,betexplorer,BET_TYPE,Over/Under 112.5 sets,Over/Under 112.5 sets
+,betexplorer,BET_TYPE,Over/Under 113.5 sets,Over/Under 113.5 sets
+,betexplorer,BET_TYPE,Over/Under 114.5 sets,Over/Under 114.5 sets
+,betexplorer,BET_TYPE,Over/Under 115.5 sets,Over/Under 115.5 sets
+,betexplorer,BET_TYPE,Over/Under 116.5 sets,Over/Under 116.5 sets
+,betexplorer,BET_TYPE,Over/Under 117.5 sets,Over/Under 117.5 sets
+,betexplorer,BET_TYPE,Over/Under 118.5 sets,Over/Under 118.5 sets
+,betexplorer,BET_TYPE,Over/Under 119.5 sets,Over/Under 119.5 sets
+,betexplorer,BET_TYPE,Over/Under 120.5 sets,Over/Under 120.5 sets
+,betexplorer,BET_TYPE,Over/Under 121.5 sets,Over/Under 121.5 sets
+,betexplorer,BET_TYPE,Over/Under 122.5 sets,Over/Under 122.5 sets
+,betexplorer,BET_TYPE,Over/Under 123.5 sets,Over/Under 123.5 sets
+,betexplorer,BET_TYPE,Over/Under 124.5 sets,Over/Under 124.5 sets
+,betexplorer,BET_TYPE,Over/Under 125.5 sets,Over/Under 125.5 sets
+,betexplorer,BET_TYPE,Over/Under 126.5 sets,Over/Under 126.5 sets
+,betexplorer,BET_TYPE,Over/Under 127.5 sets,Over/Under 127.5 sets
+,betexplorer,BET_TYPE,Over/Under 128.5 sets,Over/Under 128.5 sets
+,betexplorer,BET_TYPE,Over/Under 129.5 sets,Over/Under 129.5 sets
+,betexplorer,BET_TYPE,Over/Under 130.5 sets,Over/Under 130.5 sets
+,betexplorer,BET_TYPE,Over/Under 131.5 sets,Over/Under 131.5 sets
+,betexplorer,BET_TYPE,Over/Under 132.5 sets,Over/Under 132.5 sets
+,betexplorer,BET_TYPE,Over/Under 133.5 sets,Over/Under 133.5 sets
+,betexplorer,BET_TYPE,Over/Under 134.5 sets,Over/Under 134.5 sets
+,betexplorer,BET_TYPE,Over/Under 135.5 sets,Over/Under 135.5 sets
+,betexplorer,BET_TYPE,Over/Under 136.5 sets,Over/Under 136.5 sets
+,betexplorer,BET_TYPE,Over/Under 137.5 sets,Over/Under 137.5 sets
+,betexplorer,BET_TYPE,Over/Under 138.5 sets,Over/Under 138.5 sets
+,betexplorer,BET_TYPE,Over/Under 139.5 sets,Over/Under 139.5 sets
+,betexplorer,BET_TYPE,Over/Under 140.5 sets,Over/Under 140.5 sets
+,betexplorer,BET_TYPE,Over/Under 141.5 sets,Over/Under 141.5 sets
+,betexplorer,BET_TYPE,Over/Under 142.5 sets,Over/Under 142.5 sets
+,betexplorer,BET_TYPE,Over/Under 143.5 sets,Over/Under 143.5 sets
+,betexplorer,BET_TYPE,Over/Under 144.5 sets,Over/Under 144.5 sets
+,betexplorer,BET_TYPE,Over/Under 145.5 sets,Over/Under 145.5 sets
+,betexplorer,BET_TYPE,Over/Under 146.5 sets,Over/Under 146.5 sets
+,betexplorer,BET_TYPE,Over/Under 147.5 sets,Over/Under 147.5 sets
+,betexplorer,BET_TYPE,Over/Under 148.5 sets,Over/Under 148.5 sets
+,betexplorer,BET_TYPE,Over/Under 149.5 sets,Over/Under 149.5 sets
+,betexplorer,BET_TYPE,Over/Under 150.5 sets,Over/Under 150.5 sets
+,betexplorer,BET_TYPE,Over/Under 151.5 sets,Over/Under 151.5 sets
+,betexplorer,BET_TYPE,Over/Under 152.5 sets,Over/Under 152.5 sets
+,betexplorer,BET_TYPE,Over/Under 153.5 sets,Over/Under 153.5 sets
+,betexplorer,BET_TYPE,Over/Under 154.5 sets,Over/Under 154.5 sets
+,betexplorer,BET_TYPE,Over/Under 155.5 sets,Over/Under 155.5 sets
+,betexplorer,BET_TYPE,Over/Under 156.5 sets,Over/Under 156.5 sets
+,betexplorer,BET_TYPE,Over/Under 157.5 sets,Over/Under 157.5 sets
+,betexplorer,BET_TYPE,Over/Under 158.5 sets,Over/Under 158.5 sets
+,betexplorer,BET_TYPE,Over/Under 159.5 sets,Over/Under 159.5 sets
+,betexplorer,BET_TYPE,Over/Under 160.5 sets,Over/Under 160.5 sets
+,betexplorer,BET_TYPE,Over/Under 161.5 sets,Over/Under 161.5 sets
+,betexplorer,BET_TYPE,Over/Under 162.5 sets,Over/Under 162.5 sets
+,betexplorer,BET_TYPE,Over/Under 163.5 sets,Over/Under 163.5 sets
+,betexplorer,BET_TYPE,Over/Under 164.5 sets,Over/Under 164.5 sets
+,betexplorer,BET_TYPE,Over/Under 165.5 sets,Over/Under 165.5 sets
+,betexplorer,BET_TYPE,Over/Under 166.5 sets,Over/Under 166.5 sets
+,betexplorer,BET_TYPE,Over/Under 167.5 sets,Over/Under 167.5 sets
+,betexplorer,BET_TYPE,Over/Under 168.5 sets,Over/Under 168.5 sets
+,betexplorer,BET_TYPE,Over/Under 169.5 sets,Over/Under 169.5 sets
+,betexplorer,BET_TYPE,Over/Under 170.5 sets,Over/Under 170.5 sets
+,betexplorer,BET_TYPE,Over/Under 171.5 sets,Over/Under 171.5 sets
+,betexplorer,BET_TYPE,Over/Under 172.5 sets,Over/Under 172.5 sets
+,betexplorer,BET_TYPE,Over/Under 173.5 sets,Over/Under 173.5 sets
+,betexplorer,BET_TYPE,Over/Under 174.5 sets,Over/Under 174.5 sets
+,betexplorer,BET_TYPE,Over/Under 175.5 sets,Over/Under 175.5 sets
+,betexplorer,BET_TYPE,Over/Under 176.5 sets,Over/Under 176.5 sets
+,betexplorer,BET_TYPE,Over/Under 177.5 sets,Over/Under 177.5 sets
+,betexplorer,BET_TYPE,Over/Under 178.5 sets,Over/Under 178.5 sets
+,betexplorer,BET_TYPE,Over/Under 179.5 sets,Over/Under 179.5 sets
+,betexplorer,BET_TYPE,Over/Under 180.5 sets,Over/Under 180.5 sets
+,betexplorer,BET_TYPE,Over/Under 181.5 sets,Over/Under 181.5 sets
+,betexplorer,BET_TYPE,Over/Under 182.5 sets,Over/Under 182.5 sets
+,betexplorer,BET_TYPE,Over/Under 183.5 sets,Over/Under 183.5 sets
+,betexplorer,BET_TYPE,Over/Under 184.5 sets,Over/Under 184.5 sets
+,betexplorer,BET_TYPE,Over/Under 185.5 sets,Over/Under 185.5 sets
+,betexplorer,BET_TYPE,Over/Under 186.5 sets,Over/Under 186.5 sets
+,betexplorer,BET_TYPE,Over/Under 187.5 sets,Over/Under 187.5 sets
+,betexplorer,BET_TYPE,Over/Under 188.5 sets,Over/Under 188.5 sets
+,betexplorer,BET_TYPE,Over/Under 189.5 sets,Over/Under 189.5 sets
+,betexplorer,BET_TYPE,Over/Under 190.5 sets,Over/Under 190.5 sets
+,betexplorer,BET_TYPE,Over/Under 191.5 sets,Over/Under 191.5 sets
+,betexplorer,BET_TYPE,Over/Under 192.5 sets,Over/Under 192.5 sets
+,betexplorer,BET_TYPE,Over/Under 193.5 sets,Over/Under 193.5 sets
+,betexplorer,BET_TYPE,Over/Under 194.5 sets,Over/Under 194.5 sets
+,betexplorer,BET_TYPE,Over/Under 195.5 sets,Over/Under 195.5 sets
+,betexplorer,BET_TYPE,Over/Under 196.5 sets,Over/Under 196.5 sets
+,betexplorer,BET_TYPE,Over/Under 197.5 sets,Over/Under 197.5 sets
+,betexplorer,BET_TYPE,Over/Under 198.5 sets,Over/Under 198.5 sets
+,betexplorer,BET_TYPE,Over/Under 199.5 sets,Over/Under 199.5 sets
+,betexplorer,BET_TYPE,Over/Under 200.5 sets,Over/Under 200.5 sets
+,betexplorer,BET_TYPE,Over/Under 201.5 sets,Over/Under 201.5 sets
+,betexplorer,BET_TYPE,Over/Under 202.5 sets,Over/Under 202.5 sets
+,betexplorer,BET_TYPE,Over/Under 203.5 sets,Over/Under 203.5 sets
+,betexplorer,BET_TYPE,Over/Under 204.5 sets,Over/Under 204.5 sets
+,betexplorer,BET_TYPE,Over/Under 205.5 sets,Over/Under 205.5 sets
+,betexplorer,BET_TYPE,Over/Under 206.5 sets,Over/Under 206.5 sets
+,betexplorer,BET_TYPE,Over/Under 207.5 sets,Over/Under 207.5 sets
+,betexplorer,BET_TYPE,Over/Under 208.5 sets,Over/Under 208.5 sets
+,betexplorer,BET_TYPE,Over/Under 209.5 sets,Over/Under 209.5 sets
+,betexplorer,BET_TYPE,Over/Under 210.5 sets,Over/Under 210.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -20 sets,Asian Handicap -20 sets
+,betexplorer,BET_TYPE,Asian Handicap -19.5 sets,Asian Handicap -19.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -19 sets,Asian Handicap -19 sets
+,betexplorer,BET_TYPE,Asian Handicap -18.5 sets,Asian Handicap -18.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -18 sets,Asian Handicap -18 sets
+,betexplorer,BET_TYPE,Asian Handicap -17.5 sets,Asian Handicap -17.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -17 sets,Asian Handicap -17 sets
+,betexplorer,BET_TYPE,Asian Handicap -16.5 sets,Asian Handicap -16.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -16 sets,Asian Handicap -16 sets
+,betexplorer,BET_TYPE,Asian Handicap -15.5 sets,Asian Handicap -15.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -15 sets,Asian Handicap -15 sets
+,betexplorer,BET_TYPE,Asian Handicap -14.5 sets,Asian Handicap -14.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -14 sets,Asian Handicap -14 sets
+,betexplorer,BET_TYPE,Asian Handicap -13.5 sets,Asian Handicap -13.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -13 sets,Asian Handicap -13 sets
+,betexplorer,BET_TYPE,Asian Handicap -12.5 sets,Asian Handicap -12.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -12 sets,Asian Handicap -12 sets
+,betexplorer,BET_TYPE,Asian Handicap -11.5 sets,Asian Handicap -11.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -11 sets,Asian Handicap -11 sets
+,betexplorer,BET_TYPE,Asian Handicap -10.5 sets,Asian Handicap -10.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -10 sets,Asian Handicap -10 sets
+,betexplorer,BET_TYPE,Asian Handicap -9.5 sets,Asian Handicap -9.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -9 sets,Asian Handicap -9 sets
+,betexplorer,BET_TYPE,Asian Handicap -8.5 sets,Asian Handicap -8.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -8 sets,Asian Handicap -8 sets
+,betexplorer,BET_TYPE,Asian Handicap -7.5 sets,Asian Handicap -7.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -7 sets,Asian Handicap -7 sets
+,betexplorer,BET_TYPE,Asian Handicap -6.5 sets,Asian Handicap -6.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -6 sets,Asian Handicap -6 sets
+,betexplorer,BET_TYPE,Asian Handicap -5.5 sets,Asian Handicap -5.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -5 sets,Asian Handicap -5 sets
+,betexplorer,BET_TYPE,Asian Handicap -4.5 sets,Asian Handicap -4.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -4 sets,Asian Handicap -4 sets
+,betexplorer,BET_TYPE,Asian Handicap -3.5 sets,Asian Handicap -3.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -3 sets,Asian Handicap -3 sets
+,betexplorer,BET_TYPE,Asian Handicap -2.5 sets,Asian Handicap -2.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -2 sets,Asian Handicap -2 sets
+,betexplorer,BET_TYPE,Asian Handicap -1.5 sets,Asian Handicap -1.5 sets
+,betexplorer,BET_TYPE,Asian Handicap -1 sets,Asian Handicap -1 sets
+,betexplorer,BET_TYPE,Asian Handicap -0.5 sets,Asian Handicap -0.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 0 sets,Asian Handicap 0 sets
+,betexplorer,BET_TYPE,Asian Handicap 0.5 sets,Asian Handicap 0.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 1 sets,Asian Handicap 1 sets
+,betexplorer,BET_TYPE,Asian Handicap 1.5 sets,Asian Handicap 1.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 2 sets,Asian Handicap 2 sets
+,betexplorer,BET_TYPE,Asian Handicap 2.5 sets,Asian Handicap 2.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 3 sets,Asian Handicap 3 sets
+,betexplorer,BET_TYPE,Asian Handicap 3.5 sets,Asian Handicap 3.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 4 sets,Asian Handicap 4 sets
+,betexplorer,BET_TYPE,Asian Handicap 4.5 sets,Asian Handicap 4.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 5 sets,Asian Handicap 5 sets
+,betexplorer,BET_TYPE,Asian Handicap 5.5 sets,Asian Handicap 5.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 6 sets,Asian Handicap 6 sets
+,betexplorer,BET_TYPE,Asian Handicap 6.5 sets,Asian Handicap 6.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 7 sets,Asian Handicap 7 sets
+,betexplorer,BET_TYPE,Asian Handicap 7.5 sets,Asian Handicap 7.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 8 sets,Asian Handicap 8 sets
+,betexplorer,BET_TYPE,Asian Handicap 8.5 sets,Asian Handicap 8.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 9 sets,Asian Handicap 9 sets
+,betexplorer,BET_TYPE,Asian Handicap 9.5 sets,Asian Handicap 9.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 10 sets,Asian Handicap 10 sets
+,betexplorer,BET_TYPE,Asian Handicap 10.5 sets,Asian Handicap 10.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 11 sets,Asian Handicap 11 sets
+,betexplorer,BET_TYPE,Asian Handicap 11.5 sets,Asian Handicap 11.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 12 sets,Asian Handicap 12 sets
+,betexplorer,BET_TYPE,Asian Handicap 12.5 sets,Asian Handicap 12.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 13 sets,Asian Handicap 13 sets
+,betexplorer,BET_TYPE,Asian Handicap 13.5 sets,Asian Handicap 13.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 14 sets,Asian Handicap 14 sets
+,betexplorer,BET_TYPE,Asian Handicap 14.5 sets,Asian Handicap 14.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 15 sets,Asian Handicap 15 sets
+,betexplorer,BET_TYPE,Asian Handicap 15.5 sets,Asian Handicap 15.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 16 sets,Asian Handicap 16 sets
+,betexplorer,BET_TYPE,Asian Handicap 16.5 sets,Asian Handicap 16.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 17 sets,Asian Handicap 17 sets
+,betexplorer,BET_TYPE,Asian Handicap 17.5 sets,Asian Handicap 17.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 18 sets,Asian Handicap 18 sets
+,betexplorer,BET_TYPE,Asian Handicap 18.5 sets,Asian Handicap 18.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 19 sets,Asian Handicap 19 sets
+,betexplorer,BET_TYPE,Asian Handicap 19.5 sets,Asian Handicap 19.5 sets
+,betexplorer,BET_TYPE,Asian Handicap 20 sets,Asian Handicap 20 sets
+,betexplorer,BET_TYPE,Over/Under 0.5 points,Over/Under 0.5 points
+,betexplorer,BET_TYPE,Over/Under 1.5 points,Over/Under 1.5 points
+,betexplorer,BET_TYPE,Over/Under 2.5 points,Over/Under 2.5 points
+,betexplorer,BET_TYPE,Over/Under 3.5 points,Over/Under 3.5 points
+,betexplorer,BET_TYPE,Over/Under 4.5 points,Over/Under 4.5 points
+,betexplorer,BET_TYPE,Over/Under 5.5 points,Over/Under 5.5 points
+,betexplorer,BET_TYPE,Over/Under 6.5 points,Over/Under 6.5 points
+,betexplorer,BET_TYPE,Over/Under 7.5 points,Over/Under 7.5 points
+,betexplorer,BET_TYPE,Over/Under 8.5 points,Over/Under 8.5 points
+,betexplorer,BET_TYPE,Over/Under 9.5 points,Over/Under 9.5 points
+,betexplorer,BET_TYPE,Over/Under 10.5 points,Over/Under 10.5 points
+,betexplorer,BET_TYPE,Over/Under 11.5 points,Over/Under 11.5 points
+,betexplorer,BET_TYPE,Over/Under 12.5 points,Over/Under 12.5 points
+,betexplorer,BET_TYPE,Over/Under 13.5 points,Over/Under 13.5 points
+,betexplorer,BET_TYPE,Over/Under 14.5 points,Over/Under 14.5 points
+,betexplorer,BET_TYPE,Over/Under 15.5 points,Over/Under 15.5 points
+,betexplorer,BET_TYPE,Over/Under 16.5 points,Over/Under 16.5 points
+,betexplorer,BET_TYPE,Over/Under 17.5 points,Over/Under 17.5 points
+,betexplorer,BET_TYPE,Over/Under 18.5 points,Over/Under 18.5 points
+,betexplorer,BET_TYPE,Over/Under 19.5 points,Over/Under 19.5 points
+,betexplorer,BET_TYPE,Over/Under 20.5 points,Over/Under 20.5 points
+,betexplorer,BET_TYPE,Over/Under 21.5 points,Over/Under 21.5 points
+,betexplorer,BET_TYPE,Over/Under 22.5 points,Over/Under 22.5 points
+,betexplorer,BET_TYPE,Over/Under 23.5 points,Over/Under 23.5 points
+,betexplorer,BET_TYPE,Over/Under 24.5 points,Over/Under 24.5 points
+,betexplorer,BET_TYPE,Over/Under 25.5 points,Over/Under 25.5 points
+,betexplorer,BET_TYPE,Over/Under 26.5 points,Over/Under 26.5 points
+,betexplorer,BET_TYPE,Over/Under 27.5 points,Over/Under 27.5 points
+,betexplorer,BET_TYPE,Over/Under 28.5 points,Over/Under 28.5 points
+,betexplorer,BET_TYPE,Over/Under 29.5 points,Over/Under 29.5 points
+,betexplorer,BET_TYPE,Over/Under 30.5 points,Over/Under 30.5 points
+,betexplorer,BET_TYPE,Over/Under 31.5 points,Over/Under 31.5 points
+,betexplorer,BET_TYPE,Over/Under 32.5 points,Over/Under 32.5 points
+,betexplorer,BET_TYPE,Over/Under 33.5 points,Over/Under 33.5 points
+,betexplorer,BET_TYPE,Over/Under 34.5 points,Over/Under 34.5 points
+,betexplorer,BET_TYPE,Over/Under 35.5 points,Over/Under 35.5 points
+,betexplorer,BET_TYPE,Over/Under 36.5 points,Over/Under 36.5 points
+,betexplorer,BET_TYPE,Over/Under 37.5 points,Over/Under 37.5 points
+,betexplorer,BET_TYPE,Over/Under 38.5 points,Over/Under 38.5 points
+,betexplorer,BET_TYPE,Over/Under 39.5 points,Over/Under 39.5 points
+,betexplorer,BET_TYPE,Over/Under 40.5 points,Over/Under 40.5 points
+,betexplorer,BET_TYPE,Over/Under 41.5 points,Over/Under 41.5 points
+,betexplorer,BET_TYPE,Over/Under 42.5 points,Over/Under 42.5 points
+,betexplorer,BET_TYPE,Over/Under 43.5 points,Over/Under 43.5 points
+,betexplorer,BET_TYPE,Over/Under 44.5 points,Over/Under 44.5 points
+,betexplorer,BET_TYPE,Over/Under 45.5 points,Over/Under 45.5 points
+,betexplorer,BET_TYPE,Over/Under 46.5 points,Over/Under 46.5 points
+,betexplorer,BET_TYPE,Over/Under 47.5 points,Over/Under 47.5 points
+,betexplorer,BET_TYPE,Over/Under 48.5 points,Over/Under 48.5 points
+,betexplorer,BET_TYPE,Over/Under 49.5 points,Over/Under 49.5 points
+,betexplorer,BET_TYPE,Over/Under 50.5 points,Over/Under 50.5 points
+,betexplorer,BET_TYPE,Over/Under 51.5 points,Over/Under 51.5 points
+,betexplorer,BET_TYPE,Over/Under 52.5 points,Over/Under 52.5 points
+,betexplorer,BET_TYPE,Over/Under 53.5 points,Over/Under 53.5 points
+,betexplorer,BET_TYPE,Over/Under 54.5 points,Over/Under 54.5 points
+,betexplorer,BET_TYPE,Over/Under 55.5 points,Over/Under 55.5 points
+,betexplorer,BET_TYPE,Over/Under 56.5 points,Over/Under 56.5 points
+,betexplorer,BET_TYPE,Over/Under 57.5 points,Over/Under 57.5 points
+,betexplorer,BET_TYPE,Over/Under 58.5 points,Over/Under 58.5 points
+,betexplorer,BET_TYPE,Over/Under 59.5 points,Over/Under 59.5 points
+,betexplorer,BET_TYPE,Over/Under 60.5 points,Over/Under 60.5 points
+,betexplorer,BET_TYPE,Over/Under 61.5 points,Over/Under 61.5 points
+,betexplorer,BET_TYPE,Over/Under 62.5 points,Over/Under 62.5 points
+,betexplorer,BET_TYPE,Over/Under 63.5 points,Over/Under 63.5 points
+,betexplorer,BET_TYPE,Over/Under 64.5 points,Over/Under 64.5 points
+,betexplorer,BET_TYPE,Over/Under 65.5 points,Over/Under 65.5 points
+,betexplorer,BET_TYPE,Over/Under 66.5 points,Over/Under 66.5 points
+,betexplorer,BET_TYPE,Over/Under 67.5 points,Over/Under 67.5 points
+,betexplorer,BET_TYPE,Over/Under 68.5 points,Over/Under 68.5 points
+,betexplorer,BET_TYPE,Over/Under 69.5 points,Over/Under 69.5 points
+,betexplorer,BET_TYPE,Over/Under 70.5 points,Over/Under 70.5 points
+,betexplorer,BET_TYPE,Over/Under 71.5 points,Over/Under 71.5 points
+,betexplorer,BET_TYPE,Over/Under 72.5 points,Over/Under 72.5 points
+,betexplorer,BET_TYPE,Over/Under 73.5 points,Over/Under 73.5 points
+,betexplorer,BET_TYPE,Over/Under 74.5 points,Over/Under 74.5 points
+,betexplorer,BET_TYPE,Over/Under 75.5 points,Over/Under 75.5 points
+,betexplorer,BET_TYPE,Over/Under 76.5 points,Over/Under 76.5 points
+,betexplorer,BET_TYPE,Over/Under 77.5 points,Over/Under 77.5 points
+,betexplorer,BET_TYPE,Over/Under 78.5 points,Over/Under 78.5 points
+,betexplorer,BET_TYPE,Over/Under 79.5 points,Over/Under 79.5 points
+,betexplorer,BET_TYPE,Over/Under 80.5 points,Over/Under 80.5 points
+,betexplorer,BET_TYPE,Over/Under 81.5 points,Over/Under 81.5 points
+,betexplorer,BET_TYPE,Over/Under 82.5 points,Over/Under 82.5 points
+,betexplorer,BET_TYPE,Over/Under 83.5 points,Over/Under 83.5 points
+,betexplorer,BET_TYPE,Over/Under 84.5 points,Over/Under 84.5 points
+,betexplorer,BET_TYPE,Over/Under 85.5 points,Over/Under 85.5 points
+,betexplorer,BET_TYPE,Over/Under 86.5 points,Over/Under 86.5 points
+,betexplorer,BET_TYPE,Over/Under 87.5 points,Over/Under 87.5 points
+,betexplorer,BET_TYPE,Over/Under 88.5 points,Over/Under 88.5 points
+,betexplorer,BET_TYPE,Over/Under 89.5 points,Over/Under 89.5 points
+,betexplorer,BET_TYPE,Over/Under 90.5 points,Over/Under 90.5 points
+,betexplorer,BET_TYPE,Over/Under 91.5 points,Over/Under 91.5 points
+,betexplorer,BET_TYPE,Over/Under 92.5 points,Over/Under 92.5 points
+,betexplorer,BET_TYPE,Over/Under 93.5 points,Over/Under 93.5 points
+,betexplorer,BET_TYPE,Over/Under 94.5 points,Over/Under 94.5 points
+,betexplorer,BET_TYPE,Over/Under 95.5 points,Over/Under 95.5 points
+,betexplorer,BET_TYPE,Over/Under 96.5 points,Over/Under 96.5 points
+,betexplorer,BET_TYPE,Over/Under 97.5 points,Over/Under 97.5 points
+,betexplorer,BET_TYPE,Over/Under 98.5 points,Over/Under 98.5 points
+,betexplorer,BET_TYPE,Over/Under 99.5 points,Over/Under 99.5 points
+,betexplorer,BET_TYPE,Over/Under 100.5 points,Over/Under 100.5 points
+,betexplorer,BET_TYPE,Over/Under 101.5 points,Over/Under 101.5 points
+,betexplorer,BET_TYPE,Over/Under 102.5 points,Over/Under 102.5 points
+,betexplorer,BET_TYPE,Over/Under 103.5 points,Over/Under 103.5 points
+,betexplorer,BET_TYPE,Over/Under 104.5 points,Over/Under 104.5 points
+,betexplorer,BET_TYPE,Over/Under 105.5 points,Over/Under 105.5 points
+,betexplorer,BET_TYPE,Over/Under 106.5 points,Over/Under 106.5 points
+,betexplorer,BET_TYPE,Over/Under 107.5 points,Over/Under 107.5 points
+,betexplorer,BET_TYPE,Over/Under 108.5 points,Over/Under 108.5 points
+,betexplorer,BET_TYPE,Over/Under 109.5 points,Over/Under 109.5 points
+,betexplorer,BET_TYPE,Over/Under 110.5 points,Over/Under 110.5 points
+,betexplorer,BET_TYPE,Over/Under 111.5 points,Over/Under 111.5 points
+,betexplorer,BET_TYPE,Over/Under 112.5 points,Over/Under 112.5 points
+,betexplorer,BET_TYPE,Over/Under 113.5 points,Over/Under 113.5 points
+,betexplorer,BET_TYPE,Over/Under 114.5 points,Over/Under 114.5 points
+,betexplorer,BET_TYPE,Over/Under 115.5 points,Over/Under 115.5 points
+,betexplorer,BET_TYPE,Over/Under 116.5 points,Over/Under 116.5 points
+,betexplorer,BET_TYPE,Over/Under 117.5 points,Over/Under 117.5 points
+,betexplorer,BET_TYPE,Over/Under 118.5 points,Over/Under 118.5 points
+,betexplorer,BET_TYPE,Over/Under 119.5 points,Over/Under 119.5 points
+,betexplorer,BET_TYPE,Over/Under 120.5 points,Over/Under 120.5 points
+,betexplorer,BET_TYPE,Over/Under 121.5 points,Over/Under 121.5 points
+,betexplorer,BET_TYPE,Over/Under 122.5 points,Over/Under 122.5 points
+,betexplorer,BET_TYPE,Over/Under 123.5 points,Over/Under 123.5 points
+,betexplorer,BET_TYPE,Over/Under 124.5 points,Over/Under 124.5 points
+,betexplorer,BET_TYPE,Over/Under 125.5 points,Over/Under 125.5 points
+,betexplorer,BET_TYPE,Over/Under 126.5 points,Over/Under 126.5 points
+,betexplorer,BET_TYPE,Over/Under 127.5 points,Over/Under 127.5 points
+,betexplorer,BET_TYPE,Over/Under 128.5 points,Over/Under 128.5 points
+,betexplorer,BET_TYPE,Over/Under 129.5 points,Over/Under 129.5 points
+,betexplorer,BET_TYPE,Over/Under 130.5 points,Over/Under 130.5 points
+,betexplorer,BET_TYPE,Over/Under 131.5 points,Over/Under 131.5 points
+,betexplorer,BET_TYPE,Over/Under 132.5 points,Over/Under 132.5 points
+,betexplorer,BET_TYPE,Over/Under 133.5 points,Over/Under 133.5 points
+,betexplorer,BET_TYPE,Over/Under 134.5 points,Over/Under 134.5 points
+,betexplorer,BET_TYPE,Over/Under 135.5 points,Over/Under 135.5 points
+,betexplorer,BET_TYPE,Over/Under 136.5 points,Over/Under 136.5 points
+,betexplorer,BET_TYPE,Over/Under 137.5 points,Over/Under 137.5 points
+,betexplorer,BET_TYPE,Over/Under 138.5 points,Over/Under 138.5 points
+,betexplorer,BET_TYPE,Over/Under 139.5 points,Over/Under 139.5 points
+,betexplorer,BET_TYPE,Over/Under 140.5 points,Over/Under 140.5 points
+,betexplorer,BET_TYPE,Over/Under 141.5 points,Over/Under 141.5 points
+,betexplorer,BET_TYPE,Over/Under 142.5 points,Over/Under 142.5 points
+,betexplorer,BET_TYPE,Over/Under 143.5 points,Over/Under 143.5 points
+,betexplorer,BET_TYPE,Over/Under 144.5 points,Over/Under 144.5 points
+,betexplorer,BET_TYPE,Over/Under 145.5 points,Over/Under 145.5 points
+,betexplorer,BET_TYPE,Over/Under 146.5 points,Over/Under 146.5 points
+,betexplorer,BET_TYPE,Over/Under 147.5 points,Over/Under 147.5 points
+,betexplorer,BET_TYPE,Over/Under 148.5 points,Over/Under 148.5 points
+,betexplorer,BET_TYPE,Over/Under 149.5 points,Over/Under 149.5 points
+,betexplorer,BET_TYPE,Over/Under 150.5 points,Over/Under 150.5 points
+,betexplorer,BET_TYPE,Over/Under 151.5 points,Over/Under 151.5 points
+,betexplorer,BET_TYPE,Over/Under 152.5 points,Over/Under 152.5 points
+,betexplorer,BET_TYPE,Over/Under 153.5 points,Over/Under 153.5 points
+,betexplorer,BET_TYPE,Over/Under 154.5 points,Over/Under 154.5 points
+,betexplorer,BET_TYPE,Over/Under 155.5 points,Over/Under 155.5 points
+,betexplorer,BET_TYPE,Over/Under 156.5 points,Over/Under 156.5 points
+,betexplorer,BET_TYPE,Over/Under 157.5 points,Over/Under 157.5 points
+,betexplorer,BET_TYPE,Over/Under 158.5 points,Over/Under 158.5 points
+,betexplorer,BET_TYPE,Over/Under 159.5 points,Over/Under 159.5 points
+,betexplorer,BET_TYPE,Over/Under 160.5 points,Over/Under 160.5 points
+,betexplorer,BET_TYPE,Over/Under 161.5 points,Over/Under 161.5 points
+,betexplorer,BET_TYPE,Over/Under 162.5 points,Over/Under 162.5 points
+,betexplorer,BET_TYPE,Over/Under 163.5 points,Over/Under 163.5 points
+,betexplorer,BET_TYPE,Over/Under 164.5 points,Over/Under 164.5 points
+,betexplorer,BET_TYPE,Over/Under 165.5 points,Over/Under 165.5 points
+,betexplorer,BET_TYPE,Over/Under 166.5 points,Over/Under 166.5 points
+,betexplorer,BET_TYPE,Over/Under 167.5 points,Over/Under 167.5 points
+,betexplorer,BET_TYPE,Over/Under 168.5 points,Over/Under 168.5 points
+,betexplorer,BET_TYPE,Over/Under 169.5 points,Over/Under 169.5 points
+,betexplorer,BET_TYPE,Over/Under 170.5 points,Over/Under 170.5 points
+,betexplorer,BET_TYPE,Over/Under 171.5 points,Over/Under 171.5 points
+,betexplorer,BET_TYPE,Over/Under 172.5 points,Over/Under 172.5 points
+,betexplorer,BET_TYPE,Over/Under 173.5 points,Over/Under 173.5 points
+,betexplorer,BET_TYPE,Over/Under 174.5 points,Over/Under 174.5 points
+,betexplorer,BET_TYPE,Over/Under 175.5 points,Over/Under 175.5 points
+,betexplorer,BET_TYPE,Over/Under 176.5 points,Over/Under 176.5 points
+,betexplorer,BET_TYPE,Over/Under 177.5 points,Over/Under 177.5 points
+,betexplorer,BET_TYPE,Over/Under 178.5 points,Over/Under 178.5 points
+,betexplorer,BET_TYPE,Over/Under 179.5 points,Over/Under 179.5 points
+,betexplorer,BET_TYPE,Over/Under 180.5 points,Over/Under 180.5 points
+,betexplorer,BET_TYPE,Over/Under 181.5 points,Over/Under 181.5 points
+,betexplorer,BET_TYPE,Over/Under 182.5 points,Over/Under 182.5 points
+,betexplorer,BET_TYPE,Over/Under 183.5 points,Over/Under 183.5 points
+,betexplorer,BET_TYPE,Over/Under 184.5 points,Over/Under 184.5 points
+,betexplorer,BET_TYPE,Over/Under 185.5 points,Over/Under 185.5 points
+,betexplorer,BET_TYPE,Over/Under 186.5 points,Over/Under 186.5 points
+,betexplorer,BET_TYPE,Over/Under 187.5 points,Over/Under 187.5 points
+,betexplorer,BET_TYPE,Over/Under 188.5 points,Over/Under 188.5 points
+,betexplorer,BET_TYPE,Over/Under 189.5 points,Over/Under 189.5 points
+,betexplorer,BET_TYPE,Over/Under 190.5 points,Over/Under 190.5 points
+,betexplorer,BET_TYPE,Over/Under 191.5 points,Over/Under 191.5 points
+,betexplorer,BET_TYPE,Over/Under 192.5 points,Over/Under 192.5 points
+,betexplorer,BET_TYPE,Over/Under 193.5 points,Over/Under 193.5 points
+,betexplorer,BET_TYPE,Over/Under 194.5 points,Over/Under 194.5 points
+,betexplorer,BET_TYPE,Over/Under 195.5 points,Over/Under 195.5 points
+,betexplorer,BET_TYPE,Over/Under 196.5 points,Over/Under 196.5 points
+,betexplorer,BET_TYPE,Over/Under 197.5 points,Over/Under 197.5 points
+,betexplorer,BET_TYPE,Over/Under 198.5 points,Over/Under 198.5 points
+,betexplorer,BET_TYPE,Over/Under 199.5 points,Over/Under 199.5 points
+,betexplorer,BET_TYPE,Over/Under 200.5 points,Over/Under 200.5 points
+,betexplorer,BET_TYPE,Over/Under 201.5 points,Over/Under 201.5 points
+,betexplorer,BET_TYPE,Over/Under 202.5 points,Over/Under 202.5 points
+,betexplorer,BET_TYPE,Over/Under 203.5 points,Over/Under 203.5 points
+,betexplorer,BET_TYPE,Over/Under 204.5 points,Over/Under 204.5 points
+,betexplorer,BET_TYPE,Over/Under 205.5 points,Over/Under 205.5 points
+,betexplorer,BET_TYPE,Over/Under 206.5 points,Over/Under 206.5 points
+,betexplorer,BET_TYPE,Over/Under 207.5 points,Over/Under 207.5 points
+,betexplorer,BET_TYPE,Over/Under 208.5 points,Over/Under 208.5 points
+,betexplorer,BET_TYPE,Over/Under 209.5 points,Over/Under 209.5 points
+,betexplorer,BET_TYPE,Over/Under 210.5 points,Over/Under 210.5 points
+,betexplorer,BET_TYPE,Asian Handicap -20 points,Asian Handicap -20 points
+,betexplorer,BET_TYPE,Asian Handicap -19.5 points,Asian Handicap -19.5 points
+,betexplorer,BET_TYPE,Asian Handicap -19 points,Asian Handicap -19 points
+,betexplorer,BET_TYPE,Asian Handicap -18.5 points,Asian Handicap -18.5 points
+,betexplorer,BET_TYPE,Asian Handicap -18 points,Asian Handicap -18 points
+,betexplorer,BET_TYPE,Asian Handicap -17.5 points,Asian Handicap -17.5 points
+,betexplorer,BET_TYPE,Asian Handicap -17 points,Asian Handicap -17 points
+,betexplorer,BET_TYPE,Asian Handicap -16.5 points,Asian Handicap -16.5 points
+,betexplorer,BET_TYPE,Asian Handicap -16 points,Asian Handicap -16 points
+,betexplorer,BET_TYPE,Asian Handicap -15.5 points,Asian Handicap -15.5 points
+,betexplorer,BET_TYPE,Asian Handicap -15 points,Asian Handicap -15 points
+,betexplorer,BET_TYPE,Asian Handicap -14.5 points,Asian Handicap -14.5 points
+,betexplorer,BET_TYPE,Asian Handicap -14 points,Asian Handicap -14 points
+,betexplorer,BET_TYPE,Asian Handicap -13.5 points,Asian Handicap -13.5 points
+,betexplorer,BET_TYPE,Asian Handicap -13 points,Asian Handicap -13 points
+,betexplorer,BET_TYPE,Asian Handicap -12.5 points,Asian Handicap -12.5 points
+,betexplorer,BET_TYPE,Asian Handicap -12 points,Asian Handicap -12 points
+,betexplorer,BET_TYPE,Asian Handicap -11.5 points,Asian Handicap -11.5 points
+,betexplorer,BET_TYPE,Asian Handicap -11 points,Asian Handicap -11 points
+,betexplorer,BET_TYPE,Asian Handicap -10.5 points,Asian Handicap -10.5 points
+,betexplorer,BET_TYPE,Asian Handicap -10 points,Asian Handicap -10 points
+,betexplorer,BET_TYPE,Asian Handicap -9.5 points,Asian Handicap -9.5 points
+,betexplorer,BET_TYPE,Asian Handicap -9 points,Asian Handicap -9 points
+,betexplorer,BET_TYPE,Asian Handicap -8.5 points,Asian Handicap -8.5 points
+,betexplorer,BET_TYPE,Asian Handicap -8 points,Asian Handicap -8 points
+,betexplorer,BET_TYPE,Asian Handicap -7.5 points,Asian Handicap -7.5 points
+,betexplorer,BET_TYPE,Asian Handicap -7 points,Asian Handicap -7 points
+,betexplorer,BET_TYPE,Asian Handicap -6.5 points,Asian Handicap -6.5 points
+,betexplorer,BET_TYPE,Asian Handicap -6 points,Asian Handicap -6 points
+,betexplorer,BET_TYPE,Asian Handicap -5.5 points,Asian Handicap -5.5 points
+,betexplorer,BET_TYPE,Asian Handicap -5 points,Asian Handicap -5 points
+,betexplorer,BET_TYPE,Asian Handicap -4.5 points,Asian Handicap -4.5 points
+,betexplorer,BET_TYPE,Asian Handicap -4 points,Asian Handicap -4 points
+,betexplorer,BET_TYPE,Asian Handicap -3.5 points,Asian Handicap -3.5 points
+,betexplorer,BET_TYPE,Asian Handicap -3 points,Asian Handicap -3 points
+,betexplorer,BET_TYPE,Asian Handicap -2.5 points,Asian Handicap -2.5 points
+,betexplorer,BET_TYPE,Asian Handicap -2 points,Asian Handicap -2 points
+,betexplorer,BET_TYPE,Asian Handicap -1.5 points,Asian Handicap -1.5 points
+,betexplorer,BET_TYPE,Asian Handicap -1 points,Asian Handicap -1 points
+,betexplorer,BET_TYPE,Asian Handicap -0.5 points,Asian Handicap -0.5 points
+,betexplorer,BET_TYPE,Asian Handicap 0 points,Asian Handicap 0 points
+,betexplorer,BET_TYPE,Asian Handicap 0.5 points,Asian Handicap 0.5 points
+,betexplorer,BET_TYPE,Asian Handicap 1 points,Asian Handicap 1 points
+,betexplorer,BET_TYPE,Asian Handicap 1.5 points,Asian Handicap 1.5 points
+,betexplorer,BET_TYPE,Asian Handicap 2 points,Asian Handicap 2 points
+,betexplorer,BET_TYPE,Asian Handicap 2.5 points,Asian Handicap 2.5 points
+,betexplorer,BET_TYPE,Asian Handicap 3 points,Asian Handicap 3 points
+,betexplorer,BET_TYPE,Asian Handicap 3.5 points,Asian Handicap 3.5 points
+,betexplorer,BET_TYPE,Asian Handicap 4 points,Asian Handicap 4 points
+,betexplorer,BET_TYPE,Asian Handicap 4.5 points,Asian Handicap 4.5 points
+,betexplorer,BET_TYPE,Asian Handicap 5 points,Asian Handicap 5 points
+,betexplorer,BET_TYPE,Asian Handicap 5.5 points,Asian Handicap 5.5 points
+,betexplorer,BET_TYPE,Asian Handicap 6 points,Asian Handicap 6 points
+,betexplorer,BET_TYPE,Asian Handicap 6.5 points,Asian Handicap 6.5 points
+,betexplorer,BET_TYPE,Asian Handicap 7 points,Asian Handicap 7 points
+,betexplorer,BET_TYPE,Asian Handicap 7.5 points,Asian Handicap 7.5 points
+,betexplorer,BET_TYPE,Asian Handicap 8 points,Asian Handicap 8 points
+,betexplorer,BET_TYPE,Asian Handicap 8.5 points,Asian Handicap 8.5 points
+,betexplorer,BET_TYPE,Asian Handicap 9 points,Asian Handicap 9 points
+,betexplorer,BET_TYPE,Asian Handicap 9.5 points,Asian Handicap 9.5 points
+,betexplorer,BET_TYPE,Asian Handicap 10 points,Asian Handicap 10 points
+,betexplorer,BET_TYPE,Asian Handicap 10.5 points,Asian Handicap 10.5 points
+,betexplorer,BET_TYPE,Asian Handicap 11 points,Asian Handicap 11 points
+,betexplorer,BET_TYPE,Asian Handicap 11.5 points,Asian Handicap 11.5 points
+,betexplorer,BET_TYPE,Asian Handicap 12 points,Asian Handicap 12 points
+,betexplorer,BET_TYPE,Asian Handicap 12.5 points,Asian Handicap 12.5 points
+,betexplorer,BET_TYPE,Asian Handicap 13 points,Asian Handicap 13 points
+,betexplorer,BET_TYPE,Asian Handicap 13.5 points,Asian Handicap 13.5 points
+,betexplorer,BET_TYPE,Asian Handicap 14 points,Asian Handicap 14 points
+,betexplorer,BET_TYPE,Asian Handicap 14.5 points,Asian Handicap 14.5 points
+,betexplorer,BET_TYPE,Asian Handicap 15 points,Asian Handicap 15 points
+,betexplorer,BET_TYPE,Asian Handicap 15.5 points,Asian Handicap 15.5 points
+,betexplorer,BET_TYPE,Asian Handicap 16 points,Asian Handicap 16 points
+,betexplorer,BET_TYPE,Asian Handicap 16.5 points,Asian Handicap 16.5 points
+,betexplorer,BET_TYPE,Asian Handicap 17 points,Asian Handicap 17 points
+,betexplorer,BET_TYPE,Asian Handicap 17.5 points,Asian Handicap 17.5 points
+,betexplorer,BET_TYPE,Asian Handicap 18 points,Asian Handicap 18 points
+,betexplorer,BET_TYPE,Asian Handicap 18.5 points,Asian Handicap 18.5 points
+,betexplorer,BET_TYPE,Asian Handicap 19 points,Asian Handicap 19 points
+,betexplorer,BET_TYPE,Asian Handicap 19.5 points,Asian Handicap 19.5 points
+,betexplorer,BET_TYPE,Asian Handicap 20 points,Asian Handicap 20 points

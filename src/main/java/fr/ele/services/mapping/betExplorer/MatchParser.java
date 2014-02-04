@@ -13,14 +13,17 @@ import org.jsoup.nodes.Element;
 
 import fr.ele.model.Bet;
 import fr.ele.model.ref.BetType;
+import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.RefKey;
 import fr.ele.services.mapping.SynchronizerContext;
 
 public abstract class MatchParser {
+	private BookMaker bookmaker;
 
 	public List<Bet> parseMatchId(String httpRef, Match match,
 			SynchronizerContext context) throws Throwable {
+		this.setBookmaker(context);
 		List<Bet> bets = new LinkedList<Bet>();
 		URL website = new URL(httpRef + getUrlExtension());
 		URLConnection urlConnetion = website.openConnection(getProxy());
@@ -67,7 +70,7 @@ public abstract class MatchParser {
 					bets.add(convert(odd, match, betType, subType, context));
 				}
 			}
-			context.setBookmaker("betexplorer");
+			context.setBookmaker(this.getBookmaker());
 		}
 	}
 
@@ -80,9 +83,21 @@ public abstract class MatchParser {
 		return element.toString().contains("notactive");
 	}
 
+	protected boolean extractActiveOdd(String element) {
+		return element.contains("notactive");
+	}
+
 	private Proxy getProxy() throws Throwable {
 		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
 				"gecd-proxy.equities.net.intra", 8080));
 		return proxy;
+	}
+
+	private void setBookmaker(SynchronizerContext context) {
+		this.bookmaker = context.getBookMaker();
+	}
+
+	private BookMaker getBookmaker() {
+		return this.bookmaker;
 	}
 }
