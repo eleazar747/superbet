@@ -223,6 +223,11 @@ public class SynchronizerContext {
 
 	}
 
+	public void setBookmaker(BookMaker bookmakerCode) {
+		bookMaker = bookmakerCode;
+
+	}
+
 	public Date getSynchronizationDate() {
 		return synchronizationDate;
 	}
