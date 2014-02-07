@@ -55,3 +55,4 @@ id,code,url,url sync,sync service,encoding
 0,PaddyPower,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-15
 0,youwin,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-16
 0,Tibico,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-16
+0,tennisexplorer,www.google.com,http://xml.nordicbet.com/football.xml,TennisExplorerSynchroniser,ISO-8859-16

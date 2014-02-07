@@ -12,12 +12,21 @@
 		</layout>
 		<target>System.err</target>
 	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>stdout.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+
 
 	<logger name="fr.ele" level="TRACE" additivity="false">
-		<appender-ref ref="STDERR"/>
+		<appender-ref ref="STDERR" />
+		<appender-ref ref="FILE" />
 	</logger>
 	<logger name="fr.ele.ui.mustache" level="INFO" additivity="false">
-		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="STDOUT" />
 	</logger>
 
 	<root level="INFO">
