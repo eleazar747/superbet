@@ -23,52 +23,52 @@ import fr.ele.services.repositories.MatchRepository;
 
 public class WIlliamHillIntegrationTest extends AbstractSuperbetIntegrationTest {
 
-    @Autowired
-    private WilliamHillSynchronizer williamHillSynchronizer;
+	@Autowired
+	private WilliamHillSynchronizer williamHillSynchronizer;
 
-    @Autowired
-    private MatchRepository matchRepository;
+	@Autowired
+	private MatchRepository matchRepository;
 
-    @Autowired
-    private BetRepository betRepository;
+	@Autowired
+	private BetRepository betRepository;
 
-    @Autowired
-    private BookMakerSynchronizerService bookMakerSynchronizerService;
+	@Autowired
+	private BookMakerSynchronizerService bookMakerSynchronizerService;
 
-    @Autowired
-    private BookMakerRepository bookMakerRepository;
+	@Autowired
+	private BookMakerRepository bookMakerRepository;
 
-    @Override
-    @Before
-    public void initializeDatas() {
-        super.initializeDatas();
-    }
+	@Override
+	@Before
+	public void initializeDatas() {
+		super.initializeDatas();
+	}
 
-    @Test
-    public void test() throws Throwable {
-        BufferedInputStream inputStream = new BufferedInputStream(
-                BetclickIntegrationTest.class
-                        .getResourceAsStream("/fr/ele/feeds/williamhill/WilliamHill.xml"));
-        Oxip dto = williamHillSynchronizer.unmarshall(inputStream, null);
-        williamHillSynchronizer.synchronize("williamhill", dto);
+	@Test
+	public void test() throws Throwable {
+		BufferedInputStream inputStream = new BufferedInputStream(
+				WIlliamHillIntegrationTest.class
+						.getResourceAsStream("/fr/ele/feeds/williamhill/WilliamHill.xml"));
+		Oxip dto = williamHillSynchronizer.unmarshall(inputStream, null);
+		williamHillSynchronizer.synchronize("williamhill", dto);
 
-        // Assert.assertNotNull(matchRepository.findByCode(code));
-        List<Bet> bets = Lists.newArrayList(betRepository.findAll());
-        Assert.assertNotNull(bets);
-        Assert.assertEquals(48, bets.size());
-        Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());
-        for (Bet bet : bets) {
-            bookmakerUniqueIds.add(bet.getBookmakerBetId());
-            // System.err.println(bet.getRefKey().getMatch().getCode());
-        }
-        Assert.assertEquals(bets.size(), bookmakerUniqueIds.size());
+		// Assert.assertNotNull(matchRepository.findByCode(code));
+		List<Bet> bets = Lists.newArrayList(betRepository.findAll());
+		Assert.assertNotNull(bets);
+		Assert.assertEquals(48, bets.size());
+		Set<String> bookmakerUniqueIds = new HashSet<String>(bets.size());
+		for (Bet bet : bets) {
+			bookmakerUniqueIds.add(bet.getBookmakerBetId());
+			// System.err.println(bet.getRefKey().getMatch().getCode());
+		}
+		Assert.assertEquals(bets.size(), bookmakerUniqueIds.size());
 
-    }
+	}
 
-    @Test
-    public void test2() {
-        BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
-        bookMakerSynchronizerService.synchronize(bookMaker);
-    }
+	@Test
+	public void test2() {
+		BookMaker bookMaker = bookMakerRepository.findByCode("betclic");
+		bookMakerSynchronizerService.synchronize(bookMaker);
+	}
 
 }

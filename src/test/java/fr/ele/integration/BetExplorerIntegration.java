@@ -7,8 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.ele.feeds.nordicbet.NordicbetUnwmarshallingTest;
-import fr.ele.feeds.nordicbet.dto.Odds;
+import fr.ele.feeds.wiliamhill.dto.Oxip;
 import fr.ele.services.mapping.BetExplorerSynchroniser;
 
 public class BetExplorerIntegration extends AbstractSuperbetIntegrationTest {
@@ -24,9 +23,9 @@ public class BetExplorerIntegration extends AbstractSuperbetIntegrationTest {
 	@Test
 	public void testParse() {
 		InputStream inputStream = new BufferedInputStream(
-				NordicbetUnwmarshallingTest.class
+				WIlliamHillIntegrationTest.class
 						.getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
-		Odds odds = betExplorerSynchroniser.unmarshall(inputStream, null);
+		Oxip odds = betExplorerSynchroniser.unmarshall(inputStream, null);
 		betExplorerSynchroniser.synchronize("betexplorer", odds);
 	}
 }

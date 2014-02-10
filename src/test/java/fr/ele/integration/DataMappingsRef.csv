@@ -3111,6 +3111,7 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betexplorer,SPORT,Volleyball,Volleyball
 0,betexplorer,SPORT,Basketball,Basketball
 0,betexplorer,SPORT,Handball,Handball
+0,tennisexplorer,SPORT,Tennis,Tennis
 0,betexplorer,BET_TYPE,Over/Under 0.50,Over/Under 0.5
 0,betexplorer,BET_TYPE,Over/Under 1.50,Over/Under 1.5
 0,betexplorer,BET_TYPE,Over/Under 2.50,Over/Under 2.5
@@ -3989,3 +3990,4 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,betexplorer,BET_TYPE,Asian Handicap 19 points,Asian Handicap 19 points
 0,betexplorer,BET_TYPE,Asian Handicap 19.5 points,Asian Handicap 19.5 points
 0,betexplorer,BET_TYPE,Asian Handicap 20 points,Asian Handicap 20 points
+0,tennisexplorer,BET_TYPE,1x2,Match Result

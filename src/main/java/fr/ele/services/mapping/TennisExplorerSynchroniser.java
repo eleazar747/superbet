@@ -5,6 +5,9 @@ import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -15,14 +18,14 @@ import org.springframework.stereotype.Service;
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 
-import fr.ele.feeds.nordicbet.dto.Odds;
+import fr.ele.feeds.wiliamhill.dto.Oxip;
+import fr.ele.model.Bet;
 import fr.ele.model.ref.Sport;
-import fr.ele.services.mapping.betExplorer.MatchParser;
-import fr.ele.services.mapping.betExplorer.OverUnderMatchParser;
-import fr.ele.services.mapping.betExplorer.WinnerMatchParser;
+import fr.ele.services.mapping.tennisExplorer.MatchParser;
+import fr.ele.services.mapping.tennisExplorer.ResultMatchParser;
 
 @Service("TennisExplorerSynchroniser")
-public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
+public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 
 	private static final String URL_MATCH = "http://www.tennisexplorer.com/next/?type=all&";
 	private final String TENNIS = "Tennis";
@@ -30,7 +33,7 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			"yyyy:MM:dd HH:mm");
 
 	@Override
-	protected long convert(SynchronizerContext context, Odds dto) {
+	protected long convert(SynchronizerContext context, Oxip dto) {
 		// TODO Auto-generated method stub
 		long nb = 0L;
 		// genrate url_request to retrieve all match of day
@@ -41,7 +44,7 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 		try {
 			parseNextMatch(URL_MATCH, TENNIS, context, year, month, day,
-					new OverUnderMatchParser(), new WinnerMatchParser());
+					new ResultMatchParser());
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,32 +79,41 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 					if (p.attr("class").equals("first time")) {
 						String strTmp = year + ":" + month + ":" + day + " "
 								+ p.text();
+						System.out.println(p.text());
+						if (p.text().equals("--:--") == false) {
+							Date date = formatter.parse(strTmp);
+							Date time = new Date();
 
-						Date date = formatter.parse(strTmp);
-						Date time = new Date();
-						if (date.compareTo(time) > 0) {
-							if (p.attr("rowspan").equals("2")) {
-								Element link = p.select("a").first();
-								if (link != null) {
-									String linkHref = "http://www.tennisexplorer.com"
-											+ link.attr("href");
+							if (date.compareTo(time) > 0) {
+								Iterator<Element> it = ele.iterator();
+								while (it.hasNext()) {
+									Element elementIt = it.next();
 
-									/**
-									 * if (teams != null) { String[] players =
-									 * teams.split(" - "); Match match =
-									 * context.findOrCreateMatch(sport, date,
-									 * players[0], players[1]); List<Bet> bets =
-									 * new LinkedList<Bet>(); String linkOdd =
-									 * URL_MATCH + extract;
-									 * 
-									 * for (MatchParser parser : parsers) {
-									 * bets.addAll(parser.parseMatchId(linkOdd,
-									 * match, context));
-									 * 
-									 * }
-									 * 
-									 * for (Bet bet : bets) { saveBet(bet); } }
-									 */
+									if (elementIt.attr("rowspan").equals("2")) {
+										Element link = elementIt.select("a")
+												.first();
+										if (link != null
+												&& link.attr("href").contains(
+														"detail")) {
+											String linkHref = "http://www.tennisexplorer.com"
+													+ link.attr("href");
+
+											List<Bet> bets = new LinkedList<Bet>();
+											for (fr.ele.services.mapping.tennisExplorer.MatchParser parser : parsers) {
+												bets.addAll(parser
+														.parseMatchId(linkHref,
+																context, sport,
+																date));
+												/**
+												 * 
+												 * }
+												 */
+												for (Bet bet : bets) {
+													saveBet(bet);
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -119,9 +131,9 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	}
 
 	@Override
-	protected Class<Odds> getDtoClass() {
+	protected Class<Oxip> getDtoClass() {
 		// TODO Auto-generated method stub
-		return Odds.class;
+		return Oxip.class;
 	}
 
 	private boolean isActiveLink(Element element) {

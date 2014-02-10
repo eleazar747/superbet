@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 
-import fr.ele.feeds.nordicbet.dto.Odds;
+import fr.ele.feeds.wiliamhill.dto.Oxip;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.Sport;
@@ -27,7 +27,7 @@ import fr.ele.services.mapping.betExplorer.ResultMatchParser;
 import fr.ele.services.mapping.betExplorer.WinnerMatchParser;
 
 @Service("BetExplorerSynchroniser")
-public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
+public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 
 	private static final String URL_MATCH = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e=";
 
@@ -44,7 +44,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	private final String BASEBALL = "Baseball";
 
 	@Override
-	protected long convert(SynchronizerContext context, Odds dto) {
+	protected long convert(SynchronizerContext context, Oxip dto) {
 		long nb = 0L;
 
 		try {
@@ -208,9 +208,9 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 	}
 
 	@Override
-	protected Class<Odds> getDtoClass() {
+	protected Class<Oxip> getDtoClass() {
 		// TODO Auto-generated method stub
-		return Odds.class;
+		return Oxip.class;
 	}
 
 }
