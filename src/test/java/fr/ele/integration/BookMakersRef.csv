@@ -9,7 +9,7 @@ id,code,url,url sync,sync service,encoding
 0,titanbet,www.google.com,http://xml.nordicbet.com/football.xml,TitanBetSynchroniser,
 0,ESPN,http://espn.go.com/,http://api.espn.com/v1/sports/,EspnSynchronizer,ISO-8859-1
 0,oddsportal,www.google.com,http://xml.nordicbet.com/football.xml,oddsPortalSynchroniser,
-0,betexplorer,www.google.com,http://cachepricefeeds.williamhill.com/openbet_cdn?action=template&template=getHierarchyByMarketType&classId=10&marketSort=--&filterBIR=N,BetExplorerSynchroniser,ISO-8859-1
+0,betexplorer,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
 0,10Bet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
 0,12BET,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
 0,888sport,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-1
@@ -55,7 +55,7 @@ id,code,url,url sync,sync service,encoding
 0,PaddyPower,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-15
 0,youwin,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-16
 0,Tibico,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-16
-0,tennisexplorer,www.google.com,http://cachepricefeeds.williamhill.com/openbet_cdn?action=template&template=getHierarchyByMarketType&classId=10&marketSort=--&filterBIR=N,TennisExplorerSynchroniser,ISO-8859-16
+0,tennisexplorer,www.google.com,http://xml.nordicbet.com/football.xml,TennisExplorerSynchroniser,ISO-8859-1
 0,Sbobet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-8
 0,SportingBet,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-8
 0,TheGreek,www.google.com,http://xml.nordicbet.com/football.xml,BetExplorerSynchroniser,ISO-8859-8

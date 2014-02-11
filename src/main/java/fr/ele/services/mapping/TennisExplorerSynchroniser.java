@@ -18,14 +18,15 @@ import org.springframework.stereotype.Service;
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 
-import fr.ele.feeds.wiliamhill.dto.Oxip;
+import fr.ele.feeds.nordicbet.dto.Odds;
 import fr.ele.model.Bet;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.mapping.tennisExplorer.MatchParser;
+import fr.ele.services.mapping.tennisExplorer.OverUnderMatchParser;
 import fr.ele.services.mapping.tennisExplorer.ResultMatchParser;
 
 @Service("TennisExplorerSynchroniser")
-public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
+public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 
 	private static final String URL_MATCH = "http://www.tennisexplorer.com/next/?type=all&";
 	private final String TENNIS = "Tennis";
@@ -33,7 +34,7 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 			"yyyy:MM:dd HH:mm");
 
 	@Override
-	protected long convert(SynchronizerContext context, Oxip dto) {
+	protected long convert(SynchronizerContext context, Odds dto) {
 		// TODO Auto-generated method stub
 		long nb = 0L;
 		// genrate url_request to retrieve all match of day
@@ -44,7 +45,7 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 
 		try {
 			parseNextMatch(URL_MATCH, TENNIS, context, year, month, day,
-					new ResultMatchParser());
+					new ResultMatchParser(), new OverUnderMatchParser());
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,7 +81,7 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 						String strTmp = year + ":" + month + ":" + day + " "
 								+ p.text();
 						System.out.println(p.text());
-						if (p.text().equals("--:--") == false) {
+						if (p.text().contains("--") == false) {
 							Date date = formatter.parse(strTmp);
 							Date time = new Date();
 
@@ -104,13 +105,10 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 														.parseMatchId(linkHref,
 																context, sport,
 																date));
-												/**
-												 * 
-												 * }
-												 */
-												for (Bet bet : bets) {
-													saveBet(bet);
-												}
+
+											}
+											for (Bet bet : bets) {
+												saveBet(bet);
 											}
 										}
 									}
@@ -131,9 +129,9 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 	}
 
 	@Override
-	protected Class<Oxip> getDtoClass() {
+	protected Class<Odds> getDtoClass() {
 		// TODO Auto-generated method stub
-		return Oxip.class;
+		return Odds.class;
 	}
 
 	private boolean isActiveLink(Element element) {

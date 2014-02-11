@@ -6,7 +6,6 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,oddsportal,SPORT,Basketball,Basketball
 0,titanbet,SPORT,Football,Football
 0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
-0,betvictor,BET_TYPE,Total Goals - Over/Under 2.5,Over Under
 0,betvictor,TEAM,Nice,Nice
 0,betvictor,TEAM,Marseille,Marseille
 0,betvictor,BET_TYPE,Match Betting,Match Result
@@ -4202,3 +4201,587 @@ id,bookmaker,ref_entity_type,bookmaker_code,model_code
 0,tennisexplorer,BET_TYPE,Over/Under 208.5 sets,Over/Under 208.5 sets
 0,tennisexplorer,BET_TYPE,Over/Under 209.5 sets,Over/Under 209.5 sets
 0,tennisexplorer,BET_TYPE,Over/Under 210.5 sets,Over/Under 210.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -20 sets,Asian Handicap -20 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -19.5 sets,Asian Handicap -19.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -19 sets,Asian Handicap -19 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -18.5 sets,Asian Handicap -18.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -18 sets,Asian Handicap -18 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -17.5 sets,Asian Handicap -17.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -17 sets,Asian Handicap -17 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -16.5 sets,Asian Handicap -16.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -16 sets,Asian Handicap -16 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -15.5 sets,Asian Handicap -15.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -15 sets,Asian Handicap -15 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -14.5 sets,Asian Handicap -14.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -14 sets,Asian Handicap -14 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -13.5 sets,Asian Handicap -13.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -13 sets,Asian Handicap -13 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -12.5 sets,Asian Handicap -12.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -12 sets,Asian Handicap -12 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -11.5 sets,Asian Handicap -11.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -11 sets,Asian Handicap -11 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -10.5 sets,Asian Handicap -10.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -10 sets,Asian Handicap -10 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -9.5 sets,Asian Handicap -9.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -9 sets,Asian Handicap -9 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -8.5 sets,Asian Handicap -8.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -8 sets,Asian Handicap -8 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -7.5 sets,Asian Handicap -7.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -7 sets,Asian Handicap -7 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -6.5 sets,Asian Handicap -6.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -6 sets,Asian Handicap -6 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -5.5 sets,Asian Handicap -5.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -5 sets,Asian Handicap -5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -4.5 sets,Asian Handicap -4.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -4 sets,Asian Handicap -4 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -3.5 sets,Asian Handicap -3.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -3 sets,Asian Handicap -3 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -2.5 sets,Asian Handicap -2.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -2 sets,Asian Handicap -2 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -1.5 sets,Asian Handicap -1.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -1 sets,Asian Handicap -1 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -0.5 sets,Asian Handicap -0.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 0 sets,Asian Handicap 0 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 0.5 sets,Asian Handicap 0.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 1 sets,Asian Handicap 1 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 1.5 sets,Asian Handicap 1.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 2 sets,Asian Handicap 2 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 2.5 sets,Asian Handicap 2.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 3 sets,Asian Handicap 3 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 3.5 sets,Asian Handicap 3.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 4 sets,Asian Handicap 4 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 4.5 sets,Asian Handicap 4.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 5 sets,Asian Handicap 5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 5.5 sets,Asian Handicap 5.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 6 sets,Asian Handicap 6 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 6.5 sets,Asian Handicap 6.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 7 sets,Asian Handicap 7 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 7.5 sets,Asian Handicap 7.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 8 sets,Asian Handicap 8 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 8.5 sets,Asian Handicap 8.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 9 sets,Asian Handicap 9 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 9.5 sets,Asian Handicap 9.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 10 sets,Asian Handicap 10 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 10.5 sets,Asian Handicap 10.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 11 sets,Asian Handicap 11 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 11.5 sets,Asian Handicap 11.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 12 sets,Asian Handicap 12 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 12.5 sets,Asian Handicap 12.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 13 sets,Asian Handicap 13 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 13.5 sets,Asian Handicap 13.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 14 sets,Asian Handicap 14 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 14.5 sets,Asian Handicap 14.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 15 sets,Asian Handicap 15 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 15.5 sets,Asian Handicap 15.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 16 sets,Asian Handicap 16 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 16.5 sets,Asian Handicap 16.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 17 sets,Asian Handicap 17 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 17.5 sets,Asian Handicap 17.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 18 sets,Asian Handicap 18 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 18.5 sets,Asian Handicap 18.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 19 sets,Asian Handicap 19 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 19.5 sets,Asian Handicap 19.5 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap 20 sets,Asian Handicap 20 sets
+0,tennisexplorer,BET_TYPE,Asian Handicap -20 games,Asian Handicap -20 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -19.5 games,Asian Handicap -19.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -19 games,Asian Handicap -19 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -18.5 games,Asian Handicap -18.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -18 games,Asian Handicap -18 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -17.5 games,Asian Handicap -17.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -17 games,Asian Handicap -17 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -16.5 games,Asian Handicap -16.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -16 games,Asian Handicap -16 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -15.5 games,Asian Handicap -15.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -15 games,Asian Handicap -15 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -14.5 games,Asian Handicap -14.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -14 games,Asian Handicap -14 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -13.5 games,Asian Handicap -13.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -13 games,Asian Handicap -13 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -12.5 games,Asian Handicap -12.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -12 games,Asian Handicap -12 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -11.5 games,Asian Handicap -11.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -11 games,Asian Handicap -11 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -10.5 games,Asian Handicap -10.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -10 games,Asian Handicap -10 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -9.5 games,Asian Handicap -9.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -9 games,Asian Handicap -9 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -8.5 games,Asian Handicap -8.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -8 games,Asian Handicap -8 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -7.5 games,Asian Handicap -7.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -7 games,Asian Handicap -7 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -6.5 games,Asian Handicap -6.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -6 games,Asian Handicap -6 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -5.5 games,Asian Handicap -5.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -5 games,Asian Handicap -5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -4.5 games,Asian Handicap -4.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -4 games,Asian Handicap -4 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -3.5 games,Asian Handicap -3.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -3 games,Asian Handicap -3 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -2.5 games,Asian Handicap -2.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -2 games,Asian Handicap -2 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -1.5 games,Asian Handicap -1.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -1 games,Asian Handicap -1 games
+0,tennisexplorer,BET_TYPE,Asian Handicap -0.5 games,Asian Handicap -0.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 0 games,Asian Handicap 0 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 0.5 games,Asian Handicap 0.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 1 games,Asian Handicap 1 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 1.5 games,Asian Handicap 1.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 2 games,Asian Handicap 2 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 2.5 games,Asian Handicap 2.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 3 games,Asian Handicap 3 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 3.5 games,Asian Handicap 3.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 4 games,Asian Handicap 4 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 4.5 games,Asian Handicap 4.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 5 games,Asian Handicap 5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 5.5 games,Asian Handicap 5.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 6 games,Asian Handicap 6 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 6.5 games,Asian Handicap 6.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 7 games,Asian Handicap 7 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 7.5 games,Asian Handicap 7.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 8 games,Asian Handicap 8 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 8.5 games,Asian Handicap 8.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 9 games,Asian Handicap 9 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 9.5 games,Asian Handicap 9.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 10 games,Asian Handicap 10 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 10.5 games,Asian Handicap 10.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 11 games,Asian Handicap 11 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 11.5 games,Asian Handicap 11.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 12 games,Asian Handicap 12 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 12.5 games,Asian Handicap 12.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 13 games,Asian Handicap 13 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 13.5 games,Asian Handicap 13.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 14 games,Asian Handicap 14 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 14.5 games,Asian Handicap 14.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 15 games,Asian Handicap 15 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 15.5 games,Asian Handicap 15.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 16 games,Asian Handicap 16 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 16.5 games,Asian Handicap 16.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 17 games,Asian Handicap 17 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 17.5 games,Asian Handicap 17.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 18 games,Asian Handicap 18 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 18.5 games,Asian Handicap 18.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 19 games,Asian Handicap 19 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 19.5 games,Asian Handicap 19.5 games
+0,tennisexplorer,BET_TYPE,Asian Handicap 20 games,Asian Handicap 20 games
+0,tennisexplorer,BET_TYPE,Over/Under 0.5 games,Over/Under 0.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 1.5 games,Over/Under 1.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 2.5 games,Over/Under 2.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 3.5 games,Over/Under 3.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 4.5 games,Over/Under 4.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 5.5 games,Over/Under 5.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 6.5 games,Over/Under 6.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 7.5 games,Over/Under 7.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 8.5 games,Over/Under 8.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 9.5 games,Over/Under 9.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 10.5 games,Over/Under 10.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 11.5 games,Over/Under 11.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 12.5 games,Over/Under 12.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 13.5 games,Over/Under 13.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 14.5 games,Over/Under 14.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 15.5 games,Over/Under 15.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 16.5 games,Over/Under 16.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 17.5 games,Over/Under 17.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 18.5 games,Over/Under 18.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 19.5 games,Over/Under 19.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 20.5 games,Over/Under 20.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 21.5 games,Over/Under 21.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 22.5 games,Over/Under 22.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 23.5 games,Over/Under 23.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 24.5 games,Over/Under 24.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 25.5 games,Over/Under 25.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 26.5 games,Over/Under 26.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 27.5 games,Over/Under 27.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 28.5 games,Over/Under 28.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 29.5 games,Over/Under 29.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 30.5 games,Over/Under 30.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 31.5 games,Over/Under 31.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 32.5 games,Over/Under 32.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 33.5 games,Over/Under 33.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 34.5 games,Over/Under 34.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 35.5 games,Over/Under 35.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 36.5 games,Over/Under 36.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 37.5 games,Over/Under 37.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 38.5 games,Over/Under 38.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 39.5 games,Over/Under 39.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 40.5 games,Over/Under 40.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 41.5 games,Over/Under 41.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 42.5 games,Over/Under 42.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 43.5 games,Over/Under 43.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 44.5 games,Over/Under 44.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 45.5 games,Over/Under 45.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 46.5 games,Over/Under 46.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 47.5 games,Over/Under 47.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 48.5 games,Over/Under 48.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 49.5 games,Over/Under 49.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 50.5 games,Over/Under 50.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 51.5 games,Over/Under 51.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 52.5 games,Over/Under 52.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 53.5 games,Over/Under 53.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 54.5 games,Over/Under 54.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 55.5 games,Over/Under 55.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 56.5 games,Over/Under 56.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 57.5 games,Over/Under 57.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 58.5 games,Over/Under 58.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 59.5 games,Over/Under 59.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 60.5 games,Over/Under 60.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 61.5 games,Over/Under 61.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 62.5 games,Over/Under 62.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 63.5 games,Over/Under 63.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 64.5 games,Over/Under 64.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 65.5 games,Over/Under 65.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 66.5 games,Over/Under 66.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 67.5 games,Over/Under 67.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 68.5 games,Over/Under 68.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 69.5 games,Over/Under 69.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 70.5 games,Over/Under 70.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 71.5 games,Over/Under 71.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 72.5 games,Over/Under 72.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 73.5 games,Over/Under 73.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 74.5 games,Over/Under 74.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 75.5 games,Over/Under 75.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 76.5 games,Over/Under 76.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 77.5 games,Over/Under 77.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 78.5 games,Over/Under 78.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 79.5 games,Over/Under 79.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 80.5 games,Over/Under 80.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 81.5 games,Over/Under 81.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 82.5 games,Over/Under 82.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 83.5 games,Over/Under 83.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 84.5 games,Over/Under 84.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 85.5 games,Over/Under 85.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 86.5 games,Over/Under 86.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 87.5 games,Over/Under 87.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 88.5 games,Over/Under 88.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 89.5 games,Over/Under 89.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 90.5 games,Over/Under 90.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 91.5 games,Over/Under 91.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 92.5 games,Over/Under 92.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 93.5 games,Over/Under 93.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 94.5 games,Over/Under 94.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 95.5 games,Over/Under 95.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 96.5 games,Over/Under 96.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 97.5 games,Over/Under 97.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 98.5 games,Over/Under 98.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 99.5 games,Over/Under 99.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 100.5 games,Over/Under 100.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 101.5 games,Over/Under 101.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 102.5 games,Over/Under 102.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 103.5 games,Over/Under 103.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 104.5 games,Over/Under 104.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 105.5 games,Over/Under 105.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 106.5 games,Over/Under 106.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 107.5 games,Over/Under 107.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 108.5 games,Over/Under 108.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 109.5 games,Over/Under 109.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 110.5 games,Over/Under 110.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 111.5 games,Over/Under 111.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 112.5 games,Over/Under 112.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 113.5 games,Over/Under 113.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 114.5 games,Over/Under 114.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 115.5 games,Over/Under 115.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 116.5 games,Over/Under 116.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 117.5 games,Over/Under 117.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 118.5 games,Over/Under 118.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 119.5 games,Over/Under 119.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 120.5 games,Over/Under 120.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 121.5 games,Over/Under 121.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 122.5 games,Over/Under 122.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 123.5 games,Over/Under 123.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 124.5 games,Over/Under 124.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 125.5 games,Over/Under 125.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 126.5 games,Over/Under 126.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 127.5 games,Over/Under 127.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 128.5 games,Over/Under 128.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 129.5 games,Over/Under 129.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 130.5 games,Over/Under 130.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 131.5 games,Over/Under 131.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 132.5 games,Over/Under 132.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 133.5 games,Over/Under 133.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 134.5 games,Over/Under 134.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 135.5 games,Over/Under 135.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 136.5 games,Over/Under 136.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 137.5 games,Over/Under 137.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 138.5 games,Over/Under 138.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 139.5 games,Over/Under 139.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 140.5 games,Over/Under 140.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 141.5 games,Over/Under 141.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 142.5 games,Over/Under 142.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 143.5 games,Over/Under 143.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 144.5 games,Over/Under 144.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 145.5 games,Over/Under 145.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 146.5 games,Over/Under 146.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 147.5 games,Over/Under 147.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 148.5 games,Over/Under 148.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 149.5 games,Over/Under 149.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 150.5 games,Over/Under 150.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 151.5 games,Over/Under 151.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 152.5 games,Over/Under 152.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 153.5 games,Over/Under 153.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 154.5 games,Over/Under 154.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 155.5 games,Over/Under 155.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 156.5 games,Over/Under 156.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 157.5 games,Over/Under 157.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 158.5 games,Over/Under 158.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 159.5 games,Over/Under 159.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 160.5 games,Over/Under 160.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 161.5 games,Over/Under 161.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 162.5 games,Over/Under 162.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 163.5 games,Over/Under 163.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 164.5 games,Over/Under 164.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 165.5 games,Over/Under 165.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 166.5 games,Over/Under 166.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 167.5 games,Over/Under 167.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 168.5 games,Over/Under 168.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 169.5 games,Over/Under 169.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 170.5 games,Over/Under 170.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 171.5 games,Over/Under 171.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 172.5 games,Over/Under 172.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 173.5 games,Over/Under 173.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 174.5 games,Over/Under 174.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 175.5 games,Over/Under 175.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 176.5 games,Over/Under 176.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 177.5 games,Over/Under 177.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 178.5 games,Over/Under 178.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 179.5 games,Over/Under 179.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 180.5 games,Over/Under 180.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 181.5 games,Over/Under 181.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 182.5 games,Over/Under 182.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 183.5 games,Over/Under 183.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 184.5 games,Over/Under 184.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 185.5 games,Over/Under 185.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 186.5 games,Over/Under 186.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 187.5 games,Over/Under 187.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 188.5 games,Over/Under 188.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 189.5 games,Over/Under 189.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 190.5 games,Over/Under 190.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 191.5 games,Over/Under 191.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 192.5 games,Over/Under 192.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 193.5 games,Over/Under 193.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 194.5 games,Over/Under 194.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 195.5 games,Over/Under 195.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 196.5 games,Over/Under 196.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 197.5 games,Over/Under 197.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 198.5 games,Over/Under 198.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 199.5 games,Over/Under 199.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 200.5 games,Over/Under 200.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 201.5 games,Over/Under 201.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 202.5 games,Over/Under 202.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 203.5 games,Over/Under 203.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 204.5 games,Over/Under 204.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 205.5 games,Over/Under 205.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 206.5 games,Over/Under 206.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 207.5 games,Over/Under 207.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 208.5 games,Over/Under 208.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 209.5 games,Over/Under 209.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 210.5 games,Over/Under 210.5 games
+0,tennisexplorer,BET_TYPE,Over/Under 0 games,Over/Under 0 games
+0,tennisexplorer,BET_TYPE,Over/Under 1 games,Over/Under 1 games
+0,tennisexplorer,BET_TYPE,Over/Under 2 games,Over/Under 2 games
+0,tennisexplorer,BET_TYPE,Over/Under 3 games,Over/Under 3 games
+0,tennisexplorer,BET_TYPE,Over/Under 4 games,Over/Under 4 games
+0,tennisexplorer,BET_TYPE,Over/Under 5 games,Over/Under 5 games
+0,tennisexplorer,BET_TYPE,Over/Under 6 games,Over/Under 6 games
+0,tennisexplorer,BET_TYPE,Over/Under 7 games,Over/Under 7 games
+0,tennisexplorer,BET_TYPE,Over/Under 8 games,Over/Under 8 games
+0,tennisexplorer,BET_TYPE,Over/Under 9 games,Over/Under 9 games
+0,tennisexplorer,BET_TYPE,Over/Under 10 games,Over/Under 10 games
+0,tennisexplorer,BET_TYPE,Over/Under 11 games,Over/Under 11 games
+0,tennisexplorer,BET_TYPE,Over/Under 12 games,Over/Under 12 games
+0,tennisexplorer,BET_TYPE,Over/Under 13 games,Over/Under 13 games
+0,tennisexplorer,BET_TYPE,Over/Under 14 games,Over/Under 14 games
+0,tennisexplorer,BET_TYPE,Over/Under 15 games,Over/Under 15 games
+0,tennisexplorer,BET_TYPE,Over/Under 16 games,Over/Under 16 games
+0,tennisexplorer,BET_TYPE,Over/Under 17 games,Over/Under 17 games
+0,tennisexplorer,BET_TYPE,Over/Under 18 games,Over/Under 18 games
+0,tennisexplorer,BET_TYPE,Over/Under 19 games,Over/Under 19 games
+0,tennisexplorer,BET_TYPE,Over/Under 20 games,Over/Under 20 games
+0,tennisexplorer,BET_TYPE,Over/Under 21 games,Over/Under 21 games
+0,tennisexplorer,BET_TYPE,Over/Under 22 games,Over/Under 22 games
+0,tennisexplorer,BET_TYPE,Over/Under 23 games,Over/Under 23 games
+0,tennisexplorer,BET_TYPE,Over/Under 24 games,Over/Under 24 games
+0,tennisexplorer,BET_TYPE,Over/Under 25 games,Over/Under 25 games
+0,tennisexplorer,BET_TYPE,Over/Under 26 games,Over/Under 26 games
+0,tennisexplorer,BET_TYPE,Over/Under 27 games,Over/Under 27 games
+0,tennisexplorer,BET_TYPE,Over/Under 28 games,Over/Under 28 games
+0,tennisexplorer,BET_TYPE,Over/Under 29 games,Over/Under 29 games
+0,tennisexplorer,BET_TYPE,Over/Under 30 games,Over/Under 30 games
+0,tennisexplorer,BET_TYPE,Over/Under 31 games,Over/Under 31 games
+0,tennisexplorer,BET_TYPE,Over/Under 32 games,Over/Under 32 games
+0,tennisexplorer,BET_TYPE,Over/Under 33 games,Over/Under 33 games
+0,tennisexplorer,BET_TYPE,Over/Under 34 games,Over/Under 34 games
+0,tennisexplorer,BET_TYPE,Over/Under 35 games,Over/Under 35 games
+0,tennisexplorer,BET_TYPE,Over/Under 36 games,Over/Under 36 games
+0,tennisexplorer,BET_TYPE,Over/Under 37 games,Over/Under 37 games
+0,tennisexplorer,BET_TYPE,Over/Under 38 games,Over/Under 38 games
+0,tennisexplorer,BET_TYPE,Over/Under 39 games,Over/Under 39 games
+0,tennisexplorer,BET_TYPE,Over/Under 40 games,Over/Under 40 games
+0,tennisexplorer,BET_TYPE,Over/Under 41 games,Over/Under 41 games
+0,tennisexplorer,BET_TYPE,Over/Under 42 games,Over/Under 42 games
+0,tennisexplorer,BET_TYPE,Over/Under 43 games,Over/Under 43 games
+0,tennisexplorer,BET_TYPE,Over/Under 44 games,Over/Under 44 games
+0,tennisexplorer,BET_TYPE,Over/Under 45 games,Over/Under 45 games
+0,tennisexplorer,BET_TYPE,Over/Under 46 games,Over/Under 46 games
+0,tennisexplorer,BET_TYPE,Over/Under 47 games,Over/Under 47 games
+0,tennisexplorer,BET_TYPE,Over/Under 48 games,Over/Under 48 games
+0,tennisexplorer,BET_TYPE,Over/Under 49 games,Over/Under 49 games
+0,tennisexplorer,BET_TYPE,Over/Under 50 games,Over/Under 50 games
+0,tennisexplorer,BET_TYPE,Over/Under 51 games,Over/Under 51 games
+0,tennisexplorer,BET_TYPE,Over/Under 52 games,Over/Under 52 games
+0,tennisexplorer,BET_TYPE,Over/Under 53 games,Over/Under 53 games
+0,tennisexplorer,BET_TYPE,Over/Under 54 games,Over/Under 54 games
+0,tennisexplorer,BET_TYPE,Over/Under 55 games,Over/Under 55 games
+0,tennisexplorer,BET_TYPE,Over/Under 56 games,Over/Under 56 games
+0,tennisexplorer,BET_TYPE,Over/Under 57 games,Over/Under 57 games
+0,tennisexplorer,BET_TYPE,Over/Under 58 games,Over/Under 58 games
+0,tennisexplorer,BET_TYPE,Over/Under 59 games,Over/Under 59 games
+0,tennisexplorer,BET_TYPE,Over/Under 60 games,Over/Under 60 games
+0,tennisexplorer,BET_TYPE,Over/Under 61 games,Over/Under 61 games
+0,tennisexplorer,BET_TYPE,Over/Under 62 games,Over/Under 62 games
+0,tennisexplorer,BET_TYPE,Over/Under 63 games,Over/Under 63 games
+0,tennisexplorer,BET_TYPE,Over/Under 64 games,Over/Under 64 games
+0,tennisexplorer,BET_TYPE,Over/Under 65 games,Over/Under 65 games
+0,tennisexplorer,BET_TYPE,Over/Under 66 games,Over/Under 66 games
+0,tennisexplorer,BET_TYPE,Over/Under 67 games,Over/Under 67 games
+0,tennisexplorer,BET_TYPE,Over/Under 68 games,Over/Under 68 games
+0,tennisexplorer,BET_TYPE,Over/Under 69 games,Over/Under 69 games
+0,tennisexplorer,BET_TYPE,Over/Under 70 games,Over/Under 70 games
+0,tennisexplorer,BET_TYPE,Over/Under 71 games,Over/Under 71 games
+0,tennisexplorer,BET_TYPE,Over/Under 72 games,Over/Under 72 games
+0,tennisexplorer,BET_TYPE,Over/Under 73 games,Over/Under 73 games
+0,tennisexplorer,BET_TYPE,Over/Under 74 games,Over/Under 74 games
+0,tennisexplorer,BET_TYPE,Over/Under 75 games,Over/Under 75 games
+0,tennisexplorer,BET_TYPE,Over/Under 76 games,Over/Under 76 games
+0,tennisexplorer,BET_TYPE,Over/Under 77 games,Over/Under 77 games
+0,tennisexplorer,BET_TYPE,Over/Under 78 games,Over/Under 78 games
+0,tennisexplorer,BET_TYPE,Over/Under 79 games,Over/Under 79 games
+0,tennisexplorer,BET_TYPE,Over/Under 80 games,Over/Under 80 games
+0,tennisexplorer,BET_TYPE,Over/Under 81 games,Over/Under 81 games
+0,tennisexplorer,BET_TYPE,Over/Under 82 games,Over/Under 82 games
+0,tennisexplorer,BET_TYPE,Over/Under 83 games,Over/Under 83 games
+0,tennisexplorer,BET_TYPE,Over/Under 84 games,Over/Under 84 games
+0,tennisexplorer,BET_TYPE,Over/Under 85 games,Over/Under 85 games
+0,tennisexplorer,BET_TYPE,Over/Under 86 games,Over/Under 86 games
+0,tennisexplorer,BET_TYPE,Over/Under 87 games,Over/Under 87 games
+0,tennisexplorer,BET_TYPE,Over/Under 88 games,Over/Under 88 games
+0,tennisexplorer,BET_TYPE,Over/Under 89 games,Over/Under 89 games
+0,tennisexplorer,BET_TYPE,Over/Under 90 games,Over/Under 90 games
+0,tennisexplorer,BET_TYPE,Over/Under 91 games,Over/Under 91 games
+0,tennisexplorer,BET_TYPE,Over/Under 92 games,Over/Under 92 games
+0,tennisexplorer,BET_TYPE,Over/Under 93 games,Over/Under 93 games
+0,tennisexplorer,BET_TYPE,Over/Under 94 games,Over/Under 94 games
+0,tennisexplorer,BET_TYPE,Over/Under 95 games,Over/Under 95 games
+0,tennisexplorer,BET_TYPE,Over/Under 96 games,Over/Under 96 games
+0,tennisexplorer,BET_TYPE,Over/Under 97 games,Over/Under 97 games
+0,tennisexplorer,BET_TYPE,Over/Under 98 games,Over/Under 98 games
+0,tennisexplorer,BET_TYPE,Over/Under 99 games,Over/Under 99 games
+0,tennisexplorer,BET_TYPE,Over/Under 100 games,Over/Under 100 games
+0,tennisexplorer,BET_TYPE,Over/Under 101 games,Over/Under 101 games
+0,tennisexplorer,BET_TYPE,Over/Under 102 games,Over/Under 102 games
+0,tennisexplorer,BET_TYPE,Over/Under 103 games,Over/Under 103 games
+0,tennisexplorer,BET_TYPE,Over/Under 104 games,Over/Under 104 games
+0,tennisexplorer,BET_TYPE,Over/Under 105 games,Over/Under 105 games
+0,tennisexplorer,BET_TYPE,Over/Under 106 games,Over/Under 106 games
+0,tennisexplorer,BET_TYPE,Over/Under 107 games,Over/Under 107 games
+0,tennisexplorer,BET_TYPE,Over/Under 108 games,Over/Under 108 games
+0,tennisexplorer,BET_TYPE,Over/Under 109 games,Over/Under 109 games
+0,tennisexplorer,BET_TYPE,Over/Under 110 games,Over/Under 110 games
+0,tennisexplorer,BET_TYPE,Over/Under 111 games,Over/Under 111 games
+0,tennisexplorer,BET_TYPE,Over/Under 112 games,Over/Under 112 games
+0,tennisexplorer,BET_TYPE,Over/Under 113 games,Over/Under 113 games
+0,tennisexplorer,BET_TYPE,Over/Under 114 games,Over/Under 114 games
+0,tennisexplorer,BET_TYPE,Over/Under 115 games,Over/Under 115 games
+0,tennisexplorer,BET_TYPE,Over/Under 116 games,Over/Under 116 games
+0,tennisexplorer,BET_TYPE,Over/Under 117 games,Over/Under 117 games
+0,tennisexplorer,BET_TYPE,Over/Under 118 games,Over/Under 118 games
+0,tennisexplorer,BET_TYPE,Over/Under 119 games,Over/Under 119 games
+0,tennisexplorer,BET_TYPE,Over/Under 120 games,Over/Under 120 games
+0,tennisexplorer,BET_TYPE,Over/Under 121 games,Over/Under 121 games
+0,tennisexplorer,BET_TYPE,Over/Under 122 games,Over/Under 122 games
+0,tennisexplorer,BET_TYPE,Over/Under 123 games,Over/Under 123 games
+0,tennisexplorer,BET_TYPE,Over/Under 124 games,Over/Under 124 games
+0,tennisexplorer,BET_TYPE,Over/Under 125 games,Over/Under 125 games
+0,tennisexplorer,BET_TYPE,Over/Under 126 games,Over/Under 126 games
+0,tennisexplorer,BET_TYPE,Over/Under 127 games,Over/Under 127 games
+0,tennisexplorer,BET_TYPE,Over/Under 128 games,Over/Under 128 games
+0,tennisexplorer,BET_TYPE,Over/Under 129 games,Over/Under 129 games
+0,tennisexplorer,BET_TYPE,Over/Under 130 games,Over/Under 130 games
+0,tennisexplorer,BET_TYPE,Over/Under 131 games,Over/Under 131 games
+0,tennisexplorer,BET_TYPE,Over/Under 132 games,Over/Under 132 games
+0,tennisexplorer,BET_TYPE,Over/Under 133 games,Over/Under 133 games
+0,tennisexplorer,BET_TYPE,Over/Under 134 games,Over/Under 134 games
+0,tennisexplorer,BET_TYPE,Over/Under 135 games,Over/Under 135 games
+0,tennisexplorer,BET_TYPE,Over/Under 136 games,Over/Under 136 games
+0,tennisexplorer,BET_TYPE,Over/Under 137 games,Over/Under 137 games
+0,tennisexplorer,BET_TYPE,Over/Under 138 games,Over/Under 138 games
+0,tennisexplorer,BET_TYPE,Over/Under 139 games,Over/Under 139 games
+0,tennisexplorer,BET_TYPE,Over/Under 140 games,Over/Under 140 games
+0,tennisexplorer,BET_TYPE,Over/Under 141 games,Over/Under 141 games
+0,tennisexplorer,BET_TYPE,Over/Under 142 games,Over/Under 142 games
+0,tennisexplorer,BET_TYPE,Over/Under 143 games,Over/Under 143 games
+0,tennisexplorer,BET_TYPE,Over/Under 144 games,Over/Under 144 games
+0,tennisexplorer,BET_TYPE,Over/Under 145 games,Over/Under 145 games
+0,tennisexplorer,BET_TYPE,Over/Under 146 games,Over/Under 146 games
+0,tennisexplorer,BET_TYPE,Over/Under 147 games,Over/Under 147 games
+0,tennisexplorer,BET_TYPE,Over/Under 148 games,Over/Under 148 games
+0,tennisexplorer,BET_TYPE,Over/Under 149 games,Over/Under 149 games
+0,tennisexplorer,BET_TYPE,Over/Under 150 games,Over/Under 150 games
+0,tennisexplorer,BET_TYPE,Over/Under 151 games,Over/Under 151 games
+0,tennisexplorer,BET_TYPE,Over/Under 152 games,Over/Under 152 games
+0,tennisexplorer,BET_TYPE,Over/Under 153 games,Over/Under 153 games
+0,tennisexplorer,BET_TYPE,Over/Under 154 games,Over/Under 154 games
+0,tennisexplorer,BET_TYPE,Over/Under 155 games,Over/Under 155 games
+0,tennisexplorer,BET_TYPE,Over/Under 156 games,Over/Under 156 games
+0,tennisexplorer,BET_TYPE,Over/Under 157 games,Over/Under 157 games
+0,tennisexplorer,BET_TYPE,Over/Under 158 games,Over/Under 158 games
+0,tennisexplorer,BET_TYPE,Over/Under 159 games,Over/Under 159 games
+0,tennisexplorer,BET_TYPE,Over/Under 160 games,Over/Under 160 games
+0,tennisexplorer,BET_TYPE,Over/Under 161 games,Over/Under 161 games
+0,tennisexplorer,BET_TYPE,Over/Under 162 games,Over/Under 162 games
+0,tennisexplorer,BET_TYPE,Over/Under 163 games,Over/Under 163 games
+0,tennisexplorer,BET_TYPE,Over/Under 164 games,Over/Under 164 games
+0,tennisexplorer,BET_TYPE,Over/Under 165 games,Over/Under 165 games
+0,tennisexplorer,BET_TYPE,Over/Under 166 games,Over/Under 166 games
+0,tennisexplorer,BET_TYPE,Over/Under 167 games,Over/Under 167 games
+0,tennisexplorer,BET_TYPE,Over/Under 168 games,Over/Under 168 games
+0,tennisexplorer,BET_TYPE,Over/Under 169 games,Over/Under 169 games
+0,tennisexplorer,BET_TYPE,Over/Under 170 games,Over/Under 170 games
+0,tennisexplorer,BET_TYPE,Over/Under 171 games,Over/Under 171 games
+0,tennisexplorer,BET_TYPE,Over/Under 172 games,Over/Under 172 games
+0,tennisexplorer,BET_TYPE,Over/Under 173 games,Over/Under 173 games
+0,tennisexplorer,BET_TYPE,Over/Under 174 games,Over/Under 174 games
+0,tennisexplorer,BET_TYPE,Over/Under 175 games,Over/Under 175 games
+0,tennisexplorer,BET_TYPE,Over/Under 176 games,Over/Under 176 games
+0,tennisexplorer,BET_TYPE,Over/Under 177 games,Over/Under 177 games
+0,tennisexplorer,BET_TYPE,Over/Under 178 games,Over/Under 178 games
+0,tennisexplorer,BET_TYPE,Over/Under 179 games,Over/Under 179 games
+0,tennisexplorer,BET_TYPE,Over/Under 180 games,Over/Under 180 games
+0,tennisexplorer,BET_TYPE,Over/Under 181 games,Over/Under 181 games
+0,tennisexplorer,BET_TYPE,Over/Under 182 games,Over/Under 182 games
+0,tennisexplorer,BET_TYPE,Over/Under 183 games,Over/Under 183 games
+0,tennisexplorer,BET_TYPE,Over/Under 184 games,Over/Under 184 games
+0,tennisexplorer,BET_TYPE,Over/Under 185 games,Over/Under 185 games
+0,tennisexplorer,BET_TYPE,Over/Under 186 games,Over/Under 186 games
+0,tennisexplorer,BET_TYPE,Over/Under 187 games,Over/Under 187 games
+0,tennisexplorer,BET_TYPE,Over/Under 188 games,Over/Under 188 games
+0,tennisexplorer,BET_TYPE,Over/Under 189 games,Over/Under 189 games
+0,tennisexplorer,BET_TYPE,Over/Under 190 games,Over/Under 190 games
+0,tennisexplorer,BET_TYPE,Over/Under 191 games,Over/Under 191 games
+0,tennisexplorer,BET_TYPE,Over/Under 192 games,Over/Under 192 games
+0,tennisexplorer,BET_TYPE,Over/Under 193 games,Over/Under 193 games
+0,tennisexplorer,BET_TYPE,Over/Under 194 games,Over/Under 194 games
+0,tennisexplorer,BET_TYPE,Over/Under 195 games,Over/Under 195 games
+0,tennisexplorer,BET_TYPE,Over/Under 196 games,Over/Under 196 games
+0,tennisexplorer,BET_TYPE,Over/Under 197 games,Over/Under 197 games
+0,tennisexplorer,BET_TYPE,Over/Under 198 games,Over/Under 198 games
+0,tennisexplorer,BET_TYPE,Over/Under 199 games,Over/Under 199 games
+0,tennisexplorer,BET_TYPE,Over/Under 200 games,Over/Under 200 games
+0,tennisexplorer,BET_TYPE,Over/Under 201 games,Over/Under 201 games
+0,tennisexplorer,BET_TYPE,Over/Under 202 games,Over/Under 202 games
+0,tennisexplorer,BET_TYPE,Over/Under 203 games,Over/Under 203 games
+0,tennisexplorer,BET_TYPE,Over/Under 204 games,Over/Under 204 games
+0,tennisexplorer,BET_TYPE,Over/Under 205 games,Over/Under 205 games
+0,tennisexplorer,BET_TYPE,Over/Under 206 games,Over/Under 206 games
+0,tennisexplorer,BET_TYPE,Over/Under 207 games,Over/Under 207 games
+0,tennisexplorer,BET_TYPE,Over/Under 208 games,Over/Under 208 games
+0,tennisexplorer,BET_TYPE,Over/Under 209 games,Over/Under 209 games
+0,tennisexplorer,BET_TYPE,Over/Under 210 games,Over/Under 210 games

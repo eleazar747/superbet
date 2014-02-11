@@ -1,41 +1,11 @@
-id,code
-0,Goalscorer
-0,Drivers Championship Winner
-0,Total Goals
-0,Half-Time / Full-Time
-0,First Team To Score
-0,Relegation
-0,Place 1-4
-0,Place 1-3
-0,Podium
-0,Run Line
-0,Constructors Championship
-0,Match Winner
-0,Winning Team
-0,Handicap Result
-0,Championship Winner
-0,Winner
-0,Double Chance
-0,Total Sets
-0,Outright Winner
-0,First Goalscorer
-0,Correct Score
-0,Match Result
-0,Total Goal Lines
-0,Last Goalscorer
-0,Total Points
-0,Total Runs
-0,Points Classification
-0,Winning Nationality
-0,Half-Time Result
-0,Head-to-Head General Classification
-0,Half-Time Correct Score
 0,Over Under
-0,Over/Under 0.5
+0,Match Result
+0,Over Under 22
 0,Over/Under 1.5
+0,Over/Under 4.5
+0,Over/Under 0.5
 0,Over/Under 2.5
 0,Over/Under 3.5
-0,Over/Under 4.5
 0,Over/Under 5.5
 0,Over/Under 6.5
 0,Over/Under 7.5
@@ -907,3 +877,536 @@ id,code
 0,Asian Handicap 19 points
 0,Asian Handicap 19.5 points
 0,Asian Handicap 20 points
+0,Asian Handicap -20 games
+0,Asian Handicap -19.5 games
+0,Asian Handicap -19 games
+0,Asian Handicap -18.5 games
+0,Asian Handicap -18 games
+0,Asian Handicap -17.5 games
+0,Asian Handicap -17 games
+0,Asian Handicap -16.5 games
+0,Asian Handicap -16 games
+0,Asian Handicap -15.5 games
+0,Asian Handicap -15 games
+0,Asian Handicap -14.5 games
+0,Asian Handicap -14 games
+0,Asian Handicap -13.5 games
+0,Asian Handicap -13 games
+0,Asian Handicap -12.5 games
+0,Asian Handicap -12 games
+0,Asian Handicap -11.5 games
+0,Asian Handicap -11 games
+0,Asian Handicap -10.5 games
+0,Asian Handicap -10 games
+0,Asian Handicap -9.5 games
+0,Asian Handicap -9 games
+0,Asian Handicap -8.5 games
+0,Asian Handicap -8 games
+0,Asian Handicap -7.5 games
+0,Asian Handicap -7 games
+0,Asian Handicap -6.5 games
+0,Asian Handicap -6 games
+0,Asian Handicap -5.5 games
+0,Asian Handicap -5 games
+0,Asian Handicap -4.5 games
+0,Asian Handicap -4 games
+0,Asian Handicap -3.5 games
+0,Asian Handicap -3 games
+0,Asian Handicap -2.5 games
+0,Asian Handicap -2 games
+0,Asian Handicap -1.5 games
+0,Asian Handicap -1 games
+0,Asian Handicap -0.5 games
+0,Asian Handicap 0 games
+0,Asian Handicap 0.5 games
+0,Asian Handicap 1 games
+0,Asian Handicap 1.5 games
+0,Asian Handicap 2 games
+0,Asian Handicap 2.5 games
+0,Asian Handicap 3 games
+0,Asian Handicap 3.5 games
+0,Asian Handicap 4 games
+0,Asian Handicap 4.5 games
+0,Asian Handicap 5 games
+0,Asian Handicap 5.5 games
+0,Asian Handicap 6 games
+0,Asian Handicap 6.5 games
+0,Asian Handicap 7 games
+0,Asian Handicap 7.5 games
+0,Asian Handicap 8 games
+0,Asian Handicap 8.5 games
+0,Asian Handicap 9 games
+0,Asian Handicap 9.5 games
+0,Asian Handicap 10 games
+0,Asian Handicap 10.5 games
+0,Asian Handicap 11 games
+0,Asian Handicap 11.5 games
+0,Asian Handicap 12 games
+0,Asian Handicap 12.5 games
+0,Asian Handicap 13 games
+0,Asian Handicap 13.5 games
+0,Asian Handicap 14 games
+0,Asian Handicap 14.5 games
+0,Asian Handicap 15 games
+0,Asian Handicap 15.5 games
+0,Asian Handicap 16 games
+0,Asian Handicap 16.5 games
+0,Asian Handicap 17 games
+0,Asian Handicap 17.5 games
+0,Asian Handicap 18 games
+0,Asian Handicap 18.5 games
+0,Asian Handicap 19 games
+0,Asian Handicap 19.5 games
+0,Asian Handicap 20 games
+0,Over/Under 0.5 games
+0,Over/Under 1.5 games
+0,Over/Under 2.5 games
+0,Over/Under 3.5 games
+0,Over/Under 4.5 games
+0,Over/Under 5.5 games
+0,Over/Under 6.5 games
+0,Over/Under 7.5 games
+0,Over/Under 8.5 games
+0,Over/Under 9.5 games
+0,Over/Under 10.5 games
+0,Over/Under 11.5 games
+0,Over/Under 12.5 games
+0,Over/Under 13.5 games
+0,Over/Under 14.5 games
+0,Over/Under 15.5 games
+0,Over/Under 16.5 games
+0,Over/Under 17.5 games
+0,Over/Under 18.5 games
+0,Over/Under 19.5 games
+0,Over/Under 20.5 games
+0,Over/Under 21.5 games
+0,Over/Under 22.5 games
+0,Over/Under 23.5 games
+0,Over/Under 24.5 games
+0,Over/Under 25.5 games
+0,Over/Under 26.5 games
+0,Over/Under 27.5 games
+0,Over/Under 28.5 games
+0,Over/Under 29.5 games
+0,Over/Under 30.5 games
+0,Over/Under 31.5 games
+0,Over/Under 32.5 games
+0,Over/Under 33.5 games
+0,Over/Under 34.5 games
+0,Over/Under 35.5 games
+0,Over/Under 36.5 games
+0,Over/Under 37.5 games
+0,Over/Under 38.5 games
+0,Over/Under 39.5 games
+0,Over/Under 40.5 games
+0,Over/Under 41.5 games
+0,Over/Under 42.5 games
+0,Over/Under 43.5 games
+0,Over/Under 44.5 games
+0,Over/Under 45.5 games
+0,Over/Under 46.5 games
+0,Over/Under 47.5 games
+0,Over/Under 48.5 games
+0,Over/Under 49.5 games
+0,Over/Under 50.5 games
+0,Over/Under 51.5 games
+0,Over/Under 52.5 games
+0,Over/Under 53.5 games
+0,Over/Under 54.5 games
+0,Over/Under 55.5 games
+0,Over/Under 56.5 games
+0,Over/Under 57.5 games
+0,Over/Under 58.5 games
+0,Over/Under 59.5 games
+0,Over/Under 60.5 games
+0,Over/Under 61.5 games
+0,Over/Under 62.5 games
+0,Over/Under 63.5 games
+0,Over/Under 64.5 games
+0,Over/Under 65.5 games
+0,Over/Under 66.5 games
+0,Over/Under 67.5 games
+0,Over/Under 68.5 games
+0,Over/Under 69.5 games
+0,Over/Under 70.5 games
+0,Over/Under 71.5 games
+0,Over/Under 72.5 games
+0,Over/Under 73.5 games
+0,Over/Under 74.5 games
+0,Over/Under 75.5 games
+0,Over/Under 76.5 games
+0,Over/Under 77.5 games
+0,Over/Under 78.5 games
+0,Over/Under 79.5 games
+0,Over/Under 80.5 games
+0,Over/Under 81.5 games
+0,Over/Under 82.5 games
+0,Over/Under 83.5 games
+0,Over/Under 84.5 games
+0,Over/Under 85.5 games
+0,Over/Under 86.5 games
+0,Over/Under 87.5 games
+0,Over/Under 88.5 games
+0,Over/Under 89.5 games
+0,Over/Under 90.5 games
+0,Over/Under 91.5 games
+0,Over/Under 92.5 games
+0,Over/Under 93.5 games
+0,Over/Under 94.5 games
+0,Over/Under 95.5 games
+0,Over/Under 96.5 games
+0,Over/Under 97.5 games
+0,Over/Under 98.5 games
+0,Over/Under 99.5 games
+0,Over/Under 100.5 games
+0,Over/Under 101.5 games
+0,Over/Under 102.5 games
+0,Over/Under 103.5 games
+0,Over/Under 104.5 games
+0,Over/Under 105.5 games
+0,Over/Under 106.5 games
+0,Over/Under 107.5 games
+0,Over/Under 108.5 games
+0,Over/Under 109.5 games
+0,Over/Under 110.5 games
+0,Over/Under 111.5 games
+0,Over/Under 112.5 games
+0,Over/Under 113.5 games
+0,Over/Under 114.5 games
+0,Over/Under 115.5 games
+0,Over/Under 116.5 games
+0,Over/Under 117.5 games
+0,Over/Under 118.5 games
+0,Over/Under 119.5 games
+0,Over/Under 120.5 games
+0,Over/Under 121.5 games
+0,Over/Under 122.5 games
+0,Over/Under 123.5 games
+0,Over/Under 124.5 games
+0,Over/Under 125.5 games
+0,Over/Under 126.5 games
+0,Over/Under 127.5 games
+0,Over/Under 128.5 games
+0,Over/Under 129.5 games
+0,Over/Under 130.5 games
+0,Over/Under 131.5 games
+0,Over/Under 132.5 games
+0,Over/Under 133.5 games
+0,Over/Under 134.5 games
+0,Over/Under 135.5 games
+0,Over/Under 136.5 games
+0,Over/Under 137.5 games
+0,Over/Under 138.5 games
+0,Over/Under 139.5 games
+0,Over/Under 140.5 games
+0,Over/Under 141.5 games
+0,Over/Under 142.5 games
+0,Over/Under 143.5 games
+0,Over/Under 144.5 games
+0,Over/Under 145.5 games
+0,Over/Under 146.5 games
+0,Over/Under 147.5 games
+0,Over/Under 148.5 games
+0,Over/Under 149.5 games
+0,Over/Under 150.5 games
+0,Over/Under 151.5 games
+0,Over/Under 152.5 games
+0,Over/Under 153.5 games
+0,Over/Under 154.5 games
+0,Over/Under 155.5 games
+0,Over/Under 156.5 games
+0,Over/Under 157.5 games
+0,Over/Under 158.5 games
+0,Over/Under 159.5 games
+0,Over/Under 160.5 games
+0,Over/Under 161.5 games
+0,Over/Under 162.5 games
+0,Over/Under 163.5 games
+0,Over/Under 164.5 games
+0,Over/Under 165.5 games
+0,Over/Under 166.5 games
+0,Over/Under 167.5 games
+0,Over/Under 168.5 games
+0,Over/Under 169.5 games
+0,Over/Under 170.5 games
+0,Over/Under 171.5 games
+0,Over/Under 172.5 games
+0,Over/Under 173.5 games
+0,Over/Under 174.5 games
+0,Over/Under 175.5 games
+0,Over/Under 176.5 games
+0,Over/Under 177.5 games
+0,Over/Under 178.5 games
+0,Over/Under 179.5 games
+0,Over/Under 180.5 games
+0,Over/Under 181.5 games
+0,Over/Under 182.5 games
+0,Over/Under 183.5 games
+0,Over/Under 184.5 games
+0,Over/Under 185.5 games
+0,Over/Under 186.5 games
+0,Over/Under 187.5 games
+0,Over/Under 188.5 games
+0,Over/Under 189.5 games
+0,Over/Under 190.5 games
+0,Over/Under 191.5 games
+0,Over/Under 192.5 games
+0,Over/Under 193.5 games
+0,Over/Under 194.5 games
+0,Over/Under 195.5 games
+0,Over/Under 196.5 games
+0,Over/Under 197.5 games
+0,Over/Under 198.5 games
+0,Over/Under 199.5 games
+0,Over/Under 200.5 games
+0,Over/Under 201.5 games
+0,Over/Under 202.5 games
+0,Over/Under 203.5 games
+0,Over/Under 204.5 games
+0,Over/Under 205.5 games
+0,Over/Under 206.5 games
+0,Over/Under 207.5 games
+0,Over/Under 208.5 games
+0,Over/Under 209.5 games
+0,Over/Under 210.5 games
+0,Over/Under 0 games
+0,Over/Under 1 games
+0,Over/Under 2 games
+0,Over/Under 3 games
+0,Over/Under 4 games
+0,Over/Under 5 games
+0,Over/Under 6 games
+0,Over/Under 7 games
+0,Over/Under 8 games
+0,Over/Under 9 games
+0,Over/Under 10 games
+0,Over/Under 11 games
+0,Over/Under 12 games
+0,Over/Under 13 games
+0,Over/Under 14 games
+0,Over/Under 15 games
+0,Over/Under 16 games
+0,Over/Under 17 games
+0,Over/Under 18 games
+0,Over/Under 19 games
+0,Over/Under 20 games
+0,Over/Under 21 games
+0,Over/Under 22 games
+0,Over/Under 23 games
+0,Over/Under 24 games
+0,Over/Under 25 games
+0,Over/Under 26 games
+0,Over/Under 27 games
+0,Over/Under 28 games
+0,Over/Under 29 games
+0,Over/Under 30 games
+0,Over/Under 31 games
+0,Over/Under 32 games
+0,Over/Under 33 games
+0,Over/Under 34 games
+0,Over/Under 35 games
+0,Over/Under 36 games
+0,Over/Under 37 games
+0,Over/Under 38 games
+0,Over/Under 39 games
+0,Over/Under 40 games
+0,Over/Under 41 games
+0,Over/Under 42 games
+0,Over/Under 43 games
+0,Over/Under 44 games
+0,Over/Under 45 games
+0,Over/Under 46 games
+0,Over/Under 47 games
+0,Over/Under 48 games
+0,Over/Under 49 games
+0,Over/Under 50 games
+0,Over/Under 51 games
+0,Over/Under 52 games
+0,Over/Under 53 games
+0,Over/Under 54 games
+0,Over/Under 55 games
+0,Over/Under 56 games
+0,Over/Under 57 games
+0,Over/Under 58 games
+0,Over/Under 59 games
+0,Over/Under 60 games
+0,Over/Under 61 games
+0,Over/Under 62 games
+0,Over/Under 63 games
+0,Over/Under 64 games
+0,Over/Under 65 games
+0,Over/Under 66 games
+0,Over/Under 67 games
+0,Over/Under 68 games
+0,Over/Under 69 games
+0,Over/Under 70 games
+0,Over/Under 71 games
+0,Over/Under 72 games
+0,Over/Under 73 games
+0,Over/Under 74 games
+0,Over/Under 75 games
+0,Over/Under 76 games
+0,Over/Under 77 games
+0,Over/Under 78 games
+0,Over/Under 79 games
+0,Over/Under 80 games
+0,Over/Under 81 games
+0,Over/Under 82 games
+0,Over/Under 83 games
+0,Over/Under 84 games
+0,Over/Under 85 games
+0,Over/Under 86 games
+0,Over/Under 87 games
+0,Over/Under 88 games
+0,Over/Under 89 games
+0,Over/Under 90 games
+0,Over/Under 91 games
+0,Over/Under 92 games
+0,Over/Under 93 games
+0,Over/Under 94 games
+0,Over/Under 95 games
+0,Over/Under 96 games
+0,Over/Under 97 games
+0,Over/Under 98 games
+0,Over/Under 99 games
+0,Over/Under 100 games
+0,Over/Under 101 games
+0,Over/Under 102 games
+0,Over/Under 103 games
+0,Over/Under 104 games
+0,Over/Under 105 games
+0,Over/Under 106 games
+0,Over/Under 107 games
+0,Over/Under 108 games
+0,Over/Under 109 games
+0,Over/Under 110 games
+0,Over/Under 111 games
+0,Over/Under 112 games
+0,Over/Under 113 games
+0,Over/Under 114 games
+0,Over/Under 115 games
+0,Over/Under 116 games
+0,Over/Under 117 games
+0,Over/Under 118 games
+0,Over/Under 119 games
+0,Over/Under 120 games
+0,Over/Under 121 games
+0,Over/Under 122 games
+0,Over/Under 123 games
+0,Over/Under 124 games
+0,Over/Under 125 games
+0,Over/Under 126 games
+0,Over/Under 127 games
+0,Over/Under 128 games
+0,Over/Under 129 games
+0,Over/Under 130 games
+0,Over/Under 131 games
+0,Over/Under 132 games
+0,Over/Under 133 games
+0,Over/Under 134 games
+0,Over/Under 135 games
+0,Over/Under 136 games
+0,Over/Under 137 games
+0,Over/Under 138 games
+0,Over/Under 139 games
+0,Over/Under 140 games
+0,Over/Under 141 games
+0,Over/Under 142 games
+0,Over/Under 143 games
+0,Over/Under 144 games
+0,Over/Under 145 games
+0,Over/Under 146 games
+0,Over/Under 147 games
+0,Over/Under 148 games
+0,Over/Under 149 games
+0,Over/Under 150 games
+0,Over/Under 151 games
+0,Over/Under 152 games
+0,Over/Under 153 games
+0,Over/Under 154 games
+0,Over/Under 155 games
+0,Over/Under 156 games
+0,Over/Under 157 games
+0,Over/Under 158 games
+0,Over/Under 159 games
+0,Over/Under 160 games
+0,Over/Under 161 games
+0,Over/Under 162 games
+0,Over/Under 163 games
+0,Over/Under 164 games
+0,Over/Under 165 games
+0,Over/Under 166 games
+0,Over/Under 167 games
+0,Over/Under 168 games
+0,Over/Under 169 games
+0,Over/Under 170 games
+0,Over/Under 171 games
+0,Over/Under 172 games
+0,Over/Under 173 games
+0,Over/Under 174 games
+0,Over/Under 175 games
+0,Over/Under 176 games
+0,Over/Under 177 games
+0,Over/Under 178 games
+0,Over/Under 179 games
+0,Over/Under 180 games
+0,Over/Under 181 games
+0,Over/Under 182 games
+0,Over/Under 183 games
+0,Over/Under 184 games
+0,Over/Under 185 games
+0,Over/Under 186 games
+0,Over/Under 187 games
+0,Over/Under 188 games
+0,Over/Under 189 games
+0,Over/Under 190 games
+0,Over/Under 191 games
+0,Over/Under 192 games
+0,Over/Under 193 games
+0,Over/Under 194 games
+0,Over/Under 195 games
+0,Over/Under 196 games
+0,Over/Under 197 games
+0,Over/Under 198 games
+0,Over/Under 199 games
+0,Over/Under 200 games
+0,Over/Under 201 games
+0,Over/Under 202 games
+0,Over/Under 203 games
+0,Over/Under 204 games
+0,Over/Under 205 games
+0,Over/Under 206 games
+0,Over/Under 207 games
+0,Over/Under 208 games
+0,Over/Under 209 games
+0,Over/Under 210 games
+0,Goalscorer
+0,Drivers Championship Winner
+0,Total Goals
+0,Half-Time / Full-Time
+0,First Team To Score
+0,Relegation
+0,Place 1-4
+0,Place 1-3
+0,Podium
+0,Run Line
+0,Constructors Championship
+0,Match Winner
+0,Winning Team
+0,Handicap Result
+0,Championship Winner
+0,Winner
+0,Double Chance
+0,Total Sets
+0,Outright Winner
+0,First Goalscorer
+0,Correct Score
+0,Total Goal Lines
+0,Last Goalscorer
+0,Total Points
+0,Total Runs
+0,Points Classification
+0,Winning Nationality
+0,Half-Time Result
+0,Head-to-Head General Classification
+0,Half-Time Correct Score

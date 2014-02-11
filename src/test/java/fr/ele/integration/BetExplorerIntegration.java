@@ -1,13 +1,10 @@
 package fr.ele.integration;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.ele.feeds.wiliamhill.dto.Oxip;
+import fr.ele.feeds.HtmlBetDtos;
 import fr.ele.services.mapping.BetExplorerSynchroniser;
 
 public class BetExplorerIntegration extends AbstractSuperbetIntegrationTest {
@@ -22,10 +19,15 @@ public class BetExplorerIntegration extends AbstractSuperbetIntegrationTest {
 
 	@Test
 	public void testParse() {
-		InputStream inputStream = new BufferedInputStream(
-				WIlliamHillIntegrationTest.class
-						.getResourceAsStream("/fr/ele/feeds/nordicbet/nordicbet.xml"));
-		Oxip odds = betExplorerSynchroniser.unmarshall(inputStream, null);
-		betExplorerSynchroniser.synchronize("betexplorer", odds);
+
+		try {
+			HtmlBetDtos odds = betExplorerSynchroniser.unmarshall(
+					"http://www.betexplorer.com/next/volleyball/", null);
+			betExplorerSynchroniser.synchronize("betexplorer", odds);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

@@ -7,18 +7,15 @@ import java.util.List;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import fr.ele.model.Bet;
-import fr.ele.model.ref.BetType;
-import fr.ele.model.ref.Match;
-import fr.ele.services.mapping.SynchronizerContext;
+import fr.ele.feeds.HtmlBetDto;
 
 public class WinnerMatchParser extends MatchParser {
 
 	private Element elementTmp;
 
 	@Override
-	protected List<Bet> doParse(Elements elements, Element t, Match match,
-			SynchronizerContext context) {
+	protected List<HtmlBetDto> doParse(Elements elements, Element t,
+			String match, String sport) {
 		// Match Winner structure <tr> 3 elements : 1/nothing :
 		// 2/ Home Winner 3/ Away Winner
 		String bookie = "";
@@ -41,26 +38,25 @@ public class WinnerMatchParser extends MatchParser {
 			}
 		}
 
-		List<Bet> bets = new LinkedList<Bet>();
-		BetType betType = null;
+		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
+		String betType = null;
 		Iterator<Element> it = elements.iterator();
 
 		if (extractActiveOdd(elements.toString()) == false) {
 			if (it.hasNext()) {
 				it.next();
-				betType = context.findBetType("Home/Away");
+				betType = "Home/Away";
 				if (it.hasNext()) {
 					elementTmp = it.next();
 					String odd = extractOdd(elementTmp);
 
-					createOdd(match, context, bookie, bets, betType, odd, "1");
+					createOdd(match, bookie, bets, betType, odd, "1", sport);
 
 					if (it.hasNext()) {
 						elementTmp = it.next();
 						odd = extractOdd(elementTmp);
 
-						createOdd(match, context, bookie, bets, betType, odd,
-								"2");
+						createOdd(match, bookie, bets, betType, odd, "2", sport);
 
 					}
 				}

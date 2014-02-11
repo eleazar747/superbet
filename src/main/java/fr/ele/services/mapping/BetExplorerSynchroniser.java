@@ -16,18 +16,20 @@ import org.springframework.stereotype.Service;
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 
-import fr.ele.feeds.wiliamhill.dto.Oxip;
+import fr.ele.feeds.HtmlBetDto;
+import fr.ele.feeds.HtmlBetDtos;
 import fr.ele.model.Bet;
+import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
+import fr.ele.model.ref.RefKey;
 import fr.ele.model.ref.Sport;
 import fr.ele.services.mapping.betExplorer.AsianHandicapParser;
 import fr.ele.services.mapping.betExplorer.MatchParser;
 import fr.ele.services.mapping.betExplorer.OverUnderMatchParser;
-import fr.ele.services.mapping.betExplorer.ResultMatchParser;
 import fr.ele.services.mapping.betExplorer.WinnerMatchParser;
 
 @Service("BetExplorerSynchroniser")
-public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
+public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
 
 	private static final String URL_MATCH = "http://www.betexplorer.com/gres/ajax-matchodds.php?t=n&e=";
 
@@ -43,70 +45,41 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 
 	private final String BASEBALL = "Baseball";
 
+	private SynchronizerContext contextdefaut;
+
 	@Override
-	protected long convert(SynchronizerContext context, Oxip dto) {
+	protected long convert(SynchronizerContext context, HtmlBetDtos dto) {
 		long nb = 0L;
+		contextdefaut = context;
+		for (HtmlBetDto htmlBetDto : dto.getDtos()) {
+			// Here transformation htmlbetDto to bet object
 
-		try {
-
-			LOGGER.info("Synchroniser Volleyball starts at :" + new Date()
-					+ "\n");
-			parseNextMatch("http://www.betexplorer.com/next/volleyball/",
-					VOLLEYBALL, context, new OverUnderMatchParser(),
-					new WinnerMatchParser(), new AsianHandicapParser());
-			LOGGER.info("Synchroniser Volleyball finish at :" + new Date()
-					+ "\n");
-
-			LOGGER.info("Synchroniser Handball starts at :" + new Date() + "\n");
-			parseNextMatch("http://www.betexplorer.com/next/handball/",
-					HANDBALL, context, new OverUnderMatchParser(),
-					new ResultMatchParser(), new AsianHandicapParser());
-			LOGGER.info("Synchroniser Handball finish at :" + new Date() + "\n");
-
-			LOGGER.info("Synchroniser Basketball starts at :" + new Date()
-					+ "\n");
-			parseNextMatch("http://www.betexplorer.com/next/basketball/",
-					BASKETBALL, context, new ResultMatchParser(),
-					new OverUnderMatchParser(), new AsianHandicapParser());
-
-			LOGGER.info("Synchroniser Basketball finish at :" + new Date()
-					+ "\n");
-			/**
-			 * LOGGER.info("Synchroniser Football starts at :" + new Date() +
-			 * "\n"); parseNextMatch("http://www.betexplorer.com/next/soccer/",
-			 * FOOTBALL, context, new ResultMatchParser(), new
-			 * OverUnderMatchParser());
-			 * LOGGER.info("Synchroniser Football finish at :" + new Date() +
-			 * "\n"); /** LOGGER.info("Synchroniser Hockey starts at :" + new
-			 * Date() + "\n");
-			 * parseNextMatch("http://www.betexplorer.com/next/hockey/", HOCKEY,
-			 * context, new ResultMatchParser(), new OverUnderMatchParser());
-			 * LOGGER.info("Synchroniser Hockey finish at :" + new Date() +
-			 * "\n");
-			 * 
-			 * LOGGER.info("Synchroniser Baseball starts at :" + new Date() +
-			 * "\n");
-			 * parseNextMatch("http://www.betexplorer.com/next/baseball/",
-			 * BASEBALL, context, new ResultMatchParser(), new
-			 * OverUnderMatchParser());
-			 * LOGGER.info("Synchroniser Baseball finish at :" + new Date() +
-			 * "\n");
-			 */
-			// for
-			// Volleyball
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out
+					.println(htmlBetDto.getBetType() + " "
+							+ htmlBetDto.getSubType() + " "
+							+ htmlBetDto.getBookmaker());
+			Bet bet = new Bet();
+			Sport sport = context.findSport(htmlBetDto.getSport());
+			BetType betType = context.findBetType(htmlBetDto.getBetType());
+			Match match = context.findOrCreateMatch(sport,
+					htmlBetDto.getDate(), htmlBetDto.getPlayer1(),
+					htmlBetDto.getPlayer2());
+			context.setBookmaker(htmlBetDto.getBookmaker());
+			RefKey refkey = context.findOrCreateRefKey(match, betType);
+			bet.setOdd(htmlBetDto.getOdd());
+			bet.setRefKey(refkey);
+			bet.setBookmakerBetId(htmlBetDto.getBookmakerId());
+			saveBet(bet);
 		}
 
 		return nb;
 	}
 
-	private void parseNextMatch(String httpRef, String sportType,
+	private List<HtmlBetDto> parseNextMatch(String httpRef, String sportType,
 			SynchronizerContext context, MatchParser... parsers)
 			throws Throwable {
 		// TODO Auto-generated method stub
-
+		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
 		URL website = new URL(httpRef);
 		URLConnection urlConnetion = website.openConnection(getProxy());
 		Document doc = Jsoup
@@ -115,7 +88,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 		// Document doc = Jsoup.connect(httpRef).get();
 		org.jsoup.select.Elements e = doc.select("tr");
 		// Define sport
-		Sport sport = context.findSport(sportType);
+		// Sport sport = context.findSport(sportType);
 
 		// Search URL for each match
 		for (Element t : e) {
@@ -144,53 +117,13 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 								String teams = t.select("td").get(1).text();
 								if (teams != null) {
 									String[] players = teams.split(" - ");
-									Match match = context
-											.findOrCreateMatch(sport, date,
-													players[0], players[1]);
-									List<Bet> bets = new LinkedList<Bet>();
 									String linkOdd = URL_MATCH + extract;
 									for (MatchParser parser : parsers) {
 										bets.addAll(parser.parseMatchId(
-												linkOdd, match, context));
+												linkOdd, teams, sportType));
 
 									}
-									// if (sportType.toUpperCase().equals(
-									// "BASKETBALL")
-									// || sportType.toUpperCase().equals(
-									// "VOLLEYBALL")
-									// || sportType.toUpperCase().equals(
-									// "HOCKEY")) {
-									// parser = new ResultMatchParser();
-									// }
-									// if (sportType.toUpperCase().equals(
-									// "FOOTBALL")
-									// || sportType.toUpperCase().equals(
-									// "BASKETBALL")
-									// || sportType.toUpperCase().equals(
-									// "VOLLEYBALL")
-									// || sportType.toUpperCase().equals(
-									// "HANDBALL")
-									// || sportType.toUpperCase().equals(
-									// "HOCKEY")) {
-									// String linkOdd = URL_MATCH + extract;
-									// parser = new OverUnderMatchParser();
-									// bets.addAll(parser.parseMatchId(
-									// linkOdd, match, context));
-									// }
-									// if (sportType.toUpperCase().equals(
-									// "FOOTBALL")
-									// || sportType.toUpperCase().equals(
-									// "HANDBALL")
-									// || sportType.toUpperCase().equals(
-									// "HOCKEY")) {
-									// String linkOdd = URL_MATCH + extract;
-									// parser = new WinnerMatchParser();
-									// bets.addAll(parser.parseMatchId(
-									// linkOdd, match, context));
-									// }
-									for (Bet bet : bets) {
-										saveBet(bet);
-									}
+
 								}
 							}
 						}
@@ -199,6 +132,7 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 			}
 		}
 
+		return bets;
 	}
 
 	private Proxy getProxy() throws Throwable {
@@ -208,9 +142,58 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<Oxip> {
 	}
 
 	@Override
-	protected Class<Oxip> getDtoClass() {
-		// TODO Auto-generated method stub
-		return Oxip.class;
+	protected Class<HtmlBetDtos> getDtoClass() {
+		return HtmlBetDtos.class;
+	}
+
+	@Override
+	public HtmlBetDtos unmarshall(String urlBase, String encoding)
+			throws Exception {
+		List<HtmlBetDto> dtos = new LinkedList<HtmlBetDto>();
+		LOGGER.info("Synchroniser Volleyball starts at :" + new Date() + "\n");
+		try {
+			dtos.addAll(parseNextMatch(
+					"http://www.betexplorer.com/next/volleyball/", VOLLEYBALL,
+					contextdefaut, new OverUnderMatchParser(),
+					new WinnerMatchParser(), new AsianHandicapParser()));
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		LOGGER.info("Synchroniser Volleyball finish at :" + new Date() + "\n");
+		/**
+		 * LOGGER.info("Synchroniser Handball starts at :" + new Date() + "\n");
+		 * parseNextMatch("http://www.betexplorer.com/next/handball/", HANDBALL,
+		 * context, new OverUnderMatchParser(), new ResultMatchParser(), new
+		 * AsianHandicapParser());
+		 * LOGGER.info("Synchroniser Handball finish at :" + new Date() + "\n");
+		 * 
+		 * LOGGER.info("Synchroniser Basketball starts at :" + new Date() +
+		 * "\n"); parseNextMatch("http://www.betexplorer.com/next/basketball/",
+		 * BASKETBALL, context, new ResultMatchParser(), new
+		 * OverUnderMatchParser(), new AsianHandicapParser());
+		 * 
+		 * LOGGER.info("Synchroniser Basketball finish at :" + new Date() +
+		 * "\n");
+		 * 
+		 * LOGGER.info("Synchroniser Football starts at :" + new Date() + "\n");
+		 * parseNextMatch("http://www.betexplorer.com/next/soccer/", FOOTBALL,
+		 * context, new ResultMatchParser(), new OverUnderMatchParser());
+		 * LOGGER.info("Synchroniser Football finish at :" + new Date() + "\n");
+		 * /** LOGGER.info("Synchroniser Hockey starts at :" + new Date() +
+		 * "\n"); parseNextMatch("http://www.betexplorer.com/next/hockey/",
+		 * HOCKEY, context, new ResultMatchParser(), new
+		 * OverUnderMatchParser());
+		 * LOGGER.info("Synchroniser Hockey finish at :" + new Date() + "\n");
+		 * 
+		 * LOGGER.info("Synchroniser Baseball starts at :" + new Date() + "\n");
+		 * parseNextMatch("http://www.betexplorer.com/next/baseball/", BASEBALL,
+		 * context, new ResultMatchParser(), new OverUnderMatchParser());
+		 * LOGGER.info("Synchroniser Baseball finish at :" + new Date() + "\n");
+		 */
+		HtmlBetDtos zob = new HtmlBetDtos();
+		zob.setDtos(dtos);
+		return zob;
 	}
 
 }

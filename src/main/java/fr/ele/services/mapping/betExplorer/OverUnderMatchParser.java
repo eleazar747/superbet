@@ -7,18 +7,15 @@ import java.util.List;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import fr.ele.model.Bet;
-import fr.ele.model.ref.BetType;
-import fr.ele.model.ref.Match;
-import fr.ele.services.mapping.SynchronizerContext;
+import fr.ele.feeds.HtmlBetDto;
 
 public class OverUnderMatchParser extends MatchParser {
 
 	private Element elementTmp;
 
 	@Override
-	protected List<Bet> doParse(Elements elements, Element t, Match match,
-			SynchronizerContext context) {
+	protected List<HtmlBetDto> doParse(Elements elements, Element t,
+			String match, String sport) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
 		String bookie = "";
@@ -41,8 +38,8 @@ public class OverUnderMatchParser extends MatchParser {
 			}
 		}
 
-		List<Bet> bets = new LinkedList<Bet>();
-		BetType betType = null;
+		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
+		String betType = null;
 		Iterator<Element> it = elements.iterator();
 		if (extractActiveOdd(elements.toString()) == false) {
 			if (it.hasNext()) {
@@ -52,21 +49,21 @@ public class OverUnderMatchParser extends MatchParser {
 						.replaceAll(">", "").replace(" \\", "")
 						.replace("\\", "");
 				str = "Over/Under " + str;
-				betType = context.findBetType(str);
+				betType = str;
 				if (betType != null) {
 					if (it.hasNext()) {
 						elementTmp = it.next();
 						String odd = extractOdd(elementTmp);
 
-						createOdd(match, context, bookie, bets, betType, odd,
-								"Over");
+						createOdd(match, bookie, bets, betType, odd, "Over",
+								sport);
 
 						if (it.hasNext()) {
 							elementTmp = it.next();
 							odd = extractOdd(elementTmp);
 
-							createOdd(match, context, bookie, bets, betType,
-									odd, "Under");
+							createOdd(match, bookie, bets, betType, odd,
+									"Under", sport);
 
 						}
 					}

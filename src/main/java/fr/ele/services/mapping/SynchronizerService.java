@@ -5,7 +5,9 @@ import java.io.InputStream;
 import fr.ele.model.BookMakerSynchronization;
 
 public interface SynchronizerService<T> {
-    BookMakerSynchronization synchronize(String bookmakerCode, T dto);
+	BookMakerSynchronization synchronize(String bookmakerCode, T dto);
 
-    T unmarshall(InputStream inputStream, String charset);
+	T unmarshall(InputStream inputStream, String charset);
+
+	T unmarshall(String urlBase, String encoding) throws Exception;
 }
