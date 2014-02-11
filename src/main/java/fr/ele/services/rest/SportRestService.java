@@ -15,10 +15,12 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.ref.Sport;
 import fr.ele.model.search.SportSearch;
 
 @Path(SportRestService.PATH)
+@RestService
 public interface SportRestService {
     public static final String PATH = "sports";
 

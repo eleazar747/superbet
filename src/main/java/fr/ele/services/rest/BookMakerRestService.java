@@ -15,10 +15,12 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.search.BookmakerSearch;
 
 @Path(BookMakerRestService.PATH)
+@RestService
 public interface BookMakerRestService {
 
     public static final String PATH = "bookmakers";

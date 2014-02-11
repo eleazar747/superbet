@@ -13,44 +13,47 @@ import javax.ws.rs.core.MediaType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.core.jaxb.DateTimeAdapter;
 import fr.ele.model.search.BetSearch;
 
 @Path(BetRestService.PATH)
+@RestService
 public interface BetRestService {
-	public static final String PATH = "bets";
+    public static final String PATH = "bets";
 
-	public static final String SERVER = "BetRestService";
+    public static final String SERVER = "BetRestService";
 
-	public static final class SureBetDto {
-		public String sport, betType, match;
-		public String odds, date, profit;
+    public static final class SureBetDto {
+        public String sport, betType, match;
 
-		public Map<String, Double> alternatives;
-	}
+        public String odds, date, profit;
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("sures")
-	List<SureBetDto> getSureBets();
+        public Map<String, Double> alternatives;
+    }
 
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("search")
-	Iterable<BetDto> search(BetSearch search);
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("sures")
+    List<SureBetDto> getSureBets();
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	Iterable<BetDto> getBets();
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("search")
+    Iterable<BetDto> search(BetSearch search);
 
-	@XmlRootElement
-	public static class BetDto {
-		public Double value;
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    Iterable<BetDto> getBets();
 
-		public String type, bookmaker, match, alternative, sport;
+    @XmlRootElement
+    public static class BetDto {
+        public Double value;
 
-		@XmlJavaTypeAdapter(DateTimeAdapter.class)
-		public Date matchDate, syncDate;
-	}
+        public String type, bookmaker, match, alternative, sport;
+
+        @XmlJavaTypeAdapter(DateTimeAdapter.class)
+        public Date matchDate, syncDate;
+    }
 }

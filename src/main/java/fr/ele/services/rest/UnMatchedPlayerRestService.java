@@ -9,10 +9,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.UnMatchedPlayer;
 import fr.ele.model.search.UnMatchedPlayerSearch;
 
 @Path(UnMatchedPlayerRestService.PATH)
+@RestService
 public interface UnMatchedPlayerRestService {
     public static final String PATH = "unmatchedplayer";
 

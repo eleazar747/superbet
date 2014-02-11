@@ -15,10 +15,12 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.ref.Match;
 import fr.ele.model.search.MatchSearch;
 
 @Path(MatchRestService.PATH)
+@RestService
 public interface MatchRestService {
     public static final String PATH = "matches";
 

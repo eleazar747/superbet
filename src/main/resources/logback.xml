@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
 
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</Pattern>
-		</layout>
-	</appender>
-	<appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</Pattern>
-		</layout>
-		<target>System.err</target>
-	</appender>
-	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>stdout.log</file>
-		<append>true</append>
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
-		</encoder>
-	</appender>
+<configuration scan="true">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>[%p] %c - %m%n</Pattern>
+        </encoder>
+    </appender>
+    <logger name="fr.ele" level="${logback.loglevel}"/>
+    <logger name="ch.qos.logback" level="WARN"/>
+    <logger name="com.codahale.metrics" level="WARN"/>
+    <logger name="com.ryantenney" level="WARN"/>
+    <logger name="com.zaxxer" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.hibernate.validator" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.atmosphere" level="WARN"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.springframework.cache" level="INFO"/>
+    <logger name="net.sf.ehcache" level="WARN"/>
+    <logger name="org.apache.cxf" level="DEBUG"/>
 
+    <root level="${logback.loglevel}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
 
-	<logger name="fr.ele" level="TRACE" additivity="false">
-		<appender-ref ref="STDERR" />
-		<appender-ref ref="FILE" />
-	</logger>
-	<logger name="fr.ele.ui.mustache" level="INFO" additivity="false">
-		<appender-ref ref="STDOUT" />
-	</logger>
-
-	<root level="INFO">
-		<appender-ref ref="STDOUT" />
-	</root>
 </configuration>

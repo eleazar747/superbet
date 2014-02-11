@@ -2,9 +2,10 @@ package fr.ele;
 
 import java.beans.PropertyDescriptor;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.ele.core.search.criteria.enums.EnumValueCriteria;
 import fr.ele.core.search.ui.SearchToUi;

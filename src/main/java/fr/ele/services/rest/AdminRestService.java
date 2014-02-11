@@ -6,9 +6,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.BookMakerSynchronization;
 
 @Path(AdminRestService.PATH)
+@RestService
 public interface AdminRestService {
 
     public static final String PATH = "admin";
