@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.lang.model.util.Elements;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -30,12 +32,13 @@ public abstract class MatchParser {
 		// search Team :
 
 		List<Bet> bets = new LinkedList<Bet>();
-
-		URL website = new URL(httpRef + getUrlExtension());
-		URLConnection urlConnetion = website.openConnection(getProxy());
-		Document docmatch = Jsoup.parse(urlConnetion.getInputStream(), null,
-				httpRef + getUrlExtension());
-		// Document docmatch = Jsoup.connect(httpRef + getUrlExtension()).get();
+		/**
+		 * URL website = new URL(httpRef + getUrlExtension()); URLConnection
+		 * urlConnetion = website.openConnection(getProxy()); Document docmatch
+		 * = Jsoup.parse(urlConnetion.getInputStream(), null, httpRef +
+		 * getUrlExtension());
+		 */
+		Document docmatch = Jsoup.connect(httpRef).get();
 		if (docmatch.select("tr").isEmpty() == false) {
 			org.jsoup.select.Elements e = docmatch.select("tbody");
 			Match match = new Match();
@@ -66,11 +69,13 @@ public abstract class MatchParser {
 
 					}
 				}
-				// end find match
+				// end find match and proceess for bettype match result
 
-				if (t.attr("class").equals("odds-type")) {
+				if (t.select("tr").attr("class").equals("odds-type")) {
 
-					bets.addAll(doParse(t, match, context));
+						bets.addAll(doParse(t, match, context));
+	
+					
 				}
 			}
 		}
@@ -78,7 +83,7 @@ public abstract class MatchParser {
 		return bets;
 	}
 
-	protected abstract String getUrlExtension();
+	
 
 	protected abstract List<Bet> doParse(Element t, Match match,
 			SynchronizerContext context);

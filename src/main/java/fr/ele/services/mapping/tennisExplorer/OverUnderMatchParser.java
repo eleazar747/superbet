@@ -11,39 +11,38 @@ import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.Match;
 import fr.ele.services.mapping.SynchronizerContext;
 
-public class ResultMatchParser extends MatchParser {
-
-	private Element elementTmp;
+public class OverUnderMatchParser extends MatchParser {
 	private String bookie;
+	private BetType betType;
 
 	@Override
 	protected List<Bet> doParse(Element t, Match match,
 			SynchronizerContext context) {
-		// Match Winner structure <tr> 3 elements : 1/nothing :
-		// 2/ Home Winner 3/ Away Winner String bookie = "";
-		Elements tnode = t.select("tr");
+		// TODO Auto-generated method stub
 		List<Bet> bets = new LinkedList<Bet>();
-		BetType betType = context.findBetType("1x2");
-		
-
-		for (Element tnodeelement : tnode) {
-			Elements tnode3 = tnodeelement.select("td");
-			if (tnodeelement.attr("class").equals("one")
-					|| tnodeelement.attr("class").equals("two")) {
+		Elements elements = t.select("tr");
+		for (Element element : elements) {
+			if (element.attr("class").equals("odds-type")) {
+				String sbetType = element.select("td").text();
+				betType = context.findBetType(sbetType);
+			}
+			Elements tnode3 = element.select("td");
+			if (element.attr("class").equals("one")
+					|| element.attr("class").equals("two")) {
 				for (Element tnode3element : tnode3) {
 					if (tnode3element.attr("class").equals("first tl")) {
 						bookie = tnode3element.text();
 					}
 
-					if (tnode3element.attr("class").equals("k1")) {
+					if (tnode3element.attr("class").equals("k1") || tnode3element.attr("class").equals("k1 best-betrate")) {
 						String odd = tnode3element.text();
 						createOdd(match, context, bookie, bets, betType, odd,
-								"1");
+								"Over");
 					}
-					if (tnode3element.attr("class").equals("k2")) {
+					if (tnode3element.attr("class").equals("k2") || tnode3element.attr("class").equals("k2 best-betrate")) {
 						String odd = tnode3element.text();
 						createOdd(match, context, bookie, bets, betType, odd,
-								"2");
+								"Under");
 					}
 
 				}
@@ -51,7 +50,6 @@ public class ResultMatchParser extends MatchParser {
 		}
 
 		return bets;
-
 	}
 
 }
