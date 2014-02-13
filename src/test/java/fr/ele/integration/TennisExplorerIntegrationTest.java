@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fr.ele.feeds.wiliamhill.dto.Oxip;
 import fr.ele.services.mapping.TennisExplorerSynchroniser;
 
 public class TennisExplorerIntegrationTest extends
@@ -26,7 +25,9 @@ public class TennisExplorerIntegrationTest extends
 		InputStream inputStream = new BufferedInputStream(
 				WIlliamHillIntegrationTest.class
 						.getResourceAsStream("/fr/ele/feeds/williamhill/WilliamHill.xml"));
-		Oxip odds = tennisExplorerSynchroniser.unmarshall(inputStream, null);
-		tennisExplorerSynchroniser.synchronize("tennisexplorer", odds);
+		/**
+		 * Oxip odds = tennisExplorerSynchroniser.unmarshall(inputStream, null);
+		 * tennisExplorerSynchroniser.synchronize("tennisexplorer", odds);
+		 */
 	}
 }
