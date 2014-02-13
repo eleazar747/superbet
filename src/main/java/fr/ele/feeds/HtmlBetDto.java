@@ -39,7 +39,7 @@ public class HtmlBetDto {
 		this.match = match;
 		String[] players = match.split(" - ");
 		this.setPlayer1(players[0]);
-		this.setPlayer1(players[1]);
+		this.setPlayer2(players[1]);
 	}
 
 	public String getSport() {

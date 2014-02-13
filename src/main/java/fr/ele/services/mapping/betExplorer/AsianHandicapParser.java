@@ -1,5 +1,6 @@
 package fr.ele.services.mapping.betExplorer;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class AsianHandicapParser extends MatchParser {
 
 	@Override
 	protected List<HtmlBetDto> doParse(Elements elements, Element t,
-			String match, String sport) {
+			String match, String sport, Date date) {
 		// 3/ odd Over 4/odd under
 		String bookie = "";
 		Element tnode = t.select("th").first();
@@ -56,14 +57,15 @@ public class AsianHandicapParser extends MatchParser {
 						elementTmp = it.next();
 						String odd = extractOdd(elementTmp);
 
-						createOdd(match, bookie, bets, betType, odd, "1", sport);
+						createOdd(match, bookie, bets, betType, odd, "1",
+								sport, date);
 
 						if (it.hasNext()) {
 							elementTmp = it.next();
 							odd = extractOdd(elementTmp);
 
 							createOdd(match, bookie, bets, betType, odd, "2",
-									sport);
+									sport, date);
 
 						}
 					}

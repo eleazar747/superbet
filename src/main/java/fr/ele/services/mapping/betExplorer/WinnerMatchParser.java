@@ -1,5 +1,6 @@
 package fr.ele.services.mapping.betExplorer;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class WinnerMatchParser extends MatchParser {
 
 	@Override
 	protected List<HtmlBetDto> doParse(Elements elements, Element t,
-			String match, String sport) {
+			String match, String sport, Date date) {
 		// Match Winner structure <tr> 3 elements : 1/nothing :
 		// 2/ Home Winner 3/ Away Winner
 		String bookie = "";
@@ -50,13 +51,15 @@ public class WinnerMatchParser extends MatchParser {
 					elementTmp = it.next();
 					String odd = extractOdd(elementTmp);
 
-					createOdd(match, bookie, bets, betType, odd, "1", sport);
+					createOdd(match, bookie, bets, betType, odd, "1", sport,
+							date);
 
 					if (it.hasNext()) {
 						elementTmp = it.next();
 						odd = extractOdd(elementTmp);
 
-						createOdd(match, bookie, bets, betType, odd, "2", sport);
+						createOdd(match, bookie, bets, betType, odd, "2",
+								sport, date);
 
 					}
 				}

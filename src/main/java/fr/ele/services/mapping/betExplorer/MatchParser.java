@@ -4,6 +4,7 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public abstract class MatchParser {
 	private BookMaker bookmaker;
 
 	public List<HtmlBetDto> parseMatchId(String httpRef, String match,
-			String sport) throws Throwable {
+			String sport, Date date) throws Throwable {
 
 		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
 		URL website = new URL(httpRef + getUrlExtension());
@@ -31,7 +32,7 @@ public abstract class MatchParser {
 			org.jsoup.select.Elements e = docmatch.select("tr");
 			// One bet Type, one Bookmaker, one match
 			for (Element t : e) {
-				bets.addAll(doParse(t.select("td"), t, match, sport));
+				bets.addAll(doParse(t.select("td"), t, match, sport, date));
 			}
 		}
 
@@ -42,10 +43,10 @@ public abstract class MatchParser {
 
 	protected abstract List<HtmlBetDto> doParse(
 			org.jsoup.select.Elements elements, Element t, String match,
-			String sport);
+			String sport, Date date);
 
 	protected HtmlBetDto convert(String odd, String match, String betType,
-			String subBetType, String bookmaker, String sport) {
+			String subBetType, String bookmaker, String sport, Date date) {
 
 		// RefKey refKey = context.findOrCreateRefKey(match, betType);
 
@@ -57,22 +58,19 @@ public abstract class MatchParser {
 		htmlBetDto.setMatch(match);
 		htmlBetDto.setBetType(betType);
 		// bet.setRefKey(refKey);
-		// htmlBetDto.setDate(date);// a voir
+		htmlBetDto.setDate(date);
 		htmlBetDto.setBookmakerId("dummy");
-		// bet.setDate(context.getSynchronizationDate());
-		// bet.setBookMaker(context.getBookMaker());
-		// bet.setBookmakerBetId("dummy");
 		return htmlBetDto;
 	}
 
 	protected void createOdd(String match, String bookie,
 			List<HtmlBetDto> htmlBetDtos, String betType, String odd,
-			String subType, String sport) {
+			String subType, String sport, Date date) {
 		if (betType != null) {
 			if (bookie.equals("") == false) {
 				if (!odd.isEmpty()) {
 					htmlBetDtos.add(convert(odd, match, betType, subType,
-							bookie, sport));
+							bookie, sport, date));
 				}
 			}
 

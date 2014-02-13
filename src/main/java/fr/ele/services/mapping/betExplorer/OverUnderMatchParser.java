@@ -1,5 +1,6 @@
 package fr.ele.services.mapping.betExplorer;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class OverUnderMatchParser extends MatchParser {
 
 	@Override
 	protected List<HtmlBetDto> doParse(Elements elements, Element t,
-			String match, String sport) {
+			String match, String sport, Date date) {
 		// Over Under structure <tr> 4 elements : 1/nothing : 2/ref over under
 		// 3/ odd Over 4/odd under
 		String bookie = "";
@@ -56,14 +57,14 @@ public class OverUnderMatchParser extends MatchParser {
 						String odd = extractOdd(elementTmp);
 
 						createOdd(match, bookie, bets, betType, odd, "Over",
-								sport);
+								sport, date);
 
 						if (it.hasNext()) {
 							elementTmp = it.next();
 							odd = extractOdd(elementTmp);
 
 							createOdd(match, bookie, bets, betType, odd,
-									"Under", sport);
+									"Under", sport, date);
 
 						}
 					}
