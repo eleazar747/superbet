@@ -6,7 +6,7 @@ spring:
     profiles: test
     datasource:
         dataSourceClassName: org.h2.jdbcx.JdbcDataSource
-        url: jdbc:h2:~/test
+        url: jdbc:h2:mem:test
         databaseName: 
         serverName: 
         username: sa
@@ -22,10 +22,10 @@ spring:
             ddl-auto: create-drop
             naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
         properties:
-            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
-            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+            hibernate.cache.region.factory_class: org.hibernate.cache.internal.NoCachingRegionFactory
 
 metrics:
     jmx.enabled: true

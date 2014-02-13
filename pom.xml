@@ -16,9 +16,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<jaxb.version>2.2.7</jaxb.version>
-		<querydsl.version>2.9.0</querydsl.version>
+		<querydsl.version>3.3.0</querydsl.version>
 		<java.version>1.7</java.version>
-		<cxf.version>2.7.5</cxf.version>
+		<cxf.version>3.0.0-milestone1</cxf.version>
 		<jetty.version>8.1.12.v20130726</jetty.version>
 	</properties>
 	<repositories>
@@ -111,7 +111,6 @@
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>1.13</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -269,18 +268,14 @@
 			<version>3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-json-org</artifactId>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-hppc</artifactId>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-afterburner</artifactId>
 			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-joda</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

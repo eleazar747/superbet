@@ -6,11 +6,12 @@ import java.util.Map;
 
 import org.junit.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
+import fr.ele.WebApp;
 import fr.ele.core.ApplicationProfiles;
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvUnmarshaller;
@@ -24,7 +25,7 @@ import fr.ele.model.ref.Sport;
 import fr.ele.services.repositories.RepositoryRegistry;
 
 @Ignore
-@ContextConfiguration(locations = "/ApplicationContext.xml")
+@SpringApplicationConfiguration(classes = WebApp.class)
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @ActiveProfiles(ApplicationProfiles.TEST)
 public abstract class AbstractSuperbetIntegrationTest extends

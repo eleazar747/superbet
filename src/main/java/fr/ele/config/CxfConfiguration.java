@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
+
 import fr.ele.config.jaxrs.RestService;
 
 @Configuration
@@ -42,7 +46,7 @@ public class CxfConfiguration {
         factory.setServiceBeans(new ArrayList<>(appContext
                 .getBeansWithAnnotation(RestService.class).values()));
         factory.setAddress("/");
-        // factory.setProvider(jsonProvider());
+        factory.setProvider(jsonProvider());
         return factory.create();
     }
 
@@ -51,9 +55,14 @@ public class CxfConfiguration {
         return new JaxRsApiApplication();
     }
 
-    // @Bean
-    // public JacksonJsonProvider jsonProvider() {
-    // return new JacksonJsonProvider();
-    // }
+    @Bean
+    public JacksonJsonProvider jsonProvider() {
+        JacksonJsonProvider provider = new JacksonJsonProvider();
+        ObjectMapper mapper = new ObjectMapper();
+        AfterburnerModule module = new AfterburnerModule();
+        mapper.registerModule(module);
+        provider.setMapper(mapper);
+        return provider;
+    }
 
 }
