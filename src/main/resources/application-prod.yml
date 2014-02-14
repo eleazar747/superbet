@@ -4,7 +4,7 @@ server:
 
 spring:
     profiles: prod
-    profiles.active: +web_module
+    profiles.active: +web_module,+cache,+async
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
         url: jdbc:postgresql://127.0.0.1:5432/surebet

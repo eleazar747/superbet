@@ -17,14 +17,18 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.ehcache.InstrumentedEhcache;
 
+import fr.ele.core.ApplicationProfiles;
+
 @Configuration
 @EnableCaching
 @AutoConfigureAfter(MetricsConfiguration.class)
+@Profile(ApplicationProfiles.CACHE)
 public class CacheConfiguration {
 
     private final Logger log = LoggerFactory

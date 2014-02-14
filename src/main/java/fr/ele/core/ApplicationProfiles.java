@@ -11,4 +11,8 @@ public class ApplicationProfiles {
 
     public static final String WEB = "web_module";
 
+    public static final String CACHE = "cache";
+
+    public static final String ASYNC = "async";
+
 }
