@@ -4,7 +4,7 @@ server:
 
 spring:
     profiles: dev
-    profiles.active: +web_module,+cache,+async
+    profiles.active: +web_module,+cache,+async,+mem_db
     datasource:
         dataSourceClassName: org.h2.jdbcx.JdbcDataSource
         url: jdbc:h2:tcp://localhost/~/test
@@ -17,7 +17,7 @@ spring:
         database-platform: org.hibernate.dialect.H2Dialect
         database: H2
         openInView: false
-        show_sql: true
+        show_sql: false
         generate-ddl: true
         hibernate:
             ddl-auto: update

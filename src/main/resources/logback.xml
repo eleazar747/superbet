@@ -21,7 +21,9 @@
     <logger name="org.springframework.security" level="INFO"/>
     <logger name="org.springframework.cache" level="INFO"/>
     <logger name="net.sf.ehcache" level="WARN"/>
-    <logger name="org.apache.cxf" level="DEBUG"/>
+    <logger name="org.apache.cxf" level="WARN"/>
+    <logger name="fr.ele.ui.mustache" level="WARN"/>
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
 
     <root level="${logback.loglevel}">
         <appender-ref ref="CONSOLE"/>

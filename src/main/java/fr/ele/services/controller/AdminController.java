@@ -48,4 +48,12 @@ public class AdminController extends AbstractActivityController {
         mapActivities(model);
         return "unmatchedPlayersView";
     }
+
+    @RequestMapping("metrics")
+    @Activity(name = "Metrics")
+    public String metrics(Locale locale, Model model) {
+        model.addAttribute("resource", "metrics");
+        mapActivities(model);
+        return "metricsView";
+    }
 }
