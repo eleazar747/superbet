@@ -15,14 +15,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Profile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 
 import fr.ele.config.jaxrs.RestService;
+import fr.ele.core.ApplicationProfiles;
 
 @Configuration
+@Profile(ApplicationProfiles.WEB)
 public class CxfConfiguration {
     private static final Logger LOG = LoggerFactory
             .getLogger(WebMvcConfiguration.class);

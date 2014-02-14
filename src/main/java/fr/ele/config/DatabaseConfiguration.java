@@ -46,7 +46,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
     @Bean
     public DataSource dataSource() {
         log.debug("Configuring Datasource");
-        if (env.acceptsProfiles(ApplicationProfiles.TEST)) {
+        if (env.acceptsProfiles(ApplicationProfiles.MEM_DB)) {
             return new EmbeddedDatabaseBuilder().setType(
                     EmbeddedDatabaseType.H2).build();
         }

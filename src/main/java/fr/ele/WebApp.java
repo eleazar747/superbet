@@ -62,7 +62,7 @@ public class WebApp {
     private static void addDefaultProfile(SpringApplication app,
             SimpleCommandLinePropertySource source) {
         if (!source.containsProperty("spring.profiles.active")) {
-            app.setAdditionalProfiles(ApplicationProfiles.TEST);
+            app.setAdditionalProfiles(ApplicationProfiles.DEV);
         }
     }
 
