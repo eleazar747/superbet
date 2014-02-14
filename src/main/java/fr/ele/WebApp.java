@@ -1,7 +1,5 @@
 package fr.ele;
 
-import java.util.Arrays;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -64,7 +62,7 @@ public class WebApp {
     private static void addDefaultProfile(SpringApplication app,
             SimpleCommandLinePropertySource source) {
         if (!source.containsProperty("spring.profiles.active")) {
-            app.setAdditionalProfiles(Arrays.asList(ApplicationProfiles.TEST));
+            app.setAdditionalProfiles(ApplicationProfiles.TEST);
         }
     }
 
