@@ -15,6 +15,8 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
+import com.codahale.metrics.annotation.Timed;
+
 import fr.ele.config.jaxrs.RestService;
 import fr.ele.model.ref.Sport;
 import fr.ele.model.search.SportSearch;
@@ -28,6 +30,7 @@ public interface SportRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Timed
     Iterable<Sport> findAll();
 
     @POST

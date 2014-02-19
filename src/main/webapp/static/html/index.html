@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="superBetApp">
+<head>
+<meta charset="utf-8">
+<title>Superbet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="garc33">
+<!-- Le styles -->
+<link href="/wro/all.css" rel="stylesheet">
+<link href="/static/css/sb.css" rel="stylesheet">
+<script src="/wro/all.js"></script>
+
+
+<script src="/static/scripts/app.js"></script>
+<script src="/static/scripts/model/model.js"></script>
+<script src="/static/scripts/controllers/referential-controller.js"></script>
+<script src="/static/scripts/controllers/metrics-controller.js"></script>
+<script src="/static/scripts/routers/referential-router.js"></script>
+<script src="/static/scripts/services/referential-services.js"></script>
+<script src="/static/scripts/services/metrics-services.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/site/">SuperBet</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-header navbar-right">
+				<p class="navbar-text">
+					Logged in as <a href="#" class="navbar-link">Username</a>
+				</p>
+			</div>
+			<div class="navbar-header">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li class="navbar-brand">referential</li>
+					<li><a href="#/bettypes/">Bet Type</a></li>
+					<li><a href="#/bookmakers/">BookMaker</a></li>
+					<li><a href="#/datamappings/">Data Mapping</a></li>
+					<li><a href="#/matchs/">Match</a></li>
+					<li><a href="#/sports/">Sport</a></li>
+					<li class="navbar-brand">bets</li>
+					<li><a href="#/bets/search">Search Bets</a></li>
+					<li><a href="#/bets/sures">Sure Bets</a></li>
+					<li class="navbar-brand">admin</li>
+					<li><a href="#/unMatchedPlayers">Unmatched Players</a></li>
+					<li><a href="#/synchronize">Synchronize Bookmakers</a></li>
+					<li><a href="#/metrics">Metrics</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--/.fluid-container-->
+		<div id="page-wrapper">
+
+			<div class="row">
+				<div class="col-lg-12" ng-view>
+					<h1>Welcome to Superbet</h1>
+				</div>
+			</div>
+			<!-- /.row -->
+
+		</div>
+	</div>
+</body>
+</html>

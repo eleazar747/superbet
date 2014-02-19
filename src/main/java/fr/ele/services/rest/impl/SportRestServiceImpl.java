@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codahale.metrics.annotation.Timed;
+
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
@@ -34,26 +36,31 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
     }
 
     @Override
+    @Timed
     public Iterable<Sport> findAll() {
         return super.findAll();
     }
 
     @Override
+    @Timed
     public Sport create(Sport model) {
         return super.create(model);
     }
 
     @Override
+    @Timed
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
+    @Timed
     public List<Sport> insertCsv(Attachment file) {
         return insertCsv(file, Sport.class);
     }
 
     @Override
+    @Timed
     public Iterable<Sport> search(SportSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, entityPath(), search);

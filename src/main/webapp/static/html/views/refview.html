@@ -1,0 +1,36 @@
+<div class="row">
+	<legend>{{metamodel.label}}</legend>
+	<div class="form-actions">
+		<button class="btn btn-primary type=" button" ng-click="form()">New</button>
+		<button data-toggle="modal" href="#upload-modal"
+			class="btn btn-primary type="button">Import</button>
+		<button data-toggle="modal" href="#search-modal"
+			class="btn btn-primary type="button">Search</button>
+		<button id="refresh" class="btn btn-primary type="button" ng-click="refresh()">Refresh</button>
+	</div>
+	<div class="table-responsive">
+		<table
+			class="table table-bordered table-hover table-striped tablesorter">
+			<thead>
+				<tr>
+					<th ng-repeat="field in metamodel.fields">{{field.label}}<i
+						class="fa fa-sort"></i></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="dto in dtos">
+					<td ng-repeat="field in metamodel.fields">{{dto[field.ref]}}</td>
+					<td><button type="submit" ng-click="update(dto.id)"
+							class="btn">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+						<button type="submit" ng-click="delete(dto.id)"
+							class="btn btn-danger">
+							<span class="glyphicon glyphicon-trash"></span>
+						</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

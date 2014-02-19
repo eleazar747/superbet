@@ -20,6 +20,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
+import ro.isdc.wro.http.ConfigurableWroFilter;
+
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.health.HealthCheckRegistry;
 import com.codahale.metrics.servlet.InstrumentedFilter;
@@ -58,6 +60,7 @@ public class WebConfigurer implements ServletContextInitializer {
                 DispatcherType.FORWARD, DispatcherType.ASYNC);
 
         initMetrics(servletContext, disps);
+        initWroFilter(servletContext, disps);
         if (env.acceptsProfiles(ApplicationProfiles.PROD)) {
             initStaticResourcesProductionFilter(servletContext, disps);
             initCachingHttpHeadersFilter(servletContext, disps);
@@ -74,6 +77,16 @@ public class WebConfigurer implements ServletContextInitializer {
                 "CXFServlet", cxfServlet);
         appServlet.setLoadOnStartup(1);
         appServlet.addMapping("/rest/*");
+    }
+
+    private void initWroFilter(ServletContext servletContext,
+            EnumSet<DispatcherType> disps) {
+        ConfigurableWroFilter filter = new ConfigurableWroFilter();
+        filter.setDebug(false);
+        FilterRegistration.Dynamic wroFilter = servletContext.addFilter(
+                "wroFilter", filter);
+        wroFilter.addMappingForUrlPatterns(disps, true, "/wro/*");
+        wroFilter.setAsyncSupported(true);
     }
 
     /**

@@ -1,0 +1,12 @@
+<div class="modal-content">
+	<div class="modal-body">
+		<div class="form-group" ng-repeat="field in metamodel.fields">
+			<label>{{field.label}}</label> <input type="text" class="form-control" name="{{field.ref}}"
+				ng-model="dto[field.ref]" ng-readonly="field.readonly" ng-required="field.requiered">
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+		<button type="button" ng-click="ok()" class="btn btn-primary">Save</button>
+	</div>
+</div>
