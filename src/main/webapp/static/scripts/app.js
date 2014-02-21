@@ -1,4 +1,4 @@
-var superBetApp = angular.module('superBetApp', ['ngResource','ngRoute','ui.bootstrap']);
+var superBetApp = angular.module('superBetApp', ['ngResource','ngRoute','ui.bootstrap','angularFileUpload']);
 superBetApp.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/metrics', {
         templateUrl: 'views/metricsview.html',

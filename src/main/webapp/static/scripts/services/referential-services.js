@@ -1,28 +1,34 @@
-superBetApp.factory('Bookmakers', ['$resource',
-    function ($resource) {
-        return $resource('/rest/bookmakers/:id', {}, {
-            'query': { method: 'GET', isArray: true},
-            'get': { method: 'GET'}
-        });
-    }]);
-superBetApp.factory('Sports', ['$resource',
-                                   function ($resource) {
-	return $resource('/rest/sports/:id', {}, {
-		'query': { method: 'GET', isArray: true},
-		'get': { method: 'GET'}
-	});
-}]);
-superBetApp.factory('BetTypes', ['$resource',
-                                   function ($resource) {
-	return $resource('/rest/bettypes/:id', {}, {
-		'query': { method: 'GET', isArray: true},
-		'get': { method: 'GET'}
-	});
-}]);
-superBetApp.factory('DataMappings', ['$resource',
-                                   function ($resource) {
-	return $resource('/rest/datamappings/:id', {}, {
-		'query': { method: 'GET', isArray: true},
-		'get': { method: 'GET'}
-	});
-}]);
+function register(app, name, resource) {
+	app.factory(name, [ '$resource', function($resource) {
+		return $resource('/rest/' + resource + '/:id', {}, {
+			'query' : {
+				method : 'GET',
+				isArray : true
+			},
+			'get' : {
+				method : 'GET'
+			}
+		});
+	} ]);
+}
+superBetApp.service('FileUpload', [ '$http', function($http) {
+	this.uploadFileToUrl = function(file, uploadUrl) {
+		var fd = new FormData();
+		alert(file);
+		fd.append('content', file);
+		$http.post(uploadUrl, fd, {
+			transformRequest : angular.identity,
+			headers : {
+				'Content-Type' : '*/*'
+			}
+		}).success(function() {
+			//alert('succes');
+		}).error(function() {
+			//alert('error');
+		});
+	}
+} ]);
+register(superBetApp, 'Bookmakers', 'bookmakers');
+register(superBetApp, 'Sports', 'sports');
+register(superBetApp, 'BetTypes', 'bettypes');
+register(superBetApp, 'DataMappings', 'datamappings');
