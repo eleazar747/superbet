@@ -36,5 +36,14 @@ superBetApp.config([ '$routeProvider', '$httpProvider',
 					} ],
 					metamodel : function() {return superbetMetamodel.datamapping}
 				}
-			})
+			}).when('/matches', {
+				templateUrl : 'views/refview.html',
+			controller : 'MatchesController',
+			resolve : {
+				resolvedDtos : [ 'Matches', function(service) {
+					return service.query();
+				} ],
+				metamodel : function() {return superbetMetamodel.match}
+			}
+		})
 		} ]);

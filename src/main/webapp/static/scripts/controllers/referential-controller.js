@@ -126,3 +126,5 @@ var refController = function ($scope, resolvedDtos, service,$modal,metamodel,Fil
     refController]);
   superBetApp.controller('DataMappingsController', ['$scope', 'resolvedDtos', 'DataMappings','$modal','metamodel','$upload',
     refController]);
+  superBetApp.controller('MatchesController', ['$scope', 'resolvedDtos', 'Matches','$modal','metamodel','$upload',
+    refController]);

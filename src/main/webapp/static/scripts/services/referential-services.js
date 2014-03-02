@@ -32,3 +32,4 @@ register(superBetApp, 'Bookmakers', 'bookmakers');
 register(superBetApp, 'Sports', 'sports');
 register(superBetApp, 'BetTypes', 'bettypes');
 register(superBetApp, 'DataMappings', 'datamappings');
+register(superBetApp, 'Matches', 'matches');
