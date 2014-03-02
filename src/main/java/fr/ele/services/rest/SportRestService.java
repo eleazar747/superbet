@@ -15,44 +15,36 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
-import com.codahale.metrics.annotation.Timed;
-
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.model.ref.Sport;
+import fr.ele.dto.SportDto;
 import fr.ele.model.search.SportSearch;
 
 @Path(SportRestService.PATH)
 @RestService
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface SportRestService {
     public static final String PATH = "sports";
 
     public static final String SERVER = "SportRestService";
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Timed
-    Iterable<Sport> findAll();
+    Iterable<SportDto> findAll();
 
     @POST
     @Path("search")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    Iterable<Sport> search(SportSearch search);
+    Iterable<SportDto> search(SportSearch search);
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    Sport get(@PathParam("id") long id);
+    SportDto get(@PathParam("id") long id);
 
     @GET
     @Path("search")
-    @Produces(MediaType.APPLICATION_JSON)
-    Sport findByCode(@QueryParam("code") String code);
+    SportDto findByCode(@QueryParam("code") String code);
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    Sport create(Sport sport);
+    SportDto create(SportDto sport);
 
     @DELETE
     @Path("{id}")
@@ -62,6 +54,6 @@ public interface SportRestService {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
-    List<Sport> insertCsv(
+    List<SportDto> insertCsv(
             @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

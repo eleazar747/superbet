@@ -15,11 +15,11 @@ public class Player extends SuperBetEntity {
     @Column(nullable = false)
     private String code;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Sport.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sport.class)
     @JoinColumn(nullable = false)
     private Sport sport;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = BookMaker.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMaker.class)
     @JoinColumn(nullable = false)
     private BookMaker dataProvider;
 

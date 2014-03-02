@@ -10,66 +10,71 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
 
 import fr.ele.core.csv.CsvContext;
 import fr.ele.core.csv.CsvUnmarshaller;
 import fr.ele.core.csv.GraphResolver;
 import fr.ele.csv.SuperBetGraphResolver;
+import fr.ele.dto.SuperbetDto;
 import fr.ele.model.SuperBetEntity;
 import fr.ele.services.repositories.RepositoryRegistry;
 import fr.ele.services.repositories.SuperBetRepository;
 
-public abstract class AbstractBaseRestService<T extends SuperBetEntity> {
+public abstract class AbstractBaseRestService<DTO extends SuperbetDto, MODEL extends SuperBetEntity> {
 
     protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private RepositoryRegistry repositoryRegistry;
 
-    @Transactional(readOnly = true)
-    public Iterable<T> findAll() {
+    protected Iterable<DTO> findAll() {
         LOGGER.debug("findAll");
-        return getRepository().findAll();
+        return Translate.to(dtoClass()).fromEach(
+                Lists.newArrayList(getRepository().findAll()));
     }
 
-    @Transactional(readOnly = true)
-    public T get(long id) {
-        LOGGER.debug("getById(id={})", id);
-        return getRepository().findOne(id);
+    protected DTO get(long id) {
+        LOGGER.debug("findById({})", id);
+        return Translate.to(dtoClass()).from(getRepository().findOne(id));
     }
 
-    @Transactional
-    protected T create(T model) {
+    protected DTO create(DTO dto) {
+        LOGGER.debug("create({})", dto);
+        MODEL model = Translate.to(modelClass()).from(dto);
         getRepository().save(model);
-        return model;
+        return Translate.to(dtoClass()).from(model);
     }
 
-    @Transactional
     protected void delete(long id) {
+        LOGGER.debug("delete({})", id);
         getRepository().delete(id);
     }
 
-    @Transactional
-    public List<T> insertCsv(Attachment file, Class<T> clazz) {
+    protected List<DTO> insertCsv(Attachment file, Class<MODEL> clazz) {
         try {
             InputStream in = file.getDataHandler().getInputStream();
             GraphResolver graphResolver = new SuperBetGraphResolver(
                     repositoryRegistry);
-            CsvContext<T> context = CsvContext.create(clazz, graphResolver);
-            CsvUnmarshaller<T> unmarshaller = context.newUnmarshaller();
-            Iterator<T> iterator = unmarshaller.unmarshall(in);
-            List<T> results = new LinkedList<T>();
+            CsvContext<MODEL> context = CsvContext.create(clazz, graphResolver);
+            CsvUnmarshaller<MODEL> unmarshaller = context.newUnmarshaller();
+            Iterator<MODEL> iterator = unmarshaller.unmarshall(in);
+            List<MODEL> results = new LinkedList<MODEL>();
             while (iterator.hasNext()) {
-                T bookMaker = getRepository().save(iterator.next());
+                MODEL bookMaker = getRepository().save(iterator.next());
                 results.add(bookMaker);
             }
-            return results;
+            return Translate.to(dtoClass()).fromEach(results);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    protected abstract SuperBetRepository<T> getRepository();
+    protected abstract SuperBetRepository<MODEL> getRepository();
 
+    protected abstract Class<MODEL> modelClass();
+
+    protected abstract Class<DTO> dtoClass();
 }

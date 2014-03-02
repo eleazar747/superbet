@@ -15,11 +15,13 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.model.DataMapping;
+import fr.ele.dto.DataMappingDto;
 import fr.ele.model.search.DataMappingSearch;
 
 @Path(DataMappingRestService.PATH)
 @RestService
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public interface DataMappingRestService {
 
     public static final String PATH = "datamappings";
@@ -27,24 +29,18 @@ public interface DataMappingRestService {
     static final String SERVER = "DataMappingRestService";
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    Iterable<DataMapping> findAll();
+    Iterable<DataMappingDto> findAll();
 
     @POST
     @Path("search")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    Iterable<DataMapping> search(DataMappingSearch search);
+    Iterable<DataMappingDto> search(DataMappingSearch search);
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    DataMapping get(@PathParam("id") long id);
+    DataMappingDto get(@PathParam("id") long id);
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    DataMapping create(DataMapping dataMapping);
+    DataMappingDto create(DataMappingDto dataMapping);
 
     @DELETE
     @Path("{id}")
@@ -54,6 +50,6 @@ public interface DataMappingRestService {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
-    List<DataMapping> insertCsv(
+    List<DataMappingDto> insertCsv(
             @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

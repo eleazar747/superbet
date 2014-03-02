@@ -8,41 +8,27 @@
 
 
   <group name="angular">
-    <js>classpath:META-INF/resources/webjars/angular-file-upload/1.2.5/angular-file-upload-html5-shim.js</js>
-    <js>classpath:META-INF/resources/webjars/angularjs/1.2.13/angular.js</js>
-    <js>classpath:META-INF/resources/webjars/angularjs/1.2.13/angular-route.js</js>
-    <js>classpath:META-INF/resources/webjars/angularjs/1.2.13/angular-resource.js</js>
-    <js>classpath:META-INF/resources/webjars/angularjs/1.2.13/angular-cookies.js</js>
-    <js>classpath:META-INF/resources/webjars/angularjs/1.2.13/angular-sanitize.js</js>
-    <js>classpath:META-INF/resources/webjars/angular-file-upload/1.2.5/angular-file-upload.js</js>
+    <js>webjar:angular-file-upload-html5-shim.js</js>
+    <js>webjar:angular.js</js>
+    <js>webjar:angular-route.js</js>
+    <js>webjar:angular-resource.js</js>
+    <js>webjar:angular-cookies.js</js>
+    <js>webjar:angular-sanitize.js</js>
+    <js>webjar:angular-file-upload.js</js>
   </group>
   
   <group name="angular-ui">
-    <js>classpath:META-INF/resources/webjars/angular-ui-bootstrap/0.10.0/ui-bootstrap.js</js>
-    <js>classpath:META-INF/resources/webjars/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js</js>
+    <js>webjar:ui-bootstrap.js</js>
+    <js>webjar:ui-bootstrap-tpls.js</js>
   </group>
   
   <group name="jquery">
-    <js>classpath:META-INF/resources/webjars/jquery/1.8.2/*.min.js</js>
+    <js>webjar:jquery.min.js</js>
   </group>
   
   <group name="bootstrap">
-    <js>classpath:META-INF/resources/webjars/bootstrap/3.0.3/js/*.min.js</js>
-    <css>classpath:META-INF/resources/webjars/bootstrap/3.0.3/css/*.min.css</css>
+    <js>webjar:bootstrap.js</js>
+    <css>webjar:bootstrap.css</css>
+    <css>webjar:bootstrap-theme.css</css>
   </group>
-
-  <group name="g2">
-    <js>/dwr/engine.js</js>
-    <group-ref>g3</group-ref>
-    <css>classpath:/static/css/2.css</css>
-    <js>classpath:/static/*.js</js>
-  </group>
-
-  <group name="g3">
-    <css>/static/css/style.css</css>
-    <css>/static/css/global/*.css</css>
-    <js>/static/js/**</js>
-    <js>http://www.site.com/static/plugin.js</js>
-  </group>
-
 </groups>

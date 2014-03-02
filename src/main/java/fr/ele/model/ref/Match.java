@@ -14,7 +14,7 @@ import org.hibernate.annotations.Proxy;
 
 import com.mysema.query.annotations.QueryInit;
 
-import fr.ele.model.SuperBetEntity;
+import fr.ele.model.HasCodeEntity;
 import fr.ele.model.SuperBetTables;
 
 @Entity
@@ -22,26 +22,15 @@ import fr.ele.model.SuperBetTables;
         SuperBetTables.MatchTable.SPORT_COLUMN,
         SuperBetTables.MatchTable.DATE_COLUMN, SuperBetTables.CODE_COLUMN}))
 @Proxy(proxyClass = Match.class)
-public class Match extends SuperBetEntity {
+public class Match extends HasCodeEntity {
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Sport.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Sport.class)
     @JoinColumn(name = SuperBetTables.MatchTable.SPORT_COLUMN, nullable = false)
     @QueryInit("*")
     private Sport sport;
 
     @Column(name = SuperBetTables.MatchTable.DATE_COLUMN, nullable = false)
     private Date date;
-
-    @Column(name = SuperBetTables.CODE_COLUMN, nullable = false)
-    private String code;
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
 
     public Sport getSport() {
         return sport;

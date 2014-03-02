@@ -7,7 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
+
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.dto.BetTypeDto;
 import fr.ele.model.ref.BetType;
 import fr.ele.model.ref.QBetType;
 import fr.ele.model.search.BetTypeSearch;
@@ -16,16 +20,18 @@ import fr.ele.services.repositories.SuperBetRepository;
 import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.BetTypeRestService;
 
-@Transactional
+@Transactional(readOnly = true)
 @Service(BetTypeRestService.SERVER)
-public class BetTypeRestServiceImpl extends AbstractRefRestServiceImpl<BetType>
-        implements BetTypeRestService {
+public class BetTypeRestServiceImpl extends
+        AbstractRefRestServiceImpl<BetTypeDto, BetType> implements
+        BetTypeRestService {
 
     @Autowired
     private BetTypeRepository betTypeRepository;
 
     @Override
-    public BetType create(BetType betType) {
+    @Transactional
+    public BetTypeDto create(BetTypeDto betType) {
         return super.create(betType);
     }
 
@@ -40,25 +46,48 @@ public class BetTypeRestServiceImpl extends AbstractRefRestServiceImpl<BetType>
     }
 
     @Override
-    public Iterable<BetType> findAll() {
+    public Iterable<BetTypeDto> findAll() {
         return super.findAll();
     }
 
     @Override
+    @Transactional
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
-    public List<BetType> insertCsv(Attachment file) {
+    @Transactional
+    public List<BetTypeDto> insertCsv(Attachment file) {
         return insertCsv(file, BetType.class);
     }
 
     @Override
-    public Iterable<BetType> search(BetTypeSearch betTypeSearch) {
+    public Iterable<BetTypeDto> search(BetTypeSearch betTypeSearch) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, entityPath(), betTypeSearch);
-        return getRepository().findAll(queryBuilder.build());
+        Iterable models = getRepository().findAll(queryBuilder.build());
+        return Translate.to(dtoClass()).fromEach(Lists.newArrayList(models));
+    }
+
+    @Override
+    protected Class<BetType> modelClass() {
+        return BetType.class;
+    }
+
+    @Override
+    protected Class<BetTypeDto> dtoClass() {
+        return BetTypeDto.class;
+    }
+
+    @Override
+    public BetTypeDto findByCode(String code) {
+        return super.findByCode(code);
+    }
+
+    @Override
+    public BetTypeDto get(long id) {
+        return super.get(id);
     }
 
 }

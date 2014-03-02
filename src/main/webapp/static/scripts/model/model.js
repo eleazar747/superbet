@@ -19,7 +19,7 @@ var superbetMetamodel = {
 			label : 'Url sync',
 			requiered : true
 		}, {
-			ref : 'synchronizerService',
+			ref : 'synchronizer',
 			label : 'Sync service',
 			requiered : true
 		}, {
@@ -32,7 +32,7 @@ var superbetMetamodel = {
 				code : "",
 				url : "",
 				urlSync : "",
-				synchronizerService : "",
+				synchronizer : "",
 				encoding : ""
 			};
 		}

@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.model.UnMatchedPlayer;
+import fr.ele.dto.UnMatchedPalyerDto;
 import fr.ele.model.search.UnMatchedPlayerSearch;
 
 @Path(UnMatchedPlayerRestService.PATH)
@@ -22,15 +22,19 @@ public interface UnMatchedPlayerRestService {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    Iterable<UnMatchedPlayer> findAll();
+    Iterable<UnMatchedPalyerDto> findAll();
 
     @POST
     @Path("search")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    Iterable<UnMatchedPlayer> search(UnMatchedPlayerSearch search);
+    Iterable<UnMatchedPalyerDto> search(UnMatchedPlayerSearch search);
 
     @DELETE
     @Path("{id}")
     void delete(@PathParam("id") long id);
+
+    @GET
+    @Path("{id}")
+    UnMatchedPalyerDto get(@PathParam("id") long id);
 }

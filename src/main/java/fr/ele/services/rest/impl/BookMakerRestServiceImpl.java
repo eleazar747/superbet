@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codahale.metrics.annotation.Timed;
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
+
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.dto.BookmakerDto;
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.QBookMaker;
 import fr.ele.model.search.BookmakerSearch;
@@ -15,10 +20,11 @@ import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.BookMakerRestService;
 
-@Transactional
+@Transactional(readOnly = true)
 @Service(BookMakerRestService.SERVER)
 public class BookMakerRestServiceImpl extends
-        AbstractRefRestServiceImpl<BookMaker> implements BookMakerRestService {
+        AbstractRefRestServiceImpl<BookmakerDto, BookMaker> implements
+        BookMakerRestService {
 
     @Autowired
     private BookMakerRepository bookMakerRepository;
@@ -29,7 +35,8 @@ public class BookMakerRestServiceImpl extends
     }
 
     @Override
-    public Iterable<BookMaker> findAll() {
+    @Timed
+    public Iterable<BookmakerDto> findAll() {
         return super.findAll();
     }
 
@@ -39,25 +46,56 @@ public class BookMakerRestServiceImpl extends
     }
 
     @Override
-    public BookMaker create(BookMaker bookmaker) {
+    @Transactional
+    @Timed
+    public BookmakerDto create(BookmakerDto bookmaker) {
         return super.create(bookmaker);
     }
 
     @Override
+    @Transactional
+    @Timed
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
-    public List<BookMaker> insertCsv(Attachment file) {
+    @Transactional
+    @Timed
+    public List<BookmakerDto> insertCsv(Attachment file) {
         return insertCsv(file, BookMaker.class);
     }
 
     @Override
-    public Iterable<BookMaker> search(BookmakerSearch search) {
+    @Timed
+    public Iterable<BookmakerDto> search(BookmakerSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, entityPath(), search);
-        return bookMakerRepository.findAll(queryBuilder.build());
+        Iterable<BookMaker> models = bookMakerRepository.findAll(queryBuilder
+                .build());
+        return Translate.to(dtoClass()).fromEach(Lists.newArrayList(models));
+    }
+
+    @Override
+    @Timed
+    public BookmakerDto findByCode(String code) {
+        return super.findByCode(code);
+    }
+
+    @Override
+    @Timed
+    public BookmakerDto get(long id) {
+        return super.get(id);
+    }
+
+    @Override
+    protected Class<BookMaker> modelClass() {
+        return BookMaker.class;
+    }
+
+    @Override
+    protected Class<BookmakerDto> dtoClass() {
+        return BookmakerDto.class;
     }
 
 }

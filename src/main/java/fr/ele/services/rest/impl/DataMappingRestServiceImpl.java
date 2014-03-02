@@ -5,8 +5,14 @@ import java.util.List;
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.codahale.metrics.annotation.Timed;
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
 
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.dto.DataMappingDto;
 import fr.ele.model.DataMapping;
 import fr.ele.model.QDataMapping;
 import fr.ele.model.search.DataMappingSearch;
@@ -16,8 +22,10 @@ import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.DataMappingRestService;
 
 @Service(DataMappingRestService.SERVER)
+@Transactional(readOnly = true)
 public class DataMappingRestServiceImpl extends
-        AbstractBaseRestService<DataMapping> implements DataMappingRestService {
+        AbstractBaseRestService<DataMappingDto, DataMapping> implements
+        DataMappingRestService {
 
     @Autowired
     private DataMappingRepository dataMappingRepository;
@@ -28,28 +36,54 @@ public class DataMappingRestServiceImpl extends
     }
 
     @Override
-    public Iterable<DataMapping> findAll() {
+    @Timed
+    public Iterable<DataMappingDto> findAll() {
         return super.findAll();
     }
 
-    public Iterable<DataMapping> search(DataMappingSearch search) {
+    @Timed
+    public Iterable<DataMappingDto> search(DataMappingSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, QDataMapping.dataMapping, search);
-        return dataMappingRepository.findAll(queryBuilder.build());
+        Iterable<DataMapping> models = dataMappingRepository
+                .findAll(queryBuilder.build());
+        return Translate.to(dtoClass()).fromEach(Lists.newArrayList(models));
     }
 
     @Override
-    public DataMapping create(DataMapping model) {
+    @Timed
+    public DataMappingDto get(long id) {
+        return super.get(id);
+    }
+
+    @Override
+    protected Class<DataMapping> modelClass() {
+        return DataMapping.class;
+    }
+
+    @Override
+    protected Class<DataMappingDto> dtoClass() {
+        return DataMappingDto.class;
+    }
+
+    @Override
+    @Timed
+    @Transactional
+    public DataMappingDto create(DataMappingDto model) {
         return super.create(model);
     }
 
     @Override
+    @Timed
+    @Transactional
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
-    public List<DataMapping> insertCsv(Attachment file) {
+    @Timed
+    @Transactional
+    public List<DataMappingDto> insertCsv(Attachment file) {
         return insertCsv(file, DataMapping.class);
     }
 }

@@ -16,40 +16,35 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.model.ref.BetType;
+import fr.ele.dto.BetTypeDto;
 import fr.ele.model.search.BetTypeSearch;
 
 @Path(BetTypeRestService.PATH)
 @RestService
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public interface BetTypeRestService {
     public static final String PATH = "bettypes";
 
     public static final String SERVER = "BetTypeRestService";
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    Iterable<BetType> findAll();
+    Iterable<BetTypeDto> findAll();
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    BetType get(@PathParam("id") long id);
+    BetTypeDto get(@PathParam("id") long id);
 
     @GET
     @Path("search")
-    @Produces(MediaType.APPLICATION_JSON)
-    BetType findByCode(@QueryParam("code") String code);
+    BetTypeDto findByCode(@QueryParam("code") String code);
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    BetType create(BetType betType);
+    BetTypeDto create(BetTypeDto betType);
 
     @POST
     @Path("search")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    Iterable<BetType> search(BetTypeSearch betTypeSearch);
+    Iterable<BetTypeDto> search(BetTypeSearch betTypeSearch);
 
     @DELETE
     @Path("{id}")
@@ -59,6 +54,6 @@ public interface BetTypeRestService {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
-    List<BetType> insertCsv(
+    List<BetTypeDto> insertCsv(
             @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

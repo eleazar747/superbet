@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codahale.metrics.annotation.Timed;
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
+
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.dto.MatchDto;
 import fr.ele.model.ref.Match;
 import fr.ele.model.ref.QMatch;
 import fr.ele.model.search.MatchSearch;
@@ -16,15 +21,15 @@ import fr.ele.services.repositories.SuperBetRepository;
 import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.MatchRestService;
 
-@Transactional
+@Transactional(readOnly = true)
 @Service(MatchRestService.SERVER)
-public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
-        implements MatchRestService {
+public class MatchRestServiceImpl extends
+        AbstractRefRestServiceImpl<MatchDto, Match> implements MatchRestService {
 
     @Override
-    @Transactional(readOnly = true)
-    public Match findByCode(String code) {
-        return matchRepository.findByCode(code);
+    @Timed
+    public MatchDto findByCode(String code) {
+        return super.findByCode(code);
     }
 
     @Autowired
@@ -36,29 +41,60 @@ public class MatchRestServiceImpl extends AbstractBaseRestService<Match>
     }
 
     @Override
-    public Iterable<Match> findAll() {
+    @Timed
+    public Iterable<MatchDto> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Match create(Match match) {
+    @Timed
+    @Transactional
+    public MatchDto create(MatchDto match) {
         return super.create(match);
     }
 
     @Override
+    @Timed
+    @Transactional
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
-    public List<Match> insertCsv(Attachment file) {
+    @Timed
+    @Transactional
+    public List<MatchDto> insertCsv(Attachment file) {
         return insertCsv(file, Match.class);
     }
 
     @Override
-    public Iterable<Match> search(MatchSearch search) {
+    @Timed
+    public Iterable<MatchDto> search(MatchSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, QMatch.match, search);
-        return getRepository().findAll(queryBuilder.build());
+        Iterable<Match> models = getRepository().findAll(queryBuilder.build());
+        return Translate.to(dtoClass()).fromEach(Lists.newArrayList(models));
     }
+
+    @Override
+    protected Class<Match> modelClass() {
+        return Match.class;
+    }
+
+    @Override
+    protected Class<MatchDto> dtoClass() {
+        return MatchDto.class;
+    }
+
+    @Override
+    @Timed
+    public MatchDto get(long id) {
+        return super.get(id);
+    }
+
+    @Override
+    protected QMatch entityPath() {
+        return QMatch.match;
+    }
+
 }

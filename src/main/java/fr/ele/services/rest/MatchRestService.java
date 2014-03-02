@@ -16,40 +16,35 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
 
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.model.ref.Match;
+import fr.ele.dto.MatchDto;
 import fr.ele.model.search.MatchSearch;
 
 @Path(MatchRestService.PATH)
 @RestService
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public interface MatchRestService {
     public static final String PATH = "matches";
 
     public static final String SERVER = "MatchRestService";
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Iterable<Match> findAll();
+    public Iterable<MatchDto> findAll();
 
     @POST
     @Path("search")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Iterable<Match> search(MatchSearch search);
+    public Iterable<MatchDto> search(MatchSearch search);
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    Match get(@PathParam("id") long id);
+    MatchDto get(@PathParam("id") long id);
 
     @GET
     @Path("search")
-    @Produces(MediaType.APPLICATION_JSON)
-    Match findByCode(@QueryParam("code") String code);
+    MatchDto findByCode(@QueryParam("code") String code);
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    Match create(Match match);
+    MatchDto create(MatchDto match);
 
     @DELETE
     @Path("{id}")
@@ -59,6 +54,6 @@ public interface MatchRestService {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("upload")
-    List<Match> insertCsv(
+    List<MatchDto> insertCsv(
             @Multipart(value = "content", type = MediaType.WILDCARD) Attachment file);
 }

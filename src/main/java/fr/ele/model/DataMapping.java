@@ -27,7 +27,7 @@ public class DataMapping extends SuperBetEntity {
     @Enumerated(EnumType.STRING)
     private RefEntityType refEntityType;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = BookMaker.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = BookMaker.class)
     @JoinColumn(name = SuperBetTables.DataMapping.BOOKMAKER_ID, nullable = false)
     @QueryInit("*")
     private BookMaker bookMaker;

@@ -1,20 +1,21 @@
 package fr.ele.services.rest.impl;
 
-import org.springframework.transaction.annotation.Transactional;
-
+import com.codiform.moo.curry.Translate;
 import com.mysema.query.types.path.EntityPathBase;
 
+import fr.ele.dto.HasIdAndCodeDto;
 import fr.ele.model.HasCodeEntity;
 import fr.ele.services.repositories.HasCodeRepository;
 
-public abstract class AbstractRefRestServiceImpl<T extends HasCodeEntity>
-        extends AbstractBaseRestService<T> {
+public abstract class AbstractRefRestServiceImpl<DTO extends HasIdAndCodeDto, MODEL extends HasCodeEntity>
+        extends AbstractBaseRestService<DTO, MODEL> {
 
-    @Transactional(readOnly = true)
-    public T findByCode(String code) {
+    protected DTO findByCode(String code) {
         LOGGER.debug("findByCode({})", code);
-        return ((HasCodeRepository<T>) getRepository()).findByCode(code);
+        MODEL model = ((HasCodeRepository<MODEL>) getRepository())
+                .findByCode(code);
+        return Translate.to(dtoClass()).from(model);
     }
 
-    protected abstract <Q extends EntityPathBase<T>> Q entityPath();
+    protected abstract <Q extends EntityPathBase<MODEL>> Q entityPath();
 }

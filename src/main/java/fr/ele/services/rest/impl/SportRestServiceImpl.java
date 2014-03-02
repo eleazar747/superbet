@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.codahale.metrics.annotation.Timed;
+import com.codiform.moo.curry.Translate;
+import com.google.common.collect.Lists;
 
 import fr.ele.core.search.querydsl.QueryBuilder;
+import fr.ele.dto.SportDto;
 import fr.ele.model.ref.QSport;
 import fr.ele.model.ref.Sport;
 import fr.ele.model.search.SportSearch;
@@ -17,10 +20,10 @@ import fr.ele.services.repositories.SportRepository;
 import fr.ele.services.repositories.search.SearchMapping;
 import fr.ele.services.rest.SportRestService;
 
-@Transactional
+@Transactional(readOnly = true)
 @Service(SportRestService.SERVER)
-public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
-        implements SportRestService {
+public class SportRestServiceImpl extends
+        AbstractRefRestServiceImpl<SportDto, Sport> implements SportRestService {
 
     @Autowired
     private SportRepository sportRepository;
@@ -37,33 +40,59 @@ public class SportRestServiceImpl extends AbstractRefRestServiceImpl<Sport>
 
     @Override
     @Timed
-    public Iterable<Sport> findAll() {
+    public Iterable<SportDto> findAll() {
         return super.findAll();
     }
 
     @Override
     @Timed
-    public Sport create(Sport model) {
+    @Transactional
+    public SportDto create(SportDto model) {
         return super.create(model);
     }
 
     @Override
     @Timed
+    @Transactional
     public void delete(long id) {
         super.delete(id);
     }
 
     @Override
     @Timed
-    public List<Sport> insertCsv(Attachment file) {
+    @Transactional
+    public List<SportDto> insertCsv(Attachment file) {
         return insertCsv(file, Sport.class);
     }
 
     @Override
     @Timed
-    public Iterable<Sport> search(SportSearch search) {
+    public Iterable<SportDto> search(SportSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, entityPath(), search);
-        return getRepository().findAll(queryBuilder.build());
+        return Translate.to(dtoClass()).fromEach(
+                Lists.newArrayList(getRepository()
+                        .findAll(queryBuilder.build())));
     }
+
+    @Override
+    protected Class<Sport> modelClass() {
+        return Sport.class;
+    }
+
+    @Override
+    protected Class<SportDto> dtoClass() {
+        return SportDto.class;
+    }
+
+    @Override
+    public SportDto findByCode(String code) {
+        return super.findByCode(code);
+    }
+
+    @Override
+    public SportDto get(long id) {
+        return super.get(id);
+    }
+
 }

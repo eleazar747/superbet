@@ -81,8 +81,9 @@ public class WebConfigurer implements ServletContextInitializer {
 
     private void initWroFilter(ServletContext servletContext,
             EnumSet<DispatcherType> disps) {
+
         ConfigurableWroFilter filter = new ConfigurableWroFilter();
-        filter.setDebug(false);
+        filter.setDebug(LoggerFactory.getLogger("ro.isdc.wro").isDebugEnabled());
         FilterRegistration.Dynamic wroFilter = servletContext.addFilter(
                 "wroFilter", filter);
         wroFilter.addMappingForUrlPatterns(disps, true, "/wro/*");
