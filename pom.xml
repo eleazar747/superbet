@@ -47,10 +47,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>gecd-nexus</id>
-			<url>spnego://repo-build-factory.equities.net.intra/content/groups/public</url>
-		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -59,10 +55,6 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>gecd-nexus</id>
-			<url>spnego://repo-build-factory.equities.net.intra/content/groups/public</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
