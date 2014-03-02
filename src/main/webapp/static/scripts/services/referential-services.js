@@ -14,17 +14,17 @@ function register(app, name, resource) {
 superBetApp.service('FileUpload', [ '$http', function($http) {
 	this.uploadFileToUrl = function(file, uploadUrl) {
 		var fd = new FormData();
-		alert(file);
 		fd.append('content', file);
 		$http.post(uploadUrl, fd, {
 			transformRequest : angular.identity,
 			headers : {
-				'Content-Type' : '*/*'
+				'Content-Disposition' : 'form-data; name="content"',
+				'Content-Type' : undefined//'multipart/form-data'
 			}
 		}).success(function() {
-			//alert('succes');
+			// alert('succes');
 		}).error(function() {
-			//alert('error');
+			// alert('error');
 		});
 	}
 } ]);

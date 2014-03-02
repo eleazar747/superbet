@@ -34,6 +34,7 @@ public class MetaMustacheFactory extends DefaultMustacheFactory {
     @Override
     public Reader getReader(String template) {
         LOGGER.debug("meta {}", template);
+        template = template.replace(".html", "");
         String path = resourceBase + template + resourceSuffix;
         LOGGER.debug("load mustache meta template : {} at {}", template, path);
         InputStream is = MetaMustacheFactory.class.getResourceAsStream(path);

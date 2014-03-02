@@ -75,25 +75,13 @@ var refController = function ($scope, resolvedDtos, service,$modal,metamodel,Fil
 			  $scope.metamodel=metamodel;
 			  $scope.myFile={};
 			  $scope.ok = function () {
-				  alert($scope.myFile);
 			    $modalInstance.close($scope.myFile);
 			  };
 		
-			  $scope.sendFile = function($files){ 
-				  var uploadUrl = '/rest/'+$scope.metamodel.resource+'/upload';
-				  for (var i = 0; i < $files.length; i++) {
-				      var file = $files[i];
-					  FileUpload.upload({
-						  url: uploadUrl,
-						  method: 'POST',
-						  headers: {'Content-Type' : '*/*'},
-						  // withCredentials: true,
-						  // data: {myObj: $scope.myModelObj},
-						  file: file,
-					  });
-				  }
+			  setFile = function(element) {
+			        $scope.myFile = element.files[0];
 			  };
-			  
+			    
 			  $scope.cancel = function () {
 			    $modalInstance.dismiss('cancel');
 		    	  };
@@ -109,22 +97,21 @@ var refController = function ($scope, resolvedDtos, service,$modal,metamodel,Fil
 		    });
 	
 		  modalInstance.result.then(function (myFile) {
-			   $scope.sendFile();
+			  FileUpload.uploadFileToUrl(myFile, '/rest/'+$scope.metamodel.resource+'/upload');
 	        }, function () {
-	        	$scope.clear();
+	        	$scope.refresh();
 	        });
 			  
 		  };
-		  
   };
 
-  superBetApp.controller('BookmakersController', ['$scope', 'resolvedDtos', 'Bookmakers','$modal','metamodel','$upload',
+  superBetApp.controller('BookmakersController', ['$scope', 'resolvedDtos', 'Bookmakers','$modal','metamodel','FileUpload',
     refController]);
-  superBetApp.controller('SportsController', ['$scope', 'resolvedDtos', 'Sports','$modal','metamodel','$upload',
+  superBetApp.controller('SportsController', ['$scope', 'resolvedDtos', 'Sports','$modal','metamodel','FileUpload',
     refController]);
-  superBetApp.controller('BetTypesController', ['$scope', 'resolvedDtos', 'BetTypes','$modal','metamodel','$upload',
+  superBetApp.controller('BetTypesController', ['$scope', 'resolvedDtos', 'BetTypes','$modal','metamodel','FileUpload',
     refController]);
-  superBetApp.controller('DataMappingsController', ['$scope', 'resolvedDtos', 'DataMappings','$modal','metamodel','$upload',
+  superBetApp.controller('DataMappingsController', ['$scope', 'resolvedDtos', 'DataMappings','$modal','metamodel','FileUpload',
     refController]);
-  superBetApp.controller('MatchesController', ['$scope', 'resolvedDtos', 'Matches','$modal','metamodel','$upload',
+  superBetApp.controller('MatchesController', ['$scope', 'resolvedDtos', 'Matches','$modal','metamodel','FileUpload',
     refController]);

@@ -102,8 +102,7 @@ var superbetMetamodel = {
 		init : function() {
 			return {
 				id : "",
-				bookMaker : "",
-				bookMaker.code : "",
+				bookMaker : {code:""},
 				refEntityType : "",
 				modelCode : "",
 				bookMakerCode : ""
@@ -133,8 +132,7 @@ var superbetMetamodel = {
 		init : function() {
 			return {
 				id : "",
-				sport : "",
-				sport.code : "",
+				sport : {code:""},
 				code : "",
 				date : "",
 			};

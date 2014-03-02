@@ -3,9 +3,9 @@
 	<h3>Upload {{datamodel.label}}</h3>
 </div>
 <div class="modal-body">
-	<input type="file" ng-file-select="sendFile($files)"/>
+	<input id="upload-file" type="file" onchange="setFile(this)"/>
 </div>
 <div class="modal-footer">
 	<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-		<button type="button" ng-click="ok()" class="btn btn-primary">Upload</button>
+	<button id="send-file" type="button" ng-click="ok()" class="btn btn-primary">Upload</button>
 </div>

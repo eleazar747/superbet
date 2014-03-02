@@ -1,5 +1,5 @@
 superBetApp.config([ '$routeProvider', '$httpProvider',
-		function($routeProvider, $httpProvider,Bookmakers) {
+		function($routeProvider, $httpProvider, Bookmakers) {
 			$routeProvider.when('/bookmakers', {
 				templateUrl : 'views/refview.html',
 				controller : 'BookmakersController',
@@ -7,7 +7,9 @@ superBetApp.config([ '$routeProvider', '$httpProvider',
 					resolvedDtos : [ 'Bookmakers', function(service) {
 						return service.query();
 					} ],
-					metamodel : function() {return superbetMetamodel.bookmaker}
+					metamodel : function() {
+						return superbetMetamodel.bookmaker
+					}
 				}
 			}).when('/sports', {
 				templateUrl : 'views/refview.html',
@@ -16,7 +18,9 @@ superBetApp.config([ '$routeProvider', '$httpProvider',
 					resolvedDtos : [ 'Sports', function(service) {
 						return service.query();
 					} ],
-					metamodel : function() {return superbetMetamodel.sport}
+					metamodel : function() {
+						return superbetMetamodel.sport
+					}
 				}
 			}).when('/bettypes', {
 				templateUrl : 'views/refview.html',
@@ -25,7 +29,9 @@ superBetApp.config([ '$routeProvider', '$httpProvider',
 					resolvedDtos : [ 'BetTypes', function(service) {
 						return service.query();
 					} ],
-					metamodel : function() {return superbetMetamodel.bettype}
+					metamodel : function() {
+						return superbetMetamodel.bettype
+					}
 				}
 			}).when('/datamappings', {
 				templateUrl : 'views/refview.html',
@@ -34,16 +40,20 @@ superBetApp.config([ '$routeProvider', '$httpProvider',
 					resolvedDtos : [ 'DataMappings', function(service) {
 						return service.query();
 					} ],
-					metamodel : function() {return superbetMetamodel.datamapping}
+					metamodel : function() {
+						return superbetMetamodel.datamapping
+					}
 				}
 			}).when('/matches', {
 				templateUrl : 'views/refview.html',
-			controller : 'MatchesController',
-			resolve : {
-				resolvedDtos : [ 'Matches', function(service) {
-					return service.query();
-				} ],
-				metamodel : function() {return superbetMetamodel.match}
-			}
-		})
+				controller : 'MatchesController',
+				resolve : {
+					resolvedDtos : [ 'Matches', function(service) {
+						return service.query();
+					} ],
+					metamodel : function() {
+						return superbetMetamodel.match
+					}
+				}
+			})
 		} ]);
