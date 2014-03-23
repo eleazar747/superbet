@@ -1,5 +1,7 @@
 package fr.ele.dto;
 
+import com.codiform.moo.annotation.Property;
+
 import fr.ele.model.RefEntityType;
 
 public class DataMappingDto extends HasIdDto {
@@ -7,6 +9,7 @@ public class DataMappingDto extends HasIdDto {
 
     private RefEntityType refEntityType;
 
+    @Property(translate = true)
     private BookmakerDto bookMaker;
 
     public String getModelCode() {

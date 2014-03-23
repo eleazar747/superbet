@@ -137,6 +137,38 @@ var superbetMetamodel = {
 				date : "",
 			};
 		}
+	},
+	bet : {
+		label : 'Bets',
+		resource : 'bets',
+		fields : [ {
+			ref : 'id',
+			label : 'Id',
+		}, {
+			ref : 'match.sport.code',
+			label : 'Sport',
+		}, {
+			ref : 'match.code',
+			label : 'Match',
+		}, {
+			ref : 'match.date',
+			label : 'Match date',
+		}, {
+			ref : 'bookMaker.code',
+			label : 'Bookmaker',
+		}, {
+			ref : 'betType.code',
+			label : 'BetType',
+		}, {
+			ref : 'code',
+			label : 'Code',
+		}, {
+			ref : 'odd',
+			label : 'Odd',
+		}, {
+			ref : 'date',
+			label : 'Date',
+		} ]
 	}
 
 }
