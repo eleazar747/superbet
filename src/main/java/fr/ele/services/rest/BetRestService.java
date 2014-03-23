@@ -1,6 +1,5 @@
 package fr.ele.services.rest;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -10,11 +9,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import fr.ele.config.jaxrs.RestService;
-import fr.ele.core.jaxb.DateTimeAdapter;
+import fr.ele.dto.BetDto;
 import fr.ele.model.search.BetSearch;
 
 @Path(BetRestService.PATH)
@@ -47,13 +44,4 @@ public interface BetRestService {
     @Produces(MediaType.APPLICATION_JSON)
     Iterable<BetDto> getBets();
 
-    @XmlRootElement
-    public static class BetDto {
-        public Double value;
-
-        public String type, bookmaker, match, alternative, sport;
-
-        @XmlJavaTypeAdapter(DateTimeAdapter.class)
-        public Date matchDate, syncDate;
-    }
 }
