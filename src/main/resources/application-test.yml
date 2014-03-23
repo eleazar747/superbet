@@ -4,7 +4,7 @@ server:
 
 spring:
     profiles: test
-    profiles.active: +mem_db
+    profiles.include: mem_db
     main:
         web_environment: false
         show_banner: false	
