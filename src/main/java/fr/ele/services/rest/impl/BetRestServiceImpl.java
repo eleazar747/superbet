@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codahale.metrics.annotation.Timed;
 import com.codiform.moo.curry.Translate;
 import com.google.common.collect.Lists;
 
@@ -38,6 +39,7 @@ public class BetRestServiceImpl implements BetRestService {
     private BetRepository betRepository;
 
     @Override
+    @Timed
     public List<SureBetDto> getSureBets() {
         BetSearch search = new BetSearch();
         search.setFrom(DateMidnight.now().toDate());
@@ -69,12 +71,14 @@ public class BetRestServiceImpl implements BetRestService {
     }
 
     @Override
+    @Timed
     public Iterable<BetDto> getBets() {
         Iterable<Bet> bets = betRepository.findAll();
         return Translate.to(BetDto.class).fromEach(Lists.newArrayList(bets));
     }
 
     @Override
+    @Timed
     public Iterable<BetDto> search(fr.ele.model.search.BetSearch search) {
         QueryBuilder queryBuilder = new QueryBuilder();
         SearchMapping.map(queryBuilder, QBet.bet, search);

@@ -2,6 +2,7 @@ package fr.ele.services.rest.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,8 +33,7 @@ public abstract class AbstractBaseRestService<DTO extends SuperbetDto, MODEL ext
 
     protected Iterable<DTO> findAll() {
         LOGGER.debug("findAll");
-        return Translate.to(dtoClass()).fromEach(
-                Lists.newArrayList(getRepository().findAll()));
+        return toDtos(getRepository().findAll());
     }
 
     protected DTO get(long id) {
@@ -53,6 +53,13 @@ public abstract class AbstractBaseRestService<DTO extends SuperbetDto, MODEL ext
         getRepository().delete(id);
     }
 
+    protected Iterable<DTO> toDtos(Iterable<MODEL> models) {
+        if (models instanceof Collection) {
+            return Translate.to(dtoClass()).fromEach((Collection<?>) models);
+        }
+        return Translate.to(dtoClass()).fromEach(Lists.newArrayList(models));
+    }
+
     protected List<DTO> insertCsv(Attachment file, Class<MODEL> clazz) {
         try {
             InputStream in = file.getDataHandler().getInputStream();
@@ -61,7 +68,7 @@ public abstract class AbstractBaseRestService<DTO extends SuperbetDto, MODEL ext
             CsvContext<MODEL> context = CsvContext.create(clazz, graphResolver);
             CsvUnmarshaller<MODEL> unmarshaller = context.newUnmarshaller();
             Iterator<MODEL> iterator = unmarshaller.unmarshall(in);
-            List<MODEL> results = new LinkedList<MODEL>();
+            List<MODEL> results = new LinkedList<>();
             while (iterator.hasNext()) {
                 MODEL bookMaker = getRepository().save(iterator.next());
                 results.add(bookMaker);

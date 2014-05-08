@@ -11,7 +11,7 @@ import fr.ele.services.repositories.BookMakerRepository;
 import fr.ele.services.repositories.BookMakerSynchronizationRepository;
 import fr.ele.services.rest.AdminRestService;
 
-@Transactional
+@Transactional(readOnly = true)
 @Service(AdminRestService.SERVER)
 public class AdminRestServiceImpl implements AdminRestService {
     @Autowired
@@ -24,6 +24,7 @@ public class AdminRestServiceImpl implements AdminRestService {
     private BookMakerSynchronizationRepository bookMakerSynchronizationRepository;
 
     @Override
+    @Transactional
     public BookMakerSynchronization synchronize(String bookmaker) {
         BookMaker b = bookMakerRepository.findByCode(bookmaker);
         if (b == null) {
@@ -34,7 +35,6 @@ public class AdminRestServiceImpl implements AdminRestService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Iterable<BookMakerSynchronization> listSyncs() {
         return bookMakerSynchronizationRepository.findAll();
     }
