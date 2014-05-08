@@ -55,7 +55,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
             log.error(
                     "Your database connection pool configuration is incorrect! The application"
                             + "cannot start. Please check your Spring profile, current profiles are: {}",
-                    env.getActiveProfiles());
+                            env.getActiveProfiles());
 
             throw new ApplicationContextException(
                     "Database connection pool is not configured correctly");
@@ -82,7 +82,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
 
     @Bean(name = {"org.springframework.boot.autoconfigure.AutoConfigurationUtils.basePackages"})
     public List<String> getBasePackages() {
-        List<String> basePackages = new ArrayList<String>();
+        List<String> basePackages = new ArrayList<>();
         basePackages.add("fr.ele.model");
         return basePackages;
     }

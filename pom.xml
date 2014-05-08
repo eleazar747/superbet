@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.0.0.RC5</version>
+		<version>1.0.2.RELEASE</version>
 	</parent>
 	<groupId>fr.ele</groupId>
 	<artifactId>superbet</artifactId>
@@ -16,29 +16,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<jaxb.version>2.2.7</jaxb.version>
-		<querydsl.version>3.3.0</querydsl.version>
+		<querydsl.version>3.3.2</querydsl.version>
 		<java.version>1.7</java.version>
-		<cxf.version>3.0.0-milestone1</cxf.version>
-		<jetty.version>8.1.12.v20130726</jetty.version>
-		<wro4j.version>1.7.3</wro4j.version>
+		<cxf.version>3.0.0-milestone2</cxf.version>
+		<wro4j.version>1.7.5</wro4j.version>
+		<hikaricp.version>1.3.8</hikaricp.version>
+		<jsoup.version>1.7.2</jsoup.version>
+		<commons-lang.version>3.1</commons-lang.version>
+		<spring-metrics.version>3.0.0</spring-metrics.version>
+		<mustache.version>0.8.12</mustache.version>
+		<flexy-pool.version>1.0.4</flexy-pool.version>
 	</properties>
 	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>http://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>http://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 		<repository>
 			<id>org.jboss.repository.releases</id>
 			<name>JBoss Maven Release Repository</name>
@@ -146,13 +135,18 @@
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>1.2.8</version>
+			<version>${hikaricp.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.sun</groupId>
 					<artifactId>tools</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.vladmihalcea.flexy-pool</groupId>
+			<artifactId>flexy-hikaricp</artifactId>
+			<version>${flexy-pool.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -182,12 +176,12 @@
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.7.2</version>
+			<version>${jsoup.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.1</version>
+			<version>${commons-lang.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.ostermiller</groupId>
@@ -230,7 +224,7 @@
 		<dependency>
 			<groupId>com.ryantenney.metrics</groupId>
 			<artifactId>metrics-spring</artifactId>
-			<version>3.0.0-RC4</version>
+			<version>${spring-metrics.version}</version>
 		</dependency>
 		<!-- webserver dependencies -->
 		<dependency>
@@ -241,20 +235,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- To remove webmvc -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-tomcat</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.fasterxml.jackson.core</groupId> -->
-<!-- 			<artifactId>jackson-databind</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework</groupId> -->
-<!-- 			<artifactId>spring-web</artifactId> -->
-<!-- 		</dependency> -->
-		<!--  -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
@@ -263,7 +243,7 @@
 		<dependency>
 			<groupId>com.github.spullara.mustache.java</groupId>
 			<artifactId>compiler</artifactId>
-			<version>0.8.12</version>
+			<version>${mustache.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
