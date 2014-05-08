@@ -18,6 +18,7 @@ import com.google.common.collect.Lists;
 
 import fr.ele.core.search.querydsl.QueryBuilder;
 import fr.ele.dto.BetDto;
+import fr.ele.dto.SureBetDto;
 import fr.ele.model.Bet;
 import fr.ele.model.QBet;
 import fr.ele.model.ref.RefKey;
@@ -53,18 +54,15 @@ public class BetRestServiceImpl implements BetRestService {
             Map<String, Double> alternatives = new HashMap<>(bets.size());
             for (Bet bet : bets) {
                 alternatives.put(bet.getBookMaker().getCode(), bet.getOdd());
-                dto.odds = dto.odds + " / " + bet.getBookMaker().getCode()
-                        + "=" + bet.getOdd();
             }
-            dto.alternatives = alternatives;
-            dto.odds = dto.odds.replaceAll("null", "");
+            dto.setAlternatives(alternatives);
             RefKey refKey = bets.iterator().next().getRefKey();
-            dto.sport = refKey.getMatch().getSport().getCode();
-            dto.match = refKey.getMatch().getCode();
-            dto.betType = refKey.getBetType().getCode();
-            dto.date = refKey.getMatch().getDate().toString();
-            dto.profit = Math.floor((1 - sureBet.getValue()) * 10000 + 0.5)
-                    / 100 + "%";
+            dto.setSport(refKey.getMatch().getSport().getCode());
+            dto.setMatch(refKey.getMatch().getCode());
+            dto.setBetType(refKey.getBetType().getCode());
+            dto.setDate(refKey.getMatch().getDate().toString());
+            dto.setProfit(Math.floor((1 - sureBet.getValue()) * 10000 + 0.5)
+                    / 100 + "%");
             dtos.add(dto);
         }
         return dtos;

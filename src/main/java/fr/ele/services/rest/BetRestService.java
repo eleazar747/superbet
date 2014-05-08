@@ -1,7 +1,6 @@
 package fr.ele.services.rest;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -12,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 
 import fr.ele.config.jaxrs.RestService;
 import fr.ele.dto.BetDto;
+import fr.ele.dto.SureBetDto;
 import fr.ele.model.search.BetSearch;
 
 @Path(BetRestService.PATH)
@@ -20,14 +20,6 @@ public interface BetRestService {
     public static final String PATH = "bets";
 
     public static final String SERVER = "BetRestService";
-
-    public static final class SureBetDto {
-        public String sport, betType, match;
-
-        public String odds, date, profit;
-
-        public Map<String, Double> alternatives;
-    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

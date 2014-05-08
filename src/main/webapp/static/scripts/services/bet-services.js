@@ -5,7 +5,7 @@ superBetApp.factory('Bets', [ '$resource', function($resource) {
 			isArray : true
 		},
 		'sure' : {
-			params : {action : 'sure'},
+			params : {action : 'sures'},
 			method : 'GET',
 			isArray : true
 		}

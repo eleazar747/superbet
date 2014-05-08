@@ -102,7 +102,9 @@ var superbetMetamodel = {
 		init : function() {
 			return {
 				id : "",
-				bookMaker : {code:""},
+				bookMaker : {
+					code : ""
+				},
 				refEntityType : "",
 				modelCode : "",
 				bookMakerCode : ""
@@ -132,7 +134,9 @@ var superbetMetamodel = {
 		init : function() {
 			return {
 				id : "",
-				sport : {code:""},
+				sport : {
+					code : ""
+				},
 				code : "",
 				date : "",
 			};
@@ -168,6 +172,32 @@ var superbetMetamodel = {
 		}, {
 			ref : 'date',
 			label : 'Date',
+		} ]
+	},
+	surebet : {
+		label : 'Surebet',
+		resource : 'bets',
+		fields : [ {
+			ref : 'sport',
+			label : 'Sport'
+		}, {
+			ref : 'betType',
+			label : 'Bet type'
+		}, {
+			ref : 'match',
+			label : 'Match'
+		}, {
+			ref : 'odds',
+			label : 'Odds'
+		}, {
+			ref : 'date',
+			label : 'Date'
+		}, {
+			ref : 'profit',
+			label : 'Profit'
+		}, {
+			ref : 'alternatives',
+			label : 'Alternatives'
 		} ]
 	}
 

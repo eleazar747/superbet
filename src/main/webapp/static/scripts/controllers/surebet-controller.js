@@ -4,6 +4,6 @@ superBetApp.controller('SureBetController', [ '$scope', 'resolvedDtos', 'Bets',
 			$scope.metamodel = metamodel;
 
 			$scope.refresh = function() {
-				$scope.dtos = service.query();
+				$scope.dtos = service.sure();
 			};
 		} ]);
