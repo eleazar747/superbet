@@ -1,5 +1,8 @@
 package fr.ele.services.mapping;
 
+import java.net.Proxy;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -14,6 +17,7 @@ import org.apache.cxf.common.i18n.Exception;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ibm.icu.text.DateFormat;
@@ -39,6 +43,9 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
     private final String FOOTBALL = "Football";
 
     private SynchronizerContext contextdefaut;
+
+    @Autowired
+    private Proxy proxy;
 
     @Override
     protected long convert(SynchronizerContext context, HtmlBetDtos dto) {
@@ -87,13 +94,10 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
     private List<HtmlBetDto> parseNextMatch(String httpRef, String sportType,
             SynchronizerContext context, MatchParser... parsers) throws Throwable {
 
-    	/**
-		URL website = new URL(httpRef);
-		URLConnection urlConnetion = website.openConnection(getProxy());
-		Document doc = Jsoup
-				.parse(urlConnetion.getInputStream(), null, httpRef);
-*/
-		Document doc = Jsoup.connect(httpRef).get();
+        URL website = new URL(httpRef);
+        URLConnection urlConnetion = website.openConnection(proxy);
+        Document doc = Jsoup
+                .parse(urlConnetion.getInputStream(), null, httpRef);
         org.jsoup.select.Elements e = doc.select("tr");
 
         // Search URL for each match
