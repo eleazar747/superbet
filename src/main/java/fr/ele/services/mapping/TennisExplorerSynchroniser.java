@@ -59,13 +59,13 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			MatchParser... parsers) throws Throwable {
 		// TODO Auto-generated method stub
 		httpRef = httpRef + "year=" + year + "&month=" + month + "&day=" + day;
-
+/**
 		URL website = new URL(httpRef);
 		URLConnection urlConnetion = website.openConnection(getProxy());
 		Document doc = Jsoup
 				.parse(urlConnetion.getInputStream(), null, httpRef);
-
-		// Document doc = Jsoup.connect(httpRef).get();
+*/
+		Document doc = Jsoup.connect(httpRef).get();
 		Elements e = doc.select("tr");
 		// Define sport
 		Sport sport = context.findSport(sportType);

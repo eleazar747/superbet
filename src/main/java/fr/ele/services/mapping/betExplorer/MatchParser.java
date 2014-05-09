@@ -23,11 +23,12 @@ public abstract class MatchParser {
 			String sport, Date date) throws Throwable {
 
 		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
-		URL website = new URL(httpRef + getUrlExtension());
+	/**	URL website = new URL(httpRef + getUrlExtension());
 		URLConnection urlConnetion = website.openConnection(getProxy());
 		Document docmatch = Jsoup.parse(urlConnetion.getInputStream(), null,
 				httpRef + getUrlExtension());
-		// Document docmatch = Jsoup.connect(httpRef + getUrlExtension()).get();
+		*/
+		Document docmatch = Jsoup.connect(httpRef + getUrlExtension()).get();
 		if (docmatch.select("tr").isEmpty() == false) {
 			org.jsoup.select.Elements e = docmatch.select("tr");
 			// One bet Type, one Bookmaker, one match

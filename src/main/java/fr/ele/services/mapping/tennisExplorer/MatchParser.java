@@ -31,12 +31,13 @@ public abstract class MatchParser {
 
 		List<Bet> bets = new LinkedList<Bet>();
 
-		URL website = new URL(httpRef);
+		/**URL website = new URL(httpRef);
 		URLConnection urlConnetion = website.openConnection(getProxy());
 		Document docmatch = Jsoup.parse(urlConnetion.getInputStream(), null,
 				httpRef);
 
-		// Document docmatch = Jsoup.connect(httpRef).get();
+		*/
+		Document docmatch = Jsoup.connect(httpRef).get();
 		if (docmatch.select("tr").isEmpty() == false) {
 			org.jsoup.select.Elements e = docmatch.select("tbody");
 			Match match = new Match();

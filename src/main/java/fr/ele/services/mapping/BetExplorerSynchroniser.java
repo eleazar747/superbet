@@ -89,10 +89,13 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
     private List<HtmlBetDto> parseNextMatch(String httpRef, String sportType,
             SynchronizerContext context, MatchParser... parsers) throws Throwable {
 
-        URL website = new URL(httpRef);
-        URLConnection urlConnetion = website.openConnection();
-        Document doc = Jsoup
-                .parse(urlConnetion.getInputStream(), null, httpRef);
+    	/**
+		URL website = new URL(httpRef);
+		URLConnection urlConnetion = website.openConnection(getProxy());
+		Document doc = Jsoup
+				.parse(urlConnetion.getInputStream(), null, httpRef);
+*/
+		Document doc = Jsoup.connect(httpRef).get();
         org.jsoup.select.Elements e = doc.select("tr");
 
         // Search URL for each match
