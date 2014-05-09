@@ -3,7 +3,10 @@ package fr.ele.services.mapping;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.MessageFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,12 +16,19 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.cxf.common.i18n.Exception;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import reactor.core.Environment;
+import reactor.core.composable.spec.Streams;
+import reactor.function.Consumer;
 
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
@@ -91,76 +101,67 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
         return nb;
     }
 
-    private List<HtmlBetDto> parseNextMatch(String httpRef, String sportType,
-            SynchronizerContext context, MatchParser... parsers) throws Throwable {
+    private List<HtmlBetDto> parseNextMatch(String httpRef,
+            final String sportType, SynchronizerContext context,
+            final MatchParser... parsers) throws Throwable {
 
         URL website = new URL(httpRef);
         URLConnection urlConnetion = website.openConnection(proxy);
         Document doc = Jsoup
                 .parse(urlConnetion.getInputStream(), null, httpRef);
-        org.jsoup.select.Elements e = doc.select("tr");
 
         // Search URL for each match
-        List<Callable<List<HtmlBetDto>>> runnables = new ArrayList<>();
-        for (Element t : e) {
-            String test = t.attr("data-dt").replace(",", ":");
+        final List<Future<List<HtmlBetDto>>> futures = Collections
+                .synchronizedList(new ArrayList<Future<List<HtmlBetDto>>>());
+        final ExecutorService service = Executors.newFixedThreadPool(100);
+        final Date now = new Date();
+        Consumer<Element> consumer = new Consumer<Element>() {
 
-            if (t.attr("class").equals("rtitle league-title") == false) {
-                Element link = t.select("a").first();
-
-                if (link != null) {
-                    String linkHref = link.attr("href");
-                    t.select("span.Postponed").text();
-                    if (linkHref.isEmpty() == false) {
-
-                        DateFormat formatter = new SimpleDateFormat(
-                                "dd:MM:yyyy:hh:mm");
-                        if (test.isEmpty() == false || test.equals("") == false) {
-                            Date date = formatter.parse(test);
-                            Date timeSQL = new Date();
-                            if (date.compareTo(timeSQL) > 0) {
-                                String extract = linkHref.substring(
-                                        linkHref.length() - 9,
-                                        linkHref.length() - 1);
-                                // before, need to retrive match team1 vs team
-                                // 2;
-
-                                String teams = t.select("td").get(1).text();
-                                if (teams != null) {
-                                    teams.split(" - ");
-                                    String linkOdd = URL_MATCH + extract;
-
-                                    for (MatchParser parser : parsers) {
-
-                                        runnables.add(new ProcessHtmlDtos(
-                                                parser, sportType, teams,
-                                                linkOdd, date));
-
-                                        /**
-                                         * hread thread = new Thread( new
-                                         * ProcessHtmlDtos(parser, sportType,
-                                         * teams, linkOdd, date));
-                                         * thread.start(); thread.join(); /**
-                                         * bets.addAll(parser
-                                         * .parseMatchId(linkOdd, teams,
-                                         * sportType, date));
-                                         */
-
+            @Override
+            public void accept(Element t) {
+                String test = t.attr("data-dt").replace(",", ":");
+                if (!t.attr("class").equals("rtitle league-title")) {
+                    Element link = t.select("a").first();
+                    if (link != null) {
+                        String linkHref = link.attr("href");
+                        if (!linkHref.isEmpty()) {
+                            if (StringUtils.isNotBlank(test)) {
+                                Date date;
+                                try {
+                                    DateFormat formatter = new SimpleDateFormat(
+                                            "dd:MM:yyyy:hh:mm");
+                                    date = formatter.parse(test);
+                                    if (date.after(now)) {
+                                        String extract = linkHref.substring(
+                                                linkHref.length() - 9,
+                                                linkHref.length() - 1);
+                                        String teams = t.select("td").get(1)
+                                                .text();
+                                        if (teams != null) {
+                                            String linkOdd = URL_MATCH
+                                                    + extract;
+                                            for (MatchParser parser : parsers) {
+                                                ProcessHtmlDtos task = new ProcessHtmlDtos(
+                                                        parser, sportType,
+                                                        teams, linkOdd, date);
+                                                futures.add(service
+                                                        .submit(task));
+                                            }
+                                        }
                                     }
-
+                                } catch (ParseException e) {
+                                    LOGGER.error(e.getLocalizedMessage(), e);
                                 }
                             }
                         }
                     }
                 }
             }
-        }
-        ExecutorService service = Executors.newFixedThreadPool(100);
-        List<Future<List<HtmlBetDto>>> futures = new ArrayList<>(
-                runnables.size());
-        for (Callable<List<HtmlBetDto>> job : runnables) {
-            futures.add(service.submit(job));
-        }
+        };
+        Streams.defer(doc.select("tr")).env(new Environment())
+                .dispatcher(Environment.THREAD_POOL).get().compose()
+                .consume(consumer).flush();
+
         service.shutdown();
         service.awaitTermination(300, TimeUnit.SECONDS);
         List<HtmlBetDto> dtos = new LinkedList<>();
@@ -229,7 +230,10 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
         return zob;
     }
 
-    private class ProcessHtmlDtos implements Callable<List<HtmlBetDto>> {
+    private static class ProcessHtmlDtos implements Callable<List<HtmlBetDto>> {
+
+        private static final Logger LOG = LoggerFactory
+                .getLogger(ProcessHtmlDtos.class);
 
         private final Date date;
 
@@ -248,10 +252,17 @@ public class BetExplorerSynchroniser extends AbstractSynchronizer<HtmlBetDtos> {
 
         @Override
         public List<HtmlBetDto> call() {
+            long time = System.currentTimeMillis();
+            String work = MessageFormat.format(
+                    "Work url:{0}, sport:{1}, teams:{2}", url, sport, teams);
             try {
+                LOG.debug("Start work {}", work);
                 return parser.parseMatchId(url, teams, sport, date);
             } catch (Throwable e) {
                 throw new RuntimeException(e);
+            } finally {
+                LOG.debug("End work {} in {}ms", work,
+                        System.currentTimeMillis() - time);
             }
         }
     }

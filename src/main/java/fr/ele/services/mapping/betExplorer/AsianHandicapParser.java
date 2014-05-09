@@ -12,72 +12,72 @@ import fr.ele.feeds.HtmlBetDto;
 
 public class AsianHandicapParser extends MatchParser {
 
-	private Element elementTmp;
+    private Element elementTmp;
 
-	@Override
-	protected List<HtmlBetDto> doParse(Elements elements, Element t,
-			String match, String sport, Date date) {
-		// 3/ odd Over 4/odd under
-		String bookie = "";
-		Element tnode = t.select("th").first();
-		Elements link = tnode.select("a");
-		if (link != null) {
-			Element tnode2 = link.select("span").first();
+    @Override
+    protected List<HtmlBetDto> doParse(Elements elements, Element t,
+            String match, String sport, Date date) {
+        // 3/ odd Over 4/odd under
+        String bookie = "";
+        Element tnode = t.select("th").first();
+        Elements link = tnode.select("a");
+        if (link != null) {
+            Element tnode2 = link.select("span").first();
 
-			if (tnode2 != null) {
-				Elements link2 = tnode2.select("span");
+            if (tnode2 != null) {
+                Elements link2 = tnode2.select("span");
 
-				if (link2 != null) {
-					bookie = link2.text().replaceAll(" ", "")
-							.replaceAll("/", "").replaceAll("th", "")
-							.replaceAll("span", "").replaceAll("<a", "")
-							.replaceAll("a>", "").replace("(www)", "")
-							.replaceAll("<", "").replaceAll(">", "")
-							.replace(" \\", "").replace("\\", "");
-				}
-			}
-		}
+                if (link2 != null) {
+                    bookie = link2.text().replaceAll(" ", "")
+                            .replaceAll("/", "").replaceAll("th", "")
+                            .replaceAll("span", "").replaceAll("<a", "")
+                            .replaceAll("a>", "").replace("(www)", "")
+                            .replaceAll("<", "").replaceAll(">", "")
+                            .replace(" \\", "").replace("\\", "");
+                }
+            }
+        }
 
-		List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
-		String betType = null;
-		Iterator<Element> it = elements.iterator();
+        List<HtmlBetDto> bets = new LinkedList<HtmlBetDto>();
+        String betType = null;
+        Iterator<Element> it = elements.iterator();
 
-		if (extractActiveOdd(elements.toString()) == false) {
+        if (extractActiveOdd(elements.toString()) == false) {
 
-			if (it.hasNext()) {
-				it.next();
-				String str = it.next().text().replaceAll("/", "")
-						.replaceAll("td", "").replaceAll("<", "")
-						.replaceAll(">", "").replace(" \\", "")
-						.replace("\\", "");
-				str = "Asian Handicap " + str;
-				betType = str;
-				if (betType != null) {
-					if (it.hasNext()) {
-						elementTmp = it.next();
-						String odd = extractOdd(elementTmp);
+            if (it.hasNext()) {
+                it.next();
+                String str = it.next().text().replaceAll("/", "")
+                        .replaceAll("td", "").replaceAll("<", "")
+                        .replaceAll(">", "").replace(" \\", "")
+                        .replace("\\", "");
+                str = "Asian Handicap " + str;
+                betType = str;
+                if (betType != null) {
+                    if (it.hasNext()) {
+                        elementTmp = it.next();
+                        String odd = extractOdd(elementTmp);
 
-						createOdd(match, bookie, bets, betType, odd, "1",
-								sport, date);
+                        createOdd(match, bookie, bets, betType, odd, "1",
+                                sport, date);
 
-						if (it.hasNext()) {
-							elementTmp = it.next();
-							odd = extractOdd(elementTmp);
+                        if (it.hasNext()) {
+                            elementTmp = it.next();
+                            odd = extractOdd(elementTmp);
 
-							createOdd(match, bookie, bets, betType, odd, "2",
-									sport, date);
+                            createOdd(match, bookie, bets, betType, odd, "2",
+                                    sport, date);
 
-						}
-					}
-				}
-			}
-		}
-		return bets;
-	}
+                        }
+                    }
+                }
+            }
+        }
+        return bets;
+    }
 
-	@Override
-	protected String getUrlExtension() {
-		// TODO Auto-generated method stub
-		return "&b=ah";
-	}
+    @Override
+    protected String getUrlExtension() {
+        // TODO Auto-generated method stub
+        return "&b=ah";
+    }
 }
