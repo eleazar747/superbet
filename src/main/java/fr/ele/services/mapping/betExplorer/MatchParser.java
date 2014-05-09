@@ -1,9 +1,5 @@
 package fr.ele.services.mapping.betExplorer;
 
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +10,6 @@ import org.jsoup.nodes.Element;
 
 import fr.ele.feeds.HtmlBetDto;
 import fr.ele.model.ref.BookMaker;
-import fr.ele.services.mapping.SynchronizerContext;
 
 public abstract class MatchParser {
 	private BookMaker bookmaker;
@@ -89,19 +84,5 @@ public abstract class MatchParser {
 
 	protected boolean extractActiveOdd(String element) {
 		return element.contains("notactive");
-	}
-
-	private Proxy getProxy() throws Throwable {
-		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
-				"gecd-proxy.equities.net.intra", 8080));
-		return proxy;
-	}
-
-	private void setBookmaker(SynchronizerContext context) {
-		this.bookmaker = context.getBookMaker();
-	}
-
-	private BookMaker getBookmaker() {
-		return this.bookmaker;
 	}
 }

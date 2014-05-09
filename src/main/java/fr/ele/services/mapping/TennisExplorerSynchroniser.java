@@ -1,9 +1,5 @@
 package fr.ele.services.mapping;
 
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -120,12 +116,6 @@ public class TennisExplorerSynchroniser extends AbstractSynchronizer<Odds> {
 			}
 		}
 
-	}
-
-	private Proxy getProxy() throws Throwable {
-		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
-				"gecd-proxy.equities.net.intra", 8080));
-		return proxy;
 	}
 
 	@Override

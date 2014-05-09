@@ -1,9 +1,5 @@
 package fr.ele.services.mapping.tennisExplorer;
 
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,7 +22,7 @@ public abstract class MatchParser {
 
 	public List<Bet> parseMatchId(String httpRef, SynchronizerContext context,
 			Sport sport, Date date) throws Throwable {
-		this.setBookmaker(context);
+		setBookmaker(context);
 		// search Team :
 
 		List<Bet> bets = new LinkedList<Bet>();
@@ -112,7 +108,7 @@ public abstract class MatchParser {
 					bets.add(convert(odd, match, betType, subType, context));
 				}
 			}
-			context.setBookmaker(this.getBookmaker());
+			context.setBookmaker(getBookmaker());
 		}
 	}
 
@@ -129,17 +125,11 @@ public abstract class MatchParser {
 		return element.contains("notactive");
 	}
 
-	private Proxy getProxy() throws Throwable {
-		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
-				"gecd-proxy.equities.net.intra", 8080));
-		return proxy;
-	}
-
 	private void setBookmaker(SynchronizerContext context) {
-		this.bookmaker = context.getBookMaker();
+		bookmaker = context.getBookMaker();
 	}
 
 	private BookMaker getBookmaker() {
-		return this.bookmaker;
+		return bookmaker;
 	}
 }

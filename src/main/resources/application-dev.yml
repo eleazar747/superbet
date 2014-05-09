@@ -4,15 +4,15 @@ server:
 
 spring:
     profiles: dev
-    profiles.include: web_module,cache,async,mem_db
+    profiles.include: web_module,cache,async
     
     datasource:
         dataSourceClassName: org.h2.jdbcx.JdbcDataSource
-        url: jdbc:h2:tcp://localhost/~/test
+        url: jdbc:h2:~/test
         databaseName: 
         serverName: 
         username: sa
-        password:
+        password: 
 
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect

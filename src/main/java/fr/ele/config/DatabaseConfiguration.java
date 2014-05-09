@@ -45,8 +45,9 @@ public class DatabaseConfiguration implements EnvironmentAware {
 
     @Bean
     public DataSource dataSource() {
-        log.debug("Configuring Datasource");
+        log.info("Configuring Datasource");
         if (env.acceptsProfiles(ApplicationProfiles.MEM_DB)) {
+            log.info("Embedded DB");
             return new EmbeddedDatabaseBuilder().setType(
                     EmbeddedDatabaseType.H2).build();
         }
@@ -55,11 +56,12 @@ public class DatabaseConfiguration implements EnvironmentAware {
             log.error(
                     "Your database connection pool configuration is incorrect! The application"
                             + "cannot start. Please check your Spring profile, current profiles are: {}",
-                            env.getActiveProfiles());
+                    (Object[]) env.getActiveProfiles());
 
             throw new ApplicationContextException(
                     "Database connection pool is not configured correctly");
         }
+        log.info("Pooled datasource");
         HikariConfig config = new HikariConfig();
         config.setDataSourceClassName(propertyResolver
                 .getProperty("dataSourceClassName"));
@@ -78,6 +80,7 @@ public class DatabaseConfiguration implements EnvironmentAware {
         config.addDataSourceProperty("password",
                 propertyResolver.getProperty("password"));
         return new HikariDataSource(config);
+
     }
 
     @Bean(name = {"org.springframework.boot.autoconfigure.AutoConfigurationUtils.basePackages"})
