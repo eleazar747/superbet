@@ -15,7 +15,7 @@
 		<target>System.err</target>
 	</appender>
 
-	<logger name="fr.ele" level="TRACE" >
+	<logger name="fr.ele" level="INFO" additivity="false">
 		<appender-ref ref="STDERR"/>
 	</logger>
 
