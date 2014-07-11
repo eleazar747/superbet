@@ -25,6 +25,8 @@
         <spring-metrics.version>3.0.0</spring-metrics.version>
         <mustache.version>0.8.12</mustache.version>
         <flexy-pool.version>1.0.4</flexy-pool.version>
+        <!-- WARNING: must follow the server version !!! -->
+        <h2.version>1.4.179</h2.version>
     </properties>
     <repositories>
         <repository>
@@ -156,6 +158,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
         </dependency>
         <dependency>
             <artifactId>slf4j-api</artifactId>

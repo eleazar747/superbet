@@ -5,14 +5,14 @@ server:
 spring:
     profiles: dev
     profiles.include: web_module,cache,async
-    
+
     datasource:
         dataSourceClassName: org.h2.jdbcx.JdbcDataSource
-        url: jdbc:h2:~/test
-        databaseName: 
-        serverName: 
+        url: jdbc:h2:tcp://localhost/~/test
+        databaseName:
+        serverName:
         username: sa
-        password: 
+        password:
 
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
@@ -36,4 +36,3 @@ cache:
     timeToLiveSeconds: 3600
     ehcache:
         maxBytesLocalHeap: 16M
-        
