@@ -23,7 +23,7 @@ public class BookMaker extends HasCodeEntity {
     @Column(name = SuperBetTables.BookMakerTable.URL_SYNC_COLUMN, nullable = false)
     private String urlSync;
 
-    @Property(translation = "synchronizer")
+    @Property(source = "synchronizer")
     @Column(name = SuperBetTables.BookMakerTable.SYNC_SERVICE, nullable = false)
     private String synchronizerService;
 

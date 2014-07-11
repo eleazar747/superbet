@@ -5,7 +5,7 @@ import com.codiform.moo.annotation.Property;
 public class BookmakerDto extends HasIdAndCodeDto {
     private String url, urlSync, encoding;
 
-    @Property(translation = "synchronizerService")
+    @Property(source = "synchronizerService")
     private String synchronizer;
 
     public String getUrl() {

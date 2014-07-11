@@ -9,10 +9,10 @@ public class BetDto extends HasIdDto {
     @Property(translate = true)
     private BookmakerDto bookmaker;
 
-    @Property(translation = "refKey.betType", translate = true)
+    @Property(source = "refKey.betType", translate = true)
     private BetTypeDto betType;
 
-    @Property(translation = "refKey.match", translate = true)
+    @Property(source = "refKey.match", translate = true)
     private MatchDto match;
 
     private Date date;

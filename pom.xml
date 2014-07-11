@@ -27,6 +27,7 @@
         <flexy-pool.version>1.0.4</flexy-pool.version>
         <!-- WARNING: must follow the server version !!! -->
         <h2.version>1.4.179</h2.version>
+        <moo.version>2.0</moo.version>
     </properties>
     <repositories>
         <repository>
@@ -198,8 +199,13 @@
         </dependency>
         <dependency>
             <groupId>com.codiform</groupId>
-            <artifactId>moo</artifactId>
-            <version>1.3</version>
+            <artifactId>moo-core</artifactId>
+            <version>${moo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codiform</groupId>
+            <artifactId>moo-mvel</artifactId>
+            <version>${moo.version}</version>
         </dependency>
         <!-- Metrics -->
         <dependency>
