@@ -2,18 +2,9 @@ package fr.ele.services.bets.impl;
 
 import java.util.Iterator;
 
-import javax.annotation.Nullable;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterators;
-
-import fr.ele.mapreduce.Closure;
-import fr.ele.mapreduce.Closures;
-import fr.ele.mapreduce.Holder;
 import fr.ele.mapreduce.KeyMap;
 import fr.ele.mapreduce.superbet.LastBetFactory;
 import fr.ele.mapreduce.superbet.SureBetHolderFactory;
@@ -33,55 +24,18 @@ public class BetServiceImpl implements BetService {
 
     @Override
     public Iterator<Bet> findLastValues(BetSearch search) {
-        Iterator<Bet> it = betQueryService.iterate(search);
-        final KeyMap<LastBetKey, Bet, Bet> keyMap = new KeyMap<LastBetKey, Bet, Bet>(
+        final KeyMap<LastBetKey, Bet, Bet> keyMap = new KeyMap<>(
                 new LastBetFactory());
-        Closures.forAll(it, new Closure<Bet>() {
-            @Override
-            public void execute(Bet input) {
-                LastBetKey key = new LastBetKey(input);
-                keyMap.add(key, input);
-            }
-        });
-        return Iterators.transform(keyMap.iterateHolder(),
-                new Function<Holder<Bet, Bet>, Bet>() {
-
-                    @Override
-                    @Nullable
-                    public Bet apply(@Nullable Holder<Bet, Bet> input) {
-                        return input.getResult();
-                    }
-                });
+        betQueryService.iterate(search).forEachRemaining(bet -> keyMap.add(new LastBetKey(bet), bet));
+        return keyMap.getHolders().stream().map(holder -> holder.getResult()).iterator();
     }
 
     @Override
     public Iterator<SureBet> findSureBets(BetSearch search) {
-        Iterator<Bet> iterator = findLastValues(search);
-        final KeyMap<AggregateByRefKey, SureBet, Bet> keyMap = new KeyMap<AggregateByRefKey, SureBet, Bet>(
+        final KeyMap<AggregateByRefKey, SureBet, Bet> keyMap = new KeyMap<>(
                 new SureBetHolderFactory());
-        Closures.forAll(iterator, new Closure<Bet>() {
-            @Override
-            public void execute(Bet input) {
-                keyMap.add(new AggregateByRefKey(input), input);
-            }
-        });
-        Iterator<SureBet> surebets = Iterators.transform(
-                keyMap.iterateHolder(),
-                new Function<Holder<SureBet, Bet>, SureBet>() {
-
-                    @Override
-                    @Nullable
-                    public SureBet apply(@Nullable Holder<SureBet, Bet> input) {
-                        return input.getResult();
-                    }
-                });
-        return Iterators.filter(surebets, new Predicate<SureBet>() {
-
-            @Override
-            public boolean apply(@Nullable SureBet input) {
-                return input.isSureBet();
-            }
-        });
+        findLastValues(search).forEachRemaining(bet -> keyMap.add(new AggregateByRefKey(bet), bet));
+        return keyMap.getHolders().stream().map(holder -> holder.getResult()).filter(surebet -> surebet.isSureBet()).iterator();
     }
 
 }
