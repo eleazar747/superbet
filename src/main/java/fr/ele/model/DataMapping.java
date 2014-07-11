@@ -12,7 +12,9 @@ import javax.persistence.Table;
 import com.mysema.query.annotations.QueryInit;
 
 import fr.ele.model.ref.BookMaker;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table(name = SuperBetTables.DataMapping.TABLE)
 public class DataMapping extends SuperBetEntity {

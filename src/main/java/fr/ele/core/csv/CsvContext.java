@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import fr.ele.core.formatter.DefaultStringConverterRegistry;
 import fr.ele.core.formatter.StringConverter;
 import fr.ele.core.formatter.StringConverterRegistry;
-import fr.ele.csv.CsvRegistry;
+import fr.ele.csv.Registry;
 
 public class CsvContext<T> {
 
@@ -15,7 +15,7 @@ public class CsvContext<T> {
 
     public static final char DEFAULT_COMMENT = '#';
 
-    private final CsvBeanProperties csvBeanProperties;
+    private final CsvBeanProperties<T> csvBeanProperties;
 
     private final GraphResolver graphResolver;
 
@@ -29,7 +29,7 @@ public class CsvContext<T> {
 
     private char comment = DEFAULT_COMMENT;
 
-    private CsvContext(CsvBeanProperties csvBeanProperties,
+    private CsvContext(CsvBeanProperties<T> csvBeanProperties,
             GraphResolver graphResolver) {
         this.csvBeanProperties = csvBeanProperties;
         this.graphResolver = graphResolver;
@@ -37,7 +37,7 @@ public class CsvContext<T> {
 
     public static <T> CsvContext<T> create(Class<T> clazz,
             GraphResolver graphResolver) {
-        return new CsvContext(CsvRegistry.findCsvDefinition(clazz),
+        return new CsvContext<T>(Registry.findCsvDefinition(clazz),
                 graphResolver);
     }
 

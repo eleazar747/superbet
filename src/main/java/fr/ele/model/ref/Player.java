@@ -8,7 +8,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import fr.ele.model.SuperBetEntity;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table
 public class Player extends SuperBetEntity {

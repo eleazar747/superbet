@@ -15,8 +15,7 @@ import fr.ele.ui.mvc.MustacheViewResolver;
 @Profile(ApplicationProfiles.WEB)
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 
-    private static final Logger LOG = LoggerFactory
-            .getLogger(WebMvcConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WebMvcConfiguration.class);
 
     @Bean
     public ViewResolver resolver() {

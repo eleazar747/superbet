@@ -16,7 +16,9 @@ import com.mysema.query.annotations.QueryInit;
 
 import fr.ele.model.HasCodeEntity;
 import fr.ele.model.SuperBetTables;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table(name = SuperBetTables.MatchTable.TABLE, uniqueConstraints = @UniqueConstraint(columnNames = {
         SuperBetTables.MatchTable.SPORT_COLUMN,

@@ -10,7 +10,9 @@ import com.codiform.moo.annotation.Property;
 
 import fr.ele.model.HasCodeEntity;
 import fr.ele.model.SuperBetTables;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table(name = SuperBetTables.BookMakerTable.TABLE)
 @Proxy(proxyClass = BookMaker.class)

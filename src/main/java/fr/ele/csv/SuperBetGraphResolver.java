@@ -84,7 +84,7 @@ public class SuperBetGraphResolver implements GraphResolver {
 
     @Override
     public <T> T findByCode(Class<T> clazz, String code) {
-        SuperBetRepository repository = registry
+        SuperBetRepository<?> repository = registry
                 .getRepository((Class<SuperBetEntity>) clazz);
         if (repository instanceof HasCodeRepository) {
             Key key = new Key(clazz, code);

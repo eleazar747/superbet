@@ -22,8 +22,7 @@ import fr.ele.core.ApplicationProfiles;
 @Profile(ApplicationProfiles.ASYNC)
 public class AsyncConfiguration implements AsyncConfigurer, EnvironmentAware {
 
-    private final Logger log = LoggerFactory
-            .getLogger(AsyncConfiguration.class);
+    private final Logger log = LoggerFactory.getLogger(AsyncConfiguration.class);
 
     private RelaxedPropertyResolver propertyResolver;
 
@@ -36,12 +35,9 @@ public class AsyncConfiguration implements AsyncConfigurer, EnvironmentAware {
     public Executor getAsyncExecutor() {
         log.debug("Creating Async Task Executor");
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(propertyResolver.getProperty("corePoolSize",
-                Integer.class, 2));
-        executor.setMaxPoolSize(propertyResolver.getProperty("corePoolSize",
-                Integer.class, 50));
-        executor.setQueueCapacity(propertyResolver.getProperty("corePoolSize",
-                Integer.class, 10000));
+        executor.setCorePoolSize(propertyResolver.getProperty("corePoolSize", Integer.class, 2));
+        executor.setMaxPoolSize(propertyResolver.getProperty("corePoolSize", Integer.class, 50));
+        executor.setQueueCapacity(propertyResolver.getProperty("corePoolSize", Integer.class, 10000));
         executor.setThreadNamePrefix("stack-Executor-");
         executor.initialize();
         return executor;

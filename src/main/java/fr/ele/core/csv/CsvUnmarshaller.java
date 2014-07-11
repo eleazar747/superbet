@@ -12,7 +12,7 @@ public class CsvUnmarshaller<T> {
 
     private final CsvContext<T> context;
 
-    public CsvBeanProperties getCsvBeanProperties() {
+    public CsvBeanProperties<T> getCsvBeanProperties() {
         return csvBeanProperties;
     }
 
@@ -53,8 +53,9 @@ public class CsvUnmarshaller<T> {
                 next = true;
                 step();
                 T object = csvBeanProperties.getNewInstance();
-                for (int i = 0; i < csvBeanProperties.getProperties().length; i++) {
-                    CsvProperty<T> property = csvBeanProperties.getProperties()[i];
+                CsvProperty<T>[] properties = csvBeanProperties.getProperties();
+                for (int i = 0; i < properties.length; i++) {
+                    CsvProperty<T> property = properties[i];
                     property.setValue(context, object, current[i]);
                 }
                 return object;

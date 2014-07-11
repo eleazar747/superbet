@@ -31,8 +31,7 @@ import fr.ele.core.ApplicationProfiles;
 @Profile(ApplicationProfiles.CACHE)
 public class CacheConfiguration {
 
-    private final Logger log = LoggerFactory
-            .getLogger(CacheConfiguration.class);
+    private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -64,19 +63,15 @@ public class CacheConfiguration {
         // cacheManager.getConfiguration().setMaxBytesLocalHeap(env.getProperty("cache.ehcache.maxBytesLocalHeap",
         // String.class, "16M"));
         log.debug("Registring Ehcache Metrics gauges");
-        Set<EntityType<?>> entities = entityManager.getMetamodel()
-                .getEntities();
+        Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
         for (EntityType<?> entity : entities) {
             String name = entity.getJavaType().getName();
             net.sf.ehcache.Cache cache = cacheManager.getCache(name);
             if (cache != null) {
                 cache.getCacheConfiguration().setTimeToLiveSeconds(
-                        env.getProperty("cache.timeToLiveSeconds",
-                                Integer.class, 3600));
-                net.sf.ehcache.Ehcache decoratedCache = InstrumentedEhcache
-                        .instrument(metricRegistry, cache);
-                cacheManager.replaceCacheWithDecoratedCache(cache,
-                        decoratedCache);
+                        env.getProperty("cache.timeToLiveSeconds", Long.class, Long.valueOf(3600)));
+                net.sf.ehcache.Ehcache decoratedCache = InstrumentedEhcache.instrument(metricRegistry, cache);
+                cacheManager.replaceCacheWithDecoratedCache(cache, decoratedCache);
             }
         }
         EhCacheCacheManager ehCacheManager = new EhCacheCacheManager();

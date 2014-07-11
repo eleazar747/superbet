@@ -13,7 +13,9 @@ import com.mysema.query.annotations.QueryInit;
 
 import fr.ele.model.SuperBetEntity;
 import fr.ele.model.SuperBetTables;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table(name = SuperBetTables.RefKeyTable.TABLE, uniqueConstraints = @UniqueConstraint(columnNames = {
         SuperBetTables.RefKeyTable.BETTYPE_ID_COLUMN,

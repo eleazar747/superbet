@@ -13,8 +13,10 @@ import com.mysema.query.annotations.QueryInit;
 
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.RefKey;
+import fr.herman.metatype.annotation.MetaBean;
 
 @Entity
+@MetaBean
 @Table(name = SuperBetTables.BetTable.TABLE)
 public class Bet extends SuperBetEntity {
 

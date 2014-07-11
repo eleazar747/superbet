@@ -27,8 +27,7 @@ import fr.ele.core.ApplicationProfiles;
 @Configuration
 @Profile(ApplicationProfiles.WEB)
 public class CxfConfiguration {
-    private static final Logger LOG = LoggerFactory
-            .getLogger(WebMvcConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WebMvcConfiguration.class);
 
     @ApplicationPath("/")
     public class JaxRsApiApplication extends Application {
@@ -43,11 +42,8 @@ public class CxfConfiguration {
     @DependsOn("cxf")
     public Server jaxRsServer(ApplicationContext appContext) {
         LOG.info("init CXF server");
-        JAXRSServerFactoryBean factory = RuntimeDelegate.getInstance()
-                .createEndpoint(jaxRsApiApplication(),
-                        JAXRSServerFactoryBean.class);
-        factory.setServiceBeans(new ArrayList<>(appContext
-                .getBeansWithAnnotation(RestService.class).values()));
+        JAXRSServerFactoryBean factory = RuntimeDelegate.getInstance().createEndpoint(jaxRsApiApplication(), JAXRSServerFactoryBean.class);
+        factory.setServiceBeans(new ArrayList<>(appContext.getBeansWithAnnotation(RestService.class).values()));
         factory.setAddress("/");
         factory.setProvider(jsonProvider());
         return factory.create();

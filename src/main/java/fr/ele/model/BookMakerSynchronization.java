@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import fr.ele.core.jaxb.DateTimeAdapter;
 import fr.ele.model.ref.BookMaker;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table
 public class BookMakerSynchronization extends SuperBetEntity {

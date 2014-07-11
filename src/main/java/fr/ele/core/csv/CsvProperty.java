@@ -6,5 +6,5 @@ public interface CsvProperty<T> {
 
     String getHeader();
 
-    void setValue(CsvContext context, T object, String value);
+    void setValue(CsvContext<T> context, T object, String value);
 }

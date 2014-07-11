@@ -14,8 +14,7 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class ProxyConfiguration implements EnvironmentAware {
 
-    private static final Logger LOG = LoggerFactory
-            .getLogger(ProxyConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProxyConfiguration.class);
 
     private RelaxedPropertyResolver rpr;
 
@@ -31,9 +30,7 @@ public class ProxyConfiguration implements EnvironmentAware {
             String url = rpr.getProperty("url");
             Integer port = rpr.getProperty("port", Integer.class);
             LOG.info("Use proxy {}:{}", url, port);
-            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(url,
-                    port));
-            return proxy;
+            return new Proxy(Proxy.Type.HTTP, new InetSocketAddress(url, port));
         }
 
         LOG.info("No proxy used");

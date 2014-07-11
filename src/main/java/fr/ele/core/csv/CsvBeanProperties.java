@@ -3,7 +3,7 @@ package fr.ele.core.csv;
 public interface CsvBeanProperties<T> {
     Class<T> getHandledClass();
 
-    CsvProperty[] getProperties();
+    CsvProperty<T>[] getProperties();
 
     T getNewInstance();
 }

@@ -32,11 +32,9 @@ import com.ryantenney.metrics.spring.config.annotation.MetricsConfigurerAdapter;
 
 @Configuration
 @EnableMetrics(proxyTargetClass = true)
-public class MetricsConfiguration extends MetricsConfigurerAdapter implements
-        EnvironmentAware {
+public class MetricsConfiguration extends MetricsConfigurerAdapter implements EnvironmentAware {
 
-    private static final Logger log = LoggerFactory
-            .getLogger(MetricsConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(MetricsConfiguration.class);
 
     private static final MetricRegistry METRIC_REGISTRY = new MetricRegistry();
 
@@ -65,22 +63,18 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter implements
     public void init() {
         log.debug("Registring JVM gauges");
         METRIC_REGISTRY.register("jvm.memory", new MemoryUsageGaugeSet());
-        METRIC_REGISTRY
-                .register("jvm.garbage", new GarbageCollectorMetricSet());
+        METRIC_REGISTRY.register("jvm.garbage", new GarbageCollectorMetricSet());
         METRIC_REGISTRY.register("jvm.threads", new ThreadStatesGaugeSet());
         METRIC_REGISTRY.register("jvm.files", new FileDescriptorRatioGauge());
-        METRIC_REGISTRY.register("jvm.buffers", new BufferPoolMetricSet(
-                ManagementFactory.getPlatformMBeanServer()));
+        METRIC_REGISTRY.register("jvm.buffers", new BufferPoolMetricSet(ManagementFactory.getPlatformMBeanServer()));
     }
 
     @Override
     public void configureReporters(MetricRegistry metricRegistry) {
-        ConsoleReporter.forRegistry(metricRegistry).build()
-                .start(30, TimeUnit.SECONDS);
+        ConsoleReporter.forRegistry(metricRegistry).build().start(30, TimeUnit.SECONDS);
         if (propertyResolver.getProperty("jmx.enabled", Boolean.class, false)) {
             log.info("Initializing Metrics JMX reporting");
-            final JmxReporter jmxReporter = JmxReporter.forRegistry(
-                    metricRegistry).build();
+            final JmxReporter jmxReporter = JmxReporter.forRegistry(metricRegistry).build();
             jmxReporter.start();
         }
     }
@@ -95,27 +89,19 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter implements
 
         @Override
         public void setEnvironment(Environment environment) {
-            propertyResolver = new RelaxedPropertyResolver(environment,
-                    "metrics.graphite");
+            propertyResolver = new RelaxedPropertyResolver(environment, "metrics.graphite");
         }
 
         @PostConstruct
         private void init() {
-            Boolean graphiteEnabled = propertyResolver.getProperty("enabled",
-                    Boolean.class, false);
+            Boolean graphiteEnabled = propertyResolver.getProperty("enabled", Boolean.class, false);
             if (graphiteEnabled) {
                 log.info("Initializing Metrics Graphite reporting");
-                String graphiteHost = propertyResolver
-                        .getRequiredProperty("host");
-                Integer graphitePort = propertyResolver.getRequiredProperty(
-                        "port", Integer.class);
-                Graphite graphite = new Graphite(new InetSocketAddress(
-                        graphiteHost, graphitePort));
-                GraphiteReporter graphiteReporter = GraphiteReporter
-                        .forRegistry(metricRegistry)
-                        .convertRatesTo(TimeUnit.SECONDS)
-                        .convertDurationsTo(TimeUnit.MILLISECONDS)
-                        .build(graphite);
+                String graphiteHost = propertyResolver.getRequiredProperty("host");
+                Integer graphitePort = propertyResolver.getRequiredProperty("port", Integer.class);
+                Graphite graphite = new Graphite(new InetSocketAddress(graphiteHost, graphitePort));
+                GraphiteReporter graphiteReporter = GraphiteReporter.forRegistry(metricRegistry).convertRatesTo(TimeUnit.SECONDS)
+                        .convertDurationsTo(TimeUnit.MILLISECONDS).build(graphite);
                 graphiteReporter.start(1, TimeUnit.MINUTES);
             } else {
                 log.warn("Graphite server is not configured, unable to send any data to Graphite");

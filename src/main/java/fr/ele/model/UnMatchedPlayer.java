@@ -9,7 +9,9 @@ import javax.persistence.Table;
 
 import fr.ele.model.ref.BookMaker;
 import fr.ele.model.ref.Sport;
+import fr.herman.metatype.annotation.MetaBean;
 
+@MetaBean
 @Entity
 @Table
 public class UnMatchedPlayer extends SuperBetEntity {

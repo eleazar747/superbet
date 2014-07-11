@@ -6,6 +6,7 @@ public class DefaultStringConverterRegistry extends StringConverterRegistry {
         register(new BooleanStringConverter());
         register(new NumberStringConverter());
         register(new DateStringConverter());
+        register(new EnumStringConverter<>());
         register(new StringStringConverter());
     }
 }
