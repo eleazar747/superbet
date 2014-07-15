@@ -24,16 +24,14 @@ public class BetServiceImpl implements BetService {
 
     @Override
     public Iterator<Bet> findLastValues(BetSearch search) {
-        final KeyMap<LastBetKey, Bet, Bet> keyMap = new KeyMap<>(
-                new LastBetFactory());
+        final KeyMap<LastBetKey, Bet, Bet> keyMap = new KeyMap<>(new LastBetFactory());
         betQueryService.iterate(search).forEachRemaining(bet -> keyMap.add(new LastBetKey(bet), bet));
         return keyMap.getHolders().stream().map(holder -> holder.getResult()).iterator();
     }
 
     @Override
     public Iterator<SureBet> findSureBets(BetSearch search) {
-        final KeyMap<AggregateByRefKey, SureBet, Bet> keyMap = new KeyMap<>(
-                new SureBetHolderFactory());
+        final KeyMap<AggregateByRefKey, SureBet, Bet> keyMap = new KeyMap<>(new SureBetHolderFactory());
         findLastValues(search).forEachRemaining(bet -> keyMap.add(new AggregateByRefKey(bet), bet));
         return keyMap.getHolders().stream().map(holder -> holder.getResult()).filter(surebet -> surebet.isSureBet()).iterator();
     }
