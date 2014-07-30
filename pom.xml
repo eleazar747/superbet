@@ -40,7 +40,14 @@
         </repository>
         <repository>
             <id>garc33-releases</id>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
             <url>https://raw.github.com/garc33/m2p2-repository/mvn-repo/maven/releases/</url>
+        </repository>
+        <repository>
+            <id>garc33-snapshots</id>
+            <url>https://raw.github.com/garc33/m2p2-repository/mvn-repo/maven/snapshots/</url>
         </repository>
     </repositories>
     <pluginRepositories>
